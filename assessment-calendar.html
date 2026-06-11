@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assessment &amp; Authorization Calendar — CCoE</title>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Operations · <span class="phase-tag">Phase 5 — Pipeline Visibility</span></div>
+      <h1>Assessment &amp; Authorization Calendar</h1>
+      <p class="lede">The 3-year ATO lifecycle in one pipeline view: what's in the queue, what's expiring, where the blackout windows fall, and which hard milestones are coming at you.</p>
+      <div class="doc-meta">
+        <span>OWNER: <b>Assessment Cell</b></span><span>VERSION: <b>2.1</b></span><span>EFFECTIVE: <b>2026-06-01</b></span><span>REVIEW: <b>2026-09-01</b></span><span>APPROVAL: <b>AODR</b></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPIRATION RADAR -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">180-to-30 Day Warning Dashboard</span>
+      <h2>Expiration Radar</h2>
+      <div class="grid g4">
+        <div class="metric m-info"><div class="n">4</div><div class="l">Expiring 121–180 Days</div><div class="delta">Strategy confirmation due</div></div>
+        <div class="metric m-warn"><div class="n">3</div><div class="l">Expiring 61–120 Days</div><div class="delta">Assessment must be scheduled</div></div>
+        <div class="metric m-crit"><div class="n">2</div><div class="l">Expiring 31–60 Days</div><div class="delta">Package in routing — daily tracking</div></div>
+        <div class="metric m-crit"><div class="n">0</div><div class="l">Expiring ≤ 30 Days</div><div class="delta" style="color:var(--ok)">▲ Clean — keep it that way</div></div>
+      </div>
+      <div class="table-wrap" style="margin-top:18px">
+        <table>
+          <thead><tr><th class="sortable">System</th><th class="sortable">Pathway</th><th class="sortable" data-sort-type="num">Days to Expiration</th><th>Stage</th><th>ISSO</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td><b>FIRES-DSS</b></td><td class="mono">Full ATO</td><td class="mono" data-val="44">44</td><td>Package routing to AODR</td><td>R. Alvarez</td><td><span class="badge b-crit">Daily Track</span></td></tr>
+            <tr><td><b>LOGNET-04</b></td><td class="mono">Full ATO</td><td class="mono" data-val="58">58</td><td>Assessment starts 16 JUN (SAP/TRR)</td><td>T. Okafor</td><td><span class="badge b-crit">Daily Track</span></td></tr>
+            <tr><td><b>MEDLOG-01</b></td><td class="mono">Conditional</td><td class="mono" data-val="83">83</td><td>Condition milestones in verification</td><td>S. Park</td><td><span class="badge b-warn">Watch</span></td></tr>
+            <tr><td><b>TRNG-SIM-2</b></td><td class="mono">Full ATO</td><td class="mono" data-val="97">97</td><td>Readiness checklist 70% complete</td><td>J. Whitfield</td><td><span class="badge b-warn">Watch</span></td></tr>
+            <tr><td><b>SUPPLY-NET</b></td><td class="mono">Full ATO</td><td class="mono" data-val="118">118</td><td>Self-assessment underway</td><td>M. Reyes</td><td><span class="badge b-warn">Watch</span></td></tr>
+            <tr><td><b>INTEL-FUS</b></td><td class="mono">Agile ATO</td><td class="mono" data-val="139">139</td><td>ConMon evidence pipeline green</td><td>D. Chen</td><td><span class="badge b-info">Plan</span></td></tr>
+            <tr><td><b>CLOUD-PLT</b></td><td class="mono">Full ATO</td><td class="mono" data-val="151">151</td><td>Strategy confirmed; IL4 re-baseline first</td><td>A. Brooks</td><td><span class="badge b-info">Plan</span></td></tr>
+            <tr><td><b>RANGE-OT</b></td><td class="mono">Closed Network</td><td class="mono" data-val="166">166</td><td>Annual closed-network audit scheduled</td><td>K. Nguyen</td><td><span class="badge b-info">Plan</span></td></tr>
+            <tr><td><b>PAY-GW</b></td><td class="mono">Reciprocity</td><td class="mono" data-val="178">178</td><td>BoE transfer requested from owning org</td><td>L. Foster</td><td><span class="badge b-info">Plan</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- MONTH VIEW -->
+  <section class="section" style="background:var(--panel)">
+    <div class="wrap">
+      <div style="display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:14px">
+        <div>
+          <span class="kicker">Pipeline Management View</span>
+          <h2 id="calTitle">June 2026</h2>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="btn btn-ghost btn-sm" id="calPrev">← Prev</button>
+          <button class="btn btn-ghost btn-sm" id="calNext">Next →</button>
+        </div>
+      </div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin:14px 0">
+        <span class="mono" style="font-size:11px"><span class="cal-evt e-ato" style="display:inline;padding:1px 6px">ATO DEADLINE</span></span>
+        <span class="mono" style="font-size:11px"><span class="cal-evt e-asmt" style="display:inline;padding:1px 6px">ASSESSMENT</span></span>
+        <span class="mono" style="font-size:11px"><span class="cal-evt e-mil" style="display:inline;padding:1px 6px">MILESTONE</span></span>
+        <span class="mono" style="font-size:11px"><span class="cal-evt e-trn" style="display:inline;padding:1px 6px">TRAINING / EVENT</span></span>
+        <span class="mono" style="font-size:11px"><span class="cal-evt e-blk" style="display:inline;padding:1px 6px">BLACKOUT</span></span>
+      </div>
+      <div class="cal-grid" id="calGrid" role="grid" aria-label="Assessment calendar"></div>
+    </div>
+  </section>
+
+  <!-- MILESTONES + AVAILABILITY -->
+  <section class="section">
+    <div class="wrap split">
+      <div class="card flush card-accent">
+        <div class="card-head"><h3>Hard Reporting Milestones</h3><span class="badge b-mute">FY26 Q3–Q4</span></div>
+        <div class="card-body" style="padding:0 18px">
+          <ul class="linklist">
+            <li><a href="#"><span><b>CSRR</b> — Cyber Security Readiness Review data lock</span><span class="meta">30 JUN · QTRLY</span></a></li>
+            <li><a href="#"><span><b>SAP/TRR</b> — LOGNET-04 Security Assessment Plan / Test Readiness Review</span><span class="meta">16 JUN</span></a></li>
+            <li><a href="#"><span><b>SAR/RAW</b> — INTEL-FUS Security Assessment Report &amp; Risk Worksheet due</span><span class="meta">11 JUL</span></a></li>
+            <li><a href="#"><span><b>SAP/TRR</b> — TRNG-SIM-2 assessment kickoff</span><span class="meta">04 AUG</span></a></li>
+            <li><a href="#"><span><b>CSRR</b> — Q4 data lock</span><span class="meta">30 SEP · QTRLY</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="card card-gold">
+          <span class="kicker">Assessor / ISSO Availability</span>
+          <div class="bar-row" style="grid-template-columns:120px 1fr 52px"><span>SCA Team A</span><div class="bar-track"><div class="bar-fill f-crit" style="width:92%"></div></div><span class="v">92%</span></div>
+          <div class="bar-row" style="grid-template-columns:120px 1fr 52px"><span>SCA Team B</span><div class="bar-track"><div class="bar-fill f-warn" style="width:74%"></div></div><span class="v">74%</span></div>
+          <div class="bar-row" style="grid-template-columns:120px 1fr 52px"><span>SCA-R Support</span><div class="bar-track"><div class="bar-fill f-ok" style="width:55%"></div></div><span class="v">55%</span></div>
+          <div class="bar-row" style="grid-template-columns:120px 1fr 52px"><span>ISSO Pool</span><div class="bar-track"><div class="bar-fill f-gold" style="width:81%"></div></div><span class="v">81%</span></div>
+          <p class="dim" style="font-size:12.5px;margin-top:8px">Utilization this period. Team A is saturated — new assessments route to Team B / SCA-R until 15 JUL.</p>
+        </div>
+        <div class="callout warn" style="margin-top:18px"><b class="head">Submission Blackout</b>22–26 JUN: no new package submissions while the assessment cell locks quarterly CSRR data. Plan routing around it.</div>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="assets/js/main.js"></script>
+<script>
+// Calendar with seeded events for Jun–Aug 2026
+const EVENTS = {
+  '2026-06-12':[['e-trn','Office Hours: POA&M evidence']],
+  '2026-06-16':[['e-asmt','SAP/TRR: LOGNET-04']],
+  '2026-06-17':[['e-asmt','LOGNET-04 assessment']],
+  '2026-06-18':[['e-trn','Exec risk briefing lab']],
+  '2026-06-22':[['e-blk','Submission blackout']],
+  '2026-06-23':[['e-blk','Submission blackout']],
+  '2026-06-24':[['e-ato','FIRES-DSS pkg → AODR'],['e-blk','Blackout']],
+  '2026-06-25':[['e-blk','Submission blackout']],
+  '2026-06-26':[['e-blk','Blackout'],['e-trn','TTX: data spill']],
+  '2026-06-30':[['e-mil','CSRR Q3 data lock']],
+  '2026-07-01':[['e-mil','Cloud gov v3.0 effective']],
+  '2026-07-02':[['e-trn','Workforce assembly']],
+  '2026-07-11':[['e-mil','SAR/RAW: INTEL-FUS']],
+  '2026-07-15':[['e-mil','Inspection binders due']],
+  '2026-07-24':[['e-ato','LOGNET-04 decision target']],
+  '2026-08-04':[['e-asmt','SAP/TRR: TRNG-SIM-2']],
+  '2026-08-05':[['e-asmt','TRNG-SIM-2 assessment']],
+  '2026-08-20':[['e-trn','Office Hours: cloud overlays']],
+};
+let calY = 2026, calM = 5; // June 2026 (0-indexed)
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+function renderCal(){
+  const grid = document.getElementById('calGrid');
+  document.getElementById('calTitle').textContent = `${MONTHS[calM]} ${calY}`;
+  const days = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+  let html = days.map(d=>`<div class="cal-head">${d}</div>`).join('');
+  const first = new Date(calY, calM, 1).getDay();
+  const len = new Date(calY, calM+1, 0).getDate();
+  const today = new Date(2026,5,10);
+  for(let i=0;i<first;i++) html += `<div class="cal-cell dim"></div>`;
+  for(let d=1; d<=len; d++){
+    const key = `${calY}-${String(calM+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const evts = (EVENTS[key]||[]).map(([c,t])=>`<span class="cal-evt ${c}">${t}</span>`).join('');
+    const isToday = calY===today.getFullYear()&&calM===today.getMonth()&&d===today.getDate();
+    html += `<div class="cal-cell ${isToday?'today':''}"><span class="d">${d}${isToday?' · TODAY':''}</span>${evts}</div>`;
+  }
+  grid.innerHTML = html;
+}
+document.getElementById('calPrev').addEventListener('click',()=>{ calM--; if(calM<0){calM=11;calY--;} renderCal(); });
+document.getElementById('calNext').addEventListener('click',()=>{ calM++; if(calM>11){calM=0;calY++;} renderCal(); });
+renderCal();
+</script>
+</body>
+</html>

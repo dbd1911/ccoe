@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Threat Intelligence — CCoE</title>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Operations · <span class="phase-tag">Subsequent Phase — Operational Context</span></div>
+      <h1>Threat Intelligence &amp; Cyber Awareness</h1>
+      <p class="lede">Curated for this portfolio — not a firehose. Every alert ships with mission impact context and a "What to Do Now" directive you can execute today.</p>
+      <div class="doc-meta">
+        <span>OWNER: <b>Threat Intelligence Cell</b></span><span>VERSION: <b>Weekly — 2026-W24</b></span><span>EFFECTIVE: <b>2026-06-08</b></span><span>REVIEW: <b>Weekly, Monday 0900</b></span><span>APPROVAL: <b>CISO</b></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEKLY ALERTS -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Weekly Synthesized Alerts · Week of 08 JUN 2026</span>
+      <h2>This Week's Threat Picture</h2>
+      <div class="grid g2">
+        <div class="card card-crit reveal">
+          <span class="badge b-crit">KEV · ACT NOW</span>
+          <h3>CVE-2026-31822 — Web Framework RCE</h3>
+          <p><b>What:</b> Pre-auth remote code execution; added to CISA KEV 05 JUN. Active exploitation confirmed.</p>
+          <p><b>Mission impact:</b> LOGNET-04 web tier runs the affected framework. Compromise degrades supply requisitions for three supported brigades.</p>
+          <p><b>What to do now:</b> Patch by <b>12 JUN (KEV 7-day clock)</b>. WAF rule WR-2218 deployed as interim; verify in your segment, rescan, and update PM-2287.</p>
+        </div>
+        <div class="card reveal">
+          <span class="badge b-warn">Vendor Advisory</span>
+          <h3>VPN Concentrator Auth Bypass</h3>
+          <p><b>What:</b> Vendor out-of-band patch for an authentication bypass; PoC public, no confirmed exploitation in DoD space.</p>
+          <p><b>Mission impact:</b> Remote-access path for SUPPLY-NET and MEDLOG-01 administrators.</p>
+          <p><b>What to do now:</b> Apply vendor patch during the 14 JUN maintenance window; enforce phishing-resistant MFA on all admin VPN profiles by 20 JUN.</p>
+        </div>
+        <div class="card reveal">
+          <span class="badge b-warn">Campaign</span>
+          <h3>Credential Phishing — Logistics Theme</h3>
+          <p><b>What:</b> Spear-phish wave imitating transportation-request portals targeting Army logistics personnel; 14 attempts caught at the gateway this week.</p>
+          <p><b>Mission impact:</b> Harvested credentials enable initial access against SUPPLY-NET user accounts.</p>
+          <p><b>What to do now:</b> Forward suspicious mail to the watch desk; supervisors brief teams using the 2-minute awareness card; report any click within 1 hour.</p>
+        </div>
+        <div class="card reveal">
+          <span class="badge b-info">Awareness</span>
+          <h3>OT Firmware End-of-Support</h3>
+          <p><b>What:</b> RANGE-OT controller firmware reaches end-of-support 30 SEP 2026; no further security patches.</p>
+          <p><b>Mission impact:</b> Unsupported firmware on the live-fire range instrumentation segment raises residual risk beyond current acceptance (DR-2026-022).</p>
+          <p><b>What to do now:</b> Engineering evaluates replacement candidates by 15 JUL; isolation controls re-validated this quarter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEV MAP -->
+  <section class="section" style="background:var(--panel)">
+    <div class="wrap">
+      <span class="kicker">CISA KEV → Portfolio Map</span>
+      <h2>KEV Items Touching Our Systems</h2>
+      <p class="section-sub">Refreshed nightly against the asset inventory. The 7-day remediation clock is policy — see <a href="vulnerability-poam.html">Vulnerability &amp; POA&amp;M</a>.</p>
+      <div class="table-wrap reveal">
+        <table>
+          <thead><tr><th class="sortable">CVE</th><th class="sortable">KEV Added</th><th class="sortable">Affected System(s)</th><th class="sortable">Due</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td class="formula">CVE-2026-31822</td><td data-val="20260605">05 JUN 2026</td><td>LOGNET-04</td><td data-val="20260612"><b>12 JUN 2026</b></td><td><span class="badge b-warn">Patching — WAF interim active</span></td></tr>
+            <tr><td class="formula">CVE-2026-29410</td><td data-val="20260528">28 MAY 2026</td><td>CLOUD-PLT (mgmt plane)</td><td data-val="20260604">04 JUN 2026</td><td><span class="badge b-ok">Closed — verified 03 JUN</span></td></tr>
+            <tr><td class="formula">CVE-2026-27155</td><td data-val="20260514">14 MAY 2026</td><td>INTEL-FUS, SUPPLY-NET</td><td data-val="20260521">21 MAY 2026</td><td><span class="badge b-ok">Closed — verified 20 MAY</span></td></tr>
+            <tr><td class="formula">CVE-2025-61998</td><td data-val="20260430">30 APR 2026</td><td>RANGE-OT (isolated)</td><td data-val="20260507">07 MAY 2026</td><td><span class="badge b-mute">Exception — compensating isolation, AO acceptance on file</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATT&CK -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">MITRE ATT&amp;CK Mapping</span>
+      <h2>Techniques Mapped to Our Weak Points</h2>
+      <p class="section-sub">The Threat Intel Cell maps current adversary techniques against known portfolio gaps, so defensive effort lands where attacks actually arrive.</p>
+      <div class="table-wrap reveal">
+        <table>
+          <thead><tr><th>Technique</th><th>ATT&amp;CK ID</th><th>Portfolio Exposure</th><th>Defensive Priority</th></tr></thead>
+          <tbody>
+            <tr><td>Exploit Public-Facing Application</td><td class="formula">T1190</td><td>LOGNET-04 web tier (CVE-2026-31822)</td><td><span class="badge b-crit">1 — Patch + WAF verification</span></td></tr>
+            <tr><td>Phishing: Spearphishing Link</td><td class="formula">T1566.002</td><td>Logistics-themed campaign, SUPPLY-NET users</td><td><span class="badge b-warn">2 — MFA rollout + awareness card</span></td></tr>
+            <tr><td>Valid Accounts: Cloud Accounts</td><td class="formula">T1078.004</td><td>CLOUD-PLT inherited-control gaps in IAM config</td><td><span class="badge b-warn">3 — Conditional access review, Q3</span></td></tr>
+            <tr><td>External Remote Services</td><td class="formula">T1133</td><td>VPN concentrator auth bypass (advisory above)</td><td><span class="badge b-warn">4 — Patch 14 JUN window</span></td></tr>
+            <tr><td>Hardware Additions</td><td class="formula">T1200</td><td>Standalone/closed networks with removable media workflows</td><td><span class="badge b-mute">5 — Media control audit, quarterly</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout" style="margin-top:20px"><b class="head">Subscribe</b>The weekly alert digest goes to all hands Monday 0900. Role-tailored versions (engineer / ISSO / leadership) are configured in <a href="tools-dashboards.html">Tools &amp; Dashboards</a>. Archive lives in the <a href="community.html">newsletter archive</a>.</div>
+    </div>
+  </section>
+</main>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

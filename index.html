@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCoE Operational Hub — Command Center</title>
+<meta name="description" content="Cybersecurity Center of Excellence operational hub: RMF execution, risk ownership, workforce capability, and portfolio health metrics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<!-- ============ INTERACTIVE HERO LANDING (PRD 2.1) ============ -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="eyebrow">Cybersecurity Center of Excellence · Army Cyber Portfolio</div>
+    <h1>From document repository<br>to <span class="accent">command center.</span></h1>
+    <p class="lede">Disciplined RMF execution. Clear risk ownership. An optimized workforce. Real-time portfolio health — replacing anecdotal reporting with evidence-based management.</p>
+    <div class="hero-question">▸ WHAT DO I NEED TO KNOW OR DO TODAY?</div>
+    <div class="hero-ctas">
+      <a class="btn btn-gold" href="#command-center">Enter the Command Center ↓</a>
+      <a class="btn btn-ghost" style="color:#fff;border-color:#9AA39D" href="rmf-operations.html">RMF Operations Hub</a>
+    </div>
+  </div>
+  <div class="scroll-cue">SCROLL<br>▼</div>
+</section>
+<div class="hero-stats">
+  <div class="hero-stats-inner">
+    <div class="hero-stat"><div class="n" data-count="84">0</div><div class="l">Systems Under Management</div></div>
+    <div class="hero-stat"><div class="n" data-count="71">0</div><div class="l">Active Authorizations</div></div>
+    <div class="hero-stat"><div class="n" data-count="12">0</div><div class="l">Packages In Assessment Queue</div></div>
+    <div class="hero-stat"><div class="n" data-count="9">0</div><div class="l">ATOs Expiring ≤ 180 Days</div></div>
+  </div>
+</div>
+
+<!-- ============ CYBER ALERTS TICKER ============ -->
+<div class="ticker-band" role="region" aria-label="Cyber alerts ticker">
+  <div class="ticker-label"><span class="pulse"></span>CYBER ALERTS</div>
+  <div class="ticker-viewport">
+    <div class="ticker-track" id="ticker">
+      <span><b>ZERO-DAY:</b> CVE-2026-31822 (network appliance RCE) added to CISA KEV — patch window 7 days. See Threat Intel.</span>
+      <span><b>COMPLIANCE:</b> eMASS control set baseline update effective 15 JUN — re-validate inherited controls before submission.</span>
+      <span><b>POLICY:</b> Significant Change Memo template v3.2 published — v3.1 retired 30 JUN.</span>
+      <span><b>OPS:</b> Assessment submission blackout 22–26 JUN for quarterly CSRR reporting.</span>
+      <span><b>ADVISORY:</b> Phishing campaign targeting program offices observed — report suspicious mail via Incident Response node.</span>
+      <span><b>DEADLINE:</b> 3 ATO packages due to AODR routing this week — verify checklists in RMF Hub.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ COMMAND CENTER (PRD 5.1) ============ -->
+<main id="command-center">
+  <div class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Home · Command Center</div>
+      <h1>Today's Operating Picture</h1>
+      <div class="doc-meta">
+        <span>OWNER: <b>Cybersecurity Office</b></span>
+        <span>VERSION: <b>1.1</b></span>
+        <span>EFFECTIVE: <b>2026-06-01</b></span>
+        <span>REVIEW: <b>2026-12-01</b></span>
+        <span>APPROVAL: <b>CISO</b></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mission + CISO message -->
+  <section class="section">
+    <div class="wrap split">
+      <div class="card card-accent reveal">
+        <span class="kicker">Mission Statement</span>
+        <h2 style="font-size:23px">Enable the mission. Own the risk.</h2>
+        <p style="margin-top:8px">The Cybersecurity Center of Excellence drives disciplined Risk Management Framework execution across the Army cyber portfolio, establishes explicit risk ownership at every echelon, builds workforce capability, and delivers the real-time portfolio health metrics leadership needs to make evidence-based decisions. Compliance is the floor — risk-aware mission enablement is the standard.</p>
+      </div>
+      <div class="card card-gold reveal">
+        <span class="kicker">CISO Standing Message</span>
+        <p style="font-size:14.5px">"Every authorization we deliver is a promise to the warfighter that risk is known, owned, and managed. Disciplined execution is not bureaucracy — it is how we move fast without breaking trust. Know your systems. Own your risk. Enable the mission."</p>
+        <p class="mono" style="margin-top:12px;font-size:11px;color:var(--ink-mute)">— OFFICE OF THE CISO · STANDING GUIDANCE 26-01</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metrics snapshot -->
+  <section class="section" style="background:var(--panel)">
+    <div class="wrap">
+      <span class="kicker">Metrics Snapshot</span>
+      <h2>Portfolio Health at a Glance</h2>
+      <p class="section-sub">Live rollup across all commands. Full drill-down available in <a href="tools-dashboards.html">Tools &amp; Dashboards</a> (role-restricted).</p>
+      <div class="grid g4 reveal">
+        <div class="metric m-ok"><div class="n">84%</div><div class="l">Portfolio ATO Health</div><div class="delta" style="color:var(--ok)">▲ 3% vs last month</div></div>
+        <div class="metric m-warn"><div class="n">312</div><div class="l">Open POA&M Items</div><div class="delta" style="color:var(--warn)">47 aging &gt; 90 days</div></div>
+        <div class="metric m-info"><div class="n">12</div><div class="l">In Assessment Queue</div><div class="delta">Median cycle: 41 days</div></div>
+        <div class="metric m-crit"><div class="n">6</div><div class="l">High-Risk Systems</div><div class="delta" style="color:var(--crit)">2 overdue remediation</div></div>
+      </div>
+      <div class="grid g2" style="margin-top:18px">
+        <div class="card reveal">
+          <h3 style="font-size:16px;margin-bottom:14px">Authorization Status Mix</h3>
+          <div class="donut-wrap">
+            <div class="donut" id="atoDonut" role="img" aria-label="Authorization mix: 58 full ATO, 7 conditional, 4 IATT, 2 ATC, 9 expiring, 4 in process">
+              <div class="donut-center">84</div>
+            </div>
+            <ul class="legend">
+              <li><span class="sw" style="background:var(--ok)"></span>Full ATO <span class="lv">58</span></li>
+              <li><span class="sw" style="background:var(--gold)"></span>Conditional ATO <span class="lv">7</span></li>
+              <li><span class="sw" style="background:var(--info)"></span>IATT <span class="lv">4</span></li>
+              <li><span class="sw" style="background:#7A8576"></span>ATC Only <span class="lv">2</span></li>
+              <li><span class="sw" style="background:var(--warn)"></span>Expiring ≤180d <span class="lv">9</span></li>
+              <li><span class="sw" style="background:var(--crit)"></span>In Process / Lapsed <span class="lv">4</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="card reveal">
+          <h3 style="font-size:16px;margin-bottom:14px">Open POA&M by Severity</h3>
+          <div class="bar-row"><span>Critical (CAT I)</span><div class="bar-track"><div class="bar-fill f-crit" style="width:0" data-w="18%"></div></div><span class="v">23</span></div>
+          <div class="bar-row"><span>High (CAT II)</span><div class="bar-track"><div class="bar-fill f-warn" style="width:0" data-w="52%"></div></div><span class="v">96</span></div>
+          <div class="bar-row"><span>Medium</span><div class="bar-track"><div class="bar-fill f-gold" style="width:0" data-w="78%"></div></div><span class="v">141</span></div>
+          <div class="bar-row"><span>Low (CAT III)</span><div class="bar-track"><div class="bar-fill f-ok" style="width:0" data-w="29%"></div></div><span class="v">52</span></div>
+          <p class="dim" style="margin-top:10px;font-size:13px">SLA enforcement and aging dashboards: <a href="vulnerability-poam.html">Vulnerability &amp; POA&M Portal</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Priorities + events -->
+  <section class="section">
+    <div class="wrap split">
+      <div class="card flush card-crit reveal">
+        <div class="card-head"><h3>Current Priorities</h3><span class="badge b-crit">Command Emphasis</span></div>
+        <div class="card-body">
+          <ul class="checklist">
+            <li><b>ATO renewals:</b> 9 packages inside the 180-day window — owners confirmed, routing checklists in progress. <a href="assessment-calendar.html">Expiration dashboard →</a></li>
+            <li><b>Inspection focus:</b> Q3 command cyber readiness review — artifact binders due 15 JUL. <a href="inspection-readiness.html">Readiness panel →</a></li>
+            <li><b>Policy shift:</b> Cloud governance update (IL4/IL5 inheritance maps) effective 01 JUL — all cloud-hosted SSPs must reference new baseline. <a href="policies.html">Policy library →</a></li>
+            <li><b>Workforce initiative:</b> DoD 8140 qualification tracker goes live — verify your work-role mapping by 30 JUN. <a href="workforce.html">Workforce center →</a></li>
+            <li><b>KEV remediation:</b> CVE-2026-31822 due across 14 affected systems within 7 days. <a href="threat-intel.html">Threat intel →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="card flush reveal">
+        <div class="card-head"><h3>Upcoming Events</h3><a class="mono" style="font-size:11px" href="assessment-calendar.html">FULL CALENDAR →</a></div>
+        <div class="card-body" style="padding:0">
+          <ul class="linklist" style="padding:0 18px">
+            <li><a href="community.html"><span><b>JUN 12</b> · Technical Office Hours — POA&M closure evidence</span><span class="meta">1000–1130</span></a></li>
+            <li><a href="assessment-calendar.html"><span><b>JUN 16</b> · SAP/TRR — LOGNET-04 assessment kickoff</span><span class="meta">MILESTONE</span></a></li>
+            <li><a href="training.html"><span><b>JUN 18</b> · Live training — Executive risk briefing lab</span><span class="meta">REGISTER</span></a></li>
+            <li><a href="assessment-calendar.html"><span><b>JUN 24</b> · ATO deadline — FIRES-DSS package to AODR</span><span class="meta">HARD STOP</span></a></li>
+            <li><a href="incident-response.html"><span><b>JUN 26</b> · Tabletop exercise — data spill response</span><span class="meta">ALL ISSOs</span></a></li>
+            <li><a href="community.html"><span><b>JUL 02</b> · Workforce assembly — CISO quarterly address</span><span class="meta">ALL HANDS</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Role entry points (PRD 3) -->
+  <section class="section" style="background:var(--panel)">
+    <div class="wrap">
+      <span class="kicker">Start Here</span>
+      <h2>Role-Based Entry Points</h2>
+      <p class="section-sub">Tailored pathways for every persona in the portfolio. Pick your role; land on what you need to do today.</p>
+      <div class="grid g4 reveal">
+        <a class="persona" href="rmf-operations.html"><span class="abbr">ISSM / Program ISSM</span><span class="role">Security Managers</span><p>Package routing, metrics aggregation, workload balancing, compliance oversight.</p></a>
+        <a class="persona" href="vulnerability-poam.html"><span class="abbr">ISSO</span><span class="role">Security Officers</span><p>Daily RMF ops, control implementation, artifacts, eMASS workflows, POA&Ms.</p></a>
+        <a class="persona" href="assessment-calendar.html"><span class="abbr">SCA / SCA-R</span><span class="role">Assessors</span><p>Validation queues, evidence verification, readiness metrics, quality audits.</p></a>
+        <a class="persona" href="assessment-calendar.html"><span class="abbr">SO / PL / PM</span><span class="role">System Owners &amp; PMs</span><p>Authorization health, lifecycle calendars, acquisition language, cost/schedule risk.</p></a>
+        <a class="persona" href="engineering.html"><span class="abbr">ENG / DEV</span><span class="role">Engineers</span><p>Secure blueprints, STIG configuration, DevSecOps pipelines, remediation standards.</p></a>
+        <a class="persona" href="governance.html"><span class="abbr">CISO / AODR</span><span class="role">Leadership</span><p>Risk dashboards, portfolio compliance, inspection posture, workforce allocation.</p></a>
+        <a class="persona" href="acquisition.html"><span class="abbr">CTR</span><span class="role">Contractor Support</span><p>Deliverable acceptance, secure boundaries, government approval touchpoints.</p></a>
+        <a class="persona" href="faq.html"><span class="abbr">NEW</span><span class="role">New to the Portfolio?</span><p>Orientation path: glossary, FAQ, RMF fundamentals, and who to contact.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick links engine -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Quick Links Engine</span>
+      <h2>Direct Pathways</h2>
+      <div class="grid g3 reveal" style="margin-top:16px">
+        <a class="tile" href="tools-dashboards.html#emass"><span class="go">→</span><span class="kicker">External System</span><div class="tile-title">eMASS</div><p>Enterprise Mission Assurance Support Service — access provisioning, guidance, and execution help.</p></a>
+        <a class="tile" href="policies.html"><span class="go">→</span><span class="kicker">Source of Truth</span><div class="tile-title">Core Policies &amp; SOPs</div><p>Authoritative library with controlled document metadata on every entry.</p></a>
+        <a class="tile" href="templates.html"><span class="go">→</span><span class="kicker">Quality Control</span><div class="tile-title">Active Templates</div><p>Blank files plus gold-standard completed examples for every artifact.</p></a>
+        <a class="tile" href="rmf-operations.html"><span class="go">→</span><span class="kicker">Process</span><div class="tile-title">Operational SOPs</div><p>Step-by-step RMF lifecycle content, job aids, and authorization pathways.</p></a>
+        <a class="tile" href="tools-dashboards.html"><span class="go">→</span><span class="kicker">Role-Restricted</span><div class="tile-title">User Dashboards</div><p>Cycle times, rejection rates, workload tracking, and throughput metrics.</p></a>
+        <a class="tile" href="faq.html#glossary"><span class="go">→</span><span class="kicker">Reference</span><div class="tile-title">Acronym Glossary</div><p>Searchable definitions: AO, AODR, ISSM, ISSO, SCA, RMF, POA&amp;M, STIG, and more.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Implementation roadmap -->
+  <section class="section" style="background:var(--panel)">
+    <div class="wrap split">
+      <div>
+        <span class="kicker">PRD Section 6</span>
+        <h2>Phased Implementation Roadmap</h2>
+        <p class="section-sub">Functionality rolls out on a strict 10-phase pipeline to minimize time-to-value. All ten core phases are <b>live</b>; subsequent-phase components are deployed.</p>
+        <div class="phase-track reveal">
+          <div class="phase-item done"><div class="phase-num"></div><div><h3><a href="rmf-operations.html">RMF Operations Hub</a></h3><p>Process standardization — lifecycle content matrix, job aids, pathway guides.</p></div></div>
+          <div class="phase-item done"><div class="phase-num"></div><div><h3><a href="templates.html">Templates and Job Aids</a></h3><p>Quality control — downloadable blanks and gold-standard examples.</p></div></div>
+          <div class="phase-item done"><div class="phase-num"></div><div><h3><a href="policies.html">Policies and SOP Library</a></h3><p>Source of truth — categorized guidance with controlled metadata.</p></div></div>
+          <div class="phase-item done"><div class="phase-num"></div><div><h3><a href="vulnerability-poam.html">POA&M &amp; Vulnerability Management</a></h3><p>Risk reduction — SLA timelines, lifecycle enforcement, aging dashboards.</p></div></div>
+          <div class="phase-item done"><div class="phase-num"></div><div><h3><a href="assessment-calendar.html">Assessment Calendar</a></h3><p>Pipeline visibility — 3-year lifecycle view and expiration warnings.</p></div></div>
+        </div>
+      </div>
+      <div class="phase-track reveal" style="counter-reset: ph 5">
+        <div class="phase-item done"><div class="phase-num"></div><div><h3><a href="workforce.html">Workforce Development</a></h3><p>Capacity &amp; compliance — 8140/DCWF mapping, IDPs, certification matrix.</p></div></div>
+        <div class="phase-item done"><div class="phase-num"></div><div><h3><a href="governance.html">Leadership Dashboards</a></h3><p>Portfolio visibility — read-only authorization, risk, and workload views.</p></div></div>
+        <div class="phase-item done"><div class="phase-num"></div><div><h3><a href="acquisition.html">Acquisition Cyber Language</a></h3><p>Upstream security — SOW/RFI clause libraries and deliverable QA.</p></div></div>
+        <div class="phase-item done"><div class="phase-num"></div><div><h3><a href="incident-response.html">Incident Response</a></h3><p>Crisis preparedness — reporting, escalation timelines, tabletop library.</p></div></div>
+        <div class="phase-item done"><div class="phase-num"></div><div><h3><a href="faq.html">Knowledge Base and FAQ</a></h3><p>Institutional memory — searchable FAQ modules and the CCoE glossary.</p></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="assets/js/main.js"></script>
+<script>
+// Donut: 58 ok, 7 gold, 4 info, 2 gray, 9 warn, 4 crit of 84
+(function(){
+  const segs = [[58,'var(--ok)'],[7,'var(--gold)'],[4,'var(--info)'],[2,'#7A8576'],[9,'var(--warn)'],[4,'var(--crit)']];
+  const total = segs.reduce((s,x)=>s+x[0],0);
+  let acc = 0; const stops = segs.map(([v,c])=>{ const a=acc/total*360; acc+=v; const b=acc/total*360; return `${c} ${a}deg ${b}deg`; });
+  document.getElementById('atoDonut').style.background = `conic-gradient(${stops.join(',')})`;
+})();
+// Animate bar fills + counters when visible
+(function(){
+  const io = new IntersectionObserver(es=>es.forEach(e=>{
+    if(!e.isIntersecting) return;
+    e.target.querySelectorAll('.bar-fill').forEach(b=>b.style.width=b.dataset.w);
+    io.unobserve(e.target);
+  }),{threshold:.3});
+  document.querySelectorAll('.card').forEach(c=>io.observe(c));
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('[data-count]').forEach(el=>{
+    const end = +el.dataset.count;
+    if (reduce) { el.textContent = end; return; }
+    const t0 = performance.now(), dur = 1400;
+    const step = t => { const p = Math.min((t-t0)/dur,1); el.textContent = Math.round(end*(1-Math.pow(1-p,3))); if(p<1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  });
+})();
+// Duplicate ticker content for seamless loop
+(function(){ const t=document.getElementById('ticker'); t.innerHTML += t.innerHTML; })();
+</script>
+</body>
+</html>

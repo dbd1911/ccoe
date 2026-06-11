@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RMF Operations Hub — CCoE</title>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Operations · <span class="phase-tag">Phase 1 — Process Standardization</span></div>
+      <h1>RMF Operations Hub</h1>
+      <p class="lede">The full Risk Management Framework lifecycle, step by step: what each phase requires, the job aids that get you through it, and the authorization pathway that fits your system.</p>
+      <div class="doc-meta">
+        <span>OWNER: <b>RMF Branch</b></span><span>VERSION: <b>2.4</b></span><span>EFFECTIVE: <b>2026-05-15</b></span><span>REVIEW: <b>2026-11-15</b></span><span>APPLICABILITY: <b>All Systems</b></span><span>APPROVAL: <b>AODR</b></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIFECYCLE MATRIX -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Step-by-Step Lifecycle Content Matrix</span>
+      <h2>The Seven Steps</h2>
+      <p class="section-sub">Select a phase to see exactly what this hub mandates for it. Each step links to its templates, checklists, and SOPs.</p>
+
+      <div class="rmf-rail" role="tablist" aria-label="RMF lifecycle steps">
+        <button class="rmf-step active" data-step="prepare" role="tab"><span class="num">STEP 0</span><span class="nm">Prepare</span></button>
+        <button class="rmf-step" data-step="categorize" role="tab"><span class="num">STEP 1</span><span class="nm">Categorize</span></button>
+        <button class="rmf-step" data-step="select" role="tab"><span class="num">STEP 2</span><span class="nm">Select</span></button>
+        <button class="rmf-step" data-step="implement" role="tab"><span class="num">STEP 3</span><span class="nm">Implement</span></button>
+        <button class="rmf-step" data-step="assess" role="tab"><span class="num">STEP 4</span><span class="nm">Assess</span></button>
+        <button class="rmf-step" data-step="authorize" role="tab"><span class="num">STEP 5</span><span class="nm">Authorize</span></button>
+        <button class="rmf-step" data-step="monitor" role="tab"><span class="num">STEP 6</span><span class="nm">Monitor</span></button>
+      </div>
+
+      <div id="step-panels"></div>
+    </div>
+  </section>
+
+  <!-- JOB AIDS -->
+  <section class="section" style="background:var(--panel)">
+    <div class="wrap">
+      <span class="kicker">RMF Job Aids Repository</span>
+      <h2>Job Aids &amp; Checklists</h2>
+      <p class="section-sub">Readily accessible tools, kept current by the RMF Branch. Every checklist has a matching template in the <a href="templates.html">Templates Library</a>.</p>
+      <div class="grid g3">
+        <a class="tile" href="templates.html"><span class="go">↓</span><span class="kicker">Visual Aid</span><div class="tile-title">RMF Process Map</div><p>One-page visual of the full lifecycle with decision gates and exit criteria for every step.</p></a>
+        <a class="tile" href="templates.html"><span class="go">↓</span><span class="kicker">Worksheet</span><div class="tile-title">System Categorization Worksheet</div><p>FIPS 199 walk-through capturing information types, impact values, and rationale.</p></a>
+        <a class="tile" href="templates.html"><span class="go">↓</span><span class="kicker">Checklist</span><div class="tile-title">Security Plan Quality Checklist</div><p>Pre-submission SSP review: boundary accuracy, inheritance claims, narrative completeness.</p></a>
+        <a class="tile" href="#impl-examples"><span class="go">↓</span><span class="kicker">Examples</span><div class="tile-title">Control Implementation Statements</div><p>Acceptable vs. unacceptable narratives, side by side, by control family.</p></a>
+        <a class="tile" href="templates.html"><span class="go">↓</span><span class="kicker">Checklist</span><div class="tile-title">Artifact Checklists by Family</div><p>Required evidence for AC, AU, CM, IA, SC, SI and every other control family.</p></a>
+        <a class="tile" href="templates.html"><span class="go">↓</span><span class="kicker">Checklist</span><div class="tile-title">Assessment Readiness Checklist</div><p>The SCA's first look, run by you first — scans, STIGs, artifacts, interviews.</p></a>
+        <a class="tile" href="templates.html"><span class="go">↓</span><span class="kicker">Checklist</span><div class="tile-title">AO Package Routing Checklist</div><p>Complete decision package composition and routing order to the AODR/AO.</p></a>
+        <a class="tile" href="vulnerability-poam.html"><span class="go">↓</span><span class="kicker">Checklist</span><div class="tile-title">POA&amp;M Quality Checklist</div><p>Field-by-field quality bar for entries and closure evidence packages.</p></a>
+        <a class="tile" href="faq.html"><span class="go">→</span><span class="kicker">Reference</span><div class="tile-title">Common Package Mistakes</div><p>The reject-pile patterns: vague narratives, stale scans, boundary drift, orphan POA&amp;Ms.</p></a>
+      </div>
+
+      <div id="impl-examples" class="grid g2" style="margin-top:28px">
+        <div class="card" style="border-top:3px solid var(--ok)">
+          <span class="badge b-ok">Acceptable Narrative</span>
+          <p class="mono" style="margin-top:12px;font-size:12.5px;line-height:1.7">AC-2(3): The system automatically disables user accounts after 35 days of inactivity via Active Directory GPO "ACME-AC-2-3-Disable" (screenshot, artifact AC-2.3-01). The ISSO reviews the disabled-accounts report monthly (sample report, artifact AC-2.3-02). Exceptions require a signed waiver from the ISSM (waiver log, artifact AC-2.3-03).</p>
+          <p class="dim" style="margin-top:10px">States <b>what</b>, <b>how</b>, <b>who</b>, <b>how often</b>, and names the evidence.</p>
+        </div>
+        <div class="card" style="border-top:3px solid var(--crit)">
+          <span class="badge b-crit">Unacceptable Narrative</span>
+          <p class="mono" style="margin-top:12px;font-size:12.5px;line-height:1.7">AC-2(3): The organization disables inactive accounts in accordance with policy. This control is implemented and compliant.</p>
+          <p class="dim" style="margin-top:10px">Restates the control, names no mechanism, no frequency, no role, no evidence. Automatic quality-review reject.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTHORIZATION PATHWAYS -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Dedicated Pathway Guides</span>
+      <h2>Authorization Pathways</h2>
+      <p class="section-sub">Ten distinct compliance paths. Filter by your system's situation; each guide covers entry criteria, required artifacts, duration limits, and renewal triggers.</p>
+      <div class="chip-row" data-chip-target="#pathways" data-count-note="#path-count">
+        <button class="chip active" data-chip-value="all">All</button>
+        <button class="chip" data-chip-value="standard">Standard</button>
+        <button class="chip" data-chip-value="temporary">Temporary / Limited</button>
+        <button class="chip" data-chip-value="special">Special Environments</button>
+        <button class="chip" data-chip-value="continuous">Continuous / Agile</button>
+      </div>
+      <p class="count-note" id="path-count">10 items shown</p>
+      <div class="grid g2" id="pathways">
+        <div class="card card-accent" data-cat="standard"><span class="badge b-ok">Standard</span><h3 style="margin-top:10px">Full ATO</h3><p class="dim">Complete RMF execution with a standard 3-year authorization term. The default path for enduring systems with stable boundaries. Requires full assessment, complete decision package, and a continuous monitoring plan accepted by the AO.</p></div>
+        <div class="card card-accent" data-cat="temporary"><span class="badge b-warn">Temporary</span><h3 style="margin-top:10px">IATT — Interim Authorization to Test</h3><p class="dim">Time-boxed authority for test activity only, with explicit temporary boundaries and operational restrictions. No live operational data unless specifically authorized. Hard expiration — no auto-renewal.</p></div>
+        <div class="card card-accent" data-cat="standard"><span class="badge b-gold">Conditional</span><h3 style="margin-top:10px">Conditional ATO</h3><p class="dim">Authorization granted with binding conditions: named POA&M milestones, restricted functionality, or mandated compensating controls. Missing a condition milestone triggers AODR escalation and potential revocation.</p></div>
+        <div class="card card-accent" data-cat="temporary"><span class="badge b-info">Connection</span><h3 style="margin-top:10px">ATC Only</h3><p class="dim">Authority to Connect for systems whose authorization is owned elsewhere but which require a connection decision on this network. Connection-oriented evidence: boundary, data flows, and ports/protocols/services.</p></div>
+        <div class="card card-accent" data-cat="temporary"><span class="badge b-mute">Limited Scope</span><h3 style="margin-top:10px">Assess-Only</h3><p class="dim">For components and applications inheriting their hosting environment's authorization. Assessment evidence is produced and registered, but no separate authorization decision is issued.</p></div>
+        <div class="card card-accent" data-cat="special"><span class="badge b-mute">Special</span><h3 style="margin-top:10px">Standalone Systems</h3><p class="dim">Zero-to-limited scan pathways for disconnected systems. Manual STIG review and physical/administrative control emphasis replace network scanning cadence. See the Standalone SOP for evidence substitutions.</p></div>
+        <div class="card card-accent" data-cat="special"><span class="badge b-mute">Special</span><h3 style="margin-top:10px">Closed-Restricted Networks</h3><p class="dim">Networks with controlled interfaces and restricted membership. Audit emphasis on boundary protection, media control, and cross-domain touchpoints. Annual closed-network audit required.</p></div>
+        <div class="card card-accent" data-cat="continuous"><span class="badge b-ok">Continuous</span><h3 style="margin-top:10px">Agile ATO / Continuous Authorization</h3><p class="dim">DevSecOps-aligned cycle: authorize the pipeline and platform once, then sustain authorization through automated control evidence, gated releases, and continuous monitoring dashboards.</p></div>
+        <div class="card card-accent" data-cat="standard"><span class="badge b-warn">Extension</span><h3 style="margin-top:10px">ATO Extension</h3><p class="dim">Short, justified extension of an expiring authorization. Requires current scan posture, POA&M health review, and a credible plan to complete reauthorization. Extensions are exceptions, not strategy.</p></div>
+        <div class="card card-accent" data-cat="standard"><span class="badge b-info">Reciprocity</span><h3 style="margin-top:10px">Reciprocity</h3><p class="dim">Accepting another DoD organization's authorization body of evidence. Execution terms: complete BoE transfer, delta assessment of local risk, and a documented acceptance decision — never rubber-stamp.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="assets/js/main.js"></script>
+<script>
+const STEPS = {
+  prepare: { title:'Prepare', who:'System Owner · ISSM · ISSO', goal:'Set the conditions for a clean run through the framework.',
+    items:['System identification guidelines — register the system, name it once, name it consistently','Baseline stakeholder assignments — AO, AODR, ISSM, ISSO, SCA confirmed in writing','Overall authorization strategy construction — pick the pathway before you build the package','Common control selection and inheritance logic — claim only what the provider actually offers'],
+    exit:'Exit gate: registered system, named stakeholders, signed authorization strategy.' },
+  categorize: { title:'Categorize', who:'System Owner · ISSO', goal:'Establish impact levels that survive assessor scrutiny.',
+    items:['FIPS 199 mapping metrics — confidentiality, integrity, availability rated per information type','Impact level calculators — use the worksheet; document the rationale, not just the answer','Mission criticality definitions — tie impact ratings to actual mission degradation','Information types and CUI designations — every data element identified and marked'],
+    exit:'Exit gate: signed categorization worksheet with CUI determination.' },
+  select: { title:'Select', who:'ISSO · ISSM · Engineers', goal:'A control set that is tailored, justified, and traceable.',
+    items:['Baseline control allocation engine — start from the categorized baseline, never from scratch','Custom overlay definitions — apply portfolio overlays (cloud, OT, standalone) where they fit','Tailoring guidance — every removed control gets a documented, defensible justification','Inherited parameters and compensating control selection criteria'],
+    exit:'Exit gate: approved control selection with tailoring record in eMASS.' },
+  implement: { title:'Implement', who:'Engineers · ISSO', goal:'Controls built as designed, with evidence designed in from day one.',
+    items:['Engineering artifact expectations — diagrams, configs, and inventories current to the build','Implementation statement formatting rules — what, how, who, how often, evidence named','Clear evidence design templates — capture proof as you build, not after','See the acceptable vs. unacceptable narrative examples below'],
+    exit:'Exit gate: implementation statements complete, artifacts indexed by control family.' },
+  assess: { title:'Assess', who:'SCA / SCA-R · ISSO', goal:'Independent validation with no surprises.',
+    items:['Self-assessment protocols — run the readiness checklist before requesting the SCA','SCA execution processes — scope, schedule, and rules of engagement agreed at TRR','Evidence validation parameters — artifacts must match the implementation statements','Interview preparation guides — ISSOs and admins briefed on likely question lines'],
+    exit:'Exit gate: SAR delivered, findings triaged into the POA&M.' },
+  authorize: { title:'Authorize', who:'ISSM · AODR · AO', goal:'A decision package the AO can act on in one sitting.',
+    items:['Complete AO decision package composition — follow the routing checklist exactly','Executive risk summary building tools — lead with mission risk, not control counts','SAR / RAW handling directives — risk assessment worksheet aligned to the SAR findings','Programmatic POA&M strategy alignment — remediation plan funded and scheduled'],
+    exit:'Exit gate: signed authorization decision with terms and conditions recorded.' },
+  monitor: { title:'Monitor', who:'ISSO · ISSM · Assessors', goal:'Authorization sustained, not shelved.',
+    items:['Continuous monitoring lifecycle definition — what is checked, by whom, how often','Change management parameters — minor vs. significant change rubric applied to every change','Recurring annual reviews — control sampling plan executed and documented','Vulnerability track-and-report frequencies — scan cadence and SLA timelines enforced'],
+    exit:'Exit gate (recurring): annual review complete, POA&M current, scans inside cadence.' }
+};
+(function(){
+  const wrap = document.getElementById('step-panels');
+  function render(key){
+    const s = STEPS[key];
+    wrap.innerHTML = `<div class="card card-gold" style="animation:fadeUp .25s ease">
+      <div style="display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:baseline">
+        <h3 style="font-size:24px">${s.title}</h3>
+        <span class="mono" style="font-size:11px;color:var(--ink-mute)">RESPONSIBLE: ${s.who}</span>
+      </div>
+      <p style="margin:8px 0 14px;color:var(--ink-soft)"><b>Objective:</b> ${s.goal}</p>
+      <ul class="checklist">${s.items.map(i=>`<li>${i}</li>`).join('')}</ul>
+      <div class="callout ok" style="margin-bottom:0"><b class="head">Gate</b>${s.exit}</div>
+    </div>`;
+  }
+  document.querySelectorAll('.rmf-step').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.rmf-step').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      render(btn.dataset.step);
+    });
+  });
+  render('prepare');
+})();
+</script>
+</body>
+</html>

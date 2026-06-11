@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tools &amp; Dashboards — CCoE</title>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Tech · <span class="phase-tag">Subsequent Phase — One Directory</span></div>
+      <h1>Tools &amp; Systems Portal</h1>
+      <p class="lede">Every major tool in the ecosystem: who owns it, how you get access, where the manual lives, and who to call when it breaks. One directory, zero tribal knowledge.</p>
+      <div class="doc-meta">
+        <span>OWNER: <b>Tools &amp; Platforms Manager</b></span><span>VERSION: <b>2.0</b></span><span>EFFECTIVE: <b>2026-05-01</b></span><span>REVIEW: <b>2026-11-01</b></span><span>APPROVAL: <b>Cybersecurity Office Director</b></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIRECTORY -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Ecosystem Directory</span>
+      <h2>The Tools You'll Actually Use</h2>
+      <div class="grid g2">
+        <div class="card card-gold reveal" id="emass">
+          <span class="badge b-gold">System of Record</span>
+          <h3>eMASS</h3>
+          <p><b>Purpose:</b> Enterprise Mission Assurance Support Service — authoritative record for packages, controls, and POA&amp;Ms.</p>
+          <ul class="checklist">
+            <li><b>Owner:</b> AODR office (org administrator)</li>
+            <li><b>Access:</b> CAC + eMASS CBT certificate + ISSM sponsorship form → ~5 business days</li>
+            <li><b>Guidance:</b> eMASS Execution track in the <a href="training.html">Training Academy</a>; quick-reference cards in <a href="templates.html">Templates</a></li>
+            <li><b>Support:</b> emass.support@demo.mil · office hours Tuesdays 1000</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <span class="badge b-info">Scanning</span>
+          <h3>ACAS (Tenable)</h3>
+          <p><b>Purpose:</b> Enterprise vulnerability scanning and reporting.</p>
+          <ul class="checklist">
+            <li><b>Owner:</b> Vulnerability Management Cell</li>
+            <li><b>Access:</b> read access for ISSOs by default; operator roles require ACAS course completion</li>
+            <li><b>Cadence:</b> weekly authenticated scans, per the <a href="vulnerability-poam.html">vuln standards</a></li>
+            <li><b>Support:</b> vuln.cell@demo.mil</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <span class="badge b-info">Compliance</span>
+          <h3>STIG Viewer</h3>
+          <p><b>Purpose:</b> Review STIG content, manage .ckl checklists, document finding status.</p>
+          <ul class="checklist">
+            <li><b>Owner:</b> Engineering (version tracking)</li>
+            <li><b>Access:</b> approved software list — self-service install</li>
+            <li><b>Guidance:</b> STIG Execution Handbook on the <a href="engineering.html">Engineering Center</a></li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <span class="badge b-info">Analytics</span>
+          <h3>Power BI</h3>
+          <p><b>Purpose:</b> Portfolio dashboards — ATO health, POA&amp;M aging, queue metrics.</p>
+          <ul class="checklist">
+            <li><b>Owner:</b> Metrics &amp; Performance Center</li>
+            <li><b>Access:</b> view access by role; report-builder access by request with supervisor endorsement</li>
+            <li><b>Support:</b> metrics@demo.mil</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <span class="badge b-mute">Collaboration</span>
+          <h3>SharePoint &amp; Teams</h3>
+          <p><b>Purpose:</b> Document collaboration (SharePoint, CUI-approved libraries) and meetings/office hours (Teams).</p>
+          <ul class="checklist">
+            <li><b>Owner:</b> Knowledge Manager (site structure)</li>
+            <li><b>Access:</b> automatic with network account; CUI library access via ISSM</li>
+            <li><b>Rule:</b> working drafts in SharePoint; authoritative documents live here with controlled metadata</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <span class="badge b-mute">Training</span>
+          <h3>NICCS</h3>
+          <p><b>Purpose:</b> National Initiative for Cybersecurity Careers and Studies — free federal training catalog mapped to NICE work roles.</p>
+          <ul class="checklist">
+            <li><b>Owner:</b> Workforce Development Lead (roadmap mapping)</li>
+            <li><b>Access:</b> public; courses flagged in each <a href="workforce.html">training roadmap</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METRICS CENTER -->
+  <section class="section" style="background:var(--panel)">
+    <div class="wrap">
+      <span class="kicker">Metrics &amp; Performance Management Center</span>
+      <h2>Throughput, Measured</h2>
+      <p class="section-sub"><span class="badge b-mute">RBAC</span> Summary tiles below are visible to all. Drill-down by team and individual is restricted to leadership and ISSMs for their own portfolios.</p>
+      <div class="grid g4 reveal">
+        <div class="metric"><div class="n">47<span style="font-size:18px">d</span></div><div class="l">Median package cycle time</div><div class="delta d-ok">▼ 9 days since template mandate</div></div>
+        <div class="metric"><div class="n">29%</div><div class="l">Package rejection rate</div><div class="delta d-ok">▼ from 41% last FY</div></div>
+        <div class="metric"><div class="n">88%</div><div class="l">Template compliance</div><div class="delta">Gold Standard usage tracked per package</div></div>
+        <div class="metric m-warn"><div class="n">3.2</div><div class="l">Avg systems per ISSO</div><div class="delta">Target ≤ 3.0 — load balancing in progress</div></div>
+      </div>
+      <div class="callout" style="margin-top:24px"><b class="head">Requesting restricted access</b>Submit the dashboard access request with role justification; ISSM endorsement required for portfolio-level vulnerability views. Decisions in 3 business days. <a href="contact.html">Contact the office →</a></div>
+    </div>
+  </section>
+
+  <!-- ACCESS WORKFLOW -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Access Provisioning</span>
+      <h2>Standard Access Workflow</h2>
+      <div class="phase-track">
+        <div class="phase-item reveal"><div class="phase-num">1</div><div><h3>Prerequisites</h3><p>CAC issued, baseline training current (CUI + incident reporting), tool-specific CBT where required.</p></div></div>
+        <div class="phase-item reveal"><div class="phase-num">2</div><div><h3>Sponsorship</h3><p>ISSM (or supervisor for non-system tools) endorses the request naming exact roles and systems.</p></div></div>
+        <div class="phase-item reveal"><div class="phase-num">3</div><div><h3>Provisioning</h3><p>Tool owner provisions least-privilege roles; SLA 5 business days, expedite via the watch desk for incident needs.</p></div></div>
+        <div class="phase-item reveal"><div class="phase-num">4</div><div><h3>Recertification</h3><p>Privileged access recertified every 90 days; departure triggers same-day deactivation per the contractor and personnel standards.</p></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

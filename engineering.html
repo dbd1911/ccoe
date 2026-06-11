@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engineering &amp; Secure Design — CCoE</title>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Tech · <span class="phase-tag">Subsequent Phase — Build It Secure</span></div>
+      <h1>Engineering &amp; Secure Design Center</h1>
+      <p class="lede">Start from a pre-authorized blueprint and inherit months of authorization work. Build from scratch and re-litigate every decision. Choose accordingly.</p>
+      <div class="doc-meta">
+        <span>OWNER: <b>Chief Engineer, Cybersecurity Office</b></span><span>VERSION: <b>3.1</b></span><span>EFFECTIVE: <b>2026-04-01</b></span><span>REVIEW: <b>2026-10-01</b></span><span>APPROVAL: <b>CISO + Architecture Review Board</b></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLUEPRINTS -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Pre-Authorized Blueprint Library</span>
+      <h2>Reference Architectures That Already Passed</h2>
+      <p class="section-sub">Each blueprint ships with boundary and data-flow examples, pre-written control implementation language, and the inheritance map for eMASS.</p>
+      <div class="grid g3">
+        <div class="card reveal"><span class="badge b-gold">BP-01</span><h3>Three-Tier Enclave Web App</h3><p>Segmented web/app/data tiers, reverse proxy ingress, centralized logging. Inherits 61 common controls.</p></div>
+        <div class="card reveal"><span class="badge b-gold">BP-02</span><h3>IL4/IL5 Cloud Workload</h3><p>Landing-zone pattern on the approved CSP: conditional access, CSP-native logging to the enterprise SIEM, customer-responsibility matrix pre-mapped.</p></div>
+        <div class="card reveal"><span class="badge b-gold">BP-03</span><h3>Standalone / Closed Network</h3><p>Air-gapped pattern with controlled media transfer station, manual evidence workflow, and quarterly audit checklist built in.</p></div>
+        <div class="card reveal"><span class="badge b-gold">BP-04</span><h3>OT / Range Instrumentation</h3><p>Purdue-model segmentation, unidirectional data diode for telemetry export, isolation validation procedures.</p></div>
+        <div class="card reveal"><span class="badge b-gold">BP-05</span><h3>DevSecOps Pipeline</h3><p>Hardened runners, signed commits, SAST/DAST/SCA gates, SBOM generation per build — the Agile ATO pathway's technical foundation.</p></div>
+        <div class="card reveal"><span class="badge b-gold">BP-06</span><h3>XR / Simulation Training</h3><p>Headset fleet management, isolated content distribution, peripheral firmware control aligned to the OT/XR policy.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STANDARDS -->
+  <section class="section" style="background:var(--panel)">
+    <div class="wrap">
+      <span class="kicker">Mandatory Technical Standards</span>
+      <h2>Non-Negotiables in Every Design</h2>
+      <div class="grid g2">
+        <div class="card reveal">
+          <h3>Identity &amp; Access Management</h3>
+          <ul class="checklist">
+            <li><b>MFA:</b> phishing-resistant (CAC/PKI or FIDO2) for all users; mandatory for privileged access — no exceptions, no OTP fallback for admins</li>
+            <li><b>RBAC:</b> role definitions documented in the SSP; access recertification every 90 days for privileged, 180 for standard</li>
+            <li>Privileged sessions via jump host / PAW only; no direct admin from user workstations</li>
+            <li>Service accounts inventoried, non-interactive, credential rotation ≤ 90 days</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <h3>Logging &amp; Auditing</h3>
+          <ul class="checklist">
+            <li>All systems forward to the enterprise SIEM — local-only logging fails assessment</li>
+            <li>Minimum events: authentication, privilege use, configuration change, data export</li>
+            <li>Retention: 1 year online, 5 years archived; clock sync to authoritative NTP</li>
+            <li>Log integrity protected (append-only or hash-chained store)</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <h3>Cryptographic Standards</h3>
+          <ul class="checklist">
+            <li>FIPS 140-validated modules only; TLS 1.2 minimum, 1.3 preferred</li>
+            <li>CUI at rest: AES-256 full-disk or database-level encryption</li>
+            <li>Key management documented in the SSP; no hardcoded keys — pipeline secret scanning enforced</li>
+            <li>Begin CNSA 2.0 / post-quantum transition planning for systems with &gt;5-year horizons</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <h3>STIG Execution Handbook</h3>
+          <ul class="checklist">
+            <li>Apply current-quarter STIG/SRG baselines from the tracked version list</li>
+            <li>Baseline system images maintained per OS family — start hardened, don't harden later</li>
+            <li>Every open finding carries a justification or a POA&amp;M; "will fix later" is not a justification</li>
+            <li>SCAP-scan where possible; manual .ckl with evidence where not</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEVSECOPS + ARB -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Pipeline Controls &amp; ARB Intake</span>
+      <h2>From Commit to Authorized</h2>
+      <div class="grid g2">
+        <div class="card reveal">
+          <h3>DevSecOps Pipeline Controls</h3>
+          <p>Required gates for any pipeline feeding an authorized boundary (and the precondition for the <a href="rmf-operations.html">Agile ATO pathway</a>):</p>
+          <ul class="checklist">
+            <li>Signed commits + protected main branch with mandatory review</li>
+            <li>SAST and dependency (SCA) scanning — build fails on unmitigated critical/high</li>
+            <li>Container/image scanning against hardened base images</li>
+            <li>SBOM generated per release artifact, archived with the build</li>
+            <li>DAST in staging before any production promotion</li>
+            <li>Deployment audit trail retained in the SIEM</li>
+          </ul>
+        </div>
+        <div class="card card-gold reveal">
+          <h3>Architecture Review Board (ARB)</h3>
+          <p>The ARB reviews new system designs and significant architecture changes <b>before</b> resources are committed.</p>
+          <ul class="checklist">
+            <li><b>Cadence:</b> first and third Wednesday monthly</li>
+            <li><b>Submit:</b> intake package 10 business days prior — concept, boundary sketch, data types, blueprint deviation list</li>
+            <li><b>Outcome:</b> approved / approved-with-conditions / rework, recorded in the <a href="governance.html">decision archive</a></li>
+            <li>Blueprint-conformant designs qualify for <b>expedited review</b> (single session)</li>
+          </ul>
+          <a class="btn btn-gold btn-sm" href="#" onclick="alert('Demo environment — intake form disabled.');return false;">Start ARB Intake</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

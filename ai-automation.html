@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI &amp; Automation — CCoE</title>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Tech · <span class="phase-tag">Subsequent Phase — Force Multiplier</span></div>
+      <h1>AI &amp; Automation Center</h1>
+      <p class="lede">AI drafts; humans decide. Used inside the guardrails, these tools buy back hours per package. Used outside them, they create CUI spills and unreviewable artifacts. Know the line.</p>
+      <div class="doc-meta">
+        <span>OWNER: <b>AI Governance Lead</b></span><span>VERSION: <b>1.5</b></span><span>EFFECTIVE: <b>2026-05-01</b></span><span>REVIEW: <b>2026-08-01</b></span><span>APPROVAL: <b>CISO</b></span><span>RELATED: <b>AI &amp; Model Governance Policy</b></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- GUARDRAILS -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Approved Use Guardrails</span>
+      <h2>The Rules Before the Tools</h2>
+      <div class="grid g2">
+        <div class="card reveal">
+          <h3>Permitted (approved platforms only)</h3>
+          <ul class="checklist">
+            <li>Drafting control implementation narratives from <i>sanitized</i> inputs</li>
+            <li>Summarizing policy documents and STIG content for study</li>
+            <li>Generating training scenarios, quiz items, and awareness material</li>
+            <li>Script drafting for evidence collection (human review before any execution)</li>
+            <li>Meeting-note structuring and AAR first drafts</li>
+          </ul>
+        </div>
+        <div class="card card-crit reveal">
+          <h3>Prohibited — No Exceptions</h3>
+          <ul class="checklist">
+            <li>CUI, vulnerability details, or system-identifying data into any unapproved AI tool</li>
+            <li>AI-generated artifacts submitted <b>without documented human review</b> — the signer owns every word</li>
+            <li>AI output as closure evidence or assessment results</li>
+            <li>Autonomous execution against production systems</li>
+            <li>Personal/free-tier AI accounts for any work product</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout warn" style="margin-top:22px"><b class="head">The accountability rule</b>If your signature block is on it, you reviewed it line by line. "The AI wrote it" has never survived a quality review, an inspection, or an incident investigation — and it never will.</div>
+    </div>
+  </section>
+
+  <!-- PROMPT LIBRARY -->
+  <section class="section" style="background:var(--panel)">
+    <div class="wrap">
+      <span class="kicker">Vetted Prompt Library</span>
+      <h2>Prompts That Produce Reviewable Drafts</h2>
+      <p class="section-sub">Tested against the Gold Standard rubric. Replace bracketed placeholders with <b>sanitized</b> content only.</p>
+      <div class="grid g3">
+        <div class="card reveal"><span class="badge b-gold">PL-01</span><h3>Control Narrative Draft</h3><p class="formula" style="font-size:12px">"Draft an implementation statement for [control ID] describing [generic mechanism]. State what is implemented, how it's configured, who manages it, and how it's verified. Present tense, no aspirational language."</p></div>
+        <div class="card reveal"><span class="badge b-gold">PL-02</span><h3>Policy Plain-Language Summary</h3><p class="formula" style="font-size:12px">"Summarize this policy section for a new ISSO: required actions, deadlines, and escalation triggers as a checklist. Flag any ambiguity instead of resolving it yourself."</p></div>
+        <div class="card reveal"><span class="badge b-gold">PL-03</span><h3>POA&amp;M Milestone Decomposition</h3><p class="formula" style="font-size:12px">"Break this remediation goal: [sanitized weakness type] into 3–5 verifiable milestones with measurable completion criteria for each. No milestone may be 'ongoing.'"</p></div>
+        <div class="card reveal"><span class="badge b-gold">PL-04</span><h3>Tabletop Inject Generator</h3><p class="formula" style="font-size:12px">"Generate 6 escalating injects for a [scenario type] tabletop testing [decision points]. Each inject names who receives it and what decision it forces."</p></div>
+        <div class="card reveal"><span class="badge b-gold">PL-05</span><h3>AAR First Draft</h3><p class="formula" style="font-size:12px">"Structure these sanitized timeline notes into AAR format: chronology, what worked, what failed, corrective actions with owner and date placeholders."</p></div>
+        <div class="card reveal"><span class="badge b-gold">PL-06</span><h3>NotebookLM Study Pack</h3><p class="formula" style="font-size:12px">Approved parameters: upload <b>published policies from this site only</b>; generate study guides and FAQs per document set; verify every citation against the source before sharing.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCRIPTS -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Approved Script Repository</span>
+      <h2>Automation With a Paper Trail</h2>
+      <p class="section-sub">Version-controlled, peer-reviewed, and change-logged. Running unapproved scripts against authorized systems is a reportable configuration-control violation.</p>
+      <div class="table-wrap reveal">
+        <table>
+          <thead><tr><th class="sortable">Script</th><th>Purpose</th><th class="sortable">Version</th><th class="sortable">Owner</th><th>Review Status</th></tr></thead>
+          <tbody>
+            <tr><td class="formula">stig-delta-report</td><td>Diffs .ckl checklists between quarters; outputs new/changed findings</td><td>2.4</td><td>Engineering</td><td><span class="badge b-ok">Approved</span></td></tr>
+            <tr><td class="formula">poam-aging-export</td><td>Pulls eMASS POA&amp;M aging into the dashboard feed format</td><td>3.1</td><td>Vuln Cell</td><td><span class="badge b-ok">Approved</span></td></tr>
+            <tr><td class="formula">evidence-bundler</td><td>Packages ConMon artifacts into the binder Tab-4 structure with hash manifest</td><td>1.7</td><td>Readiness Coord.</td><td><span class="badge b-ok">Approved</span></td></tr>
+            <tr><td class="formula">acct-recert-checker</td><td>Flags privileged accounts approaching the 90-day recertification window</td><td>1.2</td><td>Engineering</td><td><span class="badge b-ok">Approved</span></td></tr>
+            <tr><td class="formula">sbom-validator</td><td>Validates contractor SBOM deliverables against SPDX/CycloneDX schema</td><td>0.9</td><td>Acquisition Liaison</td><td><span class="badge b-warn">In peer review</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTAKE -->
+  <section class="section" id="intake" style="background:var(--panel)">
+    <div class="wrap">
+      <span class="kicker">Request Intake Engine</span>
+      <h2>Have an Automation Idea? Route It Here.</h2>
+      <p class="section-sub">All AI/automation proposals enter through this intake — including new tool requests, script submissions, and process-automation candidates. Triage decision within <b>10 business days</b>.</p>
+      <div class="grid g3">
+        <div class="phase-item reveal"><div class="phase-num">1</div><div><h3>Submit</h3><p>Problem statement, time cost today, data types touched (CUI? system data?), and proposed approach.</p></div></div>
+        <div class="phase-item reveal"><div class="phase-num">2</div><div><h3>Triage</h3><p>AI Governance Lead scores feasibility, data risk, and hours saved; CUI-touching proposals get policy review.</p></div></div>
+        <div class="phase-item reveal"><div class="phase-num">3</div><div><h3>Build &amp; Govern</h3><p>Approved items get an owner, peer review, and a repository entry — or a written "no" with reasons, archived in the decision records.</p></div></div>
+      </div>
+      <p style="margin-top:20px"><a class="btn btn-gold" href="#" onclick="alert('Demo environment — intake form disabled.');return false;">Open Intake Form</a> <a class="btn btn-ghost" href="contact.html">Talk to the AI Governance Lead</a></p>
+    </div>
+  </section>
+</main>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

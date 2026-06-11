@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Governance &amp; Leadership — CCoE</title>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Governance · <span class="phase-tag">Phase 7 — Portfolio Visibility</span></div>
+      <h1>Governance &amp; Leadership</h1>
+      <p class="lede">Authority boundaries written down, decisions recorded and auditable, and a leadership view of the portfolio that needs no slide deck to assemble.</p>
+      <div class="doc-meta">
+        <span>OWNER: <b>Cybersecurity Office Director</b></span><span>VERSION: <b>4.1</b></span><span>EFFECTIVE: <b>2026-03-01</b></span><span>REVIEW: <b>2027-03-01</b></span><span>APPROVAL: <b>CISO</b></span><span>RELATED: <b>Cyber Governance Board Charter</b></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FRAMEWORK -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Governance Framework</span>
+      <h2>Who Decides What</h2>
+      <div class="grid g2">
+        <div class="card card-gold reveal">
+          <h3>Oversight Authority Model</h3>
+          <p><b>CISO</b> sets policy, owns portfolio risk posture, chairs the Cyber Governance Board, and is the escalation terminus for all cyber disputes.</p>
+          <p><b>AODR</b> exercises delegated authorization review: validates package completeness, frames the risk recommendation, and routes to the AO. The AODR <i>recommends</i>; only the <b>AO</b> accepts risk and signs authorization decisions.</p>
+          <p><b>AO interaction model:</b> the AO engages at three formal gates — strategy approval (Prepare), CSRR, and the decision briefing. Out-of-cycle engagement goes through the AODR.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Cyber Governance Board (CGB)</h3>
+          <ul class="checklist">
+            <li><b>Charter:</b> adjudicates significant changes, risk acceptances above ISSM threshold, policy waivers, and cross-portfolio mandates.</li>
+            <li><b>Cadence:</b> second Thursday monthly; emergency session within 48h on CISO call.</li>
+            <li><b>Quorum:</b> CISO (chair), AODR, senior ISSM, engineering lead, plus the affected system owner.</li>
+            <li><b>Escalation path:</b> ISSO → ISSM → AODR → CGB → CISO → AO. Skipping levels is permitted only for active incidents.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RACI -->
+  <section class="section" style="background:var(--panel)">
+    <div class="wrap">
+      <span class="kicker">RACI Matrices</span>
+      <h2>Explicit Roles, No Orphan Tasks</h2>
+      <p class="section-sub">R = Responsible · A = Accountable · C = Consulted · I = Informed. Select a workflow.</p>
+      <div class="tabs" data-group="raci">
+        <button class="tab active" data-tab="raci-rmf">RMF Execution</button>
+        <button class="tab" data-tab="raci-cr">Change Requests</button>
+        <button class="tab" data-tab="raci-vuln">Vulnerability Mitigation</button>
+        <button class="tab" data-tab="raci-ir">Incident Response</button>
+      </div>
+      <div class="tab-panel active" data-group="raci" id="raci-rmf">
+        <div class="table-wrap"><table>
+          <thead><tr><th>Activity</th><th>ISSO</th><th>ISSM</th><th>SCA</th><th>Sys Owner</th><th>AODR</th><th>AO</th></tr></thead>
+          <tbody>
+            <tr><td>Categorization (FIPS 199)</td><td>R</td><td>A</td><td>C</td><td>C</td><td>I</td><td>I</td></tr>
+            <tr><td>Control implementation statements</td><td>R</td><td>A</td><td>I</td><td>C</td><td>—</td><td>—</td></tr>
+            <tr><td>Assessment execution</td><td>C</td><td>I</td><td>R/A</td><td>I</td><td>I</td><td>—</td></tr>
+            <tr><td>Authorization decision</td><td>I</td><td>C</td><td>C</td><td>C</td><td>R</td><td>A</td></tr>
+            <tr><td>Continuous monitoring</td><td>R</td><td>A</td><td>C</td><td>I</td><td>I</td><td>—</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="tab-panel" data-group="raci" id="raci-cr">
+        <div class="table-wrap"><table>
+          <thead><tr><th>Activity</th><th>ISSO</th><th>ISSM</th><th>Engineer</th><th>Sys Owner</th><th>CGB</th></tr></thead>
+          <tbody>
+            <tr><td>Minor change memo</td><td>R</td><td>A</td><td>C</td><td>I</td><td>I</td></tr>
+            <tr><td>Significant change request</td><td>R</td><td>C</td><td>C</td><td>A</td><td>A (adjudication)</td></tr>
+            <tr><td>Security impact analysis</td><td>R</td><td>A</td><td>C</td><td>I</td><td>I</td></tr>
+            <tr><td>Post-change verification</td><td>R</td><td>A</td><td>R</td><td>I</td><td>I</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="tab-panel" data-group="raci" id="raci-vuln">
+        <div class="table-wrap"><table>
+          <thead><tr><th>Activity</th><th>ISSO</th><th>ISSM</th><th>Engineer</th><th>Vuln Cell</th><th>CISO</th></tr></thead>
+          <tbody>
+            <tr><td>Scan execution &amp; triage</td><td>C</td><td>I</td><td>C</td><td>R/A</td><td>I</td></tr>
+            <tr><td>Remediation inside SLA</td><td>C</td><td>A</td><td>R</td><td>I</td><td>I</td></tr>
+            <tr><td>SLA exception request</td><td>R</td><td>C</td><td>C</td><td>C</td><td>A</td></tr>
+            <tr><td>KEV-listed (7-day) items</td><td>C</td><td>A</td><td>R</td><td>C</td><td>I (daily until closed)</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="tab-panel" data-group="raci" id="raci-ir">
+        <div class="table-wrap"><table>
+          <thead><tr><th>Activity</th><th>Reporter</th><th>ISSO</th><th>ISSM</th><th>IR Lead</th><th>CISO</th></tr></thead>
+          <tbody>
+            <tr><td>Initial report (any user)</td><td>R</td><td>I</td><td>I</td><td>A</td><td>I</td></tr>
+            <tr><td>Triage &amp; categorization</td><td>C</td><td>R</td><td>C</td><td>A</td><td>I</td></tr>
+            <tr><td>Containment decision</td><td>—</td><td>C</td><td>C</td><td>R</td><td>A</td></tr>
+            <tr><td>After-action report</td><td>C</td><td>R</td><td>A</td><td>R</td><td>I</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DECISION RECORDS -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Decision Records Archive</span>
+      <h2>If It Wasn't Recorded, It Wasn't Decided</h2>
+      <p class="section-sub">Searchable, auditable record of signed decisions. Full documents are role-restricted; the index is visible to all.</p>
+      <div class="filter-bar"><input class="field" type="search" placeholder="Search decision records…" data-filter-target="#drTable tbody" aria-label="Search decision records"></div>
+      <div class="table-wrap reveal">
+        <table id="drTable">
+          <thead><tr><th class="sortable">Record ID</th><th class="sortable">Date</th><th class="sortable">Type</th><th>Subject</th><th class="sortable">Authority</th></tr></thead>
+          <tbody>
+            <tr data-search="DR-2026-041 risk acceptance FIRES-DSS"><td>DR-2026-041</td><td data-val="20260602">02 JUN 2026</td><td><span class="badge b-warn">Risk Acceptance</span></td><td>FIRES-DSS — CAT II residual on legacy interface, compensating controls accepted 12 mo</td><td>AO</td></tr>
+            <tr data-search="DR-2026-038 policy memo cloud IL5"><td>DR-2026-038</td><td data-val="20260519">19 MAY 2026</td><td><span class="badge b-info">Policy Memo</span></td><td>IL5 workload approval criteria — supersedes 2024 interim guidance</td><td>CISO</td></tr>
+            <tr data-search="DR-2026-035 significant change CLOUD-PLT"><td>DR-2026-035</td><td data-val="20260507">07 MAY 2026</td><td><span class="badge b-gold">Significant Change</span></td><td>CLOUD-PLT — container orchestration platform migration approved with re-assessment</td><td>CGB</td></tr>
+            <tr><td>DR-2026-031</td><td data-val="20260422">22 APR 2026</td><td><span class="badge b-info">Mandate</span></td><td>Portfolio-wide phishing-resistant MFA implementation directive — complete by Q2 FY27</td><td>CISO</td></tr>
+            <tr data-search="DR-2026-027 waiver TRNG-SIM-2 standalone"><td>DR-2026-027</td><td data-val="20260408">08 APR 2026</td><td><span class="badge b-mute">Waiver</span></td><td>TRNG-SIM-2 — scan cadence waiver under Standalone SOP, quarterly manual review substituted</td><td>AODR</td></tr>
+            <tr data-search="DR-2026-022 risk acceptance RANGE-OT"><td>DR-2026-022</td><td data-val="20260318">18 MAR 2026</td><td><span class="badge b-warn">Risk Acceptance</span></td><td>RANGE-OT — unsupported firmware on isolated OT segment, 6-month acceptance with divestment plan</td><td>AO</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP DASHBOARDS -->
+  <section class="section" style="background:var(--panel)">
+    <div class="wrap">
+      <span class="kicker">Read-Only Leadership Dashboards</span>
+      <h2>The Portfolio in One Screen</h2>
+      <p class="section-sub">Live snapshot rendered from the same data feeding the Command Center. Read-only; drill-down views are RBAC-restricted to leadership.</p>
+      <div class="grid g4 reveal">
+        <div class="metric"><div class="n">84%</div><div class="l">Portfolio ATO health</div><div class="delta d-ok">▲ 2% vs last month</div></div>
+        <div class="metric m-warn"><div class="n">9</div><div class="l">Authorizations expiring ≤180d</div><div class="delta">4 inside 90 days</div></div>
+        <div class="metric"><div class="n">12</div><div class="l">Packages in assessment queue</div><div class="delta">Median dwell 23 days</div></div>
+        <div class="metric m-crit"><div class="n">23</div><div class="l">Overdue CAT I POA&amp;Ms</div><div class="delta">All on CISO review list</div></div>
+      </div>
+      <div class="grid g2" style="margin-top:24px">
+        <div class="card reveal">
+          <h3>POA&amp;M Aging by Severity</h3>
+          <div class="bar-row"><span>CAT I</span><div class="bar-track"><div class="bar-fill" style="width:18%;background:var(--crit)"></div></div><b>23</b></div>
+          <div class="bar-row"><span>CAT II</span><div class="bar-track"><div class="bar-fill" style="width:52%;background:var(--warn)"></div></div><b>96</b></div>
+          <div class="bar-row"><span>Medium</span><div class="bar-track"><div class="bar-fill" style="width:76%"></div></div><b>141</b></div>
+          <div class="bar-row"><span>Low</span><div class="bar-track"><div class="bar-fill" style="width:30%;background:var(--olive)"></div></div><b>52</b></div>
+        </div>
+        <div class="card reveal">
+          <h3>Workforce Operational Metrics</h3>
+          <div class="bar-row"><span>ISSO avg systems/person</span><div class="bar-track"><div class="bar-fill" style="width:64%"></div></div><b>3.2</b></div>
+          <div class="bar-row"><span>Assessor saturation</span><div class="bar-track"><div class="bar-fill" style="width:92%;background:var(--warn)"></div></div><b>92%</b></div>
+          <div class="bar-row"><span>8140 qualified</span><div class="bar-track"><div class="bar-fill" style="width:84%;background:var(--olive)"></div></div><b>84%</b></div>
+          <div class="bar-row"><span>First-pass package acceptance</span><div class="bar-track"><div class="bar-fill" style="width:71%"></div></div><b>71%</b></div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:24px"><b class="head">RBAC Notice</b>Cycle-time analytics, rejection-rate detail by team, and unredacted vulnerability profiles are restricted views. Request access via <a href="tools-dashboards.html">Tools &amp; Dashboards</a>.</div>
+    </div>
+  </section>
+</main>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

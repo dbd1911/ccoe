@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ &amp; Knowledge Base — CCoE</title>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Library · <span class="phase-tag">Phase 10 — Institutional Memory</span></div>
+      <h1>FAQ &amp; Knowledge Base</h1>
+      <p class="lede">The answers we give most often, written down once. If you ask the office a question that belongs here, it gets added within a week — that's the deal.</p>
+      <div class="doc-meta">
+        <span>OWNER: <b>Knowledge Manager</b></span><span>VERSION: <b>5.0</b></span><span>EFFECTIVE: <b>2026-06-01</b></span><span>REVIEW: <b>Continuous</b></span><span>APPROVAL: <b>Cybersecurity Office Director</b></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Frequently Asked Questions</span>
+      <h2>Search Before You Email</h2>
+      <div class="filter-bar"><input class="field" type="search" placeholder="Search questions… (e.g. 'POA&amp;M closure', 'standalone', 'CUI email')" data-filter-target="#faqList" aria-label="Search FAQs"></div>
+      <div class="chip-row" data-chip-target="#faqList" data-count-note="#faqCount">
+        <button class="chip active" data-chip-value="all">All</button>
+        <button class="chip" data-chip-value="rmf">RMF</button>
+        <button class="chip" data-chip-value="emass">eMASS</button>
+        <button class="chip" data-chip-value="poam">POA&amp;M</button>
+        <button class="chip" data-chip-value="change">Change Requests</button>
+        <button class="chip" data-chip-value="standalone">Standalone</button>
+        <button class="chip" data-chip-value="cloud">Cloud</button>
+        <button class="chip" data-chip-value="cui">CUI</button>
+        <button class="chip" data-chip-value="contractor">Contractor</button>
+        <button class="chip" data-chip-value="incident">Incident</button>
+      </div>
+      <p class="count-note" id="faqCount">14 questions shown</p>
+      <div class="grid g2" id="faqList">
+        <div class="card reveal" data-cat="rmf" data-search="rmf how long does authorization take timeline ato"><span class="badge b-gold">RMF</span><h3>How long does an initial ATO take?</h3><p>Plan <b>6–9 months</b> from categorization to decision for a moderate system with a prepared team. The biggest variable is artifact quality — packages built from Gold Standard templates clear assessment roughly 40% faster.</p></div>
+        <div class="card reveal" data-cat="rmf" data-search="rmf which pathway authorization applies iatt conditional"><span class="badge b-gold">RMF</span><h3>Which authorization pathway applies to my system?</h3><p>Start with the pathway cards on the <a href="rmf-operations.html">RMF Operations Hub</a>. If two seem to fit, your ISSM makes the call during strategy approval — don't self-select a temporary pathway to dodge full ATO work.</p></div>
+        <div class="card reveal" data-cat="emass" data-search="emass access account how do i get"><span class="badge b-info">eMASS</span><h3>How do I get an eMASS account?</h3><p>Request via <a href="tools-dashboards.html#emass">Tools &amp; Dashboards → eMASS</a>. You need: CAC, completed eMASS computer-based training certificate, and ISSM sponsorship naming your system roles. Provisioning runs ~5 business days.</p></div>
+        <div class="card reveal" data-cat="emass" data-search="emass system of record export tracker conflict"><span class="badge b-info">eMASS</span><h3>This site's data disagrees with eMASS. Which wins?</h3><p><b>eMASS, always.</b> Dashboards here refresh nightly and exist for visibility, not record-keeping. If they disagree for more than 48 hours, report it to the Knowledge Manager.</p></div>
+        <div class="card reveal" data-cat="poam" data-search="poam closure evidence what counts rejected"><span class="badge b-warn">POA&amp;M</span><h3>What closure evidence actually passes review?</h3><p>Proof the fix exists <i>and</i> proof it works: config export or patch record <b>plus</b> a clean rescan or manual verification dated after the fix. Screenshots without timestamps and "completed per admin" notes are auto-rejected.</p></div>
+        <div class="card reveal" data-cat="poam" data-search="poam extension sla exception overdue"><span class="badge b-warn">POA&amp;M</span><h3>Can I get an SLA extension?</h3><p>Only via a written exception request with compensating measures, endorsed by your ISSM. KEV-listed items have <b>no extension path</b> — escalate resourcing instead.</p></div>
+        <div class="card reveal" data-cat="change" data-search="change request minor significant difference rubric"><span class="badge b-info">Change</span><h3>Minor change or significant change?</h3><p>Apply the rubric in the <a href="policies.html">Change Management Policy</a>: anything altering the boundary, data types, user population, external connections, or security architecture is significant. When genuinely unsure, file it as significant — downgrades are painless, upgrades mid-stream are not.</p></div>
+        <div class="card reveal" data-cat="standalone" data-search="standalone scan requirement isolated no network"><span class="badge b-mute">Standalone</span><h3>My system can't be scanned. Now what?</h3><p>The Standalone SOP defines substitute evidence: manual STIG checklists, signed configuration attestations, and quarterly physical audits. "Can't scan" never means "no evidence" — it means different evidence.</p></div>
+        <div class="card reveal" data-cat="cloud" data-search="cloud fedramp il2 il4 il5 inherit"><span class="badge b-info">Cloud</span><h3>The CSP is FedRAMP authorized. Am I done?</h3><p>No — you inherit the provider's controls, not your own. Customer-responsibility controls (IAM config, data handling, logging integration) remain yours and are assessed normally. The inheritance matrix in eMASS shows the split.</p></div>
+        <div class="card reveal" data-cat="cui" data-search="cui email send encrypt marking"><span class="badge b-cui">CUI</span><h3>Can I email CUI?</h3><p>Only encrypted (signed and encrypted via approved PKI), only to recipients with lawful government purpose, with the banner marking in the body and "CUI" in the subject line. Personal accounts and unmanaged mobile: never.</p></div>
+        <div class="card reveal" data-cat="cui" data-search="cui marking documents banner portion"><span class="badge b-cui">CUI</span><h3>How do I mark a CUI document?</h3><p>Banner top and bottom ("CUI"), designation indicator block on page one (owner, category, distribution, POC), and portion markings where required by category. The <a href="policies.html">CUI Handling SOP</a> has worked examples.</p></div>
+        <div class="card reveal" data-cat="contractor" data-search="contractor deliverable acceptance rejected qa"><span class="badge b-mute">Contractor</span><h3>A contractor deliverable failed cyber QA. Who fixes it?</h3><p>The contractor, under the acceptance-criteria clause — one funded correction cycle, then corrections at contractor expense. Route findings through the COR, never directly to contractor staff.</p></div>
+        <div class="card reveal" data-cat="incident" data-search="incident report benign false alarm penalty"><span class="badge b-crit">Incident</span><h3>What if I report something and it's nothing?</h3><p>Good. A benign report costs 20 minutes; an unreported incident costs an authorization. No one is penalized for good-faith reporting — this is written policy, not a slogan.</p></div>
+        <div class="card reveal" data-cat="incident" data-search="incident clicked phishing link credentials what do"><span class="badge b-crit">Incident</span><h3>I clicked a phishing link. What now?</h3><p>Call the watch desk <b>immediately</b> (treat as malware timeline), leave the machine on but disconnect from the network, and change credentials from a different, known-good device. Speed matters more than embarrassment.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOSSARY -->
+  <section class="section" id="glossary" style="background:var(--panel)">
+    <div class="wrap">
+      <span class="kicker">Authoritative CCoE Glossary</span>
+      <h2>Speak the Same Language</h2>
+      <div class="filter-bar"><input class="field" type="search" placeholder="Search acronyms and terms…" data-filter-target="#glossTable tbody" aria-label="Search glossary"></div>
+      <div class="table-wrap reveal">
+        <table id="glossTable">
+          <thead><tr><th class="sortable">Term</th><th>Definition</th></tr></thead>
+          <tbody>
+            <tr data-search="AO authorizing official"><td><b>AO</b></td><td>Authorizing Official — the senior official with authority to formally accept risk and authorize system operation.</td></tr>
+            <tr data-search="AODR authorizing official designated representative"><td><b>AODR</b></td><td>AO Designated Representative — performs authorization review and coordination on the AO's behalf; recommends but does not accept risk.</td></tr>
+            <tr data-search="ACAS assured compliance assessment solution scanning"><td><b>ACAS</b></td><td>Assured Compliance Assessment Solution — the DoD enterprise vulnerability scanning capability (Tenable-based).</td></tr>
+            <tr data-search="ATC authorization to connect"><td><b>ATC</b></td><td>Authorization to Connect — permission for a system to connect to a network, distinct from authority to operate the system itself.</td></tr>
+            <tr data-search="ATO-C conditional authorization"><td><b>ATO-C</b></td><td>Conditional ATO — authorization granted with binding conditions (typically POA&amp;M milestones) whose breach can trigger revocation.</td></tr>
+            <tr data-search="CCI control correlation identifier"><td><b>CCI</b></td><td>Control Correlation Identifier — decomposes NIST controls into single, assessable statements used in STIGs and eMASS.</td></tr>
+            <tr data-search="CUI controlled unclassified information"><td><b>CUI</b></td><td>Controlled Unclassified Information — unclassified information requiring safeguarding under law, regulation, or government-wide policy.</td></tr>
+            <tr data-search="FedRAMP federal risk authorization management program cloud"><td><b>FedRAMP</b></td><td>Federal Risk and Authorization Management Program — standardized federal approach to cloud service security authorization.</td></tr>
+            <tr data-search="IATT interim authorization to test"><td><b>IATT</b></td><td>Interim Authorization to Test — short-duration authorization for testing in an operational environment, with explicit boundaries and restrictions.</td></tr>
+            <tr data-search="IL impact level cloud il2 il4 il5 il6"><td><b>IL</b></td><td>Impact Level — DoD cloud data sensitivity tiers (IL2 public ↔ IL6 classified) governing where workloads may reside.</td></tr>
+            <tr data-search="ISSM information system security manager"><td><b>ISSM</b></td><td>Information System Security Manager — manages cybersecurity for assigned systems/programs; the ISSO's governance chain.</td></tr>
+            <tr data-search="ISSO information system security officer"><td><b>ISSO</b></td><td>Information System Security Officer — executes daily security operations, evidence collection, and POA&amp;M hygiene for assigned systems.</td></tr>
+            <tr data-search="POA&M plan of action and milestones poam"><td><b>POA&amp;M</b></td><td>Plan of Action and Milestones — the managed record of a weakness, its remediation plan, resources, and milestone dates.</td></tr>
+            <tr data-search="RAW risk assessment worksheet"><td><b>RAW</b></td><td>Risk Assessment Worksheet — structured analysis translating findings into risk statements supporting the authorization decision.</td></tr>
+            <tr data-search="RMF risk management framework"><td><b>RMF</b></td><td>Risk Management Framework — the NIST 7-step lifecycle (Prepare → Monitor) governing system authorization.</td></tr>
+            <tr data-search="SAR security assessment report"><td><b>SAR</b></td><td>Security Assessment Report — the assessor's findings on control effectiveness, feeding the RAW and AO decision.</td></tr>
+            <tr data-search="SCA security control assessor"><td><b>SCA</b></td><td>Security Control Assessor — independently validates control implementation and produces the SAR.</td></tr>
+            <tr data-search="SCA-R security control assessor representative"><td><b>SCA-R</b></td><td>SCA Representative — performs assessment activities under SCA authority and direction.</td></tr>
+            <tr data-search="SSP system security plan"><td><b>SSP</b></td><td>System Security Plan — the authoritative description of the system boundary, environment, and control implementation.</td></tr>
+            <tr data-search="STIG security technical implementation guide"><td><b>STIG</b></td><td>Security Technical Implementation Guide — DISA-published configuration standard for securing specific technologies.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="section-sub" style="margin-top:14px">Missing a term? <a href="contact.html">Tell the Knowledge Manager</a> — additions ship weekly.</p>
+    </div>
+  </section>
+</main>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

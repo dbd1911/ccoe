@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acquisition &amp; Contracts — CCoE</title>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Library · <span class="phase-tag">Phase 8 — Upstream Security</span></div>
+      <h1>Acquisition &amp; Contracting Cyber Support</h1>
+      <p class="lede">Security written into the contract costs pennies. Security bolted on after award costs the schedule. Use pre-approved language and explicit deliverables before anything is signed.</p>
+      <div class="doc-meta">
+        <span>OWNER: <b>Acquisition Cyber Liaison</b></span><span>VERSION: <b>2.2</b></span><span>EFFECTIVE: <b>2026-02-01</b></span><span>REVIEW: <b>2026-08-01</b></span><span>APPLICABILITY: <b>All cyber-relevant contract actions</b></span><span>APPROVAL: <b>CISO + Contracting Officer concurrence</b></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLAUSE LIBRARY -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Pre-Approved Contract Language</span>
+      <h2>The Clause Library</h2>
+      <p class="section-sub">Copy-ready blocks for SOW, RFI, and RFP packages. Each clause is pre-coordinated with the contracting office — using it verbatim skips legal review cycles.</p>
+      <div class="chip-row" data-chip-target="#clauseGrid" data-count-note="#clauseCount">
+        <button class="chip active" data-chip-value="all">All</button>
+        <button class="chip" data-chip-value="sow">SOW</button>
+        <button class="chip" data-chip-value="cui">CUI Handling</button>
+        <button class="chip" data-chip-value="deliv">Deliverables</button>
+        <button class="chip" data-chip-value="cloud">Cloud / FedRAMP</button>
+        <button class="chip" data-chip-value="personnel">Personnel</button>
+      </div>
+      <p class="count-note" id="clauseCount">9 clauses shown</p>
+      <div class="grid g3" id="clauseGrid">
+        <div class="card reveal" data-cat="sow"><span class="badge b-gold">SOW-CY-01</span><h3>RMF Support Baseline</h3><p>Contractor shall execute RMF activities under government direction, producing artifacts compliant with CCoE templates and accepted only upon government QA review.</p></div>
+        <div class="card reveal" data-cat="sow"><span class="badge b-gold">SOW-CY-02</span><h3>Secure Coding Requirements</h3><p>All delivered code shall pass static analysis with zero unmitigated critical/high findings and comply with applicable STIG/SRG configuration baselines.</p></div>
+        <div class="card reveal" data-cat="cui"><span class="badge b-cui">CUI-CL-01</span><h3>CUI Safeguarding</h3><p>Contractor systems processing CUI shall meet NIST SP 800-171 requirements; flow-down to subcontractors is mandatory and verifiable on request.</p></div>
+        <div class="card reveal" data-cat="cui"><span class="badge b-cui">CUI-CL-02</span><h3>Incident Notification SLA</h3><p>Contractor shall report suspected cyber incidents affecting CUI or government systems within <b>4 hours</b> of discovery via the government contact tree.</p></div>
+        <div class="card reveal" data-cat="deliv"><span class="badge b-info">DEL-CY-01</span><h3>RMF Deliverables List</h3><p>Required with delivery: <b>SBOM</b> (SPDX or CycloneDX), draft <b>SSP</b> inputs, hardware/software inventory, authenticated <b>scan results</b> ≤30 days old, and STIG checklists.</p></div>
+        <div class="card reveal" data-cat="deliv"><span class="badge b-info">DEL-CY-02</span><h3>Acceptance Criteria</h3><p>Deliverables are accepted only after government QA against the published checklist; one funded correction cycle, after which corrections are at contractor expense.</p></div>
+        <div class="card reveal" data-cat="cloud"><span class="badge b-info">CLD-CY-01</span><h3>FedRAMP / IL Residency</h3><p>Cloud services shall hold FedRAMP authorization at the IL level matching data categorization (IL4/IL5 as specified); data residency restricted to approved regions.</p></div>
+        <div class="card reveal" data-cat="personnel"><span class="badge b-mute">PER-CY-01</span><h3>Personnel Access Standards</h3><p>Contractor personnel accessing government systems shall meet position-designated investigation levels and complete CUI and incident-reporting training before access.</p></div>
+        <div class="card reveal" data-cat="personnel"><span class="badge b-mute">PER-CY-02</span><h3>Departure Notification</h3><p>Contractor shall notify the COR within <b>1 business day</b> of personnel departure; account deactivation is verified by the ISSO within 24 hours of notice.</p></div>
+      </div>
+      <p style="margin-top:18px"><a class="btn btn-gold" href="templates.html">Get the Master Contractor Cyber Language Library →</a></p>
+    </div>
+  </section>
+
+  <!-- RMF DELIVERABLES DETAIL -->
+  <section class="section" style="background:var(--panel)">
+    <div class="wrap">
+      <span class="kicker">Contract Deliverable Detail</span>
+      <h2>What "Done" Means at Delivery</h2>
+      <div class="grid g2">
+        <div class="card reveal">
+          <h3>Minimum Cyber Deliverable Set</h3>
+          <ul class="checklist">
+            <li><b>SBOM</b> — machine-readable (SPDX/CycloneDX), regenerated at every release</li>
+            <li><b>SSP inputs</b> — implementation statements for contractor-managed controls, in CCoE template format</li>
+            <li><b>Boundary &amp; data flow diagrams</b> — current as-built, not as-proposed</li>
+            <li><b>Authenticated scans</b> — ACAS-compatible output, ≤30 days old at delivery</li>
+            <li><b>STIG checklists</b> — .ckl format with justification for every open finding</li>
+            <li><b>HW/SW inventory</b> — reconcilable against the SBOM and scans</li>
+          </ul>
+        </div>
+        <div class="card card-gold reveal">
+          <h3>Cybersecurity Cost Estimating Guide</h3>
+          <p>Rule-of-thumb planning factors so cyber work is funded, not absorbed:</p>
+          <ul class="checklist">
+            <li>Initial authorization support: <b>8–12%</b> of development cost for a moderate system</li>
+            <li>Continuous monitoring: <b>2–4%</b> annually of system sustainment cost</li>
+            <li>Significant change re-assessment: budget <b>per event</b>, not from sustainment</li>
+            <li>Standalone / closed networks: add <b>15–25%</b> for manual evidence overhead</li>
+          </ul>
+          <p style="margin-top:10px"><span class="badge b-mute">RBAC</span> Full guide with labor-hour models is restricted to PMs and leadership.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">When to Engage Us</span>
+      <h2>Acquisition Touchpoints</h2>
+      <p class="section-sub">Bring the Cybersecurity Office in at these four gates. Earlier is cheaper, every time.</p>
+      <div class="phase-track">
+        <div class="phase-item reveal"><div class="phase-num">1</div><div><h3>Market Research / RFI</h3><p>We supply RFI cyber questions that reveal vendor security maturity before you're committed to a vendor pool.</p></div></div>
+        <div class="phase-item reveal"><div class="phase-num">2</div><div><h3>SOW Drafting</h3><p>Pull clause-library language. We review any tailored cyber text within <b>5 business days</b>.</p></div></div>
+        <div class="phase-item reveal"><div class="phase-num">3</div><div><h3>Source Selection</h3><p>We provide evaluation criteria and can sit as technical evaluators for cyber factors.</p></div></div>
+        <div class="phase-item reveal"><div class="phase-num">4</div><div><h3>Post-Award / Delivery</h3><p>Deliverable QA against acceptance criteria; findings routed back through the COR with one funded correction cycle.</p></div></div>
+      </div>
+      <div class="callout warn" style="margin-top:24px"><b class="head">Contractor Notification SLAs (recap)</b>Cyber incident: <b>4 hours</b>. Personnel departure: <b>1 business day</b>. Subcontractor change touching CUI: <b>5 business days before</b> the change. These appear in every awarded contract using library language.</div>
+      <p style="margin-top:18px">Need tailored language reviewed? <a class="btn btn-ghost" href="contact.html">Contact the Acquisition Cyber Liaison →</a></p>
+    </div>
+  </section>
+</main>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

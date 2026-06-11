@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Incident Response — CCoE</title>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Operations · <span class="phase-tag">Phase 9 — Crisis Preparedness</span></div>
+      <h1>Incident Response &amp; Reporting</h1>
+      <p class="lede">When something looks wrong, report first and investigate second. You will never be penalized for a good-faith report that turns out benign. Silence is the only wrong answer.</p>
+      <div class="doc-meta">
+        <span>OWNER: <b>Incident Response Lead</b></span><span>VERSION: <b>3.3</b></span><span>EFFECTIVE: <b>2026-01-15</b></span><span>REVIEW: <b>2026-07-15</b></span><span>APPLICABILITY: <b>All personnel, all systems</b></span><span>APPROVAL: <b>CISO</b></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- REPORT -->
+  <section class="section" id="report">
+    <div class="wrap">
+      <div class="card card-crit reveal" style="text-align:center;padding:40px 28px">
+        <span class="kicker" style="color:var(--crit)">Report an Incident</span>
+        <h2 style="margin-top:6px">Suspect Something? Act Now.</h2>
+        <p class="section-sub" style="margin:10px auto 22px;max-width:640px"><b>1.</b> Disconnect from the network if safe to do so — <b>do not power off</b>. <b>2.</b> Call the watch desk. <b>3.</b> Preserve everything; touch nothing else.</p>
+        <div class="grid g3" style="text-align:left">
+          <div class="card"><h3>📞 24/7 Watch Desk</h3><p class="formula">DSN 312-555-0199<br>COMM (407) 555-0199</p><p>First call, every category, every hour.</p></div>
+          <div class="card"><h3>✉ Secure Reporting</h3><p class="formula">ccoe.incident@demo.mil</p><p>Encrypted email for non-urgent follow-up detail. Never email a spill's contents.</p></div>
+          <div class="card"><h3>🗂 Initial Report Form</h3><p>Who / what / when / where / observed behavior. Send what you have — incomplete and fast beats complete and late.</p><a class="btn btn-sm btn-crit" href="#" onclick="alert('Demo environment — form disabled.');return false;">Open Form</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES + TIMELINES -->
+  <section class="section" style="background:var(--panel)">
+    <div class="wrap">
+      <span class="kicker">Incident Categories &amp; Escalation Timelines</span>
+      <h2>Name It, Clock It</h2>
+      <p class="section-sub">Category determines the reporting clock. The clock starts at <b>discovery</b>, not at confirmation.</p>
+      <div class="table-wrap reveal">
+        <table>
+          <thead><tr><th class="sortable">Category</th><th>Examples</th><th class="sortable" data-sort-type="num">Watch Desk</th><th>ISSM / IR Lead</th><th>CISO</th></tr></thead>
+          <tbody>
+            <tr><td><b>Data Spill</b> <span class="badge b-cui">CUI</span></td><td>Classified or CUI on an unapproved system or network</td><td data-val="0">Immediate</td><td>≤ 1 hour</td><td>≤ 2 hours</td></tr>
+            <tr><td><b>Malware</b></td><td>Ransomware behavior, C2 beaconing, AV detection on a server</td><td data-val="0">Immediate</td><td>≤ 1 hour</td><td>≤ 4 hours</td></tr>
+            <tr><td><b>Privilege Escalation</b></td><td>Unauthorized admin rights, unexplained account changes</td><td data-val="0">Immediate</td><td>≤ 2 hours</td><td>≤ 4 hours</td></tr>
+            <tr><td><b>Vulnerability Exploitation</b></td><td>Active exploitation of a known CVE, web shell discovery</td><td data-val="0">Immediate</td><td>≤ 1 hour</td><td>≤ 4 hours</td></tr>
+            <tr><td><b>Insider Threat</b></td><td>Bulk data staging, policy-violating exfil attempts</td><td data-val="0">Immediate</td><td>≤ 1 hour</td><td>≤ 2 hours · counterintel notified</td></tr>
+            <tr><td><b>Lost Asset</b></td><td>Missing laptop, drive, token, or mobile device</td><td data-val="120">≤ 2 hours</td><td>≤ 4 hours</td><td>≤ 24 hours</td></tr>
+            <tr><td><b>Phishing</b></td><td>Credential-harvest emails, suspicious attachments (no click)</td><td data-val="240">≤ 4 hours</td><td>Daily rollup</td><td>Weekly rollup</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout warn"><b class="head">Phishing exception</b>If anyone <b>clicked, entered credentials, or opened the attachment</b>, treat it as Malware/Privilege Escalation timelines — immediate watch desk call.</div>
+    </div>
+  </section>
+
+  <!-- TRIAGE + EVIDENCE -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">First-Hour Discipline</span>
+      <h2>Triage &amp; Evidence Preservation</h2>
+      <div class="grid g2">
+        <div class="card reveal">
+          <h3>Initial Triage Checklist</h3>
+          <ul class="checklist">
+            <li>Confirm reporter identity, system name, and physical/network location</li>
+            <li>Assign category and start the escalation clock</li>
+            <li>Isolate at the network layer if safe — <b>do not power off or reboot</b></li>
+            <li>Identify data types in scope (CUI? PII? mission data?)</li>
+            <li>Open the incident log: timestamped, factual, no speculation</li>
+            <li>Establish the containment boundary with the IR Lead before touching the host</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <h3>Evidence Preservation Guide</h3>
+          <ul class="checklist">
+            <li><b>Volatile memory first:</b> capture RAM before any other action if tooling is staged</li>
+            <li><b>Logs:</b> export host, application, and network logs to write-once media; note retention rollover windows</li>
+            <li><b>Disk images:</b> forensic image before remediation on any CAT-reportable incident</li>
+            <li><b>Chain of custody:</b> who handled what, when — on the standard custody form, every transfer</li>
+            <li><b>Screenshots/photos:</b> acceptable for on-screen ephemeral evidence; include system clock in frame</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:24px"><b class="head">Containment Boundaries</b>ISSOs may isolate a single host. Segment-level isolation requires the IR Lead. Enclave or mission-system shutdown requires CISO approval with system-owner consultation — mission impact is weighed in minutes, not days.</div>
+    </div>
+  </section>
+
+  <!-- CONTACT TREE -->
+  <section class="section" style="background:var(--panel)">
+    <div class="wrap">
+      <span class="kicker">Master Contact Tree</span>
+      <h2>Who Gets Called, In Order</h2>
+      <div class="phase-track">
+        <div class="phase-item reveal"><div class="phase-num">1</div><div><h3>24/7 Watch Desk</h3><p class="formula">DSN 312-555-0199</p><p>Always first. Logs the incident, starts the clock, pages the IR Lead.</p></div></div>
+        <div class="phase-item reveal"><div class="phase-num">2</div><div><h3>IR Lead → System ISSO/ISSM</h3><p>Triage, categorization, containment decisions inside delegated boundaries.</p></div></div>
+        <div class="phase-item reveal"><div class="phase-num">3</div><div><h3>CISO / AODR</h3><p>Per category timelines. Approves enclave-level containment and external notifications.</p></div></div>
+        <div class="phase-item reveal"><div class="phase-num">4</div><div><h3>External Parties</h3><p>Army CERT, counterintelligence (insider), law enforcement, and contracting officer (contractor systems) — <b>CISO authorizes all external notifications</b>.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AAR + TABLETOPS -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Learn &amp; Rehearse</span>
+      <h2>After-Action &amp; Tabletop Library</h2>
+      <div class="grid g3">
+        <a class="tile reveal" href="templates.html"><div class="tile-title">AAR Template</div><p>Timeline, root cause, response evaluation, and corrective actions with owners and dates. Due <b>10 business days</b> after closure.</p></a>
+        <a class="tile reveal" href="#" onclick="alert('Demo environment — download disabled.');return false;"><div class="tile-title">Tabletop: Ransomware on LOGNET-04</div><p>3-hour exercise. Tests containment authority, backup integrity decisions, and mission-impact messaging.</p></a>
+        <a class="tile reveal" href="#" onclick="alert('Demo environment — download disabled.');return false;"><div class="tile-title">Tabletop: CUI Spill, Cross-Domain</div><p>90-minute exercise. Tests spill clock discipline, sanitization decisions, and notification order.</p></a>
+        <a class="tile reveal" href="#" onclick="alert('Demo environment — download disabled.');return false;"><div class="tile-title">Tabletop: Insider Data Staging</div><p>2-hour exercise with counterintel injects. Tests evidence preservation under personnel sensitivity.</p></a>
+        <a class="tile reveal" href="#" onclick="alert('Demo environment — download disabled.');return false;"><div class="tile-title">Tabletop: Lost Laptop, TDY</div><p>60-minute desktop drill for supervisors. Tests asset-loss timelines and encryption verification.</p></a>
+        <a class="tile reveal" href="training.html"><div class="tile-title">IR Triage Training Track</div><p>Self-paced module in the Training Academy — required for all ISSOs annually.</p></a>
+      </div>
+      <p style="margin-top:18px" class="section-sub">Each system runs at least <b>one tabletop per authorization cycle</b>; results feed the inspection readiness binder.</p>
+    </div>
+  </section>
+</main>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

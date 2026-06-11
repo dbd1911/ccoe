@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Risk Management — CCoE</title>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Operations · <span class="phase-tag">Subsequent Phase — Risk Discipline</span></div>
+      <h1>Cyber Risk Management Center</h1>
+      <p class="lede">Risk is a number we can defend, not an adjective we argue about. Aligned to NIST CSF 2.0 with the <b>Govern</b> function threaded through everything we do.</p>
+      <div class="doc-meta">
+        <span>OWNER: <b>Risk Management Lead</b></span><span>VERSION: <b>2.6</b></span><span>EFFECTIVE: <b>2026-05-15</b></span><span>REVIEW: <b>2026-11-15</b></span><span>APPROVAL: <b>CISO</b></span><span>RELATED: <b>AO Risk Decision Framework</b></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAXONOMY + CALCULATOR -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Risk Taxonomy</span>
+      <h2>One Formula, Portfolio-Wide</h2>
+      <p class="formula" style="font-size:20px;margin:8px 0 16px">Likelihood × Impact = Severity</p>
+      <p class="section-sub">Pick a likelihood and an impact below — the matrix and the verdict update live. Residual risk is the same calculation re-run <i>after</i> compensating controls; mission risk maps the technical severity onto operational degradation.</p>
+      <div class="grid g2" style="align-items:start">
+        <div class="card reveal">
+          <h3>Severity Calculator</h3>
+          <label style="display:block;margin:12px 0 4px;font-weight:600;font-size:13px">Likelihood (1–5)</label>
+          <select class="field" id="selLike" style="width:100%">
+            <option value="1">1 — Rare (no known exploit path)</option>
+            <option value="2">2 — Unlikely (exploit requires local access)</option>
+            <option value="3" selected>3 — Possible (public PoC exists)</option>
+            <option value="4">4 — Likely (active exploitation in the wild)</option>
+            <option value="5">5 — Near certain (KEV-listed, internet-facing)</option>
+          </select>
+          <label style="display:block;margin:14px 0 4px;font-weight:600;font-size:13px">Impact (1–5)</label>
+          <select class="field" id="selImp" style="width:100%">
+            <option value="1">1 — Negligible (no mission effect)</option>
+            <option value="2">2 — Minor (single function degraded)</option>
+            <option value="3">3 — Moderate (mission function delayed)</option>
+            <option value="4" selected>4 — Major (mission function lost)</option>
+            <option value="5">5 — Severe (mission failure / CUI compromise)</option>
+          </select>
+          <div class="callout" id="riskVerdict" style="margin-top:18px"><b class="head" id="rvHead">Severity 12 — HIGH</b><span id="rvBody">Remediate within the High SLA (30 days). ISSM visibility required; appears on the monthly portfolio review.</span></div>
+        </div>
+        <div class="reveal">
+          <div class="matrix-5" id="riskMatrix" aria-label="5 by 5 risk matrix">
+            <div class="axis">Impact 5</div><div data-l="1" data-i="5">5</div><div data-l="2" data-i="5">10</div><div data-l="3" data-i="5">15</div><div data-l="4" data-i="5">20</div><div data-l="5" data-i="5">25</div>
+            <div class="axis">Impact 4</div><div data-l="1" data-i="4">4</div><div data-l="2" data-i="4">8</div><div data-l="3" data-i="4">12</div><div data-l="4" data-i="4">16</div><div data-l="5" data-i="4">20</div>
+            <div class="axis">Impact 3</div><div data-l="1" data-i="3">3</div><div data-l="2" data-i="3">6</div><div data-l="3" data-i="3">9</div><div data-l="4" data-i="3">12</div><div data-l="5" data-i="3">15</div>
+            <div class="axis">Impact 2</div><div data-l="1" data-i="2">2</div><div data-l="2" data-i="2">4</div><div data-l="3" data-i="2">6</div><div data-l="4" data-i="2">8</div><div data-l="5" data-i="2">10</div>
+            <div class="axis">Impact 1</div><div data-l="1" data-i="1">1</div><div data-l="2" data-i="1">2</div><div data-l="3" data-i="1">3</div><div data-l="4" data-i="1">4</div><div data-l="5" data-i="1">5</div>
+            <div class="axis"></div><div class="axis">Like 1</div><div class="axis">Like 2</div><div class="axis">Like 3</div><div class="axis">Like 4</div><div class="axis">Like 5</div>
+          </div>
+          <div class="legend" style="margin-top:10px">
+            <span><span class="dot" style="background:var(--ok)"></span> Low 1–4</span>
+            <span><span class="dot" style="background:var(--gold)"></span> Moderate 5–9</span>
+            <span><span class="dot" style="background:var(--warn)"></span> High 10–14</span>
+            <span><span class="dot" style="background:var(--crit)"></span> Critical 15–25</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AO FRAMEWORK -->
+  <section class="section" style="background:var(--panel)">
+    <div class="wrap">
+      <span class="kicker">AO Risk Decision Framework</span>
+      <h2>Four Factors Behind Every Decision</h2>
+      <p class="section-sub">The AODR frames every authorization recommendation against these factors. Package narratives that address all four explicitly clear review fastest.</p>
+      <div class="grid g4">
+        <div class="card reveal"><span class="badge b-gold">Factor 1</span><h3>System Criticality</h3><p>Mission dependency tier: what stops if this system stops? Direct fires support weighs differently than a training scheduler.</p></div>
+        <div class="card reveal"><span class="badge b-gold">Factor 2</span><h3>Data Categorization</h3><p>FIPS 199 levels plus CUI categories carried. Aggregation matters — many low-sensitivity records can be a high-sensitivity holding.</p></div>
+        <div class="card reveal"><span class="badge b-gold">Factor 3</span><h3>Connectivity Profile</h3><p>Internet-facing, enclave-internal, cross-domain, or air-gapped. Exposure surface scales likelihood across every finding.</p></div>
+        <div class="card reveal"><span class="badge b-gold">Factor 4</span><h3>Compensating Posture</h3><p>What stands between the weakness and the adversary today — segmentation, monitoring depth, response speed.</p></div>
+      </div>
+      <div class="card card-gold reveal" style="margin-top:24px">
+        <h3>Authorization Priority Score</h3>
+        <p class="formula">Priority = (Criticality × 0.4) + (Expiration urgency × 0.3) + (Risk severity × 0.2) + (Mission tempo × 0.1)</p>
+        <p>Standardized 1–10 scoring per factor ranks the assessment queue. The score is published with the queue — no system jumps the line without a recorded CISO decision.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION IMPACT -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Risk Acceptance &amp; Mission Impact</span>
+      <h2>Translate CVEs into Mission Language</h2>
+      <p class="section-sub">The AO accepts <i>mission</i> risk, not CVSS scores. Every risk acceptance memo must complete this translation chain:</p>
+      <div class="phase-track">
+        <div class="phase-item reveal"><div class="phase-num">1</div><div><h3>Technical Finding</h3><p>"CVE-2026-31822, remote code execution on the LOGNET-04 web tier, CVSS 9.8, KEV-listed."</p></div></div>
+        <div class="phase-item reveal"><div class="phase-num">2</div><div><h3>System Effect</h3><p>"Successful exploitation grants adversary control of the logistics request broker."</p></div></div>
+        <div class="phase-item reveal"><div class="phase-num">3</div><div><h3>Mission Degradation</h3><p>"Supply requisitions for three supported brigades revert to manual processing — 72-hour fulfillment becomes 7–10 days."</p></div></div>
+        <div class="phase-item reveal"><div class="phase-num">4</div><div><h3>Decision Frame</h3><p>"Accept for 30 days with WAF rule and enhanced logging, or take a 4-hour outage now to patch." The AO chooses between mission costs, stated plainly.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPORTING -->
+  <section class="section" style="background:var(--panel)">
+    <div class="wrap">
+      <span class="kicker">Reporting Instruments</span>
+      <h2>Registers, Top Risks &amp; Quad Charts</h2>
+      <div class="grid g3">
+        <a class="tile reveal" href="templates.html"><div class="tile-title">Portfolio Risk Register Template</div><p>Standard fields: risk statement, owner, severity, residual, treatment, review date. One register per portfolio segment, reviewed monthly.</p></a>
+        <a class="tile reveal" href="governance.html"><div class="tile-title">Top Portfolio Systemic Risks</div><p>Dynamic top-10 list maintained by the Risk Lead — currently led by assessor saturation, legacy OT firmware, and cloud control inheritance gaps.</p></a>
+        <a class="tile reveal" href="templates.html"><div class="tile-title">Executive Quad Chart</div><p>One slide: risk posture / drivers / decisions needed / trend. The only risk format leadership sees — anything longer gets summarized into it anyway.</p></a>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="assets/js/main.js"></script>
+<script>
+(function(){
+  const like = document.getElementById('selLike'), imp = document.getElementById('selImp');
+  const cells = document.querySelectorAll('#riskMatrix div[data-l]');
+  const head = document.getElementById('rvHead'), body = document.getElementById('rvBody'), box = document.getElementById('riskVerdict');
+  function band(s){ return s>=15?['CRITICAL','mx-crit','Stop-work consideration. CISO notified same day; remediate or formally accept at AO level within the Critical SLA (15 days, or 7 if KEV-listed).']
+    : s>=10?['HIGH','mx-high','Remediate within the High SLA (30 days). ISSM visibility required; appears on the monthly portfolio review.']
+    : s>=5?['MODERATE','mx-mod','Remediate within 90 days. Track on the system risk register with a named owner.']
+    : ['LOW','mx-low','Remediate within 180 days or document acceptance at ISSM level. Batch with scheduled maintenance.']; }
+  function paint(){
+    cells.forEach(c=>{ const s = (+c.dataset.l)*(+c.dataset.i); const b = band(s)[1];
+      c.classList.remove('mx-low','mx-mod','mx-high','mx-crit','mx-sel'); c.classList.add(b);
+      if(c.dataset.l===like.value && c.dataset.i===imp.value) c.classList.add('mx-sel'); });
+    const s = (+like.value)*(+imp.value), b = band(s);
+    head.textContent = `Severity ${s} — ${b[0]}`; body.textContent = b[2];
+    box.className = 'callout' + (s>=10?' warn':'');
+  }
+  cells.forEach(c=>c.addEventListener('click',()=>{ like.value=c.dataset.l; imp.value=c.dataset.i; paint(); }));
+  like.addEventListener('change',paint); imp.addEventListener('change',paint); paint();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — CCoE</title>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Contact · <span class="phase-tag">Always Open</span></div>
+      <h1>Contact the Cybersecurity Office</h1>
+      <p class="lede">Route it right and it moves fast. When in doubt, the general inbox triages everything within one business day — and incidents always go to the watch desk first.</p>
+      <div class="doc-meta">
+        <span>OWNER: <b>Cybersecurity Office Front Desk</b></span><span>VERSION: <b>1.4</b></span><span>EFFECTIVE: <b>2026-02-01</b></span><span>REVIEW: <b>2026-08-01</b></span><span>APPROVAL: <b>Cybersecurity Office Director</b></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- INCIDENT FIRST -->
+  <section class="section">
+    <div class="wrap">
+      <div class="callout warn reveal"><b class="head">Incident? Stop here.</b>Suspected incidents bypass every channel on this page. Call the 24/7 watch desk — <span class="formula">DSN 312-555-0199 · COMM (407) 555-0199</span> — or go to <a href="incident-response.html#report">Report an Incident</a>.</div>
+
+      <span class="kicker" style="margin-top:26px;display:block">Routing Directory</span>
+      <h2>Who Handles What</h2>
+      <div class="table-wrap reveal">
+        <table>
+          <thead><tr><th class="sortable">Topic</th><th class="sortable">Channel</th><th>Response SLA</th></tr></thead>
+          <tbody>
+            <tr><td>General questions / unsure where to go</td><td class="formula">ccoe.frontdesk@demo.mil</td><td>1 business day triage</td></tr>
+            <tr><td>RMF package status &amp; routing</td><td class="formula">ccoe.aodr@demo.mil</td><td>2 business days</td></tr>
+            <tr><td>POA&amp;M / vulnerability / SLA exceptions</td><td class="formula">vuln.cell@demo.mil</td><td>2 business days · KEV items same day</td></tr>
+            <tr><td>eMASS accounts &amp; support</td><td class="formula">emass.support@demo.mil</td><td>5 business days provisioning</td></tr>
+            <tr><td>Contract language review</td><td class="formula">acq.cyber@demo.mil</td><td>5 business days</td></tr>
+            <tr><td>ARB intake / engineering consults</td><td class="formula">arb.intake@demo.mil</td><td>Next board cycle</td></tr>
+            <tr><td>Training, certs &amp; IDPs</td><td class="formula">workforce.dev@demo.mil</td><td>3 business days</td></tr>
+            <tr><td>Website corrections &amp; FAQ additions</td><td class="formula">knowledge.mgr@demo.mil</td><td>Weekly publication cycle</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASK THE CISO -->
+  <section class="section" id="ask-ciso" style="background:var(--panel)">
+    <div class="wrap">
+      <span class="kicker">Ask the CISO</span>
+      <h2>Direct Line, No Filter</h2>
+      <div class="grid g2">
+        <div class="card card-gold reveal">
+          <h3>How It Works</h3>
+          <ul class="checklist">
+            <li>Submit any question — policy, priorities, "why do we do it this way" — through the box below. <b>Anonymous submissions accepted.</b></li>
+            <li>Every question gets an answer: live at the monthly session (last Friday, 1100) or in writing within two weeks.</li>
+            <li>Answers of general interest are published to the <a href="faq.html">FAQ</a> and the weekly digest.</li>
+            <li>Disagreement is welcome; this channel exists precisely for the questions people hesitate to ask in formation.</li>
+          </ul>
+          <a class="btn btn-gold btn-sm" href="#" onclick="alert('Demo environment — submission box disabled.');return false;">Submit a Question</a>
+        </div>
+        <div class="card reveal">
+          <h3>Recently Answered</h3>
+          <ul class="linklist">
+            <li><a href="faq.html">"Why can't KEV items get extensions when CAT Is can?"</a></li>
+            <li><a href="faq.html">"Will the template mandate apply to legacy packages mid-cycle?" (No — next full submission.)</a></li>
+            <li><a href="faq.html">"Can we get more assessors instead of more process?" (Two hires funded FY27; queue scoring published meanwhile.)</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">General Inquiry</span>
+      <h2>Send a Message</h2>
+      <p class="section-sub">Triaged by the front desk within one business day. <b>Do not include CUI, vulnerability details, or incident information in this form.</b></p>
+      <div class="card reveal" style="max-width:680px">
+        <div class="grid g2">
+          <div><label style="font-weight:600;font-size:13px">Name</label><input class="field" style="width:100%" type="text" placeholder="Optional"></div>
+          <div><label style="font-weight:600;font-size:13px">Email</label><input class="field" style="width:100%" type="email" placeholder="you@demo.mil"></div>
+        </div>
+        <div style="margin-top:12px"><label style="font-weight:600;font-size:13px">Topic</label>
+          <select class="field" style="width:100%"><option>General question</option><option>RMF / package support</option><option>Training &amp; workforce</option><option>Website feedback</option><option>Other</option></select>
+        </div>
+        <div style="margin-top:12px"><label style="font-weight:600;font-size:13px">Message</label><textarea class="field" style="width:100%;min-height:120px" placeholder="No CUI. No incident details — those go to the watch desk."></textarea></div>
+        <button class="btn btn-gold" style="margin-top:14px" onclick="alert('Demo environment — submission disabled. In production this routes to the front desk queue.')">Send</button>
+      </div>
+      <div class="callout" style="margin-top:24px"><b class="head">Physical &amp; hours</b>Cybersecurity Office, Bldg 2150 (demo), Mon–Fri 0800–1700. Office-hours drop-in schedule on the <a href="community.html">Community page</a>.</div>
+    </div>
+  </section>
+</main>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

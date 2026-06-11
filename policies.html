@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Policies &amp; SOPs — CCoE</title>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Library · <span class="phase-tag">Phase 3 — Source of Truth</span></div>
+      <h1>Policy, SOP &amp; Standards Library</h1>
+      <p class="lede">The authoritative internal repository. If a document conflicts with what you find here, this library wins — and every entry carries its controlled-document metadata so you always know it's current.</p>
+      <div class="doc-meta">
+        <span>OWNER: <b>Governance Branch</b></span><span>VERSION: <b>2.0</b></span><span>EFFECTIVE: <b>2026-05-01</b></span><span>REVIEW: <b>2026-11-01</b></span><span>APPROVAL: <b>CISO</b></span>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="filter-bar">
+        <div class="field" style="flex:2">
+          <label for="polSearch">Search policies and SOPs</label>
+          <input type="search" id="polSearch" placeholder="Try: cloud, CUI, change management, SBOM…" data-filter-target="#polList" data-count-note="#polCount">
+        </div>
+      </div>
+      <p class="count-note" id="polCount">14 items shown</p>
+
+      <div class="grid g2" id="polList">
+        <div class="card flush" data-search="rmf policy risk management framework core">
+          <div class="card-head"><h3>RMF Execution Policy</h3><span class="badge b-ok">Current</span></div>
+          <div class="card-body"><p class="dim">Portfolio-wide rules for executing all seven RMF steps, pathway selection criteria, and quality gates. The parent document for the RMF Operations Hub.</p>
+          <div class="doc-meta" style="margin-top:14px"><span>OWNER: <b>RMF Branch</b></span><span>VER: <b>4.0</b></span><span>EFF: <b>2026-04-01</b></span><span>REVIEW: <b>2026-10-01</b></span><span>APPROVAL: <b>CISO</b></span></div>
+          <p class="mono" style="font-size:10.5px;color:var(--ink-mute);margin-top:8px">RELATED: SSP blocks, routing checklist · SUPERSEDES: RMF-POL v3.x</p></div>
+        </div>
+        <div class="card flush" data-search="change management rubric minor significant changes">
+          <div class="card-head"><h3>Change Management Rubric</h3><span class="badge b-ok">Current</span></div>
+          <div class="card-body"><p class="dim">The formal minor-vs-significant change test. Significant: alters boundary, data types, connectivity, or risk posture → SCR + reassessment. Minor: inside approved baseline → memo for record.</p>
+          <div class="doc-meta" style="margin-top:14px"><span>OWNER: <b>RMF Branch</b></span><span>VER: <b>3.2</b></span><span>EFF: <b>2026-05-30</b></span><span>REVIEW: <b>2026-11-30</b></span><span>APPROVAL: <b>AODR</b></span></div>
+          <p class="mono" style="font-size:10.5px;color:var(--ink-mute);margin-top:8px">RELATED: SCR template, Minor Change Memo · SUPERSEDES: CM-RUB v3.1 (retired 30 JUN)</p></div>
+        </div>
+        <div class="card flush" data-search="continuous monitoring conmon parameters">
+          <div class="card-head"><h3>Continuous Monitoring Parameters</h3><span class="badge b-ok">Current</span></div>
+          <div class="card-body"><p class="dim">What gets monitored, by whom, at what frequency — scan cadence, control sampling plans, annual review structure, and reporting lines into leadership dashboards.</p>
+          <div class="doc-meta" style="margin-top:14px"><span>OWNER: <b>Ops Branch</b></span><span>VER: <b>2.7</b></span><span>EFF: <b>2026-03-15</b></span><span>REVIEW: <b>2026-09-15</b></span><span>APPROVAL: <b>CISO</b></span></div></div>
+        </div>
+        <div class="card flush" data-search="vulnerability management windows remediation sla">
+          <div class="card-head"><h3>Vulnerability Management Windows</h3><span class="badge b-ok">Current</span></div>
+          <div class="card-body"><p class="dim">Severity-based remediation timelines and SLA enforcement: KEV-listed 7 days, Critical 15, High 30, Medium 90, Low 180. Exception and false-positive handling loops defined.</p>
+          <div class="doc-meta" style="margin-top:14px"><span>OWNER: <b>Vuln Mgmt</b></span><span>VER: <b>3.0</b></span><span>EFF: <b>2026-05-01</b></span><span>REVIEW: <b>2026-11-01</b></span><span>APPROVAL: <b>CISO</b></span></div></div>
+        </div>
+        <div class="card flush" data-search="poam lifecycle policy plan of action milestones">
+          <div class="card-head"><h3>POA&amp;M Lifecycle Policy</h3><span class="badge b-ok">Current</span></div>
+          <div class="card-body"><p class="dim">Entry standards, milestone discipline, closure evidence requirements, quality review reject paths, and leadership escalation triggers. Enforced by the POA&amp;M portal engine.</p>
+          <div class="doc-meta" style="margin-top:14px"><span>OWNER: <b>Vuln Mgmt</b></span><span>VER: <b>2.4</b></span><span>EFF: <b>2026-04-12</b></span><span>REVIEW: <b>2026-10-12</b></span><span>APPROVAL: <b>AODR</b></span></div></div>
+        </div>
+        <div class="card flush" data-search="standalone system boundaries sop disconnected">
+          <div class="card-head"><h3>Standalone System Boundaries SOP</h3><span class="badge b-ok">Current</span></div>
+          <div class="card-body"><p class="dim">Zero-to-limited scan pathways: manual STIG review cadence, media control, physical/administrative control emphasis, and evidence substitution rules.</p>
+          <div class="doc-meta" style="margin-top:14px"><span>OWNER: <b>RMF Branch</b></span><span>VER: <b>1.8</b></span><span>EFF: <b>2026-02-20</b></span><span>REVIEW: <b>2026-08-20</b></span><span>APPROVAL: <b>AODR</b></span></div></div>
+        </div>
+        <div class="card flush" data-search="closed network audit restricted">
+          <div class="card-head"><h3>Closed Network Audit Standard</h3><span class="badge b-ok">Current</span></div>
+          <div class="card-body"><p class="dim">Annual audit requirements for closed-restricted networks: controlled interfaces, membership review, media movement logs, and cross-domain touchpoint validation.</p>
+          <div class="doc-meta" style="margin-top:14px"><span>OWNER: <b>Ops Branch</b></span><span>VER: <b>1.5</b></span><span>EFF: <b>2026-01-30</b></span><span>REVIEW: <b>2026-07-30</b></span><span>APPROVAL: <b>CISO</b></span></div></div>
+        </div>
+        <div class="card flush" data-search="cloud governance fedramp impact level il2 il4 il5 il6 maps">
+          <div class="card-head"><h3>Cloud Governance (FedRAMP / IL2–IL6)</h3><span class="badge b-warn">Update 01 JUL</span></div>
+          <div class="card-body"><p class="dim">Impact-level mapping from IL2 through IL6, FedRAMP reciprocity rules, inheritance maps for approved CSP offerings, and cloud-specific overlay requirements. IL4/IL5 inheritance maps update effective 01 JUL — re-baseline cloud SSPs.</p>
+          <div class="doc-meta" style="margin-top:14px"><span>OWNER: <b>Cloud Cell</b></span><span>VER: <b>2.9→3.0</b></span><span>EFF: <b>2026-07-01</b></span><span>REVIEW: <b>2027-01-01</b></span><span>APPROVAL: <b>CISO</b></span></div></div>
+        </div>
+        <div class="card flush" data-search="cui handling controlled unclassified information markings">
+          <div class="card-head"><h3>CUI Handling Directive</h3><span class="badge b-ok">Current</span></div>
+          <div class="card-body"><p class="dim">Marking, storage, transmission, and destruction of Controlled Unclassified Information across the portfolio. Includes the banner and designation indicator standards this hub itself follows.</p>
+          <div class="doc-meta" style="margin-top:14px"><span>OWNER: <b>Governance</b></span><span>VER: <b>2.2</b></span><span>EFF: <b>2026-03-01</b></span><span>REVIEW: <b>2026-09-01</b></span><span>APPROVAL: <b>CISO</b></span></div></div>
+        </div>
+        <div class="card flush" data-search="incident response policy reporting">
+          <div class="card-head"><h3>Incident Response Policy</h3><span class="badge b-ok">Current</span></div>
+          <div class="card-body"><p class="dim">Categories, binding escalation timelines, evidence preservation requirements, and after-action discipline. Operationalized in the <a href="incident-response.html">Incident Response node</a>.</p>
+          <div class="doc-meta" style="margin-top:14px"><span>OWNER: <b>IR Cell</b></span><span>VER: <b>3.1</b></span><span>EFF: <b>2026-04-25</b></span><span>REVIEW: <b>2026-10-25</b></span><span>APPROVAL: <b>CISO</b></span></div></div>
+        </div>
+        <div class="card flush" data-search="supply chain risk management scrm sbom framework">
+          <div class="card-head"><h3>SCRM / SBOM Framework</h3><span class="badge b-ok">Current</span></div>
+          <div class="card-body"><p class="dim">Supply chain risk management requirements: SBOM delivery format, component vetting, vendor risk tiers, and integration with acquisition deliverable lists.</p>
+          <div class="doc-meta" style="margin-top:14px"><span>OWNER: <b>Eng Center</b></span><span>VER: <b>1.6</b></span><span>EFF: <b>2026-02-10</b></span><span>REVIEW: <b>2026-08-10</b></span><span>APPROVAL: <b>CISO</b></span></div></div>
+        </div>
+        <div class="card flush" data-search="ai model governance emerging artificial intelligence">
+          <div class="card-head"><h3>Emerging AI / Model Governance</h3><span class="badge b-info">New</span></div>
+          <div class="card-body"><p class="dim">Operational parameters for AI tooling: approved use cases, data boundaries, output review requirements, and model documentation standards. Pairs with the <a href="ai-automation.html">AI &amp; Automation portal</a>.</p>
+          <div class="doc-meta" style="margin-top:14px"><span>OWNER: <b>AI Cell</b></span><span>VER: <b>1.0</b></span><span>EFF: <b>2026-05-15</b></span><span>REVIEW: <b>2026-08-15</b></span><span>APPROVAL: <b>CISO</b></span></div></div>
+        </div>
+        <div class="card flush" data-search="operational technology ot xr ar vr frameworks">
+          <div class="card-head"><h3>OT / XR / AR / VR Framework</h3><span class="badge b-ok">Current</span></div>
+          <div class="card-body"><p class="dim">Operational technology and extended-reality system requirements: segmentation, safety-system precedence, firmware management, and assessment adaptations.</p>
+          <div class="doc-meta" style="margin-top:14px"><span>OWNER: <b>Eng Center</b></span><span>VER: <b>1.3</b></span><span>EFF: <b>2026-01-15</b></span><span>REVIEW: <b>2026-07-15</b></span><span>APPROVAL: <b>AODR</b></span></div></div>
+        </div>
+        <div class="card flush" data-search="reciprocity acceptance policy body of evidence">
+          <div class="card-head"><h3>Reciprocity Acceptance Policy</h3><span class="badge b-ok">Current</span></div>
+          <div class="card-body"><p class="dim">Terms for accepting external authorization bodies of evidence: BoE completeness criteria, delta risk assessment, and documented acceptance decisions.</p>
+          <div class="doc-meta" style="margin-top:14px"><span>OWNER: <b>RMF Branch</b></span><span>VER: <b>1.7</b></span><span>EFF: <b>2026-03-20</b></span><span>REVIEW: <b>2026-09-20</b></span><span>APPROVAL: <b>AO</b></span></div></div>
+        </div>
+      </div>
+
+      <div class="callout cui" style="margin-top:26px"><b class="head">Controlled Document Metadata Standard</b>
+      Required fields on every document in this library: <span class="mono">Owner | Current Version | Effective Date | Mandated Review Date | Applicability | Approval Authority | Related Templates | Superseded Documents</span>. A document missing any field is returned to its owner at quality review.</div>
+    </div>
+  </section>
+</main>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
