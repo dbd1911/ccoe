@@ -1,0 +1,1332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CSO Cyber Range — Operator Console</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+:root{
+  --abyss:#0A0E18;
+  --console:#0F1524;
+  --panel:#131B2E;
+  --panel-2:#172033;
+  --hairline:#21304D;
+  --hairline-soft:#1A2540;
+  --phosphor:#54E6C4;
+  --phosphor-dim:#2F8E7D;
+  --amber:#F2A33C;
+  --amber-dim:#7A5827;
+  --steel:#8294B6;
+  --steel-dim:#566182;
+  --ink-text:#DCE5F5;
+  --alert:#FF5F73;
+  --alert-dim:#7a3340;
+  --r:10px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(84,230,196,.06), transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, rgba(242,163,60,.05), transparent 55%),
+    var(--abyss);
+  color:var(--ink-text);
+  font-family:'Inter',system-ui,sans-serif;
+  font-size:15px;
+  line-height:1.5;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
+  background-image:repeating-linear-gradient(to bottom, rgba(255,255,255,.012) 0 1px, transparent 1px 3px);
+  mix-blend-mode:overlay;opacity:.5;
+}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;margin:0;line-height:1.15;letter-spacing:-.01em}
+.mono{font-family:'IBM Plex Mono',monospace}
+a{color:var(--phosphor);text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--steel)}
+
+/* ---------- Classification top strip ---------- */
+.classbar{
+  position:sticky;top:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:7px 18px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;
+  background:linear-gradient(90deg,#11324a,#0c2236);
+  border-bottom:1px solid var(--hairline);
+  text-transform:uppercase;color:#9fd9c9;
+}
+.classbar .dot{width:7px;height:7px;border-radius:50%;background:var(--phosphor);box-shadow:0 0 10px var(--phosphor);display:inline-block;margin-right:7px;animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.classbar .right{display:flex;gap:18px;align-items:center;color:var(--steel)}
+
+/* ---------- App layout ---------- */
+.shell{display:grid;grid-template-columns:248px 1fr;min-height:calc(100vh - 32px)}
+.rail{
+  border-right:1px solid var(--hairline);
+  background:linear-gradient(180deg,var(--console),#0b1120);
+  padding:22px 16px;position:sticky;top:32px;height:calc(100vh - 32px);overflow:auto;
+}
+.brand{display:flex;align-items:center;gap:11px;margin-bottom:26px;padding:0 4px}
+.brand .mark{width:38px;height:38px;flex:0 0 38px;position:relative}
+.brand .name{font-family:'Space Grotesk';font-weight:700;font-size:15px;letter-spacing:.02em}
+.brand .sub{font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.18em;color:var(--steel);text-transform:uppercase}
+.nav{display:flex;flex-direction:column;gap:3px;margin-top:6px}
+.nav button{
+  display:flex;align-items:center;gap:11px;width:100%;text-align:left;
+  background:transparent;border:1px solid transparent;color:var(--steel);
+  padding:9px 11px;border-radius:8px;font-size:13.5px;font-weight:500;transition:.15s;
+}
+.nav button:hover{color:var(--ink-text);background:var(--panel)}
+.nav button.active{color:var(--abyss);background:var(--phosphor);font-weight:600}
+.nav button.active svg{stroke:var(--abyss)}
+.nav button svg{width:17px;height:17px;stroke:currentColor;flex:0 0 17px}
+.nav .seg{font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.2em;color:var(--steel-dim);text-transform:uppercase;margin:18px 6px 7px}
+.rail .operator{margin-top:22px;padding:13px;border:1px solid var(--hairline);border-radius:10px;background:var(--panel)}
+.rail .operator .nm{font-weight:600;font-size:13.5px}
+.rail .operator .rl{font-family:'IBM Plex Mono';font-size:10.5px;color:var(--phosphor);letter-spacing:.08em;margin-top:2px}
+.rail .operator button{margin-top:11px;width:100%;background:transparent;border:1px solid var(--hairline);color:var(--steel);border-radius:7px;padding:7px;font-size:12px}
+.rail .operator button:hover{border-color:var(--alert);color:var(--alert)}
+
+.main{padding:30px 38px 70px;max-width:1180px}
+.page-head{margin-bottom:26px}
+.page-head h1{font-size:30px;font-weight:700;margin-top:6px}
+.page-head p{color:var(--steel);max-width:680px;margin:8px 0 0}
+
+/* ---------- Panels / cards ---------- */
+.panel{background:var(--panel);border:1px solid var(--hairline);border-radius:var(--r);padding:20px}
+.grid{display:grid;gap:16px}
+.cols-3{grid-template-columns:repeat(3,1fr)}
+.cols-2{grid-template-columns:repeat(2,1fr)}
+.cols-4{grid-template-columns:repeat(4,1fr)}
+
+.stat{position:relative;overflow:hidden}
+.stat .k{font-family:'IBM Plex Mono';font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--steel)}
+.stat .v{font-family:'Space Grotesk';font-weight:700;font-size:34px;margin-top:8px;line-height:1}
+.stat .v small{font-size:16px;color:var(--steel);font-weight:500}
+.stat .corner{position:absolute;top:0;right:0;width:42px;height:42px;border-top:1px solid var(--phosphor-dim);border-right:1px solid var(--phosphor-dim);opacity:.4;border-top-right-radius:10px}
+
+.ring{--p:0;width:84px;height:84px;border-radius:50%;display:grid;place-items:center;
+  background:conic-gradient(var(--phosphor) calc(var(--p)*1%), var(--hairline-soft) 0);}
+.ring .inner{width:64px;height:64px;border-radius:50%;background:var(--panel);display:grid;place-items:center;font-family:'Space Grotesk';font-weight:700;font-size:18px}
+
+/* ---------- Tier badges ---------- */
+.tier-pill{font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:5px;border:1px solid;display:inline-block}
+.t-beginner{color:var(--phosphor);border-color:var(--phosphor-dim);background:rgba(84,230,196,.06)}
+.t-intermediate{color:var(--amber);border-color:var(--amber-dim);background:rgba(242,163,60,.06)}
+.t-advanced{color:var(--alert);border-color:var(--alert-dim);background:rgba(255,95,115,.06)}
+
+/* ---------- Course cards ---------- */
+.course-card{display:flex;flex-direction:column;gap:10px;cursor:pointer;transition:.16s;position:relative}
+.course-card:hover{border-color:var(--phosphor-dim);transform:translateY(-2px)}
+.course-card .cid{font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.1em;color:var(--steel)}
+.course-card h3{font-size:16px;font-weight:600}
+.course-card .blurb{font-size:13px;color:var(--steel);flex:1}
+.course-card .foot{display:flex;align-items:center;justify-content:space-between;margin-top:4px}
+.bar{height:5px;background:var(--hairline-soft);border-radius:99px;overflow:hidden}
+.bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--phosphor-dim),var(--phosphor));border-radius:99px;transition:width .5s}
+.status-tag{font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.06em;padding:2px 7px;border-radius:4px;text-transform:uppercase}
+.st-done{color:var(--phosphor);background:rgba(84,230,196,.1)}
+.st-prog{color:var(--amber);background:rgba(242,163,60,.1)}
+.st-new{color:var(--steel);background:var(--panel-2)}
+.st-locked{color:var(--alert);background:rgba(255,95,115,.08)}
+
+.check{color:var(--phosphor)}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;border:none;border-radius:8px;padding:11px 18px;font-weight:600;font-size:13.5px;transition:.15s}
+.btn-primary{background:var(--phosphor);color:#06231d}
+.btn-primary:hover{box-shadow:0 0 0 3px rgba(84,230,196,.2)}
+.btn-amber{background:var(--amber);color:#2a1b06}
+.btn-amber:hover{box-shadow:0 0 0 3px rgba(242,163,60,.2)}
+.btn-ghost{background:transparent;border:1px solid var(--hairline);color:var(--ink-text)}
+.btn-ghost:hover{border-color:var(--phosphor-dim);color:var(--phosphor)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+
+/* ---------- Module checklist ---------- */
+.module{display:flex;gap:14px;padding:15px;border:1px solid var(--hairline);border-radius:9px;background:var(--panel-2);margin-bottom:11px;align-items:flex-start}
+.module .box{width:22px;height:22px;flex:0 0 22px;border:1.5px solid var(--steel-dim);border-radius:6px;display:grid;place-items:center;cursor:pointer;margin-top:2px;transition:.15s}
+.module .box.done{background:var(--phosphor);border-color:var(--phosphor)}
+.module .box.done svg{stroke:#06231d}
+.module .box svg{width:13px;height:13px;stroke:transparent}
+.module .mt{font-weight:600;font-size:14.5px;font-family:'Space Grotesk'}
+.module .md{font-size:13px;color:var(--steel);margin-top:3px}
+
+/* ---------- Lessons & study guide ---------- */
+.lesson{border:1px solid var(--hairline);border-radius:10px;background:var(--panel-2);margin-bottom:13px;overflow:hidden}
+.lesson .lhd{display:flex;gap:13px;align-items:flex-start;padding:15px 16px;cursor:pointer;user-select:none}
+.lesson .num{flex:0 0 26px;height:26px;border-radius:7px;display:grid;place-items:center;font-family:'IBM Plex Mono';font-size:12px;font-weight:600;background:rgba(84,230,196,.08);color:var(--phosphor);border:1px solid var(--phosphor-dim)}
+.lesson.studied .num{background:var(--phosphor);color:#06231d;border-color:var(--phosphor)}
+.lesson .lhd .mt{font-weight:600;font-size:15px;font-family:'Space Grotesk'}
+.lesson .lhd .md{font-size:12.5px;color:var(--steel);margin-top:3px}
+.lesson .chev{margin-left:auto;color:var(--steel);transition:transform .2s;flex:0 0 auto}
+.lesson.open .chev{transform:rotate(90deg)}
+.lesson .body{display:none;padding:0 16px 16px 55px}
+.lesson.open .body{display:block}
+.lesson .body p{font-size:14px;line-height:1.7;color:var(--ink-2)}
+.lesson .mark{margin-top:14px}
+.tabs{display:flex;gap:6px;margin-bottom:16px;border-bottom:1px solid var(--hairline)}
+.tab{padding:9px 16px;cursor:pointer;font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--steel);border-bottom:2px solid transparent;margin-bottom:-1px}
+.tab.on{color:var(--phosphor);border-bottom-color:var(--phosphor)}
+.flash{border:1px solid var(--hairline);border-left:3px solid var(--phosphor-dim);border-radius:0 8px 8px 0;background:var(--panel-2);padding:13px 15px;margin-bottom:10px}
+.flash .fq{font-size:13.5px;font-weight:600;font-family:'Space Grotesk'}
+.flash .fa{font-size:13px;color:var(--phosphor);margin-top:6px;display:none}
+.flash .fa .lab{font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.12em;color:var(--steel);text-transform:uppercase;margin-right:7px}
+.flash.show .fa{display:block}
+.flash .rev{font-family:'IBM Plex Mono';font-size:11px;color:var(--steel);cursor:pointer;margin-top:8px;display:inline-block}
+.readychk{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--ink-2);padding:7px 0}
+.readychk .dot{width:16px;height:16px;border-radius:50%;flex:0 0 16px;display:grid;place-items:center;border:1.5px solid var(--steel-dim)}
+.readychk.ok .dot{background:var(--phosphor);border-color:var(--phosphor)}
+.readychk.ok .dot svg{width:9px;height:9px;stroke:#06231d}
+.readychk .dot svg{width:9px;height:9px;stroke:transparent}
+.locknote{display:flex;gap:10px;align-items:flex-start;background:rgba(242,163,60,.06);border:1px solid rgba(242,163,60,.25);border-radius:9px;padding:12px 14px;margin-top:12px;font-size:12.5px;color:var(--ink-2);text-align:left}
+.locknote svg{width:16px;height:16px;stroke:var(--amber);flex:0 0 16px;margin-top:1px}
+.preq{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.preq .chip{font-family:'IBM Plex Mono';font-size:11px;padding:4px 9px;border-radius:5px;border:1px solid var(--hairline);background:var(--panel-2);cursor:pointer;display:flex;align-items:center;gap:6px}
+.preq .chip.done{color:var(--phosphor);border-color:var(--phosphor-dim)}
+.preq .chip.todo{color:var(--amber);border-color:rgba(242,163,60,.3)}
+
+.deliverable{border-left:3px solid var(--amber);background:rgba(242,163,60,.05);padding:14px 16px;border-radius:0 8px 8px 0;margin-top:6px}
+.deliverable .lab{font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.16em;color:var(--amber);text-transform:uppercase}
+
+/* ---------- Exam ---------- */
+.q{border:1px solid var(--hairline);border-radius:10px;padding:18px 20px;margin-bottom:14px;background:var(--panel)}
+.q .qn{font-family:'IBM Plex Mono';font-size:11px;color:var(--phosphor);letter-spacing:.08em}
+.q .qt{font-weight:600;font-size:15px;margin:8px 0 14px;font-family:'Space Grotesk'}
+.opt{display:flex;gap:11px;align-items:center;padding:11px 13px;border:1px solid var(--hairline);border-radius:8px;margin-bottom:9px;cursor:pointer;transition:.12s}
+.opt:hover{border-color:var(--steel)}
+.opt.sel{border-color:var(--phosphor);background:rgba(84,230,196,.07)}
+.opt .rad{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--steel-dim);flex:0 0 16px}
+.opt.sel .rad{border-color:var(--phosphor);background:var(--phosphor);box-shadow:inset 0 0 0 3px var(--panel)}
+.opt.correct{border-color:var(--phosphor);background:rgba(84,230,196,.12)}
+.opt.wrong{border-color:var(--alert);background:rgba(255,95,115,.1)}
+
+/* ---------- Auth ---------- */
+.auth-wrap{display:grid;grid-template-columns:1.05fr .95fr;min-height:calc(100vh - 32px)}
+.auth-art{position:relative;overflow:hidden;border-right:1px solid var(--hairline);
+  background:linear-gradient(160deg,#0b1322,#0a0e18 60%);padding:54px;display:flex;flex-direction:column;justify-content:space-between}
+.auth-art .grid-bg{position:absolute;inset:0;opacity:.5;
+  background-image:linear-gradient(var(--hairline-soft) 1px,transparent 1px),linear-gradient(90deg,var(--hairline-soft) 1px,transparent 1px);
+  background-size:34px 34px;mask-image:radial-gradient(circle at 30% 40%,#000,transparent 75%)}
+.auth-art .big{font-family:'Space Grotesk';font-weight:700;font-size:42px;line-height:1.05;position:relative;letter-spacing:-.02em}
+.auth-art .big em{font-style:normal;color:var(--phosphor)}
+.auth-form{padding:54px 56px;display:flex;flex-direction:column;justify-content:center;max-width:520px}
+.field{margin-bottom:15px}
+.field label{display:block;font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);margin-bottom:6px}
+.field input,.field select{width:100%;background:var(--console);border:1px solid var(--hairline);color:var(--ink-text);border-radius:8px;padding:11px 13px;font-family:inherit;font-size:14px}
+.field input:focus,.field select:focus{outline:none;border-color:var(--phosphor);box-shadow:0 0 0 3px rgba(84,230,196,.12)}
+.toggle-link{color:var(--phosphor);cursor:pointer;font-weight:600}
+.err{color:var(--alert);font-size:13px;margin-top:4px;font-family:'IBM Plex Mono'}
+
+/* ---------- Certificate ---------- */
+.cert-tile{border:1px solid var(--hairline);border-radius:10px;overflow:hidden;background:var(--panel)}
+.cert-tile .top{padding:16px 18px;border-bottom:1px solid var(--hairline);display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.cert-tile .bot{padding:13px 18px;display:flex;gap:9px}
+.modal{position:fixed;inset:0;z-index:500;background:rgba(5,8,15,.86);display:grid;place-items:center;padding:24px;overflow:auto}
+.modal .box{background:var(--panel);border:1px solid var(--hairline);border-radius:12px;padding:22px;max-width:920px;width:100%}
+canvas.cert{width:100%;height:auto;border:1px solid var(--hairline);border-radius:8px;background:#0a0e18}
+
+.empty{text-align:center;padding:48px 20px;color:var(--steel)}
+.empty svg{width:42px;height:42px;stroke:var(--steel-dim);margin-bottom:12px}
+
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--panel-2);border:1px solid var(--phosphor-dim);color:var(--phosphor);padding:12px 20px;border-radius:9px;font-family:'IBM Plex Mono';font-size:13px;z-index:800;box-shadow:0 10px 40px rgba(0,0,0,.5);animation:rise .3s}
+@keyframes rise{from{opacity:0;transform:translate(-50%,12px)}to{opacity:1;transform:translate(-50%,0)}}
+
+.divider{height:1px;background:var(--hairline);margin:24px 0}
+.muted{color:var(--steel)}
+.tag-row{display:flex;gap:8px;flex-wrap:wrap}
+@media (max-width:920px){
+  .shell{grid-template-columns:1fr}
+  .rail{position:static;height:auto;display:none}
+  .rail.open{display:block}
+  .main{padding:22px 18px 60px}
+  .cols-3,.cols-2,.cols-4{grid-template-columns:1fr}
+  .auth-wrap{grid-template-columns:1fr}
+  .auth-art{display:none}
+  .auth-form{padding:34px 22px}
+  .menu-btn{display:inline-flex!important}
+}
+.menu-btn{display:none;align-items:center;gap:7px;background:var(--panel);border:1px solid var(--hairline);color:var(--ink-text);border-radius:8px;padding:8px 12px;font-size:13px;margin-bottom:14px}
+@media print{body::before{display:none}}
+</style>
+</head>
+<body>
+<a href="../../tools-dashboards.html" style="position:fixed;top:0;left:0;z-index:2147483647;display:flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',ui-monospace,Consolas,monospace;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:#0a0f1e;background:#C9A227;padding:6px 12px 6px 10px;border-bottom-right-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.35);opacity:.92" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.92" title="Return to the CCoE Operational Hub">← CCoE Hub</a>
+<div id="root"></div>
+<script>
+/* ============================================================
+   CSO Cyber Range — Operator Console
+   CPE ST3 Cybersecurity Office (CSO)
+   Self-contained LMS. Persistence via window.storage with
+   in-memory fallback. (Demo auth — not production security.)
+   ============================================================ */
+
+/* ---------------- Storage layer ---------------- */
+const Store = {
+  mem:{},
+  async get(k){
+    try{ if(window.storage){ const r=await window.storage.get(k,false); return r?r.value:null; } }
+    catch(e){ /* missing key throws */ if(k in this.mem) return this.mem[k]; return null; }
+    return (k in this.mem)?this.mem[k]:null;
+  },
+  async set(k,v){
+    this.mem[k]=v;
+    try{ if(window.storage){ await window.storage.set(k,v,false); } }catch(e){}
+  }
+};
+const uKey = u => 'lms_user_'+u.toLowerCase().replace(/[^a-z0-9_]/g,'_');
+async function loadUser(u){ const r=await Store.get(uKey(u)); return r?JSON.parse(r):null; }
+async function saveUser(rec){ await Store.set(uKey(rec.username), JSON.stringify(rec)); }
+function hashPw(s){ let h=2166136261; for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);} return ('0000000'+(h>>>0).toString(16)).slice(-8); }
+function shortHash(s){ let h=5381; for(let i=0;i<s.length;i++){h=((h<<5)+h)+s.charCodeAt(i);} return ('00000000'+(h>>>0).toString(16).toUpperCase()).slice(-8); }
+
+/* ---------------- App state ---------------- */
+const App = { user:null, view:'dashboard', sel:null, exam:null, courseTab:'learn' };
+const TIERS = {
+  beginner:    {key:'beginner',     label:'Tier I — Foundational',  pre:'BC', roman:'I',   cls:'t-beginner'},
+  intermediate:{key:'intermediate', label:'Tier II — Operational',  pre:'IC', roman:'II',  cls:'t-intermediate'},
+  advanced:    {key:'advanced',     label:'Tier III — Strategic',   pre:'AC', roman:'III', cls:'t-advanced'}
+};
+
+/* ---------------- Course catalog (30 courses) ---------------- */
+const COURSES = [
+/* ===== TIER I — BEGINNER ===== */
+{id:"BC-101",tier:"beginner",title:"Intro to Cybersecurity & Resilience Frameworks",blurb:"Foundational security principles and the shift from protection to engineered resilience.",
+ modules:[
+  {t:"The Foundations of Security",d:"CIA Triad vs. the Parkerian Hexad; defense-in-depth principles."},
+  {t:"Shift to Cyber Resilience",d:"Engineering systems to absorb, adapt, withstand, and rapidly recover from adverse events."},
+  {t:"Security Controls & Architecture Baselines",d:"Protective, detective, corrective, and deterrent controls."},
+  {t:"Industry Framework Overview",d:"High-level orientation to NIST CSF, ISO 27001, and the DoD RMF."}],
+ deliverable:"Build an initial defense-in-depth layout for a hypothetical mid-sized corporate network.",
+ q:[
+  {q:"Which three properties make up the classic CIA Triad?",o:["Confidentiality, Integrity, Availability","Control, Identity, Authorization","Compliance, Isolation, Auditing","Cryptography, Inspection, Alerting"],a:0},
+  {q:"The Parkerian Hexad extends the CIA Triad by adding which additional attributes?",o:["Speed, scale, and cost","Possession/control, authenticity, and utility","Latency, jitter, and uptime","Patching, scanning, and logging"],a:1},
+  {q:"A control whose primary purpose is to identify that an incident is occurring is best classified as:",o:["Preventive","Deterrent","Detective","Corrective"],a:2},
+  {q:"Cyber resilience is best described as the ability to:",o:["Prevent every possible attack","Absorb, adapt, withstand, and rapidly recover from adverse cyber events","Eliminate all system vulnerabilities","Pass an annual compliance audit"],a:1},
+  {q:"Which framework is the U.S. Department of Defense's structured process for authorizing systems to operate?",o:["ISO 27001","PCI DSS","NIST RMF","COBIT"],a:2}]},
+
+{id:"BC-102",tier:"beginner",title:"Network Security & Traffic Analysis Foundations",blurb:"Read the wire: protocols, models, and spotting anomalies in packet captures.",
+ modules:[
+  {t:"The OSI & TCP/IP Models",d:"Layers, encapsulation, headers, and protocol functionality."},
+  {t:"Core Protocols",d:"Analyzing DNS, HTTP/S, DHCP, ARP, ICMP, and SMTP behaviors."},
+  {t:"Ports and Sockets",d:"How applications communicate; standard vs. non-standard port use."},
+  {t:"Introduction to Wireshark",d:"Capturing traffic, display filters, and normal vs. anomalous baselines."}],
+ deliverable:"Analyze a PCAP to map network assets and isolate an unencrypted password transmission.",
+ q:[
+  {q:"At which OSI layer does IP addressing and routing primarily operate?",o:["Layer 2 — Data Link","Layer 3 — Network","Layer 4 — Transport","Layer 7 — Application"],a:1},
+  {q:"Which protocol resolves human-readable domain names to IP addresses?",o:["DHCP","ARP","DNS","ICMP"],a:2},
+  {q:"A web server using TLS typically listens on which default port?",o:["80","22","443","53"],a:2},
+  {q:"ARP is used to map which two addresses together on a local network?",o:["IP address to MAC address","Domain name to IP address","Port to socket","Hostname to MAC address"],a:0},
+  {q:"In Wireshark, the most reliable way to find anomalous traffic is to first:",o:["Disable all capture filters","Establish a normal baseline to compare against","Capture only encrypted packets","Export everything to a spreadsheet"],a:1}]},
+
+{id:"BC-103",tier:"beginner",title:"Operating System Security (Windows & Linux)",blurb:"Harden the hosts: registry, permissions, services, logging, and benchmarks.",
+ modules:[
+  {t:"Windows Architecture & Hardening",d:"Registry security, local policies, event logs, and Defender baselines."},
+  {t:"Linux Architecture & Hardening",d:"File permissions, SSH hardening, syslog, and safe systemd services."},
+  {t:"Kernel vs. User Space",d:"Execution privileges, system calls, and driver security."},
+  {t:"Auditing Configurations",d:"Using CIS Benchmark scripts to detect OS misconfigurations."}],
+ deliverable:"Execute manual and script-based hardening checklists on a Windows Server and an Ubuntu instance.",
+ q:[
+  {q:"Which body publishes widely used hardening 'Benchmarks' for operating systems?",o:["IEEE","CIS (Center for Internet Security)","ICANN","W3C"],a:1},
+  {q:"In Linux, the permission string 'rwxr-x---' grants what to the group?",o:["Read, write, execute","Read and execute only","No access","Write only"],a:1},
+  {q:"A primary SSH hardening step is to:",o:["Enable root login over the network","Disable password auth and require key-based authentication","Open port 22 to the entire internet","Run sshd as a normal user only"],a:1},
+  {q:"Code running in kernel space is dangerous because it:",o:["Runs with full privileged access to hardware and memory","Is always sandboxed from the system","Cannot access system calls","Runs slower than user-space code"],a:0},
+  {q:"Windows Event Logs are most useful to a defender for:",o:["Encrypting disks","Recording security-relevant activity for detection and forensics","Replacing antivirus","Managing network routes"],a:1}]},
+
+{id:"BC-104",tier:"beginner",title:"Identity & Access Management (IAM) Basics",blurb:"Who you are, what you can do, and proving it — the identity lifecycle.",
+ modules:[
+  {t:"Identification, Authentication & Authorization",d:"The distinct phases of the identity lifecycle."},
+  {t:"Access Control Models",d:"Implementing RBAC, ABAC, and DAC."},
+  {t:"Modern Authentication Mechanics",d:"MFA methods, conditional access, and SSO basics."},
+  {t:"Least Privilege Implementation",d:"Restricting admin accounts, auditing groups, managing service accounts."}],
+ deliverable:"Design an RBAC and group policy structure for an enterprise based on a departmental org chart.",
+ q:[
+  {q:"Proving an asserted identity with a credential is the phase called:",o:["Identification","Authentication","Authorization","Accounting"],a:1},
+  {q:"RBAC assigns permissions based on:",o:["The individual user's discretion","A user's assigned role within the organization","The data owner's mood","Geographic location only"],a:1},
+  {q:"Multi-factor authentication requires factors from how many distinct categories?",o:["At least two different categories (e.g., something you know + something you have)","Two of the same type, like two passwords","Exactly five factors","Only biometrics"],a:0},
+  {q:"The principle of least privilege states that a subject should have:",o:["Maximum access to reduce help-desk tickets","Only the access required to perform its function","Administrative rights by default","No access to anything"],a:1},
+  {q:"ABAC makes access decisions primarily based on:",o:["Static roles only","Attributes such as user, resource, action, and environment","Physical badge color","Password length"],a:1}]},
+
+{id:"BC-105",tier:"beginner",title:"Introduction to the Risk Management Framework (RMF)",blurb:"Prepare, Categorize, Select — the opening moves of the NIST authorization lifecycle.",
+ modules:[
+  {t:"Foundations of RMF",d:"History, legal mandates, and the NIST SP 800-37 lifecycle philosophy."},
+  {t:"Step 1 — Prepare",d:"Organizational prep, key stakeholders, and risk tolerances."},
+  {t:"Step 2 — Categorize",d:"Impact levels using NIST SP 800-60 and FIPS 199."},
+  {t:"Step 3 — Select",d:"Choosing and tailoring the baseline using NIST SP 800-53."}],
+ deliverable:"Author a System Categorization Report and draft a tailored control baseline for an HR application.",
+ q:[
+  {q:"The core RMF lifecycle is defined primarily in which NIST publication?",o:["SP 800-53","SP 800-37","FIPS 140-2","SP 800-171"],a:1},
+  {q:"FIPS 199 is used during which RMF step?",o:["Prepare","Categorize","Authorize","Monitor"],a:1},
+  {q:"System categorization assigns impact levels of:",o:["Red, Yellow, Green","Low, Moderate, High","Tier 1, 2, 3","Pass / Fail"],a:1},
+  {q:"The control baseline a system starts from is chosen during which step?",o:["Prepare","Categorize","Select","Assess"],a:2},
+  {q:"'Tailoring' a baseline means:",o:["Deleting all controls","Adjusting controls (adding, removing, scoping) to fit the system's risk","Copying another system's package verbatim","Ignoring NIST 800-53"],a:1}]},
+
+{id:"BC-106",tier:"beginner",title:"NIST Controls Baseline",blurb:"Navigate the SP 800-53 catalog and write implementation statements that survive audit.",
+ modules:[
+  {t:"Navigating NIST SP 800-53",d:"Families, controls, enhancements, and allocation tables."},
+  {t:"Administrative & Technical Families",d:"AC, AT, AU, and CM control families."},
+  {t:"Operational & Physical Families",d:"IR, PE, and SC families."},
+  {t:"Documenting Implementations",d:"Statements describing how, where, and by whom a control is satisfied."}],
+ deliverable:"Write audit-ready implementation statements for ten core technical controls in the AC and AU families.",
+ q:[
+  {q:"In NIST SP 800-53, the two-letter prefix 'AU' refers to which family?",o:["Authentication","Audit and Accountability","Authorization Utility","Automated Updates"],a:1},
+  {q:"A control 'enhancement' in 800-53 is:",o:["A stricter or additional requirement layered on a base control","A control that has been deleted","An optional marketing label","A physical security guard"],a:0},
+  {q:"The 'AC' family principally governs:",o:["Air conditioning of server rooms","Access Control","Audit Compression","Asset Counting"],a:1},
+  {q:"An effective control implementation statement should describe:",o:["Only the vendor's product name","How, where, and by whom the control is satisfied","The CEO's opinion","Future plans only"],a:1},
+  {q:"The 'CM' family is most concerned with:",o:["Crisis Management","Configuration Management","Customer Marketing","Cryptographic Modules"],a:1}]},
+
+{id:"BC-107",tier:"beginner",title:"Foundations of Security Assessment",blurb:"Examine, interview, test — and turn findings into a defensible assessment report.",
+ modules:[
+  {t:"The Role of the Control Assessor",d:"Independence requirements, ethics, and objectives of the assessment phase."},
+  {t:"Assessment Methods",d:"Examine (documentation), Interview (personnel), Test (technical verification)."},
+  {t:"Developing the Security Assessment Plan",d:"Scoping, control selection, and rules of engagement."},
+  {t:"Developing the Security Assessment Report",d:"Documenting findings, residual risk, and actionable formatting."}],
+ deliverable:"Conduct a simulated control assessment, produce execution logs, and generate a draft SAR.",
+ q:[
+  {q:"The three core assessment methods in NIST 800-53A are:",o:["Scan, patch, report","Examine, Interview, Test","Plan, do, check","Detect, contain, recover"],a:1},
+  {q:"Why must a control assessor maintain independence?",o:["To make the report longer","To avoid bias and conflicts of interest in judging effectiveness","To bill more hours","Independence is not required"],a:1},
+  {q:"The Security Assessment Plan (SAP) primarily defines:",o:["The marketing budget","Scope, controls to test, and rules of engagement","The system's source code","Employee salaries"],a:1},
+  {q:"'Residual risk' refers to:",o:["Risk remaining after controls are applied","Risk that never existed","The full risk before any controls","Risk transferred to insurance only"],a:0},
+  {q:"Verifying a setting by directly observing the configured system uses which method?",o:["Examine","Interview","Test","Assume"],a:2}]},
+
+{id:"BC-108",tier:"beginner",title:"Cyber Threat Intelligence (CTI) Fundamentals",blurb:"From raw feeds to actionable indicators — mapping adversaries to known behavior.",
+ modules:[
+  {t:"The Intelligence Lifecycle",d:"Requirements, collection, processing, analysis, production, dissemination."},
+  {t:"Strategic, Operational & Tactical Intel",d:"Actor trends vs. immediate indicators of compromise."},
+  {t:"Taxonomies and Standards",d:"MITRE ATT&CK, Cyber Kill Chain, STIX/TAXII, Diamond Model."},
+  {t:"Open-Source Intelligence (OSINT)",d:"Public repositories, threat feeds, and OSINT frameworks."}],
+ deliverable:"Trace a real-world threat actor group, map behaviors to MITRE ATT&CK, and extract actionable IOCs.",
+ q:[
+  {q:"MITRE ATT&CK is best described as a:",o:["Vulnerability scanner","Knowledge base of adversary tactics and techniques","Firewall vendor","Encryption standard"],a:1},
+  {q:"An IP address known to host malware C2 is an example of a(n):",o:["Strategic forecast","Indicator of Compromise (IOC)","Risk acceptance","Control enhancement"],a:1},
+  {q:"Which intel type is aimed at executives and long-term decision-making?",o:["Tactical","Operational","Strategic","Forensic"],a:2},
+  {q:"STIX/TAXII are standards for:",o:["Disk encryption","Structuring and transporting threat intelligence","Network cabling","Cloud billing"],a:1},
+  {q:"The Diamond Model of Intrusion Analysis links which four core features?",o:["Adversary, infrastructure, capability, victim","People, process, technology, budget","Confidentiality, integrity, availability, utility","Plan, do, check, act"],a:0}]},
+
+{id:"BC-109",tier:"beginner",title:"Social Engineering & Phishing Defense",blurb:"The human attack surface — influence tactics, email authentication, and reporting.",
+ modules:[
+  {t:"Psychology of Influence",d:"Authority, urgency, scarcity, fear, and social proof."},
+  {t:"Vector Analysis",d:"Phishing, vishing, smishing, and physical tailgating."},
+  {t:"Email Authentication Indicators",d:"SPF, DKIM, and DMARC verification tags in headers."},
+  {t:"Incident Reporting Workflows",d:"Rapid reporting mechanisms and initial triage for reported items."}],
+ deliverable:"Deconstruct three malicious email headers to verify authenticity and build an anti-phishing brief.",
+ q:[
+  {q:"A phone-based social engineering attack is known as:",o:["Smishing","Vishing","Tailgating","Whaling"],a:1},
+  {q:"SPF, DKIM, and DMARC are mechanisms to:",o:["Encrypt hard drives","Authenticate the legitimacy of email senders","Block all attachments","Scan for malware in CPUs"],a:1},
+  {q:"An attacker creating false time pressure is exploiting which principle?",o:["Urgency","Reciprocity","Consistency","Liking"],a:0},
+  {q:"Tailgating refers to:",o:["Following someone through a secure door without authorization","Sending bulk SMS","Spoofing a DNS record","Cracking a password hash"],a:0},
+  {q:"The most valuable immediate action when a user spots a phishing email is to:",o:["Forward it to all colleagues","Report it through the established reporting channel","Click links to investigate","Delete it silently and tell no one"],a:1}]},
+
+{id:"BC-110",tier:"beginner",title:"Basic Incident Response & Reporting",blurb:"Triage events, contain hosts, escalate cleanly, and document the facts.",
+ modules:[
+  {t:"IR Fundamentals",d:"The NIST SP 800-61r2 incident handling lifecycle."},
+  {t:"Triage & Identification",d:"Events vs. true incidents; baseline log analysis for anomalies."},
+  {t:"Containment & Escalation Pathways",d:"SOPs for host isolation and communication matrices."},
+  {t:"Documentation Best Practices",d:"Timestamps, chain-of-custody basics, and clear factual logs."}],
+ deliverable:"Given a mock malware alert, run a triage workflow, draft an escalation notice, and complete an intake ticket.",
+ q:[
+  {q:"The NIST incident response lifecycle phases include:",o:["Plan, build, ship, monitor","Preparation; Detection & Analysis; Containment, Eradication & Recovery; Post-Incident Activity","Scan, patch, report, close","Categorize, select, implement, assess"],a:1},
+  {q:"The key difference between an event and an incident is that an incident:",o:["Is always a false positive","Involves an actual or imminent violation of security policy","Is logged but harmless","Only happens on weekends"],a:1},
+  {q:"The primary goal of containment is to:",o:["Delete all logs","Limit the scope and damage of the incident","Immediately rebuild every server","Notify the press"],a:1},
+  {q:"Accurate, sequential timestamps in IR documentation are critical because they:",o:["Make reports look professional","Establish a defensible timeline of events","Replace the need for backups","Encrypt the evidence"],a:1},
+  {q:"Chain of custody primarily ensures:",o:["Faster internet speeds","Evidence integrity and traceability of handling","Lower licensing costs","Automatic patching"],a:1}]},
+
+/* ===== TIER II — INTERMEDIATE ===== */
+{id:"IC-201",tier:"intermediate",title:"Securing Hybrid Cloud Infrastructure",blurb:"Shared responsibility, least-privilege cloud IAM, secure connectivity, and continuous audit.",
+ modules:[
+  {t:"The Shared Responsibility Model",d:"Provider vs. consumer duties across IaaS, PaaS, and SaaS."},
+  {t:"Cloud IAM & Resource Policies",d:"Least-privilege identities, cross-account access, explicit-deny buckets."},
+  {t:"Hybrid Connectivity Architecture",d:"Secure site-to-site VPNs, interconnects, and transition-zone routing."},
+  {t:"Cloud Logging & Continuous Auditing",d:"Aggregating control-plane logs into centralized views."}],
+ deliverable:"Build a secure cloud environment with restricted security groups, centralized auditing, and locked-down object storage.",
+ q:[
+  {q:"Under the shared responsibility model for IaaS, the customer is generally responsible for:",o:["Physical data-center security","The guest OS, applications, and data configuration","The hypervisor firmware","The provider's global network backbone"],a:1},
+  {q:"An explicit-deny statement in a cloud resource policy:",o:["Can be overridden by any allow statement","Takes precedence over allow statements","Only applies to root users","Is purely cosmetic"],a:1},
+  {q:"AWS CloudTrail and Azure Activity Logs primarily record:",o:["Application user passwords","Control-plane API activity for auditing","Network packet payloads","Disk temperatures"],a:1},
+  {q:"As you move from IaaS to SaaS, the customer's security responsibility generally:",o:["Increases","Decreases","Stays identical","Disappears entirely"],a:1},
+  {q:"A secure way to connect an on-prem network to a cloud VPC is:",o:["Open RDP to the world","An encrypted site-to-site VPN or dedicated interconnect","Email the data","Disable all logging"],a:1}]},
+
+{id:"IC-202",tier:"intermediate",title:"Enterprise Vulnerability & Patch Management",blurb:"Beyond CVSS — context-driven prioritization, staged patching, and remediation metrics.",
+ modules:[
+  {t:"Scanning Mechanics & Orchestration",d:"Credentialed vs. non-credentialed scans run safely at scale."},
+  {t:"Risk-Based Prioritization",d:"Asset criticality, runtime context, EPSS, and CISA KEV."},
+  {t:"Patch Testing & Deployment Lifecycles",d:"Staging rings, rollback procedures, and legacy exceptions."},
+  {t:"Vulnerability Tracking",d:"Remediation metrics, SLA tracking, and historical trends."}],
+ deliverable:"Analyze an enterprise vulnerability export, calculate risk priority by context, and build a patching plan.",
+ q:[
+  {q:"The CISA KEV catalog lists vulnerabilities that are:",o:["Theoretical only","Known to be exploited in the wild","Always low severity","Specific to one vendor"],a:1},
+  {q:"A credentialed scan typically produces results that are:",o:["Less accurate than an external scan","More accurate, with deeper visibility into the host","Identical to a ping sweep","Only network-layer"],a:1},
+  {q:"EPSS provides an estimate of:",o:["The cost of a patch","The probability a vulnerability will be exploited","The encryption strength","The asset's purchase price"],a:1},
+  {q:"Why use staging 'rings' for patch deployment?",o:["To deploy to everyone at once","To validate patches on smaller groups before full rollout","To avoid patching entirely","To increase downtime"],a:1},
+  {q:"Pure CVSS base score is insufficient for prioritization because it ignores:",o:["Asset criticality and real-world exploitation context","The color of the dashboard","The vendor's stock price","The number of employees"],a:0}]},
+
+{id:"IC-203",tier:"intermediate",title:"Securing DevOps Pipelines (DevSecOps)",blurb:"Shift left — SAST, SCA, DAST, container hardening, and policy-as-code in CI/CD.",
+ modules:[
+  {t:"Shift-Left Architecture",d:"Integrating automated security throughout the SDLC."},
+  {t:"Static & Dynamic Testing",d:"SAST, Software Composition Analysis, and DAST."},
+  {t:"Container & Base Image Hardening",d:"Scanning images, reducing attack surface, managing registry access."},
+  {t:"Infrastructure as Code Security",d:"Policy-as-code (Checkov, OPA) auditing Terraform/CloudFormation."}],
+ deliverable:"Configure a CI/CD pipeline that halts deployment if severe vulnerabilities or embedded secrets are found.",
+ q:[
+  {q:"'Shift left' in DevSecOps means:",o:["Moving servers to the left rack","Introducing security earlier in the development lifecycle","Disabling security in production","Left-aligning code comments"],a:1},
+  {q:"SAST analyzes an application by:",o:["Running it and sending live traffic","Examining source code without executing it","Phoning the developer","Scanning the network only"],a:1},
+  {q:"Software Composition Analysis (SCA) primarily finds risk in:",o:["Custom hand-written logic only","Third-party and open-source dependencies","CPU microcode","Office furniture"],a:1},
+  {q:"Policy-as-code tools like Checkov or OPA are used to:",o:["Write marketing copy","Automatically audit infrastructure definitions against policy","Replace developers","Encrypt email"],a:1},
+  {q:"A good DevSecOps gate should:",o:["Never block a build","Fail the pipeline when critical issues or secrets are detected","Only run once per year","Ignore container images"],a:1}]},
+
+{id:"IC-204",tier:"intermediate",title:"Managing eMASS & ATO Workflows",blurb:"Drive RMF steps 4–6 through eMASS and author defensible POA&M entries.",
+ modules:[
+  {t:"Introduction to the eMASS Interface",d:"Dashboards, operational profiles, and control ownership."},
+  {t:"Executing RMF Steps 4-6 in eMASS",d:"Test results, assessment import, and SSP packaging."},
+  {t:"Engineering the POA&M",d:"Compliant entries with milestones, resource costs, and completion dates."},
+  {t:"Continuous Authorization Workflows",d:"Annual assessments, system modifications, and re-authorizations."}],
+ deliverable:"Create an eMASS system record, populate a control implementation package, and author a POA&M corrective action.",
+ q:[
+  {q:"A POA&M (Plan of Action and Milestones) is used to:",o:["Hide findings permanently","Track remediation of known weaknesses with milestones and dates","Replace the SSP","Award contracts"],a:1},
+  {q:"eMASS is primarily a tool for:",o:["Network packet capture","Managing RMF authorization packages and workflows","Compiling source code","Penetration testing"],a:1},
+  {q:"An Authorization to Operate (ATO) is granted by the:",o:["System administrator","Authorizing Official (AO)","Help desk","Vendor"],a:1},
+  {q:"A well-written POA&M entry must include:",o:["A scheduled completion date and milestones","Only a vague promise to fix it","The CEO's signature in blood","No dates at all"],a:0},
+  {q:"Continuous authorization (ongoing authorization) reduces reliance on:",o:["Real-time monitoring","Point-in-time, periodic re-authorizations","Documentation","Risk acceptance"],a:1}]},
+
+{id:"IC-205",tier:"intermediate",title:"Practical Threat Hunting",blurb:"Hypothesis-driven hunting across endpoints and the network using SIEM query languages.",
+ modules:[
+  {t:"The Threat Hunting Philosophy",d:"Proactive hypothesis generation driven by current CTI."},
+  {t:"Endpoint Hunting Vectors",d:"Persistence, malicious scheduled tasks, registry mods, abnormal process parents."},
+  {t:"Network Hunting Vectors",d:"C2 patterns, data staging, out-of-hours transfers, DNS tunneling."},
+  {t:"Query Construction & SIEM Operations",d:"SPL, KQL, and Lucene to isolate subtle signatures across large datasets."}],
+ deliverable:"Form a hunting hypothesis, run advanced queries across an endpoint data lake, and uncover an unalerted web shell.",
+ q:[
+  {q:"Threat hunting differs from traditional alerting because it is:",o:["Entirely automated with no human","Proactive and hypothesis-driven rather than purely reactive","Only done after a breach is confirmed","A type of firewall"],a:1},
+  {q:"A process with an unexpected parent (e.g., Word spawning PowerShell) is a sign of:",o:["Normal operation","Possible malicious execution worth investigating","A hardware failure","A licensing issue"],a:1},
+  {q:"DNS tunneling is a technique used to:",o:["Speed up name resolution","Covertly exfiltrate data or run C2 over DNS","Encrypt all DNS by default","Block phishing"],a:1},
+  {q:"KQL and SPL are examples of:",o:["Programming languages for games","Query languages used in SIEM/log platforms","Encryption algorithms","Network protocols"],a:1},
+  {q:"A strong hunting hypothesis is typically grounded in:",o:["A random guess","Current threat intelligence about adversary behavior","The marketing calendar","Available disk space"],a:1}]},
+
+{id:"IC-206",tier:"intermediate",title:"Applied Cryptography & PKI Management",blurb:"AES/RSA/ECC in practice, CA hierarchies, TLS hardening, and key lifecycles.",
+ modules:[
+  {t:"Symmetric vs. Asymmetric Operations",d:"Practical application of AES, RSA, and ECC."},
+  {t:"PKI Architecture",d:"Two-tier CA hierarchies, root and intermediate CAs, CRLs/OCSP."},
+  {t:"TLS Engineering",d:"Hardening servers, disabling legacy protocols, selecting cipher suites."},
+  {t:"Key Management Lifecycles",d:"Generation, escrow, rotation, and Hardware Security Modules (HSMs)."}],
+ deliverable:"Build a two-tier internal certificate authority hierarchy and issue/revoke test certificates.",
+ q:[
+  {q:"AES is an example of which type of cryptography?",o:["Symmetric","Asymmetric","Hashing only","Steganography"],a:0},
+  {q:"In a two-tier PKI, the root CA is typically kept:",o:["Online and issuing daily certs","Offline to protect it, issuing only to intermediate CAs","On every laptop","Published publicly with its private key"],a:1},
+  {q:"OCSP and CRLs are mechanisms for:",o:["Generating keys","Checking whether a certificate has been revoked","Compressing files","Routing packets"],a:1},
+  {q:"A primary TLS hardening step is to:",o:["Enable SSLv3 for compatibility","Disable legacy protocols like TLS 1.0/1.1 and weak ciphers","Use no encryption","Reuse one key forever"],a:1},
+  {q:"An HSM is used to:",o:["Store and protect cryptographic keys in tamper-resistant hardware","Host websites","Scan for viruses","Compress logs"],a:0}]},
+
+{id:"IC-207",tier:"intermediate",title:"Intermediate Penetration Testing & Exploit Analysis",blurb:"Scope legally, enumerate, exploit, pivot, and report business risk clearly.",
+ modules:[
+  {t:"Scoping and Reconnaissance",d:"Legal frameworks, scoping boundaries, active mapping, service enumeration."},
+  {t:"Exploit Selection & Verification",d:"Identifying known vulns, vetting exploit code safely, bypassing protections."},
+  {t:"Post-Exploitation & Lateral Movement",d:"Privilege escalation, credential dumping, internal pivoting."},
+  {t:"Reporting Findings",d:"Replication steps, business risk impact, and remediation guidance."}],
+ deliverable:"Conduct an authorized penetration test against a multi-machine lab and compile a technical finding report.",
+ q:[
+  {q:"The most important prerequisite before any penetration test is:",o:["A fast internet connection","Written authorization and a defined scope (rules of engagement)","A new laptop","A press release"],a:1},
+  {q:"Enumeration in recon refers to:",o:["Encrypting the target","Actively gathering details like open services, versions, and users","Deleting logs","Paying the target"],a:1},
+  {q:"Lateral movement describes:",o:["Patching servers","Moving between systems within a compromised network","Backing up data","Rotating keys"],a:1},
+  {q:"A penetration test report is most valuable when it:",o:["Only lists tool output","Communicates business risk and clear remediation steps","Hides the findings","Contains no technical detail"],a:1},
+  {q:"Privilege escalation aims to:",o:["Lower an account's rights","Gain higher-level (e.g., admin/root) access on a system","Disable the network","Encrypt the disk"],a:1}]},
+
+{id:"IC-208",tier:"intermediate",title:"Digital Forensics & Log Analysis",blurb:"Preserve evidence, analyze memory and disk, correlate logs, and build timelines.",
+ modules:[
+  {t:"Forensic Readiness & Chain of Custody",d:"Evidence preservation, hashing, immutable documentation."},
+  {t:"Host Forensics (Memory & Disk)",d:"Analyzing RAM captures and disk images for malicious artifacts."},
+  {t:"Event Log Correlation",d:"Reconstructing attacker paths across Windows, Syslog, and app records."},
+  {t:"Timeline Analysis",d:"Integrated master timelines mapping chronological threat movement."}],
+ deliverable:"Analyze a memory capture and compromised host image to extract a ransomware execution timeline.",
+ q:[
+  {q:"Hashing an evidence image (e.g., SHA-256) is done to:",o:["Encrypt the suspect's files","Verify integrity and detect any later tampering","Compress the image","Speed up the network"],a:1},
+  {q:"Volatile memory (RAM) is valuable in forensics because it may contain:",o:["Nothing useful","Running processes, injected code, and keys lost on power-off","Only the boot logo","The user's contract"],a:1},
+  {q:"Correlating logs from multiple sources helps an analyst:",o:["Increase log volume for its own sake","Reconstruct the attacker's path across systems","Delete evidence","Slow down detection"],a:1},
+  {q:"A forensic timeline is used to:",o:["Schedule maintenance","Map the chronological sequence of attacker activity","Bill the client","Encrypt disks"],a:1},
+  {q:"The correct order to capture evidence generally follows:",o:["Most volatile to least volatile (order of volatility)","Least volatile first","Random order","Whatever is fastest"],a:0}]},
+
+{id:"IC-209",tier:"intermediate",title:"Security Automation & Orchestration (SOAR)",blurb:"Turn runbooks into playbooks — enrich, decide, and contain at machine speed.",
+ modules:[
+  {t:"Introduction to SOAR Architecture",d:"API-driven infrastructure, connectors, webhooks, orchestration engines."},
+  {t:"Playbook Design & Logic Modeling",d:"Translating manual runbooks into conditional logic workflows."},
+  {t:"Automated Enriched Analysis",d:"Auto-extracting artifacts and adding context before analyst review."},
+  {t:"Automated Containment Operations",d:"Low-risk response scripts to disable accounts, revoke tokens, segment hosts."}],
+ deliverable:"Build a production playbook that isolates an endpoint and blocks an IP automatically upon a verified critical alert.",
+ q:[
+  {q:"SOAR stands for:",o:["Secure Online Account Recovery","Security Orchestration, Automation, and Response","System Of Audit Records","Single Origin Access Routing"],a:1},
+  {q:"A SOAR 'playbook' is best described as:",o:["A vendor brochure","A defined, often-automated workflow of response actions","A type of firewall rule","An encryption key"],a:1},
+  {q:"Automated enrichment in SOAR aims to:",o:["Delete alerts","Add context (threat lookups, asset info) before human review","Increase false positives","Disable logging"],a:1},
+  {q:"Why limit auto-containment to low-risk actions initially?",o:["To avoid disrupting business with bad automated decisions","Automation is illegal","To save electricity","Containment is never useful"],a:0},
+  {q:"SOAR integrates with other tools primarily via:",o:["Fax machines","APIs, connectors, and webhooks","Physical cables only","Handwritten notes"],a:1}]},
+
+{id:"IC-210",tier:"intermediate",title:"Network Architecture & Microsegmentation",blurb:"Zero Trust foundations, workload isolation, SDN policy, and secure enclaves.",
+ modules:[
+  {t:"Zero Trust Architecture Foundations",d:"NIST SP 800-207; decoupling trust from location or IP."},
+  {t:"Designing Microsegmentation",d:"Isolating workloads by scope, application bounds, and classification."},
+  {t:"Software-Defined Networking Controls",d:"Centralized policy, overlay networks, dynamic firewalling."},
+  {t:"Secure Enclave Engineering",d:"High-security landing zones for payment processors and critical databases."}],
+ deliverable:"Design a resilient network architecture using microsegmentation to isolate a core transaction system from users.",
+ q:[
+  {q:"The core tenet of Zero Trust is:",o:["Trust everything inside the perimeter","Never trust, always verify — regardless of network location","Trust based on IP address","Disable all authentication"],a:1},
+  {q:"Microsegmentation primarily limits:",o:["Internet bandwidth","Lateral movement by isolating workloads from each other","Email volume","CPU usage"],a:1},
+  {q:"Zero Trust Architecture is defined in which NIST publication?",o:["SP 800-207","SP 800-53","FIPS 199","SP 800-61"],a:0},
+  {q:"A secure enclave is intended to:",o:["Expose sensitive systems to all users","Provide a tightly controlled zone for high-value assets","Replace backups","Disable firewalls"],a:1},
+  {q:"Software-Defined Networking enables defenders to:",o:["Apply centralized, dynamic network policy programmatically","Only use physical switches","Avoid all segmentation","Eliminate the need for monitoring"],a:0}]},
+
+/* ===== TIER III — ADVANCED ===== */
+{id:"AC-301",tier:"advanced",title:"Designing AI-Native Security Operations",blurb:"Build a SOC around autonomous agents, LLM reasoning, and human-in-the-loop guardrails.",
+ modules:[
+  {t:"Core AI-Native Architecture",d:"SOC built around autonomous agents, LLM reasoning, real-time semantic analysis."},
+  {t:"Multi-Agent Coordination Systems",d:"Specialized agents for ingestion, triage, collection, and remediation drafting."},
+  {t:"Securing the AI Infrastructure",d:"Defending against prompt injection, data poisoning, model extraction; securing vector DBs."},
+  {t:"Evaluation & Human-in-the-Loop Guardrails",d:"Semantic testing, hallucination measurement, deterministic review thresholds."}],
+ deliverable:"Architect an agentic triage system that ingests raw alerts, gathers context, and proposes verifiable remediation code.",
+ q:[
+  {q:"Prompt injection is an attack that targets:",o:["The power supply","An LLM by manipulating its input instructions","The network cable","The disk firmware"],a:1},
+  {q:"In a multi-agent SOC, specialization means:",o:["One agent does everything","Distinct agents handle ingestion, triage, collection, and remediation","Agents never communicate","Humans are removed entirely"],a:1},
+  {q:"Human-in-the-loop guardrails are most important for:",o:["High-impact or irreversible autonomous actions","Trivial read-only lookups","Spell-checking","Reducing log volume"],a:0},
+  {q:"Data poisoning attacks aim to:",o:["Improve model accuracy","Corrupt training/reference data to degrade or bias outputs","Encrypt the model","Speed up inference"],a:1},
+  {q:"Measuring 'hallucination rate' in security logic helps teams:",o:["Increase false confidence","Quantify and bound unreliable AI outputs before trusting them","Avoid all testing","Eliminate the need for humans"],a:1}]},
+
+{id:"AC-302",tier:"advanced",title:"Security Data Lakehouse Architecture",blurb:"Ingest terabytes of telemetry, normalize to OCSF, and query cold data in seconds.",
+ modules:[
+  {t:"Lakehouse Design Principles",d:"Raw-storage scalability with ACID reliability; parquet schemas for fast indexing."},
+  {t:"High-Velocity Ingestion Pipelines",d:"Streaming/micro-batch pipelines (Kafka, Flink) for terabytes daily."},
+  {t:"Normalization & Open Data Standards",d:"Implementing OCSF across varied infrastructure logs."},
+  {t:"High-Performance Distributed Querying",d:"Tuning Trino/Spark to detect across months of cold data in seconds."}],
+ deliverable:"Design an enterprise security data lakehouse handling massive ingestion and real-time concurrent detection queries.",
+ q:[
+  {q:"OCSF (Open Cybersecurity Schema Framework) is used to:",o:["Encrypt log files","Normalize security telemetry into a common schema","Route network packets","Generate certificates"],a:1},
+  {q:"A 'lakehouse' combines the scalability of a data lake with:",o:["No structure at all","ACID transactional reliability of a warehouse","A physical lake","Manual spreadsheets"],a:1},
+  {q:"Parquet is favored in analytics because it is:",o:["A columnar format enabling efficient compression and querying","A row-only text format","An encryption cipher","A network protocol"],a:0},
+  {q:"Tools like Kafka and Flink are used in this architecture for:",o:["Drawing diagrams","High-velocity streaming/micro-batch data ingestion","Storing certificates","Printing reports"],a:1},
+  {q:"Distributed query engines like Trino/Spark help defenders:",o:["Query large historical datasets quickly for detection","Avoid storing logs","Disable indexing","Encrypt the SOC"],a:0}]},
+
+{id:"AC-303",tier:"advanced",title:"Advanced Threat Emulation & Red Teaming",blurb:"Emulate real APTs end-to-end, evade EDR, and close gaps with the blue team.",
+ modules:[
+  {t:"Foundations of Red Teaming",d:"Adversary emulation vs. pen testing; rules of engagement and safety plans."},
+  {t:"Designing Threat Emulation Plans",d:"Mapping to APT playbooks, custom payloads, multi-tier C2 profiles."},
+  {t:"Evasion & Operations",d:"Bypassing EDR telemetry, network filtering, and identity edge controls."},
+  {t:"Collaborative Blue Team Integration",d:"Post-exercise reviews to close detection gaps and raise the defensive baseline."}],
+ deliverable:"Create a Threat Emulation Campaign Plan targeting a business unit, with custom profiles and mitigation guardrails.",
+ q:[
+  {q:"How does red teaming differ from standard penetration testing?",o:["It is identical","It emulates a specific adversary's objectives and behaviors over a campaign","It only scans for vulnerabilities","It avoids any objectives"],a:1},
+  {q:"Threat emulation plans are typically mapped to:",o:["Random tools","Real-world APT playbooks and ATT&CK techniques","Marketing goals","Financial reports"],a:1},
+  {q:"A purple-team approach emphasizes:",o:["Red and blue teams competing in secret","Red and blue collaborating to improve detection","Eliminating the blue team","Only documentation"],a:1},
+  {q:"EDR evasion during emulation is performed to:",o:["Permanently disable defenses","Test and reveal gaps in detection telemetry safely","Damage production data","Avoid all logging forever"],a:1},
+  {q:"Rules of engagement in red teaming primarily define:",o:["The dress code","Authorized scope, constraints, and safety boundaries","The lunch menu","Server pricing"],a:1}]},
+
+{id:"AC-304",tier:"advanced",title:"Supply Chain Risk Management & SBOM",blurb:"Tame dependency risk: generate and consume SBOMs, vet vendors, track components.",
+ modules:[
+  {t:"Software Supply Chain Vulnerabilities",d:"Dependency confusion, malicious injection in open-source modules."},
+  {t:"Operationalizing SBOM Frameworks",d:"Generating and analyzing CycloneDX/SPDX SBOMs at build time."},
+  {t:"Hardware & Third-Party Vendor Auditing",d:"Procurement vetting per NIST SP 800-161 and custody chains."},
+  {t:"Continuous Component Tracking",d:"Automated monitoring tracing new vulns across deployed codebases."}],
+ deliverable:"Build a supply chain validation framework that ingests SBOMs, cross-references vuln feeds, and flags runtime dependencies.",
+ q:[
+  {q:"An SBOM (Software Bill of Materials) is essentially:",o:["A network diagram","An inventory of components and dependencies in software","A pricing list","An encryption key"],a:1},
+  {q:"CycloneDX and SPDX are:",o:["Cloud providers","Standard SBOM formats","Hashing algorithms","Firewall vendors"],a:1},
+  {q:"Dependency confusion attacks exploit:",o:["Physical theft of servers","Package managers pulling a malicious public package over an internal one","Weak passwords only","DNS caching"],a:1},
+  {q:"NIST SP 800-161 provides guidance on:",o:["Cryptographic standards","Supply chain risk management practices","Incident response","Cloud billing"],a:1},
+  {q:"Continuous component tracking matters because:",o:["Components never change","Newly disclosed vulnerabilities can affect already-deployed dependencies","SBOMs are one-time documents","Open-source is always safe"],a:1}]},
+
+{id:"AC-305",tier:"advanced",title:"Advanced Incident Command & Crisis Management",blurb:"Run a breach like an incident commander across legal, PR, executives, and recovery.",
+ modules:[
+  {t:"The Crisis Command Framework",d:"Structuring response on ICS-style protocols for digital containment."},
+  {t:"Cross-Functional Team Coordination",d:"Managing legal, PR, executives, and insurers during active breaches."},
+  {t:"Regulatory Compliance & Disclosure",d:"National/international breach reporting regulations and timelines."},
+  {t:"Post-Crisis Business Continuity",d:"Restoring from clean baselines while preserving forensic records."}],
+ deliverable:"Lead a simulated crisis tabletop for an enterprise-wide cloud compromise and produce an incident command brief.",
+ q:[
+  {q:"The Incident Command System (ICS) provides:",o:["A scripting language","A scalable command-and-control structure for managing incidents","A type of malware","A firewall rule set"],a:1},
+  {q:"During a major breach, coordinating with legal and PR is important to:",o:["Slow down the technical team","Manage disclosure obligations and reputational risk correctly","Avoid fixing anything","Increase confusion"],a:1},
+  {q:"Restoring systems during recovery should use:",o:["The compromised images directly","Known-clean baselines while preserving forensic evidence","No backups","Whatever is fastest, ignoring integrity"],a:1},
+  {q:"Breach disclosure timelines are primarily driven by:",o:["The IT team's preference","Applicable laws and regulations for the jurisdiction/industry","Social media trends","The weather"],a:1},
+  {q:"A tabletop exercise is valuable because it:",o:["Tests the live production systems destructively","Rehearses decision-making and coordination without real impact","Replaces all monitoring","Is purely ceremonial"],a:1}]},
+
+{id:"AC-306",tier:"advanced",title:"ICS/SCADA & Operational Technology (OT) Security",blurb:"Defend cyber-physical systems where availability and safety outrank confidentiality.",
+ modules:[
+  {t:"Demarcating OT vs. IT Environments",d:"Availability constraints, physical safety, and the Purdue Model."},
+  {t:"Industrial Communications Protocols",d:"Modbus, DNP3, BACnet, and Profinet vulnerabilities."},
+  {t:"OT Defenses & Zone Segmentation",d:"Secure gateways, air-gaps, data diodes, and industrial IDS."},
+  {t:"Safety Instrumented Systems Protection",d:"Protecting shutdown components and interlocks from remote alteration."}],
+ deliverable:"Create a network segmentation architecture for a utility environment that insulates PLCs from corporate access points.",
+ q:[
+  {q:"In OT environments, the priority ordering is often:",o:["Confidentiality, then integrity, then availability","Availability and safety prioritized, sometimes above confidentiality","Cost above all else","There are no priorities"],a:1},
+  {q:"The Purdue Model is used to:",o:["Encrypt industrial data","Define hierarchical zones/levels for ICS network architecture","Price equipment","Schedule maintenance"],a:1},
+  {q:"Modbus and DNP3 are:",o:["Encryption algorithms","Industrial communication protocols","Cloud services","Antivirus engines"],a:1},
+  {q:"A data diode enforces:",o:["Two-way encrypted traffic","Strictly one-way (unidirectional) data flow","Random packet drops","Load balancing"],a:1},
+  {q:"Safety Instrumented Systems (SIS) must be protected because they:",o:["Handle marketing emails","Perform critical automatic shutdowns and safety interlocks","Store passwords","Run the website"],a:1}]},
+
+{id:"AC-307",tier:"advanced",title:"Reverse Engineering & Advanced Malware Analysis",blurb:"Disassemble, detonate, defeat obfuscation, and dissect nation-state toolkits.",
+ modules:[
+  {t:"Static Code Disassembly",d:"Using Ghidra/IDA Pro to analyze flow without executing code."},
+  {t:"Dynamic Execution Analysis",d:"Running binaries in sandboxes, tracking hooks, network, and file edits."},
+  {t:"Defeating Anti-Analysis Defenses",d:"Bypassing packers, obfuscation, anti-debugging, and VM checks."},
+  {t:"Analyzing Nation-State Capabilities",d:"Deconstructing APT toolkits, modular backdoors, and rootkits."}],
+ deliverable:"Reverse engineer a malicious sample to extract its config blocks, target IPs, and communication mechanisms.",
+ q:[
+  {q:"Static analysis of malware means:",o:["Executing it on production","Examining the code/binary without running it","Deleting it immediately","Encrypting the sample"],a:1},
+  {q:"Ghidra and IDA Pro are primarily:",o:["Disassemblers/decompilers for reverse engineering","Network scanners","Email clients","Backup tools"],a:0},
+  {q:"Malware that checks for a virtual machine is attempting to:",o:["Run faster","Detect and evade analysis sandboxes","Improve graphics","Patch itself"],a:1},
+  {q:"Dynamic analysis is best performed in:",o:["The production domain controller","An isolated sandbox environment","The CEO's laptop","A live customer database"],a:1},
+  {q:"A 'packer' is used by malware authors to:",o:["Compress/obfuscate code to hinder static analysis","Speed up the network","Improve documentation","Sign the binary legitimately"],a:0}]},
+
+{id:"AC-308",tier:"advanced",title:"Security as a Capability & Resilience Frameworks",blurb:"Move past checkbox compliance toward measured, adaptive operational capability.",
+ modules:[
+  {t:"Moving Beyond Checkbox Compliance",d:"Why compliant systems still fail in production."},
+  {t:"Defining Operational Capability",d:"Metrics for performance, resilience, and adaptability under attack."},
+  {t:"Designing Resilient Core Infrastructures",d:"Patterns that keep essential functions running when peripherals fail."},
+  {t:"Continuous Capability Auditing",d:"Purple-teaming and active monitoring to score capability over time."}],
+ deliverable:"Design a corporate program proposal restructuring metrics from a checklist to a capability-driven resilience framework.",
+ q:[
+  {q:"A core critique of pure 'checkbox compliance' is that:",o:["It guarantees security","Compliant systems can still fail against real adversaries","It is too expensive to ever pass","It eliminates risk entirely"],a:1},
+  {q:"Operational capability metrics focus on:",o:["Number of documents written","Actual performance and resilience during active threats","Office attendance","Marketing reach"],a:1},
+  {q:"Designing for resilience means ensuring:",o:["Every system must be perfect","Essential functions continue even when peripheral systems are compromised","No system is ever monitored","All controls are removed"],a:1},
+  {q:"Purple teaming supports capability auditing by:",o:["Hiding results from defenders","Combining offense and defense to continuously test and improve","Replacing compliance with nothing","Stopping all assessments"],a:1},
+  {q:"Continuous capability auditing differs from annual audits because it:",o:["Happens once a decade","Provides ongoing, dynamic measurement over time","Ignores metrics","Requires no tooling"],a:1}]},
+
+{id:"AC-309",tier:"advanced",title:"Cyber Risk Quantification for Executives",blurb:"Replace Low/Med/High with FAIR, probability modeling, and financial loss estimates.",
+ modules:[
+  {t:"Core Principles of Risk Quantification",d:"FAIR methodology; moving past subjective matrix ratings."},
+  {t:"Data Gathering & Probability Modeling",d:"Threat capability, control performance, Monte Carlo event frequency."},
+  {t:"Business Loss Impact Calculations",d:"Downtime, legal fees, regulatory fines, and reputational damage."},
+  {t:"Cost-Benefit Analysis for Investments",d:"Calculating ROI by comparing risk reduction to implementation cost."}],
+ deliverable:"Convert a technical vulnerability assessment into a quantitative financial risk report for an executive board.",
+ q:[
+  {q:"FAIR is a methodology for:",o:["Encrypting executive email","Quantifying information risk in financial terms","Patching servers","Network segmentation"],a:1},
+  {q:"Monte Carlo simulation is used in risk quantification to:",o:["Pick a single deterministic answer","Model a distribution of probable outcomes from uncertain inputs","Encrypt data","Replace all data"],a:1},
+  {q:"Expressing risk in dollars rather than Low/Medium/High helps executives:",o:["Avoid all decisions","Make informed, comparable investment trade-offs","Ignore risk","Increase ambiguity"],a:1},
+  {q:"Loss magnitude in a risk model should include:",o:["Only the cost of the firewall","Downtime, legal, regulatory, and reputational impacts","Just employee lunches","Nothing measurable"],a:1},
+  {q:"Security investment ROI is evaluated by comparing:",o:["Risk reduction value against implementation cost","Office size to staff count","Logo color to revenue","Patch count to coffee consumption"],a:0}]},
+
+{id:"AC-310",tier:"advanced",title:"Executive Cyber Leadership & Policy Development",blurb:"Align strategy to mission, author scalable policy, and brief the board with authority.",
+ modules:[
+  {t:"Strategic Alignment",d:"Designing security initiatives that support the mission and minimize friction."},
+  {t:"Enterprise Policy Architecture",d:"Authoring scalable directives, standards, and guidelines."},
+  {t:"Managing Complex CSO Support Needs",d:"Roles, reporting chains, and cross-departmental requirements."},
+  {t:"Board Communication & Governance",d:"Strategic communication, capital budgets, and program oversight."}],
+ deliverable:"Author an enterprise cybersecurity strategy document aligning infrastructure plans with organizational risk profiles.",
+ q:[
+  {q:"In policy architecture, a 'standard' differs from a 'policy' in that a standard is typically:",o:["A high-level intent statement","A specific, mandatory requirement supporting a policy","Optional advice only","A marketing slogan"],a:1},
+  {q:"Strategic alignment means security initiatives should:",o:["Operate in isolation from the business","Support the organization's mission and reduce operational friction","Maximize friction deliberately","Ignore business goals"],a:1},
+  {q:"When briefing a board of directors, an effective CSO focuses on:",o:["Raw packet captures","Risk, business impact, and strategic decisions","Individual firewall rules","Vendor SKU numbers"],a:1},
+  {q:"A 'guideline' in policy hierarchy is generally:",o:["Mandatory and enforceable","Recommended best practice, not strictly mandatory","Identical to a law","A type of exploit"],a:1},
+  {q:"Governance in security leadership primarily ensures:",o:["The program is overseen, resourced, and accountable","Nobody is responsible","Policies are never updated","Budgets are irrelevant"],a:0}]}
+];
+
+/* ---------------- Learning content (lessons + study guide overviews) ---------------- */
+const CONTENT = {"BC-101": {"ov": "This course sets the vocabulary for everything that follows. Focus on the difference between the three security properties, the controls that protect them, and why modern programs measure resilience (recovering well) rather than only prevention (never being hit).", "ls": ["Security rests on three properties: Confidentiality (only authorized parties can read data), Integrity (data is accurate and unaltered), and Availability (systems are usable when needed) \u2014 together the CIA Triad. The Parkerian Hexad extends this with possession/control, authenticity, and utility to capture cases the triad misses, such as a stolen-but-still-encrypted laptop. Every control you ever deploy exists to defend one or more of these properties.", "Resilience accepts that breaches are inevitable and asks a harder question: when something fails, how quickly and gracefully does the organization absorb, adapt, withstand, and recover? A resilient system degrades safely instead of collapsing, preserves critical functions under stress, and restores full service fast. This mindset shifts investment from purely blocking attacks toward detection, response, and recovery capability.", "Controls are grouped by what they do in time relative to an incident. Preventive controls stop it (firewalls, access rules); detective controls reveal it is happening (logging, IDS); corrective controls fix the damage (backups, patching); deterrent controls discourage the attempt (warning banners, visible monitoring). A defense-in-depth architecture layers several control types so no single failure exposes the asset.", "Frameworks give programs a common structure. The NIST Cybersecurity Framework organizes work into Identify, Protect, Detect, Respond, and Recover. ISO 27001 certifies a formal information security management system. The DoD Risk Management Framework (RMF) is the U.S. government's structured process for authorizing a system to operate. You do not need every detail yet \u2014 just recognize what each is for."]}, "BC-102": {"ov": "Network analysis starts with knowing where each protocol lives and what 'normal' looks like. Anchor the OSI layers, the job of DNS/ARP/HTTP, default ports, and the idea that anomaly detection always begins from a baseline.", "ls": ["The OSI model breaks communication into seven layers; the TCP/IP model collapses them into four. The layers you will reference most are Layer 2 (Data Link, MAC addressing), Layer 3 (Network, IP addressing and routing), Layer 4 (Transport, TCP/UDP and ports), and Layer 7 (Application). Encapsulation means each layer wraps the layer above it with its own header \u2014 a packet is a set of nested envelopes.", "A handful of protocols carry most traffic. DNS resolves names to IP addresses; HTTP/S moves web content; DHCP hands out IP leases; ARP maps an IP address to a MAC address on the local segment; ICMP carries control and error messages (ping). Recognizing each protocol's normal request/response pattern lets you spot the abnormal one immediately.", "Ports identify which application a packet is destined for. Well-known defaults include 80 (HTTP), 443 (HTTPS/TLS), 22 (SSH), 53 (DNS), and 25 (SMTP). The combination of an IP address and a port is a socket. Traffic on non-standard ports, or a service answering on a port it should not, is a classic early indicator of compromise or misconfiguration.", "Wireshark captures traffic off the wire and lets you slice it with display filters (for example, dns or ip.addr == x). The single most important analytical habit is establishing a baseline of normal behavior first, so deviations stand out. Capturing everything blindly produces noise; comparing against a known-good baseline produces findings."]}, "BC-103": {"ov": "Hardening is about reducing what an attacker can touch on a host. Learn the Windows and Linux security primitives, why the kernel/user-space boundary matters, and how benchmarks turn hardening into a repeatable, auditable checklist.", "ls": ["Windows security centers on the registry, local and group policy, the event log subsystem, and built-in protections like Microsoft Defender. Hardening means disabling unused services, enforcing policy baselines, tightening account and audit settings, and ensuring security-relevant events are actually logged. The goal is to shrink the attack surface to only what the host genuinely needs.", "Linux hardening revolves around file permissions and ownership, restricting SSH (key-based auth, no root login), forwarding logs via syslog/journald, and running only the systemd services required. The principle is identical to Windows: every enabled service, open port, and over-permissive file is attack surface you must justify or remove.", "Code runs in one of two privilege domains. Kernel space has unrestricted access to hardware and memory; user space is sandboxed and must request privileged operations through system calls. This boundary is the operating system's core security guarantee \u2014 a kernel-level compromise is total, which is why drivers and kernel modules deserve special scrutiny.", "Configuration auditing turns hardening from opinion into evidence. Benchmarks such as the CIS Benchmarks and DISA STIGs define concrete, testable settings, and tooling can scan a host against them to produce a pass/fail report. This makes hardening repeatable across fleets and provides the documentation auditors and authorizing officials require."]}, "BC-104": {"ov": "Identity is the new perimeter. Keep the three IAA steps distinct, know the major access-control models and when each fits, and understand why least privilege and MFA are the highest-leverage controls you can apply.", "ls": ["Three distinct steps are often confused. Identification is claiming who you are (a username); Authentication is proving it (a password, token, or biometric); Authorization is what you are then allowed to do. Strong systems separate these cleanly \u2014 a verified identity still gets only the access its role grants, and nothing more.", "Access-control models define how permissions are decided. Discretionary (DAC) lets resource owners grant access; Mandatory (MAC) enforces system-wide labels the user cannot override; Role-Based (RBAC) assigns permissions to roles and users to roles; Attribute-Based (ABAC) evaluates policies against attributes like department, device, or time. RBAC is the workhorse of most enterprises.", "Modern authentication moves beyond passwords. Multi-factor authentication combines something you know, have, and are. Single sign-on (SSO) centralizes login through an identity provider using standards like SAML and OAuth/OIDC, while tokens carry signed claims about the authenticated user. MFA remains one of the single most effective controls against account takeover.", "Least privilege means every user, service, and process gets the minimum access required to do its job \u2014 no standing administrative rights, no broad shared accounts. Pair it with separation of duties so no one person can complete a sensitive action alone. Properly scoped RBAC plus least privilege dramatically limits the blast radius of any single compromised credential."]}, "BC-105": {"ov": "This is the front half of the Risk Management Framework. Learn the seven steps in order and go deep on Prepare, Categorize (using FIPS 199 impact levels), and Select (tailoring a control baseline).", "ls": ["The RMF is NIST's seven-step lifecycle for managing system risk: Prepare, Categorize, Select, Implement, Assess, Authorize, and Monitor. It is iterative, not one-and-done \u2014 Monitor feeds back into the earlier steps continuously. Memorize the order; nearly every government cybersecurity role references these steps by name.", "Prepare establishes the context before any control work begins: defining roles, risk tolerance, the organizational risk strategy, and a common control baseline that systems can inherit. Good preparation prevents wasted effort later by ensuring everyone agrees on scope, responsibilities, and how much risk the organization is willing to accept.", "Categorize sets the system's security impact level using FIPS 199, rating the potential impact of a loss of confidentiality, integrity, and availability as Low, Moderate, or High. The system's overall categorization typically takes the high-water mark across the three. This rating drives how strong the eventual control set must be.", "Select chooses a control baseline (from NIST SP 800-53) matched to the categorization, then tailors it \u2014 adding, removing, or adjusting controls to fit the system's real risk and environment. The output is a defensible, documented set of controls the system commits to implementing. Tailoring is where engineering judgment meets the catalog."]}, "BC-106": {"ov": "SP 800-53 is the control catalog the whole RMF leans on. Learn how it is organized into families, the difference between technical and non-technical controls, and how to write an implementation statement that will survive assessment.", "ls": ["NIST SP 800-53 is a catalog of security and privacy controls organized into roughly twenty families, each identified by a two-letter prefix \u2014 AC (Access Control), AU (Audit and Accountability), IA (Identification and Authentication), SC (System and Communications Protection), and so on. Navigating it means knowing which family a requirement lives in so you can find and cite the exact control.", "Controls split by how they are realized. Technical controls are enforced by the system itself (encryption, access enforcement, logging). Administrative (management/operational) controls are policies, procedures, and training enacted by people. A complete program needs both \u2014 a strong technical control fails if no procedure governs its use.", "Operational families cover day-to-day execution \u2014 incident response (IR), contingency planning (CP), configuration management (CM) \u2014 while physical and environmental controls (PE) protect the facility itself: locks, surveillance, power, and climate. Recognizing which family owns a requirement keeps your documentation organized and your assessor oriented.", "An implementation statement explains, for a specific control, exactly how this system satisfies it \u2014 concrete, verifiable, and tied to evidence. Vague language ('we follow best practices') fails assessment; assessable language ('all admin access requires MFA enforced by Entra ID Conditional Access policy X') passes. Write for someone who will independently test the claim."]}, "BC-107": {"ov": "This course is the assessor's perspective on RMF Step 5. Understand the assessor's independence, the three assessment methods, and the two key artifacts: the Security Assessment Plan and the Security Assessment Report.", "ls": ["The control assessor independently evaluates whether implemented controls are in place and operating as intended. Independence matters: the assessor should not be the same person who implemented the controls, so the evaluation is objective. Their findings feed the authorizing official's accept-the-risk decision.", "Assessors use three methods, often in combination. Examine reviews documents, configurations, and records. Interview questions the people who operate the control. Test exercises the control directly to observe actual behavior. Testing carries the most weight because it shows what the system really does, not just what the paperwork claims.", "The Security Assessment Plan (SAP) defines the scope, the controls to be assessed, the methods and depth, and the schedule \u2014 agreed before assessment begins. A clear SAP prevents disputes later about what was and was not evaluated, and ensures the assessment is repeatable and properly resourced.", "The Security Assessment Report (SAR) records what was found: each control's status, the evidence, and any deficiencies with their severity. The SAR is the primary input to the authorization decision and seeds the Plan of Action and Milestones (POA&M) for remediating gaps. Findings must be specific, evidenced, and risk-rated."]}, "BC-108": {"ov": "Threat intelligence turns raw data into decisions. Learn the intelligence lifecycle, the strategic/operational/tactical tiers, the standards that make intel shareable, and the basics of responsible OSINT collection.", "ls": ["Intelligence is produced through a repeating lifecycle: Planning and Direction, Collection, Processing, Analysis and Production, and Dissemination, followed by feedback. The discipline is what separates intelligence from a pile of alerts \u2014 each stage refines raw data toward a decision a stakeholder can act on.", "Intel serves three audiences. Strategic intelligence informs executives about long-term risk and adversary motivation. Operational intelligence guides defenders on specific campaigns and threat actors. Tactical intelligence delivers the concrete indicators (hashes, IPs, domains) that tools consume in near real time. Matching the product to the audience is the analyst's core skill.", "Sharing requires common formats. STIX structures threat information so machines and analysts read it the same way; TAXII transports it between organizations. Frameworks like MITRE ATT&CK provide a shared vocabulary of adversary tactics and techniques. Standards turn isolated observations into collective defense.", "Open-source intelligence (OSINT) gathers information from publicly available sources \u2014 DNS records, certificate transparency logs, social media, public registries. It is powerful and legal but demands discipline: verify across sources, respect scope and legal boundaries, and avoid tipping off the target. Corroboration is what makes OSINT trustworthy."]}, "BC-109": {"ov": "Most breaches start with a human, not an exploit. Learn the psychological levers attackers pull, how to dissect a phishing vector, the email authentication signals (SPF/DKIM/DMARC), and why fast, blame-free reporting matters most.", "ls": ["Social engineering exploits predictable psychology: authority (a message that appears to come from a boss), urgency (act now or lose access), scarcity, reciprocity, and trust. Recognizing the emotional pressure a message creates is the first defense \u2014 legitimate requests rarely demand that you bypass normal process immediately.", "Vector analysis dissects how an attack arrives and what it wants. Examine the sender, the displayed versus actual links, attachments, and the call to action. Phishing seeks credentials or a click; spear phishing is tailored to a specific target; business email compromise impersonates an executive to redirect money. Map the vector before reacting.", "Email authentication exposes spoofing. SPF lists which servers may send for a domain; DKIM cryptographically signs messages; DMARC ties them together and tells receivers what to do on failure. A failed alignment is a strong forgery signal \u2014 but a passing check does not guarantee safety, since attackers can pass authentication from look-alike domains.", "The single most valuable behavior is fast reporting. A user who reports a suspicious email in minutes lets the team pull it from other inboxes before more people click. This requires a blameless culture and a one-click report path; punishing victims simply drives incidents underground and lengthens dwell time."]}, "BC-110": {"ov": "Incident response is a disciplined process, not improvisation. Learn the IR lifecycle phases, how to triage and prioritize, the difference between containment and escalation, and why contemporaneous documentation is non-negotiable.", "ls": ["The incident response lifecycle (NIST SP 800-61) runs Preparation, Detection and Analysis, Containment/Eradication/Recovery, and Post-Incident Activity. Preparation done in advance \u2014 tooling, runbooks, contacts, and authority \u2014 determines how well the rest goes. Response quality is decided long before the incident occurs.", "Triage answers two questions fast: is this a real incident, and how bad is it? Analysts validate the alert, scope the affected systems, and assign severity based on impact and urgency. Good triage prevents both panic over false positives and dangerous under-reaction to a genuine breach.", "Containment limits spread \u2014 isolating a host, disabling an account, blocking a domain \u2014 and may be short-term (stop the bleeding) or long-term (a sustained fix). Escalation routes the incident to the right authority and skill level when severity, scope, or decision rights exceed the responder's mandate. Knowing when to escalate is as important as knowing how to contain.", "Document everything as it happens: what was observed, what action was taken, when, and by whom. Contemporaneous notes support the post-incident review, legal and regulatory needs, and any future prosecution. Memory is unreliable under stress; a clear timeline is the most defensible artifact an incident produces."]}, "IC-201": {"ov": "Cloud security reassigns responsibility rather than removing it. Master the shared responsibility model, cloud IAM and resource policies, how hybrid connectivity is secured, and why continuous logging is the backbone of cloud assurance.", "ls": ["The shared responsibility model divides security between provider and customer. The provider secures the cloud itself (physical, hypervisor, managed-service internals); the customer secures what they put in the cloud \u2014 data, identities, configuration, and access. Most cloud breaches stem from the customer side, especially misconfiguration, not provider failure.", "Cloud IAM controls who and what can act on resources. Identities (users, groups, roles, service accounts) are granted permissions through policies attached to identities or directly to resources. The recurring failure mode is over-permissioning; scope policies tightly, prefer roles over long-lived keys, and audit for wildcard or admin grants.", "Hybrid architectures connect on-prem networks to the cloud via VPNs or dedicated private links, extending identity and segmentation across both. The design challenge is maintaining consistent policy and visibility across environments so the connection does not become an unmonitored bridge an attacker can ride inward.", "Cloud platforms emit rich telemetry \u2014 control-plane logs (e.g., CloudTrail-style API audit logs), flow logs, and service logs. Centralizing and continuously analyzing these is how you detect misconfiguration and intrusion in an environment with no physical perimeter. In the cloud, logging is not optional instrumentation; it is the primary detective control."]}, "IC-202": {"ov": "Vulnerability management is a prioritization problem, not a scanning problem. Learn how scanning works at scale, how to rank findings by real risk, how patches move safely to production, and how to track remediation to closure.", "ls": ["Scanners identify known weaknesses by matching system attributes against vulnerability databases, either with credentials (authenticated, deeper) or without (unauthenticated, attacker's-eye view). At scale, scanning must be orchestrated \u2014 scheduled, scoped, and distributed \u2014 so coverage is complete without overwhelming the network or the team.", "Raw scan output always exceeds capacity to fix, so prioritization is everything. CVSS scores severity, but real risk-based prioritization layers on exploitability (is there a known exploit in the wild, e.g., CISA KEV), asset criticality, and exposure. A medium CVSS on an internet-facing crown-jewel may outrank a critical on an isolated test box.", "Patches must be tested before broad deployment to avoid breaking production. A staged lifecycle \u2014 test, pilot ring, then phased rollout \u2014 balances speed against stability, with a rollback plan ready. Emergency patches for actively exploited flaws compress this timeline but should never skip a basic sanity check.", "Tracking closes the loop: every finding has an owner, a due date tied to its risk, and a verified remediation (or a documented, risk-accepted exception). Metrics like mean-time-to-remediate and aging reports show whether the program is actually reducing risk or just generating reports. Unverified 'fixes' are how vulnerabilities quietly persist."]}, "IC-203": {"ov": "Application security works best when it moves left \u2014 earlier in development. Learn shift-left principles, the difference between SAST and DAST, how to harden containers and base images, and how to secure infrastructure as code.", "ls": ["Shift-left means embedding security into design and development rather than bolting it on before release. Finding a flaw in code review costs a fraction of finding it in production. Practically, this means security requirements, threat modeling, and automated checks integrated into the developer's normal workflow and CI pipeline.", "Two complementary testing approaches exist. Static Application Security Testing (SAST) analyzes source code without running it, catching insecure patterns early but with false positives. Dynamic Analysis (DAST) tests the running application from the outside, catching runtime and configuration issues SAST cannot see. Mature programs run both, plus dependency scanning.", "Containers shrink attack surface only if hardened. Start from minimal, trusted base images, pin versions, run as non-root, drop unneeded capabilities, and scan images for known vulnerabilities before they ship. A bloated or stale base image silently imports every vulnerability it contains into every workload built on it.", "Infrastructure as Code (IaC) defines environments in version-controlled templates (Terraform, CloudFormation). This makes security scannable and repeatable \u2014 policy-as-code can reject an insecure configuration before it is ever deployed. The risk is that a single bad template propagates a misconfiguration everywhere, so IaC must be reviewed and scanned like application code."]}, "IC-204": {"ov": "This course operationalizes the back half of RMF inside eMASS. Learn the eMASS interface's role, how Steps 4-6 execute there, how to build a defensible POA&M, and what continuous authorization (cATO) actually requires.", "ls": ["eMASS (Enterprise Mission Assurance Support Service) is the DoD's system of record for managing RMF packages. It tracks controls, assessment results, artifacts, and authorization status in one workflow. Knowing the interface \u2014 where control implementation, test results, and risk artifacts live \u2014 is a practical job skill for anyone working DoD authorizations.", "RMF Steps 4-6 (Implement, Assess, Authorize) are recorded and routed in eMASS. Implementation statements and evidence are entered, assessors record findings, and the package flows to the authorizing official for an authorization decision. eMASS turns the abstract RMF lifecycle into a concrete, auditable system workflow.", "A Plan of Action and Milestones (POA&M) documents each unresolved weakness: the deficiency, the planned remediation, resources, and a realistic completion milestone. A good POA&M is honest and dated; it lets the authorizing official accept residual risk knowingly and lets the team track remediation. A POA&M full of slipped dates signals a stalled program.", "Continuous authorization (cATO) replaces the periodic re-authorization scramble with ongoing monitoring, automated evidence, and a robust feedback loop, so authorization is maintained continuously rather than recertified every few years. It demands mature automation and real-time visibility \u2014 the payoff is faster, evidence-backed risk decisions."]}, "IC-205": {"ov": "Threat hunting is proactive, hypothesis-driven searching for adversaries that evaded detection. Learn the hunting mindset, the endpoint and network vectors to pursue, and how to build effective queries against SIEM data.", "ls": ["Hunting assumes a breach has already occurred and that automated alerts missed it. Rather than waiting for an alarm, the hunter forms a hypothesis \u2014 often grounded in MITRE ATT&CK techniques or fresh threat intel \u2014 and searches the data to prove or disprove it. The output is either a found intrusion or a new, durable detection.", "On endpoints, hunters look for the artifacts of attacker behavior: anomalous process trees (e.g., a document spawning a shell), suspicious persistence mechanisms, credential-access tooling, and living-off-the-land use of legitimate binaries. EDR telemetry is the primary data source, and knowing what normal process lineage looks like is essential.", "On the network, hunters pursue beaconing to command-and-control, unusual data egress volumes, DNS tunneling, and connections to newly registered or low-reputation domains. Network data catches what endpoint coverage misses, especially on unmanaged or IoT devices. Together endpoint and network vectors give cross-validating evidence.", "Effective hunting depends on precise queries against centralized data in a SIEM. Strong queries scope tightly, filter known-good to reduce noise, and pivot from one indicator to related activity. A confirmed hunt should always be converted into an automated detection so the same technique never has to be hunted manually again."]}, "IC-206": {"ov": "Cryptography protects data in transit and at rest. Learn the symmetric/asymmetric split and where each is used, how PKI establishes trust, how TLS combines them, and why key management is the part that usually fails.", "ls": ["Symmetric cryptography uses one shared key for both encryption and decryption (e.g., AES) \u2014 fast, ideal for bulk data, but the key must be shared securely. Asymmetric cryptography uses a public/private key pair (e.g., RSA, ECC) \u2014 slower, but solves key distribution and enables digital signatures. Real systems use each for what it does best.", "Public Key Infrastructure (PKI) binds a public key to a verified identity through certificates issued by a Certificate Authority. A chain of trust runs from a trusted root CA down to the end-entity certificate; clients trust the leaf because they trust the root. Revocation (CRL/OCSP) handles certificates that must be invalidated before expiry.", "TLS combines both worlds. The handshake uses asymmetric cryptography to authenticate the server and securely agree on a session key, then switches to fast symmetric encryption for the actual data. Understanding this hybrid flow explains why certificate validation, cipher selection, and forward secrecy all matter to a connection's safety.", "Keys have a lifecycle \u2014 generation, distribution, storage, rotation, and destruction \u2014 and most cryptographic failures are key-management failures, not algorithm failures. Keys belong in protected stores (HSMs or managed key vaults), must be rotated, and must never be hard-coded or committed to source. Strong crypto with weak key handling provides false confidence."]}, "IC-207": {"ov": "Penetration testing safely simulates an attacker to prove what is actually exploitable. Learn how scope and reconnaissance are set, how exploits are selected and verified, what post-exploitation reveals, and why the report is the real deliverable.", "ls": ["Every engagement begins with explicit scope and rules of engagement \u2014 what is in bounds, what is off limits, timing, and authorization in writing. Reconnaissance then maps the target's footprint (hosts, services, exposed information) using passive and active techniques. Acting outside agreed scope is both unprofessional and potentially illegal.", "Findings from recon drive exploit selection. The tester chooses techniques matched to the discovered services and verifies exploitability rather than assuming it \u2014 a scanner flag is a hypothesis, a successful (and safe) proof-of-concept is evidence. Verification distinguishes a real penetration test from an automated scan with a fancier report.", "Post-exploitation explores what an attacker could actually do after initial access: escalating privileges, moving laterally to other systems, and reaching the data or control that represents true business impact. This is where a single foothold is shown to threaten crown-jewel assets, demonstrating risk in terms leadership understands.", "The report is the product the client pays for. It translates technical findings into prioritized, actionable remediation, with clear evidence, business impact, and reproduction steps. A brilliant exploit chain delivers no value if the report cannot drive the fix. Write for both the engineer who patches and the executive who funds it."]}, "IC-208": {"ov": "Digital forensics recovers and preserves evidence of what happened. Learn forensic readiness and chain of custody, host acquisition of memory and disk, log correlation, and how a defensible timeline is assembled.", "ls": ["Forensic readiness means the environment is prepared to yield sound evidence before an incident occurs \u2014 adequate logging, retention, and acquisition capability. Chain of custody documents who handled each piece of evidence, when, and how, with integrity hashes proving it was not altered. Evidence that cannot prove its integrity is evidence that cannot be relied upon.", "Host forensics acquires both volatile and non-volatile data. Memory captures running processes, network connections, and unencrypted artifacts that vanish at shutdown, so it is collected first under the order of volatility. Disk imaging preserves a bit-for-bit copy for offline analysis. Always work from verified copies, never the original media.", "No single log tells the whole story. Correlating events across host, authentication, network, and application logs reconstructs an actor's path \u2014 a failed login here, a new process there, an outbound connection moments later. Synchronized, accurate timestamps are what make correlation trustworthy; clock skew quietly corrupts an investigation.", "Timeline analysis sequences correlated events into a coherent narrative of the incident: initial access, actions on objectives, and exit. A clear timeline answers the questions leadership, legal, and regulators actually ask \u2014 what happened, when, and what was affected \u2014 and it is the synthesis that turns scattered artifacts into conclusions."]}, "IC-209": {"ov": "SOAR scales a security team by automating repetitive response. Learn SOAR architecture, how playbooks encode decision logic, how automated enrichment speeds triage, and the guardrails automated containment requires.", "ls": ["Security Orchestration, Automation, and Response (SOAR) connects disparate tools and automates workflows that analysts would otherwise run by hand. Its value is leverage: it lets a small team respond consistently at machine speed, reduces alert fatigue, and frees analysts for the judgment-heavy work machines cannot do.", "A playbook is a codified workflow \u2014 a sequence of conditional steps that responds to a given alert type. Designing one means modeling the decision logic an experienced analyst follows: gather context, branch on findings, act, and document. Good playbooks are explicit about every branch, including when to hand off to a human.", "Automated enrichment gathers context the moment an alert fires \u2014 reputation lookups, asset and user details, related events \u2014 and attaches it to the case. By the time an analyst opens the ticket, the question 'is this real and how bad' is largely pre-answered, collapsing triage time from minutes to seconds.", "Automated containment (isolating a host, disabling an account) is powerful and dangerous; a flawed playbook can disrupt the business at scale. High-impact actions need guardrails: scoping, approval gates for irreversible steps, and a tested rollback. Automate aggressively for enrichment and low-risk actions, conservatively for actions that can cause outages."]}, "IC-210": {"ov": "Zero Trust replaces the trusted perimeter with continuous verification. Learn its core tenets, how microsegmentation limits lateral movement, the role of software-defined networking, and how secure enclaves protect the most sensitive assets.", "ls": ["Zero Trust's central principle is 'never trust, always verify' \u2014 no user, device, or network location is implicitly trusted, and every access request is authenticated, authorized, and evaluated against context (identity, device posture, behavior) before being granted, least-privilege, per session. The network's inside is no longer treated as safe.", "Microsegmentation divides the network into small, individually policed zones so a compromise in one cannot freely spread. Instead of a flat internal network where one foothold reaches everything, each workload's communication is explicitly permitted and everything else is denied. This is the primary control against lateral movement.", "Software-defined networking (SDN) and policy engines make microsegmentation practical by decoupling control from hardware, letting policy follow workloads dynamically. Identity- and attribute-aware policy can adjust access in real time as posture changes, which is what allows Zero Trust enforcement at the speed and scale modern environments demand.", "Secure enclaves give the highest-value assets extra isolation \u2014 tightly controlled segments, hardened access paths, and dedicated monitoring. Combined with Zero Trust verification and microsegmentation, enclaves ensure that even an attacker loose in the broader environment faces a fresh, stringent barrier at the crown jewels."]}, "AC-301": {"ov": "AI-native systems introduce new architecture and new attack surface. Learn the components of an AI-native design, how multi-agent systems coordinate, how to secure the AI infrastructure, and why evaluation and human oversight are core controls.", "ls": ["An AI-native architecture is built around models as first-class components \u2014 inference services, retrieval and vector stores, orchestration, and the data pipelines feeding them. Security has to consider classic concerns plus model-specific ones like prompt injection, data poisoning, and sensitive-data leakage through outputs. The model is both an asset and an attack surface.", "Multi-agent systems coordinate several specialized agents (and tools) to accomplish tasks one model could not handle alone. Coordination introduces trust and authority questions: which agent can invoke which tool, how instructions propagate, and how a compromised or manipulated agent is contained. Treat inter-agent messages as untrusted input.", "Securing AI infrastructure means protecting the model supply chain (provenance of weights and training data), the inference endpoints (authentication, rate limiting, isolation), and the data stores behind retrieval. Poisoned training data, tampered model artifacts, and over-trusted tool access are the failure modes that distinguish AI security from ordinary application security.", "Evaluation and human-in-the-loop guardrails are controls, not afterthoughts. Systematic evaluation catches harmful or wrong behavior before deployment and monitors for drift after; human review gates high-stakes or irreversible actions. The principle mirrors least privilege: the more autonomy and impact an agent has, the more rigorous its evaluation and oversight must be."]}, "AC-302": {"ov": "Modern security operations run on a data platform. Learn lakehouse design, high-velocity ingestion, why normalization to open standards matters, and how distributed query engines make petabyte-scale analytics possible.", "ls": ["A lakehouse combines a data lake's cheap, flexible storage with a warehouse's structure and query performance, giving security teams one platform for both raw and analytics-ready data. For security, it means retaining high-volume telemetry affordably while still supporting fast detection queries and long-horizon hunting over historical data.", "Security data arrives fast and continuously, so ingestion pipelines must handle high velocity and volume without dropping events. Streaming ingestion, buffering, and back-pressure handling keep pace with bursts, while schema-on-read flexibility accommodates the many log formats a security program collects from across the enterprise.", "Logs from hundreds of sources use incompatible formats, so normalization to a common schema (using open standards like OCSF) is what makes cross-source detection and correlation possible. Without it, every query must special-case each source; with it, one detection works across the whole estate. Open standards also prevent vendor lock-in.", "At petabyte scale, queries must be distributed across many nodes to return in useful time. Partitioning, columnar formats, and engines that push computation to the data enable interactive hunting over enormous datasets. Understanding how the query engine parallelizes work lets analysts write queries that finish in seconds rather than hours."]}, "AC-303": {"ov": "Red teaming tests defenses by emulating a real adversary end to end. Learn its foundations versus pen testing, how to design a threat-emulation plan, evasion and operational tradecraft, and why purple-team integration multiplies the value.", "ls": ["Red teaming goes beyond finding vulnerabilities; it emulates a specific adversary's full campaign against people, process, and technology to test whether the organization can detect and respond. Where a pen test asks 'can this be exploited,' a red team asks 'would we even notice, and could we stop it.' Objectives are mission-based, not vulnerability-based.", "A threat-emulation plan grounds the engagement in a real adversary's known behavior, mapping objectives to MITRE ATT&CK tactics and techniques. This makes the exercise realistic and measurable \u2014 the blue team's detection coverage can be assessed technique by technique. Rules of engagement and explicit authorization remain mandatory.", "Evasion and operational tradecraft keep the red team realistic: minimizing footprint, blending with normal activity, managing command-and-control discreetly, and adapting when detected. The goal is not to 'win' silently forever but to genuinely test detection \u2014 including operating loud enough, at times, to validate that defenders can catch the technique.", "The highest value comes from purple teaming \u2014 red and blue working together to turn each finding into improved detection and response. An undetected technique becomes a new detection rule; a slow response becomes a tuned playbook. A red-team report that does not measurably strengthen the blue team has under-delivered."]}, "AC-304": {"ov": "Supply chain attacks compromise you through your dependencies and vendors. Learn the categories of software supply chain risk, how to operationalize SBOMs, how to audit hardware and third parties, and why continuous component tracking is essential.", "ls": ["Software supply chain risk spans compromised dependencies, malicious packages, tampered build pipelines, and poisoned updates \u2014 the SolarWinds and dependency-confusion patterns. The attacker's leverage is reach: one compromised component propagates to everyone who trusts it. Defending requires verifying the provenance and integrity of everything you incorporate.", "A Software Bill of Materials (SBOM) is a complete inventory of the components in a piece of software. Operationalizing it means generating SBOMs automatically in the build, storing them, and querying them the moment a new vulnerability appears \u2014 turning 'are we affected by this CVE' from a week of investigation into a database lookup.", "Hardware and third-party vendors extend the attack surface beyond your code. Auditing means assessing vendor security practices, validating component authenticity to counter counterfeits and implants, and contractually requiring security commitments. A vendor with weak security effectively inherits access to your environment through the trust you extend them.", "Components change and new vulnerabilities surface constantly, so a point-in-time check is insufficient. Continuous tracking monitors your component inventory against vulnerability feeds and integrity signals in real time, alerting when a previously clean dependency becomes risky. Supply chain security is a standing process, not a release-time gate."]}, "AC-305": {"ov": "Major incidents are managed, not just responded to. Learn the crisis command framework, how to coordinate cross-functional teams under pressure, the regulatory disclosure landscape, and how business continuity restores operations.", "ls": ["A crisis command framework (often built on the Incident Command System) defines clear roles and authority during a major incident: who decides, who communicates, who executes. Establishing command structure before the crisis prevents the confusion and duplicated effort that turn a serious incident into a catastrophic one.", "Major incidents pull in legal, communications, executive leadership, HR, and technical teams who normally do not work in lockstep. Coordination means a single source of truth, disciplined communication cadence, and clear decision rights, so the organization speaks and acts coherently rather than as competing factions under stress.", "Disclosure is now a legal obligation with deadlines \u2014 regulations such as breach-notification laws, SEC materiality reporting, and sector rules dictate what must be reported, to whom, and how quickly. Legal counsel guides these decisions; getting disclosure wrong can compound a technical incident with regulatory and reputational damage.", "Business continuity and disaster recovery restore operations against defined objectives \u2014 the Recovery Time Objective (how fast) and Recovery Point Objective (how much data loss is tolerable). Post-crisis, the lessons-learned review feeds continuity plans back into preparation, closing the loop so the organization emerges more resilient."]}, "AC-306": {"ov": "Operational Technology security protects systems where safety and uptime outrank confidentiality. Learn how OT differs from IT, the industrial protocols involved, OT-specific defenses and segmentation, and how safety instrumented systems are protected.", "ls": ["OT (industrial control systems, SCADA, PLCs) runs physical processes, so its priorities invert IT's: availability and safety come first, confidentiality last, and devices may run for decades without patching. Treating OT like IT \u2014 pushing patches, scanning aggressively, rebooting at will \u2014 can halt production or endanger people. The mindset must adapt to the environment.", "OT speaks specialized protocols \u2014 Modbus, DNP3, and others \u2014 many designed before security was a concern, lacking authentication or encryption. Understanding these protocols and their weaknesses is essential, because the usual IT defenses do not map cleanly and naive interference can disrupt a live physical process.", "The Purdue model organizes OT into zones, and segmentation between IT and OT (with tightly controlled conduits and DMZs) is the foundational defense. Passive monitoring is preferred over active scanning to avoid disturbing fragile devices. The goal is to keep the corporate network's compromises from ever reaching the plant floor.", "Safety Instrumented Systems (SIS) are the last-resort controls that bring a process to a safe state \u2014 and they are sacrosanct. They must be isolated from general OT and IT networks so that no cyber event can disable the protection that prevents physical harm. Compromising an SIS is the difference between an outage and a disaster."]}, "AC-307": {"ov": "Malware analysis and reverse engineering reveal what malicious code does and who built it. Learn static disassembly, dynamic execution analysis, defeating anti-analysis tricks, and attributing nation-state capability.", "ls": ["Static analysis examines a sample without running it \u2014 disassembling and decompiling to inspect code structure, strings, imports, and logic. It is safe and thorough but slow against obfuscation. Reading disassembly to understand a function's behavior is the core reverse-engineering skill that no automated tool fully replaces.", "Dynamic analysis runs the sample in an isolated sandbox and observes behavior: files written, registry and process changes, and network callbacks. It quickly reveals what static analysis might miss behind packing, but sophisticated malware detects sandboxes, so analysts combine both approaches and validate findings against each other.", "Advanced malware fights back with anti-analysis defenses \u2014 packing, anti-debugging, sandbox detection, and self-modifying code. Defeating them means unpacking, patching out checks, and using stealthier instrumentation. Recognizing these techniques is itself an indicator of sophistication and intent, narrowing who likely built the sample.", "Nation-state capability shows in tradecraft: custom tooling, novel exploits, careful operational security, and code reuse that ties samples to known actors. Attribution is probabilistic and built from many weak signals \u2014 infrastructure, code lineage, timing, and targeting \u2014 never a single smoking gun. Analysts present confidence levels, not certainty."]}, "AC-308": {"ov": "Mission assurance moves security past compliance to guaranteed operational capability. Learn why checkbox compliance falls short, how to define operational capability, how to engineer resilient core infrastructure, and how to audit capability continuously.", "ls": ["Compliance proves you met a control list at a point in time; it does not prove the mission survives a real attack. Mission assurance asks the harder, outcome-based question: can the organization continue critical operations while under attack? A perfectly compliant system can still fail its mission, which is why compliance is a floor, not the goal.", "Defining operational capability means identifying the mission-essential functions and the systems, data, and dependencies they rely on, then specifying what 'still working' means under degraded conditions. This shifts the conversation from 'is control X implemented' to 'can function Y continue,' which is what leadership actually cares about.", "Resilient core infrastructure is engineered to degrade gracefully \u2014 redundancy, failover, isolation of critical functions, and the assumption that components will be compromised. The design target is to lose pieces without losing the mission, contain damage to its origin, and keep essential services available even mid-incident.", "Capability cannot be assumed; it must be tested continuously through exercises, fault injection, and assessment that prove mission functions actually survive realistic stress. Continuous auditing of capability \u2014 not just of control checkboxes \u2014 is what keeps assurance honest as systems, threats, and dependencies change over time."]}, "AC-309": {"ov": "Risk quantification turns cyber risk into financial terms leaders can act on. Learn the principles of quantification (and frameworks like FAIR), how to model probability from data, how to calculate loss impact, and how to justify security investment.", "ls": ["Quantitative risk analysis expresses risk in money and probability rather than red/yellow/green heat maps. Frameworks like FAIR decompose risk into loss event frequency and loss magnitude, producing a defensible range. This lets security compete for budget in the same language as the rest of the business, which qualitative ratings cannot.", "Probability modeling estimates how often a loss event will occur, drawing on incident history, threat intelligence, industry data, and calibrated expert estimates. Results are expressed as distributions and ranges, not false-precision single numbers, and Monte Carlo simulation propagates the uncertainty through the model rather than hiding it.", "Loss impact calculation tallies what an event actually costs: direct response and recovery, business interruption, legal and regulatory penalties, and reputational harm. Distinguishing primary loss (immediate) from secondary loss (downstream, like fines and lost customers) produces a credible total that survives scrutiny from finance.", "Cost-benefit analysis ranks investments by how much risk reduction each dollar buys. Comparing a control's annualized cost against the reduction in expected loss (and computing a return on security investment) turns 'we should spend more on security' into a prioritized, evidence-backed business case that executives can approve with confidence."]}, "AC-310": {"ov": "Strategic leadership aligns security with the business and communicates risk to those who govern it. Learn strategic alignment, enterprise policy architecture, managing complex support demands, and how to brief a board.", "ls": ["Strategic alignment ties the security program to business objectives and the organization's risk appetite, so security enables the mission rather than obstructing it. A strategy that ignores business goals gets ignored or routed around; one framed in terms of protecting revenue, trust, and continuity earns sustained executive support.", "Enterprise policy architecture is the hierarchy that governs behavior: policies set direction and intent, standards make them measurable, and procedures make them executable. A coherent structure \u2014 without gaps or contradictions \u2014 is what makes governance enforceable and auditable across a large, complex organization.", "As the CSO's remit grows, demands multiply across business units, regulators, and technical teams with competing priorities. Managing this means clear governance forums, prioritization tied to risk, and resource allocation that reflects strategy rather than whoever shouts loudest. Leadership here is as much about saying no well as saying yes.", "Boards govern risk but are not technical, so communication must translate cyber risk into business terms \u2014 financial exposure, strategic impact, and trend lines \u2014 with clear asks and decisions. Effective board reporting is concise, honest about residual risk, and oriented to governance decisions, not technical detail. The goal is informed oversight, not a tutorial."]}};
+
+/* ---------------- Helpers ---------------- */
+const $ = id => document.getElementById(id);
+const root = $('root');
+const byTier = t => COURSES.filter(c=>c.tier===t);
+const course = id => COURSES.find(c=>c.id===id);
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function toast(msg){const t=document.createElement('div');t.className='toast';t.textContent=msg;document.body.appendChild(t);setTimeout(()=>t.remove(),2600);}
+function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function fmtDate(d){return new Date(d).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});}
+
+function ensureProgress(c){
+  App.user.progress = App.user.progress||{};
+  if(!App.user.progress[c]) App.user.progress[c]={modules:[false,false,false,false],examPassed:false,examScore:0,completedAt:null};
+  return App.user.progress[c];
+}
+function allStudied(p){return p.modules.length===4 && p.modules.every(Boolean);}
+function content(id){return CONTENT[id]||{ov:'',ls:['','','','']};}
+function courseStatus(id){
+  const p=App.user.progress&&App.user.progress[id];
+  if(!p) return 'new';
+  if(p.examPassed) return 'done';
+  if(p.modules.some(Boolean)) return 'prog';
+  return 'new';
+}
+function coursePct(id){
+  const p=App.user.progress&&App.user.progress[id];
+  if(!p) return 0;
+  if(p.examPassed) return 100;
+  return Math.round(p.modules.filter(Boolean).length/4*100);
+}
+function tierStats(t){
+  const list=byTier(t); let done=0;
+  list.forEach(c=>{if(App.user.progress&&App.user.progress[c.id]&&App.user.progress[c.id].examPassed)done++;});
+  return {done,total:list.length,pct:Math.round(done/list.length*100)};
+}
+function tierComplete(t){const s=tierStats(t);return s.done===s.total;}
+function capstoneState(t){App.user.capstones=App.user.capstones||{};return App.user.capstones[t]||null;}
+function allCerts(){return App.user.certs||[];}
+function pushRecent(id){
+  App.user.recent=(App.user.recent||[]).filter(x=>x!==id);
+  App.user.recent.unshift(id);
+  App.user.recent=App.user.recent.slice(0,6);
+}
+
+/* ---------------- Auth ---------------- */
+let authMode='login';
+window.toggleAuthMode=function(){authMode=authMode==='login'?'register':'login';renderAuth();};
+
+async function doRegister(){
+  const u=$('r-user').value.trim(), n=$('r-name').value.trim(), e=$('r-email').value.trim(),
+        rl=$('r-role').value, pw=$('r-pw').value, pw2=$('r-pw2').value;
+  const err=$('auth-err');
+  if(!u||!n||!pw){err.textContent='Operator ID, full name, and passphrase are required.';return;}
+  if(pw.length<6){err.textContent='Passphrase must be at least 6 characters.';return;}
+  if(pw!==pw2){err.textContent='Passphrases do not match.';return;}
+  if(await loadUser(u)){err.textContent='That Operator ID is already registered. Try signing in.';return;}
+  const rec={username:u,name:n,email:e,role:rl,pw:hashPw(pw),createdAt:Date.now(),progress:{},capstones:{},recent:[],certs:[]};
+  await saveUser(rec);
+  await Store.set('lms_session',u);
+  App.user=rec; App.view='dashboard'; render();
+  toast('Operator profile provisioned — welcome aboard.');
+}
+async function doLogin(){
+  const u=$('l-user').value.trim(), pw=$('l-pw').value, err=$('auth-err');
+  const rec=await loadUser(u);
+  if(!rec||rec.pw!==hashPw(pw)){err.textContent='Invalid Operator ID or passphrase.';return;}
+  await Store.set('lms_session',u);
+  App.user=rec; App.view='dashboard'; render();
+  toast('Authentication confirmed.');
+}
+window.doRegister=doRegister; window.doLogin=doLogin;
+window.logout=async function(){await Store.set('lms_session','');App.user=null;render();};
+
+function renderAuth(){
+  const login=authMode==='login';
+  root.innerHTML=`
+  <div class="classbar"><span><span class="dot"></span>CPE ST3 // CYBERSECURITY OFFICE (CSO)</span>
+    <span class="right"><span>SECURE TERMINAL</span><span id="clk"></span></span></div>
+  <div class="auth-wrap">
+    <div class="auth-art">
+      <div class="grid-bg"></div>
+      <div>
+        <div class="eyebrow">CSO Cyber Range</div>
+        <div class="big" style="margin-top:14px">Operator<br><em>Console.</em></div>
+        <p class="muted" style="max-width:380px;margin-top:18px;position:relative">A workforce proficiency platform across three clearance tiers — Foundational, Operational, and Strategic. Earn course certifications, then prove tier mastery on a 40-item capstone.</p>
+      </div>
+      <div style="position:relative;display:flex;gap:26px" class="mono">
+        ${Object.values(TIERS).map((t,i)=>`<div><div style="font-size:26px;font-weight:700;color:${i===0?'var(--phosphor)':i===1?'var(--amber)':'var(--alert)'}">${t.roman}</div><div class="eyebrow" style="font-size:9px">${t.label.split('—')[1].trim()}</div><div class="muted" style="font-size:11px;margin-top:4px">${byTier(t.key).length} courses</div></div>`).join('')}
+      </div>
+    </div>
+    <div class="auth-form">
+      <h1 style="font-size:26px">${login?'Sign in to your console':'Provision an operator profile'}</h1>
+      <p class="muted" style="margin:6px 0 22px">${login?'Enter your credentials to resume training.':'Register to track progress, exams, and credentials.'}</p>
+      ${login?`
+        <div class="field"><label>Operator ID</label><input id="l-user" autocomplete="username" placeholder="e.g. j.rivera"/></div>
+        <div class="field"><label>Passphrase</label><input id="l-pw" type="password" autocomplete="current-password" placeholder="••••••••"/></div>
+        <div id="auth-err" class="err"></div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px" onclick="doLogin()">Sign in</button>
+        <p class="muted" style="margin-top:18px">No profile yet? <span class="toggle-link" onclick="toggleAuthMode()">Provision one →</span></p>
+      `:`
+        <div class="field"><label>Operator ID</label><input id="r-user" placeholder="e.g. j.rivera"/></div>
+        <div class="field"><label>Full name</label><input id="r-name" placeholder="As it should appear on certificates"/></div>
+        <div class="field"><label>Email (optional)</label><input id="r-email" type="email" placeholder="name@agency.gov"/></div>
+        <div class="field"><label>Workforce track</label><select id="r-role">
+          <option>Security Engineering &amp; Architecture</option>
+          <option>Assurance &amp; Risk Management</option>
+          <option>Incident Response &amp; Defensive Ops</option>
+          <option>Adversary Emulation &amp; Assessment</option>
+          <option>Executive Security Leadership</option>
+          <option>General / Undeclared</option>
+        </select></div>
+        <div class="grid cols-2" style="gap:12px">
+          <div class="field"><label>Passphrase</label><input id="r-pw" type="password" placeholder="6+ characters"/></div>
+          <div class="field"><label>Confirm</label><input id="r-pw2" type="password" placeholder="repeat"/></div>
+        </div>
+        <div id="auth-err" class="err"></div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px" onclick="doRegister()">Create profile</button>
+        <p class="muted" style="margin-top:18px">Already enrolled? <span class="toggle-link" onclick="toggleAuthMode()">Sign in →</span></p>
+      `}
+    </div>
+  </div>`;
+  startClock();
+}
+
+/* ---------------- Clock ---------------- */
+let clkTimer;
+function startClock(){
+  clearInterval(clkTimer);
+  const tick=()=>{const c=$('clk');if(c)c.textContent=new Date().toISOString().replace('T',' ').slice(0,19)+'Z';};
+  tick();clkTimer=setInterval(tick,1000);
+}
+
+/* ---------------- Icons ---------------- */
+const IC={
+ dash:'<svg fill="none" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>',
+ cat:'<svg fill="none" stroke-width="2" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>',
+ cap:'<svg fill="none" stroke-width="2" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>',
+ cert:'<svg fill="none" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>',
+ check:'<svg fill="none" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>',
+ lock:'<svg fill="none" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+ menu:'<svg fill="none" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>',
+ back:'<svg fill="none" stroke-width="2" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>',
+ dl:'<svg fill="none" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>',
+ chev:'<svg fill="none" stroke-width="2" viewBox="0 0 24 24" style="width:16px;height:16px"><polyline points="9 18 15 12 9 6"/></svg>'
+};
+
+window.go=function(v){App.view=v;App.sel=null;App.exam=null;window.scrollTo(0,0);render();};
+window.openCourse=function(id){App.sel=id;App.view='course';App.courseTab='learn';pushRecent(id);saveUser(App.user);window.scrollTo(0,0);render();};
+
+function shell(content){
+  const ts={beginner:tierStats('beginner'),intermediate:tierStats('intermediate'),advanced:tierStats('advanced')};
+  return `
+  <div class="classbar"><span><span class="dot"></span>CPE ST3 // CYBERSECURITY OFFICE (CSO) — UNCLASSIFIED // TRAINING</span>
+    <span class="right"><span>OP: ${esc(App.user.username)}</span><span id="clk"></span></span></div>
+  <div class="shell">
+    <aside class="rail" id="rail">
+      <div class="brand">
+        <div class="mark">${sealSVG(38)}</div>
+        <div><div class="name">CSO Cyber Range</div><div class="sub">Operator Console</div></div>
+      </div>
+      <nav class="nav">
+        <button class="${App.view==='dashboard'?'active':''}" onclick="go('dashboard')">${IC.dash}Dashboard</button>
+        <button class="${App.view==='catalog'||App.view==='course'?'active':''}" onclick="go('catalog')">${IC.cat}Course Catalog</button>
+        <button class="${App.view==='capstone'||App.view==='capexam'?'active':''}" onclick="go('capstone')">${IC.cap}Capstone Tiers</button>
+        <button class="${App.view==='certs'?'active':''}" onclick="go('certs')">${IC.cert}My Credentials</button>
+        <div class="seg">Clearance Progress</div>
+        ${Object.values(TIERS).map(t=>`<div style="padding:6px 11px"><div style="display:flex;justify-content:space-between;font-size:12px"><span style="color:var(--steel)">Tier ${t.roman}</span><span class="mono" style="color:var(--ink-text)">${ts[t.key].done}/${ts[t.key].total}</span></div><div class="bar" style="margin-top:6px"><i style="width:${ts[t.key].pct}%"></i></div></div>`).join('')}
+      </nav>
+      <div class="operator">
+        <div class="nm">${esc(App.user.name)}</div>
+        <div class="rl">${esc(App.user.role||'Operator')}</div>
+        <button onclick="logout()">End session →</button>
+      </div>
+    </aside>
+    <main class="main">
+      <button class="menu-btn" onclick="document.getElementById('rail').classList.toggle('open')">${IC.menu} Menu</button>
+      ${content}
+    </main>
+  </div>`;
+}
+
+/* ---------------- Dashboard ---------------- */
+function renderDashboard(){
+  const totalDone=COURSES.filter(c=>App.user.progress&&App.user.progress[c.id]&&App.user.progress[c.id].examPassed).length;
+  const inProg=COURSES.filter(c=>courseStatus(c.id)==='prog').length;
+  const certs=allCerts().length;
+  const overall=Math.round(totalDone/COURSES.length*100);
+  const recent=(App.user.recent||[]).map(course).filter(Boolean);
+  const current=COURSES.filter(c=>courseStatus(c.id)==='prog').slice(0,3);
+
+  const stat=(k,v,sm)=>`<div class="panel stat"><div class="corner"></div><div class="k">${k}</div><div class="v">${v}${sm?` <small>${sm}</small>`:''}</div></div>`;
+
+  let html=`<div class="page-head"><div class="eyebrow">Operator Console · ${fmtDate(Date.now())}</div>
+    <h1>Welcome back, ${esc(App.user.name.split(' ')[0])}.</h1>
+    <p>Your standing across the CSO cyber proficiency program. Complete a course exam to certify; clear every course in a tier to unlock its capstone assessment.</p></div>
+
+  <div class="grid cols-4" style="margin-bottom:16px">
+    ${stat('Courses Certified',totalDone,`/ ${COURSES.length}`)}
+    ${stat('In Progress',inProg)}
+    ${stat('Credentials Earned',certs)}
+    <div class="panel stat" style="display:flex;align-items:center;gap:16px"><div class="ring" style="--p:${overall}"><div class="inner">${overall}%</div></div><div><div class="k">Program Completion</div><div class="muted" style="font-size:12px;margin-top:6px">Across all three clearance tiers</div></div></div>
+  </div>
+
+  <div class="grid cols-3" style="margin-bottom:16px">
+    ${Object.values(TIERS).map(t=>{const s=tierStats(t.key);const cs=capstoneState(t.key);return `
+      <div class="panel">
+        <div style="display:flex;justify-content:space-between;align-items:center"><span class="tier-pill ${t.cls}">Tier ${t.roman}</span>${cs&&cs.passed?`<span class="status-tag st-done">Credentialed</span>`:tierComplete(t.key)?`<span class="status-tag st-prog">Capstone ready</span>`:''}</div>
+        <h3 style="margin:12px 0 4px;font-size:16px">${t.label.split('—')[1].trim()}</h3>
+        <div class="muted mono" style="font-size:12px">${s.done} of ${s.total} courses certified</div>
+        <div class="bar" style="margin:12px 0"><i style="width:${s.pct}%"></i></div>
+        <button class="btn btn-ghost" style="width:100%;justify-content:center" onclick="go('capstone')">${cs&&cs.passed?'View tier credential':'Open tier'} →</button>
+      </div>`;}).join('')}
+  </div>
+
+  <div class="grid cols-2">
+    <div class="panel">
+      <div class="eyebrow">Continue training</div>
+      ${current.length?current.map(c=>courseRow(c)).join(''):recent.length?recent.slice(0,3).map(c=>courseRow(c)).join(''):`<div class="empty">${IC.cat}<div>No active courses. Open the catalog to begin.</div><button class="btn btn-primary" style="margin-top:14px" onclick="go('catalog')">Browse catalog</button></div>`}
+    </div>
+    <div class="panel">
+      <div class="eyebrow">Recent activity</div>
+      ${recent.length?recent.map(c=>courseRow(c,true)).join(''):`<div class="empty" style="padding:30px">${IC.dash}<div>Your recently opened courses will appear here.</div></div>`}
+    </div>
+  </div>`;
+  return html;
+}
+function courseRow(c,compact){
+  const st=courseStatus(c.id),pct=coursePct(c.id);
+  const tag=st==='done'?'<span class="status-tag st-done">Certified</span>':st==='prog'?'<span class="status-tag st-prog">In progress</span>':'<span class="status-tag st-new">Not started</span>';
+  return `<div onclick="openCourse('${c.id}')" style="display:flex;gap:13px;align-items:center;padding:13px 0;border-bottom:1px solid var(--hairline-soft);cursor:pointer">
+    <div style="flex:1"><div class="mono" style="font-size:11px;color:var(--steel)">${c.id} · ${TIERS[c.tier].label.split('—')[0].trim()}</div>
+    <div style="font-weight:600;font-size:14px;margin:3px 0">${esc(c.title)}</div>
+    ${compact?'':`<div class="bar" style="max-width:200px"><i style="width:${pct}%"></i></div>`}</div>${tag}</div>`;
+}
+
+/* ---------------- Catalog ---------------- */
+let catFilter='all';
+window.setCat=function(f){catFilter=f;render();};
+function renderCatalog(){
+  const tabs=[['all','All Tiers'],['beginner','Tier I'],['intermediate','Tier II'],['advanced','Tier III']];
+  let html=`<div class="page-head"><div class="eyebrow">Curriculum · 30 courses · 3 clearance tiers</div>
+    <h1>Course Catalog</h1>
+    <p>Operational, hands-on modules culminating in a graded deliverable and certification exam. Pass the exam (80%) to earn an individual course certificate.</p></div>
+    <div class="tag-row" style="margin-bottom:22px">${tabs.map(([k,l])=>`<button class="btn ${catFilter===k?'btn-primary':'btn-ghost'}" style="padding:8px 16px" onclick="setCat('${k}')">${l}</button>`).join('')}</div>`;
+
+  Object.values(TIERS).forEach(t=>{
+    if(catFilter!=='all'&&catFilter!==t.key) return;
+    const s=tierStats(t.key);
+    html+=`<div style="display:flex;align-items:baseline;gap:12px;margin:26px 0 14px"><span class="tier-pill ${t.cls}">${t.label}</span><span class="muted mono" style="font-size:12px">${s.done}/${s.total} certified</span></div>`;
+    html+=`<div class="grid cols-3">`+byTier(t.key).map(c=>{
+      const st=courseStatus(c.id),pct=coursePct(c.id);
+      const tag=st==='done'?'<span class="status-tag st-done">✓ Certified</span>':st==='prog'?'<span class="status-tag st-prog">In progress</span>':'<span class="status-tag st-new">Begin</span>';
+      return `<div class="panel course-card" onclick="openCourse('${c.id}')">
+        <div style="display:flex;justify-content:space-between;align-items:center"><span class="cid">${c.id}</span><span class="tier-pill ${t.cls}" style="font-size:9px">Tier ${t.roman}</span></div>
+        <h3>${esc(c.title)}</h3><div class="blurb">${esc(c.blurb)}</div>
+        <div class="bar"><i style="width:${pct}%"></i></div>
+        <div class="foot">${tag}<span class="muted mono" style="font-size:11px">4 modules</span></div>
+      </div>`;
+    }).join('')+`</div>`;
+  });
+  return html;
+}
+
+/* ---------------- Course detail ---------------- */
+window.toggleModule=function(cid,idx){
+  const p=ensureProgress(cid);p.modules[idx]=!p.modules[idx];saveUser(App.user);render();
+};
+window.toggleLesson=function(el){el.closest('.lesson').classList.toggle('open');};
+window.revealFlash=function(el){el.closest('.flash').classList.toggle('show');};
+window.setCourseTab=function(tab){App.courseTab=tab;render();};
+window.startExam=function(cid){
+  const c=course(cid);const p=ensureProgress(c.id);
+  if(!p.examPassed && !allStudied(p)){toast('Work through all four modules before the exam.');App.courseTab='learn';render();return;}
+  App.exam={kind:'course',ref:cid,title:c.title,questions:c.q.map((q,i)=>({...q,idx:i})),answers:[],submitted:false};
+  App.view='exam';window.scrollTo(0,0);render();
+};
+function renderCourse(){
+  const c=course(App.sel);const p=ensureProgress(c.id);const t=TIERS[c.tier];
+  const ct=content(c.id);
+  const done=p.modules.filter(Boolean).length;
+  const ready=allStudied(p);
+  const tab=App.courseTab||'learn';
+
+  /* ----- Learn tab: expandable lessons ----- */
+  const learn=`
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><div class="eyebrow">Course Material · ${c.modules.length} modules</div><span class="muted mono" style="font-size:12px">${done}/4 studied</span></div>
+    <p class="muted" style="font-size:13px;margin:0 0 16px">Open each module, read the material, then mark it studied. The exam unlocks once all four are complete.</p>
+    ${c.modules.map((m,i)=>`<div class="lesson ${p.modules[i]?'studied':''}${i===0&&!ready?' open':''}">
+        <div class="lhd" onclick="toggleLesson(this)">
+          <div class="num">${p.modules[i]?'✓':i+1}</div>
+          <div style="flex:1"><div class="mt">${esc(m.t)}</div><div class="md">${esc(m.d)}</div></div>
+          <div class="chev">${IC.chev}</div>
+        </div>
+        <div class="body">
+          <p>${esc(ct.ls[i]||m.d)}</p>
+          <button class="btn ${p.modules[i]?'btn-ghost':'btn-primary'} mark" style="padding:8px 16px" onclick="toggleModule('${c.id}',${i})">${p.modules[i]?'✓ Studied — click to unmark':'Mark module as studied'}</button>
+        </div>
+      </div>`).join('')}
+    <div class="deliverable"><div class="lab">Applied Deliverable</div><div style="margin-top:6px">${esc(c.deliverable)}</div></div>`;
+
+  /* ----- Study guide tab: overview + flashcards + readiness ----- */
+  const flash=c.q.map((q,i)=>`<div class="flash">
+      <div class="fq">${i+1}. ${esc(q.q)}</div>
+      <div class="fa"><span class="lab">Key point</span>${esc(q.o[q.a])}</div>
+      <span class="rev" onclick="revealFlash(this)">▸ reveal answer</span>
+    </div>`).join('');
+  const checks=[
+    {ok:ready,label:`All ${c.modules.length} modules studied`},
+    {ok:true,label:'Reviewed the study guide key points'},
+    {ok:p.examPassed,label:'Certification exam passed (80%+)'}
+  ].map(k=>`<div class="readychk ${k.ok?'ok':''}"><span class="dot">${IC.check}</span>${esc(k.label)}</div>`).join('');
+  const study=`
+    <div class="eyebrow" style="margin-bottom:10px">Study Guide</div>
+    <p style="font-size:14px;line-height:1.7;color:var(--ink-2);margin:0 0 20px">${esc(ct.ov)}</p>
+    <div class="eyebrow" style="margin-bottom:12px">Key Review Points · maps to exam items</div>
+    ${flash}
+    <div class="divider"></div>
+    <div class="eyebrow" style="margin-bottom:10px">Exam Readiness</div>
+    ${checks}`;
+
+  /* ----- Right rail: gated exam ----- */
+  const examPanel=p.examPassed
+    ? `<div class="status-tag st-done" style="display:inline-block;margin-bottom:12px">Passed — ${p.examScore}%</div><div class="muted" style="font-size:12px;margin-bottom:12px">Certified ${fmtDate(p.completedAt)}</div><button class="btn btn-ghost" style="width:100%;justify-content:center;margin-bottom:8px" onclick="startExam('${c.id}')">Retake exam</button><button class="btn btn-primary" style="width:100%;justify-content:center" onclick="go('certs')">View certificate</button>`
+    : ready
+      ? `<div class="status-tag st-prog" style="display:inline-block;margin-bottom:12px">Unlocked</div><button class="btn btn-primary" style="width:100%;justify-content:center" onclick="startExam('${c.id}')">Begin certification exam →</button><p class="muted" style="font-size:12px;margin-top:12px">Good luck — you can retake it if needed.</p>`
+      : `<button class="btn btn-ghost" style="width:100%;justify-content:center;cursor:not-allowed;opacity:.55" onclick="toast('Study all four modules first.');setCourseTab('learn')">${IC.lock} Exam locked</button>
+         <div class="locknote">${IC.lock}<div>Complete all four modules in the <b>Learn</b> tab to unlock the exam. ${done}/4 done.</div></div>`;
+
+  return `<button class="btn btn-ghost" style="margin-bottom:18px;padding:8px 14px" onclick="go('catalog')">${IC.back} Catalog</button>
+  <div class="page-head"><div style="display:flex;gap:12px;align-items:center"><span class="cid mono" style="color:var(--phosphor)">${c.id}</span><span class="tier-pill ${t.cls}">${t.label}</span>${p.examPassed?'<span class="status-tag st-done">✓ Certified</span>':ready?'<span class="status-tag st-prog">Ready for exam</span>':''}</div>
+    <h1 style="margin-top:10px">${esc(c.title)}</h1><p>${esc(c.blurb)}</p></div>
+
+  <div class="grid cols-2" style="grid-template-columns:1.6fr 1fr">
+    <div class="panel">
+      <div class="tabs">
+        <div class="tab ${tab==='learn'?'on':''}" onclick="setCourseTab('learn')">Learn</div>
+        <div class="tab ${tab==='study'?'on':''}" onclick="setCourseTab('study')">Study Guide</div>
+      </div>
+      ${tab==='learn'?learn:study}
+    </div>
+    <div>
+      <div class="panel" style="text-align:center;position:sticky;top:16px">
+        <div class="eyebrow">Certification Exam</div>
+        <div class="v mono" style="font-family:'Space Grotesk';font-weight:700;font-size:40px;margin:14px 0 4px">${c.q.length}<small style="font-size:15px;color:var(--steel)"> items</small></div>
+        <div class="muted" style="font-size:13px">Pass mark: 80% · Closed-book</div>
+        <div class="bar" style="margin:14px 0"><i style="width:${Math.round(done/4*100)}%"></i></div>
+        <div class="divider" style="margin:16px 0"></div>
+        ${examPanel}
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ---------------- Exam engine ---------------- */
+window.pick=function(qi,oi){if(App.exam.submitted)return;App.exam.answers[qi]=oi;renderExamBody();};
+window.submitExam=async function(){
+  const ex=App.exam;
+  if(ex.answers.filter(a=>a!==undefined).length<ex.questions.length){toast('Answer every item before submitting.');return;}
+  let correct=0;ex.questions.forEach((q,i)=>{if(ex.answers[i]===q.a)correct++;});
+  ex.score=Math.round(correct/ex.questions.length*100);ex.correct=correct;ex.submitted=true;
+  if(ex.kind==='course'){
+    const p=ensureProgress(ex.ref);p.examScore=ex.score;
+    if(ex.score>=80){p.examPassed=true;p.completedAt=Date.now();p.modules=[true,true,true,true];addCert('course',ex.ref);}
+    await saveUser(App.user);
+  }else{
+    App.user.capstones=App.user.capstones||{};const prev=App.user.capstones[ex.ref];
+    App.user.capstones[ex.ref]={passed:ex.score>=80,score:ex.score,completedAt:Date.now()};
+    if(ex.score>=80&&!(prev&&prev.passed))addCert('capstone',ex.ref);
+    await saveUser(App.user);
+  }
+  window.scrollTo(0,0);render();
+};
+function renderExam(){
+  const ex=App.exam;
+  if(ex.submitted) return renderExamResult();
+  return `<button class="btn btn-ghost" style="margin-bottom:14px;padding:8px 14px" onclick="${ex.kind==='course'?`openCourse('${ex.ref}')`:`go('capstone')`}">${IC.back} Exit exam</button>
+  <div class="page-head"><div class="eyebrow">${ex.kind==='course'?'Course Certification Exam':'Tier Capstone Assessment'}</div>
+  <h1 style="font-size:24px">${esc(ex.title)}</h1><p>${ex.questions.length} items · select one answer each · 80% to pass.</p></div>
+  <div id="exam-body">${examBody()}</div>`;
+}
+function examBody(){
+  const ex=App.exam;
+  return ex.questions.map((q,i)=>`<div class="q"><div class="qn">ITEM ${String(i+1).padStart(2,'0')} / ${ex.questions.length}</div><div class="qt">${esc(q.q)}</div>
+    ${q.o.map((o,oi)=>`<div class="opt ${ex.answers[i]===oi?'sel':''}" onclick="pick(${i},${oi})"><div class="rad"></div><div>${esc(o)}</div></div>`).join('')}</div>`).join('')
+    +`<div class="panel" style="position:sticky;bottom:16px;display:flex;justify-content:space-between;align-items:center"><span class="mono muted" style="font-size:13px">${ex.answers.filter(a=>a!==undefined).length} / ${ex.questions.length} answered</span><button class="btn btn-primary" onclick="submitExam()">Submit for grading →</button></div>`;
+}
+function renderExamBody(){const b=$('exam-body');if(b)b.innerHTML=examBody();}
+function renderExamResult(){
+  const ex=App.exam,pass=ex.score>=80;
+  return `<div class="page-head"><div class="eyebrow">${ex.kind==='course'?'Course Certification':'Tier Capstone'} · Result</div><h1>${esc(ex.title)}</h1></div>
+  <div class="panel" style="text-align:center;padding:38px;border-color:${pass?'var(--phosphor-dim)':'var(--alert-dim)'}">
+    <div class="ring" style="--p:${ex.score};margin:0 auto 18px;width:120px;height:120px"><div class="inner" style="width:92px;height:92px;font-size:26px;color:${pass?'var(--phosphor)':'var(--alert)'}">${ex.score}%</div></div>
+    <h2 style="font-size:24px;color:${pass?'var(--phosphor)':'var(--alert)'}">${pass?'Pass — Certified':'Below threshold'}</h2>
+    <p class="muted" style="margin:8px auto 20px;max-width:440px">${ex.correct} of ${ex.questions.length} correct. ${pass?(ex.kind==='course'?'A course certificate has been issued to your credentials wallet.':'Your tier capstone credential has been issued.'):'You need 80% to certify. Review the material and try again.'}</p>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      ${pass?`<button class="btn btn-primary" onclick="go('certs')">View credentials</button>`:`<button class="btn btn-amber" onclick="${ex.kind==='course'?`startExam('${ex.ref}')`:`startCapstone('${ex.ref}')`}">Retake</button>`}
+      <button class="btn btn-ghost" onclick="${ex.kind==='course'?`openCourse('${ex.ref}')`:`go('capstone')`}">${ex.kind==='course'?'Back to course':'Back to tiers'}</button>
+    </div>
+  </div>
+  ${pass?'':`<div class="panel" style="margin-top:16px"><div class="eyebrow">Review — incorrect items</div>${ex.questions.map((q,i)=>ex.answers[i]===q.a?'':`<div class="q" style="margin-top:12px"><div class="qt">${esc(q.q)}</div>${q.o.map((o,oi)=>`<div class="opt ${oi===q.a?'correct':oi===ex.answers[i]?'wrong':''}"><div class="rad"></div><div>${esc(o)}${oi===q.a?' ✓':''}</div></div>`).join('')}</div>`).join('')}</div>`}`;
+}
+
+/* ---------------- Capstone tiers ---------------- */
+window.startCapstone=function(tier){
+  if(!tierComplete(tier)){
+    const s=tierStats(tier);
+    toast(`Capstone locked — certify all ${s.total} courses first (${s.total-s.done} remaining).`);
+    App.view='capstone';render();return;
+  }
+  const pool=byTier(tier).flatMap(c=>c.q.map(q=>({...q})));
+  const questions=shuffle(pool).slice(0,40).map((q,i)=>({...q,idx:i}));
+  App.exam={kind:'capstone',ref:tier,title:TIERS[tier].label+' — Capstone Assessment',questions,answers:[],submitted:false};
+  App.view='exam';window.scrollTo(0,0);render();
+};
+function renderCapstone(){
+  let html=`<div class="page-head"><div class="eyebrow">Tier Credentials · 40-item proficiency assessments</div>
+  <h1>Capstone Tiers</h1><p>Each tier capstone is a comprehensive 40-item assessment drawn from every course in that tier. <b>You must certify every course in a tier before its capstone unlocks</b>; pass at 80% to earn the tier credential.</p></div>`;
+  Object.values(TIERS).forEach(t=>{
+    const s=tierStats(t.key),unlocked=tierComplete(t.key),cs=capstoneState(t.key);
+    const remaining=byTier(t.key).filter(c=>!(App.user.progress&&App.user.progress[c.id]&&App.user.progress[c.id].examPassed));
+    html+=`<div class="panel" style="margin-bottom:16px;border-color:${cs&&cs.passed?'var(--phosphor-dim)':'var(--hairline)'}">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap">
+        <div style="flex:1;min-width:240px">
+          <span class="tier-pill ${t.cls}">${t.label}</span>
+          <h3 style="margin:12px 0 6px;font-size:19px">${t.label.split('—')[1].trim()} Capstone</h3>
+          <div class="muted mono" style="font-size:12px">${byTier(t.key).length} courses · 40-item assessment · 80% to pass</div>
+          <div class="bar" style="margin:14px 0;max-width:360px"><i style="width:${s.pct}%"></i></div>
+          <div class="muted" style="font-size:13px">${s.done} of ${s.total} prerequisite courses certified${cs&&cs.passed?` · <span style="color:var(--phosphor)">Capstone passed (${cs.score}%)</span>`:''}</div>
+        </div>
+        <div style="text-align:center;min-width:200px">
+          ${cs&&cs.passed
+            ?`<div class="status-tag st-done" style="display:inline-block;margin-bottom:12px">✓ Tier Credential earned</div><br><button class="btn btn-primary" onclick="go('certs')">View credential</button><br><button class="btn btn-ghost" style="margin-top:8px" onclick="startCapstone('${t.key}')">Retake</button>`
+            :unlocked
+              ?`<div class="status-tag st-prog" style="display:inline-block;margin-bottom:12px">Unlocked</div><br><button class="btn btn-amber" onclick="startCapstone('${t.key}')">Start capstone →</button>`
+              :`<div style="color:var(--steel)">${IC.lock}</div><div class="status-tag st-locked" style="display:inline-block;margin-top:8px">Locked · ${s.total-s.done} course${s.total-s.done===1?'':'s'} remaining</div>`}
+        </div>
+      </div>
+      ${(!unlocked && !(cs&&cs.passed)) ? `<div class="divider" style="margin:16px 0 12px"></div>
+        <div class="eyebrow" style="margin-bottom:6px">Prerequisites — certify these to unlock</div>
+        <div class="preq">${byTier(t.key).map(c=>{const dn=!remaining.includes(c);return `<span class="chip ${dn?'done':'todo'}" onclick="openCourse('${c.id}')">${dn?'✓':'○'} ${c.id}</span>`;}).join('')}</div>` : ''}
+    </div>`;
+  });
+  return html;
+}
+
+/* ---------------- Certificates ---------------- */
+function addCert(kind,ref){
+  App.user.certs=App.user.certs||[];
+  const id=kind+'-'+ref+'-'+App.user.username;
+  if(App.user.certs.some(c=>c.id===id)) return;
+  const title=kind==='course'?course(ref).title:TIERS[ref].label+' Capstone';
+  const tier=kind==='course'?course(ref).tier:ref;
+  const date=Date.now();
+  const hash=shortHash(id+date+App.user.name);
+  App.user.certs.push({id,kind,ref,title,tier,date,hash});
+}
+function renderCerts(){
+  const certs=allCerts().slice().sort((a,b)=>b.date-a.date);
+  let html=`<div class="page-head"><div class="eyebrow">Credentials Wallet · CPE ST3 CSO</div>
+  <h1>My Credentials</h1><p>Verifiable certificates of completion. Course certificates are issued on exam pass; tier credentials on capstone pass. Download as PNG or PDF.</p></div>`;
+  if(!certs.length){return html+`<div class="panel"><div class="empty">${IC.cert}<div>No credentials yet. Pass a course exam to earn your first certificate.</div><button class="btn btn-primary" style="margin-top:14px" onclick="go('catalog')">Browse catalog</button></div></div>`;}
+  const caps=certs.filter(c=>c.kind==='capstone'),crs=certs.filter(c=>c.kind==='course');
+  if(caps.length){html+=`<div class="eyebrow" style="margin-bottom:10px">Tier Credentials</div><div class="grid cols-3" style="margin-bottom:24px">`+caps.map(certTile).join('')+`</div>`;}
+  html+=`<div class="eyebrow" style="margin-bottom:10px">Course Certificates</div><div class="grid cols-3">`+(crs.length?crs.map(certTile).join(''):`<div class="muted">No course certificates yet.</div>`)+`</div>`;
+  return html;
+}
+function certTile(c){
+  const t=TIERS[c.tier];
+  return `<div class="cert-tile">
+    <div class="top"><div><div class="mono" style="font-size:10px;color:var(--steel)">${c.kind==='capstone'?'TIER CREDENTIAL':'COURSE CERTIFICATE'}</div><div style="font-weight:600;font-size:14px;margin-top:5px">${esc(c.kind==='course'?course(c.ref).id+' · '+c.title:c.title)}</div></div><span class="tier-pill ${t.cls}" style="font-size:9px;flex:0 0 auto">Tier ${t.roman}</span></div>
+    <div class="bot"><button class="btn btn-primary" style="flex:1;justify-content:center;padding:9px" onclick="viewCert('${c.id}')">View</button><button class="btn btn-ghost" style="padding:9px 13px" onclick="downloadCert('${c.id}','png')" title="Download PNG">${IC.dl}</button></div>
+    <div style="padding:0 18px 13px"><span class="mono muted" style="font-size:10px">ISSUED ${fmtDate(c.date).toUpperCase()} · VERIFY ${c.hash}</span></div>
+  </div>`;
+}
+window.viewCert=function(id){
+  const c=allCerts().find(x=>x.id===id);if(!c)return;
+  const m=document.createElement('div');m.className='modal';m.id='cert-modal';
+  m.innerHTML=`<div class="box"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px"><div class="eyebrow">Credential Preview · ${c.hash}</div><button class="btn btn-ghost" style="padding:6px 12px" onclick="document.getElementById('cert-modal').remove()">Close ✕</button></div>
+    <canvas id="cert-canvas" class="cert" width="1600" height="1130"></canvas>
+    <div style="display:flex;gap:10px;margin-top:16px;justify-content:flex-end"><button class="btn btn-ghost" onclick="downloadCert('${id}','png')">${IC.dl} PNG</button><button class="btn btn-primary" onclick="downloadCert('${id}','pdf')">${IC.dl} PDF</button></div></div>`;
+  m.onclick=e=>{if(e.target===m)m.remove();};
+  document.body.appendChild(m);
+  drawCert($('cert-canvas'),c);
+};
+window.downloadCert=async function(id,fmt){
+  const c=allCerts().find(x=>x.id===id);if(!c)return;
+  const cv=document.createElement('canvas');cv.width=1600;cv.height=1130;
+  await drawCert(cv,c);
+  const fname='CSO_'+(c.kind==='course'?course(c.ref).id:'TIER_'+TIERS[c.tier].roman)+'_'+App.user.username;
+  if(fmt==='png'){
+    cv.toBlob(b=>{const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=fname+'.png';a.click();});
+  }else{
+    try{const {jsPDF}=window.jspdf;const pdf=new jsPDF({orientation:'landscape',unit:'px',format:[1600,1130]});
+      pdf.addImage(cv.toDataURL('image/png'),'PNG',0,0,1600,1130);pdf.save(fname+'.pdf');}
+    catch(e){toast('PDF engine unavailable — downloading PNG instead.');cv.toBlob(b=>{const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=fname+'.png';a.click();});}
+  }
+  toast('Credential downloaded.');
+};
+
+/* ---------------- Official CSO seal (SVG, used in chrome) ---------------- */
+function sealSVG(sz){
+  return `<svg viewBox="0 0 100 100" width="${sz}" height="${sz}" fill="none">
+    <polygon points="50,4 88,26 88,74 50,96 12,74 12,26" stroke="var(--phosphor)" stroke-width="3" fill="rgba(84,230,196,.06)"/>
+    <polygon points="50,16 78,32 78,68 50,84 22,68 22,32" stroke="var(--amber)" stroke-width="1.5"/>
+    <path d="M38 50 l9 9 l16 -18" stroke="var(--phosphor)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>`;
+}
+
+/* ---------------- Certificate canvas ---------------- */
+async function drawCert(cv,c){
+  try{await Promise.all([
+    document.fonts.load('700 64px "Space Grotesk"'),
+    document.fonts.load('500 64px "Space Grotesk"'),
+    document.fonts.load('600 26px "IBM Plex Mono"'),
+    document.fonts.load('400 24px "Inter"')
+  ]);}catch(e){}
+  const x=cv.getContext('2d'),W=cv.width,H=cv.height;
+  const accent=c.tier==='beginner'?'#54E6C4':c.tier==='intermediate'?'#F2A33C':'#FF5F73';
+  const t=TIERS[c.tier];
+  // background
+  const g=x.createLinearGradient(0,0,W,H);g.addColorStop(0,'#0c1322');g.addColorStop(1,'#080c16');
+  x.fillStyle=g;x.fillRect(0,0,W,H);
+  // guilloche corners
+  x.save();x.globalAlpha=.16;x.strokeStyle=accent;x.lineWidth=1;
+  for(const[cx,cy]of[[140,150],[W-140,150],[140,H-150],[W-140,H-150]]){
+    for(let r=14;r<150;r+=9){x.beginPath();for(let a=0;a<=Math.PI*2+0.1;a+=0.12){const rr=r+Math.sin(a*7)*5;x.lineTo(cx+Math.cos(a)*rr,cy+Math.sin(a)*rr*0.85);}x.stroke();}
+  }
+  x.restore();
+  // frame
+  x.strokeStyle=accent;x.lineWidth=3;x.strokeRect(40,40,W-80,H-80);
+  x.strokeStyle='rgba(130,148,182,.45)';x.lineWidth=1;x.strokeRect(54,54,W-108,H-108);
+  // microtext border
+  x.save();x.fillStyle='rgba(130,148,182,.4)';x.font='10px "IBM Plex Mono"';
+  const micro=('CPE ST3 CYBERSECURITY OFFICE · AUTHENTIC CREDENTIAL · '+c.hash+' · ').repeat(20);
+  x.fillText(micro.slice(0,210),70,78);x.fillText(micro.slice(0,210),70,H-66);x.restore();
+  const cx=W/2;
+  // seal mark (hexagon + check)
+  x.save();x.translate(cx,170);
+  const hex=(rad,col,lw)=>{x.beginPath();for(let i=0;i<6;i++){const a=-Math.PI/2+i*Math.PI/3;x[i?'lineTo':'moveTo'](Math.cos(a)*rad,Math.sin(a)*rad);}x.closePath();x.strokeStyle=col;x.lineWidth=lw;x.stroke();};
+  hex(56,accent,3);hex(42,'rgba(130,148,182,.6)',1.5);
+  x.strokeStyle=accent;x.lineWidth=6;x.lineCap='round';x.lineJoin='round';
+  x.beginPath();x.moveTo(-17,2);x.lineTo(-4,16);x.lineTo(22,-14);x.stroke();
+  x.restore();
+  // header text
+  const ctr=(txt,y,font,col,ls)=>{x.fillStyle=col;x.font=font;x.textAlign='center';if(ls){x.save();letterCenter(x,txt,cx,y,ls);x.restore();}else x.fillText(txt,cx,y);};
+  ctr('CPE ST3 CYBERSECURITY OFFICE (CSO)',262,'600 22px "IBM Plex Mono"','#8294B6',5);
+  ctr(c.kind==='capstone'?'TIER PROFICIENCY CREDENTIAL':'CERTIFICATE OF COMPLETION',322,'700 40px "Space Grotesk"','#DCE5F5',2);
+  // rule
+  x.strokeStyle=accent;x.lineWidth=2;x.beginPath();x.moveTo(cx-120,352);x.lineTo(cx+120,352);x.stroke();
+  ctr('This credential is awarded to',420,'400 24px "Inter"','#8294B6');
+  ctr(App.user.name,500,'500 62px "Space Grotesk"','#FFFFFF');
+  // accent underline under name
+  x.strokeStyle='rgba(130,148,182,.35)';x.lineWidth=1;x.beginPath();x.moveTo(cx-380,530);x.lineTo(cx+380,530);x.stroke();
+  ctr(c.kind==='capstone'?'for demonstrating comprehensive proficiency across the':'for successfully completing and passing the certification exam for',590,'400 24px "Inter"','#8294B6');
+  // title
+  const title=c.kind==='course'?course(c.ref).id+'  ·  '+c.title:t.label;
+  x.fillStyle=accent;x.font='600 38px "Space Grotesk"';x.textAlign='center';
+  wrapText(x,title,cx,660,1180,46);
+  if(c.kind==='capstone')ctr('40-item Capstone Assessment · CSO Cyber Range',724,'400 22px "Inter"','#8294B6');
+  // footer: date / hash / official
+  const fy=H-150;
+  x.textAlign='center';
+  const col=(label,val,px)=>{x.fillStyle='#8294B6';x.font='500 16px "IBM Plex Mono"';x.fillText(label,px,fy);x.strokeStyle='rgba(130,148,182,.4)';x.beginPath();x.moveTo(px-150,fy+12);x.lineTo(px+150,fy+12);x.stroke();x.fillStyle='#DCE5F5';x.font='400 22px "Inter"';x.fillText(val,px,fy+44);};
+  col('DATE OF ISSUE',fmtDate(c.date),cx-440);
+  // signature center
+  x.fillStyle='#DCE5F5';x.font='italic 30px "Space Grotesk"';x.fillText('R. Calderon',cx,fy);
+  x.strokeStyle='rgba(130,148,182,.4)';x.beginPath();x.moveTo(cx-150,fy+12);x.lineTo(cx+150,fy+12);x.stroke();
+  x.fillStyle='#8294B6';x.font='500 15px "IBM Plex Mono"';x.fillText('AUTHORIZING OFFICIAL · CSO',cx,fy+38);
+  col('VERIFICATION ID',c.hash,cx+440);
+}
+function letterCenter(x,txt,cx,y,ls){
+  const w=txt.split('').reduce((s,ch)=>s+x.measureText(ch).width+ls,-ls);
+  let px=cx-w/2;x.textAlign='left';
+  for(const ch of txt){x.fillText(ch,px,y);px+=x.measureText(ch).width+ls;}
+  x.textAlign='center';
+}
+function wrapText(x,text,cx,y,maxW,lh){
+  const words=text.split(' ');let line='',lines=[];
+  for(const w of words){const test=line?line+' '+w:w;if(x.measureText(test).width>maxW&&line){lines.push(line);line=w;}else line=test;}
+  lines.push(line);
+  const startY=y-(lines.length-1)*lh/2;
+  lines.forEach((l,i)=>x.fillText(l,cx,startY+i*lh));
+}
+
+/* ---------------- Render dispatcher ---------------- */
+function render(){
+  if(!App.user){renderAuth();return;}
+  let body;
+  switch(App.view){
+    case 'catalog':body=renderCatalog();break;
+    case 'course':body=renderCourse();break;
+    case 'exam':body=renderExam();break;
+    case 'capstone':body=renderCapstone();break;
+    case 'certs':body=renderCerts();break;
+    default:body=renderDashboard();
+  }
+  root.innerHTML=shell(body);
+  startClock();
+}
+
+/* ---------------- Bootstrap ---------------- */
+(async function init(){
+  try{const s=await Store.get('lms_session');if(s){const u=await loadUser(s);if(u)App.user=u;}}catch(e){}
+  render();
+})();
+</script>
+</body>
+</html>

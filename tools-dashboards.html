@@ -20,8 +20,80 @@
     </div>
   </div>
 
-  <!-- DIRECTORY -->
+  <!-- INTERACTIVE TOOLS (integrated apps) -->
   <section class="section">
+    <div class="wrap">
+      <span class="kicker">Interactive Tools — Launch Now</span>
+      <h2>Purpose-Built Apps for the Portfolio</h2>
+      <p class="section-sub">Self-contained applications integrated directly into the hub. Click <b>Launch</b> to open in this browser — no install required. Each opens with a <span class="mono">← CCoE Hub</span> link to bring you back. AI-backed features (memo drafting, correlation narratives) require the bundled server with an API key; the full source bundles are linked below for teams that want to stand that up.</p>
+      <div class="grid g3">
+
+        <div class="card card-gold reveal">
+          <span class="badge b-info">Vulnerability Analysis</span>
+          <h3>VulneraSight</h3>
+          <p><b>Purpose:</b> Threat-informed cyber risk correlation engine. Ingests Nessus/ACAS scan output and STIG <span class="mono">.ckl</span> checklists, then correlates findings against threat context to prioritize what truly matters.</p>
+          <ul class="checklist">
+            <li>Correlates raw scan findings with STIG control status</li>
+            <li>Risk-ranks remediation against threat intelligence</li>
+            <li>AI-assisted finding narratives (server + key optional)</li>
+          </ul>
+          <p style="margin-top:14px">
+            <a class="btn btn-gold" href="tools/vulnerasight/index.html" target="_blank" rel="noopener">Launch VulneraSight →</a><br>
+            <a class="mono" style="font-size:11px;display:inline-block;margin-top:10px" href="assets/downloads/VulneraSight-Getting-Started.pdf" target="_blank" rel="noopener">↓ Getting Started (PDF)</a>
+            &nbsp; <a class="mono" style="font-size:11px" href="assets/downloads/VulneraSight-full-source.zip">↓ Full source</a>
+          </p>
+        </div>
+
+        <div class="card card-gold reveal">
+          <span class="badge b-gold">Executive Decision Support</span>
+          <h3>Aegis.AI Risk Command</h3>
+          <p><b>Purpose:</b> Executive risk-management and authorization decision suite. Visualizes portfolio risk posture, optimizes security budget allocation, and drafts authorization memos for human review.</p>
+          <ul class="checklist">
+            <li>Portfolio risk-posture dashboards and budget optimizer</li>
+            <li>Authorization decision support for AO/AODR</li>
+            <li>AI authorization-memo drafting (server + key optional)</li>
+          </ul>
+          <p style="margin-top:14px">
+            <a class="btn btn-gold" href="tools/aegis-ai/index.html" target="_blank" rel="noopener">Launch Aegis.AI →</a><br>
+            <a class="mono" style="font-size:11px;display:inline-block;margin-top:10px" href="assets/downloads/AegisAI-full-source.zip">↓ Full source (server + README)</a>
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <span class="badge b-info">Training · Workforce</span>
+          <h3>CSO Cyber Range Console</h3>
+          <p><b>Purpose:</b> Interactive operator console for cyber workforce training — scenario-driven exercises with scored assessments and exportable PDF certificates of completion.</p>
+          <ul class="checklist">
+            <li>Operator-console training scenarios and knowledge checks</li>
+            <li>Self-scoring with progress tracking</li>
+            <li>Exportable PDF completion records</li>
+          </ul>
+          <p style="margin-top:14px">
+            <a class="btn btn-gold" href="tools/cyber-range/index.html" target="_blank" rel="noopener">Launch Cyber Range →</a>
+            &nbsp; <a class="btn btn-ghost" href="workforce.html">Workforce Center</a>
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <span class="badge b-mute">External · Hosted</span>
+          <h3>Cybersecurity AI Prompt Library</h3>
+          <p><b>Purpose:</b> Curated, hosted library of vetted cybersecurity AI prompts. Pairs with the <a href="ai-automation.html">AI &amp; Automation guardrails</a> — sanitize inputs before use.</p>
+          <ul class="checklist">
+            <li>Vetted prompts mapped to common RMF and ops tasks</li>
+            <li>Hosted externally — opens in a new tab</li>
+          </ul>
+          <p style="margin-top:14px">
+            <a class="btn btn-gold" href="https://cybersecurity-ai-prompt-library-284217534922.us-east1.run.app/" target="_blank" rel="noopener">Open Prompt Library ⤤</a>
+          </p>
+        </div>
+
+      </div>
+      <div class="callout" style="margin-top:24px"><b class="head">Demonstration data</b>These integrated apps run client-side with representative data for demonstration. Do not load CUI, real vulnerability detail, or system-identifying data — the same rule as the rest of this hub.</div>
+    </div>
+  </section>
+
+  <!-- DIRECTORY -->
+  <section class="section" style="background:var(--panel)">
     <div class="wrap">
       <span class="kicker">Ecosystem Directory</span>
       <h2>The Tools You'll Actually Use</h2>
@@ -92,7 +164,7 @@
   </section>
 
   <!-- METRICS CENTER -->
-  <section class="section" style="background:var(--panel)">
+  <section class="section">
     <div class="wrap">
       <span class="kicker">Metrics &amp; Performance Management Center</span>
       <h2>Throughput, Measured</h2>
@@ -108,7 +180,7 @@
   </section>
 
   <!-- ACCESS WORKFLOW -->
-  <section class="section">
+  <section class="section" style="background:var(--panel)">
     <div class="wrap">
       <span class="kicker">Access Provisioning</span>
       <h2>Standard Access Workflow</h2>

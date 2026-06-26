@@ -51,12 +51,42 @@
     </div>
   </section>
 
-  <!-- PROMPT LIBRARY -->
+  <!-- AI-POWERED TOOLS (integrated apps) -->
   <section class="section" style="background:var(--panel)">
+    <div class="wrap">
+      <span class="kicker">AI-Powered Tools — Inside the Guardrails</span>
+      <h2>Decision Support, Not Decision Making</h2>
+      <p class="section-sub">These integrated apps apply the rules above: AI <b>drafts</b>, humans decide and sign. Launch them directly from the hub. The AI features call a bundled server that holds the API key — the browser never sees it — and switching models (Anthropic, Gemini, Ask Sage, OpenAI, or self-hosted) is a config change, not a code change. Core dashboards work without any key.</p>
+      <div class="grid g3">
+        <div class="card card-gold reveal">
+          <span class="badge b-gold">Executive Decision Support</span>
+          <h3>Aegis.AI Risk Command</h3>
+          <p>Portfolio risk posture, security-budget optimization, and AI-drafted authorization memos that route to a human for line-by-line review and signature.</p>
+          <p style="margin-top:14px"><a class="btn btn-gold" href="tools/aegis-ai/index.html" target="_blank" rel="noopener">Launch Aegis.AI →</a></p>
+        </div>
+        <div class="card card-gold reveal">
+          <span class="badge b-info">Threat-Informed Analysis</span>
+          <h3>VulneraSight</h3>
+          <p>Correlates Nessus/ACAS findings and STIG checklists against threat context, then drafts reviewable finding narratives to accelerate POA&amp;M triage.</p>
+          <p style="margin-top:14px"><a class="btn btn-gold" href="tools/vulnerasight/index.html" target="_blank" rel="noopener">Launch VulneraSight →</a> &nbsp; <a class="btn btn-ghost" href="tools-dashboards.html#emass">Tools Portal</a></p>
+        </div>
+        <div class="card reveal">
+          <span class="badge b-mute">External · Hosted</span>
+          <h3>Cybersecurity AI Prompt Library</h3>
+          <p>The hosted home of the vetted prompts below — curated, categorized, and ready to copy. Sanitize every bracketed placeholder before use.</p>
+          <p style="margin-top:14px"><a class="btn btn-gold" href="https://cybersecurity-ai-prompt-library-284217534922.us-east1.run.app/" target="_blank" rel="noopener">Open Prompt Library ⤤</a></p>
+        </div>
+      </div>
+      <div class="callout warn" style="margin-top:22px"><b class="head">Same line, every tool</b>An AI-drafted memo, narrative, or prompt output is a <i>draft</i> until a qualified human reviews it and owns it. No CUI or system-identifying data into any AI tool — including these — outside an approved, key-backed deployment.</div>
+    </div>
+  </section>
+
+  <!-- PROMPT LIBRARY -->
+  <section class="section">
     <div class="wrap">
       <span class="kicker">Vetted Prompt Library</span>
       <h2>Prompts That Produce Reviewable Drafts</h2>
-      <p class="section-sub">Tested against the Gold Standard rubric. Replace bracketed placeholders with <b>sanitized</b> content only.</p>
+      <p class="section-sub">Tested against the Gold Standard rubric. The full, searchable library is hosted in the <a href="https://cybersecurity-ai-prompt-library-284217534922.us-east1.run.app/" target="_blank" rel="noopener">Cybersecurity AI Prompt Library ⤤</a>. Replace bracketed placeholders with <b>sanitized</b> content only.</p>
       <div class="grid g3">
         <div class="card reveal"><span class="badge b-gold">PL-01</span><h3>Control Narrative Draft</h3><p class="formula" style="font-size:12px">"Draft an implementation statement for [control ID] describing [generic mechanism]. State what is implemented, how it's configured, who manages it, and how it's verified. Present tense, no aspirational language."</p></div>
         <div class="card reveal"><span class="badge b-gold">PL-02</span><h3>Policy Plain-Language Summary</h3><p class="formula" style="font-size:12px">"Summarize this policy section for a new ISSO: required actions, deadlines, and escalation triggers as a checklist. Flag any ambiguity instead of resolving it yourself."</p></div>
@@ -69,7 +99,7 @@
   </section>
 
   <!-- SCRIPTS -->
-  <section class="section">
+  <section class="section" style="background:var(--panel)">
     <div class="wrap">
       <span class="kicker">Approved Script Repository</span>
       <h2>Automation With a Paper Trail</h2>
@@ -90,7 +120,7 @@
   </section>
 
   <!-- INTAKE -->
-  <section class="section" id="intake" style="background:var(--panel)">
+  <section class="section" id="intake">
     <div class="wrap">
       <span class="kicker">Request Intake Engine</span>
       <h2>Have an Automation Idea? Route It Here.</h2>

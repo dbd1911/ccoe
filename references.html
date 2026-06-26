@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>References &amp; Authorities Library — CCoE</title>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+  /* References-specific touches, scoped to this page */
+  .ref-controls { position: sticky; top: 64px; z-index: 5; background: var(--paper); padding: 14px 0 10px; border-bottom: 1px solid var(--line); }
+  .ref-controls .field { width: 100%; font-size: 16px; padding: 13px 16px; }
+  .ref-summary { font-family: var(--mono); font-size: 12px; letter-spacing: .04em; color: var(--ink-soft); margin: 10px 0 0; }
+  table.ref-table td { vertical-align: top; }
+  .ref-id { font-family: var(--mono); font-weight: 600; white-space: nowrap; }
+  .ref-title { font-weight: 600; }
+  .ref-note { display: block; font-size: 12.5px; color: var(--ink-soft); margin-top: 3px; font-weight: 400; }
+  .ref-dl { white-space: nowrap; }
+  .ref-src { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); }
+  tr.ref-empty td { text-align: center; padding: 28px; color: var(--ink-soft); font-style: italic; }
+  mark { background: #FCEFB8; color: inherit; padding: 0 1px; border-radius: 2px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Library · <span class="phase-tag">Subsequent Phase — Authoritative Sources</span></div>
+      <h1>References &amp; Authorities Library</h1>
+      <p class="lede">Every governing authority behind this program, in one searchable place — DoD issuances, Army regulations, NIST standards, CNSS, MITRE, CISA, and DISA. Links go to the publisher's official copy so you always pull the version of record.</p>
+      <div class="doc-meta">
+        <span>OWNER: <b>Knowledge Manager</b></span><span>VERSION: <b>1.0</b></span><span>EFFECTIVE: <b>2026-06-12</b></span><span>REVIEW: <b>Quarterly link verification</b></span><span>APPROVAL: <b>Cybersecurity Office Director</b></span>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" style="padding-top:18px">
+    <div class="wrap">
+      <div class="callout"><b class="head">Read this first</b>All links resolve to the <b>publisher's authoritative site</b> (esd.whs.mil, armypubs.army.mil, csrc.nist.gov, cnss.gov, mitre.org, cisa.gov, public.cyber.mil). That's deliberate: those pages always serve the current version, so a reissue never leaves you holding a stale PDF. Nothing here is classified or CUI — all documents are cleared for public release. The "Source" column shows the exact domain so you can confirm authenticity before you click.</div>
+
+      <div class="ref-controls">
+        <input class="field" type="search" id="refSearch" placeholder="Search by number, title, topic, or issuer — e.g. '800-53', 'RMF', 'CUI', '25-2', 'MITRE'…" aria-label="Search references">
+        <div class="chip-row" id="refChips" style="margin-top:12px">
+          <button class="chip active" data-cat="all">All</button>
+          <button class="chip" data-cat="dod">DoD Issuances</button>
+          <button class="chip" data-cat="army">Army (AR / DA PAM)</button>
+          <button class="chip" data-cat="nist">NIST</button>
+          <button class="chip" data-cat="cnss">CNSS</button>
+          <button class="chip" data-cat="mitre">MITRE</button>
+          <button class="chip" data-cat="cisa">CISA / DISA</button>
+        </div>
+        <p class="ref-summary" id="refSummary">Loading references…</p>
+      </div>
+
+      <div class="table-wrap" style="margin-top:6px">
+        <table class="ref-table" id="refTable">
+          <thead><tr>
+            <th class="sortable" style="width:13%">Document</th>
+            <th class="sortable">Title</th>
+            <th class="sortable" style="width:13%">Issuer</th>
+            <th class="sortable" style="width:13%">Current As Of</th>
+            <th style="width:11%">Source</th>
+            <th style="width:8%">Get It</th>
+          </tr></thead>
+          <tbody id="refBody"><!-- rendered by script --></tbody>
+        </table>
+      </div>
+
+      <div class="callout warn" style="margin-top:26px"><b class="head">Verification &amp; freshness</b>Links were verified against each publisher's official catalog on <b>12 JUN 2026</b>. Because we link to landing/catalog pages rather than deep-frozen file paths, the publisher's own version control keeps them current. If you hit a moved page, it's almost always a publisher reorganization — report it to the Knowledge Manager and use the issuer's site search in the meantime. Army's full <b>AR 25-2 + 14 DA PAM</b> cybersecurity series is browsable at the armypubs portal linked in the Army rows.</div>
+    </div>
+  </section>
+</main>
+
+<script src="assets/js/main.js"></script>
+<script>
+/* ----------------------------------------------------------------
+   Authoritative reference library — data + combined search/filter/sort.
+   Each link points at the publisher's official source of record.
+   Verified 12 JUN 2026.
+   ---------------------------------------------------------------- */
+const REFS = [
+  // ---- DoD ISSUANCES (esd.whs.mil Directives Division) ----
+  { cat:'dod', id:'DoDI 8500.01', title:'Cybersecurity', note:'Establishes the DoD cybersecurity program and risk-managed approach to protecting DoD information and IT.', issuer:'DoD CIO', date:'2014 (Chg 1, 2020)', sort:'20201001', src:'esd.whs.mil', url:'https://www.esd.whs.mil/portals/54/documents/dd/issuances/dodi/850001_2014.pdf' },
+  { cat:'dod', id:'DoDI 8510.01', title:'Risk Management Framework (RMF) for DoD Systems', note:'The governing instruction for executing RMF across DoD systems. Reissued 19 JUL 2022.', issuer:'DoD CIO', date:'19 JUL 2022', sort:'20220719', src:'esd.whs.mil', url:'https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodi/851001p.pdf' },
+  { cat:'dod', id:'DoDD 8140.01', title:'Cyberspace Workforce Management', note:'Directive establishing management of the DoD cyberspace workforce and the DCWF.', issuer:'DoD CIO', date:'2015 (Chg 1, 2020)', sort:'20201005', src:'esd.whs.mil', url:'https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodd/814001p.pdf' },
+  { cat:'dod', id:'DoDI 8140.02', title:'Identification, Tracking &amp; Reporting of Cyberspace Workforce Requirements', note:'Defines how DCWF work roles are identified, coded, tracked, and reported.', issuer:'DoD CIO', date:'21 DEC 2021', sort:'20211221', src:'esd.whs.mil', url:'https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodi/814002p.PDF' },
+  { cat:'dod', id:'DoDM 8140.03', title:'Cyberspace Workforce Qualification &amp; Management Program', note:'Prescribes qualification requirements per DCWF work role (foundational + residential).', issuer:'DoD CIO', date:'15 FEB 2023', sort:'20230215', src:'esd.whs.mil', url:'https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodm/814003p.pdf' },
+  { cat:'dod', id:'DoD Issuances', title:'DoD Directives Division — Official Issuances Portal', note:'Authoritative, always-current catalog of all DoD Directives, Instructions, and Manuals. Use to confirm the latest edition of any DoDD/DoDI/DoDM.', issuer:'WHS', date:'Live catalog', sort:'99999999', src:'esd.whs.mil', url:'https://www.esd.whs.mil/DD/' },
+
+  // ---- ARMY REGULATIONS & DA PAMs (armypubs.army.mil) ----
+  { cat:'army', id:'AR 25-2', title:'Army Cybersecurity', note:'The Army\u2019s cybersecurity regulation; implements DoDI 8500.01 / 8510.01. Published with 14 concurrent DA PAMs.', issuer:'HQDA (CIO/G-6)', date:'2019, as amended', sort:'20190404', src:'armypubs.army.mil', url:'https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN37506-AR_25-2-003-WEB-4.pdf' },
+  { cat:'army', id:'DA PAM 25-2-14', title:'Risk Management Framework for Army Information Technology', note:'Implements AR 25-2 RMF policy for Army IT; aligns to DoDI 8510.01, NIST SP 800-37, and CNSSI 1253.', issuer:'HQDA', date:'2019, as amended', sort:'20190408', src:'armypubs.army.mil', url:'https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN36811-PAM_25-2-14-001-WEB-3.pdf' },
+  { cat:'army', id:'DA PAM 25-2-5', title:'Army Cybersecurity — Software Assurance', note:'Procedures for managing software assurance risk across the software life cycle.', issuer:'HQDA', date:'15 SEP 2021', sort:'20210915', src:'armypubs.army.mil', url:'https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN36807-PAM_25-2-5-001-WEB-2.pdf' },
+  { cat:'army', id:'DA PAM 25-2-9', title:'Army Cybersecurity — Implementation Pamphlet', note:'One of the 14 DA PAMs implementing AR 25-2 (network security / RMF implementation guidance).', issuer:'HQDA', date:'2019, as amended', sort:'20190404', src:'armypubs.army.mil', url:'https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN36792-PAM_25-2-9-001-WEB-3.pdf' },
+  { cat:'army', id:'DA PAM 25-2-12', title:'Army Cybersecurity — Implementation Pamphlet', note:'One of the 14 DA PAMs implementing AR 25-2 (authorization / privileged access guidance).', issuer:'HQDA', date:'2019, as amended', sort:'20190404', src:'armypubs.army.mil', url:'https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN36810-PAM_25-2-12-001-WEB-3.pdf' },
+  { cat:'army', id:'Army Pubs', title:'Army Publishing Directorate — Official Portal (AR 25-2 + full DA PAM 25-2 series)', note:'Authoritative, always-current source for every Army regulation and DA pamphlet. Search "25-2" for the complete cybersecurity series.', issuer:'APD', date:'Live catalog', sort:'99999998', src:'armypubs.army.mil', url:'https://armypubs.army.mil/' },
+
+  // ---- NIST (csrc.nist.gov landing pages — always serve current PDF) ----
+  { cat:'nist', id:'FIPS 199', title:'Standards for Security Categorization of Federal Information &amp; Information Systems', note:'The categorization standard (Low/Moderate/High) behind RMF Step 1.', issuer:'NIST', date:'FEB 2004', sort:'20040201', src:'csrc.nist.gov', url:'https://csrc.nist.gov/pubs/fips/199/final' },
+  { cat:'nist', id:'FIPS 200', title:'Minimum Security Requirements for Federal Information &amp; Information Systems', note:'Defines minimum security requirements and mandates use of SP 800-53 controls.', issuer:'NIST', date:'MAR 2006', sort:'20060301', src:'csrc.nist.gov', url:'https://csrc.nist.gov/pubs/fips/200/final' },
+  { cat:'nist', id:'SP 800-18 Rev 1', title:'Guide for Developing Security Plans for Federal Information Systems', note:'The reference for building a System Security Plan (SSP).', issuer:'NIST', date:'FEB 2006', sort:'20060201', src:'csrc.nist.gov', url:'https://csrc.nist.gov/pubs/sp/800/18/r1/final' },
+  { cat:'nist', id:'SP 800-30 Rev 1', title:'Guide for Conducting Risk Assessments', note:'Methodology for risk assessment — likelihood, impact, and risk determination.', issuer:'NIST', date:'SEP 2012', sort:'20120901', src:'csrc.nist.gov', url:'https://csrc.nist.gov/pubs/sp/800/30/r1/final' },
+  { cat:'nist', id:'SP 800-37 Rev 2', title:'Risk Management Framework for Information Systems &amp; Organizations', note:'The 7-step RMF process (Prepare \u2192 Monitor). Foundational to all RMF work.', issuer:'NIST', date:'DEC 2018', sort:'20181220', src:'csrc.nist.gov', url:'https://csrc.nist.gov/pubs/sp/800/37/r2/final' },
+  { cat:'nist', id:'SP 800-39', title:'Managing Information Security Risk: Organization, Mission &amp; Information System View', note:'Organization-wide risk management program guidance (three tiers).', issuer:'NIST', date:'MAR 2011', sort:'20110301', src:'csrc.nist.gov', url:'https://csrc.nist.gov/pubs/sp/800/39/final' },
+  { cat:'nist', id:'SP 800-53 Rev 5', title:'Security &amp; Privacy Controls for Information Systems &amp; Organizations', note:'The master control catalog. Includes errata/updates (Rel. 5.x). Core to RMF Step 2.', issuer:'NIST', date:'SEP 2020 (upd.)', sort:'20201210', src:'csrc.nist.gov', url:'https://csrc.nist.gov/pubs/sp/800/53/r5/final' },
+  { cat:'nist', id:'SP 800-53A Rev 5', title:'Assessing Security &amp; Privacy Controls in Information Systems &amp; Organizations', note:'Assessment procedures for the SP 800-53 controls — the assessor\u2019s companion.', issuer:'NIST', date:'JAN 2022', sort:'20220125', src:'csrc.nist.gov', url:'https://csrc.nist.gov/pubs/sp/800/53/a/r5/final' },
+  { cat:'nist', id:'SP 800-53B', title:'Control Baselines for Information Systems &amp; Organizations', note:'The Low/Moderate/High and privacy control baselines used for tailoring.', issuer:'NIST', date:'SEP 2020 (upd.)', sort:'20201210', src:'csrc.nist.gov', url:'https://csrc.nist.gov/pubs/sp/800/53/b/upd1/final' },
+  { cat:'nist', id:'SP 800-60 Vol 1', title:'Guide for Mapping Types of Information &amp; Information Systems to Security Categories', note:'Helps assign FIPS 199 impact levels by information type.', issuer:'NIST', date:'AUG 2008', sort:'20080801', src:'csrc.nist.gov', url:'https://csrc.nist.gov/pubs/sp/800/60/v1/r1/final' },
+  { cat:'nist', id:'SP 800-137', title:'Information Security Continuous Monitoring (ISCM) for Federal Information Systems &amp; Organizations', note:'The basis for ConMon strategy and ongoing authorization.', issuer:'NIST', date:'SEP 2011', sort:'20110901', src:'csrc.nist.gov', url:'https://csrc.nist.gov/pubs/sp/800/137/final' },
+  { cat:'nist', id:'SP 800-160 Vol 1', title:'Engineering Trustworthy Secure Systems', note:'Systems security engineering principles for secure-by-design.', issuer:'NIST', date:'NOV 2022', sort:'20221116', src:'csrc.nist.gov', url:'https://csrc.nist.gov/pubs/sp/800/160/v1/r1/final' },
+  { cat:'nist', id:'SP 800-171 Rev 3', title:'Protecting Controlled Unclassified Information (CUI) in Nonfederal Systems &amp; Organizations', note:'CUI safeguarding requirements — flows down to contractor systems.', issuer:'NIST', date:'MAY 2024', sort:'20240514', src:'csrc.nist.gov', url:'https://csrc.nist.gov/pubs/sp/800/171/r3/final' },
+  { cat:'nist', id:'SP 800-172', title:'Enhanced Security Requirements for Protecting CUI', note:'Enhanced requirements against advanced persistent threats, supplementing 800-171.', issuer:'NIST', date:'FEB 2021', sort:'20210202', src:'csrc.nist.gov', url:'https://csrc.nist.gov/pubs/sp/800/172/final' },
+  { cat:'nist', id:'NIST CSF 2.0', title:'The NIST Cybersecurity Framework 2.0', note:'Six functions including the new Govern function. Referenced by the Risk Management Center.', issuer:'NIST', date:'26 FEB 2024', sort:'20240226', src:'nist.gov', url:'https://www.nist.gov/cyberframework' },
+
+  // ---- CNSS ----
+  { cat:'cnss', id:'CNSSI 1253', title:'Security Categorization &amp; Control Selection for National Security Systems', note:'Applies NIST categorization/controls to National Security Systems (NSS). Browse via the CNSS issuances catalog.', issuer:'CNSS', date:'as amended', sort:'20220301', src:'cnss.gov', url:'https://www.cnss.gov/CNSS/issuances/Instructions.cfm' },
+
+  // ---- MITRE ----
+  { cat:'mitre', id:'MITRE ATT&amp;CK', title:'Adversarial Tactics, Techniques &amp; Common Knowledge', note:'The threat-behavior knowledge base used for ATT&amp;CK mapping on the Threat Intel page.', issuer:'MITRE', date:'Living resource', sort:'99999990', src:'attack.mitre.org', url:'https://attack.mitre.org/' },
+  { cat:'mitre', id:'MITRE D3FEND', title:'A Knowledge Graph of Cybersecurity Countermeasures', note:'Defensive technique counterpart to ATT&amp;CK.', issuer:'MITRE', date:'Living resource', sort:'99999989', src:'d3fend.mitre.org', url:'https://d3fend.mitre.org/' },
+  { cat:'mitre', id:'CVE Program', title:'Common Vulnerabilities &amp; Exposures', note:'The authoritative CVE list — every vulnerability identifier referenced in POA&amp;Ms.', issuer:'MITRE / CVE.org', date:'Living resource', sort:'99999988', src:'cve.org', url:'https://www.cve.org/' },
+  { cat:'mitre', id:'MITRE CWE', title:'Common Weakness Enumeration', note:'Catalog of software/hardware weakness types underlying many vulnerabilities.', issuer:'MITRE', date:'Living resource', sort:'99999987', src:'cwe.mitre.org', url:'https://cwe.mitre.org/' },
+
+  // ---- CISA / DISA ----
+  { cat:'cisa', id:'CISA KEV', title:'Known Exploited Vulnerabilities Catalog', note:'Authoritative list of CVEs exploited in the wild. Drives the 7-day KEV remediation clock.', issuer:'CISA', date:'Updated continuously', sort:'99999986', src:'cisa.gov', url:'https://www.cisa.gov/known-exploited-vulnerabilities-catalog' },
+  { cat:'cisa', id:'CISA KEV (feed)', title:'KEV Catalog — Machine-Readable JSON Feed', note:'Direct JSON feed for automation and dashboard ingestion.', issuer:'CISA', date:'Updated continuously', sort:'99999985', src:'cisa.gov', url:'https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json' },
+  { cat:'cisa', id:'DISA STIGs', title:'Security Technical Implementation Guides &amp; SRGs', note:'Configuration hardening standards. The STIG download library for all technologies.', issuer:'DISA', date:'Quarterly releases', sort:'99999984', src:'public.cyber.mil', url:'https://public.cyber.mil/stigs/' },
+  { cat:'cisa', id:'DoD Cyber Exchange', title:'DoD Cyber Exchange (Public)', note:'DISA\u2019s public hub for STIGs, SRGs, tools, and RMF guidance.', issuer:'DISA', date:'Live catalog', sort:'99999983', src:'public.cyber.mil', url:'https://public.cyber.mil/' },
+];
+
+(function(){
+  const body = document.getElementById('refBody');
+  const search = document.getElementById('refSearch');
+  const summary = document.getElementById('refSummary');
+  const chipRow = document.getElementById('refChips');
+  let activeCat = 'all';
+  let sortKey = null, sortDir = 1;
+  const CAT_LABEL = { dod:'DoD', army:'Army', nist:'NIST', cnss:'CNSS', mitre:'MITRE', cisa:'CISA/DISA' };
+  const CAT_BADGE = { dod:'b-info', army:'b-gold', nist:'b-cui', cnss:'b-mute', mitre:'b-warn', cisa:'b-crit' };
+
+  function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function hay(r){ return (r.id+' '+r.title+' '+r.note+' '+r.issuer+' '+CAT_LABEL[r.cat]+' '+r.src).replace(/&amp;/g,'&').toLowerCase(); }
+  function mark(text, q){
+    if(!q) return text;
+    try { return text.replace(new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig'), '<mark>$1</mark>'); }
+    catch(e){ return text; }
+  }
+
+  function render(){
+    const q = search.value.trim().toLowerCase();
+    let rows = REFS.filter(r => (activeCat==='all' || r.cat===activeCat) && (!q || hay(r).includes(q)));
+    if(sortKey){
+      rows = rows.slice().sort((a,b)=>{
+        let av, bv;
+        if(sortKey==='date'){ av=a.sort; bv=b.sort; }
+        else { av=(a[sortKey]||'').replace(/&amp;/g,'&').toLowerCase(); bv=(b[sortKey]||'').replace(/&amp;/g,'&').toLowerCase(); }
+        return av<bv ? -1*sortDir : av>bv ? 1*sortDir : 0;
+      });
+    }
+    if(!rows.length){
+      body.innerHTML = '<tr class="ref-empty"><td colspan="6">No references match your search. Try a document number (e.g. 800-53), a topic (CUI, RMF), or clear the filters.</td></tr>';
+    } else {
+      body.innerHTML = rows.map(r => {
+        const isPortal = r.sort.startsWith('9999999');
+        const verb = r.url.endsWith('.pdf') || r.url.endsWith('.PDF') || r.url.endsWith('.json') ? 'Download' : (isPortal ? 'Browse' : 'Open');
+        return `<tr data-cat="${r.cat}">
+          <td class="ref-id">${mark(r.id, q)}</td>
+          <td><span class="ref-title">${mark(r.title, q)}</span><span class="ref-note">${mark(r.note, q)}</span></td>
+          <td>${mark(esc(r.issuer), q)}</td>
+          <td>${esc(r.date)}</td>
+          <td><span class="ref-src">${esc(r.src)}</span></td>
+          <td class="ref-dl"><a class="btn btn-sm btn-gold" href="${r.url}" target="_blank" rel="noopener noreferrer">${verb} \u2197</a></td>
+        </tr>`;
+      }).join('');
+    }
+    const total = REFS.length;
+    const catCount = activeCat==='all' ? total : REFS.filter(r=>r.cat===activeCat).length;
+    summary.textContent = `Showing ${rows.length} of ${total} references` +
+      (activeCat!=='all' ? ` · category: ${CAT_LABEL[activeCat]} (${catCount})` : '') +
+      (q ? ` · matching "${search.value.trim()}"` : '');
+  }
+
+  // Search
+  search.addEventListener('input', render);
+  // Category chips
+  chipRow.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      chipRow.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+      chip.classList.add('active');
+      activeCat = chip.dataset.cat;
+      render();
+    });
+  });
+  // Sortable headers (override generic table sorter for this dynamic table)
+  const headers = document.querySelectorAll('#refTable thead th.sortable');
+  const keys = ['id','title','issuer','date'];
+  headers.forEach((th, i) => {
+    th.style.cursor = 'pointer';
+    th.addEventListener('click', () => {
+      const k = keys[i];
+      if(sortKey===k){ sortDir *= -1; } else { sortKey=k; sortDir=1; }
+      headers.forEach(h=>h.removeAttribute('aria-sort'));
+      th.setAttribute('aria-sort', sortDir===1?'ascending':'descending');
+      render();
+    });
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

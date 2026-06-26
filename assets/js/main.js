@@ -20,6 +20,7 @@ const NAV = [
     label: 'Library', items: [
       ['policies.html', 'Policies & SOPs'],
       ['templates.html', 'Templates & Job Aids'],
+      ['references.html', 'References & Authorities'],
       ['faq.html', 'FAQ & Knowledge Base'],
     ]
   },
@@ -27,6 +28,7 @@ const NAV = [
     label: 'Workforce', items: [
       ['workforce.html', 'Workforce Development'],
       ['training.html', 'Training Academy'],
+      ['tools/cyber-range/index.html', 'Cyber Range Console ⤤'],
       ['community.html', 'Community & Office Hours'],
     ]
   },
@@ -42,6 +44,9 @@ const NAV = [
       ['engineering.html', 'Engineering & Secure Design'],
       ['tools-dashboards.html', 'Tools & Dashboards'],
       ['ai-automation.html', 'AI & Automation'],
+      ['tools/vulnerasight/index.html', 'VulneraSight Analyzer ⤤'],
+      ['tools/aegis-ai/index.html', 'Aegis.AI Risk Command ⤤'],
+      ['https://cybersecurity-ai-prompt-library-284217534922.us-east1.run.app/', 'AI Prompt Library ⤤'],
     ]
   },
   { label: 'Contact', href: 'contact.html' },
@@ -64,7 +69,7 @@ function buildHeader() {
         <button aria-expanded="false" aria-haspopup="true">${g.label}<span class="caret">▼</span></button>
         <div class="nav-menu" role="menu">
           <div class="menu-label">${g.label}</div>
-          ${g.items.map(it => `<a role="menuitem" href="${it[0]}" class="${page === it[0] ? 'active' : ''}">${it[1]}</a>`).join('')}
+          ${g.items.map(it => { const newTab = /^https?:/.test(it[0]) || /^tools\//.test(it[0]); return `<a role="menuitem" href="${it[0]}"${newTab ? ' target="_blank" rel="noopener"' : ''} class="${page === it[0] ? 'active' : ''}">${it[1]}</a>`; }).join('')}
         </div>
       </div>`;
     }
