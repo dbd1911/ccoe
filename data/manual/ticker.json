@@ -1,0 +1,11 @@
+{
+  "_comment": "MANUAL DATA — cyber alerts ticker on the home page. If auto_kev_item is true, the newest CISA KEV entry (from data/auto/kev.json) is inserted automatically as the first item.",
+  "auto_kev_item": true,
+  "items": [
+    { "tag": "COMPLIANCE", "text": "eMASS control set baseline update effective 15 JUN — re-validate inherited controls before submission." },
+    { "tag": "POLICY",     "text": "Significant Change Memo template v3.2 published — v3.1 retired 30 JUN." },
+    { "tag": "OPS",        "text": "Assessment submission blackout 22–26 JUN for quarterly CSRR reporting." },
+    { "tag": "ADVISORY",   "text": "Phishing campaign targeting program offices observed — report suspicious mail via Incident Response node." },
+    { "tag": "DEADLINE",   "text": "3 ATO packages due to AODR routing this week — verify checklists in RMF Hub." }
+  ]
+}

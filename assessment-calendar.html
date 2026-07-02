@@ -34,7 +34,7 @@
       <div class="table-wrap" style="margin-top:18px">
         <table>
           <thead><tr><th class="sortable">System</th><th class="sortable">Pathway</th><th class="sortable" data-sort-type="num">Days to Expiration</th><th>Stage</th><th>ISSO</th><th>Status</th></tr></thead>
-          <tbody>
+          <tbody id="expTable">
             <tr><td><b>FIRES-DSS</b></td><td class="mono">Full ATO</td><td class="mono" data-val="44">44</td><td>Package routing to AODR</td><td>R. Alvarez</td><td><span class="badge b-crit">Daily Track</span></td></tr>
             <tr><td><b>LOGNET-04</b></td><td class="mono">Full ATO</td><td class="mono" data-val="58">58</td><td>Assessment starts 16 JUN (SAP/TRR)</td><td>T. Okafor</td><td><span class="badge b-crit">Daily Track</span></td></tr>
             <tr><td><b>MEDLOG-01</b></td><td class="mono">Conditional</td><td class="mono" data-val="83">83</td><td>Condition milestones in verification</td><td>S. Park</td><td><span class="badge b-warn">Watch</span></td></tr>
@@ -78,14 +78,14 @@
   <section class="section">
     <div class="wrap split">
       <div class="card flush card-accent">
-        <div class="card-head"><h3>Hard Reporting Milestones</h3><span class="badge b-mute">FY26 Q3–Q4</span></div>
+        <div class="card-head"><h3>Hard Reporting Milestones</h3><a class="mono" style="font-size:11px" href="assets/downloads/calendar/ccoe-all-events.ics" download>ADD ALL TO CALENDAR ⬇</a></div>
         <div class="card-body" style="padding:0 18px">
-          <ul class="linklist">
-            <li><a href="#"><span><b>CSRR</b> — Cyber Security Readiness Review data lock</span><span class="meta">30 JUN · QTRLY</span></a></li>
-            <li><a href="#"><span><b>SAP/TRR</b> — LOGNET-04 Security Assessment Plan / Test Readiness Review</span><span class="meta">16 JUN</span></a></li>
-            <li><a href="#"><span><b>SAR/RAW</b> — INTEL-FUS Security Assessment Report &amp; Risk Worksheet due</span><span class="meta">11 JUL</span></a></li>
-            <li><a href="#"><span><b>SAP/TRR</b> — TRNG-SIM-2 assessment kickoff</span><span class="meta">04 AUG</span></a></li>
-            <li><a href="#"><span><b>CSRR</b> — Q4 data lock</span><span class="meta">30 SEP · QTRLY</span></a></li>
+          <ul class="linklist" id="milestoneList">
+            <li><a href="assets/downloads/calendar/csrr-q3-data-lock.ics" download><span><b>CSRR</b> — Cyber Security Readiness Review data lock</span><span class="meta">30 JUN · QTRLY ⬇</span></a></li>
+            <li><a href="assets/downloads/calendar/saptrr-lognet04.ics" download><span><b>SAP/TRR</b> — LOGNET-04 Security Assessment Plan / Test Readiness Review</span><span class="meta">16 JUN ⬇</span></a></li>
+            <li><a href="assets/downloads/calendar/sarraw-intelfus.ics" download><span><b>SAR/RAW</b> — INTEL-FUS Security Assessment Report &amp; Risk Worksheet due</span><span class="meta">11 JUL ⬇</span></a></li>
+            <li><a href="assets/downloads/calendar/saptrr-trngsim2.ics" download><span><b>SAP/TRR</b> — TRNG-SIM-2 assessment kickoff</span><span class="meta">04 AUG ⬇</span></a></li>
+            <li><a href="assets/downloads/calendar/csrr-q4-data-lock.ics" download><span><b>CSRR</b> — Q4 data lock</span><span class="meta">30 SEP · QTRLY ⬇</span></a></li>
           </ul>
         </div>
       </div>
@@ -106,7 +106,7 @@
 <script src="assets/js/main.js"></script>
 <script>
 // Calendar with seeded events for Jun–Aug 2026
-const EVENTS = {
+let EVENTS = {
   '2026-06-12':[['e-trn','Office Hours: POA&M evidence']],
   '2026-06-16':[['e-asmt','SAP/TRR: LOGNET-04']],
   '2026-06-17':[['e-asmt','LOGNET-04 assessment']],
@@ -148,6 +148,22 @@ function renderCal(){
 document.getElementById('calPrev').addEventListener('click',()=>{ calM--; if(calM<0){calM=11;calY--;} renderCal(); });
 document.getElementById('calNext').addEventListener('click',()=>{ calM++; if(calM>11){calM=0;calY++;} renderCal(); });
 renderCal();
+
+// ---- Data-driven refresh from data/manual/calendar.json (edit the JSON; no HTML changes needed).
+// The seeded EVENTS above remain as the offline/file:// fallback.
+fetch('data/manual/calendar.json', {cache:'no-cache'}).then(r=>{ if(!r.ok) throw 0; return r.json(); }).then(cal=>{
+  const esc = x => String(x??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  if (cal.events) { EVENTS = cal.events; renderCal(); }
+  const M=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+  const fmt = d => { const p=d.split('-'); return p[2]+' '+M[+p[1]-1]; };
+  const ml = document.getElementById('milestoneList');
+  if (ml && cal.milestones) ml.innerHTML = cal.milestones.map(m =>
+    `<li><a href="assets/downloads/calendar/${esc(m.slug)}.ics" download><span><b>${esc(m.code)}</b> — ${esc(m.title)}</span><span class="meta">${esc(m.meta||fmt(m.date))} ⬇</span></a></li>`).join('');
+  const et = document.getElementById('expTable');
+  const TRACK = {'Daily Track':'b-crit','Watch':'b-warn','Plan':'b-info'};
+  if (et && cal.expirations) et.innerHTML = cal.expirations.map(r =>
+    `<tr><td><b>${esc(r.system)}</b></td><td class="mono">${esc(r.pathway)}</td><td class="mono" data-val="${+r.days||0}">${+r.days||0}</td><td>${esc(r.stage)}</td><td>${esc(r.isso)}</td><td><span class="badge ${TRACK[r.track]||'b-mute'}">${esc(r.track)}</span></td></tr>`).join('');
+}).catch(()=>{ /* JSON unavailable — static content stays */ });
 </script>
 </body>
 </html>

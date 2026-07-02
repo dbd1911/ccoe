@@ -1,0 +1,57 @@
+{
+ "_note": "SEEDED PLACEHOLDER \u2014 this file is overwritten by the first run of .github/workflows/update-data.yml with real feed data.",
+ "_updated": "2026-06-10T06:17:00Z",
+ "source": "CISA Known Exploited Vulnerabilities Catalog",
+ "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+ "catalogVersion": "2026.06.10",
+ "dateReleased": "2026-06-10T12:00:00.000Z",
+ "total": 1421,
+ "recent": [
+  {
+   "cveID": "CVE-2026-31822",
+   "vendorProject": "WebFrame",
+   "product": "WebFrame Server",
+   "vulnerabilityName": "WebFrame Server Pre-Auth Remote Code Execution Vulnerability",
+   "dateAdded": "2026-06-05",
+   "dueDate": "2026-06-12",
+   "knownRansomwareCampaignUse": "Unknown",
+   "shortDescription": "WebFrame Server contains a deserialization vulnerability allowing unauthenticated remote code execution. (Seed data \u2014 refreshed automatically.)"
+  },
+  {
+   "cveID": "CVE-2026-30144",
+   "vendorProject": "NetGate",
+   "product": "VPN Concentrator 9000",
+   "vulnerabilityName": "NetGate VPN Concentrator Authentication Bypass Vulnerability",
+   "dateAdded": "2026-06-03",
+   "dueDate": "2026-06-24",
+   "knownRansomwareCampaignUse": "Known",
+   "shortDescription": "Authentication bypass in the management interface permits session creation without credentials. (Seed data.)"
+  },
+  {
+   "cveID": "CVE-2026-29410",
+   "vendorProject": "CloudStack",
+   "product": "Management Plane",
+   "vulnerabilityName": "CloudStack Management Plane Privilege Escalation Vulnerability",
+   "dateAdded": "2026-05-28",
+   "dueDate": "2026-06-18",
+   "knownRansomwareCampaignUse": "Unknown",
+   "shortDescription": "Improper authorization in tenant APIs allows privilege escalation to administrative roles. (Seed data.)"
+  }
+ ],
+ "tracked_crosscheck": [
+  {
+   "cveID": "CVE-2026-31822",
+   "dateAdded": "2026-06-05",
+   "dueDate": "2026-06-12",
+   "vulnerabilityName": "WebFrame Server Pre-Auth RCE",
+   "knownRansomwareCampaignUse": "Unknown"
+  },
+  {
+   "cveID": "CVE-2026-29410",
+   "dateAdded": "2026-05-28",
+   "dueDate": "2026-06-18",
+   "vulnerabilityName": "CloudStack Mgmt Plane PrivEsc",
+   "knownRansomwareCampaignUse": "Unknown"
+  }
+ ]
+}

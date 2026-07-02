@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CCoE Operational Hub//Assessment Calendar//EN
+X-WR-CALNAME:CCoE: SAP/TRR 2026-08-04
+BEGIN:VEVENT
+UID:saptrr-trngsim2@ccoe-hub
+DTSTAMP:20260702T115502Z
+DTSTART;VALUE=DATE:20260804
+DTEND;VALUE=DATE:20260805
+SUMMARY:SAP/TRR — TRNG-SIM-2 assessment kickoff
+DESCRIPTION:CCoE hard reporting milestone. Details: assessment-calendar.html
+END:VEVENT
+END:VCALENDAR

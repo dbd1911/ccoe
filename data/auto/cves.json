@@ -1,0 +1,31 @@
+{
+ "_note": "SEEDED PLACEHOLDER \u2014 this file is overwritten by the first run of .github/workflows/update-data.yml with real feed data.",
+ "_updated": "2026-06-10T06:17:00Z",
+ "source": "NVD (NIST) \u2014 CRITICAL severity CVEs published in the last 7 days",
+ "source_url": "https://nvd.nist.gov/vuln/search",
+ "window_days": 7,
+ "total_in_window": 23,
+ "items": [
+  {
+   "id": "CVE-2026-31822",
+   "published": "2026-06-04",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "Deserialization of untrusted data in WebFrame Server allows unauthenticated attackers to execute arbitrary code via crafted session tokens. (Seed data \u2014 refreshed automatically.)"
+  },
+  {
+   "id": "CVE-2026-30871",
+   "published": "2026-06-06",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "SQL injection in enterprise print management service allows remote unauthenticated command execution. (Seed data.)"
+  },
+  {
+   "id": "CVE-2026-30144",
+   "published": "2026-06-02",
+   "score": 9.4,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:L",
+   "description": "Authentication bypass in VPN concentrator management interface. (Seed data.)"
+  }
+ ]
+}

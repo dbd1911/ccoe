@@ -1,0 +1,42 @@
+{
+  "_comment": "MANUAL DATA — weekly synthesized alerts and the KEV→portfolio map on threat-intel.html. The KEV map is your systems' exposure (requires local knowledge); the raw KEV/CVE/KB feeds update automatically in data/auto/. badge tones: crit | warn | info | ok | mute | gold.",
+  "week_label": "Weekly — 2026-W24",
+  "effective": "2026-06-08",
+  "kicker": "Weekly Synthesized Alerts · Week of 08 JUN 2026",
+  "alerts": [
+    {
+      "badge": "KEV · ACT NOW", "tone": "crit", "card_tone": "crit",
+      "title": "CVE-2026-31822 — Web Framework RCE",
+      "what": "Pre-auth remote code execution; added to CISA KEV 05 JUN. Active exploitation confirmed.",
+      "impact": "LOGNET-04 web tier runs the affected framework. Compromise degrades supply requisitions for three supported brigades.",
+      "action": "Patch by <b>12 JUN (KEV 7-day clock)</b>. WAF rule WR-2218 deployed as interim; verify in your segment, rescan, and update PM-2287."
+    },
+    {
+      "badge": "Vendor Advisory", "tone": "warn", "card_tone": "",
+      "title": "VPN Concentrator Auth Bypass",
+      "what": "Vendor out-of-band patch for an authentication bypass; PoC public, no confirmed exploitation in DoD space.",
+      "impact": "Remote-access path for SUPPLY-NET and MEDLOG-01 administrators.",
+      "action": "Apply vendor patch during the 14 JUN maintenance window; enforce phishing-resistant MFA on all admin VPN profiles by 20 JUN."
+    },
+    {
+      "badge": "Campaign", "tone": "warn", "card_tone": "",
+      "title": "Credential Phishing — Logistics Theme",
+      "what": "Spear-phish wave imitating transportation-request portals targeting Army logistics personnel; 14 attempts caught at the gateway this week.",
+      "impact": "Harvested credentials enable initial access against SUPPLY-NET user accounts.",
+      "action": "Forward suspicious mail to the watch desk; supervisors brief teams using the 2-minute awareness card; report any click within 1 hour."
+    },
+    {
+      "badge": "Awareness", "tone": "info", "card_tone": "",
+      "title": "OT Firmware End-of-Support",
+      "what": "RANGE-OT controller firmware reaches end-of-support 30 SEP 2026; no further security patches.",
+      "impact": "Unsupported firmware on the live-fire range instrumentation segment raises residual risk beyond current acceptance (DR-2026-022).",
+      "action": "Engineering evaluates replacement candidates by 15 JUL; isolation controls re-validated this quarter."
+    }
+  ],
+  "kev_map": [
+    { "cve": "CVE-2026-31822", "added": "2026-06-05", "systems": "LOGNET-04",             "due": "2026-06-12", "due_bold": true,  "status": "Patching — WAF interim active",                                  "status_tone": "warn" },
+    { "cve": "CVE-2026-29410", "added": "2026-05-28", "systems": "CLOUD-PLT (mgmt plane)", "due": "2026-06-04", "due_bold": false, "status": "Closed — verified 03 JUN",                                        "status_tone": "ok" },
+    { "cve": "CVE-2026-27155", "added": "2026-05-14", "systems": "INTEL-FUS, SUPPLY-NET",  "due": "2026-05-21", "due_bold": false, "status": "Closed — verified 20 MAY",                                        "status_tone": "ok" },
+    { "cve": "CVE-2025-61998", "added": "2026-04-30", "systems": "RANGE-OT (isolated)",    "due": "2026-05-07", "due_bold": false, "status": "Exception — compensating isolation, AO acceptance on file",       "status_tone": "mute" }
+  ]
+}

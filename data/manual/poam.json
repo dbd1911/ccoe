@@ -1,0 +1,15 @@
+{
+  "_comment": "MANUAL DATA — live POA&M findings shown on vulnerability-poam.html. status: overdue | atrisk | ontrack | review. severity: KEV | CAT I | CAT II | Medium | Low.",
+  "items": [
+    { "id": "PM-2418", "system": "FIRES-DSS",  "summary": "Unsupported OS on 2 servers — migration funded, awaiting maintenance window", "severity": "CAT I",  "age": 34, "due": "2026-06-02", "status": "overdue" },
+    { "id": "PM-2391", "system": "LOGNET-04",  "summary": "Audit log retention below 1-year requirement on legacy appliance",           "severity": "CAT II", "age": 61, "due": "2026-05-28", "status": "overdue" },
+    { "id": "PM-2502", "system": "MEDLOG-01",  "summary": "KEV CVE-2026-31822 — patch staged, 9 of 14 hosts complete",                  "severity": "KEV",    "age": 4,  "due": "2026-06-13", "status": "atrisk" },
+    { "id": "PM-2477", "system": "TRNG-SIM-2", "summary": "MFA gap on administrative console — token rollout in progress",              "severity": "CAT II", "age": 12, "due": "2026-06-25", "status": "ontrack" },
+    { "id": "PM-2305", "system": "SUPPLY-NET", "summary": "STIG V-254201 finding — config remediated, evidence package submitted",      "severity": "CAT II", "age": 44, "due": "2026-06-10", "status": "review" },
+    { "id": "PM-2510", "system": "INTEL-FUS",  "summary": "TLS 1.0 enabled on internal service — disable scheduled with change memo",   "severity": "Medium", "age": 9,  "due": "2026-08-15", "status": "ontrack" },
+    { "id": "PM-2466", "system": "FIRES-DSS",  "summary": "Privileged account review overdue — access recertification underway",        "severity": "CAT II", "age": 26, "due": "2026-06-14", "status": "atrisk" },
+    { "id": "PM-2519", "system": "CLOUD-PLT",  "summary": "IL4 inheritance map re-baseline per 01 JUL cloud governance update",         "severity": "Medium", "age": 5,  "due": "2026-07-01", "status": "ontrack" },
+    { "id": "PM-2287", "system": "LOGNET-04",  "summary": "Backup encryption finding — keys rotated, restore test evidence attached",   "severity": "Medium", "age": 58, "due": "2026-06-08", "status": "review" },
+    { "id": "PM-2523", "system": "RANGE-OT",   "summary": "OT firmware version drift — vendor update validated in test enclave",        "severity": "Low",    "age": 3,  "due": "2026-10-30", "status": "ontrack" }
+  ]
+}

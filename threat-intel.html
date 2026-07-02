@@ -15,7 +15,7 @@
       <h1>Threat Intelligence &amp; Cyber Awareness</h1>
       <p class="lede">Curated for this portfolio — not a firehose. Every alert ships with mission impact context and a "What to Do Now" directive you can execute today.</p>
       <div class="doc-meta">
-        <span>OWNER: <b>Threat Intelligence Cell</b></span><span>VERSION: <b>Weekly — 2026-W24</b></span><span>EFFECTIVE: <b>2026-06-08</b></span><span>REVIEW: <b>Weekly, Monday 0900</b></span><span>APPROVAL: <b>CISO</b></span>
+        <span>OWNER: <b>Threat Intelligence Cell</b></span><span>VERSION: <span id="weekVersion"><b>Weekly — 2026-W24</b></span></span><span>EFFECTIVE: <span id="weekEffective"><b>2026-06-08</b></span></span><span>REVIEW: <b>Weekly, Monday 0900</b></span><span>APPROVAL: <b>CISO</b></span>
       </div>
     </div>
   </div>
@@ -23,9 +23,9 @@
   <!-- WEEKLY ALERTS -->
   <section class="section">
     <div class="wrap">
-      <span class="kicker">Weekly Synthesized Alerts · Week of 08 JUN 2026</span>
+      <span class="kicker" id="weekKicker">Weekly Synthesized Alerts · Week of 08 JUN 2026</span>
       <h2>This Week's Threat Picture</h2>
-      <div class="grid g2">
+      <div class="grid g2" id="weekAlerts">
         <div class="card card-crit reveal">
           <span class="badge b-crit">KEV · ACT NOW</span>
           <h3>CVE-2026-31822 — Web Framework RCE</h3>
@@ -67,7 +67,7 @@
       <div class="table-wrap reveal">
         <table>
           <thead><tr><th class="sortable">CVE</th><th class="sortable">KEV Added</th><th class="sortable">Affected System(s)</th><th class="sortable">Due</th><th>Status</th></tr></thead>
-          <tbody>
+          <tbody id="kevMapBody">
             <tr><td class="formula">CVE-2026-31822</td><td data-val="20260605">05 JUN 2026</td><td>LOGNET-04</td><td data-val="20260612"><b>12 JUN 2026</b></td><td><span class="badge b-warn">Patching — WAF interim active</span></td></tr>
             <tr><td class="formula">CVE-2026-29410</td><td data-val="20260528">28 MAY 2026</td><td>CLOUD-PLT (mgmt plane)</td><td data-val="20260604">04 JUN 2026</td><td><span class="badge b-ok">Closed — verified 03 JUN</span></td></tr>
             <tr><td class="formula">CVE-2026-27155</td><td data-val="20260514">14 MAY 2026</td><td>INTEL-FUS, SUPPLY-NET</td><td data-val="20260521">21 MAY 2026</td><td><span class="badge b-ok">Closed — verified 20 MAY</span></td></tr>
@@ -75,6 +75,96 @@
           </tbody>
         </table>
       </div>
+    </div>
+  </section>
+
+
+  <!-- LIVE EXTERNAL FEEDS (auto-updated via GitHub Actions — see data/auto/) -->
+  <section class="section" style="background:var(--panel)">
+    <div class="wrap">
+      <span class="kicker">Live External Feeds · Auto-Updated</span>
+      <h2>Raw Source Feeds — KEV, CVE, Patch &amp; Plugin Data</h2>
+      <p class="section-sub">Pulled automatically from the official sources on a twice-daily schedule — no manual upkeep. The curated picture above is the Threat Intel Cell's analysis; this is the unfiltered upstream data it draws from. <span class="mono" id="feedUpdated" style="font-size:11px"></span></p>
+      <div class="tabs" data-group="feeds">
+        <button class="tab active" data-tab="feedPanelKev">CISA KEV</button>
+        <button class="tab" data-tab="feedPanelCves">Critical CVEs</button>
+        <button class="tab" data-tab="feedPanelMs">Microsoft KBs</button>
+        <button class="tab" data-tab="feedPanelLinux">Linux Notices</button>
+        <button class="tab" data-tab="feedPanelNessus">Nessus Plugins</button>
+      </div>
+
+      <div class="tab-panel active" data-group="feeds" id="feedPanelKev">
+        <p class="count-note" id="feedKevNote">Loading catalog…</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th class="sortable">CVE</th><th>Vendor / Product</th><th>Vulnerability</th><th class="sortable">Added</th><th>Due</th><th>Ransomware</th></tr></thead>
+            <tbody id="feedKev"><tr><td colspan="6" class="dim">Loading latest KEV additions…</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="tab-panel" data-group="feeds" id="feedPanelCves">
+        <p class="count-note" id="feedCveNote">Loading NVD window…</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th class="sortable">CVE</th><th class="sortable" data-sort-type="num">CVSS</th><th>Description</th><th>Published</th></tr></thead>
+            <tbody id="feedCves"><tr><td colspan="4" class="dim">Loading recent critical CVEs…</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="tab-panel" data-group="feeds" id="feedPanelMs">
+        <p class="count-note" id="feedMsNote">Loading latest Microsoft release…</p>
+        <div class="grid g2">
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>KB Article</th><th>Release</th></tr></thead>
+              <tbody id="feedMs"><tr><td colspan="2" class="dim">Loading KB list…</td></tr></tbody>
+            </table>
+          </div>
+          <div class="card flush">
+            <div class="card-head"><h3>Exploitation More Likely</h3></div>
+            <div class="card-body" style="padding:0 18px">
+              <ul class="linklist" id="feedMsLikely"><li><a><span>Loading…</span></a></li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" data-group="feeds" id="feedPanelLinux">
+        <div class="grid g2">
+          <div>
+            <p class="count-note">Ubuntu Security Notices (USN)</p>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>USN</th><th>Title</th><th>CVEs</th><th>Published</th></tr></thead>
+                <tbody id="feedUbuntu"><tr><td colspan="4" class="dim">Loading…</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+          <div>
+            <p class="count-note">Red Hat — recent CVEs affecting RHEL</p>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>CVE</th><th>Severity</th><th>Description</th><th>Public</th></tr></thead>
+                <tbody id="feedRedhat"><tr><td colspan="4" class="dim">Loading…</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" data-group="feeds" id="feedPanelNessus">
+        <p class="count-note">Newest detection plugins published by Tenable — confirm availability in ACAS before relying on a check.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Plugin ID</th><th>Title</th><th>Published</th></tr></thead>
+            <tbody id="feedNessus"><tr><td colspan="3" class="dim">Loading…</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top:20px"><b class="head">How this stays current</b>A scheduled GitHub Action pulls the CISA KEV catalog, NVD, MSRC, Ubuntu, Red Hat, and Tenable feeds twice daily and commits the results to <span class="mono">data/auto/</span>. The newest KEV entry also feeds the home-page alert ticker automatically.</div>
     </div>
   </section>
 
@@ -101,5 +191,6 @@
   </section>
 </main>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/live-data.js" defer></script>
 </body>
 </html>

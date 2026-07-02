@@ -1,0 +1,26 @@
+{
+ "_note": "SEEDED PLACEHOLDER \u2014 this file is overwritten by the first run of .github/workflows/update-data.yml with real feed data.",
+ "_updated": "2026-06-10T06:17:00Z",
+ "source": "Tenable \u2014 newest Nessus plugins",
+ "source_url": "https://www.tenable.com/plugins/newest",
+ "items": [
+  {
+   "id": "240118",
+   "title": "WebFrame Server < 5.2.1 RCE (CVE-2026-31822) (seed data \u2014 refreshed automatically)",
+   "link": "https://www.tenable.com/plugins/newest",
+   "published": "Tue, 09 Jun 2026 14:02:00 GMT"
+  },
+  {
+   "id": "240102",
+   "title": "Ubuntu 24.04 LTS: Linux kernel vulnerabilities (USN-7562-1) (seed data)",
+   "link": "https://www.tenable.com/plugins/newest",
+   "published": "Tue, 09 Jun 2026 09:40:00 GMT"
+  },
+  {
+   "id": "240087",
+   "title": "Microsoft June 2026 Security Updates missing (seed data)",
+   "link": "https://www.tenable.com/plugins/newest",
+   "published": "Tue, 09 Jun 2026 08:11:00 GMT"
+  }
+ ]
+}

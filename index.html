@@ -87,7 +87,7 @@
       <span class="kicker">Metrics Snapshot</span>
       <h2>Portfolio Health at a Glance</h2>
       <p class="section-sub">Live rollup across all commands. Full drill-down available in <a href="tools-dashboards.html">Tools &amp; Dashboards</a> (role-restricted).</p>
-      <div class="grid g4 reveal">
+      <div class="grid g4 reveal" id="metricsSnapshot">
         <div class="metric m-ok"><div class="n">84%</div><div class="l">Portfolio ATO Health</div><div class="delta" style="color:var(--ok)">▲ 3% vs last month</div></div>
         <div class="metric m-warn"><div class="n">312</div><div class="l">Open POA&M Items</div><div class="delta" style="color:var(--warn)">47 aging &gt; 90 days</div></div>
         <div class="metric m-info"><div class="n">12</div><div class="l">In Assessment Queue</div><div class="delta">Median cycle: 41 days</div></div>
@@ -112,10 +112,12 @@
         </div>
         <div class="card reveal">
           <h3 style="font-size:16px;margin-bottom:14px">Open POA&M by Severity</h3>
+          <div id="poamBars">
           <div class="bar-row"><span>Critical (CAT I)</span><div class="bar-track"><div class="bar-fill f-crit" style="width:0" data-w="18%"></div></div><span class="v">23</span></div>
           <div class="bar-row"><span>High (CAT II)</span><div class="bar-track"><div class="bar-fill f-warn" style="width:0" data-w="52%"></div></div><span class="v">96</span></div>
           <div class="bar-row"><span>Medium</span><div class="bar-track"><div class="bar-fill f-gold" style="width:0" data-w="78%"></div></div><span class="v">141</span></div>
           <div class="bar-row"><span>Low (CAT III)</span><div class="bar-track"><div class="bar-fill f-ok" style="width:0" data-w="29%"></div></div><span class="v">52</span></div>
+          </div>
           <p class="dim" style="margin-top:10px;font-size:13px">SLA enforcement and aging dashboards: <a href="vulnerability-poam.html">Vulnerability &amp; POA&M Portal</a></p>
         </div>
       </div>
@@ -217,6 +219,7 @@
 </main>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/live-data.js" defer></script>
 <script>
 // Donut: 58 ok, 7 gold, 4 info, 2 gray, 9 warn, 4 crit of 84
 (function(){

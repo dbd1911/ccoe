@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CCoE Operational Hub//Assessment Calendar//EN
+X-WR-CALNAME:CCoE: SAP/TRR 2026-06-16
+BEGIN:VEVENT
+UID:saptrr-lognet04@ccoe-hub
+DTSTAMP:20260702T115502Z
+DTSTART;VALUE=DATE:20260616
+DTEND;VALUE=DATE:20260617
+SUMMARY:SAP/TRR — LOGNET-04 Security Assessment Plan / Test Readiness Review
+DESCRIPTION:CCoE hard reporting milestone. Details: assessment-calendar.html
+END:VEVENT
+END:VCALENDAR

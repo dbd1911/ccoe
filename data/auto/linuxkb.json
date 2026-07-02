@@ -1,0 +1,44 @@
+{
+ "_note": "SEEDED PLACEHOLDER \u2014 this file is overwritten by the first run of .github/workflows/update-data.yml with real feed data.",
+ "_updated": "2026-06-10T06:17:00Z",
+ "source": "Ubuntu Security Notices + Red Hat Security Data API",
+ "ubuntu_url": "https://ubuntu.com/security/notices",
+ "redhat_url": "https://access.redhat.com/security/security-updates/security-advisories",
+ "ubuntu": [
+  {
+   "id": "USN-7562-1",
+   "title": "Linux kernel vulnerabilities (seed data \u2014 refreshed automatically)",
+   "published": "2026-06-09",
+   "cves": [
+    "CVE-2026-26840",
+    "CVE-2026-26991"
+   ],
+   "url": "https://ubuntu.com/security/notices"
+  },
+  {
+   "id": "USN-7559-1",
+   "title": "OpenSSL vulnerabilities (seed data)",
+   "published": "2026-06-08",
+   "cves": [
+    "CVE-2026-24795"
+   ],
+   "url": "https://ubuntu.com/security/notices"
+  }
+ ],
+ "redhat": [
+  {
+   "cve": "CVE-2026-26840",
+   "severity": "important",
+   "public_date": "2026-06-08",
+   "description": "kernel: use-after-free in network scheduler subsystem (seed data)",
+   "url": "https://access.redhat.com/security/security-updates/security-advisories"
+  },
+  {
+   "cve": "CVE-2026-25310",
+   "severity": "moderate",
+   "public_date": "2026-06-06",
+   "description": "glibc: buffer overflow in iconv path handling (seed data)",
+   "url": "https://access.redhat.com/security/security-updates/security-advisories"
+  }
+ ]
+}

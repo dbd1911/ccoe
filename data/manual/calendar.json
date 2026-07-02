@@ -1,0 +1,41 @@
+{
+  "_comment": "MANUAL DATA — assessment calendar. events keys are YYYY-MM-DD; each entry is [type, label]. type: e-ato | e-asmt | e-mil | e-trn | e-blk. Milestones become downloadable .ics files automatically (scripts/build_ics.py).",
+  "events": {
+    "2026-06-12": [["e-trn", "Office Hours: POA&M evidence"]],
+    "2026-06-16": [["e-asmt", "SAP/TRR: LOGNET-04"]],
+    "2026-06-17": [["e-asmt", "LOGNET-04 assessment"]],
+    "2026-06-18": [["e-trn", "Exec risk briefing lab"]],
+    "2026-06-22": [["e-blk", "Submission blackout"]],
+    "2026-06-23": [["e-blk", "Submission blackout"]],
+    "2026-06-24": [["e-ato", "FIRES-DSS pkg → AODR"], ["e-blk", "Blackout"]],
+    "2026-06-25": [["e-blk", "Submission blackout"]],
+    "2026-06-26": [["e-blk", "Blackout"], ["e-trn", "TTX: data spill"]],
+    "2026-06-30": [["e-mil", "CSRR Q3 data lock"]],
+    "2026-07-01": [["e-mil", "Cloud gov v3.0 effective"]],
+    "2026-07-02": [["e-trn", "Workforce assembly"]],
+    "2026-07-11": [["e-mil", "SAR/RAW: INTEL-FUS"]],
+    "2026-07-15": [["e-mil", "Inspection binders due"]],
+    "2026-07-24": [["e-ato", "LOGNET-04 decision target"]],
+    "2026-08-04": [["e-asmt", "SAP/TRR: TRNG-SIM-2"]],
+    "2026-08-05": [["e-asmt", "TRNG-SIM-2 assessment"]],
+    "2026-08-20": [["e-trn", "Office Hours: cloud overlays"]]
+  },
+  "milestones": [
+    { "slug": "csrr-q3-data-lock",   "code": "CSRR",    "title": "Cyber Security Readiness Review data lock",                        "date": "2026-06-30", "meta": "30 JUN · QTRLY" },
+    { "slug": "saptrr-lognet04",     "code": "SAP/TRR", "title": "LOGNET-04 Security Assessment Plan / Test Readiness Review",       "date": "2026-06-16", "meta": "16 JUN" },
+    { "slug": "sarraw-intelfus",     "code": "SAR/RAW", "title": "INTEL-FUS Security Assessment Report & Risk Worksheet due",        "date": "2026-07-11", "meta": "11 JUL" },
+    { "slug": "saptrr-trngsim2",     "code": "SAP/TRR", "title": "TRNG-SIM-2 assessment kickoff",                                    "date": "2026-08-04", "meta": "04 AUG" },
+    { "slug": "csrr-q4-data-lock",   "code": "CSRR",    "title": "Q4 data lock",                                                     "date": "2026-09-30", "meta": "30 SEP · QTRLY" }
+  ],
+  "expirations": [
+    { "system": "FIRES-DSS",  "pathway": "Full ATO",       "days": 44,  "stage": "Package routing to AODR",                    "isso": "R. Alvarez",  "track": "Daily Track" },
+    { "system": "LOGNET-04",  "pathway": "Full ATO",       "days": 58,  "stage": "Assessment starts 16 JUN (SAP/TRR)",         "isso": "T. Okafor",   "track": "Daily Track" },
+    { "system": "MEDLOG-01",  "pathway": "Conditional",    "days": 83,  "stage": "Condition milestones in verification",       "isso": "S. Park",     "track": "Watch" },
+    { "system": "TRNG-SIM-2", "pathway": "Full ATO",       "days": 97,  "stage": "Readiness checklist 70% complete",           "isso": "J. Whitfield","track": "Watch" },
+    { "system": "SUPPLY-NET", "pathway": "Full ATO",       "days": 118, "stage": "Self-assessment underway",                   "isso": "M. Reyes",    "track": "Watch" },
+    { "system": "INTEL-FUS",  "pathway": "Agile ATO",      "days": 139, "stage": "ConMon evidence pipeline green",             "isso": "D. Chen",     "track": "Plan" },
+    { "system": "CLOUD-PLT",  "pathway": "Full ATO",       "days": 151, "stage": "Strategy confirmed; IL4 re-baseline first",  "isso": "A. Brooks",   "track": "Plan" },
+    { "system": "RANGE-OT",   "pathway": "Closed Network", "days": 166, "stage": "Annual closed-network audit scheduled",      "isso": "K. Nguyen",   "track": "Plan" },
+    { "system": "PAY-GW",     "pathway": "Reciprocity",    "days": 178, "stage": "BoE transfer requested from owning org",     "isso": "L. Foster",   "track": "Plan" }
+  ]
+}
