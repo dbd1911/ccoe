@@ -6,6 +6,21 @@
    fetch fails (e.g. opening the HTML directly from disk), the
    static HTML already in the page remains as the fallback —
    nothing breaks and the design never changes.
+   ------------------------------------------------------------
+   WHAT RENDERS FROM WHERE (edit the JSON, not the pages):
+     Home hero numbers + labels ... data/manual/site-metrics.json → hero_stats
+     Home metrics tiles ........... site-metrics.json → metrics_snapshot
+     Home ATO donut ............... site-metrics.json → ato_donut
+     Home severity bars ........... site-metrics.json → poam_severity_bars
+     Home CYBER ALERTS ticker ..... data/manual/ticker.json (auto_kev_item
+                                     prepends the newest CISA KEV entry)
+     POA&M table .................. data/manual/poam.json
+     Calendar / milestones / exp .. data/manual/calendar.json
+     Threat picture + KEV map ..... data/manual/threat-week.json
+     Live feed tables ............. data/auto/*.json (written by GitHub
+                                     Actions — do not hand-edit)
+     Tools & Dashboards snapshot .. site-metrics + poam + calendar JSON
+     Governance leadership tiles .. site-metrics.json
    ============================================================ */
 
 (function () {

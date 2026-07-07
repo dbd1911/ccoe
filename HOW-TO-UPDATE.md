@@ -3,6 +3,20 @@
 The hub is a static site (GitHub Pages compatible). After the June 2026 overhaul,
 routine content lives in JSON files — you almost never touch HTML.
 
+## Quick reference — the two most common edits
+
+**Change the home-page numbers** (84 systems, 71 authorizations, the tiles, the
+donut, the bars): open `data/manual/site-metrics.json`. Every section has a
+`_comment_…` key right above it explaining the fields. Save, refresh, done.
+
+**Change the CYBER ALERTS ticker**: open `data/manual/ticker.json`. Each item is
+`{ "tag": "BADGE", "text": "message" }`; `auto_kev_item` controls whether the
+newest CISA KEV entry is auto-inserted first.
+
+The matching HTML blocks in `index.html` are marked with `▶ TO CHANGE…` comments —
+they are offline fallbacks only (shown when the JSON can't load, e.g. opening the
+file straight from disk). Update them too if you want the fallback to match.
+
 ## 1. Data you edit by hand — `data/manual/`
 
 Edit the file, commit, done. The pages fetch these at load time; the HTML that is

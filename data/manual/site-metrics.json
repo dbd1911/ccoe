@@ -1,32 +1,116 @@
 {
-  "_comment": "MANUAL DATA — edit values here; the site renders them automatically. See HOW-TO-UPDATE.md.",
+  "_comment": "MANUAL DATA — this file drives the home-page dashboard, the Tools & Dashboards 'Command Center Snapshot', and the Governance leadership tiles. Edit values here and refresh the page; no HTML changes needed. Keys starting with _ are documentation and are ignored by the site.",
+  "_comment_hero_stats": "HERO STATS = the four big numbers under the home-page banner. 'value' is the number (it animates on load), 'label' is the small uppercase text beneath it. Order here = left-to-right on the page.",
   "hero_stats": [
-    { "value": 84, "label": "Systems Under Management" },
-    { "value": 71, "label": "Active Authorizations" },
-    { "value": 12, "label": "Packages In Assessment Queue" },
-    { "value": 9,  "label": "ATOs Expiring ≤ 180 Days" }
+    {
+      "value": 84,
+      "label": "Systems Under Management"
+    },
+    {
+      "value": 71,
+      "label": "Active Authorizations"
+    },
+    {
+      "value": 12,
+      "label": "Packages In Assessment Queue"
+    },
+    {
+      "value": 9,
+      "label": "ATOs Expiring ≤ 180 Days"
+    }
   ],
+  "_comment_metrics_snapshot": "METRICS SNAPSHOT = the four tiles in the Command Center section (also reused on tools-dashboards.html). tone/delta_tone control color: ok=green, warn=amber, info=blue, crit=red, gold=dark-gold; delta_tone '' = neutral gray.",
   "metrics_snapshot": [
-    { "tone": "ok",   "value": "84%", "label": "Portfolio ATO Health",  "delta": "▲ 3% vs last month",      "delta_tone": "ok" },
-    { "tone": "warn", "value": "312", "label": "Open POA&M Items",      "delta": "47 aging > 90 days",       "delta_tone": "warn" },
-    { "tone": "info", "value": "12",  "label": "In Assessment Queue",   "delta": "Median cycle: 41 days",    "delta_tone": "" },
-    { "tone": "crit", "value": "6",   "label": "High-Risk Systems",     "delta": "2 overdue remediation",    "delta_tone": "crit" }
+    {
+      "tone": "ok",
+      "value": "84%",
+      "label": "Portfolio ATO Health",
+      "delta": "▲ 3% vs last month",
+      "delta_tone": "ok"
+    },
+    {
+      "tone": "warn",
+      "value": "312",
+      "label": "Open POA&M Items",
+      "delta": "47 aging > 90 days",
+      "delta_tone": "warn"
+    },
+    {
+      "tone": "info",
+      "value": "12",
+      "label": "In Assessment Queue",
+      "delta": "Median cycle: 41 days",
+      "delta_tone": ""
+    },
+    {
+      "tone": "crit",
+      "value": "6",
+      "label": "High-Risk Systems",
+      "delta": "2 overdue remediation",
+      "delta_tone": "crit"
+    }
   ],
+  "_comment_ato_donut": "ATO DONUT = the authorization-mix ring chart. 'center' is the number in the middle; each segment needs label, value, and color (use the CSS variables shown, or any CSS color). Segment order = clockwise from 12 o'clock.",
   "ato_donut": {
     "center": 84,
     "segments": [
-      { "label": "Full ATO",            "value": 58, "color": "var(--ok)" },
-      { "label": "Conditional ATO",     "value": 7,  "color": "var(--gold)" },
-      { "label": "IATT",                "value": 4,  "color": "var(--info)" },
-      { "label": "ATC Only",            "value": 2,  "color": "#7A8576" },
-      { "label": "Expiring ≤180d",      "value": 9,  "color": "var(--warn)" },
-      { "label": "In Process / Lapsed", "value": 4,  "color": "var(--crit)" }
+      {
+        "label": "Full ATO",
+        "value": 58,
+        "color": "var(--ok)"
+      },
+      {
+        "label": "Conditional ATO",
+        "value": 7,
+        "color": "var(--gold)"
+      },
+      {
+        "label": "IATT",
+        "value": 4,
+        "color": "var(--info)"
+      },
+      {
+        "label": "ATC Only",
+        "value": 2,
+        "color": "#7A8576"
+      },
+      {
+        "label": "Expiring ≤180d",
+        "value": 9,
+        "color": "var(--warn)"
+      },
+      {
+        "label": "In Process / Lapsed",
+        "value": 4,
+        "color": "var(--crit)"
+      }
     ]
   },
+  "_comment_poam_severity_bars": "SEVERITY BARS = 'Open POA&M by Severity'. 'value' is the number shown at the right; 'width' is the visual bar length (a percentage string — scale it yourself, e.g. largest value ≈ 80%). tone: crit/warn/gold/ok.",
   "poam_severity_bars": [
-    { "label": "Critical (CAT I)", "tone": "crit", "value": 23,  "width": "18%" },
-    { "label": "High (CAT II)",    "tone": "warn", "value": 96,  "width": "52%" },
-    { "label": "Medium",           "tone": "gold", "value": 141, "width": "78%" },
-    { "label": "Low (CAT III)",    "tone": "ok",   "value": 52,  "width": "29%" }
+    {
+      "label": "Critical (CAT I)",
+      "tone": "crit",
+      "value": 23,
+      "width": "18%"
+    },
+    {
+      "label": "High (CAT II)",
+      "tone": "warn",
+      "value": 96,
+      "width": "52%"
+    },
+    {
+      "label": "Medium",
+      "tone": "gold",
+      "value": 141,
+      "width": "78%"
+    },
+    {
+      "label": "Low (CAT III)",
+      "tone": "ok",
+      "value": 52,
+      "width": "29%"
+    }
   ]
 }

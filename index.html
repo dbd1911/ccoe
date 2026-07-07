@@ -25,6 +25,14 @@
   </div>
   <div class="scroll-cue">SCROLL<br>▼</div>
 </section>
+<!-- ═══════════════════════════════════════════════════════════════════
+     HERO STATS (the four big numbers under the banner)
+     ▶ TO CHANGE NUMBERS OR LABELS: edit  data/manual/site-metrics.json
+       → "hero_stats" section. The page loads that file automatically.
+     ▶ The HTML below is only the OFFLINE FALLBACK (shown if the JSON
+       can't load, e.g. opening the file directly from disk). Keep the
+       data-count value and label text in sync with the JSON when editing.
+     ═══════════════════════════════════════════════════════════════════ -->
 <div class="hero-stats">
   <div class="hero-stats-inner">
     <div class="hero-stat"><div class="n" data-count="84">0</div><div class="l">Systems Under Management</div></div>
@@ -34,7 +42,14 @@
   </div>
 </div>
 
-<!-- ============ CYBER ALERTS TICKER ============ -->
+<!-- ═══════════════════════════════════════════════════════════════════
+     CYBER ALERTS TICKER (scrolling band)
+     ▶ TO CHANGE TICKER MESSAGES: edit  data/manual/ticker.json
+       → each item = { "tag": "BADGE TEXT", "text": "message…" }.
+       "auto_kev_item": true auto-inserts the newest CISA KEV entry
+       (from data/auto/kev.json) as the FIRST item — set false to disable.
+     ▶ The <span> items below are only the OFFLINE FALLBACK.
+     ═══════════════════════════════════════════════════════════════════ -->
 <div class="ticker-band" role="region" aria-label="Cyber alerts ticker">
   <div class="ticker-label"><span class="pulse"></span>CYBER ALERTS</div>
   <div class="ticker-viewport">
@@ -87,6 +102,8 @@
       <span class="kicker">Metrics Snapshot</span>
       <h2>Portfolio Health at a Glance</h2>
       <p class="section-sub">Live rollup across all commands. Full drill-down available in <a href="tools-dashboards.html">Tools &amp; Dashboards</a> (role-restricted).</p>
+      <!-- METRICS SNAPSHOT: edit data/manual/site-metrics.json → "metrics_snapshot".
+           HTML below = offline fallback only. -->
       <div class="grid g4 reveal" id="metricsSnapshot">
         <div class="metric m-ok"><div class="n">84%</div><div class="l">Portfolio ATO Health</div><div class="delta" style="color:var(--ok)">▲ 3% vs last month</div></div>
         <div class="metric m-warn"><div class="n">312</div><div class="l">Open POA&M Items</div><div class="delta" style="color:var(--warn)">47 aging &gt; 90 days</div></div>
@@ -97,7 +114,9 @@
         <div class="card reveal">
           <h3 style="font-size:16px;margin-bottom:14px">Authorization Status Mix</h3>
           <div class="donut-wrap">
-            <div class="donut" id="atoDonut" role="img" aria-label="Authorization mix: 58 full ATO, 7 conditional, 4 IATT, 2 ATC, 9 expiring, 4 in process">
+            <!-- ATO DONUT: edit data/manual/site-metrics.json → "ato_donut"
+               (center number + segments). HTML below = offline fallback. -->
+          <div class="donut" id="atoDonut" role="img" aria-label="Authorization mix: 58 full ATO, 7 conditional, 4 IATT, 2 ATC, 9 expiring, 4 in process">
               <div class="donut-center">84</div>
             </div>
             <ul class="legend">
@@ -112,6 +131,8 @@
         </div>
         <div class="card reveal">
           <h3 style="font-size:16px;margin-bottom:14px">Open POA&M by Severity</h3>
+          <!-- POA&M SEVERITY BARS: edit data/manual/site-metrics.json →
+               "poam_severity_bars". HTML below = offline fallback. -->
           <div id="poamBars">
           <div class="bar-row"><span>Critical (CAT I)</span><div class="bar-track"><div class="bar-fill f-crit" style="width:0" data-w="18%"></div></div><span class="v">23</span></div>
           <div class="bar-row"><span>High (CAT II)</span><div class="bar-track"><div class="bar-fill f-warn" style="width:0" data-w="52%"></div></div><span class="v">96</span></div>
