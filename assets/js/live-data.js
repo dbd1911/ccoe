@@ -33,6 +33,36 @@
     return p[2] + ' ' + M[+p[1] - 1] + ' ' + p[0];
   }
 
+
+  function renderDonut(donut, d) {
+    if (!donut || !d) return;
+    var segs = d.segments, total = segs.reduce(function (s, x) { return s + x.value; }, 0), acc = 0;
+    var stops = segs.map(function (x) {
+      var a = acc / total * 360; acc += x.value; var b = acc / total * 360;
+      return x.color + ' ' + a + 'deg ' + b + 'deg';
+    });
+    donut.style.background = 'conic-gradient(' + stops.join(',') + ')';
+    donut.setAttribute('aria-label', 'Authorization mix: ' +
+      segs.map(function (x) { return x.value + ' ' + x.label; }).join(', '));
+    var c = donut.querySelector('.donut-center');
+    if (c) c.textContent = d.center;
+    var legend = donut.parentElement.querySelector('.legend');
+    if (legend) legend.innerHTML = segs.map(function (x) {
+      return '<li><span class="sw" style="background:' + x.color + '"></span>' + esc(x.label) +
+             ' <span class="lv">' + x.value + '</span></li>';
+    }).join('');
+  }
+
+  function renderBars(el, bars) {
+    if (!el || !bars) return;
+    var F = { crit: 'f-crit', warn: 'f-warn', gold: 'f-gold', ok: 'f-ok' };
+    el.innerHTML = bars.map(function (b) {
+      return '<div class="bar-row"><span>' + esc(b.label) + '</span><div class="bar-track">' +
+             '<div class="bar-fill ' + (F[b.tone] || 'f-ok') + '" style="width:' + esc(b.width) +
+             '" data-w="' + esc(b.width) + '"></div></div><span class="v">' + esc(b.value) + '</span></div>';
+    }).join('');
+  }
+
   var BADGE = { crit: 'b-crit', warn: 'b-warn', info: 'b-info', ok: 'b-ok', mute: 'b-mute', gold: 'b-gold', cui: 'b-cui' };
   var SEV_BADGE = { 'KEV': 'b-crit', 'CAT I': 'b-crit', 'CAT II': 'b-warn', 'Medium': 'b-gold', 'Low': 'b-mute' };
   var STATUS = {
@@ -73,34 +103,9 @@
         }).join('');
       }
       // ATO donut
-      var donut = document.getElementById('atoDonut');
-      if (donut && m.ato_donut) {
-        var segs = m.ato_donut.segments, total = segs.reduce(function (s, x) { return s + x.value; }, 0), acc = 0;
-        var stops = segs.map(function (x) {
-          var a = acc / total * 360; acc += x.value; var b = acc / total * 360;
-          return x.color + ' ' + a + 'deg ' + b + 'deg';
-        });
-        donut.style.background = 'conic-gradient(' + stops.join(',') + ')';
-        donut.setAttribute('aria-label', 'Authorization mix: ' +
-          segs.map(function (x) { return x.value + ' ' + x.label; }).join(', '));
-        var c = donut.querySelector('.donut-center');
-        if (c) c.textContent = m.ato_donut.center;
-        var legend = donut.parentElement.querySelector('.legend');
-        if (legend) legend.innerHTML = segs.map(function (x) {
-          return '<li><span class="sw" style="background:' + x.color + '"></span>' + esc(x.label) +
-                 ' <span class="lv">' + x.value + '</span></li>';
-        }).join('');
-      }
+      renderDonut(document.getElementById('atoDonut'), m.ato_donut);
       // POA&M severity bars
-      var bars = document.getElementById('poamBars');
-      if (bars && m.poam_severity_bars) {
-        var F = { crit: 'f-crit', warn: 'f-warn', gold: 'f-gold', ok: 'f-ok' };
-        bars.innerHTML = m.poam_severity_bars.map(function (b) {
-          return '<div class="bar-row"><span>' + esc(b.label) + '</span><div class="bar-track">' +
-                 '<div class="bar-fill ' + (F[b.tone] || 'f-ok') + '" style="width:' + esc(b.width) +
-                 '" data-w="' + esc(b.width) + '"></div></div><span class="v">' + esc(b.value) + '</span></div>';
-        }).join('');
-      }
+      renderBars(document.getElementById('poamBars'), m.poam_severity_bars);
     }).catch(function (e) { console.warn('[live-data] site-metrics:', e.message); });
 
     // Ticker — manual items plus (optionally) the newest CISA KEV entry.
@@ -266,9 +271,80 @@
     }
   }
 
+
+  /* ---------------- Tools & Dashboards: live portfolio dashboard -------- */
+  function hydrateDashboard() {
+    var dm = document.getElementById('dashMetrics');
+    if (!dm) return;
+    getJSON('data/manual/site-metrics.json').then(function (m) {
+      if (m.metrics_snapshot) {
+        dm.innerHTML = m.metrics_snapshot.map(function (x) {
+          var deltaColor = x.delta_tone ? ' style="color:var(--' + esc(x.delta_tone) + ')"' : '';
+          return '<div class="metric m-' + esc(x.tone) + '"><div class="n">' + esc(x.value) +
+                 '</div><div class="l">' + esc(x.label) + '</div><div class="delta"' + deltaColor + '>' +
+                 esc(x.delta) + '</div></div>';
+        }).join('');
+      }
+      renderDonut(document.getElementById('dashDonut'), m.ato_donut);
+      renderBars(document.getElementById('dashBars'), m.poam_severity_bars);
+    }).catch(function (e) { console.warn('[live-data] dash metrics:', e.message); });
+
+    getJSON('data/manual/calendar.json').then(function (cal) {
+      var TRACK = { 'Daily Track': 'b-crit', 'Watch': 'b-warn', 'Plan': 'b-info' };
+      var el = document.getElementById('dashExp');
+      if (el && cal.expirations) el.innerHTML = cal.expirations.slice()
+        .sort(function (a, b) { return a.days - b.days; }).slice(0, 5).map(function (r) {
+          return '<tr><td><b>' + esc(r.system) + '</b></td><td class="mono">' + (+r.days || 0) + '</td>' +
+                 '<td>' + esc(r.stage) + '</td><td><span class="badge ' + (TRACK[r.track] || 'b-mute') + '">' + esc(r.track) + '</span></td></tr>';
+        }).join('');
+    }).catch(function () {});
+
+    getJSON('data/manual/poam.json').then(function (d) {
+      var el = document.getElementById('dashPoam');
+      if (!el) return;
+      var hot = d.items.filter(function (r) { return r.status === 'overdue' || r.status === 'atrisk'; })
+        .sort(function (a, b) { return (a.due || '').localeCompare(b.due || ''); }).slice(0, 5);
+      el.innerHTML = hot.map(function (r) {
+        return '<tr><td class="mono">' + esc(r.id) + '</td><td>' + esc(r.system) + '</td>' +
+               '<td><span class="badge ' + (SEV_BADGE[r.severity] || 'b-mute') + '">' + esc(r.severity) + '</span></td>' +
+               '<td class="mono">' + esc(r.due) + '</td></tr>';
+      }).join('');
+    }).catch(function () {});
+
+    getJSON('data/auto/meta.json').then(function (m) {
+      var el = document.getElementById('dashUpdated');
+      if (el && m._updated) el.textContent = 'DATA AS OF: ' + m._updated.replace('T', ' ').replace('Z', ' UTC');
+    }).catch(function () {});
+    getJSON('data/auto/kev.json').then(function (k) {
+      var el = document.getElementById('dashFeeds');
+      if (el && k.recent && k.recent.length) {
+        el.textContent = 'KEV catalog v' + (k.catalogVersion || '—') + ' · newest entry ' + k.recent[0].cveID +
+          ' (added ' + fmtDate(k.recent[0].dateAdded) + '). Feeds refresh automatically twice daily.';
+      }
+    }).catch(function () {});
+  }
+
+  /* ---------------- Governance: leadership snapshot tiles --------------- */
+  function hydrateGovernance() {
+    var el = document.getElementById('govTiles');
+    if (!el) return;
+    getJSON('data/manual/site-metrics.json').then(function (m) {
+      var find = function (label) {
+        return (m.metrics_snapshot || []).filter(function (x) { return x.label === label; })[0];
+      };
+      var health = find('Portfolio ATO Health'), queue = find('In Assessment Queue');
+      var h = el.querySelector('[data-gov="health"] .n'); if (h && health) h.textContent = health.value;
+      var q = el.querySelector('[data-gov="queue"] .n'); if (q && queue) q.textContent = queue.value;
+      var exp = (m.hero_stats || []).filter(function (x) { return /Expiring/.test(x.label); })[0];
+      var e = el.querySelector('[data-gov="expiring"] .n'); if (e && exp) e.textContent = exp.value;
+    }).catch(function () {});
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     hydrateHome();
     hydratePoam();
     hydrateThreatIntel();
+    hydrateDashboard();
+    hydrateGovernance();
   });
 })();

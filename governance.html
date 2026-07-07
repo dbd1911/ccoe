@@ -134,10 +134,10 @@
       <span class="kicker">Read-Only Leadership Dashboards</span>
       <h2>The Portfolio in One Screen</h2>
       <p class="section-sub">Live snapshot rendered from the same data feeding the Command Center. Read-only; drill-down views are RBAC-restricted to leadership.</p>
-      <div class="grid g4 reveal">
-        <div class="metric"><div class="n">84%</div><div class="l">Portfolio ATO health</div><div class="delta d-ok">▲ 2% vs last month</div></div>
-        <div class="metric m-warn"><div class="n">9</div><div class="l">Authorizations expiring ≤180d</div><div class="delta">4 inside 90 days</div></div>
-        <div class="metric"><div class="n">12</div><div class="l">Packages in assessment queue</div><div class="delta">Median dwell 23 days</div></div>
+      <div class="grid g4 reveal" id="govTiles">
+        <div class="metric" data-gov="health"><div class="n">84%</div><div class="l">Portfolio ATO health</div><div class="delta d-ok">▲ 2% vs last month</div></div>
+        <div class="metric m-warn" data-gov="expiring"><div class="n">9</div><div class="l">Authorizations expiring ≤180d</div><div class="delta">4 inside 90 days</div></div>
+        <div class="metric" data-gov="queue"><div class="n">12</div><div class="l">Packages in assessment queue</div><div class="delta">Median dwell 23 days</div></div>
         <div class="metric m-crit"><div class="n">23</div><div class="l">Overdue CAT I POA&amp;Ms</div><div class="delta">All on CISO review list</div></div>
       </div>
       <div class="grid g2" style="margin-top:24px">
@@ -161,5 +161,6 @@
   </section>
 </main>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/live-data.js" defer></script>
 </body>
 </html>

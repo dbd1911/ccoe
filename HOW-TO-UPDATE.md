@@ -10,7 +10,7 @@ already in each page acts as the fallback if a fetch ever fails.
 
 | File | Drives | Typical edit |
 |---|---|---|
-| `site-metrics.json` | Home page hero counters, metrics snapshot, ATO donut, POA&M severity bars | Monthly metrics roll |
+| `site-metrics.json` | Home page hero counters, metrics snapshot, ATO donut, POA&M severity bars — plus the live dashboard on `tools-dashboards.html` and the leadership tiles on `governance.html` | Monthly metrics roll |
 | `ticker.json` | Home page CYBER ALERTS ticker | Add/remove alert lines. With `"auto_kev_item": true` the newest CISA KEV entry is inserted automatically as the first item |
 | `poam.json` | Open POA&M table on `vulnerability-poam.html` | Add/close findings. `status`: `overdue` \| `atrisk` \| `ontrack` \| `review` |
 | `calendar.json` | Month grid events, hard milestones (with `.ics` downloads), ATO expiration table on `assessment-calendar.html` | Add events as `"YYYY-MM-DD": [["e-type","Label"]]`. Event types: `e-ato`, `e-asmt`, `e-mil`, `e-trn`, `e-blk` |
@@ -49,6 +49,11 @@ Requirement: repo **Settings → Actions → General → Workflow permissions** 
 
 ## 3. Downloads
 
+* ACMA: `assets/downloads/acma/` — the governing DACM policy PDF and the nomination
+  memo template linked from `acma.html`.
+* Policies: `assets/downloads/policies/` — the 14 library documents linked from
+  `policies.html`. To revise one: edit/replace the docx, bump the version in the
+  filename, and update the card's link, VER, EFF, and SUPERSEDES line.
 * Templates: `assets/downloads/templates/` (docx/xlsx/pptx, blank + gold standard)
 * Tabletop playbooks: `assets/downloads/tabletops/` (individual docx + `TTX-Playbooks-All.zip` —
   rebuild the zip if you edit a playbook: `cd assets/downloads/tabletops && zip TTX-Playbooks-All.zip TTX-*.docx`)

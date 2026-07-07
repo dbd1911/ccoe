@@ -9,3 +9,6 @@ Static demonstration site for the Cybersecurity Center of Excellence operational
   GitHub Action (CISA KEV, NVD, MSRC, Ubuntu, Red Hat, Tenable). Enable read/write
   workflow permissions in repo settings for the auto-commit to work.
 * **Downloads:** real template/tool files live under `assets/downloads/`.
+* **ACMA:** `acma.html` is the Cyber Acquisition Career Resource Center — general
+  resources only (no login, no individual tracking), governed by the Army DACM
+  ACMA Policy (2 FEB 2022) included at `assets/downloads/acma/`.

@@ -27,6 +27,7 @@ const NAV = [
   {
     label: 'Workforce', items: [
       ['workforce.html', 'Workforce Development'],
+      ['acma.html', 'ACMA — Acquisition Careers'],
       ['training.html', 'Training Academy'],
       ['tools/cyber-range/index.html', 'Cyber Range Console ⤤'],
       ['community.html', 'Community & Office Hours'],
