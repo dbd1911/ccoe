@@ -1,0 +1,16 @@
+image: alpine:latest
+
+pages:
+  stage: deploy
+  script:
+    # 1. Create a temporary folder so we don't copy the public folder into itself
+    - mkdir -p .public
+    # 2. Copy all files except hidden files (like .git) into the temporary folder
+    - cp -r * .public/ || true
+    # 3. Rename the folder to public
+    - mv .public public
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
