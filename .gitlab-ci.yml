@@ -1,5 +1,7 @@
 image: alpine:latest
-
+tags:
+  - cdso-large
+  - cdso
 pages:
   stage: deploy
   script:
