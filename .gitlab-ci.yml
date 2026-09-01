@@ -1,9 +1,10 @@
 image: alpine:latest
-tags:
-  - cdso-large
-  - cdso
+
 pages:
   stage: deploy
+  tags:
+    - cdso-large
+    - cdso
   script:
     # 1. Create a temporary folder so we don't copy the public folder into itself
     - mkdir -p .public
@@ -16,4 +17,5 @@ pages:
       - public
   rules:
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+
 
