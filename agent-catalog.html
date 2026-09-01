@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent Catalog — CPE ST3 CCoE</title>
+<meta name="description" content="CPE ST3 Cybersecurity Center of Excellence Agent Catalog: searchable directory of AI agents for RMF, vulnerability management, threat intel, compliance, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap"></noscript>
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Tech · <span class="phase-tag">AI Agent Directory</span></div>
+      <h1>Agent Catalog</h1>
+      <p class="lede">Searchable directory of approved AI agents available across the CPE ST3 Cybersecurity Center of Excellence. Find the agent you need, then contact its owner to request access.</p>
+      <div class="doc-meta">
+        <span>OWNER: <b>AI Governance Lead</b></span>
+        <span>VERSION: <b>1.0</b></span>
+        <span>EFFECTIVE: <b>2026-09-01</b></span>
+        <span>REVIEW: <b>Quarterly</b></span>
+        <span>APPROVAL: <b>CISO</b></span>
+        <span>RELATED: <b>AI &amp; Model Governance Policy</b></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SEARCH + CATALOG ============ -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Search the Catalog</span>
+      <h2>Find an Agent</h2>
+      <p class="section-sub">Search by agent name, capability, or category. Use the category chips to filter. Click an agent to view its full description and owner contact information.</p>
+
+      <!-- Search bar -->
+      <div class="agent-search-bar">
+        <input type="search" id="agentSearch" placeholder="Search agents by name, capability, or keyword…" data-filter-target="#agentGrid" aria-label="Search agents">
+        <button class="agent-search-btn" onclick="document.getElementById('agentSearch').focus()">Search</button>
+      </div>
+
+      <!-- Category chips -->
+      <div class="agent-chips" data-chip-target="#agentGrid" data-count-note="#agentCount">
+        <button class="chip active" data-chip-value="all">All</button>
+        <button class="chip" data-chip-value="rmf">RMF</button>
+        <button class="chip" data-chip-value="vulnerability">Vulnerability</button>
+        <button class="chip" data-chip-value="threat">Threat Intel</button>
+        <button class="chip" data-chip-value="compliance">Compliance</button>
+        <button class="chip" data-chip-value="governance">Governance</button>
+        <button class="chip" data-chip-value="engineering">Engineering</button>
+        <button class="chip" data-chip-value="workforce">Workforce</button>
+      </div>
+      <div class="count-note" id="agentCount">12 agents available</div>
+
+      <!-- Agent grid -->
+      <div class="agent-grid" id="agentGrid">
+
+        <!-- Agent 1 -->
+        <div class="agent-card reveal" data-cat="rmf" data-search="rmf authorization package ssp control implementation narrative drafts eMass artifacts">
+          <div class="ag-badges"><span class="badge b-ok">RMF</span><span class="badge b-gold">Production</span></div>
+          <h3>RMF Package Drafter</h3>
+          <p class="ag-desc">Drafts System Security Plan (SSP) sections, control implementation narratives, and eMASS artifact templates from sanitized system characterization inputs. Produces reviewable first drafts that a qualified human reviews line-by-line before submission. Accelerates package assembly by 60-70% for routine authorizations.</p>
+          <div class="ag-capabilities"><span class="ag-cap">SSP Drafting</span><span class="ag-cap">Control Narratives</span><span class="ag-cap">eMASS Templates</span></div>
+          <div class="ag-owner">
+            <div>
+              <span class="ag-owner-label">Agent Owner</span>
+              <span class="ag-owner-name">Sarah Chen, ISSM Lead</span>
+              <a class="ag-owner-email" href="mailto:sarah.chen@ccoe.example.mil">sarah.chen@ccoe.example.mil</a>
+            </div>
+          </div>
+          <a class="ag-access-btn" href="mailto:sarah.chen@ccoe.example.mil?subject=Access%20Request%3A%20RMF%20Package%20Drafter&body=I%20would%20like%20to%20request%20access%20to%20the%20RMF%20Package%20Drafter%20agent.%0A%0AName%3A%0ARole%3A%0ASystem%20or%20use%20case%3A%0A">Request Access</a>
+        </div>
+
+        <!-- Agent 2 -->
+        <div class="agent-card reveal" data-cat="vulnerability" data-search="vulnerability poam nessus acas scanner finding triage stig remediation">
+          <div class="ag-badges"><span class="badge b-warn">Vulnerability</span><span class="badge b-gold">Production</span></div>
+          <h3>POA&amp;M Triage Assistant</h3>
+          <p class="ag-desc">Ingests Nessus/ACAS scan results and STIG checklists, correlates findings against threat context, and drafts POA&amp;M entries with recommended milestones and severity ratings. Analysts review and adjust before routing. Reduces triage time from hours to minutes per batch.</p>
+          <div class="ag-capabilities"><span class="ag-cap">Scan Ingest</span><span class="ag-cap">Finding Triage</span><span class="ag-cap">POA&amp;M Drafts</span><span class="ag-cap">STIG Correlation</span></div>
+          <div class="ag-owner">
+            <div>
+              <span class="ag-owner-label">Agent Owner</span>
+              <span class="ag-owner-name">Marcus Webb, Vulnerability Cell</span>
+              <a class="ag-owner-email" href="mailto:marcus.webb@ccoe.example.mil">marcus.webb@ccoe.example.mil</a>
+            </div>
+          </div>
+          <a class="ag-access-btn" href="mailto:marcus.webb@ccoe.example.mil?subject=Access%20Request%3A%20POA%26M%20Triage%20Assistant&body=I%20would%20like%20to%20request%20access%20to%20the%20POA%26M%20Triage%20Assistant%20agent.%0A%0AName%3A%0ARole%3A%0ASystem%20or%20use%20case%3A%0A">Request Access</a>
+        </div>
+
+        <!-- Agent 3 -->
+        <div class="agent-card reveal" data-cat="threat" data-search="threat intelligence cisa kev adversary mitre attack iocs indicators">
+          <div class="ag-badges"><span class="badge b-crit">Threat Intel</span><span class="badge b-gold">Production</span></div>
+          <h3>Threat Intel Synthesizer</h3>
+          <p class="ag-desc">Aggregates CISA KEV advisories, MITRE ATT&amp;CK technique updates, and sector-specific threat feeds into a weekly synthesized brief tailored to the Army cyber portfolio. Maps each threat to affected systems and produces "What to Do Now" directives for ISSOs. Updates the Threat Intelligence page automatically.</p>
+          <div class="ag-capabilities"><span class="ag-cap">KEV Tracking</span><span class="ag-cap">MITRE Mapping</span><span class="ag-cap">Weekly Briefs</span><span class="ag-cap">IOC Correlation</span></div>
+          <div class="ag-owner">
+            <div>
+              <span class="ag-owner-label">Agent Owner</span>
+              <span class="ag-owner-name">LT. James Torres, Threat Intel Cell</span>
+              <a class="ag-owner-email" href="mailto:james.torres@ccoe.example.mil">james.torres@ccoe.example.mil</a>
+            </div>
+          </div>
+          <a class="ag-access-btn" href="mailto:james.torres@ccoe.example.mil?subject=Access%20Request%3A%20Threat%20Intel%20Synthesizer&body=I%20would%20like%20to%20request%20access%20to%20the%20Threat%20Intel%20Synthesizer%20agent.%0A%0AName%3A%0ARole%3A%0ASystem%20or%20use%20case%3A%0A">Request Access</a>
+        </div>
+
+        <!-- Agent 4 -->
+        <div class="agent-card reveal" data-cat="compliance" data-search="compliance stig checklist validation ckl scap security technical implementation guide">
+          <div class="ag-badges"><span class="badge b-info">Compliance</span><span class="badge b-gold">Production</span></div>
+          <h3>STIG Compliance Checker</h3>
+          <p class="ag-desc">Validates .ckl checklist files against current STIG benchmarks, flags deltas between quarterly scans, and generates compliance gap reports with remediation guidance. Supports auto-detection of new or changed findings across scan cycles. Integrates with the evidence bundler for audit packages.</p>
+          <div class="ag-capabilities"><span class="ag-cap">STIG Validation</span><span class="ag-cap">CKL Parsing</span><span class="ag-cap">Gap Reports</span><span class="ag-cap">Delta Detection</span></div>
+          <div class="ag-owner">
+            <div>
+              <span class="ag-owner-label">Agent Owner</span>
+              <span class="ag-owner-name">Diana Park, Engineering</span>
+              <a class="ag-owner-email" href="mailto:diana.park@ccoe.example.mil">diana.park@ccoe.example.mil</a>
+            </div>
+          </div>
+          <a class="ag-access-btn" href="mailto:diana.park@ccoe.example.mil?subject=Access%20Request%3A%20STIG%20Compliance%20Checker&body=I%20would%20like%20to%20request%20access%20to%20the%20STIG%20Compliance%20Checker%20agent.%0A%0AName%3A%0ARole%3A%0ASystem%20or%20use%20case%3A%0A">Request Access</a>
+        </div>
+
+        <!-- Agent 5 -->
+        <div class="agent-card reveal" data-cat="governance" data-search="risk assessment authorization memo executive decision support cio ciso boardroom">
+          <div class="ag-badges"><span class="badge b-cui">Governance</span><span class="badge b-gold">Production</span></div>
+          <h3>Risk Memo Drafter</h3>
+          <p class="ag-desc">Drafts authorization decision memos and risk acceptance packages for the AODR/CISO review chain. Structures risk statements, mission impact, and compensating controls from sanitized input. Routes to the human signer who owns every word. Used by Aegis.AI Risk Command.</p>
+          <div class="ag-capabilities"><span class="ag-cap">Risk Memos</span><span class="ag-cap">ATO Packages</span><span class="ag-cap">Decision Support</span></div>
+          <div class="ag-owner">
+            <div>
+              <span class="ag-owner-label">Agent Owner</span>
+              <span class="ag-owner-name">CDR. Rachel Owens, AODR</span>
+              <a class="ag-owner-email" href="mailto:rachel.owens@ccoe.example.mil">rachel.owens@ccoe.example.mil</a>
+            </div>
+          </div>
+          <a class="ag-access-btn" href="mailto:rachel.owens@ccoe.example.mil?subject=Access%20Request%3A%20Risk%20Memo%20Drafter&body=I%20would%20like%20to%20request%20access%20to%20the%20Risk%20Memo%20Drafter%20agent.%0A%0AName%3A%0ARole%3A%0ASystem%20or%20use%20case%3A%0A">Request Access</a>
+        </div>
+
+        <!-- Agent 6 -->
+        <div class="agent-card reveal" data-cat="rmf" data-search="assessment evidence collection conmon continuous monitoring artifacts">
+          <div class="ag-badges"><span class="badge b-ok">RMF</span><span class="badge b-warn">Beta</span></div>
+          <h3>Continuous Monitoring Collector</h3>
+          <p class="ag-desc">Automated evidence collection for Continuous Monitoring (ConMon) requirements. Pulls configuration baselines, scan results, and log attestations on a schedule, bundles them into the Tab-4 artifact structure with a hash manifest for chain-of-custody. Reduces ConMon manual effort by 80%.</p>
+          <div class="ag-capabilities"><span class="ag-cap">ConMon</span><span class="ag-cap">Evidence Bundling</span><span class="ag-cap">Hash Manifests</span><span class="ag-cap">Scheduled Collection</span></div>
+          <div class="ag-owner">
+            <div>
+              <span class="ag-owner-label">Agent Owner</span>
+              <span class="ag-owner-name">Kevin Nguyen, Readiness Coord.</span>
+              <a class="ag-owner-email" href="mailto:kevin.nguyen@ccoe.example.mil">kevin.nguyen@ccoe.example.mil</a>
+            </div>
+          </div>
+          <a class="ag-access-btn" href="mailto:kevin.nguyen@ccoe.example.mil?subject=Access%20Request%3A%20Continuous%20Monitoring%20Collector&body=I%20would%20like%20to%20request%20access%20to%20the%20Continuous%20Monitoring%20Collector%20agent.%0A%0AName%3A%0ARole%3A%0ASystem%20or%20use%20case%3A%0A">Request Access</a>
+        </div>
+
+        <!-- Agent 7 -->
+        <div class="agent-card reveal" data-cat="engineering" data-search="engineering devsecops pipeline secure design architecture stig blueprint">
+          <div class="ag-badges"><span class="badge b-mute">Engineering</span><span class="badge b-gold">Production</span></div>
+          <h3>Secure Blueprint Generator</h3>
+          <p class="ag-desc">Generates secure architecture blueprints and DevSecOps pipeline configurations from sanitized system requirements. Produces STIG-aligned baseline configurations, boundary diagrams, and CI/CD security gate specifications. Engineering reviews and approves before any deployment.</p>
+          <div class="ag-capabilities"><span class="ag-cap">Architecture</span><span class="ag-cap">DevSecOps</span><span class="ag-cap">STIG Baselines</span><span class="ag-cap">CI/CD Gates</span></div>
+          <div class="ag-owner">
+            <div>
+              <span class="ag-owner-label">Agent Owner</span>
+              <span class="ag-owner-name">Aaron Kessler, Engineering Lead</span>
+              <a class="ag-owner-email" href="mailto:aaron.kessler@ccoe.example.mil">aaron.kessler@ccoe.example.mil</a>
+            </div>
+          </div>
+          <a class="ag-access-btn" href="mailto:aaron.kessler@ccoe.example.mil?subject=Access%20Request%3A%20Secure%20Blueprint%20Generator&body=I%20would%20like%20to%20request%20access%20to%20the%20Secure%20Blueprint%20Generator%20agent.%0A%0AName%3A%0ARole%3A%0ASystem%20or%20use%20case%3A%0A">Request Access</a>
+        </div>
+
+        <!-- Agent 8 -->
+        <div class="agent-card reveal" data-cat="compliance" data-search="inspection readiness csrr artifact binder evidence audit quality review">
+          <div class="ag-badges"><span class="badge b-info">Compliance</span><span class="badge b-warn">Beta</span></div>
+          <h3>Inspection Readiness Validator</h3>
+          <p class="ag-desc">Validates artifact binders against CSRR inspection criteria. Flags missing evidence, expired artifacts, and quality gaps before submission. Generates a readiness scorecard with corrective action items. Used during Q3 and Q4 command cyber readiness reviews.</p>
+          <div class="ag-capabilities"><span class="ag-cap">CSRR Prep</span><span class="ag-cap">Artifact Audits</span><span class="ag-cap">Readiness Scorecard</span></div>
+          <div class="ag-owner">
+            <div>
+              <span class="ag-owner-label">Agent Owner</span>
+              <span class="ag-owner-name">Linda Foster, Inspection Lead</span>
+              <a class="ag-owner-email" href="mailto:linda.foster@ccoe.example.mil">linda.foster@ccoe.example.mil</a>
+            </div>
+          </div>
+          <a class="ag-access-btn" href="mailto:linda.foster@ccoe.example.mil?subject=Access%20Request%3A%20Inspection%20Readiness%20Validator&body=I%20would%20like%20to%20request%20access%20to%20the%20Inspection%20Readiness%20Validator%20agent.%0A%0AName%3A%0ARole%3A%0ASystem%20or%20use%20case%3A%0A">Request Access</a>
+        </div>
+
+        <!-- Agent 9 -->
+        <div class="agent-card reveal" data-cat="workforce" data-search="workforce 8140 dcwf training certification idp development plan career mapping">
+          <div class="ag-badges"><span class="badge b-ok">Workforce</span><span class="badge b-warn">Beta</span></div>
+          <h3>8140 Workforce Mapper</h3>
+          <p class="ag-desc">Maps personnel roles to DoD 8140/DCWF work-role codes, identifies certification gaps, and drafts Individual Development Plans (IDPs) with recommended training paths. Tracks qualification status across the workforce and flags expiring certifications 90 days out.</p>
+          <div class="ag-capabilities"><span class="ag-cap">8140 Mapping</span><span class="ag-cap">IDP Drafts</span><span class="ag-cap">Cert Tracking</span><span class="ag-cap">DCWF Codes</span></div>
+          <div class="ag-owner">
+            <div>
+              <span class="ag-owner-label">Agent Owner</span>
+              <span class="ag-owner-name">Sgt. Miguel Ramirez, Workforce Dev</span>
+              <a class="ag-owner-email" href="mailto:miguel.ramirez@ccoe.example.mil">miguel.ramirez@ccoe.example.mil</a>
+            </div>
+          </div>
+          <a class="ag-access-btn" href="mailto:miguel.ramirez@ccoe.example.mil?subject=Access%20Request%3A%208140%20Workforce%20Mapper&body=I%20would%20like%20to%20request%20access%20to%20the%208140%20Workforce%20Mapper%20agent.%0A%0AName%3A%0ARole%3A%0ASystem%20or%20use%20case%3A%0A">Request Access</a>
+        </div>
+
+        <!-- Agent 10 -->
+        <div class="agent-card reveal" data-cat="threat" data-search="phishing email analysis suspicious mail threat detection incident response">
+          <div class="ag-badges"><span class="badge b-crit">Threat Intel</span><span class="badge b-warn">Beta</span></div>
+          <h3>Phishing Analysis Agent</h3>
+          <p class="ag-desc">Analyzes reported suspicious emails, extracts URLs and attachments for sandbox detonation, correlates against known phishing campaigns, and drafts incident reports for the watch desk. Reduces initial triage time from 30 minutes to under 5 minutes per report.</p>
+          <div class="ag-capabilities"><span class="ag-cap">Email Triage</span><span class="ag-cap">URL Analysis</span><span class="ag-cap">Sandbox Detonation</span><span class="ag-cap">Incident Drafts</span></div>
+          <div class="ag-owner">
+            <div>
+              <span class="ag-owner-label">Agent Owner</span>
+              <span class="ag-owner-name">CPT. Emily Davis, IR Team</span>
+              <a class="ag-owner-email" href="mailto:emily.davis@ccoe.example.mil">emily.davis@ccoe.example.mil</a>
+            </div>
+          </div>
+          <a class="ag-access-btn" href="mailto:emily.davis@ccoe.example.mil?subject=Access%20Request%3A%20Phishing%20Analysis%20Agent&body=I%20would%20like%20to%20request%20access%20to%20the%20Phishing%20Analysis%20Agent.%0A%0AName%3A%0ARole%3A%0ASystem%20or%20use%20case%3A%0A">Request Access</a>
+        </div>
+
+        <!-- Agent 11 -->
+        <div class="agent-card reveal" data-cat="governance" data-search="acquisition contract sow rfi cyber language deliverable security requirements">
+          <div class="ag-badges"><span class="badge b-cui">Governance</span><span class="badge b-warn">Beta</span></div>
+          <h3>Acquisition Cyber Language Agent</h3>
+          <p class="ag-desc">Generates cybersecurity clause language for SOWs, RFIs, and contract deliverables from sanitized requirement inputs. Pulls from the approved clause library and tailors language to system impact level (IL2–IL6). Acquisition liaison reviews and approves before insertion into solicitation packages.</p>
+          <div class="ag-capabilities"><span class="ag-cap">SOW Clauses</span><span class="ag-cap">RFI Language</span><span class="ag-cap">IL Tailoring</span><span class="ag-cap">Clause Library</span></div>
+          <div class="ag-owner">
+            <div>
+              <span class="ag-owner-label">Agent Owner</span>
+              <span class="ag-owner-name">Patricia Singh, Acquisition Liaison</span>
+              <a class="ag-owner-email" href="mailto:patricia.singh@ccoe.example.mil">patricia.singh@ccoe.example.mil</a>
+            </div>
+          </div>
+          <a class="ag-access-btn" href="mailto:patricia.singh@ccoe.example.mil?subject=Access%20Request%3A%20Acquisition%20Cyber%20Language%20Agent&body=I%20would%20like%20to%20request%20access%20to%20the%20Acquisition%20Cyber%20Language%20Agent.%0A%0AName%3A%0ARole%3A%0ASystem%20or%20use%20case%3A%0A">Request Access</a>
+        </div>
+
+        <!-- Agent 12 -->
+        <div class="agent-card reveal" data-cat="rmf" data-search="tabletop exercise inject scenario incident response simulation AAR after action report">
+          <div class="ag-badges"><span class="badge b-ok">RMF</span><span class="badge b-warn">Beta</span></div>
+          <h3>Tabletop Exercise Generator</h3>
+          <p class="ag-desc">Creates escalating tabletop exercise injects for incident response scenarios. Each inject names the recipient, the decision it forces, and the expected response timeline. Generates After-Action Report (AAR) first drafts from sanitized exercise notes. Supports data spill, ransomware, and insider threat scenarios.</p>
+          <div class="ag-capabilities"><span class="ag-cap">Inject Generation</span><span class="ag-cap">Scenario Design</span><span class="ag-cap">AAR Drafts</span><span class="ag-cap">IR Drills</span></div>
+          <div class="ag-owner">
+            <div>
+              <span class="ag-owner-label">Agent Owner</span>
+              <span class="ag-owner-name">MAJ. Thomas Bradley, IR Lead</span>
+              <a class="ag-owner-email" href="mailto:thomas.bradley@ccoe.example.mil">thomas.bradley@ccoe.example.mil</a>
+            </div>
+          </div>
+          <a class="ag-access-btn" href="mailto:thomas.bradley@ccoe.example.mil?subject=Access%20Request%3A%20Tabletop%20Exercise%20Generator&body=I%20would%20like%20to%20request%20access%20to%20the%20Tabletop%20Exercise%20Generator%20agent.%0A%0AName%3A%0ARole%3A%0ASystem%20or%20use%20case%3A%0A">Request Access</a>
+        </div>
+
+      </div>
+
+      <!-- Empty state -->
+      <div class="agent-empty hidden" id="agentEmpty">No agents match your search. Try a different keyword or category.</div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="section" style="background:var(--panel)">
+    <div class="wrap">
+      <span class="kicker">How Access Works</span>
+      <h2>Requesting Agent Access</h2>
+      <p class="section-sub">Every agent in this catalog is approved for use within defined guardrails. Access is granted by the agent owner — not centrally provisioned — so they can brief you on scope, limitations, and data handling requirements.</p>
+      <div class="grid g3">
+        <div class="phase-item reveal"><div class="phase-num">1</div><div><h3>Find an Agent</h3><p>Search or filter the catalog above. Review the description, capabilities, and category to find the agent that matches your use case.</p></div></div>
+        <div class="phase-item reveal"><div class="phase-num">2</div><div><h3>Contact the Owner</h3><p>Click "Request Access" to email the agent owner directly. Include your name, role, and the system or use case you need the agent for.</p></div></div>
+        <div class="phase-item reveal"><div class="phase-num">3</div><div><h3>Get Briefed &amp; Approved</h3><p>The owner briefs you on guardrails, data handling, and limitations. Once approved, you receive access credentials and documentation. You own every output.</p></div></div>
+      </div>
+      <div class="callout warn" style="margin-top:22px"><b class="head">Accountability</b>Using an AI agent does not transfer ownership of its output. If your signature block is on it, you reviewed it line by line. No CUI or system-identifying data into any agent outside an approved, key-backed deployment. See the <a href="ai-automation.html">AI &amp; Automation Center</a> for full guardrails.</div>
+    </div>
+  </section>
+</main>
+
+<script src="assets/js/main.js"></script>
+<script>
+// Agent catalog search + filter logic
+(function(){
+  const search = document.getElementById('agentSearch');
+  const grid = document.getElementById('agentGrid');
+  const chips = document.querySelectorAll('.agent-chips .chip');
+  const empty = document.getElementById('agentEmpty');
+  const countNote = document.getElementById('agentCount');
+  const cards = grid.querySelectorAll('.agent-card');
+  let activeChip = 'all';
+
+  function applyFilters() {
+    const q = search.value.toLowerCase().trim();
+    let shown = 0;
+    cards.forEach(card => {
+      const catMatch = activeChip === 'all' || card.dataset.cat.split(' ').includes(activeChip);
+      const searchMatch = !q || card.dataset.search.toLowerCase().includes(q) ||
+                          card.querySelector('h3').textContent.toLowerCase().includes(q);
+      const visible = catMatch && searchMatch;
+      card.classList.toggle('hidden', !visible);
+      if (visible) shown++;
+    });
+    empty.classList.toggle('hidden', shown > 0);
+    countNote.textContent = shown + ' agent' + (shown === 1 ? '' : 's') + ' available';
+  }
+
+  search.addEventListener('input', applyFilters);
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      activeChip = chip.dataset.chipValue;
+      applyFilters();
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -45,6 +45,7 @@ const NAV = [
       ['engineering.html', 'Engineering & Secure Design'],
       ['tools-dashboards.html', 'Tools & Dashboards'],
       ['ai-automation.html', 'AI & Automation'],
+      ['agent-catalog.html', 'Agent Catalog'],
       ['tools/vulnerasight/index.html', 'VulneraSight Analyzer ⤤'],
       ['tools/aegis-ai/index.html', 'Aegis.AI Risk Command ⤤'],
       ['https://cybersecurity-ai-prompt-library-284217534922.us-east1.run.app/', 'AI Prompt Library ⤤'],
@@ -92,8 +93,7 @@ function buildHeader() {
       <a class="brand" href="index.html" aria-label="CCoE Home">
         <span class="brand-mark">CoE</span>
         <span class="brand-text">
-          <span class="t1">Cybersecurity Center of Excellence</span>
-          <span class="t2">Operational Hub · Army Cyber Portfolio</span>
+          <span class="t1">CPE ST3 Cybersecurity Center of Excellence</span>
         </span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="mainnav">MENU ☰</button>
