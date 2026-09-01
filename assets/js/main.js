@@ -50,6 +50,14 @@ const NAV = [
       ['https://cybersecurity-ai-prompt-library-284217534922.us-east1.run.app/', 'AI Prompt Library ⤤'],
     ]
   },
+  {
+    label: 'Media', items: [
+      ['media.html', 'Media Hub'],
+      ['media.html#articles', 'Articles'],
+      ['media.html#video', 'Video & Podcasts'],
+      ['media.html#ciso-podcast', 'CISO Podcast'],
+    ]
+  },
   { label: 'Contact', href: 'contact.html' },
 ];
 
@@ -157,6 +165,14 @@ function buildFooter() {
           <li><a href="community.html">Office Hours</a></li>
           <li><a href="contact.html">Contact the Cybersecurity Office</a></li>
           <li><a href="contact.html#ask-ciso">Ask the CISO</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Media</h4>
+        <ul>
+          <li><a href="media.html#articles">Articles</a></li>
+          <li><a href="media.html#video">Video & Podcasts</a></li>
+          <li><a href="media.html#ciso-podcast">CISO Podcast</a></li>
         </ul>
       </div>
     </div>
