@@ -5,19 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LLM Data Analysis with Gemini 3.7 Flash</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 2em; }
-    #result { margin-top: 2em; padding: 1em; border: 1px solid #ccc; background: #f9f9f9; }
-    label, input, button { display: block; margin-bottom: 1em; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #e0e7ff 0%, #f9fafb 100%);
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 3em auto;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      padding: 2em 2.5em;
+    }
+    h1 {
+      color: #3b82f6;
+      font-size: 2em;
+      margin-bottom: 1em;
+      text-align: center;
+    }
+    label {
+      font-weight: 600;
+      margin-bottom: 0.5em;
+      display: block;
+      color: #374151;
+    }
+    input[type="file"] {
+      margin-bottom: 1em;
+      padding: 0.5em;
+      border-radius: 6px;
+      border: 1px solid #d1d5db;
+      width: 100%;
+    }
+    button {
+      background: #3b82f6;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.75em 1.5em;
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-bottom: 1em;
+    }
+    button:hover {
+      background: #2563eb;
+    }
+    #result {
+      margin-top: 2em;
+      padding: 1em;
+      border: 1px solid #cbd5e1;
+      background: #f3f4f6;
+      border-radius: 8px;
+      min-height: 60px;
+      font-size: 1.1em;
+      color: #374151;
+      word-break: break-word;
+    }
+    .error {
+      color: #dc2626;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
-  <h1>Upload Data for LLM Analysis (Gemini 3.7 Flash)</h1>
-  <input type="file" id="fileInput" />
-  <button onclick="handleFileUpload()">Analyze with LLM</button>
-  <div id="result"></div>
+  <div class="container">
+    <h1>Upload Data for LLM Analysis<br><span style="font-size:0.7em;color:#64748b;">Gemini 3.7 Flash</span></h1>
+    <label for="fileInput">Select a data file (CSV, TXT, etc.):</label>
+    <input type="file" id="fileInput" />
+    <button onclick="handleFileUpload()">Analyze with LLM</button>
+    <div id="result"></div>
+  </div>
 
   <script>
-    // Your Gemini API key (keep this secure in production!)
+    // Gemini API configuration
     const GEMINI_API_KEY = 'STARK_DSS2Z8bN5FU76XLo30BzB1CGhgxcbQIeKOiu2knRQTM';
     const GEMINI_API_URL = 'https://api.genai.mil/v1/chat/completions';
     const GEMINI_MODEL = 'gemini-3.7-flash';
@@ -25,28 +88,37 @@
     function handleFileUpload() {
       const fileInput = document.getElementById('fileInput');
       const file = fileInput.files[0];
+      const resultDiv = document.getElementById('result');
+      resultDiv.classList.remove('error');
       if (!file) {
-        alert('Please select a file to upload.');
+        resultDiv.innerHTML = '<span class="error">Please select a file to upload.</span>';
         return;
       }
       const reader = new FileReader();
       reader.onload = async function(e) {
         const fileContent = e.target.result;
-        document.getElementById('result').innerHTML = 'Analyzing...';
+        resultDiv.innerHTML = 'Analyzing...';
         const analysis = await analyzeWithLLM(fileContent);
-        document.getElementById('result').innerHTML = '<b>Analysis Result:</b><br>' + analysis;
+        if (analysis.startsWith('Error:')) {
+          resultDiv.classList.add('error');
+        }
+        resultDiv.innerHTML = '<b>Analysis Result:</b><br>' + analysis;
       };
       reader.readAsText(file);
     }
 
     async function analyzeWithLLM(data) {
-      // You can customize the prompt as needed
+      // Compose the prompt for the LLM
       const prompt = `Analyze the following data and provide insights, trends, or anomalies.\n\nData:\n${data}`;
       const body = {
         model: GEMINI_MODEL,
         messages: [
+          { role: 'system', content: 'You are a helpful data analyst.' },
           { role: 'user', content: prompt }
-        ]
+        ],
+        temperature: 0.7,
+        max_tokens: 1000,
+        stream: false
       };
       try {
         const response = await fetch(GEMINI_API_URL, {
@@ -57,12 +129,21 @@
           },
           body: JSON.stringify(body)
         });
+        if (response.status === 401) {
+          // Check for locked key and show unlock URL if present
+          const errorJson = await response.json();
+          if (errorJson.error && errorJson.error.unlock_url) {
+            return `Error: API key locked. <a href="${errorJson.error.unlock_url}" target="_blank">Unlock your key here</a>.`;
+          } else {
+            return 'Error: Unauthorized. Please check your API key.';
+          }
+        }
         if (!response.ok) {
-          throw new Error('LLM API error: ' + response.statusText);
+          const errorJson = await response.json();
+          return 'Error: ' + (errorJson.error?.message || response.statusText);
         }
         const result = await response.json();
-        // The response format is assumed to be OpenAI-compatible
-        // e.g., result.choices[0].message.content
+        // OpenAI-compatible response
         return result.choices?.[0]?.message?.content || 'No analysis returned.';
       } catch (error) {
         return 'Error: ' + error.message;
