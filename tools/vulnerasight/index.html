@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LLM Data Analysis with Gemini 2.5 Flash</title>
+  <title>LLM Data Analysis with Gemini 3.7 Flash</title>
   <style>
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
@@ -68,28 +68,40 @@
       color: #dc2626;
       font-weight: bold;
     }
+    .debug {
+      margin-top: 1em;
+      font-size: 0.95em;
+      color: #64748b;
+      background: #f1f5f9;
+      border-radius: 6px;
+      padding: 0.5em 1em;
+      word-break: break-all;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Upload Data for LLM Analysis<br><span style="font-size:0.7em;color:#64748b;">Gemini 2.5 Flash</span></h1>
+    <h1>Upload Data for LLM Analysis<br><span style="font-size:0.7em;color:#64748b;">Gemini 3.7 Flash</span></h1>
     <label for="fileInput">Select a data file (CSV, TXT, etc.):</label>
     <input type="file" id="fileInput" />
     <button onclick="handleFileUpload()">Analyze with LLM</button>
     <div id="result"></div>
+    <div id="debug"></div>
   </div>
 
   <script>
     // Gemini API configuration
     const GEMINI_API_KEY = 'STARK_DSS2Z8bN5FU76XLo30BzB1CGhgxcbQIeKOiu2knRQTM';
     const GEMINI_API_URL = 'https://api.genai.mil/v1/chat/completions';
-    const GEMINI_MODEL = 'gemini-2.5-flash';
+    const GEMINI_MODEL = 'gemini-3.7-flash';
 
     function handleFileUpload() {
       const fileInput = document.getElementById('fileInput');
       const file = fileInput.files[0];
       const resultDiv = document.getElementById('result');
+      const debugDiv = document.getElementById('debug');
       resultDiv.classList.remove('error');
+      debugDiv.innerHTML = '';
       if (!file) {
         resultDiv.innerHTML = '<span class="error">Please select a file to upload.</span>';
         return;
@@ -98,11 +110,15 @@
       reader.onload = async function(e) {
         const fileContent = e.target.result;
         resultDiv.innerHTML = 'Analyzing...';
-        const analysis = await analyzeWithLLM(fileContent);
+        debugDiv.innerHTML = '';
+        const { analysis, debug } = await analyzeWithLLM(fileContent);
         if (analysis.startsWith('Error:')) {
           resultDiv.classList.add('error');
         }
         resultDiv.innerHTML = '<b>Analysis Result:</b><br>' + analysis;
+        if (debug) {
+          debugDiv.innerHTML = '<b>Debug Info:</b><br>' + debug;
+        }
       };
       reader.readAsText(file);
     }
@@ -120,7 +136,14 @@
         max_tokens: 1000,
         stream: false
       };
+      let debug = '';
       try {
+        debug += `<b>Request URL:</b> ${GEMINI_API_URL}<br>`;
+        debug += `<b>Request Headers:</b> ` + JSON.stringify({
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + GEMINI_API_KEY
+        }) + '<br>';
+        debug += `<b>Request Body:</b> ` + JSON.stringify(body) + '<br>';
         const response = await fetch(GEMINI_API_URL, {
           method: 'POST',
           headers: {
@@ -129,24 +152,35 @@
           },
           body: JSON.stringify(body)
         });
+        debug += `<b>Response Status:</b> ${response.status} ${response.statusText}<br>`;
+        let responseText = '';
+        try {
+          responseText = await response.text();
+          debug += `<b>Response Body:</b> ${responseText}<br>`;
+        } catch (e) {
+          debug += `<b>Response Body:</b> (failed to read)<br>`;
+        }
         if (response.status === 401) {
           // Check for locked key and show unlock URL if present
-          const errorJson = await response.json();
+          let errorJson = {};
+          try { errorJson = JSON.parse(responseText); } catch {}
           if (errorJson.error && errorJson.error.unlock_url) {
-            return `Error: API key locked. <a href="${errorJson.error.unlock_url}" target="_blank">Unlock your key here</a>.`;
+            return { analysis: `Error: API key locked. <a href="${errorJson.error.unlock_url}" target="_blank">Unlock your key here</a>.`, debug };
           } else {
-            return 'Error: Unauthorized. Please check your API key.';
+            return { analysis: 'Error: Unauthorized. Please check your API key.', debug };
           }
         }
         if (!response.ok) {
-          const errorJson = await response.json();
-          return 'Error: ' + (errorJson.error?.message || response.statusText);
+          let errorJson = {};
+          try { errorJson = JSON.parse(responseText); } catch {}
+          return { analysis: 'Error: ' + (errorJson.error?.message || response.statusText), debug };
         }
-        const result = await response.json();
-        // OpenAI-compatible response
-        return result.choices?.[0]?.message?.content || 'No analysis returned.';
+        let result = {};
+        try { result = JSON.parse(responseText); } catch {}
+        return { analysis: result.choices?.[0]?.message?.content || 'No analysis returned.', debug };
       } catch (error) {
-        return 'Error: ' + error.message;
+        debug += `<b>JS Error:</b> ${error.message}<br>`;
+        return { analysis: 'Error: ' + error.message, debug };
       }
     }
   </script>
