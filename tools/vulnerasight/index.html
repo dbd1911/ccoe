@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LLM Data Analysis with Gemini 3.7 Flash</title>
+  <title>LLM Data Analysis with Gemini 2.5 Flash</title>
   <style>
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
@@ -81,7 +81,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>Upload Data for LLM Analysis<br><span style="font-size:0.7em;color:#64748b;">Gemini 3.7 Flash</span></h1>
+    <h1>Upload Data for LLM Analysis<br><span style="font-size:0.7em;color:#64748b;">Gemini 2.5 Flash</span></h1>
     <label for="fileInput">Select a data file (CSV, TXT, etc.):</label>
     <input type="file" id="fileInput" />
     <button onclick="handleFileUpload()">Analyze with LLM</button>
@@ -93,7 +93,7 @@
     // Gemini API configuration
     const GEMINI_API_KEY = 'STARK_DSS2Z8bN5FU76XLo30BzB1CGhgxcbQIeKOiu2knRQTM';
     const GEMINI_API_URL = 'https://api.genai.mil/v1/chat/completions';
-    const GEMINI_MODEL = 'gemini-3.7-flash';
+    const GEMINI_MODEL = 'gemini-2.5-flash';
 
     function handleFileUpload() {
       const fileInput = document.getElementById('fileInput');
