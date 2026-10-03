@@ -3,9 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FAQ &amp; Knowledge Base — CCoE</title>
+<title>FAQ &amp; Knowledge Base — Searchable Answers + Full-Site Search</title>
+<meta name="description" content="Searchable knowledge base: 200+ frequently asked questions across the CCoE hub, plus full-site search with direct links to every page and tool.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap"></noscript>
 <link rel="stylesheet" href="assets/css/styles.css">
+<style>
+  /* ---- FAQ search shell (page-scoped) ---- */
+  .faq-shell{margin-top:18px}
+  .faq-hero{display:flex;flex-direction:column;gap:14px;margin-top:6px}
+  .faq-search-bar{display:flex;gap:10px;margin-bottom:4px}
+  .faq-search-bar .field{flex:1}
+  .faq-search-btn{border:1px solid var(--gold);background:var(--gold);color:var(--ink);font:inherit;font-weight:700;letter-spacing:.03em;padding:9px 20px;border-radius:var(--radius);cursor:pointer}
+  .faq-search-btn:hover{filter:brightness(1.08)}
+  .mode-switch{display:inline-flex;border:1px solid var(--line,var(--line));border-radius:var(--radius);overflow:hidden}
+  .mode-switch .mode-btn{border:0;background:transparent;color:var(--muted,var(--ink-mute));font:inherit;font-size:13px;font-weight:600;letter-spacing:.04em;padding:9px 16px;cursor:pointer}
+  .mode-switch .mode-btn.active{background:var(--gold);color:var(--ink)}
+  .faq-stats{font-size:12.5px;color:var(--muted,var(--ink-mute));text-align:right}
+  .faq-mode-note{font-size:12.5px;color:var(--muted,var(--ink-mute))}
+  .faq-chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 2px}
+  .faq-results{display:flex;flex-direction:column;gap:12px;min-height:260px}
+  .faq-answer{background:var(--panel);border:1px solid var(--line,var(--line));border-radius:var(--radius);padding:16px 18px;border-left:3px solid var(--gold);cursor:pointer}
+  .faq-answer:hover{border-left-width:5px}
+  .faq-answer .faq-catline{display:flex;gap:8px;align-items:center;margin-bottom:6px}
+  .faq-answer .faq-catline .badge{font-size:10.5px}
+  .faq-answer .faq-q{font-weight:700;margin:0;font-size:16px}
+  .faq-answer .faq-a{margin:8px 0 10px;font-size:14.5px;color:var(--text,var(--ink-soft))}
+  .faq-answer .faq-a a{color:var(--gold);font-weight:600;text-decoration:underline}
+  .faq-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12px;color:var(--muted,var(--ink-mute))}
+  .faq-answer .sr-note{font-size:11.5px;color:var(--muted,var(--ink-mute));margin-left:auto;font-style:italic}
+  .faq-answer em, .faq-page-result em{font-style:normal;background:rgba(201,162,39,.28);border-radius:2px;padding:0 1px}
+  .faq-page-result{display:flex;flex-direction:column;gap:4px;background:var(--panel);border:1px solid var(--line,var(--line));border-radius:var(--radius);padding:14px 18px;border-left:3px solid var(--info)}
+  .faq-page-result .rtitle{font-weight:700;font-size:15px;margin:0}
+  .faq-page-result .rtitle a{color:var(--ink)}
+  .faq-page-result .rtitle a:hover{color:var(--gold)}
+  .faq-page-result .rsnippet{margin:0;font-size:13.5px;color:var(--muted,var(--ink-mute))}
+  .faq-page-result .rhit{display:inline-block;margin-top:2px;font-size:12.5px;font-weight:600;color:var(--gold)}
+  .faq-empty{padding:34px 20px;text-align:center;background:var(--panel);border:1px dashed var(--line,var(--line));border-radius:var(--radius);color:var(--muted,var(--ink-mute))}
+  .faq-empty b{color:var(--text,var(--ink-soft))}
+  .faq-empty .esc{color:var(--crit);font-weight:700}
+  .faq-glossary-note{font-size:12.5px;color:var(--muted,var(--ink-mute));margin-top:16px}
+  .faq-glossary-note a{color:var(--gold);font-weight:600}
+  @media (max-width:760px){.faq-search-bar{flex-direction:column}.faq-search-btn{width:100%}}
+</style>
 </head>
 <body>
 <main>
@@ -13,51 +52,55 @@
     <div class="wrap">
       <div class="eyebrow">Library · <span class="phase-tag">Phase 10 — Institutional Memory</span></div>
       <h1>FAQ &amp; Knowledge Base</h1>
-      <p class="lede">The answers we give most often, written down once. If you ask the office a question that belongs here, it gets added within a week — that's the deal.</p>
+      <p class="lede">207 answers plus a full index of the hub. One search box: ask it like a question, get an answer — and the exact page on this site.</p>
       <div class="doc-meta">
-        <span>OWNER: <b>Knowledge Manager</b></span><span>VERSION: <b>5.0</b></span><span>EFFECTIVE: <b>2026-06-01</b></span><span>REVIEW: <b>Continuous</b></span><span>APPROVAL: <b>Cybersecurity Office Director</b></span>
+        <span>OWNER: <b>Knowledge Manager</b></span><span>VERSION: <b>6.0</b></span><span>EFFECTIVE: <b>2026-10-01</b></span><span>REVIEW: <b>Continuous</b></span><span>APPROVAL: <b>Cybersecurity Office Director</b></span>
       </div>
     </div>
   </div>
 
-  <!-- FAQ -->
   <section class="section">
-    <div class="wrap">
-      <span class="kicker">Frequently Asked Questions</span>
-      <h2>Search Before You Email</h2>
-      <div class="filter-bar"><input class="field" type="search" placeholder="Search questions… (e.g. 'POA&amp;M closure', 'standalone', 'CUI email')" data-filter-target="#faqList" aria-label="Search FAQs"></div>
-      <div class="chip-row" data-chip-target="#faqList" data-count-note="#faqCount">
-        <button class="chip active" data-chip-value="all">All</button>
-        <button class="chip" data-chip-value="rmf">RMF</button>
-        <button class="chip" data-chip-value="emass">eMASS</button>
-        <button class="chip" data-chip-value="poam">POA&amp;M</button>
-        <button class="chip" data-chip-value="change">Change Requests</button>
-        <button class="chip" data-chip-value="standalone">Standalone</button>
-        <button class="chip" data-chip-value="cloud">Cloud</button>
-        <button class="chip" data-chip-value="cui">CUI</button>
-        <button class="chip" data-chip-value="contractor">Contractor</button>
-        <button class="chip" data-chip-value="incident">Incident</button>
+    <div class="wrap faq-shell">
+      <div class="faq-hero">
+        <div class="faq-search-bar">
+          <input class="field" type="search" id="faqSearch" placeholder="Try: &quot;Where is the AI prompt library?&quot; · &quot;POA&amp;M closure evidence&quot; · &quot;7-day SLA&quot;"
+                 aria-label="Search FAQs and the entire site" autocomplete="off">
+          <button class="faq-search-btn" id="faqSearchBtn" type="button">Search</button>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+          <div class="mode-switch" role="group" aria-label="Search mode">
+            <button class="mode-btn active" id="modeBoth" type="button">Answers + Site</button>
+            <button class="mode-btn" id="modeFaqs" type="button">Answers only</button>
+            <button class="mode-btn" id="modeSite" type="button">Site only</button>
+          </div>
+          <div class="faq-mode-note" id="faqModeNote">Ask anything — answers from the knowledge base plus matching pages from the full-site index.</div>
+        </div>
+        <div class="faq-chips" id="faqChips">
+          <button class="chip active" data-chip-value="all" type="button">All topics</button>
+          <button class="chip" data-chip-value="rmf" type="button">RMF &amp; Authorization</button>
+          <button class="chip" data-chip-value="risk" type="button">Risk</button>
+          <button class="chip" data-chip-value="poam" type="button">POA&amp;M</button>
+          <button class="chip" data-chip-value="incident" type="button">Incident &amp; Threats</button>
+          <button class="chip" data-chip-value="cui" type="button">CUI</button>
+          <button class="chip" data-chip-value="stig" type="button">STIG &amp; Scanning</button>
+          <button class="chip" data-chip-value="cloud" type="button">Cloud &amp; FedRAMP</button>
+          <button class="chip" data-chip-value="policy" type="button">Policies</button>
+          <button class="chip" data-chip-value="compliance" type="button">Inspections</button>
+          <button class="chip" data-chip-value="governance" type="button">Governance</button>
+          <button class="chip" data-chip-value="workforce" type="button">Workforce</button>
+          <button class="chip" data-chip-value="acquisition" type="button">Acquisition</button>
+          <button class="chip" data-chip-value="tools" type="button">Tools &amp; Navigation</button>
+        </div>
+        <div class="faq-stats" id="faqStats">Loading the knowledge base…</div>
       </div>
-      <p class="count-note" id="faqCount">14 questions shown</p>
-      <div class="grid g2" id="faqList">
-        <div class="card reveal" data-cat="rmf" data-search="rmf how long does authorization take timeline ato"><span class="badge b-gold">RMF</span><h3>How long does an initial ATO take?</h3><p>Plan <b>6–9 months</b> from categorization to decision for a moderate system with a prepared team. The biggest variable is artifact quality — packages built from Gold Standard templates clear assessment roughly 40% faster.</p></div>
-        <div class="card reveal" data-cat="rmf" data-search="rmf which pathway authorization applies iatt conditional"><span class="badge b-gold">RMF</span><h3>Which authorization pathway applies to my system?</h3><p>Start with the pathway cards on the <a href="rmf-operations.html">RMF Operations Hub</a>. If two seem to fit, your ISSM makes the call during strategy approval — don't self-select a temporary pathway to dodge full ATO work.</p></div>
-        <div class="card reveal" data-cat="emass" data-search="emass access account how do i get"><span class="badge b-info">eMASS</span><h3>How do I get an eMASS account?</h3><p>Request via <a href="tools-dashboards.html#emass">Tools &amp; Dashboards → eMASS</a>. You need: CAC, completed eMASS computer-based training certificate, and ISSM sponsorship naming your system roles. Provisioning runs ~5 business days.</p></div>
-        <div class="card reveal" data-cat="emass" data-search="emass system of record export tracker conflict"><span class="badge b-info">eMASS</span><h3>This site's data disagrees with eMASS. Which wins?</h3><p><b>eMASS, always.</b> Dashboards here refresh nightly and exist for visibility, not record-keeping. If they disagree for more than 48 hours, report it to the Knowledge Manager.</p></div>
-        <div class="card reveal" data-cat="poam" data-search="poam closure evidence what counts rejected"><span class="badge b-warn">POA&amp;M</span><h3>What closure evidence actually passes review?</h3><p>Proof the fix exists <i>and</i> proof it works: config export or patch record <b>plus</b> a clean rescan or manual verification dated after the fix. Screenshots without timestamps and "completed per admin" notes are auto-rejected.</p></div>
-        <div class="card reveal" data-cat="poam" data-search="poam extension sla exception overdue"><span class="badge b-warn">POA&amp;M</span><h3>Can I get an SLA extension?</h3><p>Only via a written exception request with compensating measures, endorsed by your ISSM. KEV-listed items have <b>no extension path</b> — escalate resourcing instead.</p></div>
-        <div class="card reveal" data-cat="change" data-search="change request minor significant difference rubric"><span class="badge b-info">Change</span><h3>Minor change or significant change?</h3><p>Apply the rubric in the <a href="policies.html">Change Management Policy</a>: anything altering the boundary, data types, user population, external connections, or security architecture is significant. When genuinely unsure, file it as significant — downgrades are painless, upgrades mid-stream are not.</p></div>
-        <div class="card reveal" data-cat="standalone" data-search="standalone scan requirement isolated no network"><span class="badge b-mute">Standalone</span><h3>My system can't be scanned. Now what?</h3><p>The Standalone SOP defines substitute evidence: manual STIG checklists, signed configuration attestations, and quarterly physical audits. "Can't scan" never means "no evidence" — it means different evidence.</p></div>
-        <div class="card reveal" data-cat="cloud" data-search="cloud fedramp il2 il4 il5 inherit"><span class="badge b-info">Cloud</span><h3>The CSP is <a href="https://www.fedramp.gov/" target="_blank" rel="noopener">FedRAMP</a> authorized. Am I done?</h3><p>No — you inherit the provider's controls, not your own. Customer-responsibility controls (IAM config, data handling, logging integration) remain yours and are assessed normally. The inheritance matrix in eMASS shows the split.</p></div>
-        <div class="card reveal" data-cat="cui" data-search="cui email send encrypt marking"><span class="badge b-cui">CUI</span><h3>Can I email CUI?</h3><p>Only encrypted (signed and encrypted via approved PKI), only to recipients with lawful government purpose, with the banner marking in the body and "CUI" in the subject line. Personal accounts and unmanaged mobile: never.</p></div>
-        <div class="card reveal" data-cat="cui" data-search="cui marking documents banner portion"><span class="badge b-cui">CUI</span><h3>How do I mark a CUI document?</h3><p>Banner top and bottom ("CUI"), designation indicator block on page one (owner, category, distribution, POC), and portion markings where required by category. The <a href="policies.html">CUI Handling SOP</a> has worked examples.</p></div>
-        <div class="card reveal" data-cat="contractor" data-search="contractor deliverable acceptance rejected qa"><span class="badge b-mute">Contractor</span><h3>A contractor deliverable failed cyber QA. Who fixes it?</h3><p>The contractor, under the acceptance-criteria clause — one funded correction cycle, then corrections at contractor expense. Route findings through the COR, never directly to contractor staff.</p></div>
-        <div class="card reveal" data-cat="incident" data-search="incident report benign false alarm penalty"><span class="badge b-crit">Incident</span><h3>What if I report something and it's nothing?</h3><p>Good. A benign report costs 20 minutes; an unreported incident costs an authorization. No one is penalized for good-faith reporting — this is written policy, not a slogan.</p></div>
-        <div class="card reveal" data-cat="incident" data-search="incident clicked phishing link credentials what do"><span class="badge b-crit">Incident</span><h3>I clicked a phishing link. What now?</h3><p>Call the watch desk <b>immediately</b> (treat as malware timeline), leave the machine on but disconnect from the network, and change credentials from a different, known-good device. Speed matters more than embarrassment.</p></div>
-      </div>
+
+      <div class="faq-results" id="faqResults"></div>
+
+      <div class="faq-glossary-note">Looking for a definition instead of a procedure? The searchable, sortable
+        <a href="#glossary">CCoE Glossary</a> is right below. Still nothing? <a href="contact.html">Contact the office</a>
+        — unsure-where-to-go questions triage in one business day, and entries get added within a week.</div>
     </div>
   </section>
-
   <!-- GLOSSARY -->
   <section class="section" id="glossary" style="background:var(--panel)">
     <div class="wrap">
@@ -95,6 +138,146 @@
     </div>
   </section>
 </main>
+<script src="assets/js/faq-search.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+(function () {
+  var searchInput = document.getElementById('faqSearch');
+  var searchBtn = document.getElementById('faqSearchBtn');
+  var resultsEl = document.getElementById('faqResults');
+  var statsEl = document.getElementById('faqStats');
+  var chipsEl = document.getElementById('faqChips');
+  var noteEl = document.getElementById('faqModeNote');
+  var mode = 'both';
+  var activeCat = 'all';
+  var lastQ = '';
+  var debounceId = null;
+
+  var MODE_NOTE = {
+    both: 'Ask anything — answers from the knowledge base plus matching pages from the full-site index.',
+    faqs: 'Searching the answer library only (207 entries). Best for procedures and how-to questions.',
+    site: 'Searching the full-site index — every page, tool, and subdirectory on the hub.'
+  };
+
+  function esc(s) { var d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; }
+
+  var BADGE = { tools: 'b-info', rmf: 'b-gold', risk: 'b-warn', poam: 'b-warn', incident: 'b-crit',
+    cui: 'b-cui', stig: 'b-info', cloud: 'b-info', policy: 'b-mute', compliance: 'b-mute',
+    governance: 'b-ok', workforce: 'b-ok', acquisition: 'b-gold' };
+
+  function faqCard(r) {
+    var badge = BADGE[r.cat] || 'b-mute';
+    var html = '<article class="faq-answer" data-open>'
+      + '<div class="faq-catline">'
+      + '<span class="badge ' + badge + '">' + esc(r.catLabel) + '</span>';
+    if (r.src) html += '<span class="sr-note">' + esc(r.src) + '</span>';
+    html += '</div>'
+      + '<h3 class="faq-q">' + r.q + '</h3>'
+      + '<p class="faq-a">' + r.a + '</p>'
+      + '</article>';
+    return html;
+  }
+
+  function pageCard(r) {
+    var html = '<article class="faq-page-result">'
+      + '<h3 class="rtitle"><a href="' + r.url + '">' + r.title + '</a></h3>';
+    if (r.s) html += '<p class="rsnippet">' + r.s + '</p>';
+    if (r.h) html += '<span class="rhit">→ ' + r.h + '</span>';
+    return html + '</article>';
+  }
+
+  function render(res, q) {
+    var out = '';
+    if (res.faqs.length) {
+      out += '<div class="faq-meta"><span class="badge b-gold">ANSWERS</span><span>' + res.faqs.length + ' answer' + (res.faqs.length === 1 ? '' : 's') + '</span></div>';
+      res.faqs.forEach(function (r) { out += faqCard(r); });
+    }
+    if (res.pages.length) {
+      out += '<div class="faq-meta" style="margin-top:10px"><span class="badge b-info">SITE PAGES</span><span>' + res.pages.length + ' matching page' + (res.pages.length === 1 ? '' : 's') + '</span></div>';
+      res.pages.forEach(function (r) { out += pageCard(r); });
+    }
+    if (!out) {
+      out = '<div class="faq-empty" id="faqEmpty">No exact hits for &ldquo;<b>' + esc(q) + '</b>&rdquo;. Try fewer or different words '
+        + '&mdash; or <a href="contact.html">ask the front desk</a> (ccoe.frontdesk@demo.mil). '
+        + '<span class="esc">Live incident?</span> Don&rsquo;t search &mdash; call the 24/7 watch desk: <span class="esc">DSN 312-555-0199 · COMM (407) 555-0199</span>.</div>';
+    }
+    resultsEl.innerHTML = out;
+  }
+
+  function clearResults() {
+    resultsEl.innerHTML = '<div class="faq-empty">The full knowledge base is above in navigation &mdash; start typing to search '
+      + 'answers and matching pages, or pick a topic chip to browse the library.</div>';
+  }
+
+  function run() {
+    var q = searchInput.value.trim();
+    lastQ = q;
+    if (!q) { clearResults(); statsEl.textContent = FaqSearch.stats().faqs + ' answers · ' + FaqSearch.stats().pages + ' indexed pages · ready'; return; }
+    FaqSearch.search(q, { mode: mode, cat: activeCat }).then(function (res) { if (searchInput.value.trim() === lastQ) render(res, q); });
+  }
+
+  function setStats() {
+    var st = FaqSearch.stats();
+    statsEl.textContent = st.faqs > 0
+      ? st.faqs + ' answers · ' + st.pages + ' indexed pages · ready'
+      : 'Knowledge base failed to load — check the console or contact knowledge.mgr@demo.mil';
+  }
+
+  searchInput.addEventListener('input', function () {
+    clearTimeout(debounceId);
+    debounceId = setTimeout(run, 160);
+  });
+  searchInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); run(); } });
+  searchBtn.addEventListener('click', function () { run(); searchInput.focus(); });
+
+  document.getElementById('modeBoth').addEventListener('click', function () { mode = 'both'; setMode(this); });
+  document.getElementById('modeFaqs').addEventListener('click', function () { mode = 'faqs'; setMode(this); });
+  document.getElementById('modeSite').addEventListener('click', function () { mode = 'site'; setMode(this); });
+
+  function setMode(btn) {
+    ['modeBoth', 'modeFaqs', 'modeSite'].forEach(function (id) {
+      document.getElementById(id).classList.toggle('active', document.getElementById(id) === btn);
+    });
+    noteEl.textContent = MODE_NOTE[mode];
+    if (searchInput.value.trim()) run();
+  }
+
+  chipsEl.addEventListener('click', function (e) {
+    var chip = e.target.closest('.chip');
+    if (!chip) return;
+    chipsEl.querySelectorAll('.chip').forEach(function (c) { c.classList.remove('active'); });
+    chip.classList.add('active');
+    activeCat = chip.dataset.chipValue;
+    if (searchInput.value.trim()) run();
+  });
+
+  // Click an answer card to copy its question into the search box (query-refine affordance)
+  resultsEl.addEventListener('click', function (e) {
+    if (e.target.closest('a')) return;
+    var card = e.target.closest('.faq-answer[data-open]');
+    if (!card) return;
+    var qEl = card.querySelector('.faq-q');
+    if (!qEl) return;
+    searchInput.value = qEl.textContent;
+    run();
+  });
+
+  // Open search if the page was loaded with ?q= (deep-linkable searches)
+  var params = new URLSearchParams(location.search);
+  var initial = params.get('q');
+  if (initial) { searchInput.value = initial; }
+
+  FaqSearch.ready().then(function () {
+    setStats();
+    if (searchInput.value.trim()) { run(); } else { clearResults(); }
+    searchInput.focus({ preventScroll: true });
+  }).catch(function () {
+    statsEl.textContent = 'Knowledge base failed to load — refresh, or contact knowledge.mgr@demo.mil';
+    resultsEl.innerHTML = '<div class="faq-empty"><b>The search service did not start.</b> Refresh the page; if it persists, '
+      + 'email <a href="mailto:knowledge.mgr@demo.mil">knowledge.mgr@demo.mil</a>. '
+      + '<span class="esc">Live incident?</span> Call the watch desk: <span class="esc">DSN 312-555-0199 · COMM (407) 555-0199</span>.</div>';
+  });
+})();
+</script>
 </body>
 </html>

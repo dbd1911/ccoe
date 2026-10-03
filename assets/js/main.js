@@ -154,7 +154,7 @@ function buildFooter() {
           <li><a href="templates.html">Templates & Job Aids</a></li>
           <li><a href="policies.html">Policies & SOPs</a></li>
           <li><a href="training.html">Training Academy</a></li>
-          <li><a href="faq.html">FAQ & Glossary</a></li>
+          <li><a href="faq.html">FAQ &amp; Knowledge Base</a></li>
           <li><a href="tools-dashboards.html">Tools & Dashboards</a></li>
         </ul>
       </div>
