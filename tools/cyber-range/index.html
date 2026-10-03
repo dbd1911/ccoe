@@ -314,7 +314,7 @@ canvas.cert{width:100%;height:auto;border:1px solid var(--hairline);border-radiu
    correct answer is revealed with an explanation). Each course
    ends in a 40-item capstone assessment; 80% to pass.
    Persistence via window.storage with localStorage and in-memory
-   fallbacks. (Demo auth — not production security.)
+   fallbacks. (Lightweight local auth — not a hardened SSO integration.)
    ============================================================ */
 
 /* ---------------- Storage layer ---------------- */
@@ -544,7 +544,7 @@ window.openCourse=function(id){App.sel=id;App.mod=null;App.kc=null;App.view='cou
 function shell(content){
   const ts={beginner:tierStats('beginner'),intermediate:tierStats('intermediate'),advanced:tierStats('advanced')};
   return `
-  <div class="classbar"><span><span class="dot"></span>CPE ST3 // CYBERSECURITY OFFICE (CSO) — UNCLASSIFIED // TRAINING</span>
+  <div class="classbar"><span><span class="dot"></span>CPE ST3 // CYBERSECURITY OFFICE (CSO) — TRAINING SIMULATOR</span>
     <span class="right"><span>OP: ${esc(App.user.username)}</span><span id="clk"></span></span></div>
   <div class="shell">
     <aside class="rail" id="rail">

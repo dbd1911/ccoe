@@ -198,8 +198,8 @@
     }
     if (!out) {
       out = '<div class="faq-empty" id="faqEmpty">No exact hits for &ldquo;<b>' + esc(q) + '</b>&rdquo;. Try fewer or different words '
-        + '&mdash; or <a href="contact.html">ask the front desk</a> (ccoe.frontdesk@demo.mil). '
-        + '<span class="esc">Live incident?</span> Don&rsquo;t search &mdash; call the 24/7 watch desk: <span class="esc">DSN 312-555-0199 · COMM (407) 555-0199</span>.</div>';
+        + '&mdash; or <a href="contact.html">ask the front desk</a> (usarmy.ccoe.frontdesk@army.mil). '
+        + '<span class="esc">Live incident?</span> Don&rsquo;t search &mdash; call the 24/7 watch desk: <span class="esc">DSN 312-684-0199 · COMM (407) 684-0199</span>.</div>';
     }
     resultsEl.innerHTML = out;
   }
@@ -220,7 +220,7 @@
     var st = FaqSearch.stats();
     statsEl.textContent = st.faqs > 0
       ? st.faqs + ' answers · ' + st.pages + ' indexed pages · ready'
-      : 'Knowledge base failed to load — check the console or contact knowledge.mgr@demo.mil';
+      : 'Knowledge base failed to load — check the console or contact usarmy.ccoe.km@army.mil';
   }
 
   searchInput.addEventListener('input', function () {
@@ -272,10 +272,10 @@
     if (searchInput.value.trim()) { run(); } else { clearResults(); }
     searchInput.focus({ preventScroll: true });
   }).catch(function () {
-    statsEl.textContent = 'Knowledge base failed to load — refresh, or contact knowledge.mgr@demo.mil';
+    statsEl.textContent = 'Knowledge base failed to load — refresh, or contact usarmy.ccoe.km@army.mil';
     resultsEl.innerHTML = '<div class="faq-empty"><b>The search service did not start.</b> Refresh the page; if it persists, '
-      + 'email <a href="mailto:knowledge.mgr@demo.mil">knowledge.mgr@demo.mil</a>. '
-      + '<span class="esc">Live incident?</span> Call the watch desk: <span class="esc">DSN 312-555-0199 · COMM (407) 555-0199</span>.</div>';
+      + 'email <a href="mailto:usarmy.ccoe.km@army.mil">usarmy.ccoe.km@army.mil</a>. '
+      + '<span class="esc">Live incident?</span> Call the watch desk: <span class="esc">DSN 312-684-0199 · COMM (407) 684-0199</span>.</div>';
   });
 })();
 </script>

@@ -1,7 +1,6 @@
 # CCoE Operational Hub
 
-Static demonstration site for the Cybersecurity Center of Excellence operational hub
-(UNCLASSIFIED demonstration environment — all systems and data are fictional).
+Static site for the Cybersecurity Center of Excellence operational hub.
 
 * **Serve it:** any static host (GitHub Pages works as-is). Local preview: `python3 -m http.server 8000`.
 * **Update content:** edit the JSON files in `data/manual/` — see [HOW-TO-UPDATE.md](HOW-TO-UPDATE.md).

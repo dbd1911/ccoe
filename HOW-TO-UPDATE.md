@@ -80,7 +80,7 @@ row in `templates.html` (filename, version, date).
 ## 4. Placeholders to replace for production
 
 * All form/report buttons currently open a pre-addressed email to
-  `cybersecurity.office@ccoe.example.mil` (contact, engineering ARB intake,
+  `usarmy.ccoe.office@army.mil` (contact, engineering ARB intake,
   AI & Automation intake, incident report). Search for that address and replace
   it with the real org box — it appears only in HTML `mailto:` links.
 * Newsletter archive lives in `newsletters/` — copy an existing issue as the
