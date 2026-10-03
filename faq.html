@@ -199,7 +199,7 @@
     if (!out) {
       out = '<div class="faq-empty" id="faqEmpty">No exact hits for &ldquo;<b>' + esc(q) + '</b>&rdquo;. Try fewer or different words '
         + '&mdash; or <a href="contact.html">ask the front desk</a> (usarmy.ccoe.frontdesk@army.mil). '
-        + '<span class="esc">Live incident?</span> Don&rsquo;t search &mdash; call the 24/7 watch desk: <span class="esc">DSN 312-684-0199 · COMM (407) 684-0199</span>.</div>';
+        + '<span class="esc">Live incident?</span> Skip the search &mdash; email <span class="esc">usarmy.ccoe.incident@army.mil</span> or use the form on the <a href="incident-response.html#report">Incident Response</a> page.</div>';
     }
     resultsEl.innerHTML = out;
   }
@@ -275,7 +275,7 @@
     statsEl.textContent = 'Knowledge base failed to load — refresh, or contact usarmy.ccoe.km@army.mil';
     resultsEl.innerHTML = '<div class="faq-empty"><b>The search service did not start.</b> Refresh the page; if it persists, '
       + 'email <a href="mailto:usarmy.ccoe.km@army.mil">usarmy.ccoe.km@army.mil</a>. '
-      + '<span class="esc">Live incident?</span> Call the watch desk: <span class="esc">DSN 312-684-0199 · COMM (407) 684-0199</span>.</div>';
+      + '<span class="esc">Live incident?</span> Email <span class="esc">usarmy.ccoe.incident@army.mil</span> or use the form on the <a href="incident-response.html#report">Incident Response</a> page.</div>';
   });
 })();
 </script>

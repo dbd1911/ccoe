@@ -26,11 +26,21 @@
       <div class="card card-crit reveal" style="text-align:center;padding:40px 28px">
         <span class="kicker" style="color:var(--crit)">Report an Incident</span>
         <h2 style="margin-top:6px">Suspect Something? Act Now.</h2>
-        <p class="section-sub" style="margin:10px auto 22px;max-width:640px"><b>1.</b> Disconnect from the network if safe to do so — <b>do not power off</b>. <b>2.</b> Call the watch desk. <b>3.</b> Preserve everything; touch nothing else.</p>
-        <div class="grid g3" style="text-align:left">
-          <div class="card"><h3>📞 24/7 Watch Desk</h3><p class="formula">DSN 312-684-0199<br>COMM (407) 684-0199</p><p>First call, every category, every hour.</p></div>
-          <div class="card"><h3>✉ Secure Reporting</h3><p class="formula">usarmy.ccoe.incident@army.mil</p><p>Encrypted email for non-urgent follow-up detail. Never email a spill's contents.</p></div>
-          <div class="card"><h3>🗂 Initial Report Form</h3><p>Who / what / when / where / observed behavior. Send what you have — incomplete and fast beats complete and late.</p><a class="btn btn-sm btn-crit" href="mailto:usarmy.ccoe.office@army.mil?subject=INCIDENT%20REPORT%20—%20initial%20notification&body=WHO%20(reporting%20party%2C%20affected%20users)%3A%0AWHAT%20(observed%20behavior)%3A%0AWHEN%20(first%20observed)%3A%0AWHERE%20(system%2Fsegment)%3A%0AACTIONS%20TAKEN%3A%0A">Open Form</a></div>
+        <p class="section-sub" style="margin:10px auto 22px;max-width:640px"><b>1.</b> Disconnect from the network if safe to do so — <b>do not power off</b>. <b>2.</b> Report it — email <span class="formula">usarmy.ccoe.incident@army.mil</span> or use the incident report form below. <b>3.</b> Preserve everything; touch nothing else.</p>
+        <div class="grid g2" style="text-align:left;max-width:820px;margin:0 auto">
+          <div class="card"><h3>✉ Report by Email</h3><p class="formula">usarmy.ccoe.incident@army.mil</p><p>Monitored around the clock — every category, every hour. Send what you have: <b>incomplete and fast beats complete and late</b>. Never include a spill's contents; describe it.</p></div>
+          <div class="card"><h3>🗂 Incident Report Form</h3>
+            <p>Prepares an email to the incident inbox with the required fields filled in.</p>
+            <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+              <input class="field" id="irWho" placeholder="WHO — reporting party, affected users">
+              <input class="field" id="irWhat" placeholder="WHAT — observed behavior">
+              <input class="field" id="irWhen" placeholder="WHEN — first observed (date/time)">
+              <input class="field" id="irWhere" placeholder="WHERE — system / segment">
+              <textarea class="field" id="irActions" style="min-height:60px" placeholder="ACTIONS TAKEN — anything already done"></textarea>
+              <button class="btn btn-sm btn-crit" onclick="return sendIncidentReport()">Compose Report Email</button>
+              <span id="irNote" style="font-size:12px;color:var(--ink-mute)"></span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -44,7 +54,7 @@
       <p class="section-sub">Category determines the reporting clock. The clock starts at <b>discovery</b>, not at confirmation.</p>
       <div class="table-wrap reveal">
         <table>
-          <thead><tr><th class="sortable">Category</th><th>Examples</th><th class="sortable" data-sort-type="num">Watch Desk</th><th>ISSM / IR Lead</th><th>CISO</th></tr></thead>
+          <thead><tr><th class="sortable">Category</th><th>Examples</th><th class="sortable" data-sort-type="num">Reported (Email/Form)</th><th>ISSM / IR Lead</th><th>CISO</th></tr></thead>
           <tbody>
             <tr><td><b>Data Spill</b> <span class="badge b-cui">CUI</span></td><td>Classified or CUI on an unapproved system or network</td><td data-val="0">Immediate</td><td>≤ 1 hour</td><td>≤ 2 hours</td></tr>
             <tr><td><b>Malware</b></td><td>Ransomware behavior, C2 beaconing, AV detection on a server</td><td data-val="0">Immediate</td><td>≤ 1 hour</td><td>≤ 4 hours</td></tr>
@@ -56,7 +66,7 @@
           </tbody>
         </table>
       </div>
-      <div class="callout warn"><b class="head">Phishing exception</b>If anyone <b>clicked, entered credentials, or opened the attachment</b>, treat it as Malware/Privilege Escalation timelines — immediate watch desk call.</div>
+      <div class="callout warn"><b class="head">Phishing exception</b>If anyone <b>clicked, entered credentials, or opened the attachment</b>, treat it as Malware/Privilege Escalation timelines — report immediately.</div>
     </div>
   </section>
 
@@ -98,7 +108,7 @@
       <span class="kicker">Master Contact Tree</span>
       <h2>Who Gets Called, In Order</h2>
       <div class="phase-track">
-        <div class="phase-item reveal"><div class="phase-num">1</div><div><h3>24/7 Watch Desk</h3><p class="formula">DSN 312-684-0199</p><p>Always first. Logs the incident, starts the clock, pages the IR Lead.</p></div></div>
+        <div class="phase-item reveal"><div class="phase-num">1</div><div><h3>Incident Inbox</h3><p class="formula">usarmy.ccoe.incident@army.mil</p><p>Always first, 24/7. Logs the incident, starts the clock, pages the IR Lead.</p></div></div>
         <div class="phase-item reveal"><div class="phase-num">2</div><div><h3>IR Lead → System ISSO/ISSM</h3><p>Triage, categorization, containment decisions inside delegated boundaries.</p></div></div>
         <div class="phase-item reveal"><div class="phase-num">3</div><div><h3>CISO / AODR</h3><p>Per category timelines. Approves enclave-level containment and external notifications.</p></div></div>
         <div class="phase-item reveal"><div class="phase-num">4</div><div><h3>External Parties</h3><p>Army CERT, counterintelligence (insider), law enforcement, and contracting officer (contractor systems) — <b>CISO authorizes all external notifications</b>.</p></div></div>
@@ -124,5 +134,25 @@
   </section>
 </main>
 <script src="assets/js/main.js"></script>
+<script>
+function sendIncidentReport() {
+  var f = { who: document.getElementById('irWho'), what: document.getElementById('irWhat'),
+            when: document.getElementById('irWhen'), where: document.getElementById('irWhere'),
+            actions: document.getElementById('irActions') };
+  var note = document.getElementById('irNote');
+  var missing = ['what','when','where'].filter(function(k){ return !f[k].value.trim(); });
+  if (missing.length) { note.textContent = 'WHAT / WHEN / WHERE are required — send what you have.'; return false; }
+  var subject = 'INCIDENT REPORT — ' + (f.where.value.trim().slice(0,60));
+  var body = 'WHO (reporting party, affected users): ' + f.who.value.trim() + '\n'
+           + 'WHAT (observed behavior): ' + f.what.value.trim() + '\n'
+           + 'WHEN (first observed): ' + f.when.value.trim() + '\n'
+           + 'WHERE (system/segment): ' + f.where.value.trim() + '\n'
+           + 'ACTIONS TAKEN: ' + f.actions.value.trim() + '\n'
+           + '\n— Sent from the CCoE Incident Report form';
+  note.textContent = 'Opening your email client, prep-filled for usarmy.ccoe.incident@army.mil — send to start the clock.';
+  window.location.href = 'mailto:usarmy.ccoe.incident@army.mil?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  return false;
+}
+</script>
 </body>
 </html>

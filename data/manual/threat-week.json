@@ -23,7 +23,7 @@
       "title": "Credential Phishing — Logistics Theme",
       "what": "Spear-phish wave imitating transportation-request portals targeting Army logistics personnel; 14 attempts caught at the gateway this week.",
       "impact": "Harvested credentials enable initial access against SUPPLY-NET user accounts.",
-      "action": "Forward suspicious mail to the watch desk; supervisors brief teams using the 2-minute awareness card; report any click within 1 hour."
+      "action": "Forward suspicious mail to the incident inbox; supervisors brief teams using the 2-minute awareness card; report any click within 1 hour."
     },
     {
       "badge": "Awareness", "tone": "info", "card_tone": "",

@@ -87,7 +87,7 @@ function buildHeader() {
 
   const header = document.createElement('div');
   header.innerHTML = `
-  <div class="marking-banner">CPE ST3 CYBERSECURITY CENTER OF EXCELLENCE // OPERATIONAL HUB // <strong>CCoE-WEB v1.1</strong></div>
+  <div class="marking-banner">UNCLASSIFIED</div>
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="index.html" aria-label="CCoE Home">
@@ -178,8 +178,7 @@ function buildFooter() {
     </div>
     <div class="footer-legal">
       <div class="wrap">
-        <span>CCoE OPERATIONAL HUB · DOC v1.1 · REVIEW DUE 2026-12-01 · APPROVAL: CISO</span>
-        <span>RBAC ENFORCED · REPORT ISSUES VIA THE CONTACT PAGE</span>
+        <span>UNCLASSIFIED</span>
       </div>
     </div>
   </footer>`;

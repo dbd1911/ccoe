@@ -13,7 +13,7 @@
     <div class="wrap">
       <div class="eyebrow">Contact · <span class="phase-tag">Always Open</span></div>
       <h1>Contact the Cybersecurity Office</h1>
-      <p class="lede">Route it right and it moves fast. When in doubt, the general inbox triages everything within one business day — and incidents always go to the watch desk first.</p>
+      <p class="lede">Route it right and it moves fast. When in doubt, the general inbox triages everything within one business day. Suspected incidents bypass every channel: email usarmy.ccoe.incident@army.mil or use the form on the Incident Response page.</p>
       <div class="doc-meta">
         <span>OWNER: <b>Cybersecurity Office Front Desk</b></span><span>VERSION: <b>1.4</b></span><span>EFFECTIVE: <b>2026-02-01</b></span><span>REVIEW: <b>2026-08-01</b></span><span>APPROVAL: <b>Cybersecurity Office Director</b></span>
       </div>
@@ -23,7 +23,7 @@
   <!-- INCIDENT FIRST -->
   <section class="section">
     <div class="wrap">
-      <div class="callout warn reveal"><b class="head">Incident? Stop here.</b>Suspected incidents bypass every channel on this page. Call the 24/7 watch desk — <span class="formula">DSN 312-684-0199 · COMM (407) 684-0199</span> — or go to <a href="incident-response.html#report">Report an Incident</a>.</div>
+      <div class="callout warn reveal"><b class="head">Incident? Stop here.</b>Suspected incidents bypass every channel on this page: email <span class="formula">usarmy.ccoe.incident@army.mil</span> or use the form on the <a href="incident-response.html#report">Report an Incident</a> page.</div>
 
       <span class="kicker" style="margin-top:26px;display:block">Routing Directory</span>
       <h2>Who Handles What</h2>
@@ -78,7 +78,7 @@
     <div class="wrap">
       <span class="kicker">General Inquiry</span>
       <h2>Send a Message</h2>
-      <p class="section-sub">Triaged by the front desk within one business day. <b>Do not include CUI, vulnerability details, or incident information in this form.</b></p>
+      <p class="section-sub">Triaged by the front desk within one business day. Questions, access requests, and feedback — routed by topic.</p>
       <div class="card reveal" style="max-width:680px">
         <div class="grid g2">
           <div><label style="font-weight:600;font-size:13px">Name</label><input class="field" style="width:100%" type="text" id="cName" placeholder="Optional"></div>
@@ -87,7 +87,7 @@
         <div style="margin-top:12px"><label style="font-weight:600;font-size:13px">Topic</label>
           <select class="field" id="cTopic" style="width:100%"><option>General question</option><option>RMF / package support</option><option>Training &amp; workforce</option><option>Website feedback</option><option>Other</option></select>
         </div>
-        <div style="margin-top:12px"><label style="font-weight:600;font-size:13px">Message</label><textarea class="field" id="cMsg" style="width:100%;min-height:120px" placeholder="No CUI. No incident details — those go to the watch desk."></textarea></div>
+        <div style="margin-top:12px"><label style="font-weight:600;font-size:13px">Message</label><textarea class="field" id="cMsg" style="width:100%;min-height:120px" placeholder="No CUI. No incident details — those go to the incident inbox."></textarea></div>
         <button class="btn btn-gold" style="margin-top:14px" onclick="return sendInquiry()">Send</button>
         <span id="cSendNote" style="font-size:12.5px;color:var(--ink-mute);margin-left:10px"></span>
       </div>
