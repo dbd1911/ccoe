@@ -1,44 +1,204 @@
 {
- "_note": "SEEDED PLACEHOLDER \u2014 this file is overwritten by the first run of .github/workflows/update-data.yml with real feed data.",
- "_updated": "2026-06-10T06:17:00Z",
  "source": "Ubuntu Security Notices + Red Hat Security Data API",
  "ubuntu_url": "https://ubuntu.com/security/notices",
  "redhat_url": "https://access.redhat.com/security/security-updates/security-advisories",
  "ubuntu": [
   {
-   "id": "USN-7562-1",
-   "title": "Linux kernel vulnerabilities (seed data \u2014 refreshed automatically)",
-   "published": "2026-06-09",
+   "id": "USN-8911-1",
+   "title": "Linux kernel (OEM) vulnerabilities",
+   "published": "2026-10-09",
    "cves": [
-    "CVE-2026-26840",
-    "CVE-2026-26991"
+    "CVE-2026-68372",
+    "CVE-2026-53045",
+    "CVE-2026-52958",
+    "CVE-2026-52993",
+    "CVE-2026-53175",
+    "CVE-2026-53224"
    ],
-   "url": "https://ubuntu.com/security/notices"
+   "url": "https://ubuntu.com/security/notices/USN-8911-1"
   },
   {
-   "id": "USN-7559-1",
-   "title": "OpenSSL vulnerabilities (seed data)",
-   "published": "2026-06-08",
+   "id": "USN-8887-3",
+   "title": "Linux kernel vulnerabilities",
+   "published": "2026-10-09",
    "cves": [
-    "CVE-2026-24795"
+    "CVE-2026-68133",
+    "CVE-2026-68400",
+    "CVE-2026-68211",
+    "CVE-2026-72197",
+    "CVE-2026-72134",
+    "CVE-2026-72042"
    ],
-   "url": "https://ubuntu.com/security/notices"
+   "url": "https://ubuntu.com/security/notices/USN-8887-3"
+  },
+  {
+   "id": "USN-8875-2",
+   "title": "Linux kernel (NVIDIA) vulnerabilities",
+   "published": "2026-10-09",
+   "cves": [
+    "CVE-2026-46086",
+    "CVE-2026-74673",
+    "CVE-2026-64336",
+    "CVE-2026-64500",
+    "CVE-2026-63956",
+    "CVE-2026-46091"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8875-2"
+  },
+  {
+   "id": "USN-8903-2",
+   "title": "Linux kernel vulnerabilities",
+   "published": "2026-10-09",
+   "cves": [
+    "CVE-2026-63949",
+    "CVE-2026-63957",
+    "CVE-2026-64014",
+    "CVE-2026-53349",
+    "CVE-2026-53350",
+    "CVE-2026-63956"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8903-2"
+  },
+  {
+   "id": "USN-8905-2",
+   "title": "Linux kernel (GCP) vulnerabilities",
+   "published": "2026-10-09",
+   "cves": [
+    "CVE-2026-63971",
+    "CVE-2026-63980",
+    "CVE-2026-53264",
+    "CVE-2026-53156",
+    "CVE-2026-53339",
+    "CVE-2026-53245"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8905-2"
+  },
+  {
+   "id": "USN-8908-1",
+   "title": "BlueZ vulnerabilities",
+   "published": "2026-10-08",
+   "cves": [
+    "CVE-2026-19774",
+    "CVE-2026-80186",
+    "CVE-2026-80185",
+    "CVE-2026-85218",
+    "CVE-2026-75032"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8908-1"
+  },
+  {
+   "id": "USN-8910-1",
+   "title": "libxml2 vulnerabilities",
+   "published": "2026-10-08",
+   "cves": [
+    "CVE-2026-86144",
+    "CVE-2026-86142",
+    "CVE-2026-76781",
+    "CVE-2026-86138",
+    "CVE-2026-86139",
+    "CVE-2026-86143"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8910-1"
+  },
+  {
+   "id": "USN-8909-1",
+   "title": "libde265 vulnerability",
+   "published": "2026-10-08",
+   "cves": [
+    "CVE-2026-88373"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8909-1"
+  },
+  {
+   "id": "USN-8907-1",
+   "title": "libgit2 vulnerability",
+   "published": "2026-10-08",
+   "cves": [
+    "CVE-2026-53583"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8907-1"
+  },
+  {
+   "id": "USN-8902-1",
+   "title": "libarchive vulnerability",
+   "published": "2026-10-08",
+   "cves": [
+    "CVE-2026-16517"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8902-1"
   }
  ],
  "redhat": [
   {
-   "cve": "CVE-2026-26840",
+   "cve": "CVE-2026-107823",
    "severity": "important",
-   "public_date": "2026-06-08",
-   "description": "kernel: use-after-free in network scheduler subsystem (seed data)",
-   "url": "https://access.redhat.com/security/security-updates/security-advisories"
+   "public_date": "2026-10-09",
+   "description": "mariadb: mariadb: Privilege escalation via unescaped newlines in view parser",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-107823"
   },
   {
-   "cve": "CVE-2026-25310",
+   "cve": "CVE-2026-107822",
    "severity": "moderate",
-   "public_date": "2026-06-06",
-   "description": "glibc: buffer overflow in iconv path handling (seed data)",
-   "url": "https://access.redhat.com/security/security-updates/security-advisories"
+   "public_date": "2026-10-09",
+   "description": "mariadb: MariaDB: Privilege escalation via ACL cache key collision",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-107822"
+  },
+  {
+   "cve": "CVE-2026-107821",
+   "severity": "moderate",
+   "public_date": "2026-10-09",
+   "description": "mariadb: mariadb: Arbitrary code execution via crafted FRM metadata",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-107821"
+  },
+  {
+   "cve": "CVE-2026-107819",
+   "severity": "moderate",
+   "public_date": "2026-10-09",
+   "description": "mariadb-connector-c: mariadb-connector-c: Information disclosure via improper TLS hostname verification",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-107819"
+  },
+  {
+   "cve": "CVE-2026-107818",
+   "severity": "important",
+   "public_date": "2026-10-09",
+   "description": "mariadb: mariadb: Privilege escalation via environment variable injection during service restart",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-107818"
+  },
+  {
+   "cve": "CVE-2026-107817",
+   "severity": "moderate",
+   "public_date": "2026-10-09",
+   "description": "mariadb: mariadb: Denial of Service via invalid binary JSON in mysql_json plugin",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-107817"
+  },
+  {
+   "cve": "CVE-2026-107816",
+   "severity": "moderate",
+   "public_date": "2026-10-09",
+   "description": "mariadb: mariadb: Information disclosure via embedded null bytes in query cache plugin",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-107816"
+  },
+  {
+   "cve": "CVE-2026-107815",
+   "severity": "important",
+   "public_date": "2026-10-09",
+   "description": "mariadb: mariadb: Arbitrary code execution via CONNECT engine out-of-bounds write",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-107815"
+  },
+  {
+   "cve": "CVE-2026-107814",
+   "severity": "important",
+   "public_date": "2026-10-09",
+   "description": "mariadb: mariadb: Arbitrary code execution via insecure service account home directory",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-107814"
+  },
+  {
+   "cve": "CVE-2026-108119",
+   "severity": "moderate",
+   "public_date": "2026-10-09",
+   "description": "busybox: busybox: tar extraction-root escape via deferred symlink/hardlink creation bypasses CVE-2026-26158 fix",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-108119"
   }
- ]
+ ],
+ "_updated": "2026-10-10T23:09:41Z"
 }

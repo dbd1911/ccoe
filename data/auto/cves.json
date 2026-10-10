@@ -1,31 +1,93 @@
 {
- "_note": "SEEDED PLACEHOLDER \u2014 this file is overwritten by the first run of .github/workflows/update-data.yml with real feed data.",
- "_updated": "2026-06-10T06:17:00Z",
- "source": "NVD (NIST) \u2014 CRITICAL severity CVEs published in the last 7 days",
+ "source": "NVD (NIST) — CRITICAL severity CVEs published in the last 7 days",
  "source_url": "https://nvd.nist.gov/vuln/search",
  "window_days": 7,
- "total_in_window": 23,
+ "total_in_window": 25,
  "items": [
   {
-   "id": "CVE-2026-31822",
-   "published": "2026-06-04",
+   "id": "CVE-2026-104732",
+   "published": "2026-10-10",
    "score": 9.8,
    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-   "description": "Deserialization of untrusted data in WebFrame Server allows unauthenticated attackers to execute arbitrary code via crafted session tokens. (Seed data \u2014 refreshed automatically.)"
+   "description": "The Advanced IP Blocker plugin for WordPress is vulnerable to Authentication Bypass in all versions up to, and including, 8.13.13 The vulnerability exists because `handle_login_action()` performs no server-side check — via transient, sessio"
   },
   {
-   "id": "CVE-2026-30871",
-   "published": "2026-06-06",
+   "id": "CVE-2026-94589",
+   "published": "2026-10-10",
    "score": 9.8,
    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-   "description": "SQL injection in enterprise print management service allows remote unauthenticated command execution. (Seed data.)"
+   "description": "The Extensions For CF7 (Contact form 7 Database, Conditional Fields and Redirection) plugin for WordPress is vulnerable to Arbitrary File Upload in all versions up to, and including, 3.4.5 via the extcf7_submit function. This is due to miss"
   },
   {
-   "id": "CVE-2026-30144",
-   "published": "2026-06-02",
-   "score": 9.4,
-   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:L",
-   "description": "Authentication bypass in VPN concentrator management interface. (Seed data.)"
+   "id": "CVE-2026-103889",
+   "published": "2026-10-10",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "The 3D Product configurator for WooCommerce plugin for WordPress is vulnerable to Remote Code Execution in all versions up to, and including, 2.16.2 via the 'xpv_image' parameter parameter. This is due to missing authentication and nonce ch"
+  },
+  {
+   "id": "CVE-2026-104803",
+   "published": "2026-10-10",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "The WPCOM Member plugin for WordPress is vulnerable to Authentication Bypass in all versions up to, and including, 1.7.27 via the `uuid` and `code` parameters of the social-login callback handler registered on the `init` hook. The vulnerabi"
+  },
+  {
+   "id": "CVE-2026-108551",
+   "published": "2026-10-10",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "openapi-typescript-codegen through 0.31.0 contains a code injection vulnerability that allows attackers controlling an OpenAPI document to inject JavaScript by supplying unescaped values interpolated into single-quoted string literals. Atta"
+  },
+  {
+   "id": "CVE-2026-108598",
+   "published": "2026-10-10",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "Floci 1.1.0 before 2.2.0 contains a code injection vulnerability in VtlTemplateEngine that allows unauthenticated attackers to execute commands via unrestricted Velocity mapping templates. Attackers can create a REST API with a MOCK integra"
+  },
+  {
+   "id": "CVE-2026-85531",
+   "published": "2026-10-09",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "Improper verification of cryptographic signature vulnerability in Sipay Electronic Money and Payment Services Inc. OpenCart Virtual POS Module allows Signature Spoofing by Improper Validation.\n\nThis issue affects OpenCart Virtual POS Module"
+  },
+  {
+   "id": "CVE-2026-86405",
+   "published": "2026-10-09",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "Improper verification of cryptographic signature vulnerability in Sipay Electronic Money and Payment Services Inc. PrestaShop Virtual POS Module allows Signature Spoofing by Improper Validation.\n\nThis issue affects PrestaShop Virtual POS Mo"
+  },
+  {
+   "id": "CVE-2026-108107",
+   "published": "2026-10-09",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "PHPNuxBill through 2025.3.20 contains an unauthenticated SQL injection vulnerability in the radius.php FreeRADIUS REST endpoint that interpolates request parameters into whereRaw() queries. Attackers can send crafted username, macAddr or na"
+  },
+  {
+   "id": "CVE-2026-107699",
+   "published": "2026-10-08",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "ppt2png through 0.0.6 contains an OS command injection vulnerability that allows attackers to execute operating system commands by supplying unsanitized input or output path arguments. Attackers can append shell metacharacters such as ';' t"
+  },
+  {
+   "id": "CVE-2026-104075",
+   "published": "2026-10-08",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "TVU Networks Receiver/Transceiver devices running firmware before version 7.9 contain an authentication bypass vulnerability in the web management login endpoint POST /tvu/Login that allows remote unauthenticated attackers to obtain an admi"
+  },
+  {
+   "id": "CVE-2026-107779",
+   "published": "2026-10-08",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "Dromara Skyeye through commit 003549ae5615bd114ba5bb8ddf6a8e8ead97c321 contains a missing authentication vulnerability in bundled xxl-job-admin JobInfoController endpoints annotated with @PermissionLimit(limit = false). Unauthenticated atta"
   }
- ]
+ ],
+ "_updated": "2026-10-10T23:09:41Z"
 }

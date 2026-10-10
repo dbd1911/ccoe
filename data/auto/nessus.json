@@ -1,26 +1,79 @@
 {
- "_note": "SEEDED PLACEHOLDER \u2014 this file is overwritten by the first run of .github/workflows/update-data.yml with real feed data.",
- "_updated": "2026-06-10T06:17:00Z",
- "source": "Tenable \u2014 newest Nessus plugins",
+ "source": "Tenable — newest Nessus plugins",
  "source_url": "https://www.tenable.com/plugins/newest",
  "items": [
   {
-   "id": "240118",
-   "title": "WebFrame Server < 5.2.1 RCE (CVE-2026-31822) (seed data \u2014 refreshed automatically)",
-   "link": "https://www.tenable.com/plugins/newest",
-   "published": "Tue, 09 Jun 2026 14:02:00 GMT"
+   "id": "364553",
+   "title": "Wireshark 1.12.x < 1.12.1 Multiple Vulnerabilities (macOS)",
+   "link": "https://www.tenable.com/plugins/nessus/364553",
+   "published": "Sat, 10 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "240102",
-   "title": "Ubuntu 24.04 LTS: Linux kernel vulnerabilities (USN-7562-1) (seed data)",
-   "link": "https://www.tenable.com/plugins/newest",
-   "published": "Tue, 09 Jun 2026 09:40:00 GMT"
+   "id": "364552",
+   "title": "RockyLinux 9 : glibc (RLSA-2026:79281)",
+   "link": "https://www.tenable.com/plugins/nessus/364552",
+   "published": "Sat, 10 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "240087",
-   "title": "Microsoft June 2026 Security Updates missing (seed data)",
-   "link": "https://www.tenable.com/plugins/newest",
-   "published": "Tue, 09 Jun 2026 08:11:00 GMT"
+   "id": "364551",
+   "title": "RockyLinux 10 : dovecot (RLSA-2026:79371)",
+   "link": "https://www.tenable.com/plugins/nessus/364551",
+   "published": "Sat, 10 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "364550",
+   "title": "RockyLinux 10 : cjose (RLSA-2026:79122)",
+   "link": "https://www.tenable.com/plugins/nessus/364550",
+   "published": "Sat, 10 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "364549",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-105830",
+   "link": "https://www.tenable.com/plugins/nessus/364549",
+   "published": "Sat, 10 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "364548",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-105829",
+   "link": "https://www.tenable.com/plugins/nessus/364548",
+   "published": "Sat, 10 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "364547",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-102554",
+   "link": "https://www.tenable.com/plugins/nessus/364547",
+   "published": "Sat, 10 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "364546",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-92705",
+   "link": "https://www.tenable.com/plugins/nessus/364546",
+   "published": "Sat, 10 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "364545",
+   "title": "Fedora 44 : php-getid3 (2026-71df118e18)",
+   "link": "https://www.tenable.com/plugins/nessus/364545",
+   "published": "Sat, 10 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "364544",
+   "title": "Fedora 43 : openbao (2026-12caf78d6a)",
+   "link": "https://www.tenable.com/plugins/nessus/364544",
+   "published": "Sat, 10 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "364543",
+   "title": "Fedora 44 : openvpn (2026-eed9c789d3)",
+   "link": "https://www.tenable.com/plugins/nessus/364543",
+   "published": "Sat, 10 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "364542",
+   "title": "Fedora 43 : php-getid3 (2026-b9ef1180ce)",
+   "link": "https://www.tenable.com/plugins/nessus/364542",
+   "published": "Sat, 10 Oct 2026 00:00:00 GMT"
   }
- ]
+ ],
+ "_updated": "2026-10-10T23:09:41Z"
 }

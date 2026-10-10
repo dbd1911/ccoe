@@ -1,35 +1,34 @@
 {
- "_note": "SEEDED PLACEHOLDER \u2014 this file is overwritten by the first run of .github/workflows/update-data.yml with real feed data.",
- "_updated": "2026-06-10T06:17:00Z",
  "source": "Microsoft Security Response Center (MSRC) CVRF v3.0",
- "source_url": "https://msrc.microsoft.com/update-guide/releaseNote/2026-Jun",
- "release_id": "2026-Jun",
- "release_title": "June 2026 Security Updates",
- "release_date": "2026-06-09T07:00:00Z",
- "cve_count": 71,
- "kb_count": 9,
+ "source_url": "https://msrc.microsoft.com/update-guide/releaseNote/2026-Oct",
+ "release_id": "2026-Oct",
+ "release_title": "October 2026 Early Security Updates",
+ "release_date": "2026-10-02T07:00:00Z",
+ "cve_count": 240,
+ "kb_count": 4,
  "kbs": [
   {
-   "kb": "KB5062011",
-   "url": "https://catalog.update.microsoft.com/Search.aspx?q=KB5062011"
+   "kb": "KB5129957",
+   "url": "https://catalog.update.microsoft.com/Search.aspx?q=KB5129957"
   },
   {
-   "kb": "KB5062023",
-   "url": "https://catalog.update.microsoft.com/Search.aspx?q=KB5062023"
+   "kb": "KB5129958",
+   "url": "https://catalog.update.microsoft.com/Search.aspx?q=KB5129958"
   },
   {
-   "kb": "KB5061988",
-   "url": "https://catalog.update.microsoft.com/Search.aspx?q=KB5061988"
+   "kb": "KB5129955",
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5129955"
+  },
+  {
+   "kb": "KB5129956",
+   "url": "https://catalog.update.microsoft.com/Search.aspx?q=KB5129956"
   }
  ],
  "exploitation_more_likely": [
   {
-   "cve": "CVE-2026-30017",
-   "title": "Windows Kernel Elevation of Privilege Vulnerability (seed data)"
-  },
-  {
-   "cve": "CVE-2026-30022",
-   "title": "Windows SMB Remote Code Execution Vulnerability (seed data)"
+   "cve": "CVE-2026-96940",
+   "title": "Microsoft Exchange Server Elevation of Privilege Vulnerability"
   }
- ]
+ ],
+ "_updated": "2026-10-10T23:09:41Z"
 }

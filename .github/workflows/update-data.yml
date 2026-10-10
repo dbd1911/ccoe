@@ -1,0 +1,31 @@
+# Threat feed auto-refresh — see HOW-TO-UPDATE.md section 2 (feeds live here)
+name: Update external threat feeds
+'on':
+  schedule:
+  - cron: 0 7 * * 1-5
+  workflow_dispatch: null
+permissions:
+  contents: write
+jobs:
+  update-feeds:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Run feed updater
+      run: python scripts/update_feeds.py
+    - name: Commit refreshed data (if any)
+      run: 'git config user.name "ccoe-feed-bot"
+
+        git config user.email "actions@users.noreply.github.com"
+
+        git add data/auto/
+
+        git diff --cached --quiet || git commit -m "[bot] refresh threat feeds $(date
+        -u +%F)"
+
+        git push'
