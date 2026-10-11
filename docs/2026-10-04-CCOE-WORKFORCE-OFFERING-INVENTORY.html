@@ -1,0 +1,709 @@
+<!doctype html><html><head><meta charset='utf-8'><style>
+@page { size: Letter; margin: 14mm 12mm; }
+body { font-family: 'Segoe UI', Calibri, sans-serif; font-size: 9.5pt; color: #1a2230; line-height: 1.35; }
+h1 { font-size: 17pt; color: #0e1b2a; border-bottom: 3px solid #c9a227; padding-bottom: 4px; }
+h2 { font-size: 13pt; color: #0e1b2a; border-bottom: 1.5px solid #c9a227; margin-top: 18px; page-break-after: avoid; }
+h3 { font-size: 11pt; color: #243b53; margin-top: 12px; page-break-after: avoid; }
+table { border-collapse: collapse; width: 100%; margin: 6px 0 12px; page-break-inside: auto; font-size: 8.5pt; }
+th { background: #0e1b2a; color: #f4f4f0; text-align: left; padding: 4px 6px; }
+td { border: 0.5px solid #b8c0cc; padding: 3px 6px; vertical-align: top; }
+tr:nth-child(even) td { background: #f2f4f8; }
+code { font-family: Consolas; background: #eef1f6; padding: 1px 3px; }
+strong { color: #0e1b2a; }
+hr { border: none; border-top: 1px solid #c9a227; margin: 14px 0; }
+li { margin: 2px 0; }
+</style></head><body><h1>CCoE Hub — Complete Workforce Offering Inventory</h1>
+<p><strong>Prepared for CISO review · 4 OCT 2026 · Full sweep: all 24 pages, every section, card, tool, download, and link. No truncation.</strong></p>
+<p>Purpose: decision inventory for the minimally-viable deployment (+ .mil GitLab transition). Use the KEEP / MERGE / CUT marks to decide what stays in the release.</p>
+<hr />
+<h2>A. PORTAL ENTRANCES &amp; ORIENTATION</h2>
+<h3>A1. Home Page (<code>index.html</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Offering</th>
+<th>What the workforce gets</th>
+<th>Keep?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hero: "From document repository to command center" + mission framing</td>
+<td>Sets the narrative that compliance is the floor, risk-aware enablement is the standard</td>
+<td>KEEP (it's the brand)</td>
+</tr>
+<tr>
+<td>Hero stats — 84 systems / 71 ATOs / 12 in queue / 9 expiring</td>
+<td>Instant portfolio size; animates on load</td>
+<td>KEEP (edit monthly via site-metrics.json)</td>
+</tr>
+<tr>
+<td>CYBER ALERTS ticker</td>
+<td>Scrolling band: KEV acts-now, eMASS baseline changes, policy updates, deadlines, phishing advisories; newest CISA KEV auto-inserted</td>
+<td>KEEP</td>
+</tr>
+<tr>
+<td>Today's Operating Picture</td>
+<td>CISO standing message + mission statement, effective/review dates, approval chain</td>
+<td>KEEP</td>
+</tr>
+<tr>
+<td>CISO Standing Message block</td>
+<td>One voice from leadership; quarterly refresh</td>
+<td>KEEP (owner: you)</td>
+</tr>
+<tr>
+<td>Metrics Snapshot — Portfolio ATO Health 84%, Open POA&amp;M 312, In Assessment Queue 12, High-Risk Systems 6 (deltas + color tones)</td>
+<td>The 30-second posture read</td>
+<td>KEEP</td>
+</tr>
+<tr>
+<td>Authorization Status Mix (donut: Full 58 / Conditional 7 / IATT 4 / ATC 2 / Expiring 9 / In Process 4)</td>
+<td>Composition of the authorization base</td>
+<td>KEEP</td>
+</tr>
+<tr>
+<td>Open POA&amp;M by Severity (bars: 23/96/141/52)</td>
+<td>Where the risk reduction work actually sits</td>
+<td>KEEP</td>
+</tr>
+<tr>
+<td>Command Emphasis (current priorities: renewals, inspection focus, cloud governance shift, 8140 tracker, KEV remediation)</td>
+<td>What leadership wants attention on <em>this month</em></td>
+<td>KEEP</td>
+</tr>
+<tr>
+<td>Upcoming Events list (6 nearest events w/ links)</td>
+<td>Next obligations</td>
+<td>REVIEW — replace w/ expirations post-transition</td>
+</tr>
+<tr>
+<td>Role-Based Entry Points (8 role cards: ISSM, ISSO, SCA, SO/PM, ENG, CISO/AODR, CTR, New)</td>
+<td>Every persona lands on <em>their</em> tasks, not a generic sitemap</td>
+<td>KEEP — signature feature</td>
+</tr>
+<tr>
+<td>Quick Links Engine (10 direct pathways: eMASS, interactive tools, policies, templates, SOPs, dashboards, glossary, references)</td>
+<td>One-click depth from home</td>
+<td>KEEP</td>
+</tr>
+<tr>
+<td>Phased Implementation Roadmap (10 phase cards)</td>
+<td>The rollout plan itself, all phases marked live</td>
+<td>CUT or compress — post-deploy this meta-content serves nobody</td>
+</tr>
+</tbody>
+</table>
+<h3>A2. FAQ &amp; Knowledge Base (<code>faq.html</code>) — <strong>207 answers (verified count)</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Offering</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Answers mode</td>
+<td>207 searchable FAQ answers from 6 modules: site (01), RMF (02), incident (03), workforce (04–05), general (06)</td>
+</tr>
+<tr>
+<td>Site mode</td>
+<td>Full-site index search across all 24 pages (pages.json: every page has title, summary, keywords, section map)</td>
+</tr>
+<tr>
+<td>CCoE Glossary</td>
+<td>Authoritative acronyms: AO, AODR, ACAS, ATO-C, CCI, CUI, FedRAMP, IATT, IL, ISSM, ISSO, POA&amp;M, RAW, RMF, SAR, SCA, SSP, STIG + more; searchable/sortable</td>
+</tr>
+<tr>
+<td>Self-triage value</td>
+<td>The #1 deflection tool — most "who do I ask" questions die here</td>
+</tr>
+</tbody>
+</table>
+<h3>A3. Contact (<code>contact.html</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Offering</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Routing directory table (Topic / Channel / Response SLA)</td>
+<td>Who handles what: FrontDesk, AODR, Vuln Cell, eMASS Support, Acq Cyber, ARB Intake, Workforce, Knowledge Mgr</td>
+</tr>
+<tr>
+<td>Ask the CISO (anonymous)</td>
+<td>Direct anonymous channel; answered live last-Friday monthly session or within 2 weeks; general-interest answers publish to FAQ + weekly digest</td>
+</tr>
+<tr>
+<td>General inquiry form</td>
+<td>Prefilled mailto to office box (currently placeholder <code>usarmy.ccoe.office@army.mil</code> — replace w/ real box)</td>
+</tr>
+<tr>
+<td>Incident bypass note</td>
+<td>Explicit "incidents do NOT use this page" routing</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>B. RMF / OPERATIONS CORE</h2>
+<h3>B1. RMF Operations Hub (<code>rmf-operations.html</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Offering</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The Seven Steps (Prepare→Categorize→Select→Implement→Assess→Authorize→Monitor)</td>
+<td>Lifecycle skeleton with deep content per step</td>
+</tr>
+<tr>
+<td>10 authorization pathway cards: Full ATO, IATT, Conditional ATO, ATC Only, Assess-Only, Standalone Systems, Closed-Restricted Networks, Agile ATO/Continuous Auth, ATO Extension, Reciprocity</td>
+<td>Which path fits which situation — each a card w/ job aid</td>
+</tr>
+<tr>
+<td>Job aids &amp; checklists (downloads: AO Package Routing Checklist, Artifact Checklists by Control Family FULL-SET xlsx, Assessment Readiness Package, FIPS-199 Categorization Worksheet, RMF Process Map PDF, Cybersecurity-101 trio)</td>
+<td>The working paper trail</td>
+</tr>
+<tr>
+<td>Cybersecurity 101 primers (Process Guide PDF, Reference Sheet PDF, Presentation PPTX)</td>
+<td>Onboarding artifacts for the "NEW" persona</td>
+</tr>
+</tbody>
+</table>
+<h3>B2. Vulnerability &amp; POA&amp;M Management (<code>vulnerability-poam.html</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Offering</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The SLA clock (KEV 7d / CAT I 15d / CAT II 30d / Medium 90d / Low 180d)</td>
+<td>The rules of the engagement clock</td>
+</tr>
+<tr>
+<td>Open POA&amp;M aging dashboard (10 live rows from poam.json w/ status: overdue/at-risk/on-track/review)</td>
+<td>Named-system findings — ⚠ CUI-TIER ONLY after transition; public side must be aggregate counts</td>
+</tr>
+<tr>
+<td>Finding→verified-closure engine + evidence rules + escalation triggers</td>
+<td>The process backbone</td>
+</tr>
+<tr>
+<td>Standardized entry + battle rhythm + scan cadence guidance</td>
+<td>ConMon discipline</td>
+</tr>
+</tbody>
+</table>
+<h3>B3. Assessment &amp; Authorization Calendar (<code>assessment-calendar.html</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Offering</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Expiration Radar (9 systems w/ pathway, days-left, stage, ISSO, track)</td>
+<td>⚠ Named systems w/ dates+owners = CUI-TIER detail; public side must aggregate ("6 systems inside 180d")</td>
+</tr>
+<tr>
+<td>Month-grid view of events (June 2026: assessments, trainings, blackouts, decisions)</td>
+<td>Post-transition: you want EXPIRATIONS ONLY — the grid drops to system-expiry markers</td>
+</tr>
+<tr>
+<td>Hard milestones + auto-built .ics downloads (6 .ics today incl. ccoe-all-events.ics)</td>
+<td>Outlook integration</td>
+</tr>
+<tr>
+<td>6 downloads (calendar .ics set)</td>
+<td>Same</td>
+</tr>
+</tbody>
+</table>
+<h3>B4. Threat Intelligence (<code>threat-intel.html</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Offering</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>This Week's Threat Picture (weekly cards from threat-week.json)</td>
+<td>Monday-morning refresh narrative</td>
+</tr>
+<tr>
+<td>KEV→Portfolio map (which named systems each KEV touches)</td>
+<td>⚠ Named-system exposure — public side aggregate only</td>
+</tr>
+<tr>
+<td>Raw source feeds (auto-updated twice daily: CISA KEV 1,739 entries, NVD CRITICAL 7d, MSRC CVRF, Ubuntu+Red Hat notices, Nessus plugins)</td>
+<td><strong>Pipeline now FIXED &amp; running</strong> (was 116-day stale; auto-refresh workflow restored 4 OCT)</td>
+</tr>
+<tr>
+<td>ATT&amp;CK techniques mapped to weak points</td>
+<td>Threat-informed self-assessment lens</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>C. LEADERSHIP &amp; GOVERNANCE</h2>
+<h3>C1. Governance &amp; Leadership (<code>governance.html</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Offering</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Oversight Authority Model</td>
+<td>Who decides what, explicit</td>
+</tr>
+<tr>
+<td>Cyber Governance Board (CGB)</td>
+<td>Charter/composition of the decision body</td>
+</tr>
+<tr>
+<td>RACI tiles (RMF / changes / incidents / vulnerabilities)</td>
+<td>"Responsible/Accountable/Consulted/Informed" per process</td>
+</tr>
+<tr>
+<td>"If It Wasn't Recorded, It Wasn't Decided"</td>
+<td>The decision-recording rule ⚠ no decision-log artifact exists yet — add decisions.json (recommendation)</td>
+</tr>
+<tr>
+<td>Portfolio-in-One-Screen dashboards (ATO mix, POA&amp;M aging, workforce metrics)</td>
+<td>Leadership rollups; JSON-driven</td>
+</tr>
+</tbody>
+</table>
+<h3>C2. Risk Management Center (<code>risk-management.html</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Offering</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Severity Calculator (live: likelihood × impact)</td>
+<td>Interactive: score any finding in seconds</td>
+</tr>
+<tr>
+<td>Four-factor AO decision frame (Criticality, Data Category, Connectivity, Compensating Posture)</td>
+<td>The AO's mental model, written down</td>
+</tr>
+<tr>
+<td>Authorization Priority Score</td>
+<td>Triage metric for queue ordering</td>
+</tr>
+<tr>
+<td>CVE→Mission Language translator (Technical Finding → System Effect → Mission Degradation)</td>
+<td>Speak warfighter impact, not CVE jargon — gold for AODR briefs</td>
+</tr>
+<tr>
+<td>Risk registers w/ top risks + quad charts</td>
+<td>Ready-made leader artifacts</td>
+</tr>
+</tbody>
+</table>
+<h3>C3. Inspection &amp; Audit Readiness (<code>inspection-readiness.html</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Offering</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Master readiness checklist (documentation + operational)</td>
+<td>The IG-day checklist</td>
+</tr>
+<tr>
+<td>8-tab artifact binder structure</td>
+<td>"Every system, same order" — standardizes the binder</td>
+</tr>
+<tr>
+<td>Top recurring findings w/ fixes</td>
+<td>Where inspections actually bite</td>
+</tr>
+<tr>
+<td>Mock-inspection methodology + interview prep</td>
+<td>Rehearsal mechanics</td>
+</tr>
+</tbody>
+</table>
+<h3>C4. Contact/SLA note: dates hard-coded (binder countdown) → JSON-ify in release | MODIFY |</h3>
+<hr />
+<h2>D. WORKFORCE &amp; TRAINING</h2>
+<h3>D1. Workforce Development (<code>workforce.html</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Offering</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8140 readiness tiles (91% DCWF-coded / 84% foundational / 11 grace / 37 IDPs)</td>
+<td>Monthly-roll numbers — ⚠ hand-coded HTML today; JSON-ify in release</td>
+</tr>
+<tr>
+<td>Role deep-dives w/ DCWF codes: ISSO 722/723, ISSM 612, SCA 801/802, System Owner/PM, Engineer, Leadership, Contractor</td>
+<td>"Know your lane + your artifacts" — duties + artifact ownership per role</td>
+</tr>
+<tr>
+<td>"What Counts, For Whom" (common core: CUI handling, incident notification, Intro to RMF within 60 days)</td>
+<td>The everyone-must list</td>
+</tr>
+<tr>
+<td>Tools That Move You Forward (links: 8140 Readiness Tracker XLSX, DCWF Work-Role Mapper XLSX, Cyber Range)</td>
+<td>The actual worksheets</td>
+</tr>
+<tr>
+<td>Mentorship Program (6-month pairings, charter, checkpoints, capstone)</td>
+<td>DEVELOP-tier program</td>
+</tr>
+<tr>
+<td>Rotational Opportunities (90-day rotations, endorsement + backfill plan)</td>
+<td>SURGE-capacity program</td>
+</tr>
+<tr>
+<td>ACMA cross-link</td>
+<td>Acquisition career path bridge</td>
+</tr>
+</tbody>
+</table>
+<h3>D2. Training Academy (<code>training.html</code>) + Cyber Range (<code>tools/cyber-range/</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Offering</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>30 courses across 3 tiers (Build the Base / Run the Mission / Lead the Program)</td>
+<td>Structured curriculum</td>
+</tr>
+<tr>
+<td>31 range course modules (AC-301…AC-331, verified files in repo)</td>
+<td>Actual runnable modules in the console</td>
+</tr>
+<tr>
+<td>Knowledge checks + 80% capstone per course</td>
+<td>Credential-style rigor</td>
+</tr>
+<tr>
+<td>"Practice on Fiction, Perform on Fact" doctrine</td>
+<td>Range = fiction, prod = fact</td>
+</tr>
+<tr>
+<td>"Learn From the Rejection Pile"</td>
+<td>Actual rejected-package artifacts as teaching material</td>
+</tr>
+</tbody>
+</table>
+<h3>D3. ACMA Resource Center (<code>acma.html</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Offering</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DACM chartering policy (PDF, official Feb 2022 memo)</td>
+<td>Governing doc</td>
+</tr>
+<tr>
+<td>What an ACMA is/isn't, who does what</td>
+<td>Role clarification</td>
+</tr>
+<tr>
+<td>DAWIA certification tiers + CLP rules</td>
+<td>Career mechanics</td>
+</tr>
+<tr>
+<td>Annual battle rhythm + official-source list (12 ext. links)</td>
+<td>Every official link, one page</td>
+</tr>
+<tr>
+<td>ACMA Nomination Memo template (DOCX)</td>
+<td>Ready to use</td>
+</tr>
+</tbody>
+</table>
+<h3>D4. Community &amp; Office Hours (<code>community.html</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Offering</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5 standing Teams office hours (eMASS Open Lab, RMF Clinic, Vuln &amp; POA&amp;M Surgery, ARB Pre-Brief, Ask the CISO)</td>
+<td>Drop-in help, no appointment</td>
+</tr>
+<tr>
+<td>4 Communities of Practice (ISSO Forum, Assessors' Roundtable, Cloud &amp; DevSecOps Guild, OT/Standalone Circle)</td>
+<td>Peer groups</td>
+</tr>
+<tr>
+<td>Q2 FY26 Honors</td>
+<td>Recognition wall</td>
+</tr>
+<tr>
+<td>Weekly Posture</td>
+<td>Digest teaser</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>E. TOOLS, AGENTS &amp; AI</h2>
+<h3>E1. Tools &amp; Systems Portal (<code>tools-dashboards.html</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Offering</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Command Center Snapshot (live from site-metrics.json: auth mix donut, POA&amp;M severity bars, nearest expirations, needs-attention worklist)</td>
+<td>Same data as home, tool-context</td>
+</tr>
+<tr>
+<td>Purpose-built apps: VulneraSight, Aegis.AI, Cyber Range Console, AI Prompt Library</td>
+<td>Home-grown suite</td>
+</tr>
+<tr>
+<td>The Tools You'll Actually Use: eMASS (access workflow: CAC+CBT+ISSM sponsorship, ~5-day provisioning), ACAS/Tenable, SCC 1.3, STIG Viewer, Power BI, SharePoint/Teams, NICCS</td>
+<td>The real toolbelt w/ purposes</td>
+</tr>
+<tr>
+<td>Standard Access Workflow (Prerequisites→Sponsorship→Provisioning→Recertification)</td>
+<td>The how-to-get-a-tool path</td>
+</tr>
+</tbody>
+</table>
+<h3>E2. VulneraSight (<code>tools/vulnerasight/</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Offering</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Threat-informed analysis: correlates ACAS/Nessus findings + STIG .ckl against threat context; drafts reviewable POA&amp;M narratives</td>
+<td>The triage accelerator</td>
+</tr>
+</tbody>
+</table>
+<h3>E3. Aegis.AI Risk Command (<code>tools/aegis-ai/</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Offering</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Executive decision support: portfolio risk posture, budget optimization, AI-drafted authorization memos (human-signed)</td>
+<td>The leadership dashboard app</td>
+</tr>
+</tbody>
+</table>
+<h3>E4. AI &amp; Automation Center (<code>ai-automation.html</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Offering</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rules before tools: Permitted (approved platforms only) vs Prohibited — No Exceptions lists</td>
+<td>The AI guardrail policy on one page</td>
+</tr>
+<tr>
+<td>5 reviewable-draft prompt patterns (Control Narrative, Policy Plain-Language Summary, POA&amp;M Milestone Decomposition, Tabletop Inject Generator, AAR First Draft) + NotebookLM Study Pack</td>
+<td>Copy-ready prompts</td>
+</tr>
+<tr>
+<td>Automation intake (Submit→Triage→Build &amp; Govern)</td>
+<td>Paper-trail for new ideas</td>
+</tr>
+<tr>
+<td>Cybersecurity AI Prompt Library (hosted external app, Cloud Run)</td>
+<td>The vetted prompt catalog</td>
+</tr>
+</tbody>
+</table>
+<h3>E5. Agent Catalog (<code>agent-catalog.html</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Offering</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12 approved AI agents w/ purpose + owner + Request-Access email flow: RMF Package Drafter, POA&amp;M Triage Assistant, Threat Intel Synthesizer, STIG Compliance Checker, Risk Memo Drafter, ConMon Collector, Secure Blueprint Generator, Inspection Readiness Validator, 8140 Workforce Mapper, Phishing Analysis, Acquisition Cyber Language, Tabletop Exercise Generator</td>
+<td>The AI workforce directory</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>F. CONTRACTS, ENGINEERING, POLICY, REFERENCE</h2>
+<h3>F1. Acquisition Cyber Support (<code>acquisition.html</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Offering</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9-clause library (RMF baseline, secure coding, CUI safeguarding, incident SLA, deliverables list, acceptance criteria, FedRAMP/IL residency, personnel access, departure)</td>
+<td>Copy-paste SOW language</td>
+</tr>
+<tr>
+<td>Minimum Cyber Deliverable Set + Cost Estimating Guide</td>
+<td>What "done" means at delivery</td>
+</tr>
+<tr>
+<td>4 acquisition touchpoints (Market Research/RFI, SOW Drafting, Source Selection, Deliverable QA)</td>
+<td>Where cyber plugs into contracts</td>
+</tr>
+</tbody>
+</table>
+<h3>F2. Engineering &amp; Secure Design (<code>engineering.html</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Offering</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6 reference architectures that already passed (Three-Tier Enclave, IL4/IL5 Cloud, Standalone/Closed, OT/Range, DevSecOps, XR/Sim)</td>
+<td>Not theory — blueprints w/ precedent</td>
+</tr>
+<tr>
+<td>Non-negotiables (IAM, Logging, Crypto standards)</td>
+<td>Design floor</td>
+</tr>
+<tr>
+<td>STIG Execution Handbook</td>
+<td>From commit to authorized</td>
+</tr>
+<tr>
+<td>ARB intake</td>
+<td>Architecture review routing</td>
+</tr>
+</tbody>
+</table>
+<h3>F3. Policy Library (<code>policies.html</code>) — <strong>14 controlled documents, all present as DOCX</strong></h3>
+<p>RMF Execution Policy v4.0 · Change Management Rubric v3.2 · Continuous Monitoring Parameters v2.7 · Vulnerability Mgmt Windows v3.0 · POA&amp;M Lifecycle v2.4 · Standalone Boundaries SOP v1.8 · Closed Network Audit v1.5 · Cloud Governance IL2–IL6 v3.0 · CUI Handling v2.2 · Incident Response v3.1 · SCRM/SBOM v1.6 · Emerging AI Governance v1.0 · OT/XR/AR/VR v1.3 · Reciprocity Acceptance v1.7  → KEEP ALL (version-controlled, supersede lines on each card)</p>
+<h3>F4. References &amp; Authorities (<code>references.html</code>) — <strong>36 documents, all linked to publisher source</strong></h3>
+<p>DoD issuances (6): DoDI 8500.01, DoDI 8510.01, DoDD 8140.01, DoDI 8140.02, DoDM 8140.03, Issuances Portal · Army (6): AR 25-2, DA PAM 25-2-14/-5/-9/-12, Army Pubs portal · NIST (15): FIPS 199/200, SP 800-18/-30/-37/-39/-53/-53A/-53B/-60/-137/-160/-171/-172, CSF 2.0 · CNSSI 1253 · MITRE (4): ATT&amp;CK, D3FEND, CVE, CWE · CISA/DISA (4): KEV, KEV feed, DISA STIGs, DoD Cyber Exchange → KEEP ALL</p>
+<h3>F5. Templates &amp; Artifacts (<code>templates.html</code>) — <strong>33 files, every artifact in blank + gold-standard pairs</strong></h3>
+<p>AO Decision Briefing (EXAMPLE / QUAD CHART / SLIDES) · AO Package Routing Checklist · Artifact Checklists xlsx (full set) · Assessment Readiness Package (BLANK/GOLD) · Control Implementation Statement Frames (BLANK/GOLD) · Cybersecurity-101 trio · Executive Risk Summary RAW (BLANK/GOLD) · FIPS-199 Worksheet (BLANK/GOLD) · HW/SW Inventory (BLANK/GOLD) · Minor Change Memo (BLANK/GOLD) · POA&amp;M Closure Evidence Forms (BLANK/GOLD) · RMF Process Map PDF · Risk Acceptance Memorandum (BLANK/GOLD) · SSP Language Blocks (BLANK/GOLD/GOLD-PDF) · Significant Change Request (BLANK/GOLD) · Boundary &amp; Data Flow (STENCIL/GOLD) · System Divestment Checklist → KEEP ALL (this is the site's single most-used section in any org)</p>
+<h3>F6. Media Hub (<code>media.html</code>) — 8 executive CISO articles + 6 podcast/video series (external links)</h3>
+<p>External articles (Cyber Magazine, SC World, Gartner…) + AI Security Ops weekly podcast, AI Security Brief, AI Hacks… → REVIEW — these are public-internet thought-leadership, fine on both tiers; keep if you want the CISO "voice" section, cut if you want pure ops focus |</p>
+<h3>F7. Newsletters (<code>newsletters/</code>) — 4 issues (W21–W24, ends mid-June)</h3>
+<p>Weekly digest archive w/ KEV act-now, binder deadlines, mock-inspection schedule → ⚠ 15 weeks stale — either revive as the comm channel for launch or hide until real. CUT the "4 issues" count from any banner until cadence is real |</p>
+<hr />
+<h2>H. DOWNLOADS MASTER LIST (verified on disk — 50 unique files)</h2>
+<ul>
+<li><code>templates/</code> — 33 files (listed in F5)</li>
+<li><code>tabletops/</code> — 5 files: Ransomware (LOGNET-04), CUI Spill Cross-Domain, Insider Data-Staging, Lost Laptop TDY + ALL.ZIP</li>
+<li><code>policies/</code> — 14 DOCX (listed in F3)</li>
+<li><code>tools/</code> — 2: 8140-Readiness-Tracker.xlsx, DCWF-Work-Role-Mapper.xlsx</li>
+<li><code>acma/</code> — 2: DACM policy PDF, nomination memo template</li>
+<li><code>calendar/</code> — 6 generated .ics</li>
+</ul>
+<h2>I. INTERACTIVE / DYNAMIC LAYER (the "live site" part)</h2>
+<table>
+<thead>
+<tr>
+<th>Mechanism</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>site-metrics.json → home + tools + governance</td>
+<td>✅ working, JSON-driven</td>
+</tr>
+<tr>
+<td>ticker.json + auto-KEV insert</td>
+<td>✅ working</td>
+</tr>
+<tr>
+<td>poam.json → live finding table (⚠ named systems)</td>
+<td>✅ working</td>
+</tr>
+<tr>
+<td>calendar.json → grid + .ics build</td>
+<td>✅ working</td>
+</tr>
+<tr>
+<td>threat-week.json → weekly cards</td>
+<td>✅ working</td>
+</tr>
+<tr>
+<td>6 FAQ modules (207 answers) + pages.json full-site search</td>
+<td>✅ working</td>
+</tr>
+<tr>
+<td>data/auto feeds (KEV/NVD/MSRC/Linux/Nessus)</td>
+<td>✅ FIXED 4 OCT — auto-refresh workflow restored, feeds live (was 116 days stale)</td>
+</tr>
+<tr>
+<td>.ics generation (build_ics.py)</td>
+<td>✅ pipeline-coupled — needs .mil CI job</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>J. HONESTY AUDIT — verify BEFORE workforce launch (the credibility list)</h2>
+<ol>
+<li><strong>Office hours / CoPs / mentorship / rotations</strong> — are the Teams meetings real and staffed? An empty calendar link burns trust.</li>
+<li><strong>Agent Catalog (12 agents)</strong> — does each agent exist with a real owner? Any "coming soon" must be marked as such.</li>
+<li><strong>Training Academy (30 courses)</strong> — 31 range modules exist as files; verify Academy page claims match what's actually deliverable.</li>
+<li><strong>Metrics (84/71/12/9, 91%/84%, 312 POA&amp;M…)</strong> — all currently seed values; do the first REAL monthly roll before showing leadership.</li>
+<li><strong>Newsletter cadence</strong> — revive or hide.</li>
+<li><strong>Placeholder email</strong> — <code>usarmy.ccoe.office@army.mil</code> in 3 mailto links → swap before launch.</li>
+<li><strong>CUI exposure check (pre-.mil)</strong> — named systems + ISSO identities + POA&amp;M narratives + expiration dates w/ owners: aggregate on public, detail on .mil only.</li>
+</ol></body></html>
