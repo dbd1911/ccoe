@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day One — System Owner (ISO) — CCoE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap"></noscript>
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+/* page-local list styles — core tokens only */
+.readlist { list-style: none; margin: 0; padding: 0; counter-reset: rl; }
+.readlist li { counter-increment: rl; position: relative; padding: 10px 0 10px 40px; border-bottom: 1px dashed var(--line); font-size: 14px; }
+.readlist li:last-child { border-bottom: none; }
+.readlist li::before { content: counter(rl); position: absolute; left: 2px; top: 10px; width: 26px; height: 26px;
+  line-height: 26px; text-align: center; background: var(--olive-tint); color: var(--olive);
+  font-family: var(--mono); font-weight: 700; font-size: 13px; border-radius: 2px; }
+.readlist b { display: block; font-size: 15px; color: var(--ink); margin-bottom: 2px; }
+.readlist span { color: var(--ink-mute); }
+.duty { width: 100%; border-collapse: collapse; font-size: 14px; }
+.duty th { font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink-mute); text-align: left; padding: 8px; border-bottom: 1px solid var(--line-dark); }
+.duty td { padding: 9px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.duty td:first-child { white-space: nowrap; font-weight: 700; color: var(--ink); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips a { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 2px; padding: 6px 12px;
+  color: var(--ink-soft); text-decoration: none; }
+.chips a:hover { border-color: var(--gold); color: var(--gold-deep); }
+</style>
+</head>
+<body>
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Day One · System Ownership · <span class="phase-tag">PAM 25-2-14 §3-10</span></div>
+      <h1>System Owner (ISO)</h1>
+      <p class="lede">Every Army system has an appointed ISO — and in this portfolio that appointment is usually carried by the Program Manager or the Product/Project Director. You own the system end to end: procured, developed, integrated, modified, operated, maintained, and disposed. The ISSM and ISSO execute cybersecurity for you; you fund it, enable it, and answer to the AO for the posture.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">What Is My Job</span>
+      <h2>The Charter — What the Army Expects of a System Owner (ISO)</h2>
+      <p class="section-sub">Split the way you'll actually use it: what you own outright, what you support, what you hand upward. When ownership is unclear, this page is the tiebreaker.</p>
+      <div class="grid g3">
+        <div class="card reveal"><span class="badge b-ok">You Own</span><ul class="checklist"><li>The operational security posture of your system(s) — accountable to the AO chain</li><li>Appointing the cyber cadre: the ISSM (primary + support structure) and the ISSO(s) — in writing</li><li>Funding remediation: POA&amp;Ms resourced to close inside SLA timelines</li></ul></div>
+        <div class="card reveal"><span class="badge b-info">You Support</span><ul class="checklist"><li>Your ISSO — your key cyber personnel: keep them in every loop (design changes, deliverables, fielding)</li><li>Your primary ISSM — daily RMF execution on the AO’s behalf</li><li>The ISSE integration — you ensure every program has one, per the reg</li></ul></div>
+        <div class="card reveal"><span class="badge b-crit">You Escalate</span><ul class="checklist"><li>Posture you cannot fund or resource</li><li>Authorization decisions — the AO owns them; you enforce them</li></ul></div>
+      </div>
+      <div class="grid g2" style="margin-top:18px">
+        <div class="card reveal"><h3>The Chain</h3><p><b>You report to:</b> <b>PEO</b> (acquisition side) / the <b>AO chain</b> (posture side)<br><b>Who works with you:</b> primary ISSM + support ISSMs + ISSO(s) + the assigned ISSE</p></div>
+        <div class="card card-gold reveal"><h3>Army Line</h3><p><b>DA PAM 25-2-14 §3-10(a)</b>: every DoD IS and PIT system MUST have an appointed ISO or PM/SM, responsible for procurement through disposal — for ensuring the appropriate operational security posture — appointing the ISSM + ISSO structure, categorizing information types with the cadre, reporting status to the AO, and keeping every program’s ISSE fully integrated into systems engineering. The ISO and the PM/SM are the same accountability; in this portfolio the badge usually reads PM or Product Director.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--olive-tint)">
+    <div class="wrap">
+      <span class="kicker">Start-Up</span>
+      <h2>The First 10 Days</h2>
+      <p class="section-sub">Access first — SLAs stack, so request the long poles on day 1. Reading second — every item says why it matters for a System Owner (ISO).</p>
+      <div class="grid g2">
+        <div class="card reveal">
+          <span class="badge b-warn">Access &amp; Accounts — in order</span>
+          <div class="table-wrap" style="margin-top:10px"><table class="duty">
+            <thead><tr><th>Request</th><th>Approver</th><th>Expect</th></tr></thead>
+            <tbody><tr><td>eMASS (system level, after APMS registration)</td><td>Self / AO chain</td><td>5 business days</td></tr><tr><td>APMS registration</td><td>Self — required first</td><td>Same week</td></tr><tr><td>Portfolio Power BI read</td><td>ISSM grant</td><td>Day 1</td></tr></tbody>
+          </table></div>
+          <p style="margin-top:12px"><a class="btn btn-ghost" href="tools-dashboards.html">The full access workflow →</a></p>
+        </div>
+        <div class="card reveal">
+          <span class="badge b-warn">Read-First List — in order</span>
+          <ol class="readlist" style="margin-top:10px"><li><b>DA PAM 25-2-14 §3-10</b><span>YOUR duty list verbatim — 23 numbered duties, from categorization to decommissioning</span></li><li><b>RMF Execution Policy v4.0</b><span>the RMF rules your cadre executes for you</span></li><li><b>The authority model — Governance page</b><span>where your accountability stops and the AO’s begins</span></li><li><b>The expiration radar — Assessment Calendar</b><span>what your systems owe, and when they expire</span></li></ol>
+        </div>
+      </div>
+      <div class="callout warn"><b>Day-2 move:</b> introduce yourself to your primary ISSM and your ISSO — this job runs on knowing who to ask before you need to ask.</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Battle Rhythm</span>
+      <h2>The Rhythm — How This Job Actually Runs</h2>
+      <p class="section-sub">The bones are standard; every office runs a variant. Calibrate with your supervisor during week one.</p>
+      <div class="table-wrap reveal"><table class="duty">
+        <thead><tr><th>Cadence</th><th>What You Do</th></tr></thead>
+        <tbody><tr><td>Weekly</td><td>Posture pulse with the primary ISSM — what is aging, what is stuck</td></tr><tr><td>Monthly</td><td>Security status report to the AO chain per the monitoring strategy</td></tr><tr><td>Per change</td><td>Security impact determination before the change lands</td></tr><tr><td>Quarterly</td><td>Authorization health: ANO status, expirations, POA&amp;M funding alignment</td></tr><tr><td>Annually</td><td>Required reviews/testing/assessment — no less than annual, per the regulation</td></tr></tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--olive-tint)">
+    <div class="wrap">
+      <h2>Resources &amp; Qualification</h2>
+      <div class="grid g2">
+        <div class="card reveal"><span class="badge">Toolkit — on this site</span><ul class="checklist"><li><a href="governance.html">Governance — the authority model you live under</a></li><li><a href="assessment-calendar.html">Expiration radar for your systems</a></li><li><a href="vulnerability-poam.html">POA&amp;M views you fund</a></li><li><a href="program-roles.html">Working-relationship map (PM family)</a></li></ul></div>
+        <div class="card reveal"><span class="badge">Authoritative sources</span><ul class="checklist"><li><a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN36811-PAM_25-2-14-001-WEB-3.pdf" target="_blank" rel="noopener">DA PAM 25-2-14 §3-10</a> — the ISO/PM/SM duty list (a)–(23)</li><li><a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/pdf/web/ARN21003_2021_AR25-2_WEB.pdf" target="_blank" rel="noopener">AR 25-2</a> — Army Cybersecurity: who appoints whom</li><li><a href="https://public.cyber.mil/dcwf-specialty-area/acquisition-and-program-project-management/" target="_blank" rel="noopener">DCWF A&amp;PM specialty area</a> — the codes typically carrying this appointment (801/803)</li></ul></div>
+        <div class="card card-gold reveal"><span class="badge b-gold">Your playbook</span><a href="https://dl.dod.cyber.mil/wp-content/uploads/ccp/pdf/801-Program-Manager-Career-Pathway.pdf" target="_blank" rel="noopener">CCP 801 Career Pathway</a> when carried by a PM, or the <a href="https://public.cyber.mil/dcwf-specialty-area/acquisition-and-program-project-management/" target="_blank" rel="noopener">DCWF 803/805 specialty area</a> when carried by a Product Manager/Director — plus <a href="https://dl.dod.cyber.mil/wp-content/uploads/8140/pdf/unclass-2025-03-18_daudcwf_playlists.pdf" target="_blank" rel="noopener">DAU playlists</a>. Your regulation-backed charter is §3-10.</div>
+        <div class="card reveal"><span class="badge">Who to call</span><ul class="checklist"><li><b>Your primary ISSM</b> — your first call, every time</li><li><b>Your ISSO</b> — daily execution reality</li><li><b>Your AODR</b> — risk conversation ahead of the AO</li></ul>
+          <p style="margin-top:10px"><a class="btn btn-ghost" href="contact.html">Full routing directory →</a></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Day One</span>
+      <h2>Every Role in the Portfolio</h2>
+      <p class="section-sub">Working with someone new on another lane? Point them at their own page.</p>
+      <div class="chips"><a href="day-isso.html">ISSO · 721</a><a href="day-issm.html">ISSM · 722</a><a href="day-isse.html">ISSE · 160</a><a href="day-pm.html">PM/APM · 801</a><a href="day-product.html">Product · 803</a><a href="day-chen.html">CHEN · 641</a><a href="day-lpe.html">Lead PE · 802</a><a href="day-aodr.html">AO/AODR · 611</a></div>
+    </div>
+  </section>
+</main>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
