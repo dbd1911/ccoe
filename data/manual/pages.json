@@ -292,7 +292,7 @@
       "url": "day-isso.html",
       "cat": "workforce",
       "title": "Day One — ISSO (DCWF 721)",
-      "s": "New-ISSO onboarding: charter (what you own/support/escalate), first-10-days access checklist + read-first list, the daily/weekly/monthly rhythm, toolkit, and the authoritative sources (DA PAM 25-2-14 §3-15).",
+      "s": "New-ISSO onboarding: daily RMF execution, evidence, POA&M hygiene — includes former PM-level ISSM billets; DCWF 721, SLAs, read-first, rhythm, working web with ISSM/CHEN/LPE/ISSE.",
       "k": "day one isso new 721 onboarding first 10 days access emass acas scan review conmon rhythm binder evidence poam pam 25-2-14 3-15",
       "h": "What Is My Job?|The First 10 Days|The Rhythm|Resources & Qualification"
     },
@@ -300,7 +300,7 @@
       "url": "day-issm.html",
       "cat": "workforce",
       "title": "Day One — ISSM (DCWF 722)",
-      "s": "New-ISSM onboarding: single-role charter (OISSM/PISSM retired), portfolio ownership, package-routing rhythm, 722 playbook + governance chain, and the first-10-days startup.",
+      "s": "New-ISSM onboarding: ONE ISSM per organization (former PM-level ISSM billets re-titled ISSO), governance charter, package-routing rhythm, 722 playbook + DAU playlists, escalation chain.",
       "k": "day one issm new 722 onboarding single role oissm pissm retired portfolio routing cgb rhythm governance 722 playbook pam 25-2-14 3-12",
       "h": "What Is My Job?|The First 10 Days|The Rhythm|Resources & Qualification"
     },
@@ -316,7 +316,7 @@
       "url": "day-pm.html",
       "cat": "workforce",
       "title": "Day One — PM & APM (DCWF 801)",
-      "s": "New-PM onboarding: the ISO/PM accountability line in DA PAM 25-2-14 §3-10 (appoint ISSMs/ISSOs, categorize, fund remediation), AAF gates, contract cyber language, the working relationship with cyber.",
+      "s": "New-PM onboarding: the ISO/PM accountability line in DA PAM 25-2-14 §3-10 (appoint the ISSM/ISSO cadre, fund remediation), AR 70-1, clause library, gates, 801 playbook.",
       "k": "day one pm apm program manager 801 onboarding ar70-1 aaf gates clause library deliverables risk posture",
       "h": "What Is My Job?|The First 10 Days|The Rhythm|Resources & Qualification"
     },
@@ -356,7 +356,7 @@
       "url": "day-iso.html",
       "cat": "workforce",
       "title": "Day One — System Owner (ISO) — DA PAM 25-2-14 §3-10",
-      "s": "New system-owner onboarding: the appointed ISO (PM or Product Director per §3-10) — appoints the primary+support ISSM and ISSO cadre, funds POA&M remediation, reports posture to the AO chain; DA PAM 25-2-14 duties, AR 25-2, DCWF A&PM codes, access SLAs, first-10-days list, rhythm, who to call."
+      "s": "New system-owner onboarding: the appointed ISO (PM or Product Director per §3-10) — appoints the single ISSM and the ISSO cadre, funds POA&M remediation, reports posture to the AO chain."
     }
   ]
 }
