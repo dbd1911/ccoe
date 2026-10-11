@@ -1,157 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Day One — Starting Your Role — CCoE Operational Hub</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day One — Start Your Role — CCoE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap"></noscript>
+<link rel="stylesheet" href="assets/css/styles.css">
 <style>
-:root{--bg:#0e1b2a;--panel:#152a3f;--panel2:#1b3450;--ink:#e8edf4;--muted:#9ab0c4;--gold:#c9a227;--gold2:#e7c757;--ok:#57d67f;--warn:#f2b63c;--crit:#f26d5f;--info:#59a7f2;--line:#274260}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
-.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
-header.site{background:linear-gradient(180deg,#0a1522,#0e1b2a);border-bottom:1px solid var(--line);padding:14px 0}
-header.site .wrap{display:flex;align-items:center;gap:16px}
-.brand{font-weight:700;color:var(--gold);letter-spacing:.5px}
-.brand small{display:block;color:var(--muted);font-weight:400;font-size:11px;letter-spacing:1px}
-nav.top{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap}
-nav.top a{color:var(--muted);text-decoration:none;font-size:13px}
-nav.top a:hover{color:var(--gold2)}
-.banner{background:#1e2b1e;color:#cfe6cf;text-align:center;font-size:11px;letter-spacing:2px;padding:5px}
-.kicker{color:var(--gold);font-size:12px;letter-spacing:2px;font-weight:600;text-transform:uppercase}
-h1{font-size:36px;margin:12px 0 8px}
-h2{font-size:24px;margin:34px 0 10px;color:#fff}
-h3{font-size:17px;margin:16px 0 6px;color:var(--gold2)}
-.sub{color:var(--muted);max-width:940px}
-section{padding:26px 0}
-.grid{display:grid;gap:16px}
-.g2{grid-template-columns:repeat(auto-fit,minmax(420px,1fr))}
-.g3{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px}
-.card h3{margin-top:0}
-.card p{color:var(--muted);font-size:14px}
-.badge{display:inline-block;background:#2a2413;color:var(--gold2);border:1px solid #4d4118;padding:2px 10px;border-radius:20px;font-size:11px;letter-spacing:1px;margin-bottom:8px}
-ul{margin:8px 0 0 18px;font-size:14px;color:var(--ink)}
-ul a{color:#8fc3ff;text-decoration:none}
-ul a:hover{text-decoration:underline}
-a.btn{display:inline-block;background:var(--gold);color:#14100a;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:15px}
-a.btn.ghost{background:transparent;color:var(--gold2);border:1px solid #4d4118}
-.callout{background:#1c2733;border-left:3px solid var(--gold);padding:12px 16px;border-radius:0 8px 8px 0;margin:14px 0;font-size:14px}
-table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0}
-th{background:#0b1622;color:var(--gold2);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
-td{padding:7px 10px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
-td:first-child{color:var(--ink)}
-.chain{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0;font-size:14px}
-.chain span{background:#0b1420;border:1px solid var(--line);border-radius:6px;padding:5px 12px}
-.chain b{color:var(--gold2)}
-footer{border-top:1px solid var(--line);margin-top:30px;padding:18px 0 30px;color:var(--muted);font-size:12px}
-.rolegrid a{display:block;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;text-decoration:none;color:var(--ink)}
-.rolegrid a:hover{border-color:var(--gold)}
-.rolegrid .code{color:var(--gold2);font-size:12px;letter-spacing:1px}
-.rolegrid p{color:var(--muted);font-size:13px;margin-top:4px}
+/* page-local, core tokens only */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips a { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 2px; padding: 6px 12px;
+  color: var(--ink-soft); text-decoration: none; }
+.chips a:hover { border-color: var(--gold); color: var(--gold-deep); }
 </style>
 </head>
 <body>
-<div class="banner">UNCLASSIFIED · FOR OFFICIAL USE</div>
-<header class="site">
-  <div class="wrap">
-    <div class="brand">CCoE<small>CPE ST3 CYBERSECURITY CENTER OF EXCELLENCE</small></div>
-    <nav class="top">
-      <a href="index.html">Home</a><a href="rmf-operations.html">RMF Hub</a><a href="workforce.html">Workforce</a><a href="tools-dashboards.html">Tools</a><a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<section style="padding-top:34px">
-  <div class="wrap">
-    <span class="kicker">New to the Portfolio? Start Here.</span>
-    <h1>Day One</h1>
-    <p class="sub">You just picked up the duty. This is the map: what your job is, what you do in the first ten days, the rhythm you keep after that, and who to call. Pick your role — each has its own page with the real checklist, reading order, and battle rhythm.</p>
-  </div>
-</section>
-
-<!-- THE ORG MAP -->
-<section>
-  <div class="wrap">
-    <h2>Where You Sit — the 30-Second Map</h2>
-    <div class="grid g2">
-      <div class="card">
-        <h3>The Cyber Authority Chain</h3>
-        <div class="chain"><span><b>CISO</b> sets policy &amp; posture</span>→ <span><b>AODR</b> reviews &amp; recommends</span>→ <span><b>AO</b> accepts risk &amp; signs</span></div>
-        <div class="chain"><span><b>ISSM</b> governs the portfolio</span>→ <span><b>ISSO</b> runs daily ops</span>→ <span><b>ISSE</b> engineers the design</span></div>
-        <p style="margin-top:10px">Decisions flow UP. Direction flows DOWN. Evidence flows UP continuously.</p>
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Start Here · New to the Role? <span class="phase-tag">Day One</span></div>
+      <h1>Day One</h1>
+      <p class="lede">You just took this job. You have never done it before. Here is what your first days actually look like — the charter, the access you request, the reading order, the rhythm, and who to call — for every role in this portfolio.</p>
+    </div>
+    <div class="doc-meta">
+        <span>OWNER: <b>Cybersecurity Office</b></span><span>VERSION: <b>1.0</b></span><span>EFFECTIVE: <b>2026-10-10</b></span><span>REVIEW: <b>2027-10-10</b></span><span>APPROVAL: <b>CISO</b></span><span>RELATED: <b>Workforce &amp; Development Center; Governance</b></span>
       </div>
-      <div class="card">
-        <h3>The Program Chain</h3>
-        <div class="chain"><span><b>PEO</b></span>→ <span><b>PM</b> (owns the program)</span>→ <span><b>APM</b> (deputy)</span></div>
-        <div class="chain"><span><b>Product Mgr</b> (owns an increment)</span>→ <span><b>Chief Engineer</b> (technical authority)</span>→ <span><b>Lead PE</b> (integration)</span></div>
-        <p style="margin-top:10px">Cyber sits next to this chain, not above it: the ISSM/ISSO advise the PM; the ISSE advises the Chief Engineer. Risk decisions go up-chain — never sideways.</p>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Orientation</span>
+      <h2>Pick Your Role</h2>
+      <p class="section-sub">Each role has its own page: what the job is, the first 10 days in order, the battle rhythm, and the official playbook. Start there; come back here for the shared basics.</p>
+      <div class="grid g4 reveal">
+        <a class="persona" href="day-aodr.html"><span class="abbr">AO / AODR</span><span class="role">Authorization Authority</span><p>Risk acceptance, decision briefs, delegation boundaries. DCWF 611.</p></a>
+        <a class="persona" href="day-issm.html"><span class="abbr">ISSM</span><span class="role">Security Managers</span><p>Portfolio strategy, package routing, ISSO management. DCWF 722.</p></a>
+        <a class="persona" href="day-isso.html"><span class="abbr">ISSO</span><span class="role">Security Officers</span><p>Daily RMF ops, controls, artifacts, POA&amp;Ms. DCWF 721.</p></a>
+        <a class="persona" href="day-isse.html"><span class="abbr">ISSE</span><span class="role">Systems Security Engineers</span><p>Security engineering, inheritance, boundaries. SP 800-160.</p></a>
+        <a class="persona" href="day-pm.html"><span class="abbr">PM / APM</span><span class="role">Program Management</span><p>Requirements, funding, gates, contract language. DCWF 801.</p></a>
+        <a class="persona" href="day-product.html"><span class="abbr">Product Mgr</span><span class="role">Product Management</span><p>Increments, backlog, release posture. DCWF 803/805.</p></a>
+        <a class="persona" href="day-chen.html"><span class="abbr">Chief Engineer</span><span class="role">Technical Authority</span><p>Baseline, ARB, technical risk. DCWF 641.</p></a>
+        <a class="persona" href="day-lpe.html"><span class="abbr">Lead PE</span><span class="role">Engineering Integration</span><p>Integration, evidence, contractors. DCWF 802.</p></a>
       </div>
     </div>
-    <div class="callout"><b>The one rule that never changes:</b> if it wasn't recorded, it wasn't decided. Every approval, every acceptance, every risk decision lands in writing — that's not bureaucracy, that's your paper trail when you need it later.</div>
-  </div>
-</section>
+  </section>
 
-<!-- EVERYONE: FIRST 60 DAYS -->
-<section>
-  <div class="wrap">
-    <h2>Everyone, Regardless of Role</h2>
-    <div class="grid g3">
-      <div class="card">
-        <h3>Your First 60 Days</h3>
-        <ul>
-          <li>CUI handling training — within 60 days (schedule via your supervisor)</li>
-          <li>Incident notification training — within 60 days</li>
-          <li>Introduction to the RMF (Cybersecurity-101) — within 60 days</li>
-          <li>Your DCWF coding verified in the 8140 tracker within 30 days</li>
-          <li>IDP opened with your supervisor in month one</li>
-        </ul>
-        <p style="margin-top:8px"><a href="training.html">Training Academy →</a></p>
+  <section class="section" style="background:var(--olive-tint)">
+    <div class="wrap">
+      <span class="kicker">Everyone, Regardless of Role</span>
+      <h2>True on Day One for All of Us</h2>
+      <p class="section-sub">Role specifics live on the role pages. These are the shared moves every new arrival in this portfolio makes.</p>
+      <div class="grid g3">
+        <div class="card reveal"><span class="badge b-warn">Get access — in the right order</span>
+          <p>SLAs stack: eMASS provisioning is <b>5 business days</b>, so it goes in day 1 with your ISSM's sponsorship. ACAS/SCC next (~3 days). Badge + network + Teams same-day from your sponsor. The full <a href="tools-dashboards.html">access workflow</a> lists every tool and approver.</p></div>
+        <div class="card reveal"><span class="badge b-warn">Meet your counterpart — day 2</span>
+          <p>This portfolio runs on relationships: ISSO↔ISSM, PM↔ISSM, CHEN↔ISSE, AO↔AODR. Your role page names exactly who yours are. Fifteen minutes now saves weeks of routing later.</p></div>
+        <div class="card reveal"><span class="badge b-warn">Learn the one rule</span>
+          <p><b>If it was not recorded, it was not decided.</b> Every authority here — AO, ISSM, CHEN, PM — works the same way: decisions land in writing (eMASS, ARB minutes, CGB records, POA&amp;M). Day one, learn where the records live for YOUR role.</p></div>
       </div>
-      <div class="card">
-        <h3>Access You Will Need (in order — SLAs stack)</h3>
-        <ul>
-          <li>CAC enabled for NIPR + certificate access (Day 1, HR/session office)</li>
-          <li>Certificate + CBT prerequisite for gated tools (before tool requests)</li>
-          <li>eMASS account — ISSM sponsorship required, ~5 business days (request early)</li>
-          <li>ACAS / SCC / STIG Viewer access (read first, elevated later)</li>
-          <li>SharePoint / Teams groups + email distros (same day, self-service)</li>
-        </ul>
-        <p style="margin-top:8px"><a href="tools-dashboards.html">The full access workflow →</a></p>
+      <div class="grid g2" style="margin-top:18px">
+        <div class="card reveal"><h3>The landscape in 60 seconds</h3>
+          <p><b>Governance flow:</b> CISO → AODR → AO sign the risk decisions; the ISSM/ISSO cadre prepare everything they sign. <b>Program flow:</b> PEO/PM resource the work; CHEN/LPE + product teams build it; the ISSE welds security into the design. <a href="program-roles.html">Full working-relationship map →</a></p></div>
+        <div class="card reveal"><h3>First 60 days, any role</h3>
+          <p><b>Days 1–10:</b> access in order + read-first list (your role page has both). <b>Days 11–30:</b> shadow the rhythm — sit in your chain's reviews before you own one. <b>Days 31–60:</b> own your first deliverable end to end, with your counterpart reviewing.</p></div>
       </div>
-      <div class="card">
-        <h3>The Logistics Nobody Volunteers</h3>
-        <ul>
-          <li>Know which network you're working on — NIPR vs enclave vs STN; the rules differ on each</li>
-          <li>Policies, templates, and this site live HERE — bookmark the hub on day one</li>
-          <li>Meet your counterpart on day 2: PM ↔ ISSM ↔ CHEN ↔ ISSE — the whole machine runs on those four relationships</li>
-          <li>Everything you sign, write it down; everything you decide, record it</li>
-          <li>Say "I'm new" early — every office has a go-to person who remembers being new</li>
-        </ul>
+      <div class="callout"><b>The habits that make new arrivals successful here:</b> ask early, record everything, and never let a clock surprise you — the SLA timers on the <a href="vulnerability-poam.html">Vulnerability &amp; POA&amp;M page</a> run whether you watch them or not.</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Reference</span>
+      <h2>The Shared Map</h2>
+      <div class="grid g2">
+        <div class="card reveal"><h3>The authority model</h3><p>Who decides what, and where delegation stops. <a href="governance.html">Governance page →</a></p></div>
+        <div class="card reveal"><h3>The system portfolio</h3><p>What this portfolio runs, ownership, and the expiration radar. <a href="assessment-calendar.html">Assessment Calendar →</a></p></div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- PICK YOUR ROLE -->
-<section>
-  <div class="wrap">
-    <h2>Pick Your Role</h2>
-    <div class="grid g3 rolegrid">
-      <a href="day-isso.html"><span class="code">DCWF 721 · CYBER OPERATIONS</span><h3>ISSO</h3><p>Runs the daily security posture of assigned systems. The hands-on role.</p></a>
-      <a href="day-issm.html"><span class="code">DCWF 722 · CYBER GOVERNANCE</span><h3>ISSM</h3><p>Single security-manager role — owns the portfolio's security strategy and package routing.</p></a>
-      <a href="day-isse.html"><span class="code">SP 800-160 · SECURE DESIGN</span><h3>ISSE</h3><p>Engineers security into the system from requirements to authorization.</p></a>
-      <a href="day-pm.html"><span class="code">DCWF 801 · PROGRAM</span><h3>PM &amp; APM</h3><p>Owns the program — cost/schedule/performance and its cyber posture. APM = the deputy lens.</p></a>
-      <a href="day-product.html"><span class="code">DCWF 803/805 · PRODUCT</span><h3>Product Manager</h3><p>Owns a capability increment — the backlog's security starts with you.</p></a>
-      <a href="day-chen.html"><span class="code">DCWF 641 · TECH AUTHORITY</span><h3>Chief Engineer</h3><p>The PM's technical authority — architecture baseline and ARB discipline.</p></a>
-      <a href="day-lpe.html"><span class="code">DCWF 802 · INTEGRATION</span><h3>Lead Project Engineer</h3><p>Runs day-to-day engineering across government + contractor teams.</p></a>
-      <a href="day-aodr.html"><span class="code">DCWF 611 · AUTHORITY</span><h3>AO &amp; AODR</h3><p>Accepts risk formally (AO) or reviews and recommends (AODR). The decision role.</p></a>
-      <a href="training.html"><span class="code">ALL ROLES</span><h3>Training Academy</h3><p>30 courses / 3 tiers — the qualification engine behind all of the above.</p></a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">CPE ST3 Cybersecurity Center of Excellence · Army Cyber Portfolio · UNCLASSIFIED/FOR OFFICIAL USE — Day One onboarding hubs · Corrections: <a style="color:#8fc3ff" href="contact.html">tell the office</a></div>
-</footer>
+  </section>
+</main>
+<script src="assets/js/main.js"></script>
 </body>
 </html>

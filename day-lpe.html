@@ -1,103 +1,121 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Day One — Lead Project Engineer — CCoE</title>
-<style>:root{--bg:#0e1b2a;--panel:#152a3f;--ink:#e8edf4;--muted:#9ab0c4;--gold:#c9a227;--gold2:#e7c757;--line:#274260}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
-.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
-header.site{background:linear-gradient(180deg,#0a1522,#0e1b2a);border-bottom:1px solid var(--line);padding:14px 0}
-header.site .wrap{display:flex;align-items:center;gap:16px}
-.brand{font-weight:700;color:var(--gold)}
-.brand small{display:block;color:var(--muted);font-weight:400;font-size:11px;letter-spacing:1px}
-nav.top{margin-left:auto;display:flex;gap:14px}
-nav.top a{color:var(--muted);text-decoration:none;font-size:13px}
-nav.top a:hover{color:var(--gold2)}
-.banner{background:#1e2b1e;color:#cfe6cf;text-align:center;font-size:11px;letter-spacing:2px;padding:5px}
-.kicker{color:var(--gold);font-size:12px;letter-spacing:2px;font-weight:600;text-transform:uppercase}
-h1{font-size:34px;margin:8px 0 6px}
-h2{font-size:23px;margin:30px 0 10px;color:#fff}
-h3{font-size:16.5px;margin:16px 0 6px;color:var(--gold2)}
-.sub{color:var(--muted);max-width:940px}
-section{padding:22px 0}
-.grid{display:grid;gap:16px}
-.g2{grid-template-columns:repeat(auto-fit,minmax(430px,1fr))}
-.g3{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px}
-.card h3{margin-top:0}.card p{color:var(--muted);font-size:14px}
-.badge{display:inline-block;background:#2a2413;color:var(--gold2);border:1px solid #4d4118;padding:2px 10px;border-radius:20px;font-size:11px;letter-spacing:1px;margin-bottom:8px}
-ul{margin:8px 0 0 18px;font-size:14px}
-ol.reads{margin:8px 0 0 22px;font-size:14px}
-ol.reads li{margin:9px 0}
-ol.reads b{color:#fff}
-ol.reads span{color:var(--muted);display:block;font-size:13px}
-ul a{color:#8fc3ff;text-decoration:none} ul a:hover{text-decoration:underline}
-a.btn{display:inline-block;background:var(--gold);color:#14100a;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:15px}
-a.btn.ghost{background:transparent;color:var(--gold2);border:1px solid #4d4118}
-.callout{background:#1c2733;border-left:3px solid var(--gold);padding:12px 16px;border-radius:0 8px 8px 0;margin:14px 0;font-size:14px}
-table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0}
-th{background:#0b1622;color:var(--gold2);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
-td{padding:7px 10px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
-td:first-child{color:#fff;font-weight:600;white-space:nowrap}
-footer{border-top:1px solid var(--line);margin-top:30px;padding:18px 0 30px;color:var(--muted);font-size:12px}
-.otherroles{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;font-size:13px;padding:0 24px}
-.otherroles a{background:#0b1420;border:1px solid var(--line);border-radius:6px;padding:5px 12px;color:#8fc3ff;text-decoration:none}</style></head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap"></noscript>
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+/* page-local list styles — core tokens only */
+.readlist { list-style: none; margin: 0; padding: 0; counter-reset: rl; }
+.readlist li { counter-increment: rl; position: relative; padding: 10px 0 10px 40px; border-bottom: 1px dashed var(--line); font-size: 14px; }
+.readlist li:last-child { border-bottom: none; }
+.readlist li::before { content: counter(rl); position: absolute; left: 2px; top: 10px; width: 26px; height: 26px;
+  line-height: 26px; text-align: center; background: var(--olive-tint); color: var(--olive);
+  font-family: var(--mono); font-weight: 700; font-size: 13px; border-radius: 2px; }
+.readlist b { display: block; font-size: 15px; color: var(--ink); margin-bottom: 2px; }
+.readlist span { color: var(--ink-mute); }
+.duty { width: 100%; border-collapse: collapse; font-size: 14px; }
+.duty th { font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink-mute); text-align: left; padding: 8px; border-bottom: 1px solid var(--line-dark); }
+.duty td { padding: 9px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.duty td:first-child { white-space: nowrap; font-weight: 700; color: var(--ink); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips a { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 2px; padding: 6px 12px;
+  color: var(--ink-soft); text-decoration: none; }
+.chips a:hover { border-color: var(--gold); color: var(--gold-deep); }
+</style>
+</head>
 <body>
-<div class="banner">UNCLASSIFIED · FOR OFFICIAL USE — ONBOARDING GUIDANCE</div>
-<header class="site"><div class="wrap">
-  <div class="brand">CCoE<small>CPE ST3 CYBERSECURITY CENTER OF EXCELLENCE</small></div>
-  <nav class="top"><a href="index.html">Home</a><a href="day-one.html">Day One</a><a href="rmf-operations.html">RMF Hub</a><a href="workforce.html">Workforce</a><a href="contact.html">Contact</a></nav>
-</div></header>
-
-<section style="padding-top:30px"><div class="wrap">
-  <span class="kicker">Day One · ENGINEERING INTEGRATION · DCWF 802</span>
-  <h1>Lead Project Engineer</h1>
-  <p class="sub">You run day-to-day engineering across government + contractor teams — where schedules meet technical reality, and where evidence is born.</p>
-</div></section>
-
-<section><div class="wrap">
-  <h2>What Is My Job?</h2>
-  <div class="grid g3">
-    <div class="card"><span class="badge">YOU OWN</span><ul><li>Integration evidence pipeline: scan artifacts, attestations, test results — clean and on time</li><li>Cross-team technical coordination (contractor ↔ government)</li><li>Risk-tracked integration decisions (nothing silently baked in)</li></ul></div>
-    <div class="card"><span class="badge">YOU SUPPORT</span><ul><li>CHEN baseline + ARB outcomes</li><li>Product teams’ increments</li></ul></div>
-    <div class="card"><span class="badge">YOU ESCALATE</span><ul><li>Evidence gaps discovered late</li><li>Contractor artifacts repeatedly missing acceptance</li></ul></div>
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Day One · Engineering Integration · <span class="phase-tag">DCWF 802</span></div>
+      <h1>Lead Project Engineer</h1>
+      <p class="lede">You run day-to-day engineering across government and contractor teams — where schedules meet technical reality, and where the evidence is born.</p>
+    </div>
+    <div class="doc-meta">
+        <span>OWNER: <b>Cybersecurity Office</b></span><span>VERSION: <b>1.0</b></span><span>EFFECTIVE: <b>2026-10-10</b></span><span>REVIEW: <b>2027-10-10</b></span><span>APPROVAL: <b>CISO</b></span><span>RELATED: <b>Workforce &amp; Development Center; Governance</b></span>
+      </div>
   </div>
-  <div class="grid g2" style="margin-top:16px">
-    <div class="card"><h3>The Chain</h3><p><b>You report to:</b> CHEN / PM<br><b>Who works with you:</b> Contractor engineering leads</p></div>
-    <div class="card"><h3>Army Line (the regulation)</h3><p>Your integration evidence is what assessment and inspection actually judge — the binder standard maps 1:1 to what a reviewer will pull.</p></div>
-  </div>
-</div></section>
 
-<section><div class="wrap">
-  <h2>The First 10 Days</h2>
-  <div class="grid g2">
-    <div class="card"><span class="badge">ACCESS &amp; ACCOUNTS (in order — SLAs stack)</span>
-      <table><tr><th>Request</th><th>Approver</th><th>Expect</th></tr><tr><td>Pipeline dashboards</td><td>CHEN grant</td><td>Day 1</td></tr><tr><td>ACAS/SCC (write, for scans)</td><td>ISSO</td><td>3 days</td></tr></table>
-      <p style="margin-top:8px"><a href="tools-dashboards.html">Full access workflow →</a></p></div>
-    <div class="card"><span class="badge">READ-FIRST LIST (in this order)</span>
-      <ol class="reads"><li><b>The 802 Career Pathway</b><span>Your formal qualification map</span></li><li><b>The 8-tab binder standard</b><span>How your evidence will eventually be judged</span></li><li><b>The tool belt</b><span>ACAS/SCC/STIG-Viewer + Power BI</span></li></ol></div>
-  </div>
-  <div class="callout"><b>Day-2 one-liner:</b> introduce yourself to Your Chen And Your Isso — everything runs on knowing who to ask.</div>
-</div></section>
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">What Is My Job</span>
+      <h2>The Charter — What the Army Expects of a Lead Project Engineer</h2>
+      <p class="section-sub">Split the way you'll actually use it: what you own outright, what you support, what you hand upward. When ownership is unclear, this page is the tiebreaker.</p>
+      <div class="grid g3">
+        <div class="card reveal"><span class="badge b-ok">You Own</span><ul class="checklist"><li>The integration evidence pipeline — scan artifacts, attestations, test results, clean and on time</li><li>Cross-team technical coordination — contractor lines ↔ government lines</li><li>Risk-tracked integration decisions — nothing silently baked in</li></ul></div>
+        <div class="card reveal"><span class="badge b-info">You Support</span><ul class="checklist"><li>CHEN baseline + ARB outcomes</li><li>Product teams' increments</li></ul></div>
+        <div class="card reveal"><span class="badge b-crit">You Escalate</span><ul class="checklist"><li>Evidence gaps discovered late</li><li>Contractor artifacts repeatedly missing acceptance</li></ul></div>
+      </div>
+      <div class="grid g2" style="margin-top:18px">
+        <div class="card reveal"><h3>The Chain</h3><p><b>You report to:</b> <b>CHEN / PM</b><br><b>Who works with you:</b> contractor engineering leads</p></div>
+        <div class="card card-gold reveal"><h3>Army Line</h3><p>Your integration evidence is what assessment and inspection actually judge — the binder standard maps to what a reviewer will pull.</p></div>
+      </div>
+    </div>
+  </section>
 
-<section><div class="wrap">
-  <h2>The Rhythm — How This Job Runs</h2>
-  <table><tr><th>Cadence</th><th>What you do</th></tr><tr><td>Daily</td><td>Integration queue + evidence status</td></tr><tr><td>Weekly</td><td>Integration risk review w/ CHEN</td></tr><tr><td>Per delivery</td><td>Evidence package assembled + verified against acceptance criteria</td></tr><tr><td>Monthly</td><td>Dependency/SCA scan review</td></tr></table>
-  <p style="font-size:13px;color:var(--muted)">Calibrate with your supervisor in week one — the bones are standard, the office variant is not.</p>
-</div></section>
+  <section class="section" style="background:var(--olive-tint)">
+    <div class="wrap">
+      <span class="kicker">Start-Up</span>
+      <h2>The First 10 Days</h2>
+      <p class="section-sub">Access first — SLAs stack, so request the long poles on day 1. Reading second — every item says why it matters for a Lead Project Engineer.</p>
+      <div class="grid g2">
+        <div class="card reveal">
+          <span class="badge b-warn">Access &amp; Accounts — in order</span>
+          <div class="table-wrap" style="margin-top:10px"><table class="duty">
+            <thead><tr><th>Request</th><th>Approver</th><th>Expect</th></tr></thead>
+            <tbody><tr><td>Pipeline dashboards</td><td>CHEN grant</td><td>Day 1</td></tr><tr><td>ACAS/SCC (write, for scans)</td><td>ISSO</td><td>~3 days</td></tr></tbody>
+          </table></div>
+          <p style="margin-top:12px"><a class="btn btn-ghost" href="tools-dashboards.html">The full access workflow →</a></p>
+        </div>
+        <div class="card reveal">
+          <span class="badge b-warn">Read-First List — in order</span>
+          <ol class="readlist" style="margin-top:10px"><li><b>CCP 802 Career Pathway</b><span>your formal qualification map</span></li><li><b>The 8-tab binder standard — Inspection page</b><span>how your evidence will eventually be judged</span></li><li><b>The tool belt — Tools page</b><span>ACAS / SCC / STIG-Viewer + Power BI</span></li></ol>
+        </div>
+      </div>
+      <div class="callout warn"><b>Day-2 move:</b> introduce yourself to your CHEN and your ISSO — this job runs on knowing who to ask before you need to ask.</div>
+    </div>
+  </section>
 
-<section><div class="wrap">
-  <h2>Resources &amp; Qualification</h2>
-  <div class="grid g2">
-    <div class="card"><span class="badge">TOOLKIT (ON THIS SITE)</span><ul><li><a href="inspection-readiness.html">Inspection readiness (binder standard)</a></li><li><a href="tools-dashboards.html">Tool belt</a></li><li><a href="engineering.html">Engineering non-negotiables</a></li></ul></div>
-    <div class="card"><span class="badge">AUTHORITATIVE SOURCES</span><ul><li><a href="https://dl.dod.cyber.mil/wp-content/uploads/ccp/pdf/802-IT-Project-Manager-Career-Pathway.pdf" target="_blank" rel="noopener">CCP 802 (LPE playbook)</a> — CCP 802 — the IT PM/LPE career pathway</li><li><a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN36811-PAM_25-2-14-001-WEB-3.pdf" target="_blank" rel="noopener">DA PAM 25-2-14</a> — DA PAM 25-2-14 — the RMF team structure your artifacts feed</li></ul></div>
-  </div>
-  <div class="grid g2" style="margin-top:14px">
-    <div class="card"><span class="badge">YOUR PLAYBOOK</span><p><a href="https://dl.dod.cyber.mil/wp-content/uploads/ccp/pdf/802-IT-Project-Manager-Career-Pathway.pdf" target="_blank" rel="noopener">↓ CCP 802 (IT Project Manager) pathway PDF</a><br><a href="https://dl.dod.cyber.mil/wp-content/uploads/8140/pdf/unclass-2025-03-18_daudcwf_playlists.pdf" target="_blank" rel="noopener">↓ DAU learning playlists (your code within)</a><p style="margin-top:8px;color:var(--muted)">Your official playbook; DAU playlists carry the 802 sequence.</p></p></div>
-    <div class="card"><span class="badge">WHO TO CALL</span><ul><li><b>Your CHEN</b> — Technical direction</li><li><b>Your ISSO</b> — Scan/artifact integration</li></ul>
-      <p style="margin-top:8px"><a href="contact.html">Full routing directory →</a></p></div>
-  </div>
-</div></section>
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Battle Rhythm</span>
+      <h2>The Rhythm — How This Job Actually Runs</h2>
+      <p class="section-sub">The bones are standard; every office runs a variant. Calibrate with your supervisor during week one.</p>
+      <div class="table-wrap reveal"><table class="duty">
+        <thead><tr><th>Cadence</th><th>What You Do</th></tr></thead>
+        <tbody><tr><td>Daily</td><td>Integration queue + evidence status</td></tr><tr><td>Weekly</td><td>Integration-risk review with the CHEN</td></tr><tr><td>Per delivery</td><td>Evidence package assembled + verified against acceptance criteria</td></tr><tr><td>Monthly</td><td>Dependency/SCA scan review</td></tr></tbody>
+      </table></div>
+    </div>
+  </section>
 
-<footer><div class="wrap">CPE ST3 CCoE · UNCLASSIFIED/FOUO · <a style="color:#8fc3ff" href="day-one.html">← All Day One roles</a> · Corrections: <a style="color:#8fc3ff" href="contact.html">office</a></div></footer>
-<div class="otherroles" style="margin-bottom:30px"><a href="day-isso.html">ISSO</a> <a href="day-issm.html">ISSM</a> <a href="day-isse.html">ISSE</a> <a href="day-pm.html">PM &amp; APM</a> <a href="day-product.html">Product Mgr</a> <a href="day-chen.html">Chief Engineer</a> <a href="day-aodr.html">AO/AODR</a></div>
-</body></html>
+  <section class="section" style="background:var(--olive-tint)">
+    <div class="wrap">
+      <h2>Resources &amp; Qualification</h2>
+      <div class="grid g2">
+        <div class="card reveal"><span class="badge">Toolkit — on this site</span><ul class="checklist"><li><a href="inspection-readiness.html">The binder standard your evidence feeds</a></li><li><a href="tools-dashboards.html">The scan/verify tool belt</a></li><li><a href="engineering.html">Non-negotiables you verify in build</a></li></ul></div>
+        <div class="card reveal"><span class="badge">Authoritative sources</span><ul class="checklist"><li><a href="https://dl.dod.cyber.mil/wp-content/uploads/ccp/pdf/802-IT-Project-Manager-Career-Pathway.pdf" target="_blank" rel="noopener">CCP 802 — IT Project Manager Career Pathway</a></li><li><a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN36811-PAM_25-2-14-001-WEB-3.pdf" target="_blank" rel="noopener">DA PAM 25-2-14</a> — the RMF team structure your artifacts feed</li></ul></div>
+        <div class="card card-gold reveal"><span class="badge b-gold">Your playbook</span><a href="https://dl.dod.cyber.mil/wp-content/uploads/ccp/pdf/802-IT-Project-Manager-Career-Pathway.pdf" target="_blank" rel="noopener">CCP 802 (IT Project Manager) Career Pathway PDF</a> — your official playbook. <a href="https://dl.dod.cyber.mil/wp-content/uploads/8140/pdf/unclass-2025-03-18_daudcwf_playlists.pdf" target="_blank" rel="noopener">DAU playlists</a> carry the 802 sequence.</div>
+        <div class="card reveal"><span class="badge">Who to call</span><ul class="checklist"><li><b>Your CHEN</b> — technical direction</li><li><b>Your ISSO</b> — scan/artifact integration</li></ul>
+          <p style="margin-top:10px"><a class="btn btn-ghost" href="contact.html">Full routing directory →</a></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Day One</span>
+      <h2>Every Role in the Portfolio</h2>
+      <p class="section-sub">Working with someone new on another lane? Point them at their own page.</p>
+      <div class="chips"><a href="day-isso.html">ISSO · 721</a><a href="day-issm.html">ISSM · 722</a><a href="day-isse.html">ISSE · 160</a><a href="day-pm.html">PM/APM · 801</a><a href="day-product.html">Product · 803</a><a href="day-chen.html">CHEN · 641</a><a href="day-aodr.html">AO/AODR · 611</a></div>
+    </div>
+  </section>
+</main>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

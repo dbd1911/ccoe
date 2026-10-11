@@ -1,103 +1,121 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Day One — ISSM — CCoE</title>
-<style>:root{--bg:#0e1b2a;--panel:#152a3f;--ink:#e8edf4;--muted:#9ab0c4;--gold:#c9a227;--gold2:#e7c757;--line:#274260}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
-.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
-header.site{background:linear-gradient(180deg,#0a1522,#0e1b2a);border-bottom:1px solid var(--line);padding:14px 0}
-header.site .wrap{display:flex;align-items:center;gap:16px}
-.brand{font-weight:700;color:var(--gold)}
-.brand small{display:block;color:var(--muted);font-weight:400;font-size:11px;letter-spacing:1px}
-nav.top{margin-left:auto;display:flex;gap:14px}
-nav.top a{color:var(--muted);text-decoration:none;font-size:13px}
-nav.top a:hover{color:var(--gold2)}
-.banner{background:#1e2b1e;color:#cfe6cf;text-align:center;font-size:11px;letter-spacing:2px;padding:5px}
-.kicker{color:var(--gold);font-size:12px;letter-spacing:2px;font-weight:600;text-transform:uppercase}
-h1{font-size:34px;margin:8px 0 6px}
-h2{font-size:23px;margin:30px 0 10px;color:#fff}
-h3{font-size:16.5px;margin:16px 0 6px;color:var(--gold2)}
-.sub{color:var(--muted);max-width:940px}
-section{padding:22px 0}
-.grid{display:grid;gap:16px}
-.g2{grid-template-columns:repeat(auto-fit,minmax(430px,1fr))}
-.g3{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px}
-.card h3{margin-top:0}.card p{color:var(--muted);font-size:14px}
-.badge{display:inline-block;background:#2a2413;color:var(--gold2);border:1px solid #4d4118;padding:2px 10px;border-radius:20px;font-size:11px;letter-spacing:1px;margin-bottom:8px}
-ul{margin:8px 0 0 18px;font-size:14px}
-ol.reads{margin:8px 0 0 22px;font-size:14px}
-ol.reads li{margin:9px 0}
-ol.reads b{color:#fff}
-ol.reads span{color:var(--muted);display:block;font-size:13px}
-ul a{color:#8fc3ff;text-decoration:none} ul a:hover{text-decoration:underline}
-a.btn{display:inline-block;background:var(--gold);color:#14100a;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:15px}
-a.btn.ghost{background:transparent;color:var(--gold2);border:1px solid #4d4118}
-.callout{background:#1c2733;border-left:3px solid var(--gold);padding:12px 16px;border-radius:0 8px 8px 0;margin:14px 0;font-size:14px}
-table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0}
-th{background:#0b1622;color:var(--gold2);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
-td{padding:7px 10px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
-td:first-child{color:#fff;font-weight:600;white-space:nowrap}
-footer{border-top:1px solid var(--line);margin-top:30px;padding:18px 0 30px;color:var(--muted);font-size:12px}
-.otherroles{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;font-size:13px;padding:0 24px}
-.otherroles a{background:#0b1420;border:1px solid var(--line);border-radius:6px;padding:5px 12px;color:#8fc3ff;text-decoration:none}</style></head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap"></noscript>
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+/* page-local list styles — core tokens only */
+.readlist { list-style: none; margin: 0; padding: 0; counter-reset: rl; }
+.readlist li { counter-increment: rl; position: relative; padding: 10px 0 10px 40px; border-bottom: 1px dashed var(--line); font-size: 14px; }
+.readlist li:last-child { border-bottom: none; }
+.readlist li::before { content: counter(rl); position: absolute; left: 2px; top: 10px; width: 26px; height: 26px;
+  line-height: 26px; text-align: center; background: var(--olive-tint); color: var(--olive);
+  font-family: var(--mono); font-weight: 700; font-size: 13px; border-radius: 2px; }
+.readlist b { display: block; font-size: 15px; color: var(--ink); margin-bottom: 2px; }
+.readlist span { color: var(--ink-mute); }
+.duty { width: 100%; border-collapse: collapse; font-size: 14px; }
+.duty th { font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink-mute); text-align: left; padding: 8px; border-bottom: 1px solid var(--line-dark); }
+.duty td { padding: 9px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.duty td:first-child { white-space: nowrap; font-weight: 700; color: var(--ink); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips a { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 2px; padding: 6px 12px;
+  color: var(--ink-soft); text-decoration: none; }
+.chips a:hover { border-color: var(--gold); color: var(--gold-deep); }
+</style>
+</head>
 <body>
-<div class="banner">UNCLASSIFIED · FOR OFFICIAL USE — ONBOARDING GUIDANCE</div>
-<header class="site"><div class="wrap">
-  <div class="brand">CCoE<small>CPE ST3 CYBERSECURITY CENTER OF EXCELLENCE</small></div>
-  <nav class="top"><a href="index.html">Home</a><a href="day-one.html">Day One</a><a href="rmf-operations.html">RMF Hub</a><a href="workforce.html">Workforce</a><a href="contact.html">Contact</a></nav>
-</div></header>
-
-<section style="padding-top:30px"><div class="wrap">
-  <span class="kicker">Day One · CYBER GOVERNANCE · DCWF 722</span>
-  <h1>ISSM</h1>
-  <p class="sub">You are the single security manager for your portfolio — the Army retired the OISSM/PISSM split, so strategy and daily governance now meet in one role: yours.</p>
-</div></section>
-
-<section><div class="wrap">
-  <h2>What Is My Job?</h2>
-  <div class="grid g3">
-    <div class="card"><span class="badge">YOU OWN</span><ul><li>The authorization strategy for every system in the portfolio</li><li>Package routing decisions + readiness calls before the AODR sees anything</li><li>Workforce load balancing + escalation adjudication</li></ul></div>
-    <div class="card"><span class="badge">YOU SUPPORT</span><ul><li>The AO/AODR chain (your packages are their inputs)</li><li>Your ISSOs (you manage them)</li></ul></div>
-    <div class="card"><span class="badge">YOU ESCALATE</span><ul><li>Inter-system risk conflicts</li><li>Anything that would surprise the AODR — nothing should</li></ul></div>
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Day One · Cyber Governance · <span class="phase-tag">DCWF 722</span></div>
+      <h1>ISSM</h1>
+      <p class="lede">You are the single security manager for your portfolio. The Army retired the O-ISSM/P-ISSM split — strategy and daily governance now meet in one role, and that role is yours.</p>
+    </div>
+    <div class="doc-meta">
+        <span>OWNER: <b>Cybersecurity Office</b></span><span>VERSION: <b>1.0</b></span><span>EFFECTIVE: <b>2026-10-10</b></span><span>REVIEW: <b>2027-10-10</b></span><span>APPROVAL: <b>CISO</b></span><span>RELATED: <b>Workforce &amp; Development Center; Governance</b></span>
+      </div>
   </div>
-  <div class="grid g2" style="margin-top:16px">
-    <div class="card"><h3>The Chain</h3><p><b>You report to:</b> AODR / CISO chain<br><b>Who works with you:</b> Your ISSOs + ISSE support</p></div>
-    <div class="card"><h3>Army Line (the regulation)</h3><p>DA PAM 25-2-14 §3-12 is your charter and documents the old P-/O-ISSM split the Army has since retired. One role now, one accountable person: you.</p></div>
-  </div>
-</div></section>
 
-<section><div class="wrap">
-  <h2>The First 10 Days</h2>
-  <div class="grid g2">
-    <div class="card"><span class="badge">ACCESS &amp; ACCOUNTS (in order — SLAs stack)</span>
-      <table><tr><th>Request</th><th>Approver</th><th>Expect</th></tr><tr><td>eMASS (portfolio level)</td><td>AODR chain</td><td>5 business days</td></tr><tr><td>ACAS + Power BI portfolio views</td><td>ISSO endorsement</td><td>3-5 days</td></tr><tr><td>CGB/gov SharePoint</td><td>Self</td><td>Day 1</td></tr></table>
-      <p style="margin-top:8px"><a href="tools-dashboards.html">Full access workflow →</a></p></div>
-    <div class="card"><span class="badge">READ-FIRST LIST (in this order)</span>
-      <ol class="reads"><li><b>RMF Execution Policy v4.0</b><span>Your operating law</span></li><li><b>CCP 722 playbook</b><span>Your qualification map</span></li><li><b>Governance page (CGB + authority model)</b><span>The body you brief + your stops</span></li><li><b>POA&amp;M Lifecycle Policy</b><span>The rules you enforce</span></li><li><b>Change-Management Rubric</b><span>What a "significant change" means (you call several monthly)</span></li><li><b>The expiration radar</b><span>What your portfolio owes, when</span></li></ol></div>
-  </div>
-  <div class="callout"><b>Day-2 one-liner:</b> introduce yourself to Your Aodr And Every Isso In The Portfolio — everything runs on knowing who to ask.</div>
-</div></section>
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">What Is My Job</span>
+      <h2>The Charter — What the Army Expects of a ISSM</h2>
+      <p class="section-sub">Split the way you'll actually use it: what you own outright, what you support, what you hand upward. When ownership is unclear, this page is the tiebreaker.</p>
+      <div class="grid g3">
+        <div class="card reveal"><span class="badge b-ok">You Own</span><ul class="checklist"><li>The authorization strategy for every system in the portfolio</li><li>Package routing decisions + readiness calls before the AODR sees anything</li><li>Workforce load balancing + escalation adjudication</li></ul></div>
+        <div class="card reveal"><span class="badge b-info">You Support</span><ul class="checklist"><li>The AO/AODR chain — your packages are their raw material</li><li>Your ISSOs — you are their manager and their shield</li></ul></div>
+        <div class="card reveal"><span class="badge b-crit">You Escalate</span><ul class="checklist"><li>Inter-system risk conflicts</li><li>Anything that would surprise the AODR — nothing should</li></ul></div>
+      </div>
+      <div class="grid g2" style="margin-top:18px">
+        <div class="card reveal"><h3>The Chain</h3><p><b>You report to:</b> <b>AODR / CISO chain</b><br><b>Who works with you:</b> your <b>ISSOs</b> + ISSE support</p></div>
+        <div class="card card-gold reveal"><h3>Army Line</h3><p><b>DA PAM 25-2-14 §3-12</b> is your charter; §3-13/14 document the old P-ISSM/O-ISSM split the Army has retired. One role now, one accountable manager.</p></div>
+      </div>
+    </div>
+  </section>
 
-<section><div class="wrap">
-  <h2>The Rhythm — How This Job Runs</h2>
-  <table><tr><th>Cadence</th><th>What you do</th></tr><tr><td>Daily</td><td>Queue check: moving / stuck / gate-missers</td></tr><tr><td>Weekly</td><td>Package routing + readiness reviews</td></tr><tr><td>Monthly</td><td>Governance prep — metrics roll (site-metrics.json), 8140 audit, aging escalation</td></tr><tr><td>Quarterly</td><td>CGB data-lock + portfolio health brief</td></tr><tr><td>Annually</td><td>Recertification sweeps + ISSO development reviews</td></tr></table>
-  <p style="font-size:13px;color:var(--muted)">Calibrate with your supervisor in week one — the bones are standard, the office variant is not.</p>
-</div></section>
+  <section class="section" style="background:var(--olive-tint)">
+    <div class="wrap">
+      <span class="kicker">Start-Up</span>
+      <h2>The First 10 Days</h2>
+      <p class="section-sub">Access first — SLAs stack, so request the long poles on day 1. Reading second — every item says why it matters for a ISSM.</p>
+      <div class="grid g2">
+        <div class="card reveal">
+          <span class="badge b-warn">Access &amp; Accounts — in order</span>
+          <div class="table-wrap" style="margin-top:10px"><table class="duty">
+            <thead><tr><th>Request</th><th>Approver</th><th>Expect</th></tr></thead>
+            <tbody><tr><td>eMASS (portfolio level)</td><td>AODR chain</td><td>5 business days</td></tr><tr><td>ACAS + Power BI portfolio views</td><td>ISSO endorsement</td><td>3–5 days</td></tr><tr><td>Governance SharePoint</td><td>Self</td><td>Day 1</td></tr></tbody>
+          </table></div>
+          <p style="margin-top:12px"><a class="btn btn-ghost" href="tools-dashboards.html">The full access workflow →</a></p>
+        </div>
+        <div class="card reveal">
+          <span class="badge b-warn">Read-First List — in order</span>
+          <ol class="readlist" style="margin-top:10px"><li><b>RMF Execution Policy v4.0</b><span>your operating law</span></li><li><b>CCP 722 playbook</b><span>your qualification map — Basic/Intermediate/Advanced</span></li><li><b>The authority model — Governance page</b><span>where your decisions stop and the AODR start</span></li><li><b>POA&amp;M Lifecycle Policy</b><span>the rules you enforce on every aging item</span></li><li><b>The change-management rubric</b><span>what counts as a significant change — you call several monthly</span></li><li><b>The expiration radar — Assessment Calendar</b><span>what your portfolio owes, and when</span></li></ol>
+        </div>
+      </div>
+      <div class="callout warn"><b>Day-2 move:</b> introduce yourself to your AODR and every ISSO in the portfolio — this job runs on knowing who to ask before you need to ask.</div>
+    </div>
+  </section>
 
-<section><div class="wrap">
-  <h2>Resources &amp; Qualification</h2>
-  <div class="grid g2">
-    <div class="card"><span class="badge">TOOLKIT (ON THIS SITE)</span><ul><li><a href="governance.html">Governance page</a></li><li><a href="vulnerability-poam.html">Vulnerability &amp; POA&amp;M (aging views)</a></li><li><a href="assessment-calendar.html">Assessment calendar (expiration radar)</a></li><li><a href="templates.html">Templates (routing checklists)</a></li></ul></div>
-    <div class="card"><span class="badge">AUTHORITATIVE SOURCES</span><ul><li><a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN36811-PAM_25-2-14-001-WEB-3.pdf" target="_blank" rel="noopener">DA PAM 25-2-14</a> — DA PAM 25-2-14 §3-12 — your charter (§3-13/14 = the retired P-/O- split)</li><li><a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/pdf/web/ARN21003_2021_AR25-2_WEB.pdf" target="_blank" rel="noopener">AR 25-2</a> — AR 25-2 — Army Cybersecurity regulation</li><li><a href="https://dl.dod.cyber.mil/wp-content/uploads/ccp/pdf/722_Information_Systems_Security_Manager.pdf" target="_blank" rel="noopener">CCP 722 (ISSM playbook)</a> — CCP 722 — qualification playbook</li></ul></div>
-  </div>
-  <div class="grid g2" style="margin-top:14px">
-    <div class="card"><span class="badge">YOUR PLAYBOOK</span><p><a href="https://dl.dod.cyber.mil/wp-content/uploads/ccp/pdf/722_Information_Systems_Security_Manager.pdf" target="_blank" rel="noopener">↓ CCP 722 (ISSM) Career Pathway PDF</a><br><a href="https://dl.dod.cyber.mil/wp-content/uploads/8140/pdf/unclass-2025-03-18_daudcwf_playlists.pdf" target="_blank" rel="noopener">↓ DAU learning playlists (your code within)</a><p style="margin-top:8px;color:var(--muted)">Your official playbook; DAU playlists cover 722-level training.</p></p></div>
-    <div class="card"><span class="badge">WHO TO CALL</span><ul><li><b>Your AODR</b> — First call — keep nothing a surprise</li><li><b>Your ISSOs</b> — Direct reports</li><li><b>PM counterparts</b> — System ownership conversations</li><li><b>CGB secretary</b> — Agenda placement</li></ul>
-      <p style="margin-top:8px"><a href="contact.html">Full routing directory →</a></p></div>
-  </div>
-</div></section>
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Battle Rhythm</span>
+      <h2>The Rhythm — How This Job Actually Runs</h2>
+      <p class="section-sub">The bones are standard; every office runs a variant. Calibrate with your supervisor during week one.</p>
+      <div class="table-wrap reveal"><table class="duty">
+        <thead><tr><th>Cadence</th><th>What You Do</th></tr></thead>
+        <tbody><tr><td>Daily</td><td>Queue check — what is moving, stuck, or missing a gate</td></tr><tr><td>Weekly</td><td>Package routing + readiness reviews</td></tr><tr><td>Monthly</td><td>Governance prep — metrics roll, 8140 audit, aging escalations</td></tr><tr><td>Quarterly</td><td>CGB data-lock + the portfolio health brief</td></tr><tr><td>Annually</td><td>Recertification sweeps + ISSO development reviews</td></tr></tbody>
+      </table></div>
+    </div>
+  </section>
 
-<footer><div class="wrap">CPE ST3 CCoE · UNCLASSIFIED/FOUO · <a style="color:#8fc3ff" href="day-one.html">← All Day One roles</a> · Corrections: <a style="color:#8fc3ff" href="contact.html">office</a></div></footer>
-<div class="otherroles" style="margin-bottom:30px"><a href="day-isso.html">ISSO</a> <a href="day-isse.html">ISSE</a> <a href="day-pm.html">PM &amp; APM</a> <a href="day-product.html">Product Mgr</a> <a href="day-chen.html">Chief Engineer</a> <a href="day-lpe.html">Lead PE</a> <a href="day-aodr.html">AO/AODR</a></div>
-</body></html>
+  <section class="section" style="background:var(--olive-tint)">
+    <div class="wrap">
+      <h2>Resources &amp; Qualification</h2>
+      <div class="grid g2">
+        <div class="card reveal"><span class="badge">Toolkit — on this site</span><ul class="checklist"><li><a href="governance.html">Governance page</a> — CGB + authority model + dashboards</li><li><a href="vulnerability-poam.html">Portfolio aging views</a></li><li><a href="assessment-calendar.html">Expiration radar</a></li><li><a href="templates.html">Routing checklists + gold standards</a></li></ul></div>
+        <div class="card reveal"><span class="badge">Authoritative sources</span><ul class="checklist"><li><a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN36811-PAM_25-2-14-001-WEB-3.pdf" target="_blank" rel="noopener">DA PAM 25-2-14 §3-12 — ISSM charter</a> (§3-13/14 document the retired split)</li><li><a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/pdf/web/ARN21003_2021_AR25-2_WEB.pdf" target="_blank" rel="noopener">AR 25-2</a> — Army Cybersecurity regulation</li><li><a href="https://dl.dod.cyber.mil/wp-content/uploads/ccp/pdf/722_Information_Systems_Security_Manager.pdf" target="_blank" rel="noopener">CCP 722 — ISSM Career Pathway</a></li></ul></div>
+        <div class="card card-gold reveal"><span class="badge b-gold">Your playbook</span><a href="https://dl.dod.cyber.mil/wp-content/uploads/ccp/pdf/722_Information_Systems_Security_Manager.pdf" target="_blank" rel="noopener">CCP 722 (ISSM) Career Pathway PDF</a> — your official playbook. <a href="https://dl.dod.cyber.mil/wp-content/uploads/8140/pdf/unclass-2025-03-18_daudcwf_playlists.pdf" target="_blank" rel="noopener">DAU playlists</a> carry the 722 sequence.</div>
+        <div class="card reveal"><span class="badge">Who to call</span><ul class="checklist"><li><b>Your AODR</b> — keep nothing a surprise</li><li><b>Your ISSOs</b> — direct reports</li><li><b>PM counterparts</b> — ownership conversations</li><li><b>CGB secretary</b> — agenda placement</li></ul>
+          <p style="margin-top:10px"><a class="btn btn-ghost" href="contact.html">Full routing directory →</a></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Day One</span>
+      <h2>Every Role in the Portfolio</h2>
+      <p class="section-sub">Working with someone new on another lane? Point them at their own page.</p>
+      <div class="chips"><a href="day-isso.html">ISSO · 721</a><a href="day-isse.html">ISSE · 160</a><a href="day-pm.html">PM/APM · 801</a><a href="day-product.html">Product · 803</a><a href="day-chen.html">CHEN · 641</a><a href="day-lpe.html">Lead PE · 802</a><a href="day-aodr.html">AO/AODR · 611</a></div>
+    </div>
+  </section>
+</main>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

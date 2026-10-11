@@ -1,103 +1,121 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Day One — ISSE — CCoE</title>
-<style>:root{--bg:#0e1b2a;--panel:#152a3f;--ink:#e8edf4;--muted:#9ab0c4;--gold:#c9a227;--gold2:#e7c757;--line:#274260}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
-.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
-header.site{background:linear-gradient(180deg,#0a1522,#0e1b2a);border-bottom:1px solid var(--line);padding:14px 0}
-header.site .wrap{display:flex;align-items:center;gap:16px}
-.brand{font-weight:700;color:var(--gold)}
-.brand small{display:block;color:var(--muted);font-weight:400;font-size:11px;letter-spacing:1px}
-nav.top{margin-left:auto;display:flex;gap:14px}
-nav.top a{color:var(--muted);text-decoration:none;font-size:13px}
-nav.top a:hover{color:var(--gold2)}
-.banner{background:#1e2b1e;color:#cfe6cf;text-align:center;font-size:11px;letter-spacing:2px;padding:5px}
-.kicker{color:var(--gold);font-size:12px;letter-spacing:2px;font-weight:600;text-transform:uppercase}
-h1{font-size:34px;margin:8px 0 6px}
-h2{font-size:23px;margin:30px 0 10px;color:#fff}
-h3{font-size:16.5px;margin:16px 0 6px;color:var(--gold2)}
-.sub{color:var(--muted);max-width:940px}
-section{padding:22px 0}
-.grid{display:grid;gap:16px}
-.g2{grid-template-columns:repeat(auto-fit,minmax(430px,1fr))}
-.g3{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px}
-.card h3{margin-top:0}.card p{color:var(--muted);font-size:14px}
-.badge{display:inline-block;background:#2a2413;color:var(--gold2);border:1px solid #4d4118;padding:2px 10px;border-radius:20px;font-size:11px;letter-spacing:1px;margin-bottom:8px}
-ul{margin:8px 0 0 18px;font-size:14px}
-ol.reads{margin:8px 0 0 22px;font-size:14px}
-ol.reads li{margin:9px 0}
-ol.reads b{color:#fff}
-ol.reads span{color:var(--muted);display:block;font-size:13px}
-ul a{color:#8fc3ff;text-decoration:none} ul a:hover{text-decoration:underline}
-a.btn{display:inline-block;background:var(--gold);color:#14100a;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:15px}
-a.btn.ghost{background:transparent;color:var(--gold2);border:1px solid #4d4118}
-.callout{background:#1c2733;border-left:3px solid var(--gold);padding:12px 16px;border-radius:0 8px 8px 0;margin:14px 0;font-size:14px}
-table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0}
-th{background:#0b1622;color:var(--gold2);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
-td{padding:7px 10px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
-td:first-child{color:#fff;font-weight:600;white-space:nowrap}
-footer{border-top:1px solid var(--line);margin-top:30px;padding:18px 0 30px;color:var(--muted);font-size:12px}
-.otherroles{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;font-size:13px;padding:0 24px}
-.otherroles a{background:#0b1420;border:1px solid var(--line);border-radius:6px;padding:5px 12px;color:#8fc3ff;text-decoration:none}</style></head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap"></noscript>
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+/* page-local list styles — core tokens only */
+.readlist { list-style: none; margin: 0; padding: 0; counter-reset: rl; }
+.readlist li { counter-increment: rl; position: relative; padding: 10px 0 10px 40px; border-bottom: 1px dashed var(--line); font-size: 14px; }
+.readlist li:last-child { border-bottom: none; }
+.readlist li::before { content: counter(rl); position: absolute; left: 2px; top: 10px; width: 26px; height: 26px;
+  line-height: 26px; text-align: center; background: var(--olive-tint); color: var(--olive);
+  font-family: var(--mono); font-weight: 700; font-size: 13px; border-radius: 2px; }
+.readlist b { display: block; font-size: 15px; color: var(--ink); margin-bottom: 2px; }
+.readlist span { color: var(--ink-mute); }
+.duty { width: 100%; border-collapse: collapse; font-size: 14px; }
+.duty th { font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink-mute); text-align: left; padding: 8px; border-bottom: 1px solid var(--line-dark); }
+.duty td { padding: 9px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.duty td:first-child { white-space: nowrap; font-weight: 700; color: var(--ink); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips a { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 2px; padding: 6px 12px;
+  color: var(--ink-soft); text-decoration: none; }
+.chips a:hover { border-color: var(--gold); color: var(--gold-deep); }
+</style>
+</head>
 <body>
-<div class="banner">UNCLASSIFIED · FOR OFFICIAL USE — ONBOARDING GUIDANCE</div>
-<header class="site"><div class="wrap">
-  <div class="brand">CCoE<small>CPE ST3 CYBERSECURITY CENTER OF EXCELLENCE</small></div>
-  <nav class="top"><a href="index.html">Home</a><a href="day-one.html">Day One</a><a href="rmf-operations.html">RMF Hub</a><a href="workforce.html">Workforce</a><a href="contact.html">Contact</a></nav>
-</div></header>
-
-<section style="padding-top:30px"><div class="wrap">
-  <span class="kicker">Day One · SECURE DESIGN · SP 800-160</span>
-  <h1>ISSE</h1>
-  <p class="sub">You engineer security into systems as they're built, changed, and verified — the technical bridge between the program's intent and the control set's reality.</p>
-</div></section>
-
-<section><div class="wrap">
-  <h2>What Is My Job?</h2>
-  <div class="grid g3">
-    <div class="card"><span class="badge">YOU OWN</span><ul><li>Control implementation + inheritance analysis (inherited/hybrid/new, per boundary)</li><li>Boundary + data-flow architecture accuracy (what the SSP swears by)</li><li>STIG-ability reviews: every design scannable, patchable, evidenceable</li></ul></div>
-    <div class="card"><span class="badge">YOU SUPPORT</span><ul><li>The Chief Engineer’s baseline</li><li>ISSO implementations (you design, they execute)</li></ul></div>
-    <div class="card"><span class="badge">YOU ESCALATE</span><ul><li>Designs that cannot meet the control set (say it early — not at the ARB)</li><li>Inheritance assumptions that cannot be evidenced</li></ul></div>
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Day One · Secure Design · <span class="phase-tag">SP 800-160</span></div>
+      <h1>ISSE</h1>
+      <p class="lede">You engineer security into systems as they are built, changed, and verified — the technical bridge between program intent and control-set reality.</p>
+    </div>
+    <div class="doc-meta">
+        <span>OWNER: <b>Cybersecurity Office</b></span><span>VERSION: <b>1.0</b></span><span>EFFECTIVE: <b>2026-10-10</b></span><span>REVIEW: <b>2027-10-10</b></span><span>APPROVAL: <b>CISO</b></span><span>RELATED: <b>Workforce &amp; Development Center; Governance</b></span>
+      </div>
   </div>
-  <div class="grid g2" style="margin-top:16px">
-    <div class="card"><h3>The Chain</h3><p><b>You report to:</b> Chief Engineer (program side) / ISSM (portfolio side)<br><b>Who works with you:</b> Developer/621 engineers</p></div>
-    <div class="card"><h3>Army Line (the regulation)</h3><p>The ISSE is a named member of the Army RMF team in DA PAM 25-2-14 §3-1(b)(10). Your work product is the SSP’s engineering backbone.</p></div>
-  </div>
-</div></section>
 
-<section><div class="wrap">
-  <h2>The First 10 Days</h2>
-  <div class="grid g2">
-    <div class="card"><span class="badge">ACCESS &amp; ACCOUNTS (in order — SLAs stack)</span>
-      <table><tr><th>Request</th><th>Approver</th><th>Expect</th></tr><tr><td>Engineering SharePoint + diagram library</td><td>ISSE lead</td><td>Day 1</td></tr><tr><td>ACAS/SCC read</td><td>ISSM</td><td>3 days</td></tr><tr><td>eMASS read</td><td>ISSM sponsorship</td><td>5 days</td></tr></table>
-      <p style="margin-top:8px"><a href="tools-dashboards.html">Full access workflow →</a></p></div>
-    <div class="card"><span class="badge">READ-FIRST LIST (in this order)</span>
-      <ol class="reads"><li><b>NIST SP 800-160 ch. 1-3</b><span>Your professional operating system</span></li><li><b>The 6 reference architectures (engineering page)</b><span>What "already passed" looks like here</span></li><li><b>Engineering non-negotiables</b><span>The floor under every design</span></li><li><b>ARB intake mechanics</b><span>How work moves to review</span></li><li><b>Your design's current SSP inheritance section</b><span>Verify inheritance on day 2 — assume nothing</span></li></ol></div>
-  </div>
-  <div class="callout"><b>Day-2 one-liner:</b> introduce yourself to Your Chief Engineer And The Isso Of The System You’Re On — everything runs on knowing who to ask.</div>
-</div></section>
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">What Is My Job</span>
+      <h2>The Charter — What the Army Expects of a ISSE</h2>
+      <p class="section-sub">Split the way you'll actually use it: what you own outright, what you support, what you hand upward. When ownership is unclear, this page is the tiebreaker.</p>
+      <div class="grid g3">
+        <div class="card reveal"><span class="badge b-ok">You Own</span><ul class="checklist"><li>Control implementation + inheritance analysis — inherited/hybrid/new, per boundary</li><li>Boundary + data-flow architecture accuracy — what the SSP swears by</li><li>STIG-ability reviews — every design scanable, patchable, evidenceable</li></ul></div>
+        <div class="card reveal"><span class="badge b-info">You Support</span><ul class="checklist"><li>The Chief Engineer's baseline</li><li>ISSO implementations — you design, they execute</li></ul></div>
+        <div class="card reveal"><span class="badge b-crit">You Escalate</span><ul class="checklist"><li>Designs that cannot meet the control set — say it early, not at the ARB</li><li>Inheritance assumptions that cannot be evidenced</li></ul></div>
+      </div>
+      <div class="grid g2" style="margin-top:18px">
+        <div class="card reveal"><h3>The Chain</h3><p><b>You report to:</b> <b>Chief Engineer</b> (program side) / <b>ISSM</b> (portfolio side)<br><b>Who works with you:</b> developer engineers + the ISSO</p></div>
+        <div class="card card-gold reveal"><h3>Army Line</h3><p>The ISSE is a named member of the Army RMF team under <b>DA PAM 25-2-14 §3-1(b)(10)</b> — your work product is the SSP’s engineering backbone.</p></div>
+      </div>
+    </div>
+  </section>
 
-<section><div class="wrap">
-  <h2>The Rhythm — How This Job Runs</h2>
-  <table><tr><th>Cadence</th><th>What you do</th></tr><tr><td>Daily</td><td>Design queue: boundary diagrams + control mappings in review</td></tr><tr><td>Weekly</td><td>Syncs w/ LPE + developer teams</td></tr><tr><td>Per change</td><td>Inheritance analysis + STIG-ability scan BEFORE the design lands</td></tr><tr><td>Quarterly</td><td>Verify approved architectures still match current STIG baselines</td></tr></table>
-  <p style="font-size:13px;color:var(--muted)">Calibrate with your supervisor in week one — the bones are standard, the office variant is not.</p>
-</div></section>
+  <section class="section" style="background:var(--olive-tint)">
+    <div class="wrap">
+      <span class="kicker">Start-Up</span>
+      <h2>The First 10 Days</h2>
+      <p class="section-sub">Access first — SLAs stack, so request the long poles on day 1. Reading second — every item says why it matters for a ISSE.</p>
+      <div class="grid g2">
+        <div class="card reveal">
+          <span class="badge b-warn">Access &amp; Accounts — in order</span>
+          <div class="table-wrap" style="margin-top:10px"><table class="duty">
+            <thead><tr><th>Request</th><th>Approver</th><th>Expect</th></tr></thead>
+            <tbody><tr><td>Engineering SharePoint + diagram library</td><td>ISSE lead</td><td>Day 1</td></tr><tr><td>ACAS/SCC read</td><td>ISSM</td><td>~3 days</td></tr><tr><td>eMASS read</td><td>ISSM sponsorship</td><td>5 business days</td></tr></tbody>
+          </table></div>
+          <p style="margin-top:12px"><a class="btn btn-ghost" href="tools-dashboards.html">The full access workflow →</a></p>
+        </div>
+        <div class="card reveal">
+          <span class="badge b-warn">Read-First List — in order</span>
+          <ol class="readlist" style="margin-top:10px"><li><b>NIST SP 800-160, chapters 1–3</b><span>your professional operating system</span></li><li><b>The 6 reference architectures — Engineering page</b><span>what already-passed looks like here</span></li><li><b>Engineering non-negotiables</b><span>the floor under every design</span></li><li><b>ARB intake mechanics</b><span>how work moves to review</span></li><li><b>Your design’s current SSP inheritance section</b><span>verify inheritance on day 2 — assume nothing</span></li></ol>
+        </div>
+      </div>
+      <div class="callout warn"><b>Day-2 move:</b> introduce yourself to your Chief Engineer and the ISSO of your system — this job runs on knowing who to ask before you need to ask.</div>
+    </div>
+  </section>
 
-<section><div class="wrap">
-  <h2>Resources &amp; Qualification</h2>
-  <div class="grid g2">
-    <div class="card"><span class="badge">TOOLKIT (ON THIS SITE)</span><ul><li><a href="engineering.html">Engineering page (architectures, handbook, ARB)</a></li><li><a href="templates.html">Templates (boundary stencils, SSP frames)</a></li><li><a href="tools-dashboards.html">Tool belt (SCAP tooling)</a></li></ul></div>
-    <div class="card"><span class="badge">AUTHORITATIVE SOURCES</span><ul><li><a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-160.pdf" target="_blank" rel="noopener">NIST SP 800-160</a> — NIST SP 800-160 — systems security engineering (the discipline book)</li><li><a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN36811-PAM_25-2-14-001-WEB-3.pdf" target="_blank" rel="noopener">DA PAM 25-2-14</a> — DA PAM 25-2-14 §3-1(b)(10) — ISSE is a named RMF-team role</li></ul></div>
-  </div>
-  <div class="grid g2" style="margin-top:14px">
-    <div class="card"><span class="badge">YOUR PLAYBOOK</span><p><a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-160.pdf" target="_blank" rel="noopener">↓ NIST SP 800-160 (the ISSE book)</a><br><a href="https://dl.dod.cyber.mil/wp-content/uploads/8140/pdf/unclass-2025-03-18_daudcwf_playlists.pdf" target="_blank" rel="noopener">↓ DAU learning playlists (your code within)</a><p style="margin-top:8px;color:var(--muted)">ISSE practice is defined by SP 800-160; DAU playlists map the SE curriculum.</p></p></div>
-    <div class="card"><span class="badge">WHO TO CALL</span><ul><li><b>Your Chief Engineer</b> — Technical direction</li><li><b>The ISSO on each system</b> — Implementation reality check</li><li><b>ARB secretary</b> — Intake + scheduling</li></ul>
-      <p style="margin-top:8px"><a href="contact.html">Full routing directory →</a></p></div>
-  </div>
-</div></section>
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Battle Rhythm</span>
+      <h2>The Rhythm — How This Job Actually Runs</h2>
+      <p class="section-sub">The bones are standard; every office runs a variant. Calibrate with your supervisor during week one.</p>
+      <div class="table-wrap reveal"><table class="duty">
+        <thead><tr><th>Cadence</th><th>What You Do</th></tr></thead>
+        <tbody><tr><td>Daily</td><td>Design queue — boundary diagrams + control mappings in review</td></tr><tr><td>Weekly</td><td>Syncs with the LPE + developer teams</td></tr><tr><td>Per change</td><td>Inheritance analysis + STIG-ability scan BEFORE the design lands</td></tr><tr><td>Quarterly</td><td>Verify approved architectures still match current baselines</td></tr></tbody>
+      </table></div>
+    </div>
+  </section>
 
-<footer><div class="wrap">CPE ST3 CCoE · UNCLASSIFIED/FOUO · <a style="color:#8fc3ff" href="day-one.html">← All Day One roles</a> · Corrections: <a style="color:#8fc3ff" href="contact.html">office</a></div></footer>
-<div class="otherroles" style="margin-bottom:30px"><a href="day-isso.html">ISSO</a> <a href="day-issm.html">ISSM</a> <a href="day-pm.html">PM &amp; APM</a> <a href="day-product.html">Product Mgr</a> <a href="day-chen.html">Chief Engineer</a> <a href="day-lpe.html">Lead PE</a> <a href="day-aodr.html">AO/AODR</a></div>
-</body></html>
+  <section class="section" style="background:var(--olive-tint)">
+    <div class="wrap">
+      <h2>Resources &amp; Qualification</h2>
+      <div class="grid g2">
+        <div class="card reveal"><span class="badge">Toolkit — on this site</span><ul class="checklist"><li><a href="engineering.html">Engineering page</a> — architectures + handbook + ARB intake</li><li><a href="templates.html">Boundary stencils + SSP frames</a></li><li><a href="tools-dashboards.html">SCAP tooling</a></li></ul></div>
+        <div class="card reveal"><span class="badge">Authoritative sources</span><ul class="checklist"><li><a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-160.pdf" target="_blank" rel="noopener">NIST SP 800-160</a> — Systems Security Engineering (the discipline book)</li><li><a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN36811-PAM_25-2-14-001-WEB-3.pdf" target="_blank" rel="noopener">DA PAM 25-2-14 §3-1(b)(10)</a> — ISSE is a named RMF-team role</li></ul></div>
+        <div class="card card-gold reveal"><span class="badge b-gold">Your playbook</span><a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-160.pdf" target="_blank" rel="noopener">NIST SP 800-160 (the ISSE book)</a> — ISSE practice is defined there. <a href="https://dl.dod.cyber.mil/wp-content/uploads/8140/pdf/unclass-2025-03-18_daudcwf_playlists.pdf" target="_blank" rel="noopener">DAU playlists</a> map the SE curriculum.</div>
+        <div class="card reveal"><span class="badge">Who to call</span><ul class="checklist"><li><b>Your Chief Engineer</b> — technical direction</li><li><b>The ISSO on each system</b> — implementation reality check</li><li><b>ARB secretary</b> — intake + scheduling</li></ul>
+          <p style="margin-top:10px"><a class="btn btn-ghost" href="contact.html">Full routing directory →</a></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Day One</span>
+      <h2>Every Role in the Portfolio</h2>
+      <p class="section-sub">Working with someone new on another lane? Point them at their own page.</p>
+      <div class="chips"><a href="day-isso.html">ISSO · 721</a><a href="day-issm.html">ISSM · 722</a><a href="day-pm.html">PM/APM · 801</a><a href="day-product.html">Product · 803</a><a href="day-chen.html">CHEN · 641</a><a href="day-lpe.html">Lead PE · 802</a><a href="day-aodr.html">AO/AODR · 611</a></div>
+    </div>
+  </section>
+</main>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

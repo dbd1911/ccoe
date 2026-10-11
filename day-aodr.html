@@ -1,103 +1,121 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Day One — AO &amp; AODR — CCoE</title>
-<style>:root{--bg:#0e1b2a;--panel:#152a3f;--ink:#e8edf4;--muted:#9ab0c4;--gold:#c9a227;--gold2:#e7c757;--line:#274260}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
-.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
-header.site{background:linear-gradient(180deg,#0a1522,#0e1b2a);border-bottom:1px solid var(--line);padding:14px 0}
-header.site .wrap{display:flex;align-items:center;gap:16px}
-.brand{font-weight:700;color:var(--gold)}
-.brand small{display:block;color:var(--muted);font-weight:400;font-size:11px;letter-spacing:1px}
-nav.top{margin-left:auto;display:flex;gap:14px}
-nav.top a{color:var(--muted);text-decoration:none;font-size:13px}
-nav.top a:hover{color:var(--gold2)}
-.banner{background:#1e2b1e;color:#cfe6cf;text-align:center;font-size:11px;letter-spacing:2px;padding:5px}
-.kicker{color:var(--gold);font-size:12px;letter-spacing:2px;font-weight:600;text-transform:uppercase}
-h1{font-size:34px;margin:8px 0 6px}
-h2{font-size:23px;margin:30px 0 10px;color:#fff}
-h3{font-size:16.5px;margin:16px 0 6px;color:var(--gold2)}
-.sub{color:var(--muted);max-width:940px}
-section{padding:22px 0}
-.grid{display:grid;gap:16px}
-.g2{grid-template-columns:repeat(auto-fit,minmax(430px,1fr))}
-.g3{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px}
-.card h3{margin-top:0}.card p{color:var(--muted);font-size:14px}
-.badge{display:inline-block;background:#2a2413;color:var(--gold2);border:1px solid #4d4118;padding:2px 10px;border-radius:20px;font-size:11px;letter-spacing:1px;margin-bottom:8px}
-ul{margin:8px 0 0 18px;font-size:14px}
-ol.reads{margin:8px 0 0 22px;font-size:14px}
-ol.reads li{margin:9px 0}
-ol.reads b{color:#fff}
-ol.reads span{color:var(--muted);display:block;font-size:13px}
-ul a{color:#8fc3ff;text-decoration:none} ul a:hover{text-decoration:underline}
-a.btn{display:inline-block;background:var(--gold);color:#14100a;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:15px}
-a.btn.ghost{background:transparent;color:var(--gold2);border:1px solid #4d4118}
-.callout{background:#1c2733;border-left:3px solid var(--gold);padding:12px 16px;border-radius:0 8px 8px 0;margin:14px 0;font-size:14px}
-table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0}
-th{background:#0b1622;color:var(--gold2);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
-td{padding:7px 10px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
-td:first-child{color:#fff;font-weight:600;white-space:nowrap}
-footer{border-top:1px solid var(--line);margin-top:30px;padding:18px 0 30px;color:var(--muted);font-size:12px}
-.otherroles{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;font-size:13px;padding:0 24px}
-.otherroles a{background:#0b1420;border:1px solid var(--line);border-radius:6px;padding:5px 12px;color:#8fc3ff;text-decoration:none}</style></head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap"></noscript>
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+/* page-local list styles — core tokens only */
+.readlist { list-style: none; margin: 0; padding: 0; counter-reset: rl; }
+.readlist li { counter-increment: rl; position: relative; padding: 10px 0 10px 40px; border-bottom: 1px dashed var(--line); font-size: 14px; }
+.readlist li:last-child { border-bottom: none; }
+.readlist li::before { content: counter(rl); position: absolute; left: 2px; top: 10px; width: 26px; height: 26px;
+  line-height: 26px; text-align: center; background: var(--olive-tint); color: var(--olive);
+  font-family: var(--mono); font-weight: 700; font-size: 13px; border-radius: 2px; }
+.readlist b { display: block; font-size: 15px; color: var(--ink); margin-bottom: 2px; }
+.readlist span { color: var(--ink-mute); }
+.duty { width: 100%; border-collapse: collapse; font-size: 14px; }
+.duty th { font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink-mute); text-align: left; padding: 8px; border-bottom: 1px solid var(--line-dark); }
+.duty td { padding: 9px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.duty td:first-child { white-space: nowrap; font-weight: 700; color: var(--ink); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips a { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 2px; padding: 6px 12px;
+  color: var(--ink-soft); text-decoration: none; }
+.chips a:hover { border-color: var(--gold); color: var(--gold-deep); }
+</style>
+</head>
 <body>
-<div class="banner">UNCLASSIFIED · FOR OFFICIAL USE — ONBOARDING GUIDANCE</div>
-<header class="site"><div class="wrap">
-  <div class="brand">CCoE<small>CPE ST3 CYBERSECURITY CENTER OF EXCELLENCE</small></div>
-  <nav class="top"><a href="index.html">Home</a><a href="day-one.html">Day One</a><a href="rmf-operations.html">RMF Hub</a><a href="workforce.html">Workforce</a><a href="contact.html">Contact</a></nav>
-</div></header>
-
-<section style="padding-top:30px"><div class="wrap">
-  <span class="kicker">Day One · AUTHORITY · DCWF 611</span>
-  <h1>AO &amp; AODR</h1>
-  <p class="sub">The AO formally accepts risk and signs authorization decisions. The AODR does everything short of that signature — validation, coordination, recommendation. Same code (611), same playbook, different altitude.</p>
-</div></section>
-
-<section><div class="wrap">
-  <h2>What Is My Job?</h2>
-  <div class="grid g3">
-    <div class="card"><span class="badge">YOU OWN</span><ul><li>The authorization decision itself (AO — non-delegable, ever)</li><li>Delegated review/coordination/recommendation framing (AODR)</li><li>A portfolio health view with nothing surprising in it</li></ul></div>
-    <div class="card"><span class="badge">YOU SUPPORT</span><ul><li>The CGB (both roles feed it)</li><li>Programs (decision-ready briefs)</li></ul></div>
-    <div class="card"><span class="badge">YOU ESCALATE</span><ul><li>Threat-informed concerns → Army Strategy Board lane (per PPM CIO-065)</li><li>Actions exceeding your delegation</li></ul></div>
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Day One · Authority · <span class="phase-tag">DCWF 611</span></div>
+      <h1>AO &amp; AODR</h1>
+      <p class="lede">The AO formally accepts risk and signs authorization decisions. The AODR does everything short of that signature — validation, coordination, recommendation. Same code, same playbook, different altitude.</p>
+    </div>
+    <div class="doc-meta">
+        <span>OWNER: <b>Cybersecurity Office</b></span><span>VERSION: <b>1.0</b></span><span>EFFECTIVE: <b>2026-10-10</b></span><span>REVIEW: <b>2027-10-10</b></span><span>APPROVAL: <b>CISO</b></span><span>RELATED: <b>Workforce &amp; Development Center; Governance</b></span>
+      </div>
   </div>
-  <div class="grid g2" style="margin-top:16px">
-    <div class="card"><h3>The Chain</h3><p><b>You report to:</b> Service acquisition/CIO chain<br><b>Who works with you:</b> AODR office + ISSM cadre</p></div>
-    <div class="card"><h3>Army Line (the regulation)</h3><p>DA PAM 25-2-14 §3-5 is explicit: the ONLY thing an AO cannot delegate is the authorization decision and its signature. Everything else is AODR terrain. PPM CIO-065 adds the DoDIN-A/NAO alignment + ASB escalation lane.</p></div>
-  </div>
-</div></section>
 
-<section><div class="wrap">
-  <h2>The First 10 Days</h2>
-  <div class="grid g2">
-    <div class="card"><span class="badge">ACCESS &amp; ACCOUNTS (in order — SLAs stack)</span>
-      <table><tr><th>Request</th><th>Approver</th><th>Expect</th></tr><tr><td>eMASS (AO functions)</td><td>CIO office</td><td>Day 1</td></tr><tr><td>Portfolio Power BI</td><td>ISSM grant</td><td>Day 1</td></tr><tr><td>CIO policy inbox</td><td>Self</td><td>Day 1</td></tr></table>
-      <p style="margin-top:8px"><a href="tools-dashboards.html">Full access workflow →</a></p></div>
-    <div class="card"><span class="badge">READ-FIRST LIST (in this order)</span>
-      <ol class="reads"><li><b>DA PAM 25-2-12</b><span>THE AO playbook — your duties in full</span></li><li><b>PPM CIO-065 (2025)</b><span>Current AO/NAO guidance — DREN ATC + ASB escalation</span></li><li><b>The 611 Career Pathway</b><span>Competency development map</span></li><li><b>The authority model (governance.html)</b><span>Your staff’s delegation map</span></li><li><b>The decision-recording rule</b><span>Unrecorded = undecided — starts with you</span></li></ol></div>
-  </div>
-  <div class="callout"><b>Day-2 one-liner:</b> introduce yourself to Your Policy Office And Your Aodr — everything runs on knowing who to ask.</div>
-</div></section>
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">What Is My Job</span>
+      <h2>The Charter — What the Army Expects of a AO &amp; AODR</h2>
+      <p class="section-sub">Split the way you'll actually use it: what you own outright, what you support, what you hand upward. When ownership is unclear, this page is the tiebreaker.</p>
+      <div class="grid g3">
+        <div class="card reveal"><span class="badge b-ok">You Own</span><ul class="checklist"><li>The authorization decision itself — AO, non-delegable, ever</li><li>Delegated review / coordination / recommendation — AODR</li><li>A portfolio health view with nothing surprising in it</li></ul></div>
+        <div class="card reveal"><span class="badge b-info">You Support</span><ul class="checklist"><li>The CGB — both roles feed it</li><li>Programs — decision-ready briefs</li></ul></div>
+        <div class="card reveal"><span class="badge b-crit">You Escalate</span><ul class="checklist"><li>Threat-informed operational concerns → the Army Strategy Board lane (PPM CIO-065)</li><li>Actions exceeding your delegation</li></ul></div>
+      </div>
+      <div class="grid g2" style="margin-top:18px">
+        <div class="card reveal"><h3>The Chain</h3><p><b>You report to:</b> the <b>service CIO / acquisition chain</b><br><b>Who works with you:</b> your AODR office + the ISSM cadre</p></div>
+        <div class="card card-gold reveal"><h3>Army Line</h3><p><b>DA PAM 25-2-14 §3-5</b> is explicit: the only thing an AO cannot delegate is the authorization decision and its signature. Everything else is AODR territory; PPM CIO-065 adds the DoDIN-A/NAO alignment + ASB escalation lane.</p></div>
+      </div>
+    </div>
+  </section>
 
-<section><div class="wrap">
-  <h2>The Rhythm — How This Job Runs</h2>
-  <table><tr><th>Cadence</th><th>What you do</th></tr><tr><td>Daily</td><td>Queue: packages due, gates approaching</td></tr><tr><td>Weekly</td><td>Package reviews with ISSMs</td></tr><tr><td>Quarterly</td><td>CSRR + CGB data-locks; ANO issuance</td></tr><tr><td>Annually</td><td>Delegation memo refresh + portfolio posture</td></tr></table>
-  <p style="font-size:13px;color:var(--muted)">Calibrate with your supervisor in week one — the bones are standard, the office variant is not.</p>
-</div></section>
+  <section class="section" style="background:var(--olive-tint)">
+    <div class="wrap">
+      <span class="kicker">Start-Up</span>
+      <h2>The First 10 Days</h2>
+      <p class="section-sub">Access first — SLAs stack, so request the long poles on day 1. Reading second — every item says why it matters for a AO &amp; AODR.</p>
+      <div class="grid g2">
+        <div class="card reveal">
+          <span class="badge b-warn">Access &amp; Accounts — in order</span>
+          <div class="table-wrap" style="margin-top:10px"><table class="duty">
+            <thead><tr><th>Request</th><th>Approver</th><th>Expect</th></tr></thead>
+            <tbody><tr><td>eMASS (AO functions)</td><td>CIO office</td><td>Day 1</td></tr><tr><td>Portfolio Power BI</td><td>ISSM grant</td><td>Day 1</td></tr><tr><td>CIO policy inbox</td><td>Self</td><td>Day 1</td></tr></tbody>
+          </table></div>
+          <p style="margin-top:12px"><a class="btn btn-ghost" href="tools-dashboards.html">The full access workflow →</a></p>
+        </div>
+        <div class="card reveal">
+          <span class="badge b-warn">Read-First List — in order</span>
+          <ol class="readlist" style="margin-top:10px"><li><b>DA PAM 25-2-12</b><span>THE AO playbook — your duties in full</span></li><li><b>PPM CIO-065 (2025)</b><span>current AO/NAO guidance + ASB escalation</span></li><li><b>CCP 611 Career Pathway</b><span>the competency development map</span></li><li><b>The authority model — Governance page</b><span>your own staff’s map of delegation</span></li><li><b>The decision-recording rule</b><span>unrecorded = undecided — it starts with you</span></li></ol>
+        </div>
+      </div>
+      <div class="callout warn"><b>Day-2 move:</b> introduce yourself to your policy office and your AODR — this job runs on knowing who to ask before you need to ask.</div>
+    </div>
+  </section>
 
-<section><div class="wrap">
-  <h2>Resources &amp; Qualification</h2>
-  <div class="grid g2">
-    <div class="card"><span class="badge">TOOLKIT (ON THIS SITE)</span><ul><li><a href="governance.html">Governance page</a></li><li><a href="risk-management.html">Risk page (decision frames)</a></li><li><a href="assessment-calendar.html">Expiration radar</a></li></ul></div>
-    <div class="card"><span class="badge">AUTHORITATIVE SOURCES</span><ul><li><a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/pdf/ARN21003_PAM_25-2-12_WEB.pdf" target="_blank" rel="noopener">DA PAM 25-2-12</a> — DA PAM 25-2-12 — THE AO/AODR pamphlet</li><li><a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN43546-PPM_CIO-065-000-WEB-1.pdf" target="_blank" rel="noopener">PPM CIO-065 (2025)</a> — PPM CIO-065 — 2025 AO guidance (DoDIN-A/NAO, ASB escalation)</li><li><a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN36811-PAM_25-2-14-001-WEB-3.pdf" target="_blank" rel="noopener">DA PAM 25-2-14</a> — DA PAM 25-2-14 §3-4/3-5 — charters + the non-delegation rule</li></ul></div>
-  </div>
-  <div class="grid g2" style="margin-top:14px">
-    <div class="card"><span class="badge">YOUR PLAYBOOK</span><p><a href="https://dl.dod.cyber.mil/wp-content/uploads/ccp/pdf/611_Authorizing_Official.pdf" target="_blank" rel="noopener">↓ CCP 611 (AO/DR) pathway PDF</a><br><a href="https://dl.dod.cyber.mil/wp-content/uploads/8140/pdf/unclass-2025-03-18_daudcwf_playlists.pdf" target="_blank" rel="noopener">↓ DAU learning playlists (your code within)</a><p style="margin-top:8px;color:var(--muted)">Your official playbook + the DAU 611 playlist — the most resourced role code in the series.</p></p></div>
-    <div class="card"><span class="badge">WHO TO CALL</span><ul><li><b>CIO Cybersecurity Directorate</b> — Policy office of record</li><li><b>Your AODR</b> — Day-to-day (AO side)</li><li><b>Your AO</b> — Delegation questions (AODR side)</li></ul>
-      <p style="margin-top:8px"><a href="contact.html">Full routing directory →</a></p></div>
-  </div>
-</div></section>
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Battle Rhythm</span>
+      <h2>The Rhythm — How This Job Actually Runs</h2>
+      <p class="section-sub">The bones are standard; every office runs a variant. Calibrate with your supervisor during week one.</p>
+      <div class="table-wrap reveal"><table class="duty">
+        <thead><tr><th>Cadence</th><th>What You Do</th></tr></thead>
+        <tbody><tr><td>Daily</td><td>Queue — packages due, gates approaching</td></tr><tr><td>Weekly</td><td>Package reviews with ISSMs</td></tr><tr><td>Quarterly</td><td>CSRR + CGB data-locks; ANO issuance cycles</td></tr><tr><td>Annually</td><td>Delegation memo refresh + portfolio posture review</td></tr></tbody>
+      </table></div>
+    </div>
+  </section>
 
-<footer><div class="wrap">CPE ST3 CCoE · UNCLASSIFIED/FOUO · <a style="color:#8fc3ff" href="day-one.html">← All Day One roles</a> · Corrections: <a style="color:#8fc3ff" href="contact.html">office</a></div></footer>
-<div class="otherroles" style="margin-bottom:30px"><a href="day-isso.html">ISSO</a> <a href="day-issm.html">ISSM</a> <a href="day-isse.html">ISSE</a> <a href="day-pm.html">PM &amp; APM</a> <a href="day-product.html">Product Mgr</a> <a href="day-chen.html">Chief Engineer</a> <a href="day-lpe.html">Lead PE</a></div>
-</body></html>
+  <section class="section" style="background:var(--olive-tint)">
+    <div class="wrap">
+      <h2>Resources &amp; Qualification</h2>
+      <div class="grid g2">
+        <div class="card reveal"><span class="badge">Toolkit — on this site</span><ul class="checklist"><li><a href="governance.html">Authority model + CGB + dashboards</a></li><li><a href="risk-management.html">Decision frames + severity calculator for briefs</a></li><li><a href="assessment-calendar.html">The expiration radar — what is about to need YOU</a></li></ul></div>
+        <div class="card reveal"><span class="badge">Authoritative sources</span><ul class="checklist"><li><a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/pdf/ARN21003_PAM_25-2-12_WEB.pdf" target="_blank" rel="noopener">DA PAM 25-2-12</a> — THE AO/AODR pamphlet</li><li><a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN43546-PPM_CIO-065-000-WEB-1.pdf" target="_blank" rel="noopener">PPM CIO-065</a> — 2025 AO guidance (DoDIN-A/NAO, ASB escalation)</li><li><a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN36811-PAM_25-2-14-001-WEB-3.pdf" target="_blank" rel="noopener">DA PAM 25-2-14 §3-4/3-5</a> — charters + the non-delegation rule</li></ul></div>
+        <div class="card card-gold reveal"><span class="badge b-gold">Your playbook</span><a href="https://dl.dod.cyber.mil/wp-content/uploads/ccp/pdf/611_Authorizing_Official.pdf" target="_blank" rel="noopener">CCP 611 (AO/DR) Career Pathway PDF</a> — your official playbook — plus the <a href="https://dl.dod.cyber.mil/wp-content/uploads/8140/pdf/unclass-2025-03-18_daudcwf_playlists.pdf" target="_blank" rel="noopener">DAU 611 playlist</a>, the most fully resourced sequence in the series.</div>
+        <div class="card reveal"><span class="badge">Who to call</span><ul class="checklist"><li><b>The CIO Cybersecurity Directorate</b> — policy office of record</li><li><b>Your AODR</b> — day-to-day (if you are the AO)</li><li><b>Your AO</b> — delegation questions (if you are the AODR)</li></ul>
+          <p style="margin-top:10px"><a class="btn btn-ghost" href="contact.html">Full routing directory →</a></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Day One</span>
+      <h2>Every Role in the Portfolio</h2>
+      <p class="section-sub">Working with someone new on another lane? Point them at their own page.</p>
+      <div class="chips"><a href="day-isso.html">ISSO · 721</a><a href="day-issm.html">ISSM · 722</a><a href="day-isse.html">ISSE · 160</a><a href="day-pm.html">PM/APM · 801</a><a href="day-product.html">Product · 803</a><a href="day-chen.html">CHEN · 641</a><a href="day-lpe.html">Lead PE · 802</a></div>
+    </div>
+  </section>
+</main>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
