@@ -1,0 +1,174 @@
+<!doctype html><html><head><meta charset='utf-8'><style>@page { size: Letter; margin: 14mm 12mm; }
+body { font-family:'Segoe UI',sans-serif; font-size:10pt; color:#1a2230; line-height:1.4; }
+h1 { font-size:17pt; color:#0e1b2a; border-bottom:3px solid #c9a227; padding-bottom:4px; }
+h2 { font-size:13pt; color:#0e1b2a; border-bottom:1.5px solid #c9a227; margin-top:16px; }
+table { border-collapse:collapse; width:100%; font-size:8.5pt; margin:8px 0; }
+th { background:#0e1b2a; color:#f4f4f0; text-align:left; padding:5px 7px; }
+td { border:0.5px solid #b8c0cc; padding:4px 7px; vertical-align:top; }
+tr:nth-child(even) td { background:#f2f4f8; }</style></head><body><h1>PLAN — "Start Here" Per-Role Day-One Hubs</h1>
+<p><strong>Prepared for CISO review · 5 OCT 2026 · PLAN ONLY — no site changes made</strong></p>
+<hr />
+<h2>The problem you diagnosed (and it's real)</h2>
+<p>You're right on both counts:</p>
+<ol>
+<li>
+<p><strong>The role cards blur together.</strong> On <code>workforce.html</code>, ISSO and ISSM both link to <code>rmf-operations.html</code>. Product Manager also lands on <code>program-roles.html</code> (same as PM, same as Chief Engineer nearly). The cards <em>describe</em> different lanes but <em>deliver</em> the same destination. A new ISSO and a new ISSM click different buttons and see the same generic RMF process page — no personalization, no role lens.</p>
+</li>
+<li>
+<p><strong>The site has process content, not role onboarding.</strong> What exists today: the Seven Steps, job aids, 101 primers, generic tool access. What doesn't exist anywhere: <em>"You are the new ISSO for SYSTEM-X. Here is literally what you do on Monday."</em> The closest artifact is the inspection binder standard, which is about evidence, not people.</p>
+</li>
+</ol>
+<p>The fix concept: <strong>role-specific "Start Here" hubs</strong> that answer the three questions you listed — <em>What is my job? What do I need for day one? What resources exist?</em> — from INSIDE that role's perspective, then route to the shared process content (which stays shared, no duplication).</p>
+<hr />
+<h2>Proposed architecture: one page, six lanes (or six pages)</h2>
+<p><strong>Two shape options — decision point A for you:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Shape</th>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A. Single "Start Here" page, anchored per role</strong></td>
+<td>One new page <code>start-here.html</code>, with anchored sections (#isso, #issm, #isse, #pm, #chen, #acto…)</td>
+<td>One nav item; shared Day-1 admin checklist written once at the top; role sections follow; fastest to build (~1 day)</td>
+<td>URL looks generic; sections can get long</td>
+</tr>
+<tr>
+<td><strong>B. Six role pages</strong></td>
+<td><code>start-isso.html</code>, <code>start-issm.html</code>, <code>start-pm.html</code>, <code>start-chen.html</code>, <code>start-se.html</code>, <code>start-aodr.html</code></td>
+<td>Each URL shareable directly in an onboarding email ("read this before Monday"); per-role nav feels tailor-made; can grow rich without crowding</td>
+<td>6x the maintenance; shared content risks diverging; slower build</td>
+</tr>
+</tbody>
+</table>
+<p><strong>My recommendation: Option A with anchors</strong> for MVP speed + zero duplication, with the <em>option</em> to split later once a lane earns its own page. The role buttons on <code>index.html</code> / <code>workforce.html</code> then link <code>start-here.html#isso</code>, <code>start-here.html#issm</code>, etc. — same site, sharp landing.</p>
+<hr />
+<h2>What each role section MUST answer (content design)</h2>
+<p>Every role section follows the same <strong>four-part skeleton</strong> so the site feels systematic, not ad hoc. This structure IS the product — a new hire learns the <em>shape</em> of their job from the shape of the page.</p>
+<h3>Part 1 — "What is my job?" (the mandate)</h3>
+<ul>
+<li>One-paragraph role charter in plain language (not RMF jargon)</li>
+<li>What you own vs. what you support vs. what you escalate (three-column: OWN / SUPPORT / ESCALATE)</li>
+<li>Your DCWF code + where your qualification requirements live (8140.03 matrix)</li>
+<li>Who you work FOR and who works FOR you (the authority chain — PM→CHEN→LPE→ISSE→ISSO→ISSM→AODR→AO, drawn per role)</li>
+<li>"A day in the life" — a short honest rhythm block (what a typical Monday looks like)</li>
+</ul>
+<h3>Part 2 — "Day one: the first 10 days" (the startup checklist)</h3>
+<p>This is the piece everything else hangs on. Two tables per role:</p>
+<p><strong>(a) Access &amp; accounts checklist</strong> — what to request, from whom, and in what order (these have SLAs, so order matters):
+- CAC enablement / CBT prereqs / ISSM sponsorship letters / eMASS account (5-day SLA) / ACAS, SCC, STIG Viewer reads / SharePoint+Teams groups / email distros / the vault or CUI-enabled storage
+- Each row: <em>what · who approves · SLA · link to the access workflow</em></p>
+<p><strong>(b) Read-first list</strong> — roughly 6 documents in reading order, each with <em>why this one matters to YOUR role</em>:
+- e.g., new ISSO: RMF Execution Policy → the SLA clock page → SSP Standard Language Blocks → your systems' POA&amp;M rows → the ConMon parameters → the incident call order card
+- e.g., new PM: the 801 Career Pathway playbook → AR 70-1 cyber decision points → the 9-clause library → the AO authority model → the expiration calendar (what your systems owe)
+- e.g., new CHEN: SP 800-160 (skim ch. 1–3) → the 6 reference architectures → the non-negotiables → ARB intake mechanics
+- e.g., new ISSM: the 722 Career Pathway playbook → the CGB charter → POA&amp;M lifecycle policy → the change-management rubric → inspection binder standard</p>
+<h3>Part 3 — "The ongoing rhythm" (the battle rhythm)</h3>
+<ul>
+<li>A weekly / monthly / quarterly rhythm table specific to the role: what you do daily (scan review, ConMon artifacts), monthly (Aging reviews, metrics roll, 8140 tracker update), quarterly (CCRR data locks, binder self-audit), semi-annual/annual (IDP check, recertifications)</li>
+<li>This is where the "how do I strategize" answer lives — the rhythm IS the strategy</li>
+</ul>
+<h3>Part 4 — "Your toolkit + who to call" (the resources)</h3>
+<ul>
+<li>The role's specific tools from the belt (with real links)</li>
+<li>The routed contacts from the contact directory, filtered to YOUR likely needs (i.e., an ISSO routes to eMASS support and the vuln cell; a PM routes to acquisition cyber and the ARB)</li>
+<li>The 3–5 FAQ module answers a new person in this role asks first (curated, not the full 207)</li>
+<li>The playbook: DoD CCP PDF for the role's DCWF code + DAU playlist link (already built for most roles)</li>
+</ul>
+<hr />
+<h2>The "shared Day-1 block" (top of the page, before role sections)</h2>
+<p>Written once, applies to every role, and kills 80% of new-hire confusion:
+- The 60-day common core (CUI handling, incident notification, Intro to RMF) — who schedules it, where
+- The physical/logistics stuff nobody tells you: badge access to the SCIF, which network you're on (NIPR vs enclave), VPN, CAC chip reuse, where policies live (this site!), how to meet your ISSM/ISSO counterpart
+- A plain-English 60-second orientation to the org: CISO → AODR → ISSM → ISSO / PEO → PM → CHEN → LPE → ISSE — "here's the map, here's where YOU sit"
+- A printable one-pager (the "welcome card") — role name, your first 5 actions, your first 5 contacts</p>
+<hr />
+<h2>Distinct content per role (no hand-waving, what's genuinely DIFFERENT)</h2>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>The unique "Day-1" spine</th>
+<th>The unique rhythm</th>
+<th>Unique resources</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ISSO (721)</strong></td>
+<td>Assume systems in eMASS, read their SSPs, walk the controls with the ISSE, meet ConMon cadence</td>
+<td>Daily: scan review + artifacts · Monthly: aging reviews · Quarterly: binder self-audit</td>
+<td>Vulnerability &amp; POA&amp;M page, SLA clock, ConMon parameters, STIG Viewer, ACAS reads</td>
+</tr>
+<tr>
+<td><strong>ISSM (722)</strong></td>
+<td>Chart the portfolio, read every SSP w/ the ISSE, meet each PM, set the escalation map</td>
+<td>Weekly: package routing · Monthly: governance prep, metrics roll + 8140 update</td>
+<td>Governance page, CGB charter, POA&amp;M lifecycle, change rubric, 722 playbook</td>
+</tr>
+<tr>
+<td><strong>ISSE (SP 800-160)</strong></td>
+<td>Read the architectures that are approved, shadow an ARB, review one boundary diagram</td>
+<td>Weekly: design reviews · Per-change: inheritance analysis + STIG-ability scan</td>
+<td>Engineering page (6 architectures), SP 800-160, ARB intake, 801/802 pathway PDFs for context</td>
+</tr>
+<tr>
+<td><strong>PM (801)</strong></td>
+<td>Cyber requirements in the contract, risk posture of the increment, ISSE/ISSM introductions, AAF gate map</td>
+<td>Weekly: cyber deliverables check · Monthly: risk posture to AODR · Quarterly: binder readiness</td>
+<td>program-roles.html (already built), 9-clause library, cost-estimating guide, 801 playbook</td>
+</tr>
+<tr>
+<td><strong>APM (801-support)</strong></td>
+<td>The deliverables tracker, POA&amp;M funding map, test-evidence calendar</td>
+<td>Weekly: deliverables triage · Monthly: contract cyber SLA check</td>
+<td>Same hub (anchored #apm for the deputy lens)</td>
+</tr>
+<tr>
+<td><strong>Product Mgr (803)</strong></td>
+<td>The backlog's secure-by-design items, user-facing security behaviors, pipeline attestations</td>
+<td>Per-increment: security stories</td>
+<td>Same hub (#product lens)</td>
+</tr>
+<tr>
+<td><strong>CHEN (641 + 160)</strong></td>
+<td>The technical baseline, open ARB actions, non-negotiables compliance postures, ISSE alignment</td>
+<td>Weekly: design sync · Per-gate: architecture review</td>
+<td>engineering.html, 6 archetypes, ARB intake, DISA STIG floor</td>
+</tr>
+<tr>
+<td><strong>LPE (802)</strong></td>
+<td>Integration evidence pipeline (scans, attestations, test artifacts) — the delivery gate</td>
+<td>Weekly: integration risk · Per-dr: evidence package</td>
+<td>802 playbook, inspection binder (they will be judged on THIS), tool belt</td>
+</tr>
+<tr>
+<td><strong>AO/AODR (611)</strong></td>
+<td>The delegation memo, portfolio risk posture, queue depth</td>
+<td>Weekly: AODR package review · Quarterly: CSRR + CGB</td>
+<td>governance.html, 611 playbook + playlist, Risk Center, decision log (future)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>What I need from you (decision points)</h2>
+<ol>
+<li><strong>Shape:</strong> Option A (one page + anchors, my recommendation for speed) or Option B (six pages)? Or 3 pages (cyber / program / engineering-leadership)?</li>
+<li><strong>Scope for MVP:</strong> which roles are in the launch cut? (My suggested priority: ISSO + ISSM + PM + CHEN first — the four you named — then ISSE, Product Mgr, LPE, AODR in wave 2.)</li>
+<li><strong>The rhythm content:</strong> how honest can I get? The "Day in the life" works best with REAL cadence (meeting names, actual SLAs from your org). I have invented placeholders — do you want to fill from your real battle rhythm, or ship placeholders labeled "example rhythm — your ISSM will calibrate"?</li>
+<li><strong>The welcome card</strong> (printable Day-1 one-pager): include in MVP, or wave 2?</li>
+<li><strong>Link the role buttons here:</strong> when this ships, <code>workforce.html</code> and <code>index.html</code> role cards point to <code>start-here.html#ROLE</code> instead of their current hubs (process pages stay as <em>deeper</em> resources linked FROM each section). Confirm that's the intent — the "Start Here" page becomes the landing spot, process pages become reference.</li>
+<li><strong>Name it:</strong> "Start Here" / "New to the Role" / "Day One" / something else? (Nav label + card title.)</li>
+</ol>
+<hr />
+<h2>What this does NOT touch (scope guard)</h2>
+<ul>
+<li>The RMF process pages, policy library, templates, tool belt: they stay exactly as they are — they become the <em>deeper layer</em> the Start-Here page routes people into. Nothing duplicated, nothing orphaned.</li>
+<li>The expirations-only / CUI-tier / env-links decisions from earlier: still queued, still your call — this plan is additive.</li>
+</ul>
+<p><strong>Estimated build for recommended Option A (MVP, 4 roles):</strong> ~1 session. Full 8-role cut: slightly longer. All content is new writing — honest, role-specific, and tied to real pages + real downloads already on the site.</p></body></html>

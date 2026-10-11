@@ -279,6 +279,78 @@
    "s": "Program-office cyber roles under the Adaptive Acquisition Framework: PM, Product Manager, APM, Chief Engineer, Lead Project Engineer \u2014 duties, DCWF mappings,Army/DoD authoritative resources, and the cyber-program working relationship.",
    "k": "program roles pm apm product manager program manager chief engineer lead project engineer technical authority ar70-1 adaptive acquisition framework dau dcwf 801 802 803 805 sp800-160 arb",
    "h": "Program & Engineering Leadership Roles|The Working Relationship|Qualification Quick-Path"
+  },
+  {
+   "url": "day-one.html",
+   "cat": "workforce",
+   "title": "Day One \u2014 Starting Your Role",
+   "s": "The onboarding hub: the org map (where you sit), the first-60-days common core, access ordering with SLAs, logistics nobody volunteers, and links to all 8 role-specific Day One pages.",
+   "k": "day one new start here onboarding first 10 days welcome orientation role map authority chain common core 60 days access emass workflow org chart",
+   "h": "Where You Sit|Everyone, Regardless of Role|Pick Your Role"
+  },
+  {
+   "url": "day-isso.html",
+   "cat": "workforce",
+   "title": "Day One \u2014 ISSO (DCWF 721)",
+   "s": "New-ISSO onboarding: charter (what you own/support/escalate), first-10-days access checklist + read-first list, the daily/weekly/monthly rhythm, toolkit, and the authoritative sources (DA PAM 25-2-14 \u00a73-15).",
+   "k": "day one isso new 721 onboarding first 10 days access emass acas scan review conmon rhythm binder evidence poam pam 25-2-14 3-15",
+   "h": "What Is My Job?|The First 10 Days|The Rhythm|Resources & Qualification"
+  },
+  {
+   "url": "day-issm.html",
+   "cat": "workforce",
+   "title": "Day One \u2014 ISSM (DCWF 722)",
+   "s": "New-ISSM onboarding: single-role charter (OISSM/PISSM retired), portfolio ownership, package-routing rhythm, 722 playbook + governance chain, and the first-10-days startup.",
+   "k": "day one issm new 722 onboarding single role oissm pissm retired portfolio routing cgb rhythm governance 722 playbook pam 25-2-14 3-12",
+   "h": "What Is My Job?|The First 10 Days|The Rhythm|Resources & Qualification"
+  },
+  {
+   "url": "day-isse.html",
+   "cat": "workforce",
+   "title": "Day One \u2014 ISSE",
+   "s": "New-ISSE onboarding: secure-design mandate (control inheritance, boundary accuracy, STIG-ability), the read-first list (SP 800-160, architectures, non-negotiables), and the per-change rhythm.",
+   "k": "day one isse onboarding systems security engineer sp800-160 inheritance boundary stig-ability arb design review",
+   "h": "What Is My Job?|The First 10 Days|The Rhythm|Resources & Qualification"
+  },
+  {
+   "url": "day-pm.html",
+   "cat": "workforce",
+   "title": "Day One \u2014 PM & APM (DCWF 801)",
+   "s": "New-PM onboarding: the ISO/PM accountability line in DA PAM 25-2-14 \u00a73-10 (appoint ISSMs/ISSOs, categorize, fund remediation), AAF gates, contract cyber language, the working relationship with cyber.",
+   "k": "day one pm apm program manager 801 onboarding ar70-1 aaf gates clause library deliverables risk posture",
+   "h": "What Is My Job?|The First 10 Days|The Rhythm|Resources & Qualification"
+  },
+  {
+   "url": "day-product.html",
+   "cat": "workforce",
+   "title": "Day One \u2014 Product Manager (DCWF 803/805)",
+   "s": "New-Product-Manager onboarding: increment ownership, Secure-by-Design backlog, DevSecOps playbook rules, and the release-risk rhythm.",
+   "k": "day one product manager owner 803 805 onboarding secure by design backlog devsecops playbook sbom release risk",
+   "h": "What Is My Job?|The First 10 Days|The Rhythm|Resources & Qualification"
+  },
+  {
+   "url": "day-chen.html",
+   "cat": "workforce",
+   "title": "Day One \u2014 Chief Engineer (DCWF 641)",
+   "s": "New-CHEN onboarding: technical-authority charter (baseline, ARB discipline), SP 800-160 practice, reference architectures, and gate-prep rhythm.",
+   "k": "day one chief engineer chen 641 technical authority onboarding arb baseline architecture sp800-160 gate prep",
+   "h": "What Is My Job?|The First 10 Days|The Rhythm|Resources & Qualification"
+  },
+  {
+   "url": "day-lpe.html",
+   "cat": "workforce",
+   "title": "Day One \u2014 Lead Project Engineer (DCWF 802)",
+   "s": "New-LPE onboarding: integration-evidence charter (scans, attestations), the 802 career pathway, binder-standard alignment, and the per-delivery rhythm.",
+   "k": "day one lead project engineer lpe 802 onboarding integration evidence scans attestations binder delivery gate",
+   "h": "What Is My Job?|The First 10 Days|The Rhythm|Resources & Qualification"
+  },
+  {
+   "url": "day-aodr.html",
+   "cat": "workforce",
+   "title": "Day One \u2014 AO & AODR (DCWF 611)",
+   "s": "New-AO/AODR onboarding: the non-delegable decision rule (\u00a73-5), PPM CIO-065 (2025) DoDIN-A/NAO guidance, DA PAM 25-2-12 as the office playbook, and the authority chain.",
+   "k": "day one ao aodr 611 authorizing official designated representative onboarding delegation signature pam 25-2-12 ppm cio-065 dodin-a nao asb",
+   "h": "What Is My Job?|The First 10 Days|The Rhythm|Resources & Qualification"
   }
  ]
 }
