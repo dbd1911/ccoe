@@ -4,6 +4,37 @@
  "redhat_url": "https://access.redhat.com/security/security-updates/security-advisories",
  "ubuntu": [
   {
+   "id": "USN-8914-1",
+   "title": "Google Guest Agent, Google OS Config Agent vulnerability",
+   "published": "2026-10-12",
+   "cves": [
+    "CVE-2026-39821"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8914-1"
+  },
+  {
+   "id": "USN-8913-1",
+   "title": "libx11 vulnerabilities",
+   "published": "2026-10-12",
+   "cves": [
+    "CVE-2026-94283",
+    "CVE-2026-94284",
+    "CVE-2026-88806",
+    "CVE-2026-94285"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8913-1"
+  },
+  {
+   "id": "USN-8912-1",
+   "title": "Perl DBI module vulnerabilities",
+   "published": "2026-10-12",
+   "cves": [
+    "CVE-2026-88816",
+    "CVE-2026-78030"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8912-1"
+  },
+  {
    "id": "USN-8911-1",
    "title": "Linux kernel (OEM) vulnerabilities",
    "published": "2026-10-09",
@@ -99,36 +130,44 @@
     "CVE-2026-86143"
    ],
    "url": "https://ubuntu.com/security/notices/USN-8910-1"
-  },
-  {
-   "id": "USN-8909-1",
-   "title": "libde265 vulnerability",
-   "published": "2026-10-08",
-   "cves": [
-    "CVE-2026-88373"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8909-1"
-  },
-  {
-   "id": "USN-8907-1",
-   "title": "libgit2 vulnerability",
-   "published": "2026-10-08",
-   "cves": [
-    "CVE-2026-53583"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8907-1"
-  },
-  {
-   "id": "USN-8902-1",
-   "title": "libarchive vulnerability",
-   "published": "2026-10-08",
-   "cves": [
-    "CVE-2026-16517"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8902-1"
   }
  ],
  "redhat": [
+  {
+   "cve": "CVE-2026-108858",
+   "severity": "moderate",
+   "public_date": "2026-10-11",
+   "description": "lorax: lorax: Information disclosure via API token logging",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-108858"
+  },
+  {
+   "cve": "CVE-2026-108749",
+   "severity": "low",
+   "public_date": "2026-10-11",
+   "description": "docling-serve: docling-serve: Information disclosure via missing authentication on memory endpoints",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-108749"
+  },
+  {
+   "cve": "CVE-2026-108575",
+   "severity": "moderate",
+   "public_date": "2026-10-11",
+   "description": "litellm: LiteLLM: Improper authorization via api_key parameter manipulation",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-108575"
+  },
+  {
+   "cve": "CVE-2026-108693",
+   "severity": "moderate",
+   "public_date": "2026-10-11",
+   "description": "ImageMagick: ImageMagick: Arbitrary code execution via insecure search path",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-108693"
+  },
+  {
+   "cve": "CVE-2026-17025",
+   "severity": "moderate",
+   "public_date": "2026-10-10",
+   "description": "graphene: graphene: Stored Cross-Site Scripting via profile fields",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-17025"
+  },
   {
    "cve": "CVE-2026-107823",
    "severity": "important",
@@ -163,42 +202,7 @@
    "public_date": "2026-10-09",
    "description": "mariadb: mariadb: Privilege escalation via environment variable injection during service restart",
    "url": "https://access.redhat.com/security/cve/CVE-2026-107818"
-  },
-  {
-   "cve": "CVE-2026-107817",
-   "severity": "moderate",
-   "public_date": "2026-10-09",
-   "description": "mariadb: mariadb: Denial of Service via invalid binary JSON in mysql_json plugin",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-107817"
-  },
-  {
-   "cve": "CVE-2026-107816",
-   "severity": "moderate",
-   "public_date": "2026-10-09",
-   "description": "mariadb: mariadb: Information disclosure via embedded null bytes in query cache plugin",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-107816"
-  },
-  {
-   "cve": "CVE-2026-107815",
-   "severity": "important",
-   "public_date": "2026-10-09",
-   "description": "mariadb: mariadb: Arbitrary code execution via CONNECT engine out-of-bounds write",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-107815"
-  },
-  {
-   "cve": "CVE-2026-107814",
-   "severity": "important",
-   "public_date": "2026-10-09",
-   "description": "mariadb: mariadb: Arbitrary code execution via insecure service account home directory",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-107814"
-  },
-  {
-   "cve": "CVE-2026-108119",
-   "severity": "moderate",
-   "public_date": "2026-10-09",
-   "description": "busybox: busybox: tar extraction-root escape via deferred symlink/hardlink creation bypasses CVE-2026-26158 fix",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-108119"
   }
  ],
- "_updated": "2026-10-10T23:09:41Z"
+ "_updated": "2026-10-12T16:37:14Z"
 }
