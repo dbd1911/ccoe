@@ -10,7 +10,7 @@
     "2026-06-24": [["e-ato", "FIRES-DSS pkg → AODR"], ["e-blk", "Blackout"]],
     "2026-06-25": [["e-blk", "Submission blackout"]],
     "2026-06-26": [["e-blk", "Blackout"], ["e-trn", "TTX: data spill"]],
-    "2026-06-30": [["e-mil", "CSRR Q3 data lock"]],
+    "2026-06-30": [["e-mil", "Quarterly data lock (Q3)"]],
     "2026-07-01": [["e-mil", "Cloud gov v3.0 effective"]],
     "2026-07-02": [["e-trn", "Workforce assembly"]],
     "2026-07-11": [["e-mil", "SAR/RAW: INTEL-FUS"]],
@@ -21,11 +21,9 @@
     "2026-08-20": [["e-trn", "Office Hours: cloud overlays"]]
   },
   "milestones": [
-    { "slug": "csrr-q3-data-lock",   "code": "CSRR",    "title": "Cyber Security Readiness Review data lock",                        "date": "2026-06-30", "meta": "30 JUN · QTRLY" },
     { "slug": "saptrr-lognet04",     "code": "SAP/TRR", "title": "LOGNET-04 Security Assessment Plan / Test Readiness Review",       "date": "2026-06-16", "meta": "16 JUN" },
     { "slug": "sarraw-intelfus",     "code": "SAR/RAW", "title": "INTEL-FUS Security Assessment Report & Risk Worksheet due",        "date": "2026-07-11", "meta": "11 JUL" },
-    { "slug": "saptrr-trngsim2",     "code": "SAP/TRR", "title": "TRNG-SIM-2 assessment kickoff",                                    "date": "2026-08-04", "meta": "04 AUG" },
-    { "slug": "csrr-q4-data-lock",   "code": "CSRR",    "title": "Q4 data lock",                                                     "date": "2026-09-30", "meta": "30 SEP · QTRLY" }
+    { "slug": "saptrr-trngsim2",     "code": "SAP/TRR", "title": "TRNG-SIM-2 assessment kickoff",                                    "date": "2026-08-04", "meta": "04 AUG" }
   ],
   "expirations": [
     { "system": "FIRES-DSS",  "pathway": "Full ATO",       "days": 44,  "stage": "Package routing to AODR",                    "isso": "R. Alvarez",  "track": "Daily Track" },

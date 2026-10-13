@@ -86,7 +86,7 @@ Written once, applies to every role, and kills 80% of new-hire confusion:
 | **Product Mgr (803)** | The backlog's secure-by-design items, user-facing security behaviors, pipeline attestations | Per-increment: security stories | Same hub (#product lens) |
 | **CHEN (641 + 160)** | The technical baseline, open ARB actions, non-negotiables compliance postures, ISSE alignment | Weekly: design sync · Per-gate: architecture review | engineering.html, 6 archetypes, ARB intake, DISA STIG floor |
 | **LPE (802)** | Integration evidence pipeline (scans, attestations, test artifacts) — the delivery gate | Weekly: integration risk · Per-dr: evidence package | 802 playbook, inspection binder (they will be judged on THIS), tool belt |
-| **AO/AODR (611)** | The delegation memo, portfolio risk posture, queue depth | Weekly: AODR package review · Quarterly: CSRR + CGB | governance.html, 611 playbook + playlist, Risk Center, decision log (future) |
+| **AO/AODR (611)** | The delegation memo, portfolio risk posture, queue depth | Weekly: AODR package review · Quarterly: CGB data lock | governance.html, 611 playbook + playlist, Risk Center, decision log (future) |
 
 ---
 
