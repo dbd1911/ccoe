@@ -3,77 +3,77 @@
  "source_url": "https://www.tenable.com/plugins/newest",
  "items": [
   {
-   "id": "364673",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-108752",
-   "link": "https://www.tenable.com/plugins/nessus/364673",
-   "published": "Mon, 12 Oct 2026 00:00:00 GMT"
+   "id": "365306",
+   "title": "MiracleLinux 9 : vim-8.2.2637-26.el9_8.23.ML.1 (AXSA:2026-2021:26)",
+   "link": "https://www.tenable.com/plugins/nessus/365306",
+   "published": "Tue, 13 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "364672",
-   "title": "RHEL 10 : gd (RHSA-2026:80500)",
-   "link": "https://www.tenable.com/plugins/nessus/364672",
-   "published": "Mon, 12 Oct 2026 00:00:00 GMT"
+   "id": "365305",
+   "title": "MiracleLinux 8 : bind-9.11.36-16.el8_10.16 (AXSA:2026-2019:13)",
+   "link": "https://www.tenable.com/plugins/nessus/365305",
+   "published": "Tue, 13 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "364671",
-   "title": "RHEL 9 : resteasy (RHSA-2026:80505)",
-   "link": "https://www.tenable.com/plugins/nessus/364671",
-   "published": "Mon, 12 Oct 2026 00:00:00 GMT"
+   "id": "365304",
+   "title": "MiracleLinux 8 : vim-8.0.1763-32.el8_10.ML.1 (AXSA:2026-2020:25)",
+   "link": "https://www.tenable.com/plugins/nessus/365304",
+   "published": "Tue, 13 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "364670",
-   "title": "RHEL 8 : compat-openssl10 (RHSA-2026:80510)",
-   "link": "https://www.tenable.com/plugins/nessus/364670",
-   "published": "Mon, 12 Oct 2026 00:00:00 GMT"
+   "id": "365303",
+   "title": "MiracleLinux 9 : opentelemetry-collector-0.158.0-1.el9_8 (AXSA:2026-2023:06)",
+   "link": "https://www.tenable.com/plugins/nessus/365303",
+   "published": "Tue, 13 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "364669",
-   "title": "RHEL 9 : compat-openssl11 (RHSA-2026:80514)",
-   "link": "https://www.tenable.com/plugins/nessus/364669",
-   "published": "Mon, 12 Oct 2026 00:00:00 GMT"
+   "id": "365302",
+   "title": "7-Zip < 24.08 CopyCoder Infinite Loop DoS (ZDI-24-1606)",
+   "link": "https://www.tenable.com/plugins/nessus/365302",
+   "published": "Tue, 13 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "364668",
-   "title": "RHEL 9 : thunderbird (RHSA-2026:80503)",
-   "link": "https://www.tenable.com/plugins/nessus/364668",
-   "published": "Mon, 12 Oct 2026 00:00:00 GMT"
+   "id": "365301",
+   "title": "7-Zip < 26.02 XZ Heap Buffer Overflow RCE (ZDI-26-444)",
+   "link": "https://www.tenable.com/plugins/nessus/365301",
+   "published": "Tue, 13 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "364667",
-   "title": "RHEL 10 : flatpak (RHSA-2026:80498)",
-   "link": "https://www.tenable.com/plugins/nessus/364667",
-   "published": "Mon, 12 Oct 2026 00:00:00 GMT"
+   "id": "365300",
+   "title": "Rocky Linux 9.6 [TuxCare] Security Update: cups / cups-client / cups-devel / cups-filesystem / cups-ipptool / etc (ALMALINUX9.6:CLSA-2026:1791870722)",
+   "link": "https://www.tenable.com/plugins/nessus/365300",
+   "published": "Tue, 13 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "364666",
-   "title": "RHEL 9 : gimp (RHSA-2026:80509)",
-   "link": "https://www.tenable.com/plugins/nessus/364666",
-   "published": "Mon, 12 Oct 2026 00:00:00 GMT"
+   "id": "365299",
+   "title": "CentOS Linux 8.5 [TuxCare] Security Update: bpftool / kernel / kernel-core / kernel-cross-headers / etc Multiple Vulnerabilities (CENTOS8.5:CLSA-2026:1791852988",
+   "link": "https://www.tenable.com/plugins/nessus/365299",
+   "published": "Tue, 13 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "364665",
-   "title": "RHEL 9 : flatpak-builder (RHSA-2026:80496)",
-   "link": "https://www.tenable.com/plugins/nessus/364665",
-   "published": "Mon, 12 Oct 2026 00:00:00 GMT"
+   "id": "365298",
+   "title": "AlmaLinux 9.6 [TuxCare] Security Update: cups / cups-client / cups-devel / cups-filesystem / cups-ipptool / etc (ALMALINUX9.6:CLSA-2026:1791870722)",
+   "link": "https://www.tenable.com/plugins/nessus/365298",
+   "published": "Tue, 13 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "364664",
-   "title": "RHEL 9 : emacs (RHSA-2026:80507)",
-   "link": "https://www.tenable.com/plugins/nessus/364664",
-   "published": "Mon, 12 Oct 2026 00:00:00 GMT"
+   "id": "365297",
+   "title": "GitLab 18.1 < 19.2.8 / 19.3 < 19.3.5 / 19.4 < 19.4.2 (CVE-2026-81839)",
+   "link": "https://www.tenable.com/plugins/nessus/365297",
+   "published": "Tue, 13 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "364663",
-   "title": "RHEL 10 : flatpak-builder (RHSA-2026:80495)",
-   "link": "https://www.tenable.com/plugins/nessus/364663",
-   "published": "Mon, 12 Oct 2026 00:00:00 GMT"
+   "id": "365296",
+   "title": "GitLab 19.1 < 19.2.8 / 19.3 < 19.3.5 / 19.4 < 19.4.2 (CVE-2026-105458)",
+   "link": "https://www.tenable.com/plugins/nessus/365296",
+   "published": "Tue, 13 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "364662",
-   "title": "Fedora 43 : python3.10 (2026-ab6004ec50)",
-   "link": "https://www.tenable.com/plugins/nessus/364662",
+   "id": "365295",
+   "title": "Amazon Linux 2023 : php8.2, php8.2-bcmath, php8.2-cli (ALAS2023-2026-3161)",
+   "link": "https://www.tenable.com/plugins/nessus/365295",
    "published": "Mon, 12 Oct 2026 00:00:00 GMT"
   }
  ],
- "_updated": "2026-10-12T16:37:14Z"
+ "_updated": "2026-10-13T14:54:05Z"
 }

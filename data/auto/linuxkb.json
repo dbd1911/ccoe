@@ -4,6 +4,20 @@
  "redhat_url": "https://access.redhat.com/security/security-updates/security-advisories",
  "ubuntu": [
   {
+   "id": "USN-8915-1",
+   "title": "FFmpeg vulnerabilities",
+   "published": "2026-10-12",
+   "cves": [
+    "CVE-2026-38350",
+    "CVE-2026-75147",
+    "CVE-2026-38348",
+    "CVE-2026-38346",
+    "CVE-2026-38347",
+    "CVE-2026-38344"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8915-1"
+  },
+  {
    "id": "USN-8914-1",
    "title": "Google Guest Agent, Google OS Config Agent vulnerability",
    "published": "2026-10-12",
@@ -116,93 +130,79 @@
     "CVE-2026-75032"
    ],
    "url": "https://ubuntu.com/security/notices/USN-8908-1"
-  },
-  {
-   "id": "USN-8910-1",
-   "title": "libxml2 vulnerabilities",
-   "published": "2026-10-08",
-   "cves": [
-    "CVE-2026-86144",
-    "CVE-2026-86142",
-    "CVE-2026-76781",
-    "CVE-2026-86138",
-    "CVE-2026-86139",
-    "CVE-2026-86143"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8910-1"
   }
  ],
  "redhat": [
   {
-   "cve": "CVE-2026-108858",
+   "cve": "CVE-2026-109152",
    "severity": "moderate",
-   "public_date": "2026-10-11",
-   "description": "lorax: lorax: Information disclosure via API token logging",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-108858"
+   "public_date": "2026-10-13",
+   "description": "scp: scp.py: Arbitrary file overwrite via path traversal",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-109152"
   },
   {
-   "cve": "CVE-2026-108749",
+   "cve": "CVE-2026-109854",
    "severity": "low",
-   "public_date": "2026-10-11",
-   "description": "docling-serve: docling-serve: Information disclosure via missing authentication on memory endpoints",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-108749"
+   "public_date": "2026-10-13",
+   "description": "m17n-lib: Uninitialized stack read in ISO-2022 Compound Text UTF-8 decoding",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-109854"
   },
   {
-   "cve": "CVE-2026-108575",
-   "severity": "moderate",
-   "public_date": "2026-10-11",
-   "description": "litellm: LiteLLM: Improper authorization via api_key parameter manipulation",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-108575"
-  },
-  {
-   "cve": "CVE-2026-108693",
-   "severity": "moderate",
-   "public_date": "2026-10-11",
-   "description": "ImageMagick: ImageMagick: Arbitrary code execution via insecure search path",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-108693"
-  },
-  {
-   "cve": "CVE-2026-17025",
-   "severity": "moderate",
-   "public_date": "2026-10-10",
-   "description": "graphene: graphene: Stored Cross-Site Scripting via profile fields",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-17025"
-  },
-  {
-   "cve": "CVE-2026-107823",
+   "cve": "CVE-2026-103658",
    "severity": "important",
-   "public_date": "2026-10-09",
-   "description": "mariadb: mariadb: Privilege escalation via unescaped newlines in view parser",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-107823"
+   "public_date": "2026-10-12",
+   "description": "aspell: aspell: Arbitrary code execution via crafted dictionary file",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-103658"
   },
   {
-   "cve": "CVE-2026-107822",
+   "cve": "CVE-2026-109561",
    "severity": "moderate",
-   "public_date": "2026-10-09",
-   "description": "mariadb: MariaDB: Privilege escalation via ACL cache key collision",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-107822"
+   "public_date": "2026-10-12",
+   "description": "goose: goose: Authorization bypass via uncleared read-only tool annotations",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-109561"
   },
   {
-   "cve": "CVE-2026-107821",
-   "severity": "moderate",
-   "public_date": "2026-10-09",
-   "description": "mariadb: mariadb: Arbitrary code execution via crafted FRM metadata",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-107821"
-  },
-  {
-   "cve": "CVE-2026-107819",
-   "severity": "moderate",
-   "public_date": "2026-10-09",
-   "description": "mariadb-connector-c: mariadb-connector-c: Information disclosure via improper TLS hostname verification",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-107819"
-  },
-  {
-   "cve": "CVE-2026-107818",
+   "cve": "CVE-2026-109380",
    "severity": "important",
-   "public_date": "2026-10-09",
-   "description": "mariadb: mariadb: Privilege escalation via environment variable injection during service restart",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-107818"
+   "public_date": "2026-10-12",
+   "description": "modern-tar: modern-tar: Denial of Service via memory exhaustion from crafted archives",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-109380"
+  },
+  {
+   "cve": "CVE-2026-109379",
+   "severity": "moderate",
+   "public_date": "2026-10-12",
+   "description": "cockpit: Cockpit: User enumeration via timing discrepancy",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-109379"
+  },
+  {
+   "cve": "CVE-2026-83535",
+   "severity": "moderate",
+   "public_date": "2026-10-12",
+   "description": "openstack-network-exporter: Basic-auth uses plaintext password storage and non-constant-time comparison",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-83535"
+  },
+  {
+   "cve": "CVE-2026-83536",
+   "severity": "moderate",
+   "public_date": "2026-10-12",
+   "description": "openstack-network-exporter: http.Server has no ReadHeaderTimeout / ReadTimeout (Slowloris)",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-83536"
+  },
+  {
+   "cve": "CVE-2026-103061",
+   "severity": "important",
+   "public_date": "2026-10-12",
+   "description": "gleam: gleam: Arbitrary directory deletion via path traversal in package metadata",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-103061"
+  },
+  {
+   "cve": "CVE-2026-85471",
+   "severity": "moderate",
+   "public_date": "2026-10-12",
+   "description": "quay: quay: Webhook notification SSRF -- hostname-string blocklist trivially bypassable",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-85471"
   }
  ],
- "_updated": "2026-10-12T16:37:14Z"
+ "_updated": "2026-10-13T14:54:05Z"
 }

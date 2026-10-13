@@ -1,10 +1,20 @@
 {
  "source": "CISA Known Exploited Vulnerabilities Catalog",
  "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
- "catalogVersion": "2026.10.08",
- "dateReleased": "2026-10-08T20:09:18.9833Z",
- "total": 1739,
+ "catalogVersion": "2026.10.13",
+ "dateReleased": "2026-10-13T14:34:17.9076Z",
+ "total": 1740,
  "recent": [
+  {
+   "cveID": "CVE-2026-104935",
+   "vendorProject": "Ivanti",
+   "product": "Connect Secure",
+   "vulnerabilityName": "Ivanti Connect Secure Authentication Bypass by Spoofing Vulnerability",
+   "dateAdded": "2026-10-13",
+   "dueDate": "2026-10-16",
+   "knownRansomwareCampaignUse": "Unknown",
+   "shortDescription": "Ivanti Connect Secure contains an authentication bypass by spoofing vulnerability that allows a remote unauthenticated attacker to execute arbitrary commands."
+  },
   {
    "cveID": "CVE-2015-5477",
    "vendorProject": "ISC",
@@ -144,18 +154,8 @@
    "dueDate": "2026-09-28",
    "knownRansomwareCampaignUse": "Unknown",
    "shortDescription": "Mikrotik RouterOS contains an improper enforcement of behavioral workflow vulnerability that could allow an unauthenticated client to open a session channel and send an exec request. This vulnerability can be chained to "
-  },
-  {
-   "cveID": "CVE-2026-65660",
-   "vendorProject": "Microsoft",
-   "product": "SharePoint",
-   "vulnerabilityName": "Microsoft SharePoint Code Injection Vulnerability",
-   "dateAdded": "2026-09-25",
-   "dueDate": "2026-09-28",
-   "knownRansomwareCampaignUse": "Unknown",
-   "shortDescription": "Microsoft SharePoint contains a code injection vulnerability which could allow an authorized attacker to execute code over a network."
   }
  ],
  "tracked_crosscheck": [],
- "_updated": "2026-10-12T16:37:14Z"
+ "_updated": "2026-10-13T14:54:05Z"
 }
