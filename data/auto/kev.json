@@ -2,8 +2,8 @@
  "source": "CISA Known Exploited Vulnerabilities Catalog",
  "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
  "catalogVersion": "2026.10.13",
- "dateReleased": "2026-10-13T14:34:17.9076Z",
- "total": 1740,
+ "dateReleased": "2026-10-13T19:10:43.6568Z",
+ "total": 1741,
  "recent": [
   {
    "cveID": "CVE-2026-104935",
@@ -14,6 +14,16 @@
    "dueDate": "2026-10-16",
    "knownRansomwareCampaignUse": "Unknown",
    "shortDescription": "Ivanti Connect Secure contains an authentication bypass by spoofing vulnerability that allows a remote unauthenticated attacker to execute arbitrary commands."
+  },
+  {
+   "cveID": "CVE-2026-96951",
+   "vendorProject": "Microsoft",
+   "product": "Windows",
+   "vulnerabilityName": "Microsoft Windows Command Injection Vulnerability",
+   "dateAdded": "2026-10-13",
+   "dueDate": "2026-10-16",
+   "knownRansomwareCampaignUse": "Unknown",
+   "shortDescription": "Microsoft Windows Shell contains a command injection vulnerability that allows an unauthorized attacker to bypass a security feature over a network."
   },
   {
    "cveID": "CVE-2015-5477",
@@ -144,18 +154,8 @@
    "dueDate": "2026-09-30",
    "knownRansomwareCampaignUse": "Unknown",
    "shortDescription": "Citrix NetScaler ADC and NetScaler Gateway contain an improper input validation vulnerability that could allow an unauthenticated attacker to execute arbitrary commands."
-  },
-  {
-   "cveID": "CVE-2026-67279",
-   "vendorProject": "MikroTik",
-   "product": "RouterOS",
-   "vulnerabilityName": "Mikrotik RouterOS Improper Enforcement of Behavioral Workflow Vulnerability",
-   "dateAdded": "2026-09-25",
-   "dueDate": "2026-09-28",
-   "knownRansomwareCampaignUse": "Unknown",
-   "shortDescription": "Mikrotik RouterOS contains an improper enforcement of behavioral workflow vulnerability that could allow an unauthenticated client to open a session channel and send an exec request. This vulnerability can be chained to "
   }
  ],
  "tracked_crosscheck": [],
- "_updated": "2026-10-13T14:54:05Z"
+ "_updated": "2026-10-14T12:45:56Z"
 }

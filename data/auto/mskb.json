@@ -2,33 +2,109 @@
  "source": "Microsoft Security Response Center (MSRC) CVRF v3.0",
  "source_url": "https://msrc.microsoft.com/update-guide/releaseNote/2026-Oct",
  "release_id": "2026-Oct",
- "release_title": "October 2026 Early Security Updates",
- "release_date": "2026-10-02T07:00:00Z",
- "cve_count": 348,
- "kb_count": 4,
+ "release_title": "October 2026 Security Updates",
+ "release_date": "2026-10-13T07:00:00Z",
+ "cve_count": 1760,
+ "kb_count": 75,
  "kbs": [
   {
-   "kb": "KB5129957",
-   "url": "https://catalog.update.microsoft.com/Search.aspx?q=KB5129957"
+   "kb": "KB5126653",
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5126653"
   },
   {
-   "kb": "KB5129958",
-   "url": "https://catalog.update.microsoft.com/Search.aspx?q=KB5129958"
+   "kb": "KB5127648",
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5127648"
   },
   {
-   "kb": "KB5129955",
-   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5129955"
+   "kb": "KB5126646",
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5126646"
   },
   {
-   "kb": "KB5129956",
-   "url": "https://catalog.update.microsoft.com/Search.aspx?q=KB5129956"
+   "kb": "KB5127646",
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5127646"
+  },
+  {
+   "kb": "KB5126651",
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5126651"
+  },
+  {
+   "kb": "KB5126657",
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5126657"
+  },
+  {
+   "kb": "KB5126655",
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5126655"
+  },
+  {
+   "kb": "KB5126835",
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5126835"
+  },
+  {
+   "kb": "KB5126836",
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5126836"
+  },
+  {
+   "kb": "KB5126868",
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5126868"
+  },
+  {
+   "kb": "KB5002928",
+   "url": "https://www.microsoft.com/en-us/download/details.aspx?id=108860"
+  },
+  {
+   "kb": "KB5002927",
+   "url": "https://www.microsoft.com/en-us/download/details.aspx?id=108862"
+  },
+  {
+   "kb": "KB5127666",
+   "url": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5127666"
+  },
+  {
+   "kb": "KB5127685",
+   "url": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5127685"
   }
  ],
  "exploitation_more_likely": [
   {
-   "cve": "CVE-2026-96940",
-   "title": "Microsoft Exchange Server Elevation of Privilege Vulnerability"
+   "cve": "CVE-2026-100214",
+   "title": "Microsoft Dynamics 365 Business Central Remote Code Execution Vulnerability"
+  },
+  {
+   "cve": "CVE-2026-102217",
+   "title": "WebDAV Elevation of Privilege Vulnerability"
+  },
+  {
+   "cve": "CVE-2026-69452",
+   "title": "Windows Enterprise App Management Elevation of Privilege Vulnerability"
+  },
+  {
+   "cve": "CVE-2026-69673",
+   "title": "Windows Update Elevation of Privilege Vulnerability"
+  },
+  {
+   "cve": "CVE-2026-69718",
+   "title": "Windows Update Elevation of Privilege Vulnerability"
+  },
+  {
+   "cve": "CVE-2026-69733",
+   "title": "Windows Update Elevation of Privilege Vulnerability"
+  },
+  {
+   "cve": "CVE-2026-69783",
+   "title": "Windows Update Elevation of Privilege Vulnerability"
+  },
+  {
+   "cve": "CVE-2026-69880",
+   "title": "Desktop Window Manager Elevation of Privilege Vulnerability"
+  },
+  {
+   "cve": "CVE-2026-69882",
+   "title": "Windows Update Elevation of Privilege Vulnerability"
+  },
+  {
+   "cve": "CVE-2026-69918",
+   "title": "Windows Core Messaging Elevation of Privilege Vulnerability"
   }
  ],
- "_updated": "2026-10-13T14:54:05Z"
+ "_updated": "2026-10-14T12:45:56Z"
 }

@@ -3,77 +3,77 @@
  "source_url": "https://www.tenable.com/plugins/newest",
  "items": [
   {
-   "id": "365306",
-   "title": "MiracleLinux 9 : vim-8.2.2637-26.el9_8.23.ML.1 (AXSA:2026-2021:26)",
-   "link": "https://www.tenable.com/plugins/nessus/365306",
-   "published": "Tue, 13 Oct 2026 00:00:00 GMT"
+   "id": "365547",
+   "title": "RockyLinux 9 : xorg-x11-server (RLSA-2026:82015)",
+   "link": "https://www.tenable.com/plugins/nessus/365547",
+   "published": "Wed, 14 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "365305",
-   "title": "MiracleLinux 8 : bind-9.11.36-16.el8_10.16 (AXSA:2026-2019:13)",
-   "link": "https://www.tenable.com/plugins/nessus/365305",
-   "published": "Tue, 13 Oct 2026 00:00:00 GMT"
+   "id": "365546",
+   "title": "RockyLinux 8 : rsyslog (RLSA-2026:80817)",
+   "link": "https://www.tenable.com/plugins/nessus/365546",
+   "published": "Wed, 14 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "365304",
-   "title": "MiracleLinux 8 : vim-8.0.1763-32.el8_10.ML.1 (AXSA:2026-2020:25)",
-   "link": "https://www.tenable.com/plugins/nessus/365304",
-   "published": "Tue, 13 Oct 2026 00:00:00 GMT"
+   "id": "365545",
+   "title": "RockyLinux 8 : glibc (RLSA-2026:80798)",
+   "link": "https://www.tenable.com/plugins/nessus/365545",
+   "published": "Wed, 14 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "365303",
-   "title": "MiracleLinux 9 : opentelemetry-collector-0.158.0-1.el9_8 (AXSA:2026-2023:06)",
-   "link": "https://www.tenable.com/plugins/nessus/365303",
-   "published": "Tue, 13 Oct 2026 00:00:00 GMT"
+   "id": "365544",
+   "title": "RockyLinux 9 : kernel (RLSA-2026:81552)",
+   "link": "https://www.tenable.com/plugins/nessus/365544",
+   "published": "Wed, 14 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "365302",
-   "title": "7-Zip < 24.08 CopyCoder Infinite Loop DoS (ZDI-24-1606)",
-   "link": "https://www.tenable.com/plugins/nessus/365302",
-   "published": "Tue, 13 Oct 2026 00:00:00 GMT"
+   "id": "365543",
+   "title": "RockyLinux 8 : flatpak-builder (RLSA-2026:80973)",
+   "link": "https://www.tenable.com/plugins/nessus/365543",
+   "published": "Wed, 14 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "365301",
-   "title": "7-Zip < 26.02 XZ Heap Buffer Overflow RCE (ZDI-26-444)",
-   "link": "https://www.tenable.com/plugins/nessus/365301",
-   "published": "Tue, 13 Oct 2026 00:00:00 GMT"
+   "id": "365542",
+   "title": "RockyLinux 9 : gd (RLSA-2026:81517)",
+   "link": "https://www.tenable.com/plugins/nessus/365542",
+   "published": "Wed, 14 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "365300",
-   "title": "Rocky Linux 9.6 [TuxCare] Security Update: cups / cups-client / cups-devel / cups-filesystem / cups-ipptool / etc (ALMALINUX9.6:CLSA-2026:1791870722)",
-   "link": "https://www.tenable.com/plugins/nessus/365300",
-   "published": "Tue, 13 Oct 2026 00:00:00 GMT"
+   "id": "365541",
+   "title": "RockyLinux 9 : librabbitmq (RLSA-2026:82094)",
+   "link": "https://www.tenable.com/plugins/nessus/365541",
+   "published": "Wed, 14 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "365299",
-   "title": "CentOS Linux 8.5 [TuxCare] Security Update: bpftool / kernel / kernel-core / kernel-cross-headers / etc Multiple Vulnerabilities (CENTOS8.5:CLSA-2026:1791852988",
-   "link": "https://www.tenable.com/plugins/nessus/365299",
-   "published": "Tue, 13 Oct 2026 00:00:00 GMT"
+   "id": "365540",
+   "title": "RockyLinux 8 : OpenEXR (RLSA-2026:82345)",
+   "link": "https://www.tenable.com/plugins/nessus/365540",
+   "published": "Wed, 14 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "365298",
-   "title": "AlmaLinux 9.6 [TuxCare] Security Update: cups / cups-client / cups-devel / cups-filesystem / cups-ipptool / etc (ALMALINUX9.6:CLSA-2026:1791870722)",
-   "link": "https://www.tenable.com/plugins/nessus/365298",
-   "published": "Tue, 13 Oct 2026 00:00:00 GMT"
+   "id": "365539",
+   "title": "RockyLinux 9 : pcre2 (RLSA-2026:81532)",
+   "link": "https://www.tenable.com/plugins/nessus/365539",
+   "published": "Wed, 14 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "365297",
-   "title": "GitLab 18.1 < 19.2.8 / 19.3 < 19.3.5 / 19.4 < 19.4.2 (CVE-2026-81839)",
-   "link": "https://www.tenable.com/plugins/nessus/365297",
-   "published": "Tue, 13 Oct 2026 00:00:00 GMT"
+   "id": "365538",
+   "title": "RockyLinux 9 : libreoffice (RLSA-2026:82013)",
+   "link": "https://www.tenable.com/plugins/nessus/365538",
+   "published": "Wed, 14 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "365296",
-   "title": "GitLab 19.1 < 19.2.8 / 19.3 < 19.3.5 / 19.4 < 19.4.2 (CVE-2026-105458)",
-   "link": "https://www.tenable.com/plugins/nessus/365296",
-   "published": "Tue, 13 Oct 2026 00:00:00 GMT"
+   "id": "365537",
+   "title": "RockyLinux 9 : python-tornado (RLSA-2026:82040)",
+   "link": "https://www.tenable.com/plugins/nessus/365537",
+   "published": "Wed, 14 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "365295",
-   "title": "Amazon Linux 2023 : php8.2, php8.2-bcmath, php8.2-cli (ALAS2023-2026-3161)",
-   "link": "https://www.tenable.com/plugins/nessus/365295",
-   "published": "Mon, 12 Oct 2026 00:00:00 GMT"
+   "id": "365536",
+   "title": "RockyLinux 8 : pcre2 (RLSA-2026:81613)",
+   "link": "https://www.tenable.com/plugins/nessus/365536",
+   "published": "Wed, 14 Oct 2026 00:00:00 GMT"
   }
  ],
- "_updated": "2026-10-13T14:54:05Z"
+ "_updated": "2026-10-14T12:45:56Z"
 }
