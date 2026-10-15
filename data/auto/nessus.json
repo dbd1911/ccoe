@@ -3,77 +3,77 @@
  "source_url": "https://www.tenable.com/plugins/newest",
  "items": [
   {
-   "id": "365547",
-   "title": "RockyLinux 9 : xorg-x11-server (RLSA-2026:82015)",
-   "link": "https://www.tenable.com/plugins/nessus/365547",
+   "id": "366017",
+   "title": "MiracleLinux 9 : flatpak-builder-1.2.3-1.el9_8.1 (AXSA:2026-2052:01)",
+   "link": "https://www.tenable.com/plugins/nessus/366017",
+   "published": "Thu, 15 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "366016",
+   "title": "MiracleLinux 9 : dovecot-2.3.16-18.el9_8.8 (AXSA:2026-2051:08)",
+   "link": "https://www.tenable.com/plugins/nessus/366016",
+   "published": "Thu, 15 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "366015",
+   "title": "MiracleLinux 9 : glibc-2.34-283.el9_8 (AXSA:2026-2040:13)",
+   "link": "https://www.tenable.com/plugins/nessus/366015",
+   "published": "Thu, 15 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "366014",
+   "title": "MiracleLinux 9 : kernel-5.14.0-687.47.1.el9_8 (AXSA:2026-2048:99)",
+   "link": "https://www.tenable.com/plugins/nessus/366014",
+   "published": "Thu, 15 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "366013",
+   "title": "MiracleLinux 9 : flatpak-1.12.9-4.el9_8.4 (AXSA:2026-2050:04)",
+   "link": "https://www.tenable.com/plugins/nessus/366013",
+   "published": "Thu, 15 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "366012",
+   "title": "MiracleLinux 9 : firefox-140.17.0-1.el9_8.ML.1 (AXSA:2026-2049:27)",
+   "link": "https://www.tenable.com/plugins/nessus/366012",
+   "published": "Thu, 15 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "366011",
+   "title": "Fedora 43 : freerdp (2026-d51a33b2f5)",
+   "link": "https://www.tenable.com/plugins/nessus/366011",
+   "published": "Thu, 15 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "366010",
+   "title": "Fedora 44 : exim (2026-4f9e436ed5)",
+   "link": "https://www.tenable.com/plugins/nessus/366010",
+   "published": "Thu, 15 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "366009",
+   "title": "Fedora 43 : python3-docs / python3.14 (2026-a3da6bb5cd)",
+   "link": "https://www.tenable.com/plugins/nessus/366009",
+   "published": "Thu, 15 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "366008",
+   "title": "Fedora 43 : exim (2026-d202b74c6a)",
+   "link": "https://www.tenable.com/plugins/nessus/366008",
+   "published": "Thu, 15 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "366007",
+   "title": "RockyLinux 8 : python36:3.6 (RLSA-2026:82858)",
+   "link": "https://www.tenable.com/plugins/nessus/366007",
    "published": "Wed, 14 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "365546",
-   "title": "RockyLinux 8 : rsyslog (RLSA-2026:80817)",
-   "link": "https://www.tenable.com/plugins/nessus/365546",
-   "published": "Wed, 14 Oct 2026 00:00:00 GMT"
-  },
-  {
-   "id": "365545",
-   "title": "RockyLinux 8 : glibc (RLSA-2026:80798)",
-   "link": "https://www.tenable.com/plugins/nessus/365545",
-   "published": "Wed, 14 Oct 2026 00:00:00 GMT"
-  },
-  {
-   "id": "365544",
-   "title": "RockyLinux 9 : kernel (RLSA-2026:81552)",
-   "link": "https://www.tenable.com/plugins/nessus/365544",
-   "published": "Wed, 14 Oct 2026 00:00:00 GMT"
-  },
-  {
-   "id": "365543",
-   "title": "RockyLinux 8 : flatpak-builder (RLSA-2026:80973)",
-   "link": "https://www.tenable.com/plugins/nessus/365543",
-   "published": "Wed, 14 Oct 2026 00:00:00 GMT"
-  },
-  {
-   "id": "365542",
-   "title": "RockyLinux 9 : gd (RLSA-2026:81517)",
-   "link": "https://www.tenable.com/plugins/nessus/365542",
-   "published": "Wed, 14 Oct 2026 00:00:00 GMT"
-  },
-  {
-   "id": "365541",
-   "title": "RockyLinux 9 : librabbitmq (RLSA-2026:82094)",
-   "link": "https://www.tenable.com/plugins/nessus/365541",
-   "published": "Wed, 14 Oct 2026 00:00:00 GMT"
-  },
-  {
-   "id": "365540",
-   "title": "RockyLinux 8 : OpenEXR (RLSA-2026:82345)",
-   "link": "https://www.tenable.com/plugins/nessus/365540",
-   "published": "Wed, 14 Oct 2026 00:00:00 GMT"
-  },
-  {
-   "id": "365539",
-   "title": "RockyLinux 9 : pcre2 (RLSA-2026:81532)",
-   "link": "https://www.tenable.com/plugins/nessus/365539",
-   "published": "Wed, 14 Oct 2026 00:00:00 GMT"
-  },
-  {
-   "id": "365538",
-   "title": "RockyLinux 9 : libreoffice (RLSA-2026:82013)",
-   "link": "https://www.tenable.com/plugins/nessus/365538",
-   "published": "Wed, 14 Oct 2026 00:00:00 GMT"
-  },
-  {
-   "id": "365537",
-   "title": "RockyLinux 9 : python-tornado (RLSA-2026:82040)",
-   "link": "https://www.tenable.com/plugins/nessus/365537",
-   "published": "Wed, 14 Oct 2026 00:00:00 GMT"
-  },
-  {
-   "id": "365536",
-   "title": "RockyLinux 8 : pcre2 (RLSA-2026:81613)",
-   "link": "https://www.tenable.com/plugins/nessus/365536",
+   "id": "366006",
+   "title": "RockyLinux 10 : curl (RLSA-2026:80512)",
+   "link": "https://www.tenable.com/plugins/nessus/366006",
    "published": "Wed, 14 Oct 2026 00:00:00 GMT"
   }
  ],
- "_updated": "2026-10-14T12:45:56Z"
+ "_updated": "2026-10-15T12:33:13Z"
 }

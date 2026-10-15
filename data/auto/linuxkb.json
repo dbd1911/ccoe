@@ -4,6 +4,99 @@
  "redhat_url": "https://access.redhat.com/security/security-updates/security-advisories",
  "ubuntu": [
   {
+   "id": "USN-8932-1",
+   "title": "curl vulnerabilities",
+   "published": "2026-10-14",
+   "cves": [
+    "CVE-2026-92388",
+    "CVE-2026-92389",
+    "CVE-2026-87864",
+    "CVE-2026-87862",
+    "CVE-2026-94266",
+    "CVE-2026-87863"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8932-1"
+  },
+  {
+   "id": "USN-8931-1",
+   "title": "Apache HTTP Server vulnerabilities",
+   "published": "2026-10-14",
+   "cves": [
+    "CVE-2026-73637",
+    "CVE-2026-63292",
+    "CVE-2026-93546",
+    "CVE-2026-63686",
+    "CVE-2026-63045",
+    "CVE-2026-73636"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8931-1"
+  },
+  {
+   "id": "USN-8930-1",
+   "title": "U-Boot vulnerabilities",
+   "published": "2026-10-14",
+   "cves": [
+    "CVE-2026-74222",
+    "CVE-2026-74225",
+    "CVE-2026-74221",
+    "CVE-2026-74220"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8930-1"
+  },
+  {
+   "id": "USN-8929-1",
+   "title": "Bind vulnerabilities",
+   "published": "2026-10-14",
+   "cves": [
+    "CVE-2026-19033",
+    "CVE-2026-81736",
+    "CVE-2026-13321",
+    "CVE-2026-78301",
+    "CVE-2026-19941",
+    "CVE-2026-13204"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8929-1"
+  },
+  {
+   "id": "USN-8928-1",
+   "title": "OpenSSH vulnerabilities",
+   "published": "2026-10-14",
+   "cves": [
+    "CVE-2026-106552",
+    "CVE-2026-106553",
+    "CVE-2026-106585",
+    "CVE-2026-106583",
+    "CVE-2026-106584",
+    "CVE-2026-106586"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8928-1"
+  },
+  {
+   "id": "USN-8927-1",
+   "title": "curl vulnerabilities",
+   "published": "2026-10-14",
+   "cves": [
+    "CVE-2026-107928",
+    "CVE-2026-92389",
+    "CVE-2026-92387",
+    "CVE-2026-86412",
+    "CVE-2026-86409",
+    "CVE-2026-92390"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8927-1"
+  },
+  {
+   "id": "USN-8926-1",
+   "title": "urllib3 vulnerabilities",
+   "published": "2026-10-14",
+   "cves": [
+    "CVE-2026-97688",
+    "CVE-2026-97687",
+    "CVE-2026-97689"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8926-1"
+  },
+  {
    "id": "USN-8925-1",
    "title": "YAML-LibYAML vulnerabilities",
    "published": "2026-10-14",
@@ -13,6 +106,15 @@
     "CVE-2017-20285"
    ],
    "url": "https://ubuntu.com/security/notices/USN-8925-1"
+  },
+  {
+   "id": "USN-8908-2",
+   "title": "BlueZ regression",
+   "published": "2026-10-13",
+   "cves": [
+    "CVE-2026-19774"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8908-2"
   },
   {
    "id": "USN-8924-1",
@@ -27,187 +129,79 @@
     "CVE-2022-24448"
    ],
    "url": "https://ubuntu.com/security/notices/USN-8924-1"
-  },
-  {
-   "id": "USN-8918-1",
-   "title": "Linux kernel (Azure) vulnerabilities",
-   "published": "2026-10-13",
-   "cves": [
-    "CVE-2026-72197",
-    "CVE-2026-64463",
-    "CVE-2026-64330",
-    "CVE-2026-74345",
-    "CVE-2026-64541",
-    "CVE-2026-80611"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8918-1"
-  },
-  {
-   "id": "USN-8921-1",
-   "title": "Linux kernel vulnerabilities",
-   "published": "2026-10-13",
-   "cves": [
-    "CVE-2024-53214",
-    "CVE-2024-53194",
-    "CVE-2024-57904",
-    "CVE-2024-57929",
-    "CVE-2024-56570",
-    "CVE-2025-21664"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8921-1"
-  },
-  {
-   "id": "USN-8920-1",
-   "title": "Linux kernel vulnerabilities",
-   "published": "2026-10-13",
-   "cves": [
-    "CVE-2022-49149",
-    "CVE-2026-53221",
-    "CVE-2022-49182",
-    "CVE-2026-52910",
-    "CVE-2024-53210",
-    "CVE-2025-38724"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8920-1"
-  },
-  {
-   "id": "USN-8923-1",
-   "title": "Linux kernel vulnerabilities",
-   "published": "2026-10-13",
-   "cves": [
-    "CVE-2022-49114",
-    "CVE-2022-49111"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8923-1"
-  },
-  {
-   "id": "USN-8919-1",
-   "title": "Linux kernel vulnerabilities",
-   "published": "2026-10-13",
-   "cves": [
-    "CVE-2022-49201",
-    "CVE-2022-49182",
-    "CVE-2022-49149",
-    "CVE-2024-53187",
-    "CVE-2024-53210",
-    "CVE-2022-49170"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8919-1"
-  },
-  {
-   "id": "USN-8922-1",
-   "title": "Linux kernel (Oracle) vulnerabilities",
-   "published": "2026-10-13",
-   "cves": [
-    "CVE-2024-53214",
-    "CVE-2026-53221",
-    "CVE-2025-38724",
-    "CVE-2024-53194",
-    "CVE-2024-57904",
-    "CVE-2024-57929"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8922-1"
-  },
-  {
-   "id": "USN-8917-1",
-   "title": "Linux kernel vulnerabilities",
-   "published": "2026-10-13",
-   "cves": [
-    "CVE-2026-72213",
-    "CVE-2026-68260",
-    "CVE-2026-64336",
-    "CVE-2026-64500",
-    "CVE-2026-72236",
-    "CVE-2026-72086"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8917-1"
-  },
-  {
-   "id": "USN-8916-1",
-   "title": "PyJWT vulnerabilities",
-   "published": "2026-10-13",
-   "cves": [
-    "CVE-2026-102267",
-    "CVE-2026-102268",
-    "CVE-2026-102271",
-    "CVE-2026-102266",
-    "CVE-2026-102273",
-    "CVE-2026-102272"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8916-1"
   }
  ],
  "redhat": [
   {
-   "cve": "CVE-2026-88842",
-   "severity": "low",
-   "public_date": "2026-10-14",
-   "description": "busybox: busybox: dpkg stale field_start pointer causes out-of-bounds read and status file corruption",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-88842"
+   "cve": "CVE-2026-79824",
+   "severity": "important",
+   "public_date": "2026-10-15",
+   "description": "python: python: Arbitrary file overwrite via directory traversal in TAR archives",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-79824"
   },
   {
-   "cve": "CVE-2026-100231",
+   "cve": "CVE-2026-109855",
+   "severity": "important",
+   "public_date": "2026-10-15",
+   "description": "undici: undici: Denial of Service via failed HTTP/2 WebSocket handshake",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-109855"
+  },
+  {
+   "cve": "CVE-2026-102475",
+   "severity": "important",
+   "public_date": "2026-10-15",
+   "description": "io.vertx/vertx-http-proxy: vertx-http-proxy: Denial of Service via unbounded memory allocation in body transformer",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-102475"
+  },
+  {
+   "cve": "CVE-2026-110923",
+   "severity": "moderate",
+   "public_date": "2026-10-15",
+   "description": "openssh: openssh: sftp can write outside the destination directory from a server-supplied path",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-110923"
+  },
+  {
+   "cve": "CVE-2026-110925",
+   "severity": "moderate",
+   "public_date": "2026-10-15",
+   "description": "openssh: openssh: '$' and '\\' in a command-line username expand through %u",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-110925"
+  },
+  {
+   "cve": "CVE-2026-110926",
+   "severity": "moderate",
+   "public_date": "2026-10-15",
+   "description": "openssh: openssh: shared LZ77 compression dictionary leaks plaintext across channels",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-110926"
+  },
+  {
+   "cve": "CVE-2026-110928",
+   "severity": "moderate",
+   "public_date": "2026-10-15",
+   "description": "openssh: openssh: authorized_keys restrict does not apply to tunnel forwarding",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-110928"
+  },
+  {
+   "cve": "CVE-2026-110929",
+   "severity": "important",
+   "public_date": "2026-10-15",
+   "description": "openssh: openssh: post-authentication process retains root without file-descriptor passing",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-110929"
+  },
+  {
+   "cve": "CVE-2026-110872",
    "severity": "moderate",
    "public_date": "2026-10-14",
-   "description": "gstreamer1-plugins-bad-free: gstreamer1-plugins-bad-free: heap out-of-bounds write in asfmux due to incorrect UTF-16 size calculation for non-BMP characters",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-100231"
+   "description": "nodemailer: nodemailer: Denial of Service via inefficient SMTP reply parsing",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-110872"
   },
   {
-   "cve": "CVE-2026-100229",
-   "severity": "low",
-   "public_date": "2026-10-14",
-   "description": "gstreamer1-plugins-bad-free: gstreamer1-plugins-bad-free: out-of-bounds write in gst_h266_parser_parse_dci() due to off-by-one array bound check",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-100229"
-  },
-  {
-   "cve": "CVE-2026-88829",
+   "cve": "CVE-2026-110871",
    "severity": "moderate",
    "public_date": "2026-10-14",
-   "description": "busybox: busybox: HTTP request smuggling via pipelined requests in httpd reverse proxy",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-88829"
-  },
-  {
-   "cve": "CVE-2026-90954",
-   "severity": "important",
-   "public_date": "2026-10-14",
-   "description": "busybox: busybox: dpkg-deb extraction-root escape via per-ar-member deferred symlink flush",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-90954"
-  },
-  {
-   "cve": "CVE-2026-86476",
-   "severity": "important",
-   "public_date": "2026-10-14",
-   "description": "gstreamer1-plugins-base: gst-plugins-base: heap buffer overflow via unvalidated GstVideoMeta plane extents in gst_video_frame_map_id and video_meta_deserialize",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-86476"
-  },
-  {
-   "cve": "CVE-2026-94370",
-   "severity": "important",
-   "public_date": "2026-10-14",
-   "description": "qt: Qt: Memory corruption via improper string handling in Qt Quick Ultralite",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-94370"
-  },
-  {
-   "cve": "CVE-2026-92817",
-   "severity": "important",
-   "public_date": "2026-10-13",
-   "description": "Ignition: Ignition: Arbitrary code execution via improper session privilege validation",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-92817"
-  },
-  {
-   "cve": "CVE-2026-110142",
-   "severity": "moderate",
-   "public_date": "2026-10-13",
-   "description": "chromium-browser: Use after free in FileSystem",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-110142"
-  },
-  {
-   "cve": "CVE-2026-110167",
-   "severity": "important",
-   "public_date": "2026-10-13",
-   "description": "chromium-browser: Use after free in Media",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-110167"
+   "description": "nodemailer: nodemailer: Denial of Service via inefficient header parsing",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-110871"
   }
  ],
- "_updated": "2026-10-14T12:45:56Z"
+ "_updated": "2026-10-15T12:33:13Z"
 }

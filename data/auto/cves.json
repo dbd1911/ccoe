@@ -2,14 +2,14 @@
  "source": "NVD (NIST) — CRITICAL severity CVEs published in the last 7 days",
  "source_url": "https://nvd.nist.gov/vuln/search",
  "window_days": 7,
- "total_in_window": 60,
+ "total_in_window": 59,
  "items": [
   {
-   "id": "CVE-2026-109109",
-   "published": "2026-10-13",
+   "id": "CVE-2026-110536",
+   "published": "2026-10-14",
    "score": 10.0,
    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-   "description": "A vulnerability was detected in Wavlink WL-WN530BE1-A 251117. This vulnerability affects the function strcpy of the file /cgi-bin/ExportAllSettings.cgi of the component Settings Export CGI. Performing a manipulation of the argument HTTP_COO"
+   "description": "A vulnerability was determined in D-Link DIR-868L 2.01b05. This impacts the function system of the file /htdocs/cgibin of the component HNAP CGI Handler. Executing a manipulation of the argument SOAPACTION can lead to os command injection. "
   },
   {
    "id": "CVE-2026-109110",
@@ -17,34 +17,6 @@
    "score": 10.0,
    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
    "description": "A flaw has been found in Wavlink WL-WN592AX6 250422. This issue affects the function system of the component wmapd Daemon. Executing a manipulation can lead to os command injection. It is possible to launch the attack remotely. The exploit "
-  },
-  {
-   "id": "CVE-2026-103849",
-   "published": "2026-10-13",
-   "score": 10.0,
-   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-   "description": "Adobe Commerce is affected by an Improper Neutralization of Special Elements Used in a Template Engine vulnerability that could result in arbitrary code execution in the context of the current user, potentially gaining elevated access or co"
-  },
-  {
-   "id": "CVE-2026-110130",
-   "published": "2026-10-13",
-   "score": 10.0,
-   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-   "description": "Dockhand before 1.0.45 contains an authentication bypass in which the global auth hook skips authentication for any path ending in a static-asset extension such as .js, including /api/* routes, and the user-mutation handlers fail open for u"
-  },
-  {
-   "id": "CVE-2026-48382",
-   "published": "2026-10-13",
-   "score": 10.0,
-   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-   "description": "Adobe Experience Manager is affected by an Incorrect Authorization vulnerability that could result in arbitrary code execution in the context of the current user, potentially gaining elevated access or control over the victim's account or s"
-  },
-  {
-   "id": "CVE-2026-48383",
-   "published": "2026-10-13",
-   "score": 10.0,
-   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-   "description": "Adobe Experience Manager is affected by an Incorrect Authorization vulnerability that could result in arbitrary code execution in the context of the current user, potentially gaining elevated access or control over the victim's account or s"
   },
   {
    "id": "CVE-2026-108804",
@@ -75,19 +47,47 @@
    "description": "A security vulnerability has been detected in Wavlink WL-WN530BE1-A 251117. This affects the function popen of the file /cgi-bin/uploadVpn.cgi. Such manipulation of the argument Type leads to os command injection. The attack may be performe"
   },
   {
-   "id": "CVE-2026-109157",
-   "published": "2026-10-13",
-   "score": 9.9,
-   "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-   "description": "A vulnerability was found in TRENDnet TEW-432BRP 3.10B20. Affected by this vulnerability is the function formTcpipSetup of the file /goform/formTcpipSetup. Performing a manipulation of the argument Name results in stack-based buffer overflo"
-  },
-  {
-   "id": "CVE-2026-108894",
+   "id": "CVE-2026-108896",
    "published": "2026-10-12",
    "score": 9.9,
    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-   "description": "A security flaw has been discovered in Linksys E1700 1.0.0.4.003. Impacted is the function addStaticRoute of the file /goform/addStaticRoute of the component Static Route Handler. Performing a manipulation of the argument staticRoute_IP_set"
+   "description": "A vulnerability was found in Linksys E1700 1.0.0.4.003. This affects the function setLinksysIpv6 of the file /goform/setLinksysIpv6. The manipulation of the argument _6rd_prefix/_6rd_prefix_len results in os command injection. The attack ca"
+  },
+  {
+   "id": "CVE-2026-108914",
+   "published": "2026-10-12",
+   "score": 9.9,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+   "description": "A flaw has been found in Edimax BR-6208AC 1.32. Affected by this issue is some unknown functionality of the file /goform/formWlSiteSurvey. This manipulation of the argument ifname causes buffer overflow. Remote exploitation of the attack is"
+  },
+  {
+   "id": "CVE-2026-108929",
+   "published": "2026-10-12",
+   "score": 9.9,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+   "description": "A flaw has been found in Netcore NR268 1.7.121109. The affected element is the function execvp of the file /router/DDNSset.cgi of the component DDNS. Executing a manipulation of the argument Hostname can lead to argument injection. The atta"
+  },
+  {
+   "id": "CVE-2026-108587",
+   "published": "2026-10-15",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "The 10Web Booster – Website speed optimization, Cache & Page Speed optimizer plugin for WordPress is vulnerable to Arbitrary File Upload in all versions up to, and including, 2.34.10 via the compressCustom function. This is due to missing f"
+  },
+  {
+   "id": "CVE-2026-110002",
+   "published": "2026-10-14",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "The Snazzy Social Media Feed plugin for WordPress is vulnerable to Arbitrary File Upload in all versions up to, and including, 2.5 via the (file scope) function. This is due to missing WordPress bootstrap, authentication, capability, and no"
+  },
+  {
+   "id": "CVE-2026-97668",
+   "published": "2026-10-14",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "The Abandoned Cart Pro for WooCommerce plugin for WordPress is vulnerable to SQL Injection via the guest cart persistent meta_value in all versions up to, and including, 10.8.0 due to insufficient escaping on user supplied data and lack of "
   }
  ],
- "_updated": "2026-10-14T12:45:56Z"
+ "_updated": "2026-10-15T12:33:13Z"
 }
