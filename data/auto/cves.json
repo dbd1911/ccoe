@@ -2,42 +2,14 @@
  "source": "NVD (NIST) — CRITICAL severity CVEs published in the last 7 days",
  "source_url": "https://nvd.nist.gov/vuln/search",
  "window_days": 7,
- "total_in_window": 59,
+ "total_in_window": 35,
  "items": [
   {
-   "id": "CVE-2026-110536",
-   "published": "2026-10-14",
+   "id": "CVE-2026-110957",
+   "published": "2026-10-15",
    "score": 10.0,
    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-   "description": "A vulnerability was determined in D-Link DIR-868L 2.01b05. This impacts the function system of the file /htdocs/cgibin of the component HNAP CGI Handler. Executing a manipulation of the argument SOAPACTION can lead to os command injection. "
-  },
-  {
-   "id": "CVE-2026-109110",
-   "published": "2026-10-13",
-   "score": 10.0,
-   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-   "description": "A flaw has been found in Wavlink WL-WN592AX6 250422. This issue affects the function system of the component wmapd Daemon. Executing a manipulation can lead to os command injection. It is possible to launch the attack remotely. The exploit "
-  },
-  {
-   "id": "CVE-2026-108804",
-   "published": "2026-10-12",
-   "score": 10.0,
-   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-   "description": "A vulnerability was detected in TRENDnet TEW-751DR, TEW-752DRU and TEW733GR 1.03B01/1.03B03. Affected is the function fwrite of the file pigwidgeon.cgi of the component Web Management Backend. The manipulation of the argument service result"
-  },
-  {
-   "id": "CVE-2026-108892",
-   "published": "2026-10-12",
-   "score": 10.0,
-   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-   "description": "A vulnerability was determined in Linksys E1700 1.0.0.4.003. This vulnerability affects the function ssid1MACFilter of the file /goform/ssid1MACFilter of the component Mac Filter. This manipulation of the argument newap_text_%d causes stack"
-  },
-  {
-   "id": "CVE-2026-108918",
-   "published": "2026-10-12",
-   "score": 10.0,
-   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-   "description": "A vulnerability was identified in Edimax BR-6208AC 1.32. Impacted is an unknown function of the file /goform/formWlanMP. The manipulation of the argument readE2P leads to command injection. It is possible to initiate the attack remotely. Th"
+   "description": "A vulnerability has been found in Wavlink WL-WN530BE2-A up to M30BE2_V250604. The affected element is the function sub_12580 of the file api.cgi of the component Login Processing. The manipulation of the argument REMOTE_ADDR leads to os com"
   },
   {
    "id": "CVE-2026-109108",
@@ -47,20 +19,6 @@
    "description": "A security vulnerability has been detected in Wavlink WL-WN530BE1-A 251117. This affects the function popen of the file /cgi-bin/uploadVpn.cgi. Such manipulation of the argument Type leads to os command injection. The attack may be performe"
   },
   {
-   "id": "CVE-2026-108896",
-   "published": "2026-10-12",
-   "score": 9.9,
-   "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-   "description": "A vulnerability was found in Linksys E1700 1.0.0.4.003. This affects the function setLinksysIpv6 of the file /goform/setLinksysIpv6. The manipulation of the argument _6rd_prefix/_6rd_prefix_len results in os command injection. The attack ca"
-  },
-  {
-   "id": "CVE-2026-108914",
-   "published": "2026-10-12",
-   "score": 9.9,
-   "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-   "description": "A flaw has been found in Edimax BR-6208AC 1.32. Affected by this issue is some unknown functionality of the file /goform/formWlSiteSurvey. This manipulation of the argument ifname causes buffer overflow. Remote exploitation of the attack is"
-  },
-  {
    "id": "CVE-2026-108929",
    "published": "2026-10-12",
    "score": 9.9,
@@ -68,26 +26,68 @@
    "description": "A flaw has been found in Netcore NR268 1.7.121109. The affected element is the function execvp of the file /router/DDNSset.cgi of the component DDNS. Executing a manipulation of the argument Hostname can lead to argument injection. The atta"
   },
   {
-   "id": "CVE-2026-108587",
+   "id": "CVE-2026-104798",
+   "published": "2026-10-16",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "The My Calendar – Accessible Event Manager plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 3.8.7. The public `mcs` GET parameter is reflected into post content unsanitized before WordPress co"
+  },
+  {
+   "id": "CVE-2026-109219",
+   "published": "2026-10-16",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "The Mang Board plugin for WordPress is vulnerable to Arbitrary File Upload in all versions up to, and including, 2.4.4 via the mbw_file_upload function. This is due to missing file extension validation on the attacker-supplied image_path pa"
+  },
+  {
+   "id": "CVE-2026-109515",
+   "published": "2026-10-16",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "The MailOptin – Popup, Optin Forms & Email Newsletters for Mailchimp, HubSpot, AWeber Etc. plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 1.2.78.6 This is due to the `subscribe_to_email_list"
+  },
+  {
+   "id": "CVE-2026-103768",
+   "published": "2026-10-16",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "The ELEX WordPress HelpDesk & Customer Ticketing System plugin for WordPress is vulnerable to Arbitrary File Upload in all versions up to, and including, 3.3.7 via the initMailPart function. This is due to insufficient file type validation "
+  },
+  {
+   "id": "CVE-2026-89079",
+   "published": "2026-10-16",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "The Theme My Login plugin for WordPress is vulnerable to privilege escalation via account takeover in versions up to, and including, 7.2.1. This is due to the plugin not properly validating a user's identity prior to updating their password"
+  },
+  {
+   "id": "CVE-2026-104730",
+   "published": "2026-10-16",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "The Sunshine Photo Cart – Client Photo Gallery & Photo Proofing for Photographers plugin for WordPress is vulnerable to PHP Object Injection in all versions up to, and including, 3.7.4 via deserialization of untrusted input . This makes it "
+  },
+  {
+   "id": "CVE-2026-111281",
    "published": "2026-10-15",
    "score": 9.8,
    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-   "description": "The 10Web Booster – Website speed optimization, Cache & Page Speed optimizer plugin for WordPress is vulnerable to Arbitrary File Upload in all versions up to, and including, 2.34.10 via the compressCustom function. This is due to missing f"
+   "description": "Jooan JA-A12 IP cameras with firmware 009_20171107 and 05.02.31.105 contain a remote code execution vulnerability that allows unauthenticated attackers to run root commands via hard-coded credentials. Attackers send singleCMD=SetDiagMode to"
   },
   {
-   "id": "CVE-2026-110002",
-   "published": "2026-10-14",
+   "id": "CVE-2026-111322",
+   "published": "2026-10-15",
    "score": 9.8,
    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-   "description": "The Snazzy Social Media Feed plugin for WordPress is vulnerable to Arbitrary File Upload in all versions up to, and including, 2.5 via the (file scope) function. This is due to missing WordPress bootstrap, authentication, capability, and no"
+   "description": "Archon 0.2.13 through 0.11.1 contains a missing authentication vulnerability that allows unauthenticated attackers to access the /api/* control API, which binds to 0.0.0.0 by default. Attackers with network access can send messages to the A"
   },
   {
-   "id": "CVE-2026-97668",
-   "published": "2026-10-14",
+   "id": "CVE-2026-111329",
+   "published": "2026-10-15",
    "score": 9.8,
    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-   "description": "The Abandoned Cart Pro for WooCommerce plugin for WordPress is vulnerable to SQL Injection via the guest cart persistent meta_value in all versions up to, and including, 10.8.0 due to insufficient escaping on user supplied data and lack of "
+   "description": "JuggleIM im-server through 1.8.16 ships default administrator credentials admin/123456 that allow unauthenticated remote attackers to access the admin console on port 8090. Attackers can log in as administrator, even after account deletion "
   }
  ],
- "_updated": "2026-10-15T12:33:13Z"
+ "_updated": "2026-10-16T12:12:22Z"
 }

@@ -3,77 +3,77 @@
  "source_url": "https://www.tenable.com/plugins/newest",
  "items": [
   {
-   "id": "366017",
-   "title": "MiracleLinux 9 : flatpak-builder-1.2.3-1.el9_8.1 (AXSA:2026-2052:01)",
-   "link": "https://www.tenable.com/plugins/nessus/366017",
+   "id": "366332",
+   "title": "Debian dsa-6563 : mutt - security update",
+   "link": "https://www.tenable.com/plugins/nessus/366332",
    "published": "Thu, 15 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "366016",
-   "title": "MiracleLinux 9 : dovecot-2.3.16-18.el9_8.8 (AXSA:2026-2051:08)",
-   "link": "https://www.tenable.com/plugins/nessus/366016",
+   "id": "366331",
+   "title": "Debian dsa-6564 : jpeg-xl-doc - security update",
+   "link": "https://www.tenable.com/plugins/nessus/366331",
    "published": "Thu, 15 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "366015",
-   "title": "MiracleLinux 9 : glibc-2.34-283.el9_8 (AXSA:2026-2040:13)",
-   "link": "https://www.tenable.com/plugins/nessus/366015",
+   "id": "366330",
+   "title": "RHEL 8 : wireshark (RHSA-2026:83657)",
+   "link": "https://www.tenable.com/plugins/nessus/366330",
    "published": "Thu, 15 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "366014",
-   "title": "MiracleLinux 9 : kernel-5.14.0-687.47.1.el9_8 (AXSA:2026-2048:99)",
-   "link": "https://www.tenable.com/plugins/nessus/366014",
+   "id": "366329",
+   "title": "RHCOS 4 : OpenShift Container Platform 4.17.59 (RHSA-2026:77547)",
+   "link": "https://www.tenable.com/plugins/nessus/366329",
    "published": "Thu, 15 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "366013",
-   "title": "MiracleLinux 9 : flatpak-1.12.9-4.el9_8.4 (AXSA:2026-2050:04)",
-   "link": "https://www.tenable.com/plugins/nessus/366013",
+   "id": "366328",
+   "title": "RHCOS 4 : OpenShift Container Platform 4.16.73 (RHSA-2026:77611)",
+   "link": "https://www.tenable.com/plugins/nessus/366328",
    "published": "Thu, 15 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "366012",
-   "title": "MiracleLinux 9 : firefox-140.17.0-1.el9_8.ML.1 (AXSA:2026-2049:27)",
-   "link": "https://www.tenable.com/plugins/nessus/366012",
+   "id": "366327",
+   "title": "Fedora 46 : OpenImageIO / ffmpeg / libheif / mingw-openexr / openjph / xevd / etc (2026-42f5a71cb1)",
+   "link": "https://www.tenable.com/plugins/nessus/366327",
    "published": "Thu, 15 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "366011",
-   "title": "Fedora 43 : freerdp (2026-d51a33b2f5)",
-   "link": "https://www.tenable.com/plugins/nessus/366011",
+   "id": "366326",
+   "title": "Google Chrome < 155.0.8059.84 Multiple Vulnerabilities",
+   "link": "https://www.tenable.com/plugins/nessus/366326",
    "published": "Thu, 15 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "366010",
-   "title": "Fedora 44 : exim (2026-4f9e436ed5)",
-   "link": "https://www.tenable.com/plugins/nessus/366010",
+   "id": "366325",
+   "title": "Google Chrome < 155.0.8059.84 Multiple Vulnerabilities",
+   "link": "https://www.tenable.com/plugins/nessus/366325",
    "published": "Thu, 15 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "366009",
-   "title": "Fedora 43 : python3-docs / python3.14 (2026-a3da6bb5cd)",
-   "link": "https://www.tenable.com/plugins/nessus/366009",
+   "id": "366324",
+   "title": "Oracle Linux 9 : wireshark (ELSA-2026-83546)",
+   "link": "https://www.tenable.com/plugins/nessus/366324",
    "published": "Thu, 15 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "366008",
-   "title": "Fedora 43 : exim (2026-d202b74c6a)",
-   "link": "https://www.tenable.com/plugins/nessus/366008",
+   "id": "366323",
+   "title": "Oracle Linux 8 : ghostscript (ELSA-2026-83552)",
+   "link": "https://www.tenable.com/plugins/nessus/366323",
    "published": "Thu, 15 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "366007",
-   "title": "RockyLinux 8 : python36:3.6 (RLSA-2026:82858)",
-   "link": "https://www.tenable.com/plugins/nessus/366007",
-   "published": "Wed, 14 Oct 2026 00:00:00 GMT"
+   "id": "366322",
+   "title": "Oracle Linux 8 : idm:DL1 (ELSA-2026-83460)",
+   "link": "https://www.tenable.com/plugins/nessus/366322",
+   "published": "Thu, 15 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "366006",
-   "title": "RockyLinux 10 : curl (RLSA-2026:80512)",
-   "link": "https://www.tenable.com/plugins/nessus/366006",
-   "published": "Wed, 14 Oct 2026 00:00:00 GMT"
+   "id": "366321",
+   "title": "Oracle Linux 10 : libsoup3 (ELSA-2026-83618)",
+   "link": "https://www.tenable.com/plugins/nessus/366321",
+   "published": "Thu, 15 Oct 2026 00:00:00 GMT"
   }
  ],
- "_updated": "2026-10-15T12:33:13Z"
+ "_updated": "2026-10-16T12:12:22Z"
 }
