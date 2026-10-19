@@ -4,7 +4,7 @@
  "release_id": "2026-Oct",
  "release_title": "October 2026 Security Updates",
  "release_date": "2026-10-13T07:00:00Z",
- "cve_count": 1836,
+ "cve_count": 2135,
  "kb_count": 75,
  "kbs": [
   {
@@ -106,5 +106,5 @@
    "title": "Windows Core Messaging Elevation of Privilege Vulnerability"
   }
  ],
- "_updated": "2026-10-16T12:12:22Z"
+ "_updated": "2026-10-19T14:29:42Z"
 }

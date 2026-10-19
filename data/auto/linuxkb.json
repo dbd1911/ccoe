@@ -4,185 +4,210 @@
  "redhat_url": "https://access.redhat.com/security/security-updates/security-advisories",
  "ubuntu": [
   {
-   "id": "USN-8910-1",
-   "title": "libxml2 vulnerabilities",
-   "published": "2026-10-08",
+   "id": "USN-8935-1",
+   "title": "Go vulnerabilities",
+   "published": "2026-10-19",
    "cves": [
-    "CVE-2026-86144",
-    "CVE-2026-86142",
-    "CVE-2026-76781",
-    "CVE-2026-86138",
-    "CVE-2026-86139",
-    "CVE-2026-86143"
+    "CVE-2026-56866",
+    "CVE-2026-94439",
+    "CVE-2026-33818",
+    "CVE-2026-78663",
+    "CVE-2026-78660",
+    "CVE-2026-78659"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-8910-1"
+   "url": "https://ubuntu.com/security/notices/USN-8935-1"
   },
   {
-   "id": "USN-8787-1",
-   "title": "libxml2 vulnerabilities",
-   "published": "2026-09-21",
+   "id": "USN-8933-1",
+   "title": "RabbitMQ Server vulnerabilities",
+   "published": "2026-10-15",
    "cves": [
-    "CVE-2026-86140",
-    "CVE-2026-74860"
+    "CVE-2026-67404",
+    "CVE-2026-67231",
+    "CVE-2026-67237",
+    "CVE-2026-66070",
+    "CVE-2026-67232",
+    "CVE-2026-67236"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-8787-1"
+   "url": "https://ubuntu.com/security/notices/USN-8933-1"
   },
   {
-   "id": "USN-8456-1",
-   "title": "libxml2 vulnerability",
-   "published": "2026-06-22",
+   "id": "USN-8922-2",
+   "title": "Linux kernel (Azure) vulnerabilities",
+   "published": "2026-10-15",
    "cves": [
-    "CVE-2026-6653"
+    "CVE-2024-53214",
+    "CVE-2025-38724",
+    "CVE-2025-21664",
+    "CVE-2024-56570",
+    "CVE-2026-53221",
+    "CVE-2024-56779"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-8456-1"
+   "url": "https://ubuntu.com/security/notices/USN-8922-2"
   },
   {
-   "id": "USN-7974-1",
-   "title": "libxml2 vulnerabilities",
-   "published": "2026-01-22",
+   "id": "USN-8883-2",
+   "title": "Go vulnerability",
+   "published": "2026-10-15",
    "cves": [
-    "CVE-2026-0990",
-    "CVE-2026-0989",
-    "CVE-2026-0992",
-    "CVE-2025-8732"
+    "CVE-2026-39821"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-7974-1"
+   "url": "https://ubuntu.com/security/notices/USN-8883-2"
   },
   {
-   "id": "USN-7852-1",
-   "title": "libxml2 vulnerability",
-   "published": "2025-10-30",
+   "id": "USN-8916-2",
+   "title": "PyJWT vulnerabilities",
+   "published": "2026-10-15",
    "cves": [
-    "CVE-2025-7425"
+    "CVE-2026-102268",
+    "CVE-2026-102271",
+    "CVE-2026-102272",
+    "CVE-2026-102273",
+    "CVE-2026-102267",
+    "CVE-2026-102266"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-7852-1"
+   "url": "https://ubuntu.com/security/notices/USN-8916-2"
   },
   {
-   "id": "USN-7743-1",
-   "title": "libxml2 vulnerability",
-   "published": "2025-09-10",
+   "id": "USN-8932-1",
+   "title": "curl vulnerabilities",
+   "published": "2026-10-14",
    "cves": [
-    "CVE-2025-9714"
+    "CVE-2026-92388",
+    "CVE-2026-92389",
+    "CVE-2026-87864",
+    "CVE-2026-87862",
+    "CVE-2026-94266",
+    "CVE-2026-87863"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-7743-1"
+   "url": "https://ubuntu.com/security/notices/USN-8932-1"
   },
   {
-   "id": "USN-7694-1",
-   "title": "libxml2 vulnerabilities",
-   "published": "2025-08-14",
+   "id": "USN-8931-1",
+   "title": "Apache HTTP Server vulnerabilities",
+   "published": "2026-10-14",
    "cves": [
-    "CVE-2025-6021",
-    "CVE-2025-6170",
-    "CVE-2025-49796",
-    "CVE-2025-49794"
+    "CVE-2026-73637",
+    "CVE-2026-63292",
+    "CVE-2026-93546",
+    "CVE-2026-63686",
+    "CVE-2026-63045",
+    "CVE-2026-73636"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-7694-1"
+   "url": "https://ubuntu.com/security/notices/USN-8931-1"
   },
   {
-   "id": "USN-7467-1",
-   "title": "libxml2 vulnerabilities",
-   "published": "2025-04-28",
+   "id": "USN-8930-1",
+   "title": "U-Boot vulnerabilities",
+   "published": "2026-10-14",
    "cves": [
-    "CVE-2025-32414",
-    "CVE-2025-32415"
+    "CVE-2026-74222",
+    "CVE-2026-74225",
+    "CVE-2026-74221",
+    "CVE-2026-74220"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-7467-1"
+   "url": "https://ubuntu.com/security/notices/USN-8930-1"
   },
   {
-   "id": "USN-7302-1",
-   "title": "libxml2 vulnerabilities",
-   "published": "2025-02-25",
+   "id": "USN-8929-1",
+   "title": "Bind vulnerabilities",
+   "published": "2026-10-14",
    "cves": [
-    "CVE-2022-49043",
-    "CVE-2025-24928",
-    "CVE-2025-27113",
-    "CVE-2024-34459",
-    "CVE-2024-56171"
+    "CVE-2026-19033",
+    "CVE-2026-81736",
+    "CVE-2026-13321",
+    "CVE-2026-78301",
+    "CVE-2026-19941",
+    "CVE-2026-13204"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-7302-1"
+   "url": "https://ubuntu.com/security/notices/USN-8929-1"
   },
   {
-   "id": "USN-7240-1",
-   "title": "libxml2 vulnerabilities",
-   "published": "2025-01-29",
+   "id": "USN-8928-1",
+   "title": "OpenSSH vulnerabilities",
+   "published": "2026-10-14",
    "cves": [
-    "CVE-2024-34459",
-    "CVE-2022-49043"
+    "CVE-2026-106552",
+    "CVE-2026-106553",
+    "CVE-2026-106585",
+    "CVE-2026-106583",
+    "CVE-2026-106584",
+    "CVE-2026-106586"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-7240-1"
+   "url": "https://ubuntu.com/security/notices/USN-8928-1"
   }
  ],
  "redhat": [
   {
-   "cve": "CVE-2026-111382",
+   "cve": "CVE-2026-112075",
    "severity": "important",
-   "public_date": "2026-10-16",
-   "description": "freerdp: freerdp: Arbitrary code execution via crafted display frames",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-111382"
+   "public_date": "2026-10-19",
+   "description": "unsloth: unsloth: Arbitrary code execution via unsafe class selection",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-112075"
   },
   {
-   "cve": "CVE-2026-111381",
+   "cve": "CVE-2026-112057",
+   "severity": "moderate",
+   "public_date": "2026-10-18",
+   "description": "libdvdnav: libdvdnav: Denial of Service via crafted disc image",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-112057"
+  },
+  {
+   "cve": "CVE-2026-112058",
+   "severity": "moderate",
+   "public_date": "2026-10-18",
+   "description": "libdvdnav: libdvdnav: Denial of Service via out-of-bounds read in set_PTT",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-112058"
+  },
+  {
+   "cve": "CVE-2026-112052",
+   "severity": "moderate",
+   "public_date": "2026-10-18",
+   "description": "libspatialite: libspatialite: Denial of Service via integer overflow during geometry parsing",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-112052"
+  },
+  {
+   "cve": "CVE-2026-112048",
+   "severity": "moderate",
+   "public_date": "2026-10-18",
+   "description": "libspatialite: libspatialite: Denial of Service via uncontrolled memory allocation during polygon parsing",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-112048"
+  },
+  {
+   "cve": "CVE-2026-112008",
+   "severity": "moderate",
+   "public_date": "2026-10-18",
+   "description": "libmng: libmng: Denial of Service via heap-based buffer overflow in mng_read_ordr()",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-112008"
+  },
+  {
+   "cve": "CVE-2026-112006",
+   "severity": "moderate",
+   "public_date": "2026-10-18",
+   "description": "opentelemetry-exporter-otlp-proto-http: opentelemetry-exporter-otlp-proto-http: Information disclosure via improper TLS certificate validation",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-112006"
+  },
+  {
+   "cve": "CVE-2026-111997",
+   "severity": "moderate",
+   "public_date": "2026-10-18",
+   "description": "ip-address: ip-address: Denial of Service via excessive percent characters in IPv6 address input",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-111997"
+  },
+  {
+   "cve": "CVE-2026-16460",
    "severity": "important",
-   "public_date": "2026-10-16",
-   "description": "freerdp: freerdp: Arbitrary code execution via crafted persistent cache file",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-111381"
+   "public_date": "2026-10-18",
+   "description": "bootc: ostree: bootc/ostree: staged deployments not revalidated against container signature policy before finalization",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-16460"
   },
   {
-   "cve": "CVE-2026-111380",
-   "severity": "important",
-   "public_date": "2026-10-16",
-   "description": "freerdp: FreeRDP: Arbitrary code execution via integer overflow in audio input buffer calculation",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-111380"
-  },
-  {
-   "cve": "CVE-2026-111379",
-   "severity": "important",
-   "public_date": "2026-10-16",
-   "description": "freerdp: FreeRDP: Arbitrary code execution via crafted persistent cache file",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-111379"
-  },
-  {
-   "cve": "CVE-2026-111378",
-   "severity": "important",
-   "public_date": "2026-10-16",
-   "description": "freerdp: freerdp: Denial of Service via memory exhaustion in NLA frame parser",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-111378"
-  },
-  {
-   "cve": "CVE-2026-111377",
-   "severity": "moderate",
-   "public_date": "2026-10-16",
-   "description": "freerdp: FreeRDP: Denial of Service via unbounded static channel reassembly",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-111377"
-  },
-  {
-   "cve": "CVE-2026-111376",
-   "severity": "moderate",
-   "public_date": "2026-10-16",
-   "description": "freerdp: freerdp: Denial of Service via short clipboard response",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-111376"
-  },
-  {
-   "cve": "CVE-2026-111375",
-   "severity": "moderate",
-   "public_date": "2026-10-16",
-   "description": "freerdp: FreeRDP: Denial of Service via out-of-bounds read in RAIL window title",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-111375"
-  },
-  {
-   "cve": "CVE-2026-111374",
-   "severity": "moderate",
-   "public_date": "2026-10-16",
-   "description": "freerdp: freerdp: Denial of Service via unadvertised camera stream requests",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-111374"
-  },
-  {
-   "cve": "CVE-2026-111373",
-   "severity": "moderate",
-   "public_date": "2026-10-16",
-   "description": "freerdp: FreeRDP: Denial of Service via zero-length WebSocket ping",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-111373"
+   "cve": "CVE-2026-98437",
+   "severity": "low",
+   "public_date": "2026-10-18",
+   "description": "kernel: media: qcom: iris: fix runtime PM reference leaks",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-98437"
   }
  ],
- "_updated": "2026-10-16T12:12:22Z"
+ "_updated": "2026-10-19T14:29:42Z"
 }
