@@ -4,6 +4,77 @@
  "redhat_url": "https://access.redhat.com/security/security-updates/security-advisories",
  "ubuntu": [
   {
+   "id": "USN-8940-1",
+   "title": "Perl XS::Parse::Keyword module vulnerability",
+   "published": "2026-10-20",
+   "cves": [
+    "CVE-2026-85644"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8940-1"
+  },
+  {
+   "id": "USN-8939-1",
+   "title": "libXtst vulnerabilities",
+   "published": "2026-10-19",
+   "cves": [
+    "CVE-2016-7951",
+    "CVE-2026-94286",
+    "CVE-2016-7952"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8939-1"
+  },
+  {
+   "id": "USN-8927-2",
+   "title": "curl vulnerabilities",
+   "published": "2026-10-19",
+   "cves": [
+    "CVE-2026-107928",
+    "CVE-2026-92389",
+    "CVE-2026-92387",
+    "CVE-2026-86412",
+    "CVE-2026-86409",
+    "CVE-2026-92390"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8927-2"
+  },
+  {
+   "id": "USN-8938-1",
+   "title": "cifs-utils vulnerability",
+   "published": "2026-10-19",
+   "cves": [
+    "CVE-2026-104715"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8938-1"
+  },
+  {
+   "id": "USN-8937-1",
+   "title": "OpenSSH vulnerabilities",
+   "published": "2026-10-19",
+   "cves": [
+    "CVE-2026-106553",
+    "CVE-2026-106552",
+    "CVE-2026-106585",
+    "CVE-2026-106583",
+    "CVE-2026-106584",
+    "CVE-2026-106586"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8937-1"
+  },
+  {
+   "id": "USN-8936-1",
+   "title": "PHP vulnerabilities",
+   "published": "2026-10-19",
+   "cves": [
+    "CVE-2026-93682",
+    "CVE-2026-91766",
+    "CVE-2026-92842",
+    "CVE-2026-91768",
+    "CVE-2025-14181",
+    "CVE-2026-91769"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8936-1"
+  },
+  {
    "id": "USN-8935-1",
    "title": "Go vulnerabilities",
    "published": "2026-10-19",
@@ -53,161 +124,79 @@
     "CVE-2026-39821"
    ],
    "url": "https://ubuntu.com/security/notices/USN-8883-2"
-  },
-  {
-   "id": "USN-8916-2",
-   "title": "PyJWT vulnerabilities",
-   "published": "2026-10-15",
-   "cves": [
-    "CVE-2026-102268",
-    "CVE-2026-102271",
-    "CVE-2026-102272",
-    "CVE-2026-102273",
-    "CVE-2026-102267",
-    "CVE-2026-102266"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8916-2"
-  },
-  {
-   "id": "USN-8932-1",
-   "title": "curl vulnerabilities",
-   "published": "2026-10-14",
-   "cves": [
-    "CVE-2026-92388",
-    "CVE-2026-92389",
-    "CVE-2026-87864",
-    "CVE-2026-87862",
-    "CVE-2026-94266",
-    "CVE-2026-87863"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8932-1"
-  },
-  {
-   "id": "USN-8931-1",
-   "title": "Apache HTTP Server vulnerabilities",
-   "published": "2026-10-14",
-   "cves": [
-    "CVE-2026-73637",
-    "CVE-2026-63292",
-    "CVE-2026-93546",
-    "CVE-2026-63686",
-    "CVE-2026-63045",
-    "CVE-2026-73636"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8931-1"
-  },
-  {
-   "id": "USN-8930-1",
-   "title": "U-Boot vulnerabilities",
-   "published": "2026-10-14",
-   "cves": [
-    "CVE-2026-74222",
-    "CVE-2026-74225",
-    "CVE-2026-74221",
-    "CVE-2026-74220"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8930-1"
-  },
-  {
-   "id": "USN-8929-1",
-   "title": "Bind vulnerabilities",
-   "published": "2026-10-14",
-   "cves": [
-    "CVE-2026-19033",
-    "CVE-2026-81736",
-    "CVE-2026-13321",
-    "CVE-2026-78301",
-    "CVE-2026-19941",
-    "CVE-2026-13204"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8929-1"
-  },
-  {
-   "id": "USN-8928-1",
-   "title": "OpenSSH vulnerabilities",
-   "published": "2026-10-14",
-   "cves": [
-    "CVE-2026-106552",
-    "CVE-2026-106553",
-    "CVE-2026-106585",
-    "CVE-2026-106583",
-    "CVE-2026-106584",
-    "CVE-2026-106586"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8928-1"
   }
  ],
  "redhat": [
   {
-   "cve": "CVE-2026-112075",
-   "severity": "important",
-   "public_date": "2026-10-19",
-   "description": "unsloth: unsloth: Arbitrary code execution via unsafe class selection",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-112075"
-  },
-  {
-   "cve": "CVE-2026-112057",
+   "cve": "CVE-2026-113495",
    "severity": "moderate",
-   "public_date": "2026-10-18",
-   "description": "libdvdnav: libdvdnav: Denial of Service via crafted disc image",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-112057"
+   "public_date": "2026-10-20",
+   "description": "cockpit-machines: RHSM access-token disclosure through image helper command-line arguments",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-113495"
   },
   {
-   "cve": "CVE-2026-112058",
+   "cve": "CVE-2026-113496",
    "severity": "moderate",
-   "public_date": "2026-10-18",
-   "description": "libdvdnav: libdvdnav: Denial of Service via out-of-bounds read in set_PTT",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-112058"
+   "public_date": "2026-10-20",
+   "description": "cockpit-machines: VNC console password disclosure through virt-xml command-line arguments",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-113496"
   },
   {
-   "cve": "CVE-2026-112052",
+   "cve": "CVE-2026-101201",
    "severity": "moderate",
-   "public_date": "2026-10-18",
-   "description": "libspatialite: libspatialite: Denial of Service via integer overflow during geometry parsing",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-112052"
+   "public_date": "2026-10-20",
+   "description": "qt6: qt: Denial of Service via out-of-bounds read in QBinaryJson",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-101201"
   },
   {
-   "cve": "CVE-2026-112048",
+   "cve": "CVE-2026-92287",
    "severity": "moderate",
-   "public_date": "2026-10-18",
-   "description": "libspatialite: libspatialite: Denial of Service via uncontrolled memory allocation during polygon parsing",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-112048"
+   "public_date": "2026-10-20",
+   "description": "arrow: pyarrow: arrow: Information disclosure via unvalidated KMS URLs in Parquet files",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-92287"
   },
   {
-   "cve": "CVE-2026-112008",
-   "severity": "moderate",
-   "public_date": "2026-10-18",
-   "description": "libmng: libmng: Denial of Service via heap-based buffer overflow in mng_read_ordr()",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-112008"
-  },
-  {
-   "cve": "CVE-2026-112006",
-   "severity": "moderate",
-   "public_date": "2026-10-18",
-   "description": "opentelemetry-exporter-otlp-proto-http: opentelemetry-exporter-otlp-proto-http: Information disclosure via improper TLS certificate validation",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-112006"
-  },
-  {
-   "cve": "CVE-2026-111997",
-   "severity": "moderate",
-   "public_date": "2026-10-18",
-   "description": "ip-address: ip-address: Denial of Service via excessive percent characters in IPv6 address input",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-111997"
-  },
-  {
-   "cve": "CVE-2026-16460",
-   "severity": "important",
-   "public_date": "2026-10-18",
-   "description": "bootc: ostree: bootc/ostree: staged deployments not revalidated against container signature policy before finalization",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-16460"
-  },
-  {
-   "cve": "CVE-2026-98437",
+   "cve": "CVE-2026-110725",
    "severity": "low",
-   "public_date": "2026-10-18",
-   "description": "kernel: media: qcom: iris: fix runtime PM reference leaks",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-98437"
+   "public_date": "2026-10-20",
+   "description": "fast-uri: fast-uri: Cross-site scripting via unescaped colon in relative URI paths",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-110725"
+  },
+  {
+   "cve": "CVE-2026-112177",
+   "severity": "important",
+   "public_date": "2026-10-20",
+   "description": "ghostscript: Reintroduction of .charkeys -dSAFER bypass in RHEL 8",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-112177"
+  },
+  {
+   "cve": "CVE-2026-110306",
+   "severity": "moderate",
+   "public_date": "2026-10-20",
+   "description": "fast-uri: fast-uri: Cross-Site Scripting via improper URI scheme decoding",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-110306"
+  },
+  {
+   "cve": "CVE-2026-110180",
+   "severity": "moderate",
+   "public_date": "2026-10-20",
+   "description": "fast-uri: fast-uri: Security policy bypass via improper host canonicalization",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-110180"
+  },
+  {
+   "cve": "CVE-2026-110095",
+   "severity": "low",
+   "public_date": "2026-10-20",
+   "description": "fast-uri: fast-uri: Path traversal via improper relative URI normalization",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-110095"
+  },
+  {
+   "cve": "CVE-2026-86922",
+   "severity": "important",
+   "public_date": "2026-10-20",
+   "description": "webkitgtk: WebKitGTK: Arbitrary code execution via type confusion",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-86922"
   }
  ],
- "_updated": "2026-10-19T14:29:42Z"
+ "_updated": "2026-10-20T12:37:40Z"
 }
