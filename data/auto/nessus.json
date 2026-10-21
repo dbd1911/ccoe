@@ -3,77 +3,77 @@
  "source_url": "https://www.tenable.com/plugins/newest",
  "items": [
   {
-   "id": "367734",
-   "title": "Fedora 44 : python3.15 (2026-1419522981)",
-   "link": "https://www.tenable.com/plugins/nessus/367734",
+   "id": "368088",
+   "title": "RHEL 9 : kernel (RHSA-2026:79786)",
+   "link": "https://www.tenable.com/plugins/nessus/368088",
    "published": "Tue, 20 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "367733",
-   "title": "Fedora 44 : bind / bind-dyndb-ldap (2026-a5b5298a84)",
-   "link": "https://www.tenable.com/plugins/nessus/367733",
+   "id": "368087",
+   "title": "Wireshark 1.12.x < 1.12.3 Multiple Vulnerabilities (macOS)",
+   "link": "https://www.tenable.com/plugins/nessus/368087",
    "published": "Tue, 20 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "367732",
-   "title": "Fedora 44 : cifs-utils (2026-7d3c824798)",
-   "link": "https://www.tenable.com/plugins/nessus/367732",
+   "id": "368086",
+   "title": "Wireshark 1.6.x < 1.6.2 Multiple Vulnerabilities (macOS)",
+   "link": "https://www.tenable.com/plugins/nessus/368086",
    "published": "Tue, 20 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "367731",
-   "title": "Fedora 43 : rust-rbw / rust-routinator / rust-rustls (2026-c2e6d24cb0)",
-   "link": "https://www.tenable.com/plugins/nessus/367731",
+   "id": "368085",
+   "title": "Wireshark 2.0.x < 2.0.1 Multiple Vulnerabilities (macOS)",
+   "link": "https://www.tenable.com/plugins/nessus/368085",
    "published": "Tue, 20 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "367730",
-   "title": "Fedora 43 : qt5-qtbase (2026-d615eb3f43)",
-   "link": "https://www.tenable.com/plugins/nessus/367730",
+   "id": "368084",
+   "title": "Wireshark 1.8.x < 1.8.2 Multiple Vulnerabilities (macOS)",
+   "link": "https://www.tenable.com/plugins/nessus/368084",
    "published": "Tue, 20 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "367729",
-   "title": "Fedora 44 : rust-rbw / rust-routinator / rust-rustls (2026-fa08e0d381)",
-   "link": "https://www.tenable.com/plugins/nessus/367729",
+   "id": "368083",
+   "title": "CentOS Linux 7 [TuxCare] Security Update: openssl11 / openssl11-devel / openssl11-libs / openssl11-static Multiple Vulnerabilities (CENTOS7:CLSA-2026:1791193015",
+   "link": "https://www.tenable.com/plugins/nessus/368083",
    "published": "Tue, 20 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "367728",
-   "title": "Fedora 43 : python3.15 (2026-f86849b3f6)",
-   "link": "https://www.tenable.com/plugins/nessus/367728",
+   "id": "368082",
+   "title": "CentOS Linux 6 [TuxCare] Security Update: expat / expat-devel Multiple Vulnerabilities (CENTOS6:CLSA-2026:1791333112)",
+   "link": "https://www.tenable.com/plugins/nessus/368082",
    "published": "Tue, 20 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "367727",
-   "title": "Fedora 43 : cifs-utils (2026-c2b21d3979)",
-   "link": "https://www.tenable.com/plugins/nessus/367727",
+   "id": "368081",
+   "title": "CentOS Linux 7 [TuxCare] Security Update: freerdp / freerdp-devel / freerdp-libs / libwinpr / libwinpr-devel Multiple Vulnerabilities (CENTOS7:CLSA-2026:1791184",
+   "link": "https://www.tenable.com/plugins/nessus/368081",
    "published": "Tue, 20 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "367726",
-   "title": "Fedora 43 : curl (2026-d65da12723)",
-   "link": "https://www.tenable.com/plugins/nessus/367726",
+   "id": "368080",
+   "title": "CentOS Linux 7 [TuxCare] Security Update: bind / bind-chroot / bind-devel / bind-export-devel / etc Multiple Vulnerabilities (CENTOS7:CLSA-2026:1791226662)",
+   "link": "https://www.tenable.com/plugins/nessus/368080",
    "published": "Tue, 20 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "367725",
-   "title": "Fedora 43 : xorg-x11-server-Xwayland (2026-112c430ffc)",
-   "link": "https://www.tenable.com/plugins/nessus/367725",
+   "id": "368079",
+   "title": "CentOS Linux 6 [TuxCare] Security Update: httpd / httpd-devel / httpd-manual / httpd-tools / mod_ssl (CENTOS6:CLSA-2026:1791293022)",
+   "link": "https://www.tenable.com/plugins/nessus/368079",
    "published": "Tue, 20 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "367724",
-   "title": "Fedora 43 : chromium (2026-5a871d2ca7)",
-   "link": "https://www.tenable.com/plugins/nessus/367724",
+   "id": "368078",
+   "title": "CentOS Linux 7 [TuxCare] Security Update: openssl / openssl-devel / openssl-libs / openssl-perl / etc Multiple Vulnerabilities (CENTOS7:CLSA-2026:1791199071)",
+   "link": "https://www.tenable.com/plugins/nessus/368078",
    "published": "Tue, 20 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "367723",
-   "title": "Fedora 44 : xorg-x11-server (2026-1507ef9e8c)",
-   "link": "https://www.tenable.com/plugins/nessus/367723",
+   "id": "368077",
+   "title": "Wireshark 1.8.x < 1.8.1 Multiple Vulnerabilities (macOS)",
+   "link": "https://www.tenable.com/plugins/nessus/368077",
    "published": "Tue, 20 Oct 2026 00:00:00 GMT"
   }
  ],
- "_updated": "2026-10-20T12:37:40Z"
+ "_updated": "2026-10-21T12:49:12Z"
 }

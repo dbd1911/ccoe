@@ -4,6 +4,71 @@
  "redhat_url": "https://access.redhat.com/security/security-updates/security-advisories",
  "ubuntu": [
   {
+   "id": "USN-8944-2",
+   "title": "ca-certificates update",
+   "published": "2026-10-20",
+   "cves": [],
+   "url": "https://ubuntu.com/security/notices/USN-8944-2"
+  },
+  {
+   "id": "USN-8945-1",
+   "title": "XZ Utils vulnerability",
+   "published": "2026-10-20",
+   "cves": [],
+   "url": "https://ubuntu.com/security/notices/USN-8945-1"
+  },
+  {
+   "id": "USN-8944-1",
+   "title": "ca-certificates update",
+   "published": "2026-10-20",
+   "cves": [],
+   "url": "https://ubuntu.com/security/notices/USN-8944-1"
+  },
+  {
+   "id": "USN-8942-1",
+   "title": ".NET vulnerabilities",
+   "published": "2026-10-20",
+   "cves": [
+    "CVE-2026-70188",
+    "CVE-2026-102870",
+    "CVE-2026-96236",
+    "CVE-2026-96957",
+    "CVE-2026-70179",
+    "CVE-2026-96237"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8942-1"
+  },
+  {
+   "id": "USN-8943-1",
+   "title": "Protocol Buffers vulnerability",
+   "published": "2026-10-20",
+   "cves": [
+    "CVE-2026-6409"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8943-1"
+  },
+  {
+   "id": "USN-8708-2",
+   "title": "sudo-rs vulnerability",
+   "published": "2026-10-20",
+   "cves": [],
+   "url": "https://ubuntu.com/security/notices/USN-8708-2"
+  },
+  {
+   "id": "USN-8941-1",
+   "title": "Squid vulnerabilities",
+   "published": "2026-10-20",
+   "cves": [
+    "CVE-2026-47729",
+    "CVE-2026-33526",
+    "CVE-2026-33515",
+    "CVE-2026-50012",
+    "CVE-2026-61642",
+    "CVE-2026-32748"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8941-1"
+  },
+  {
    "id": "USN-8940-1",
    "title": "Perl XS::Parse::Keyword module vulnerability",
    "published": "2026-10-20",
@@ -36,167 +101,79 @@
     "CVE-2026-92390"
    ],
    "url": "https://ubuntu.com/security/notices/USN-8927-2"
-  },
-  {
-   "id": "USN-8938-1",
-   "title": "cifs-utils vulnerability",
-   "published": "2026-10-19",
-   "cves": [
-    "CVE-2026-104715"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8938-1"
-  },
-  {
-   "id": "USN-8937-1",
-   "title": "OpenSSH vulnerabilities",
-   "published": "2026-10-19",
-   "cves": [
-    "CVE-2026-106553",
-    "CVE-2026-106552",
-    "CVE-2026-106585",
-    "CVE-2026-106583",
-    "CVE-2026-106584",
-    "CVE-2026-106586"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8937-1"
-  },
-  {
-   "id": "USN-8936-1",
-   "title": "PHP vulnerabilities",
-   "published": "2026-10-19",
-   "cves": [
-    "CVE-2026-93682",
-    "CVE-2026-91766",
-    "CVE-2026-92842",
-    "CVE-2026-91768",
-    "CVE-2025-14181",
-    "CVE-2026-91769"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8936-1"
-  },
-  {
-   "id": "USN-8935-1",
-   "title": "Go vulnerabilities",
-   "published": "2026-10-19",
-   "cves": [
-    "CVE-2026-56866",
-    "CVE-2026-94439",
-    "CVE-2026-33818",
-    "CVE-2026-78663",
-    "CVE-2026-78660",
-    "CVE-2026-78659"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8935-1"
-  },
-  {
-   "id": "USN-8933-1",
-   "title": "RabbitMQ Server vulnerabilities",
-   "published": "2026-10-15",
-   "cves": [
-    "CVE-2026-67404",
-    "CVE-2026-67231",
-    "CVE-2026-67237",
-    "CVE-2026-66070",
-    "CVE-2026-67232",
-    "CVE-2026-67236"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8933-1"
-  },
-  {
-   "id": "USN-8922-2",
-   "title": "Linux kernel (Azure) vulnerabilities",
-   "published": "2026-10-15",
-   "cves": [
-    "CVE-2024-53214",
-    "CVE-2025-38724",
-    "CVE-2025-21664",
-    "CVE-2024-56570",
-    "CVE-2026-53221",
-    "CVE-2024-56779"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8922-2"
-  },
-  {
-   "id": "USN-8883-2",
-   "title": "Go vulnerability",
-   "published": "2026-10-15",
-   "cves": [
-    "CVE-2026-39821"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8883-2"
   }
  ],
  "redhat": [
   {
-   "cve": "CVE-2026-113495",
+   "cve": "CVE-2026-17557",
    "severity": "moderate",
-   "public_date": "2026-10-20",
-   "description": "cockpit-machines: RHSM access-token disclosure through image helper command-line arguments",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-113495"
+   "public_date": "2026-10-21",
+   "description": "lm-evaluation-harness: lm-evaluation-harness: SSRF via job-spec model.url with bearer credential forwarding",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-17557"
   },
   {
-   "cve": "CVE-2026-113496",
+   "cve": "CVE-2026-92824",
    "severity": "moderate",
-   "public_date": "2026-10-20",
-   "description": "cockpit-machines: VNC console password disclosure through virt-xml command-line arguments",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-113496"
+   "public_date": "2026-10-21",
+   "description": "libmodulemd: libmodulemd: out-of-bounds read when emitting rpm-map artifacts",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-92824"
   },
   {
-   "cve": "CVE-2026-101201",
+   "cve": "CVE-2026-92822",
    "severity": "moderate",
-   "public_date": "2026-10-20",
-   "description": "qt6: qt: Denial of Service via out-of-bounds read in QBinaryJson",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-101201"
+   "public_date": "2026-10-21",
+   "description": "libmodulemd: libmodulemd: unbounded recursion when parsing nested xmd YAML",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-92822"
   },
   {
-   "cve": "CVE-2026-92287",
+   "cve": "CVE-2026-92823",
    "severity": "moderate",
-   "public_date": "2026-10-20",
-   "description": "arrow: pyarrow: arrow: Information disclosure via unvalidated KMS URLs in Parquet files",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-92287"
+   "public_date": "2026-10-21",
+   "description": "libmodulemd: libmodulemd: missing decompressed-size limit when parsing compressed YAML",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-92823"
   },
   {
-   "cve": "CVE-2026-110725",
-   "severity": "low",
-   "public_date": "2026-10-20",
-   "description": "fast-uri: fast-uri: Cross-site scripting via unescaped colon in relative URI paths",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-110725"
+   "cve": "CVE-2026-114047",
+   "severity": "moderate",
+   "public_date": "2026-10-21",
+   "description": "freerdp: FreeRDP: proxy improper TLS certificate validation allows target impersonation",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-114047"
   },
   {
-   "cve": "CVE-2026-112177",
+   "cve": "CVE-2026-114046",
+   "severity": "moderate",
+   "public_date": "2026-10-21",
+   "description": "freerdp: FreeRDP: null pointer dereference in smartcard emulation via crafted reader name",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-114046"
+  },
+  {
+   "cve": "CVE-2026-114045",
    "severity": "important",
-   "public_date": "2026-10-20",
-   "description": "ghostscript: Reintroduction of .charkeys -dSAFER bypass in RHEL 8",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-112177"
+   "public_date": "2026-10-21",
+   "description": "freerdp: FreeRDP: heap buffer overflow in server rdpsnd via crafted audio formats",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-114045"
   },
   {
-   "cve": "CVE-2026-110306",
+   "cve": "CVE-2026-114044",
    "severity": "moderate",
-   "public_date": "2026-10-20",
-   "description": "fast-uri: fast-uri: Cross-Site Scripting via improper URI scheme decoding",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-110306"
+   "public_date": "2026-10-21",
+   "description": "freerdp: FreeRDP: Android client heap out-of-bounds read via graphics pipeline",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-114044"
   },
   {
-   "cve": "CVE-2026-110180",
+   "cve": "CVE-2026-114043",
    "severity": "moderate",
-   "public_date": "2026-10-20",
-   "description": "fast-uri: fast-uri: Security policy bypass via improper host canonicalization",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-110180"
+   "public_date": "2026-10-21",
+   "description": "freerdp: FreeRDP: heap out-of-bounds read in WinPR clipboard PNG-to-CF_DIB synthesis",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-114043"
   },
   {
-   "cve": "CVE-2026-110095",
-   "severity": "low",
-   "public_date": "2026-10-20",
-   "description": "fast-uri: fast-uri: Path traversal via improper relative URI normalization",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-110095"
-  },
-  {
-   "cve": "CVE-2026-86922",
-   "severity": "important",
-   "public_date": "2026-10-20",
-   "description": "webkitgtk: WebKitGTK: Arbitrary code execution via type confusion",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-86922"
+   "cve": "CVE-2026-114042",
+   "severity": "moderate",
+   "public_date": "2026-10-21",
+   "description": "freerdp: FreeRDP: use-after-free in drdynvc virtual channel PDU handling",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-114042"
   }
  ],
- "_updated": "2026-10-20T12:37:40Z"
+ "_updated": "2026-10-21T12:49:12Z"
 }
