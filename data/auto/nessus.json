@@ -3,77 +3,77 @@
  "source_url": "https://www.tenable.com/plugins/newest",
  "items": [
   {
-   "id": "368088",
-   "title": "RHEL 9 : kernel (RHSA-2026:79786)",
-   "link": "https://www.tenable.com/plugins/nessus/368088",
-   "published": "Tue, 20 Oct 2026 00:00:00 GMT"
+   "id": "370363",
+   "title": "Rocky Linux 10.2 [CIQ] Security Update: hostapd / hostapd-debuginfo / hostapd-debugsource (crlsa-2026_85276)",
+   "link": "https://www.tenable.com/plugins/nessus/370363",
+   "published": "Thu, 22 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "368087",
-   "title": "Wireshark 1.12.x < 1.12.3 Multiple Vulnerabilities (macOS)",
-   "link": "https://www.tenable.com/plugins/nessus/368087",
-   "published": "Tue, 20 Oct 2026 00:00:00 GMT"
+   "id": "370362",
+   "title": "Rocky Linux 9 [CIQ] Security Update: aspnetcore-runtime-10.0 / aspnetcore-runtime-dbg-10.0 / etc Multiple Vulnerabilities (crlsa-2026_86193)",
+   "link": "https://www.tenable.com/plugins/nessus/370362",
+   "published": "Thu, 22 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "368086",
-   "title": "Wireshark 1.6.x < 1.6.2 Multiple Vulnerabilities (macOS)",
-   "link": "https://www.tenable.com/plugins/nessus/368086",
-   "published": "Tue, 20 Oct 2026 00:00:00 GMT"
+   "id": "370361",
+   "title": "Rocky Linux 9 [CIQ] Security Update: apcu-panel / php / php-bcmath / php-bcmath-debuginfo / php-cli / etc Multiple Vulnerabilities (crlsa-2026_87072)",
+   "link": "https://www.tenable.com/plugins/nessus/370361",
+   "published": "Thu, 22 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "368085",
-   "title": "Wireshark 2.0.x < 2.0.1 Multiple Vulnerabilities (macOS)",
-   "link": "https://www.tenable.com/plugins/nessus/368085",
-   "published": "Tue, 20 Oct 2026 00:00:00 GMT"
+   "id": "370360",
+   "title": "Rocky Linux 10.2 [CIQ] Security Update: glycin-loaders / glycin-loaders-debuginfo / etc (crlsa-2026_86331)",
+   "link": "https://www.tenable.com/plugins/nessus/370360",
+   "published": "Thu, 22 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "368084",
-   "title": "Wireshark 1.8.x < 1.8.2 Multiple Vulnerabilities (macOS)",
-   "link": "https://www.tenable.com/plugins/nessus/368084",
-   "published": "Tue, 20 Oct 2026 00:00:00 GMT"
+   "id": "370359",
+   "title": "Rocky Linux 8.6 [CIQ] Security Update: bpftool / kernel / kernel-abi-stablelists / kernel-core / etc Multiple Vulnerabilities (ciqsa-2026_1656)",
+   "link": "https://www.tenable.com/plugins/nessus/370359",
+   "published": "Thu, 22 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "368083",
-   "title": "CentOS Linux 7 [TuxCare] Security Update: openssl11 / openssl11-devel / openssl11-libs / openssl11-static Multiple Vulnerabilities (CENTOS7:CLSA-2026:1791193015",
-   "link": "https://www.tenable.com/plugins/nessus/368083",
-   "published": "Tue, 20 Oct 2026 00:00:00 GMT"
+   "id": "370358",
+   "title": "Rocky Linux 10.2 [CIQ] Security Update: cockpit-machines Multiple Vulnerabilities (crlsa-2026_86971)",
+   "link": "https://www.tenable.com/plugins/nessus/370358",
+   "published": "Thu, 22 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "368082",
-   "title": "CentOS Linux 6 [TuxCare] Security Update: expat / expat-devel Multiple Vulnerabilities (CENTOS6:CLSA-2026:1791333112)",
-   "link": "https://www.tenable.com/plugins/nessus/368082",
-   "published": "Tue, 20 Oct 2026 00:00:00 GMT"
+   "id": "370357",
+   "title": "Rocky Linux 9 [CIQ] Security Update: openssh / openssh-askpass / openssh-askpass-debuginfo / etc Multiple Vulnerabilities (crlsa-2026_85958)",
+   "link": "https://www.tenable.com/plugins/nessus/370357",
+   "published": "Thu, 22 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "368081",
-   "title": "CentOS Linux 7 [TuxCare] Security Update: freerdp / freerdp-devel / freerdp-libs / libwinpr / libwinpr-devel Multiple Vulnerabilities (CENTOS7:CLSA-2026:1791184",
-   "link": "https://www.tenable.com/plugins/nessus/368081",
-   "published": "Tue, 20 Oct 2026 00:00:00 GMT"
+   "id": "370356",
+   "title": "Rocky Linux 8.6 [CIQ] Security Update: libtiff / libtiff-devel / libtiff-static / libtiff-tools (ciqsa-2026_1655)",
+   "link": "https://www.tenable.com/plugins/nessus/370356",
+   "published": "Thu, 22 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "368080",
-   "title": "CentOS Linux 7 [TuxCare] Security Update: bind / bind-chroot / bind-devel / bind-export-devel / etc Multiple Vulnerabilities (CENTOS7:CLSA-2026:1791226662)",
-   "link": "https://www.tenable.com/plugins/nessus/368080",
-   "published": "Tue, 20 Oct 2026 00:00:00 GMT"
+   "id": "370355",
+   "title": "Rocky Linux 8 [CIQ] Security Update: apcu-panel / libzip / libzip-debuginfo / libzip-debugsource / etc Multiple Vulnerabilities (crlsa-2026_87080)",
+   "link": "https://www.tenable.com/plugins/nessus/370355",
+   "published": "Thu, 22 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "368079",
-   "title": "CentOS Linux 6 [TuxCare] Security Update: httpd / httpd-devel / httpd-manual / httpd-tools / mod_ssl (CENTOS6:CLSA-2026:1791293022)",
-   "link": "https://www.tenable.com/plugins/nessus/368079",
-   "published": "Tue, 20 Oct 2026 00:00:00 GMT"
+   "id": "370354",
+   "title": "Rocky Linux 10.2 [CIQ] Security Update: openssh / openssh-askpass / openssh-askpass-debuginfo / etc Multiple Vulnerabilities (crlsa-2026_85847)",
+   "link": "https://www.tenable.com/plugins/nessus/370354",
+   "published": "Thu, 22 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "368078",
-   "title": "CentOS Linux 7 [TuxCare] Security Update: openssl / openssl-devel / openssl-libs / openssl-perl / etc Multiple Vulnerabilities (CENTOS7:CLSA-2026:1791199071)",
-   "link": "https://www.tenable.com/plugins/nessus/368078",
-   "published": "Tue, 20 Oct 2026 00:00:00 GMT"
+   "id": "370353",
+   "title": "CentOS Linux 7.9 [CIQ] Security Update: bpftool / kernel / kernel-abi-whitelists / kernel-debug / etc Multiple Vulnerabilities (ciqsa-2026_1657)",
+   "link": "https://www.tenable.com/plugins/nessus/370353",
+   "published": "Thu, 22 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "368077",
-   "title": "Wireshark 1.8.x < 1.8.1 Multiple Vulnerabilities (macOS)",
-   "link": "https://www.tenable.com/plugins/nessus/368077",
-   "published": "Tue, 20 Oct 2026 00:00:00 GMT"
+   "id": "370352",
+   "title": "Rocky Linux 9 [CIQ] Security Update: cockpit-machines Multiple Vulnerabilities (crlsa-2026_86970)",
+   "link": "https://www.tenable.com/plugins/nessus/370352",
+   "published": "Thu, 22 Oct 2026 00:00:00 GMT"
   }
  ],
- "_updated": "2026-10-21T12:49:12Z"
+ "_updated": "2026-10-22T12:52:10Z"
 }

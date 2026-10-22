@@ -1,8 +1,8 @@
 {
  "source": "CISA Known Exploited Vulnerabilities Catalog",
  "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
- "catalogVersion": "2026.10.20",
- "dateReleased": "2026-10-20T19:00:31.8765Z",
+ "catalogVersion": "2026.10.21",
+ "dateReleased": "2026-10-21T14:04:39.8983Z",
  "total": 1754,
  "recent": [
   {
@@ -157,5 +157,5 @@
   }
  ],
  "tracked_crosscheck": [],
- "_updated": "2026-10-21T12:49:12Z"
+ "_updated": "2026-10-22T12:52:10Z"
 }
