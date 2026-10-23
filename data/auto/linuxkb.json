@@ -4,6 +4,38 @@
  "redhat_url": "https://access.redhat.com/security/security-updates/security-advisories",
  "ubuntu": [
   {
+   "id": "USN-8954-1",
+   "title": "zlib vulnerability",
+   "published": "2026-10-22",
+   "cves": [
+    "CVE-2026-85091"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8954-1"
+  },
+  {
+   "id": "USN-8953-1",
+   "title": "OpenVPN vulnerability",
+   "published": "2026-10-22",
+   "cves": [
+    "CVE-2026-84790"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8953-1"
+  },
+  {
+   "id": "USN-8952-1",
+   "title": "Tornado vulnerabilities",
+   "published": "2026-10-22",
+   "cves": [
+    "CVE-2026-103263",
+    "CVE-2024-14029",
+    "CVE-2023-54397",
+    "CVE-2026-91992",
+    "CVE-2026-91990",
+    "CVE-2026-103262"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8952-1"
+  },
+  {
    "id": "USN-8890-2",
    "title": "libsoup vulnerabilities",
    "published": "2026-10-21",
@@ -76,110 +108,79 @@
     "CVE-2026-109619"
    ],
    "url": "https://ubuntu.com/security/notices/USN-8948-2"
-  },
-  {
-   "id": "USN-8948-1",
-   "title": "PHP vulnerabilities",
-   "published": "2026-10-21",
-   "cves": [
-    "CVE-2026-109618",
-    "CVE-2026-109619"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8948-1"
-  },
-  {
-   "id": "USN-8946-1",
-   "title": "Unbound vulnerabilities",
-   "published": "2026-10-21",
-   "cves": [
-    "CVE-2026-32665",
-    "CVE-2023-50868",
-    "CVE-2023-50387",
-    "CVE-2026-55973",
-    "CVE-2026-80225",
-    "CVE-2026-40691"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8946-1"
-  },
-  {
-   "id": "USN-8944-2",
-   "title": "ca-certificates update",
-   "published": "2026-10-20",
-   "cves": [],
-   "url": "https://ubuntu.com/security/notices/USN-8944-2"
   }
  ],
  "redhat": [
   {
-   "cve": "CVE-2026-114348",
+   "cve": "CVE-2026-114620",
    "severity": "moderate",
    "public_date": "2026-10-22",
-   "description": "webpack-dev-server: webpack-dev-server: Information disclosure via malformed Host header",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-114348"
+   "description": "authlib: Authlib: Server-Side Request Forgery via unvalidated request URI",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-114620"
   },
   {
-   "cve": "CVE-2026-115207",
+   "cve": "CVE-2026-114619",
    "severity": "moderate",
    "public_date": "2026-10-22",
-   "description": "patch: Filename validation bypass in reversal fallback allows file creation outside the working directory",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-115207"
+   "description": "authlib: authlib: authorization bypass via improper scope check in OpenID implicit grant",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-114619"
   },
   {
-   "cve": "CVE-2026-110353",
-   "severity": "important",
-   "public_date": "2026-10-22",
-   "description": "haproxy: HAProxy: Denial of Service via truncated HTTP/2 PING frame",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-110353"
-  },
-  {
-   "cve": "CVE-2026-110354",
-   "severity": "important",
-   "public_date": "2026-10-22",
-   "description": "haproxy: haproxy: Denial of Service via specially crafted HTTP/1.1 chunked request",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-110354"
-  },
-  {
-   "cve": "CVE-2026-114730",
-   "severity": "important",
-   "public_date": "2026-10-22",
-   "description": "roundcubemail: roundcubemail: Server-Side Request Forgery via address filter bypass",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-114730"
-  },
-  {
-   "cve": "CVE-2026-114722",
+   "cve": "CVE-2026-114618",
    "severity": "moderate",
    "public_date": "2026-10-22",
-   "description": "roundcubemail: Roundcube Webmail: Interface spoofing via CSS scoping bypass in HTML messages",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-114722"
+   "description": "authlib: Authlib: Unauthorized access via improper JWT audience validation",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-114618"
   },
   {
-   "cve": "CVE-2026-114718",
+   "cve": "CVE-2026-114617",
    "severity": "moderate",
    "public_date": "2026-10-22",
-   "description": "roundcubemail: roundcubemail: Cross-site scripting via unescaped password driver error messages",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-114718"
+   "description": "authlib: Authlib: Authentication bypass via disabled nonce verification in OpenID Connect tokens",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-114617"
   },
   {
-   "cve": "CVE-2026-111079",
+   "cve": "CVE-2026-114616",
    "severity": "important",
    "public_date": "2026-10-22",
-   "description": "goose: goose: Shell History and Environment Leak via Terminal Integration",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-111079"
+   "description": "authlib: authlib: Authentication bypass via zero-length HMAC key",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-114616"
   },
   {
-   "cve": "CVE-2026-91403",
-   "severity": "critical",
-   "public_date": "2026-10-21",
-   "description": "OpenJDK: Distrust eMudhra intermediate CA certificates due to security concerns",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-91403"
+   "cve": "CVE-2026-114615",
+   "severity": "important",
+   "public_date": "2026-10-22",
+   "description": "authlib: Authlib: Authentication bypass via improper asymmetric key validation",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-114615"
   },
   {
-   "cve": "CVE-2026-114501",
+   "cve": "CVE-2026-114614",
    "severity": "low",
-   "public_date": "2026-10-21",
-   "description": "pillow: Pillow: Information disclosure via improper memory alignment during Arrow export",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-114501"
+   "public_date": "2026-10-22",
+   "description": "authlib: Authlib: Transport security bypass via improper URL validation",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-114614"
+  },
+  {
+   "cve": "CVE-2026-115504",
+   "severity": "important",
+   "public_date": "2026-10-22",
+   "description": "cfitsio: cfitsio: arbitrary code execution via crafted FITS file",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-115504"
+  },
+  {
+   "cve": "CVE-2026-115393",
+   "severity": "low",
+   "public_date": "2026-10-22",
+   "description": "wasmtime: wasmtime: Memory corruption via cross-engine object validation failure",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-115393"
+  },
+  {
+   "cve": "CVE-2026-115391",
+   "severity": "moderate",
+   "public_date": "2026-10-22",
+   "description": "wasmtime: wasmtime: Denial of Service via unbounded buffering in WASIp3 write streams",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-115391"
   }
  ],
- "_updated": "2026-10-22T12:52:10Z"
+ "_updated": "2026-10-23T12:30:45Z"
 }

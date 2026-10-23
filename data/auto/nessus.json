@@ -3,77 +3,77 @@
  "source_url": "https://www.tenable.com/plugins/newest",
  "items": [
   {
-   "id": "370363",
-   "title": "Rocky Linux 10.2 [CIQ] Security Update: hostapd / hostapd-debuginfo / hostapd-debugsource (crlsa-2026_85276)",
-   "link": "https://www.tenable.com/plugins/nessus/370363",
+   "id": "370936",
+   "title": "Debian dsa-6578 : aide - security update",
+   "link": "https://www.tenable.com/plugins/nessus/370936",
    "published": "Thu, 22 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "370362",
-   "title": "Rocky Linux 9 [CIQ] Security Update: aspnetcore-runtime-10.0 / aspnetcore-runtime-dbg-10.0 / etc Multiple Vulnerabilities (crlsa-2026_86193)",
-   "link": "https://www.tenable.com/plugins/nessus/370362",
+   "id": "370935",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2023-7356",
+   "link": "https://www.tenable.com/plugins/nessus/370935",
    "published": "Thu, 22 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "370361",
-   "title": "Rocky Linux 9 [CIQ] Security Update: apcu-panel / php / php-bcmath / php-bcmath-debuginfo / php-cli / etc Multiple Vulnerabilities (crlsa-2026_87072)",
-   "link": "https://www.tenable.com/plugins/nessus/370361",
+   "id": "370934",
+   "title": "RHEL 10 : kernel (RHSA-2026:85928)",
+   "link": "https://www.tenable.com/plugins/nessus/370934",
    "published": "Thu, 22 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "370360",
-   "title": "Rocky Linux 10.2 [CIQ] Security Update: glycin-loaders / glycin-loaders-debuginfo / etc (crlsa-2026_86331)",
-   "link": "https://www.tenable.com/plugins/nessus/370360",
+   "id": "370933",
+   "title": "RHEL 10 : iperf3 (RHSA-2026:88207)",
+   "link": "https://www.tenable.com/plugins/nessus/370933",
    "published": "Thu, 22 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "370359",
-   "title": "Rocky Linux 8.6 [CIQ] Security Update: bpftool / kernel / kernel-abi-stablelists / kernel-core / etc Multiple Vulnerabilities (ciqsa-2026_1656)",
-   "link": "https://www.tenable.com/plugins/nessus/370359",
+   "id": "370932",
+   "title": "RHEL 10 : buildah (RHSA-2026:88262)",
+   "link": "https://www.tenable.com/plugins/nessus/370932",
    "published": "Thu, 22 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "370358",
-   "title": "Rocky Linux 10.2 [CIQ] Security Update: cockpit-machines Multiple Vulnerabilities (crlsa-2026_86971)",
-   "link": "https://www.tenable.com/plugins/nessus/370358",
+   "id": "370931",
+   "title": "RHEL 7 : kernel-rt (RHSA-2026:88204)",
+   "link": "https://www.tenable.com/plugins/nessus/370931",
    "published": "Thu, 22 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "370357",
-   "title": "Rocky Linux 9 [CIQ] Security Update: openssh / openssh-askpass / openssh-askpass-debuginfo / etc Multiple Vulnerabilities (crlsa-2026_85958)",
-   "link": "https://www.tenable.com/plugins/nessus/370357",
+   "id": "370930",
+   "title": "RHEL 8 : grafana-pcp (RHSA-2026:88394)",
+   "link": "https://www.tenable.com/plugins/nessus/370930",
    "published": "Thu, 22 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "370356",
-   "title": "Rocky Linux 8.6 [CIQ] Security Update: libtiff / libtiff-devel / libtiff-static / libtiff-tools (ciqsa-2026_1655)",
-   "link": "https://www.tenable.com/plugins/nessus/370356",
+   "id": "370929",
+   "title": "RHEL 9 : grafana (RHSA-2026:88332)",
+   "link": "https://www.tenable.com/plugins/nessus/370929",
    "published": "Thu, 22 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "370355",
-   "title": "Rocky Linux 8 [CIQ] Security Update: apcu-panel / libzip / libzip-debuginfo / libzip-debugsource / etc Multiple Vulnerabilities (crlsa-2026_87080)",
-   "link": "https://www.tenable.com/plugins/nessus/370355",
+   "id": "370928",
+   "title": "RHEL 10 : podman (RHSA-2026:88202)",
+   "link": "https://www.tenable.com/plugins/nessus/370928",
    "published": "Thu, 22 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "370354",
-   "title": "Rocky Linux 10.2 [CIQ] Security Update: openssh / openssh-askpass / openssh-askpass-debuginfo / etc Multiple Vulnerabilities (crlsa-2026_85847)",
-   "link": "https://www.tenable.com/plugins/nessus/370354",
+   "id": "370927",
+   "title": "RHEL 10 : podman (RHSA-2026:88336)",
+   "link": "https://www.tenable.com/plugins/nessus/370927",
    "published": "Thu, 22 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "370353",
-   "title": "CentOS Linux 7.9 [CIQ] Security Update: bpftool / kernel / kernel-abi-whitelists / kernel-debug / etc Multiple Vulnerabilities (ciqsa-2026_1657)",
-   "link": "https://www.tenable.com/plugins/nessus/370353",
+   "id": "370926",
+   "title": "RHEL 8 : flute, libbase, libfonts, libformula, liblayout, libloader, libreoffice, librepository, libserializer, pentaho-libxml, pentaho-reporting-flow-engine, a",
+   "link": "https://www.tenable.com/plugins/nessus/370926",
    "published": "Thu, 22 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "370352",
-   "title": "Rocky Linux 9 [CIQ] Security Update: cockpit-machines Multiple Vulnerabilities (crlsa-2026_86970)",
-   "link": "https://www.tenable.com/plugins/nessus/370352",
+   "id": "370925",
+   "title": "RHEL 7 : kernel (RHSA-2026:88206)",
+   "link": "https://www.tenable.com/plugins/nessus/370925",
    "published": "Thu, 22 Oct 2026 00:00:00 GMT"
   }
  ],
- "_updated": "2026-10-22T12:52:10Z"
+ "_updated": "2026-10-23T12:30:45Z"
 }
