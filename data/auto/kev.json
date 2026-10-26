@@ -1,10 +1,30 @@
 {
  "source": "CISA Known Exploited Vulnerabilities Catalog",
  "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
- "catalogVersion": "2026.10.21",
- "dateReleased": "2026-10-21T14:04:39.8983Z",
- "total": 1754,
+ "catalogVersion": "2026.10.23",
+ "dateReleased": "2026-10-23T19:30:18.9209Z",
+ "total": 1756,
  "recent": [
+  {
+   "cveID": "CVE-2026-114625",
+   "vendorProject": "Arista",
+   "product": "VeloCloud Orchestrator",
+   "vulnerabilityName": "Arista VeloCloud Orchestrator SQL Injection Vulnerability",
+   "dateAdded": "2026-10-23",
+   "dueDate": "2026-10-26",
+   "knownRansomwareCampaignUse": "Unknown",
+   "shortDescription": "Arista VeloCloud Orchestrator on-prem contains a SQL injection vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise th"
+  },
+  {
+   "cveID": "CVE-2026-110447",
+   "vendorProject": "Collabora",
+   "product": "Collabora Online – Built-in CODE Server",
+   "vulnerabilityName": "Collabora Online – Built-in CODE Server OS Command Injection Vulnerability",
+   "dateAdded": "2026-10-23",
+   "dueDate": "2026-10-26",
+   "knownRansomwareCampaignUse": "Unknown",
+   "shortDescription": "Collabora Collabora Online – Built-in CODE Server when used within the NextCloud platform contains an OS command injection vulnerability that allows for remote code execution when the CODE server isn't running."
+  },
   {
    "cveID": "CVE-2026-106931",
    "vendorProject": "EG Secure Solutions",
@@ -134,28 +154,8 @@
    "dueDate": "2026-10-17",
    "knownRansomwareCampaignUse": "Unknown",
    "shortDescription": "Palo Alto Networks PAN-OS contains a code injection vulnerability that could allow an authenticated attacker with network access to execute arbitrary code with root privileges on the firewall."
-  },
-  {
-   "cveID": "CVE-2026-104935",
-   "vendorProject": "Ivanti",
-   "product": "Connect Secure",
-   "vulnerabilityName": "Ivanti Connect Secure Authentication Bypass by Spoofing Vulnerability",
-   "dateAdded": "2026-10-13",
-   "dueDate": "2026-10-16",
-   "knownRansomwareCampaignUse": "Unknown",
-   "shortDescription": "Ivanti Connect Secure contains an authentication bypass by spoofing vulnerability that allows a remote unauthenticated attacker to execute arbitrary commands."
-  },
-  {
-   "cveID": "CVE-2026-96951",
-   "vendorProject": "Microsoft",
-   "product": "Windows",
-   "vulnerabilityName": "Microsoft Windows Command Injection Vulnerability",
-   "dateAdded": "2026-10-13",
-   "dueDate": "2026-10-16",
-   "knownRansomwareCampaignUse": "Unknown",
-   "shortDescription": "Microsoft Windows Shell contains a command injection vulnerability that allows an unauthorized attacker to bypass a security feature over a network."
   }
  ],
  "tracked_crosscheck": [],
- "_updated": "2026-10-23T12:30:45Z"
+ "_updated": "2026-10-26T14:02:25Z"
 }

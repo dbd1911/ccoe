@@ -112,75 +112,75 @@
  ],
  "redhat": [
   {
-   "cve": "CVE-2026-114620",
-   "severity": "moderate",
-   "public_date": "2026-10-22",
-   "description": "authlib: Authlib: Server-Side Request Forgery via unvalidated request URI",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-114620"
-  },
-  {
-   "cve": "CVE-2026-114619",
-   "severity": "moderate",
-   "public_date": "2026-10-22",
-   "description": "authlib: authlib: authorization bypass via improper scope check in OpenID implicit grant",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-114619"
-  },
-  {
-   "cve": "CVE-2026-114618",
-   "severity": "moderate",
-   "public_date": "2026-10-22",
-   "description": "authlib: Authlib: Unauthorized access via improper JWT audience validation",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-114618"
-  },
-  {
-   "cve": "CVE-2026-114617",
-   "severity": "moderate",
-   "public_date": "2026-10-22",
-   "description": "authlib: Authlib: Authentication bypass via disabled nonce verification in OpenID Connect tokens",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-114617"
-  },
-  {
-   "cve": "CVE-2026-114616",
+   "cve": "CVE-2026-116124",
    "severity": "important",
-   "public_date": "2026-10-22",
-   "description": "authlib: authlib: Authentication bypass via zero-length HMAC key",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-114616"
+   "public_date": "2026-10-26",
+   "description": "libgsf: libgsf: Arbitrary code execution via heap-based buffer overflow in OLE2 parser",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-116124"
   },
   {
-   "cve": "CVE-2026-114615",
+   "cve": "CVE-2026-116195",
+   "severity": "moderate",
+   "public_date": "2026-10-25",
+   "description": "github.com/rclone/rclone: rclone: Path traversal via link suffix trimming",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-116195"
+  },
+  {
+   "cve": "CVE-2026-116196",
+   "severity": "moderate",
+   "public_date": "2026-10-25",
+   "description": "github.com/rclone/rclone: rclone: Information disclosure via HTTP redirects in B2 backend",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-116196"
+  },
+  {
+   "cve": "CVE-2026-116194",
+   "severity": "moderate",
+   "public_date": "2026-10-25",
+   "description": "github.com/rclone/rclone: rclone: Sensitive data disclosure via CSRF in pCloud OAuth callback",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-116194"
+  },
+  {
+   "cve": "CVE-2026-116192",
+   "severity": "moderate",
+   "public_date": "2026-10-25",
+   "description": "github.com/rclone/rclone: rclone: Information disclosure via Server-Side Request Forgery in rc-serve",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-116192"
+  },
+  {
+   "cve": "CVE-2026-116191",
    "severity": "important",
-   "public_date": "2026-10-22",
-   "description": "authlib: Authlib: Authentication bypass via improper asymmetric key validation",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-114615"
+   "public_date": "2026-10-25",
+   "description": "github.com/rclone/rclone: rclone: Arbitrary file modification via path traversal in WebDAV service",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-116191"
   },
   {
-   "cve": "CVE-2026-114614",
+   "cve": "CVE-2026-116189",
+   "severity": "important",
+   "public_date": "2026-10-25",
+   "description": "github.com/rclone/rclone: rclone: Arbitrary code execution via self-update signature verification bypass",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-116189"
+  },
+  {
+   "cve": "CVE-2026-116190",
    "severity": "low",
-   "public_date": "2026-10-22",
-   "description": "authlib: Authlib: Transport security bypass via improper URL validation",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-114614"
+   "public_date": "2026-10-25",
+   "description": "github.com/rclone/rclone: rclone: Information disclosure via cross-host HTTP redirects",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-116190"
   },
   {
-   "cve": "CVE-2026-115504",
-   "severity": "important",
-   "public_date": "2026-10-22",
-   "description": "cfitsio: cfitsio: arbitrary code execution via crafted FITS file",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-115504"
-  },
-  {
-   "cve": "CVE-2026-115393",
-   "severity": "low",
-   "public_date": "2026-10-22",
-   "description": "wasmtime: wasmtime: Memory corruption via cross-engine object validation failure",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-115393"
-  },
-  {
-   "cve": "CVE-2026-115391",
+   "cve": "CVE-2026-116187",
    "severity": "moderate",
-   "public_date": "2026-10-22",
-   "description": "wasmtime: wasmtime: Denial of Service via unbounded buffering in WASIp3 write streams",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-115391"
+   "public_date": "2026-10-25",
+   "description": "github.com/rclone/rclone: rclone: Cross-tenant upload tampering via authorization bypass in S3 authentication proxy",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-116187"
+  },
+  {
+   "cve": "CVE-2026-116181",
+   "severity": "moderate",
+   "public_date": "2026-10-25",
+   "description": "vllm: vllm: Denial of Service via unvalidated stop token identifiers",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-116181"
   }
  ],
- "_updated": "2026-10-23T12:30:45Z"
+ "_updated": "2026-10-26T14:02:25Z"
 }

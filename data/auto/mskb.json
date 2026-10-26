@@ -4,8 +4,8 @@
  "release_id": "2026-Oct",
  "release_title": "October 2026 Security Updates",
  "release_date": "2026-10-13T07:00:00Z",
- "cve_count": 2952,
- "kb_count": 78,
+ "cve_count": 3019,
+ "kb_count": 81,
  "kbs": [
   {
    "kb": "KB5126653",
@@ -74,6 +74,10 @@
    "title": "WebDAV Elevation of Privilege Vulnerability"
   },
   {
+   "cve": "CVE-2026-111497",
+   "title": "Google: CVE-2026-111497 Buffer overflow vulnerability in the Brotli decoder"
+  },
+  {
    "cve": "CVE-2026-69452",
    "title": "Windows Enterprise App Management Elevation of Privilege Vulnerability"
   },
@@ -100,11 +104,7 @@
   {
    "cve": "CVE-2026-69882",
    "title": "Windows Update Elevation of Privilege Vulnerability"
-  },
-  {
-   "cve": "CVE-2026-69918",
-   "title": "Windows Core Messaging Elevation of Privilege Vulnerability"
   }
  ],
- "_updated": "2026-10-23T12:30:45Z"
+ "_updated": "2026-10-26T14:02:25Z"
 }

@@ -3,77 +3,77 @@
  "source_url": "https://www.tenable.com/plugins/newest",
  "items": [
   {
-   "id": "370936",
-   "title": "Debian dsa-6578 : aide - security update",
-   "link": "https://www.tenable.com/plugins/nessus/370936",
-   "published": "Thu, 22 Oct 2026 00:00:00 GMT"
+   "id": "371972",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-115822",
+   "link": "https://www.tenable.com/plugins/nessus/371972",
+   "published": "Mon, 26 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "370935",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2023-7356",
-   "link": "https://www.tenable.com/plugins/nessus/370935",
-   "published": "Thu, 22 Oct 2026 00:00:00 GMT"
+   "id": "371971",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-115825",
+   "link": "https://www.tenable.com/plugins/nessus/371971",
+   "published": "Mon, 26 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "370934",
-   "title": "RHEL 10 : kernel (RHSA-2026:85928)",
-   "link": "https://www.tenable.com/plugins/nessus/370934",
-   "published": "Thu, 22 Oct 2026 00:00:00 GMT"
+   "id": "371970",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-116191",
+   "link": "https://www.tenable.com/plugins/nessus/371970",
+   "published": "Mon, 26 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "370933",
-   "title": "RHEL 10 : iperf3 (RHSA-2026:88207)",
-   "link": "https://www.tenable.com/plugins/nessus/370933",
-   "published": "Thu, 22 Oct 2026 00:00:00 GMT"
+   "id": "371969",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-116142",
+   "link": "https://www.tenable.com/plugins/nessus/371969",
+   "published": "Mon, 26 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "370932",
-   "title": "RHEL 10 : buildah (RHSA-2026:88262)",
-   "link": "https://www.tenable.com/plugins/nessus/370932",
-   "published": "Thu, 22 Oct 2026 00:00:00 GMT"
+   "id": "371968",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-116194",
+   "link": "https://www.tenable.com/plugins/nessus/371968",
+   "published": "Mon, 26 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "370931",
-   "title": "RHEL 7 : kernel-rt (RHSA-2026:88204)",
-   "link": "https://www.tenable.com/plugins/nessus/370931",
-   "published": "Thu, 22 Oct 2026 00:00:00 GMT"
+   "id": "371967",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-116143",
+   "link": "https://www.tenable.com/plugins/nessus/371967",
+   "published": "Mon, 26 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "370930",
-   "title": "RHEL 8 : grafana-pcp (RHSA-2026:88394)",
-   "link": "https://www.tenable.com/plugins/nessus/370930",
-   "published": "Thu, 22 Oct 2026 00:00:00 GMT"
+   "id": "371966",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-116147",
+   "link": "https://www.tenable.com/plugins/nessus/371966",
+   "published": "Mon, 26 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "370929",
-   "title": "RHEL 9 : grafana (RHSA-2026:88332)",
-   "link": "https://www.tenable.com/plugins/nessus/370929",
-   "published": "Thu, 22 Oct 2026 00:00:00 GMT"
+   "id": "371965",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-116140",
+   "link": "https://www.tenable.com/plugins/nessus/371965",
+   "published": "Mon, 26 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "370928",
-   "title": "RHEL 10 : podman (RHSA-2026:88202)",
-   "link": "https://www.tenable.com/plugins/nessus/370928",
-   "published": "Thu, 22 Oct 2026 00:00:00 GMT"
+   "id": "371964",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-116160",
+   "link": "https://www.tenable.com/plugins/nessus/371964",
+   "published": "Mon, 26 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "370927",
-   "title": "RHEL 10 : podman (RHSA-2026:88336)",
-   "link": "https://www.tenable.com/plugins/nessus/370927",
-   "published": "Thu, 22 Oct 2026 00:00:00 GMT"
+   "id": "371963",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-116152",
+   "link": "https://www.tenable.com/plugins/nessus/371963",
+   "published": "Mon, 26 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "370926",
-   "title": "RHEL 8 : flute, libbase, libfonts, libformula, liblayout, libloader, libreoffice, librepository, libserializer, pentaho-libxml, pentaho-reporting-flow-engine, a",
-   "link": "https://www.tenable.com/plugins/nessus/370926",
-   "published": "Thu, 22 Oct 2026 00:00:00 GMT"
+   "id": "371962",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-116190",
+   "link": "https://www.tenable.com/plugins/nessus/371962",
+   "published": "Mon, 26 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "370925",
-   "title": "RHEL 7 : kernel (RHSA-2026:88206)",
-   "link": "https://www.tenable.com/plugins/nessus/370925",
-   "published": "Thu, 22 Oct 2026 00:00:00 GMT"
+   "id": "371961",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-116146",
+   "link": "https://www.tenable.com/plugins/nessus/371961",
+   "published": "Mon, 26 Oct 2026 00:00:00 GMT"
   }
  ],
- "_updated": "2026-10-23T12:30:45Z"
+ "_updated": "2026-10-26T14:02:25Z"
 }
