@@ -1,10 +1,30 @@
 {
  "source": "CISA Known Exploited Vulnerabilities Catalog",
  "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
- "catalogVersion": "2026.10.23",
- "dateReleased": "2026-10-23T19:30:18.9209Z",
- "total": 1756,
+ "catalogVersion": "2026.10.26",
+ "dateReleased": "2026-10-26T22:24:24.6101Z",
+ "total": 1758,
  "recent": [
+  {
+   "cveID": "CVE-2026-109618",
+   "vendorProject": "PHP Group",
+   "product": "PHP",
+   "vulnerabilityName": "PHP Memory Corruption Vulnerability",
+   "dateAdded": "2026-10-26",
+   "dueDate": "2026-10-29",
+   "knownRansomwareCampaignUse": "Unknown",
+   "shortDescription": "PHP contains an out-of-memory corruption vulnerability that allows for unauthenticated remote code execution."
+  },
+  {
+   "cveID": "CVE-2026-109619",
+   "vendorProject": "PHP Group",
+   "product": "PHP",
+   "vulnerabilityName": "PHP Stale Internal Request-State Vulnerability",
+   "dateAdded": "2026-10-26",
+   "dueDate": "2026-10-29",
+   "knownRansomwareCampaignUse": "Unknown",
+   "shortDescription": "PHP contains a stale internal request-state vulnerability that allows for unauthenticated remote code execution."
+  },
   {
    "cveID": "CVE-2026-114625",
    "vendorProject": "Arista",
@@ -134,28 +154,8 @@
    "dueDate": "2026-10-17",
    "knownRansomwareCampaignUse": "Unknown",
    "shortDescription": "Cisco Secure Email Gateway contains a relative path traversal vulnerability that could allow an unauthenticated, remote attacker to write arbitrary files on the underlying operating system."
-  },
-  {
-   "cveID": "CVE-2026-105133",
-   "vendorProject": "Ahsay",
-   "product": "AhsayCBS",
-   "vulnerabilityName": "Ahsay AhsayCBS Improper Authentication Vulnerability",
-   "dateAdded": "2026-10-14",
-   "dueDate": "2026-10-17",
-   "knownRansomwareCampaignUse": "Unknown",
-   "shortDescription": "Ahsay AhsayCBS contains an improper authentication vulnerability that could allow a remote attacker to bypass authentication via manipulation of the random parameter in the API component’s checkSysPwd function. This vuln"
-  },
-  {
-   "cveID": "CVE-2026-0322",
-   "vendorProject": "Palo Alto Networks",
-   "product": "PAN-OS",
-   "vulnerabilityName": "Palo Alto Networks PAN-OS Code Injection Vulnerability",
-   "dateAdded": "2026-10-14",
-   "dueDate": "2026-10-17",
-   "knownRansomwareCampaignUse": "Unknown",
-   "shortDescription": "Palo Alto Networks PAN-OS contains a code injection vulnerability that could allow an authenticated attacker with network access to execute arbitrary code with root privileges on the firewall."
   }
  ],
  "tracked_crosscheck": [],
- "_updated": "2026-10-26T14:02:25Z"
+ "_updated": "2026-10-27T13:04:41Z"
 }

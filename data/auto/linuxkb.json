@@ -4,6 +4,28 @@
  "redhat_url": "https://access.redhat.com/security/security-updates/security-advisories",
  "ubuntu": [
   {
+   "id": "USN-8956-1",
+   "title": "Brotli vulnerability",
+   "published": "2026-10-26",
+   "cves": [
+    "CVE-2026-111497"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8956-1"
+  },
+  {
+   "id": "USN-8955-1",
+   "title": "nginx vulnerabilities",
+   "published": "2026-10-26",
+   "cves": [
+    "CVE-2026-97205",
+    "CVE-2026-97629",
+    "CVE-2026-15176",
+    "CVE-2026-93479",
+    "CVE-2026-95101"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8955-1"
+  },
+  {
    "id": "USN-8954-1",
    "title": "zlib vulnerability",
    "published": "2026-10-22",
@@ -88,99 +110,79 @@
     "CVE-2026-74221"
    ],
    "url": "https://ubuntu.com/security/notices/USN-8930-2"
-  },
-  {
-   "id": "USN-8949-1",
-   "title": "Ghostscript vulnerabilities",
-   "published": "2026-10-21",
-   "cves": [
-    "CVE-2026-103226",
-    "CVE-2026-101258"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8949-1"
-  },
-  {
-   "id": "USN-8948-2",
-   "title": "PHP vulnerabilities",
-   "published": "2026-10-21",
-   "cves": [
-    "CVE-2026-109618",
-    "CVE-2026-109619"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8948-2"
   }
  ],
  "redhat": [
   {
-   "cve": "CVE-2026-116124",
+   "cve": "CVE-2026-116620",
+   "severity": "important",
+   "public_date": "2026-10-27",
+   "description": "rapidjson: rapidjson: Denial of Service via out-of-bounds read in regex parser",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-116620"
+  },
+  {
+   "cve": "CVE-2026-116803",
+   "severity": "moderate",
+   "public_date": "2026-10-26",
+   "description": "dompurify: DOMPurify: Cross-site scripting via unneutralized detached elements during in-place sanitization",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-116803"
+  },
+  {
+   "cve": "CVE-2026-116804",
+   "severity": "moderate",
+   "public_date": "2026-10-26",
+   "description": "dompurify: DOMPurify: Cross-site scripting via sanitization bypass in attached shadow roots",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-116804"
+  },
+  {
+   "cve": "CVE-2026-116802",
+   "severity": "moderate",
+   "public_date": "2026-10-26",
+   "description": "dompurify: DOMPurify: Cross-site scripting via attribute sanitization bypass in XHTML mode",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-116802"
+  },
+  {
+   "cve": "CVE-2026-116741",
+   "severity": "moderate",
+   "public_date": "2026-10-26",
+   "description": "speex: speex: Denial of Service via out-of-bounds write",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-116741"
+  },
+  {
+   "cve": "CVE-2026-116732",
+   "severity": "moderate",
+   "public_date": "2026-10-26",
+   "description": "libdwarf: libdwarf: Denial of Service via out-of-bounds read in dwarf_debug_addr_table",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-116732"
+  },
+  {
+   "cve": "CVE-2026-116724",
    "severity": "important",
    "public_date": "2026-10-26",
-   "description": "libgsf: libgsf: Arbitrary code execution via heap-based buffer overflow in OLE2 parser",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-116124"
+   "description": "fltk: fltk: Arbitrary code execution via integer overflow in BMP image parsing",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-116724"
   },
   {
-   "cve": "CVE-2026-116195",
-   "severity": "moderate",
-   "public_date": "2026-10-25",
-   "description": "github.com/rclone/rclone: rclone: Path traversal via link suffix trimming",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-116195"
-  },
-  {
-   "cve": "CVE-2026-116196",
-   "severity": "moderate",
-   "public_date": "2026-10-25",
-   "description": "github.com/rclone/rclone: rclone: Information disclosure via HTTP redirects in B2 backend",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-116196"
-  },
-  {
-   "cve": "CVE-2026-116194",
-   "severity": "moderate",
-   "public_date": "2026-10-25",
-   "description": "github.com/rclone/rclone: rclone: Sensitive data disclosure via CSRF in pCloud OAuth callback",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-116194"
-  },
-  {
-   "cve": "CVE-2026-116192",
-   "severity": "moderate",
-   "public_date": "2026-10-25",
-   "description": "github.com/rclone/rclone: rclone: Information disclosure via Server-Side Request Forgery in rc-serve",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-116192"
-  },
-  {
-   "cve": "CVE-2026-116191",
+   "cve": "CVE-2026-116723",
    "severity": "important",
-   "public_date": "2026-10-25",
-   "description": "github.com/rclone/rclone: rclone: Arbitrary file modification via path traversal in WebDAV service",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-116191"
+   "public_date": "2026-10-26",
+   "description": "fltk: fltk: Arbitrary code execution via crafted BMP image file",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-116723"
   },
   {
-   "cve": "CVE-2026-116189",
+   "cve": "CVE-2026-116584",
    "severity": "important",
-   "public_date": "2026-10-25",
-   "description": "github.com/rclone/rclone: rclone: Arbitrary code execution via self-update signature verification bypass",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-116189"
+   "public_date": "2026-10-26",
+   "description": "seroval: seroval: Denial of Service via manipulated array length during deserialization",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-116584"
   },
   {
-   "cve": "CVE-2026-116190",
-   "severity": "low",
-   "public_date": "2026-10-25",
-   "description": "github.com/rclone/rclone: rclone: Information disclosure via cross-host HTTP redirects",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-116190"
-  },
-  {
-   "cve": "CVE-2026-116187",
+   "cve": "CVE-2026-116583",
    "severity": "moderate",
-   "public_date": "2026-10-25",
-   "description": "github.com/rclone/rclone: rclone: Cross-tenant upload tampering via authorization bypass in S3 authentication proxy",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-116187"
-  },
-  {
-   "cve": "CVE-2026-116181",
-   "severity": "moderate",
-   "public_date": "2026-10-25",
-   "description": "vllm: vllm: Denial of Service via unvalidated stop token identifiers",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-116181"
+   "public_date": "2026-10-26",
+   "description": "seroval: seroval: Arbitrary code execution via untrusted typed array constructor properties",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-116583"
   }
  ],
- "_updated": "2026-10-26T14:02:25Z"
+ "_updated": "2026-10-27T13:04:41Z"
 }

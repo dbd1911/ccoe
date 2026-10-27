@@ -3,77 +3,77 @@
  "source_url": "https://www.tenable.com/plugins/newest",
  "items": [
   {
-   "id": "371972",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-115822",
-   "link": "https://www.tenable.com/plugins/nessus/371972",
-   "published": "Mon, 26 Oct 2026 00:00:00 GMT"
+   "id": "372265",
+   "title": "SUSE SLES16 Security Update : go1.27 (SUSE-SU-2026:24360-1)",
+   "link": "https://www.tenable.com/plugins/nessus/372265",
+   "published": "Tue, 27 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "371971",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-115825",
-   "link": "https://www.tenable.com/plugins/nessus/371971",
-   "published": "Mon, 26 Oct 2026 00:00:00 GMT"
+   "id": "372264",
+   "title": "SUSE SLES16 Security Update : ca-certificates-mozilla (SUSE-SU-2026:24361-1)",
+   "link": "https://www.tenable.com/plugins/nessus/372264",
+   "published": "Tue, 27 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "371970",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-116191",
-   "link": "https://www.tenable.com/plugins/nessus/371970",
-   "published": "Mon, 26 Oct 2026 00:00:00 GMT"
+   "id": "372263",
+   "title": "SUSE SLED15: cpp7 / cross-nvptx-gcc7 / cross-nvptx-newlib7-devel / gcc7 / etc (SUSE-SU-2026:4913-1)",
+   "link": "https://www.tenable.com/plugins/nessus/372263",
+   "published": "Tue, 27 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "371969",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-116142",
-   "link": "https://www.tenable.com/plugins/nessus/371969",
-   "published": "Mon, 26 Oct 2026 00:00:00 GMT"
+   "id": "372262",
+   "title": "SUSE SLES15: kubernetes1.35-client / kubernetes1.35-client-bash-completion / etc (SUSE-SU-2026:4912-1)",
+   "link": "https://www.tenable.com/plugins/nessus/372262",
+   "published": "Tue, 27 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "371968",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-116194",
-   "link": "https://www.tenable.com/plugins/nessus/371968",
-   "published": "Mon, 26 Oct 2026 00:00:00 GMT"
+   "id": "372261",
+   "title": "SUSE SLES15 Security Update : squid (SUSE-SU-2026:4909-1)",
+   "link": "https://www.tenable.com/plugins/nessus/372261",
+   "published": "Tue, 27 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "371967",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-116143",
-   "link": "https://www.tenable.com/plugins/nessus/371967",
-   "published": "Mon, 26 Oct 2026 00:00:00 GMT"
+   "id": "372260",
+   "title": "SUSE SLED15 / SLES15 Security Update : cosign (SUSE-SU-2026:4903-1)",
+   "link": "https://www.tenable.com/plugins/nessus/372260",
+   "published": "Tue, 27 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "371966",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-116147",
-   "link": "https://www.tenable.com/plugins/nessus/371966",
-   "published": "Mon, 26 Oct 2026 00:00:00 GMT"
+   "id": "372259",
+   "title": "SUSE SLED15 / SLES15 Security Update : rekor (SUSE-SU-2026:4915-1)",
+   "link": "https://www.tenable.com/plugins/nessus/372259",
+   "published": "Tue, 27 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "371965",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-116140",
-   "link": "https://www.tenable.com/plugins/nessus/371965",
-   "published": "Mon, 26 Oct 2026 00:00:00 GMT"
+   "id": "372258",
+   "title": "SUSE SLES12: openssh8.4 / openssh8.4-clients / openssh8.4-common / etc (SUSE-SU-2026:4907-1)",
+   "link": "https://www.tenable.com/plugins/nessus/372258",
+   "published": "Tue, 27 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "371964",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-116160",
-   "link": "https://www.tenable.com/plugins/nessus/371964",
-   "published": "Mon, 26 Oct 2026 00:00:00 GMT"
+   "id": "372257",
+   "title": "SUSE SLES16 Security Update : go1.26 (SUSE-SU-2026:24359-1)",
+   "link": "https://www.tenable.com/plugins/nessus/372257",
+   "published": "Tue, 27 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "371963",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-116152",
-   "link": "https://www.tenable.com/plugins/nessus/371963",
-   "published": "Mon, 26 Oct 2026 00:00:00 GMT"
+   "id": "372256",
+   "title": "SUSE SLED15 / SLES15 Security Update : runc (SUSE-SU-2026:4911-1)",
+   "link": "https://www.tenable.com/plugins/nessus/372256",
+   "published": "Tue, 27 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "371962",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-116190",
-   "link": "https://www.tenable.com/plugins/nessus/371962",
-   "published": "Mon, 26 Oct 2026 00:00:00 GMT"
+   "id": "372255",
+   "title": "SUSE SLES15 Security Update : container-suseconnect (SUSE-SU-2026:4902-1)",
+   "link": "https://www.tenable.com/plugins/nessus/372255",
+   "published": "Tue, 27 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "371961",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-116146",
-   "link": "https://www.tenable.com/plugins/nessus/371961",
-   "published": "Mon, 26 Oct 2026 00:00:00 GMT"
+   "id": "372254",
+   "title": "SUSE SLES15: kubernetes1.37-client / kubernetes1.37-client-bash-completion / etc (SUSE-SU-2026:4901-1)",
+   "link": "https://www.tenable.com/plugins/nessus/372254",
+   "published": "Tue, 27 Oct 2026 00:00:00 GMT"
   }
  ],
- "_updated": "2026-10-26T14:02:25Z"
+ "_updated": "2026-10-27T13:04:41Z"
 }
