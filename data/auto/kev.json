@@ -1,10 +1,30 @@
 {
  "source": "CISA Known Exploited Vulnerabilities Catalog",
  "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
- "catalogVersion": "2026.10.26",
- "dateReleased": "2026-10-26T22:24:24.6101Z",
- "total": 1758,
+ "catalogVersion": "2026.10.27",
+ "dateReleased": "2026-10-27T19:00:02.2307Z",
+ "total": 1760,
  "recent": [
+  {
+   "cveID": "CVE-2026-48356",
+   "vendorProject": "Adobe",
+   "product": "Commerce and Magento",
+   "vulnerabilityName": "Adobe Commerce and Magento Unrestricted Upload of File with Dangerous Type Vulnerability",
+   "dateAdded": "2026-10-27",
+   "dueDate": "2026-11-10",
+   "knownRansomwareCampaignUse": "Unknown",
+   "shortDescription": "Adobe Commerce and Magento contain an unrestricted upload of file with dangerous type vulnerability that could result in arbitrary code execution in the context of the current user, potentially gaining elevated access or"
+  },
+  {
+   "cveID": "CVE-2026-111497",
+   "vendorProject": "Google",
+   "product": "Brotli",
+   "vulnerabilityName": "Google Brotli Unchecked Return Value Vulnerability",
+   "dateAdded": "2026-10-27",
+   "dueDate": "2026-11-10",
+   "knownRansomwareCampaignUse": "Unknown",
+   "shortDescription": "Google Brotli contains an unchecked return value vulnerability that allows a remote unauthenticated attacker to corrupt adjacent decoder state memory, disclose sensitive memory contents, cause a denial of service, or pot"
+  },
   {
    "cveID": "CVE-2026-109618",
    "vendorProject": "PHP Group",
@@ -134,28 +154,8 @@
    "dueDate": "2026-10-18",
    "knownRansomwareCampaignUse": "Unknown",
    "shortDescription": "Multiple Atlassian products (Bitbucket Data Center ,Confluence Data Center, Jira Service Management Data Center, Jira Software Data Center, Bamboo Data Center, Crowd Data Center, Crucible and Fisheye) contain a files or "
-  },
-  {
-   "cveID": "CVE-2026-105134",
-   "vendorProject": "Ahsay",
-   "product": "AhsayCBS",
-   "vulnerabilityName": "Ahsay AhsayCBS Command Injection Vulnerability",
-   "dateAdded": "2026-10-14",
-   "dueDate": "2026-10-17",
-   "knownRansomwareCampaignUse": "Unknown",
-   "shortDescription": "Ahsay AhsayCBS contains a command injection vulnerability that could allow a remote attacker to execute operating system commands via manipulation of the random parameter in the Replication Receiver component’s /rps/api/"
-  },
-  {
-   "cveID": "CVE-2026-76519",
-   "vendorProject": "Cisco",
-   "product": "Secure Email Gateway",
-   "vulnerabilityName": "Cisco Secure Email Gateway Relative Path Traversal Vulnerability",
-   "dateAdded": "2026-10-14",
-   "dueDate": "2026-10-17",
-   "knownRansomwareCampaignUse": "Unknown",
-   "shortDescription": "Cisco Secure Email Gateway contains a relative path traversal vulnerability that could allow an unauthenticated, remote attacker to write arbitrary files on the underlying operating system."
   }
  ],
  "tracked_crosscheck": [],
- "_updated": "2026-10-27T13:04:41Z"
+ "_updated": "2026-10-28T13:55:09Z"
 }

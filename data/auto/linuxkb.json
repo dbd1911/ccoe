@@ -4,6 +4,15 @@
  "redhat_url": "https://access.redhat.com/security/security-updates/security-advisories",
  "ubuntu": [
   {
+   "id": "USN-8957-1",
+   "title": "authd vulnerability",
+   "published": "2026-10-27",
+   "cves": [
+    "CVE-2026-102631"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8957-1"
+  },
+  {
    "id": "USN-8956-1",
    "title": "Brotli vulnerability",
    "published": "2026-10-26",
@@ -98,18 +107,6 @@
     "CVE-2026-107705"
    ],
    "url": "https://ubuntu.com/security/notices/USN-8950-1"
-  },
-  {
-   "id": "USN-8930-2",
-   "title": "U-Boot vulnerabilities",
-   "published": "2026-10-21",
-   "cves": [
-    "CVE-2026-74220",
-    "CVE-2026-74225",
-    "CVE-2026-74222",
-    "CVE-2026-74221"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8930-2"
   }
  ],
  "redhat": [
@@ -184,5 +181,5 @@
    "url": "https://access.redhat.com/security/cve/CVE-2026-116583"
   }
  ],
- "_updated": "2026-10-27T13:04:41Z"
+ "_updated": "2026-10-28T13:55:09Z"
 }

@@ -2,28 +2,28 @@
  "source": "NVD (NIST) — CRITICAL severity CVEs published in the last 7 days",
  "source_url": "https://nvd.nist.gov/vuln/search",
  "window_days": 7,
- "total_in_window": 64,
+ "total_in_window": 36,
  "items": [
+  {
+   "id": "CVE-2026-105781",
+   "published": "2026-10-27",
+   "score": 10.0,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+   "description": "Adobe Campaign Classic (ACC) is affected by an Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability that could result in arbitrary code execution in the context of the current user. An attacker "
+  },
+  {
+   "id": "CVE-2026-116508",
+   "published": "2026-10-26",
+   "score": 10.0,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+   "description": "A security flaw has been discovered in TOTOLINK A950RG 4.1.2cu.5268_B20221104. Affected by this issue is the function sub_402340 of the file infostat.cgi of the component Device-Information CGI. Performing a manipulation of the argument CON"
+  },
   {
    "id": "CVE-2026-114575",
    "published": "2026-10-22",
    "score": 10.0,
    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
    "description": "A flaw has been found in TOTOLINK A950RG 4.1.2cu.5268_B20221104. Affected by this issue is the function UploadCustomModule of the file lib/cste_modules/product.so. Executing a manipulation of the argument FileMd5 can lead to command injecti"
-  },
-  {
-   "id": "CVE-2026-113744",
-   "published": "2026-10-21",
-   "score": 10.0,
-   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-   "description": "A security vulnerability has been detected in Tenda AC19 16.03.10.07. The impacted element is the function formSetFirewallCfg of the file /goform/SetFirewallCfg of the component httpd Web Management Service. Such manipulation of the argumen"
-  },
-  {
-   "id": "CVE-2026-114382",
-   "published": "2026-10-21",
-   "score": 10.0,
-   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-   "description": "A security flaw has been discovered in TOTOLINK EX200 5.2.3c.7200. This affects the function setStaticDhcpConfig of the file /cgi-bin/cstecgi.cgi of the component lan.so. The manipulation of the argument Comment results in stack-based buffe"
   },
   {
    "id": "CVE-2026-114383",
@@ -33,39 +33,32 @@
    "description": "A weakness has been identified in TOTOLINK EX200 5.2.3c.7200. This impacts the function setWiFiAclAddConfig of the file /cgi-bin/cstecgi.cgi of the component wireless.so. This manipulation of the argument macAddress causes stack-based buffe"
   },
   {
-   "id": "CVE-2026-81212",
-   "published": "2026-10-20",
-   "score": 10.0,
-   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N",
-   "description": "IBM DataStage on Cloud Pak for Data 5.4.0.0 allows an unauthenticated user to perform an arbitrary write into shared Redis under any tenant's key. This collapses the platform's credential-encryption boundary and lets an anonymous caller poi"
+   "id": "CVE-2026-104351",
+   "published": "2026-10-27",
+   "score": 9.9,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+   "description": "Adobe Campaign Classic (ACC) is affected by an Improper Control of Generation of Code ('Code Injection') vulnerability that could result in arbitrary code execution in the context of the current user. A low-privileged attacker could exploit"
   },
   {
-   "id": "CVE-2026-87337",
-   "published": "2026-10-20",
-   "score": 10.0,
-   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N",
-   "description": "Vulnerability in the Oracle Access Manager product of Oracle Fusion Middleware (component: Authentication Engine).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.1.0. Easily exploitable vulnerability allows unauthenticated"
+   "id": "CVE-2026-104353",
+   "published": "2026-10-27",
+   "score": 9.9,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+   "description": "Adobe Campaign Classic (ACC) is affected by an Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability that could result in arbitrary code execution in the context of the current user. A low-"
   },
   {
-   "id": "CVE-2026-91216",
-   "published": "2026-10-20",
-   "score": 10.0,
-   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-   "description": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with"
+   "id": "CVE-2026-105489",
+   "published": "2026-10-27",
+   "score": 9.9,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+   "description": "Adobe Campaign Classic (ACC) is affected by an Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability that could result in arbitrary code execution in the context of the current user. A low-privil"
   },
   {
-   "id": "CVE-2026-91221",
-   "published": "2026-10-20",
-   "score": 10.0,
-   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-   "description": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with"
-  },
-  {
-   "id": "CVE-2026-91231",
-   "published": "2026-10-20",
-   "score": 10.0,
-   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-   "description": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Adapters).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with net"
+   "id": "CVE-2026-105780",
+   "published": "2026-10-27",
+   "score": 9.9,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+   "description": "Adobe Campaign Classic (ACC) is affected by an Incorrect Authorization vulnerability that could result in arbitrary code execution in the context of the current user. A low-privileged attacker could exploit this vulnerability to execute arb"
   },
   {
    "id": "CVE-2026-116231",
@@ -75,11 +68,11 @@
    "description": "A security flaw has been discovered in Oray Pugongying X5 Pro 7.6.1. The impacted element is an unknown function of the component Ser2net. Performing a manipulation of the argument regmsg results in crlf injection. It is possible to initiat"
   },
   {
-   "id": "CVE-2026-116504",
+   "id": "CVE-2026-116506",
    "published": "2026-10-26",
    "score": 9.9,
    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-   "description": "A vulnerability has been found in TOTOLINK A950RG 4.1.2cu.5268_B20221104. This affects the function setCloudUpgradeFW of the file lib/cste_modules/upgrade.so of the component Cloud Upgrade. The manipulation of the argument FileName leads to"
+   "description": "A vulnerability was determined in TOTOLINK A950RG 4.1.2cu.5268_B20221104. Affected is the function apmib_set of the file firewall.so. This manipulation causes command injection. The attack may be initiated remotely. The exploit has been pub"
   },
   {
    "id": "CVE-2026-115375",
@@ -87,7 +80,14 @@
    "score": 9.9,
    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
    "description": "Incus 7.0.0 before 7.0.2 and 7.1.0 before 7.5.0 contains a path traversal vulnerability that allows clients able to create instances to write files on the host. The flaw stems from unvalidated dependent custom volume names in instance backu"
+  },
+  {
+   "id": "CVE-2026-115377",
+   "published": "2026-10-22",
+   "score": 9.9,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+   "description": "Incus before 6.0.7, 6.1.0 before 7.0.2, and 7.1.0 before 7.5.0 contains an arbitrary file write vulnerability that allows malicious migration sources to write host files by planting symlinks in transferred volumes. Attackers can craft rsync"
   }
  ],
- "_updated": "2026-10-27T13:04:41Z"
+ "_updated": "2026-10-28T13:55:09Z"
 }
