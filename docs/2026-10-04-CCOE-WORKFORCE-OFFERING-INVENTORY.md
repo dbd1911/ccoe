@@ -37,7 +37,7 @@ Purpose: decision inventory for the minimally-viable deployment (+ .mil GitLab t
 |---|---|
 | Routing directory table (Topic / Channel / Response SLA) | Who handles what: FrontDesk, AODR, Vuln Cell, eMASS Support, Acq Cyber, ARB Intake, Workforce, Knowledge Mgr | KEEP |
 | Ask the CISO (anonymous) | Direct anonymous channel; answered live last-Friday monthly session or within 2 weeks; general-interest answers publish to FAQ + weekly digest | KEEP |
-| General inquiry form | Prefilled mailto to office box (currently placeholder `usarmy.ccoe.office@army.mil` — replace w/ real box) | KEEP |
+| General inquiry form | Prefilled mailto to office box (currently placeholder `usarmy.orlando.cpe-st3.mbx.cybersecurity-office@army.mil` — replace w/ real box) | KEEP |
 | Incident bypass note | Explicit "incidents do NOT use this page" routing | KEEP |
 
 ---
@@ -248,5 +248,5 @@ Weekly digest archive w/ KEV act-now, binder deadlines, mock-inspection schedule
 3. **Training Academy (30 courses)** — 31 range modules exist as files; verify Academy page claims match what's actually deliverable.
 4. **Metrics (84/71/12/9, 91%/84%, 312 POA&M…)** — all currently seed values; do the first REAL monthly roll before showing leadership.
 5. **Newsletter cadence** — revive or hide.
-6. **Placeholder email** — `usarmy.ccoe.office@army.mil` in 3 mailto links → swap before launch.
+6. **Placeholder email** — `usarmy.orlando.cpe-st3.mbx.cybersecurity-office@army.mil` in 3 mailto links → swap before launch.
 7. **CUI exposure check (pre-.mil)** — named systems + ISSO identities + POA&M narratives + expiration dates w/ owners: aggregate on public, detail on .mil only.

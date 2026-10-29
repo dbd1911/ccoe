@@ -313,29 +313,10 @@ canvas.cert{width:100%;height:auto;border:1px solid var(--hairline);border-radiu
    in a required knowledge check (two attempts per item, then the
    correct answer is revealed with an explanation). Each course
    ends in a 40-item capstone assessment; 80% to pass.
-   Persistence via window.storage with localStorage and in-memory
-   fallbacks. (Lightweight local auth — not a hardened SSO integration.)
+   Learner details and progress last only for this browser tab session.
    ============================================================ */
-
-/* ---------------- Storage layer ---------------- */
-const Store = {
-  mem:{},
-  async get(k){
-    try{ if(window.storage){ const r=await window.storage.get(k,false); return r?r.value:null; } }
-    catch(e){ if(k in this.mem) return this.mem[k]; return null; }
-    try{ const v=localStorage.getItem('csorange_'+k); if(v!==null) return v; }catch(e){}
-    return (k in this.mem)?this.mem[k]:null;
-  },
-  async set(k,v){
-    this.mem[k]=v;
-    try{ if(window.storage){ await window.storage.set(k,v,false); return; } }catch(e){}
-    try{ localStorage.setItem('csorange_'+k,v); }catch(e){}
-  }
-};
-const uKey = u => 'lms_user_'+u.toLowerCase().replace(/[^a-z0-9_]/g,'_');
-async function loadUser(u){ const r=await Store.get(uKey(u)); return r?JSON.parse(r):null; }
-async function saveUser(rec){ await Store.set(uKey(rec.username), JSON.stringify(rec)); }
-function hashPw(s){ let h=2166136261; for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);} return ('0000000'+(h>>>0).toString(16)).slice(-8); }
+const Store={mem:null,async get(){try{return sessionStorage.getItem('csorange_session_v2')||this.mem;}catch(e){return this.mem;}},async set(value){this.mem=value;try{if(value)sessionStorage.setItem('csorange_session_v2',value);else sessionStorage.removeItem('csorange_session_v2');}catch(e){}}};
+async function saveUser(rec){await Store.set(JSON.stringify(rec));}
 function shortHash(s){ let h=5381; for(let i=0;i<s.length;i++){h=((h<<5)+h)+s.charCodeAt(i);} return ('00000000'+(h>>>0).toString(16).toUpperCase()).slice(-8); }
 
 /* ---------------- App state ---------------- */
@@ -436,86 +417,21 @@ function pushRecent(id){
   App.user.recent=App.user.recent.slice(0,6);
 }
 
-/* ---------------- Auth ---------------- */
-let authMode='login';
-window.toggleAuthMode=function(){authMode=authMode==='login'?'register':'login';renderAuth();};
-
-async function doRegister(){
-  const u=$('r-user').value.trim(), n=$('r-name').value.trim(), e=$('r-email').value.trim(),
-        rl=$('r-role').value, pw=$('r-pw').value, pw2=$('r-pw2').value;
-  const err=$('auth-err');
-  if(!u||!n||!pw){err.textContent='Operator ID, full name, and passphrase are required.';return;}
-  if(pw.length<6){err.textContent='Passphrase must be at least 6 characters.';return;}
-  if(pw!==pw2){err.textContent='Passphrases do not match.';return;}
-  if(await loadUser(u)){err.textContent='That Operator ID is already registered. Try signing in.';return;}
-  const rec={username:u,name:n,email:e,role:rl,pw:hashPw(pw),createdAt:Date.now(),progress:{},capstones:{},recent:[],certs:[]};
-  await saveUser(rec);
-  await Store.set('lms_session',u);
-  App.user=rec; App.view='dashboard'; render();
-  toast('Operator profile provisioned — welcome aboard.');
-}
-async function doLogin(){
-  const u=$('l-user').value.trim(), pw=$('l-pw').value, err=$('auth-err');
-  const rec=await loadUser(u);
-  if(!rec||rec.pw!==hashPw(pw)){err.textContent='Invalid Operator ID or passphrase.';return;}
-  await Store.set('lms_session',u);
-  App.user=rec; App.view='dashboard'; render();
-  toast('Authentication confirmed.');
-}
-window.doRegister=doRegister; window.doLogin=doLogin;
-window.logout=async function(){await Store.set('lms_session','');App.user=null;render();};
-
-function renderAuth(){
-  const login=authMode==='login';
-  root.innerHTML=`
-  <div class="classbar"><span><span class="dot"></span>CPE ST3 // CYBERSECURITY OFFICE (CSO)</span>
-    <span class="right"><span>SECURE TERMINAL</span><span id="clk"></span></span></div>
-  <div class="auth-wrap">
-    <div class="auth-art">
-      <div class="grid-bg"></div>
-      <div>
-        <div class="eyebrow">CSO Cyber Range · Training Academy</div>
-        <div class="big" style="margin-top:14px">Operator<br><em>Console.</em></div>
-        <p class="muted" style="max-width:380px;margin-top:18px;position:relative">A workforce proficiency platform across three clearance tiers. Every course: 15 instructional modules, each gated by a required knowledge check, closing with a 40-item capstone assessment at an 80% pass mark.</p>
-      </div>
-      <div style="position:relative;display:flex;gap:26px" class="mono">
-        ${Object.values(TIERS).map((t,i)=>`<div><div style="font-size:26px;font-weight:700;color:${i===0?'var(--phosphor)':i===1?'var(--amber)':'var(--alert)'}">${t.roman}</div><div class="eyebrow" style="font-size:9px">${t.label.split('—')[1].trim()}</div><div class="muted" style="font-size:11px;margin-top:4px">${byTier(t.key).length} courses</div></div>`).join('')}
-      </div>
-    </div>
-    <div class="auth-form">
-      <h1 style="font-size:26px">${login?'Sign in to your console':'Provision an operator profile'}</h1>
-      <p class="muted" style="margin:6px 0 22px">${login?'Enter your credentials to resume training.':'Register to track progress, exams, and credentials.'}</p>
-      ${login?`
-        <div class="field"><label>Operator ID</label><input id="l-user" autocomplete="username" placeholder="e.g. j.rivera"/></div>
-        <div class="field"><label>Passphrase</label><input id="l-pw" type="password" autocomplete="current-password" placeholder="••••••••"/></div>
-        <div id="auth-err" class="err"></div>
-        <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px" onclick="doLogin()">Sign in</button>
-        <p class="muted" style="margin-top:18px">No profile yet? <span class="toggle-link" onclick="toggleAuthMode()">Provision one →</span></p>
-      `:`
-        <div class="field"><label>Operator ID</label><input id="r-user" placeholder="e.g. j.rivera"/></div>
-        <div class="field"><label>Full name</label><input id="r-name" placeholder="As it should appear on certificates"/></div>
-        <div class="field"><label>Email (optional)</label><input id="r-email" type="email" placeholder="name@agency.gov"/></div>
-        <div class="field"><label>Workforce track</label><select id="r-role">
-          <option>Security Engineering &amp; Architecture</option>
-          <option>Assurance &amp; Risk Management</option>
-          <option>Incident Response &amp; Defensive Ops</option>
-          <option>Adversary Emulation &amp; Assessment</option>
-          <option>Executive Security Leadership</option>
-          <option>General / Undeclared</option>
-        </select></div>
-        <div class="grid cols-2" style="gap:12px">
-          <div class="field"><label>Passphrase</label><input id="r-pw" type="password" placeholder="6+ characters"/></div>
-          <div class="field"><label>Confirm</label><input id="r-pw2" type="password" placeholder="repeat"/></div>
-        </div>
-        <div id="auth-err" class="err"></div>
-        <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px" onclick="doRegister()">Create profile</button>
-        <p class="muted" style="margin-top:18px">Already enrolled? <span class="toggle-link" onclick="toggleAuthMode()">Sign in →</span></p>
-      `}
-    </div>
-  </div>`;
-  startClock();
-}
-
+/* ---------------- Session entry ---------------- */
+window.startSession=async function(event){
+ event.preventDefault();const form=event.target;if(!form.reportValidity())return;
+ const name=$('learner-name').value.trim(),email=$('learner-email').value.trim();if(!name)return;
+ App.user={username:'session-'+Date.now(),name,email,role:'Learner',createdAt:Date.now(),progress:{},capstones:{},recent:[],certs:[]};
+ await saveUser(App.user);App.view='dashboard';render();
+};
+window.logout=async function(){await Store.set(null);App.user=null;App.exam=null;App.sel=null;render();};
+function renderAuth(){root.innerHTML=`<div class="auth-wrap"><div class="auth-art"><div class="eyebrow">CSO Cyber Range</div><h1>Choose your training.</h1><p>All three tiers and all 30 courses are available. Complete the module knowledge checks and pass the course assessment to earn a completion certificate.</p></div><div class="auth-form"><h2>Start a training session</h2><p>No account or password needed. Your entered name appears on certificates. Details and progress stay in this browser tab session; download certificates before ending it.</p><form onsubmit="startSession(event)"><div class="field"><label for="learner-name">Full name</label><input id="learner-name" autocomplete="name" maxlength="100" required></div><div class="field"><label for="learner-email">Email</label><input id="learner-email" type="email" autocomplete="email" maxlength="254" required></div><button class="btn btn-primary" type="submit">Enter Cyber Range</button></form><p class="muted">Each course earns credit once per session. Retakes are practice. Download or print a certificate and attach it to your own email; this site does not send email. A new browser session starts fresh.</p></div></div>`;}
+// Count foreground learning time while the learner remains active. Certificates freeze the first completion's time.
+let lastActivity=Date.now(),lastTick=Date.now();
+['pointerdown','keydown','scroll'].forEach(type=>document.addEventListener(type,()=>lastActivity=Date.now(),{passive:true}));
+setInterval(()=>{const now=Date.now(),seconds=Math.min(15,(now-lastTick)/1000);lastTick=now;
+ if(App.user&&App.sel&&['module','exam'].includes(App.view)&&!document.hidden&&now-lastActivity<60000){const p=ensureProgress(App.sel);if(!p.examPassed){p.activeSeconds=(p.activeSeconds||0)+seconds;saveUser(App.user);}}
+},15000);
 /* ---------------- Clock ---------------- */
 let clkTimer;
 function startClock(){
@@ -853,16 +769,17 @@ function renderModule(){
 window.pick=function(qi,oi){if(App.exam.submitted)return;App.exam.answers[qi]=oi;renderExamBody();};
 window.submitExam=async function(){
   const ex=App.exam;
+  if(!ex||ex.submitted)return;
   if(ex.answers.filter(a=>a!==undefined).length<ex.questions.length){toast('Answer every item before submitting.');return;}
   let correct=0;ex.questions.forEach((q,i)=>{if(ex.answers[i]===q.a)correct++;});
   ex.score=Math.round(correct/ex.questions.length*100);ex.correct=correct;ex.submitted=true;
   if(ex.kind==='course'){
     const p=ensureProgress(ex.ref);p.examScore=ex.score;
-    if(ex.score>=80){p.examPassed=true;p.completedAt=Date.now();p.modules=p.modules.map(()=>true);addCert('course',ex.ref);}
+    if(ex.score>=80){p.examPassed=true;p.completedAt=p.completedAt||Date.now();p.modules=p.modules.map(()=>true);addCert('course',ex.ref);}
     await saveUser(App.user);
   }else{
     App.user.capstones=App.user.capstones||{};const prev=App.user.capstones[ex.ref];
-    App.user.capstones[ex.ref]={passed:ex.score>=80,score:ex.score,completedAt:Date.now()};
+    if(!(prev&&prev.passed))App.user.capstones[ex.ref]={passed:ex.score>=80,score:ex.score,completedAt:Date.now()};
     if(ex.score>=80&&!(prev&&prev.passed))addCert('capstone',ex.ref);
     await saveUser(App.user);
   }
@@ -953,12 +870,13 @@ function addCert(kind,ref){
   const tier=kind==='course'?course(ref).tier:ref;
   const date=Date.now();
   const hash=shortHash(id+date+App.user.name);
-  App.user.certs.push({id,kind,ref,title,tier,date,hash});
+  const seconds=kind==='course'?(ensureProgress(ref).activeSeconds||0):0;
+  App.user.certs.push({id,kind,ref,title,tier,date,hash,learnerName:App.user.name,minutes:Math.floor(seconds/60),potentialCpe:Math.floor(seconds/1800)*0.5});
 }
 function renderCerts(){
   const certs=allCerts().slice().sort((a,b)=>b.date-a.date);
   let html=`<div class="page-head"><div class="eyebrow">Credentials Wallet · CPE ST3 CSO</div>
-  <h1>My Credentials</h1><p>Verifiable certificates of completion. Course certificates are issued on capstone pass; tier credentials on tier capstone pass. Download as PNG or PDF.</p></div>`;
+  <h1>My Credentials</h1><p>Session completion records using the name you entered. Course certificates are issued on capstone pass; tier credentials on tier capstone pass. Download PNG or print / save PDF. Course time is counted once per session; tier certificates add no duplicate course credit. CPE acceptance is determined by your credentialing organization.</p></div>`;
   if(!certs.length){return html+`<div class="panel"><div class="empty">${IC.cert}<div>No credentials yet. Pass a course capstone to earn your first certificate.</div><button class="btn btn-primary" style="margin-top:14px" onclick="go('catalog')">Browse catalog</button></div></div>`;}
   const caps=certs.filter(c=>c.kind==='capstone'),crs=certs.filter(c=>c.kind==='course');
   if(caps.length){html+=`<div class="eyebrow" style="margin-bottom:10px">Tier Credentials</div><div class="grid cols-3" style="margin-bottom:24px">`+caps.map(certTile).join('')+`</div>`;}
@@ -970,7 +888,7 @@ function certTile(c){
   return `<div class="cert-tile">
     <div class="top"><div><div class="mono" style="font-size:10px;color:var(--steel)">${c.kind==='capstone'?'TIER CREDENTIAL':'COURSE CERTIFICATE'}</div><div style="font-weight:600;font-size:14px;margin-top:5px">${esc(c.kind==='course'?course(c.ref).id+' · '+c.title:c.title)}</div></div><span class="tier-pill ${t.cls}" style="font-size:9px;flex:0 0 auto">Tier ${t.roman}</span></div>
     <div class="bot"><button class="btn btn-primary" style="flex:1;justify-content:center;padding:9px" onclick="viewCert('${c.id}')">View</button><button class="btn btn-ghost" style="padding:9px 13px" onclick="downloadCert('${c.id}','png')" title="Download PNG">${IC.dl}</button></div>
-    <div style="padding:0 18px 13px"><span class="mono muted" style="font-size:10px">ISSUED ${fmtDate(c.date).toUpperCase()} · VERIFY ${c.hash}</span></div>
+    <div style="padding:0 18px 13px"><span class="mono muted" style="font-size:10px">ISSUED ${fmtDate(c.date).toUpperCase()} · RECORD ${c.hash}</span></div>
   </div>`;
 }
 window.viewCert=function(id){
@@ -978,39 +896,18 @@ window.viewCert=function(id){
   const m=document.createElement('div');m.className='modal';m.id='cert-modal';
   m.innerHTML=`<div class="box"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px"><div class="eyebrow">Credential Preview · ${c.hash}</div><button class="btn btn-ghost" style="padding:6px 12px" onclick="document.getElementById('cert-modal').remove()">Close ✕</button></div>
     <canvas id="cert-canvas" class="cert" width="1600" height="1130"></canvas>
-    <div style="display:flex;gap:10px;margin-top:16px;justify-content:flex-end"><button class="btn btn-ghost" onclick="downloadCert('${id}','png')">${IC.dl} PNG</button><button class="btn btn-primary" onclick="downloadCert('${id}','pdf')">${IC.dl} PDF</button></div></div>`;
+    <div style="display:flex;gap:10px;margin-top:16px;justify-content:flex-end"><button class="btn btn-ghost" onclick="downloadCert('${id}','png')">${IC.dl} PNG</button><button class="btn btn-primary" onclick="downloadCert('${id}','pdf')">Print / Save PDF</button></div></div>`;
   m.onclick=e=>{if(e.target===m)m.remove();};
   document.body.appendChild(m);
   drawCert($('cert-canvas'),c);
 };
-/* jsPDF is loaded lazily on first PDF download so an unreachable CDN can
-   never block page rendering. */
-function loadJsPDF(){
-  return new Promise(res=>{
-    if(window.jspdf)return res(true);
-    const s=document.createElement('script');
-    s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
-    s.async=true;s.onload=()=>res(true);s.onerror=()=>res(false);
-    document.head.appendChild(s);
-    setTimeout(()=>res(!!window.jspdf),8000);
-  });
-}
 window.downloadCert=async function(id,fmt){
-  const c=allCerts().find(x=>x.id===id);if(!c)return;
-  const cv=document.createElement('canvas');cv.width=1600;cv.height=1130;
-  await drawCert(cv,c);
-  const fname='CSO_'+(c.kind==='course'?course(c.ref).id:'TIER_'+TIERS[c.tier].roman)+'_'+App.user.username;
-  const savePng=()=>cv.toBlob(b=>{const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=fname+'.png';a.click();});
-  if(fmt==='png'){savePng();}
-  else{
-    const ok=await loadJsPDF();
-    try{
-      if(!ok||!window.jspdf)throw new Error('jspdf unavailable');
-      const {jsPDF}=window.jspdf;const pdf=new jsPDF({orientation:'landscape',unit:'px',format:[1600,1130]});
-      pdf.addImage(cv.toDataURL('image/png'),'PNG',0,0,1600,1130);pdf.save(fname+'.pdf');
-    }catch(e){toast('PDF engine unavailable — downloading PNG instead.');savePng();}
-  }
-  toast('Credential downloaded.');
+ const c=allCerts().find(x=>x.id===id);if(!c)return;
+ const popup=fmt==='pdf'?window.open('','_blank'):null;
+ if(fmt==='pdf'&&!popup){toast('Allow the print window or download PNG.');return;}
+ const cv=document.createElement('canvas');cv.width=1600;cv.height=1130;await drawCert(cv,c);
+ if(fmt==='png'){cv.toBlob(b=>{if(!b)return;const url=URL.createObjectURL(b),a=document.createElement('a');a.href=url;a.download='CSO_'+c.ref+'_certificate.png';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});}
+ else{popup.document.title='Training completion certificate';const style=popup.document.createElement('style');style.textContent='@page{size:landscape;margin:0}body{margin:0}img{width:100%;height:auto}';popup.document.head.appendChild(style);const img=popup.document.createElement('img');img.alt='Training completion certificate';img.onload=()=>{popup.focus();popup.print();};img.src=cv.toDataURL('image/png');popup.document.body.appendChild(img);}
 };
 
 /* ---------------- Official CSO seal (SVG, used in chrome) ---------------- */
@@ -1024,12 +921,12 @@ function sealSVG(sz){
 
 /* ---------------- Certificate canvas ---------------- */
 async function drawCert(cv,c){
-  try{await Promise.all([
+  try{await Promise.race([new Promise(resolve=>setTimeout(resolve,1500)),Promise.all([
     document.fonts.load('700 64px "Space Grotesk"'),
     document.fonts.load('500 64px "Space Grotesk"'),
     document.fonts.load('600 26px "IBM Plex Mono"'),
     document.fonts.load('400 24px "Inter"')
-  ]);}catch(e){}
+  ])]);}catch(e){}
   const x=cv.getContext('2d'),W=cv.width,H=cv.height;
   const accent=c.tier==='beginner'?'#54E6C4':c.tier==='intermediate'?'#F2A33C':'#FF5F73';
   const t=TIERS[c.tier];
@@ -1043,7 +940,7 @@ async function drawCert(cv,c){
   x.strokeStyle=accent;x.lineWidth=3;x.strokeRect(40,40,W-80,H-80);
   x.strokeStyle='rgba(130,148,182,.45)';x.lineWidth=1;x.strokeRect(54,54,W-108,H-108);
   x.save();x.fillStyle='rgba(130,148,182,.4)';x.font='10px "IBM Plex Mono"';
-  const micro=('CPE ST3 CYBERSECURITY OFFICE · AUTHENTIC CREDENTIAL · '+c.hash+' · ').repeat(20);
+  const micro=('CPE ST3 CYBERSECURITY OFFICE · TRAINING COMPLETION · '+c.hash+' · ').repeat(20);
   x.fillText(micro.slice(0,210),70,78);x.fillText(micro.slice(0,210),70,H-66);x.restore();
   const cx=W/2;
   x.save();x.translate(cx,170);
@@ -1052,26 +949,28 @@ async function drawCert(cv,c){
   x.strokeStyle=accent;x.lineWidth=6;x.lineCap='round';x.lineJoin='round';
   x.beginPath();x.moveTo(-17,2);x.lineTo(-4,16);x.lineTo(22,-14);x.stroke();
   x.restore();
-  const ctr=(txt,y,font,col,ls)=>{x.fillStyle=col;x.font=font;x.textAlign='center';if(ls){x.save();letterCenter(x,txt,cx,y,ls);x.restore();}else x.fillText(txt,cx,y);};
+  const ctr=(txt,y,font,col,ls)=>{x.fillStyle=col;x.font=font;x.textAlign='center';if(ls){x.save();letterCenter(x,txt,cx,y,ls);x.restore();}else x.fillText(txt,cx,y,1300);};
   ctr('CPE ST3 CYBERSECURITY OFFICE (CSO)',262,'600 22px "IBM Plex Mono"','#8294B6',5);
   ctr(c.kind==='capstone'?'TIER PROFICIENCY CREDENTIAL':'CERTIFICATE OF COMPLETION',322,'700 40px "Space Grotesk"','#DCE5F5',2);
   x.strokeStyle=accent;x.lineWidth=2;x.beginPath();x.moveTo(cx-120,352);x.lineTo(cx+120,352);x.stroke();
   ctr('This credential is awarded to',420,'400 24px "Inter"','#8294B6');
-  ctr(App.user.name,500,'500 62px "Space Grotesk"','#FFFFFF');
+  ctr(c.learnerName||App.user.name,500,'500 62px "Space Grotesk"','#FFFFFF');
   x.strokeStyle='rgba(130,148,182,.35)';x.lineWidth=1;x.beginPath();x.moveTo(cx-380,530);x.lineTo(cx+380,530);x.stroke();
   ctr(c.kind==='capstone'?'for demonstrating comprehensive proficiency across the':'for completing all fifteen modules and passing the 40-item capstone assessment for',590,'400 24px "Inter"','#8294B6');
   const title=c.kind==='course'?course(c.ref).id+'  ·  '+c.title:t.label;
   x.fillStyle=accent;x.font='600 38px "Space Grotesk"';x.textAlign='center';
   wrapText(x,title,cx,660,1180,46);
   if(c.kind==='capstone')ctr('40-item Capstone Assessment · CSO Cyber Range',724,'400 22px "Inter"','#8294B6');
+  ctr(c.kind==='course'?'Recorded training: '+c.minutes+' minutes · Potential CPE: '+c.potentialCpe:'Tier completion summary · No additional course credit',790,'400 23px Inter','#DCE5F5');
+  ctr('Self-reported identity · CPE subject to credentialing organization acceptance',830,'400 20px Inter','#8294B6');
   const fy=H-150;
   x.textAlign='center';
   const col=(label,val,px)=>{x.fillStyle='#8294B6';x.font='500 16px "IBM Plex Mono"';x.fillText(label,px,fy);x.strokeStyle='rgba(130,148,182,.4)';x.beginPath();x.moveTo(px-150,fy+12);x.lineTo(px+150,fy+12);x.stroke();x.fillStyle='#DCE5F5';x.font='400 22px "Inter"';x.fillText(val,px,fy+44);};
   col('DATE OF ISSUE',fmtDate(c.date),cx-440);
-  x.fillStyle='#DCE5F5';x.font='italic 30px "Space Grotesk"';x.fillText('R. Calderon',cx,fy);
+  x.fillStyle='#DCE5F5';x.font='italic 30px "Space Grotesk"';x.fillText('CSO Cyber Range',cx,fy);
   x.strokeStyle='rgba(130,148,182,.4)';x.beginPath();x.moveTo(cx-150,fy+12);x.lineTo(cx+150,fy+12);x.stroke();
-  x.fillStyle='#8294B6';x.font='500 15px "IBM Plex Mono"';x.fillText('AUTHORIZING OFFICIAL · CSO',cx,fy+38);
-  col('VERIFICATION ID',c.hash,cx+440);
+  x.fillStyle='#8294B6';x.font='500 15px "IBM Plex Mono"';x.fillText('SESSION COMPLETION RECORD',cx,fy+38);
+  col('COMPLETION ID',c.hash,cx+440);
 }
 function letterCenter(x,txt,cx,y,ls){
   const w=txt.split('').reduce((s,ch)=>s+x.measureText(ch).width+ls,-ls);
@@ -1106,7 +1005,7 @@ function render(){
 
 /* ---------------- Bootstrap ---------------- */
 (async function init(){
-  try{const s=await Store.get('lms_session');if(s){const u=await loadUser(s);if(u)App.user=u;}}catch(e){}
+  try{const saved=await Store.get();if(saved){const u=JSON.parse(saved);if(u.name&&u.email&&u.progress&&Array.isArray(u.certs))App.user=u;}}catch(e){}
   render();
 })();
 </script>

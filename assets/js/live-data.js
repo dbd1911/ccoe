@@ -1,28 +1,3 @@
-/* ============================================================
-   CCoE Operational Hub — data hydration layer
-   Renders content from data/manual/*.json (human-edited) and
-   data/auto/*.json (refreshed by GitHub Actions) into the same
-   markup the pages already use. If a data file is missing or
-   fetch fails (e.g. opening the HTML directly from disk), the
-   static HTML already in the page remains as the fallback —
-   nothing breaks and the design never changes.
-   ------------------------------------------------------------
-   WHAT RENDERS FROM WHERE (edit the JSON, not the pages):
-     Home hero numbers + labels ... data/manual/site-metrics.json → hero_stats
-     Home metrics tiles ........... site-metrics.json → metrics_snapshot
-     Home ATO donut ............... site-metrics.json → ato_donut
-     Home severity bars ........... site-metrics.json → poam_severity_bars
-     Home CYBER ALERTS ticker ..... data/manual/ticker.json (auto_kev_item
-                                     prepends the newest CISA KEV entry)
-     POA&M table .................. data/manual/poam.json
-     Calendar / milestones / exp .. data/manual/calendar.json
-     Threat picture + KEV map ..... data/manual/threat-week.json
-     Live feed tables ............. data/auto/*.json (written by GitHub
-                                     Actions — do not hand-edit)
-     Tools & Dashboards snapshot .. site-metrics + poam + calendar JSON
-     Governance leadership tiles .. site-metrics.json
-   ============================================================ */
-
 (function () {
   'use strict';
 
@@ -92,37 +67,6 @@
     var heroWrap = document.querySelector('.hero-stats-inner');
     if (!heroWrap) return; // not on this page
 
-    getJSON('data/manual/site-metrics.json').then(function (m) {
-      // Hero counters
-      if (m.hero_stats && heroWrap.children.length === m.hero_stats.length) {
-        m.hero_stats.forEach(function (s, i) {
-          var cell = heroWrap.children[i];
-          var n = cell.querySelector('.n'), l = cell.querySelector('.l');
-          if (n) {
-            n.dataset.count = s.value;
-            // The page's count-up animation runs ~1.4s; settle on the JSON
-            // value after it finishes so the two never fight.
-            setTimeout(function () { n.textContent = s.value; }, 1600);
-          }
-          if (l) l.textContent = s.label;
-        });
-      }
-      // Metrics snapshot
-      var snap = document.getElementById('metricsSnapshot');
-      if (snap && m.metrics_snapshot) {
-        snap.innerHTML = m.metrics_snapshot.map(function (x) {
-          var deltaColor = x.delta_tone ? ' style="color:var(--' + esc(x.delta_tone) + ')"' : '';
-          return '<div class="metric m-' + esc(x.tone) + '"><div class="n">' + esc(x.value) +
-                 '</div><div class="l">' + esc(x.label) + '</div><div class="delta"' + deltaColor + '>' +
-                 esc(x.delta) + '</div></div>';
-        }).join('');
-      }
-      // ATO donut
-      renderDonut(document.getElementById('atoDonut'), m.ato_donut);
-      // POA&M severity bars
-      renderBars(document.getElementById('poamBars'), m.poam_severity_bars);
-    }).catch(function (e) { console.warn('[live-data] site-metrics:', e.message); });
-
     // Ticker — manual items plus (optionally) the newest CISA KEV entry.
     var ticker = document.getElementById('ticker');
     if (ticker) {
@@ -152,26 +96,6 @@
   }
 
   /* ---------------- Vulnerability & POA&M page -------------------------- */
-  function hydratePoam() {
-    var tbody = document.querySelector('#poamTable tbody');
-    if (!tbody) return;
-    getJSON('data/manual/poam.json').then(function (d) {
-      tbody.innerHTML = d.items.map(function (r) {
-        var st = STATUS[r.status] || STATUS.ontrack;
-        return '<tr data-cat="' + esc(r.status) + '">' +
-          '<td class="mono">' + esc(r.id) + '</td>' +
-          '<td>' + esc(r.system) + '</td>' +
-          '<td>' + esc(r.summary) + '</td>' +
-          '<td><span class="badge ' + (SEV_BADGE[r.severity] || 'b-mute') + '">' + esc(r.severity) + '</span></td>' +
-          '<td class="mono" data-val="' + (+r.age || 0) + '">' + (+r.age || 0) + '</td>' +
-          '<td class="mono">' + esc(r.due) + '</td>' +
-          '<td><span class="dot ' + st.dot + '"></span>' + st.label + '</td></tr>';
-      }).join('');
-      var count = document.getElementById('poamCount');
-      if (count) count.textContent = d.items.length + ' item' + (d.items.length === 1 ? '' : 's') + ' shown';
-    }).catch(function (e) { console.warn('[live-data] poam:', e.message); });
-  }
-
   /* ---------------- Threat Intel page ----------------------------------- */
   function hydrateThreatIntel() {
     var alertsGrid = document.getElementById('weekAlerts');
@@ -193,17 +117,6 @@
             '<p><b>What to do now:</b> ' + a.action + '</p></div>';
         }).join('');
 
-        var kevBody = document.getElementById('kevMapBody');
-        if (kevBody && d.kev_map) {
-          kevBody.innerHTML = d.kev_map.map(function (r) {
-            var due = fmtDate(r.due);
-            return '<tr><td class="formula">' + esc(r.cve) + '</td>' +
-              '<td data-val="' + esc(r.added.replace(/-/g, '')) + '">' + fmtDate(r.added) + '</td>' +
-              '<td>' + esc(r.systems) + '</td>' +
-              '<td data-val="' + esc(r.due.replace(/-/g, '')) + '">' + (r.due_bold ? '<b>' + due + '</b>' : due) + '</td>' +
-              '<td><span class="badge ' + (BADGE[r.status_tone] || 'b-mute') + '">' + esc(r.status) + '</span></td></tr>';
-          }).join('');
-        }
       }).catch(function (e) { console.warn('[live-data] threat-week:', e.message); });
     }
 
@@ -289,47 +202,7 @@
 
   /* ---------------- Tools & Dashboards: live portfolio dashboard -------- */
   function hydrateDashboard() {
-    var dm = document.getElementById('dashMetrics');
-    if (!dm) return;
-    getJSON('data/manual/site-metrics.json').then(function (m) {
-      if (m.metrics_snapshot) {
-        dm.innerHTML = m.metrics_snapshot.map(function (x) {
-          var deltaColor = x.delta_tone ? ' style="color:var(--' + esc(x.delta_tone) + ')"' : '';
-          return '<div class="metric m-' + esc(x.tone) + '"><div class="n">' + esc(x.value) +
-                 '</div><div class="l">' + esc(x.label) + '</div><div class="delta"' + deltaColor + '>' +
-                 esc(x.delta) + '</div></div>';
-        }).join('');
-      }
-      renderDonut(document.getElementById('dashDonut'), m.ato_donut);
-      renderBars(document.getElementById('dashBars'), m.poam_severity_bars);
-    }).catch(function (e) { console.warn('[live-data] dash metrics:', e.message); });
-
-    getJSON('data/manual/calendar.json').then(function (cal) {
-      var TRACK = { 'Daily Track': 'b-crit', 'Watch': 'b-warn', 'Plan': 'b-info' };
-      var el = document.getElementById('dashExp');
-      if (el && cal.expirations) el.innerHTML = cal.expirations.slice()
-        .sort(function (a, b) { return a.days - b.days; }).slice(0, 5).map(function (r) {
-          return '<tr><td><b>' + esc(r.system) + '</b></td><td class="mono">' + (+r.days || 0) + '</td>' +
-                 '<td>' + esc(r.stage) + '</td><td><span class="badge ' + (TRACK[r.track] || 'b-mute') + '">' + esc(r.track) + '</span></td></tr>';
-        }).join('');
-    }).catch(function () {});
-
-    getJSON('data/manual/poam.json').then(function (d) {
-      var el = document.getElementById('dashPoam');
-      if (!el) return;
-      var hot = d.items.filter(function (r) { return r.status === 'overdue' || r.status === 'atrisk'; })
-        .sort(function (a, b) { return (a.due || '').localeCompare(b.due || ''); }).slice(0, 5);
-      el.innerHTML = hot.map(function (r) {
-        return '<tr><td class="mono">' + esc(r.id) + '</td><td>' + esc(r.system) + '</td>' +
-               '<td><span class="badge ' + (SEV_BADGE[r.severity] || 'b-mute') + '">' + esc(r.severity) + '</span></td>' +
-               '<td class="mono">' + esc(r.due) + '</td></tr>';
-      }).join('');
-    }).catch(function () {});
-
-    getJSON('data/auto/meta.json').then(function (m) {
-      var el = document.getElementById('dashUpdated');
-      if (el && m._updated) el.textContent = 'DATA AS OF: ' + m._updated.replace('T', ' ').replace('Z', ' UTC');
-    }).catch(function () {});
+    if (!document.getElementById('dashFeeds')) return;
     getJSON('data/auto/kev.json').then(function (k) {
       var el = document.getElementById('dashFeeds');
       if (el && k.recent && k.recent.length) {
@@ -339,27 +212,9 @@
     }).catch(function () {});
   }
 
-  /* ---------------- Governance: leadership snapshot tiles --------------- */
-  function hydrateGovernance() {
-    var el = document.getElementById('govTiles');
-    if (!el) return;
-    getJSON('data/manual/site-metrics.json').then(function (m) {
-      var find = function (label) {
-        return (m.metrics_snapshot || []).filter(function (x) { return x.label === label; })[0];
-      };
-      var health = find('Portfolio ATO Health'), queue = find('In Assessment Queue');
-      var h = el.querySelector('[data-gov="health"] .n'); if (h && health) h.textContent = health.value;
-      var q = el.querySelector('[data-gov="queue"] .n'); if (q && queue) q.textContent = queue.value;
-      var exp = (m.hero_stats || []).filter(function (x) { return /Expiring/.test(x.label); })[0];
-      var e = el.querySelector('[data-gov="expiring"] .n'); if (e && exp) e.textContent = exp.value;
-    }).catch(function () {});
-  }
-
   document.addEventListener('DOMContentLoaded', function () {
     hydrateHome();
-    hydratePoam();
     hydrateThreatIntel();
     hydrateDashboard();
-    hydrateGovernance();
   });
 })();

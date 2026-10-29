@@ -133,27 +133,14 @@
     <div class="wrap">
       <span class="kicker">Read-Only Leadership Dashboards</span>
       <h2>The Portfolio in One Screen</h2>
-      <p class="section-sub">Live snapshot rendered from the same data feeding the Command Center. Read-only; drill-down views are RBAC-restricted to leadership.</p>
-      <div class="grid g4 reveal" id="govTiles">
-        <div class="metric" data-gov="health"><div class="n">84%</div><div class="l">Portfolio ATO health</div><div class="delta d-ok">▲ 2% vs last month</div></div>
-        <div class="metric m-warn" data-gov="expiring"><div class="n">9</div><div class="l">Authorizations expiring ≤180d</div><div class="delta">4 inside 90 days</div></div>
-        <div class="metric" data-gov="queue"><div class="n">12</div><div class="l">Packages in assessment queue</div><div class="delta">Median dwell 23 days</div></div>
-        <div class="metric m-crit"><div class="n">23</div><div class="l">Overdue CAT I POA&amp;Ms</div><div class="delta">All on CISO review list</div></div>
-      </div>
+      <p class="section-sub">Dated summary from the same reporting snapshot as the Command Center.</p>
+      <div class="grid g4" id="govTiles" data-portfolio-cards><p class="dim">No reporting data available yet.</p></div><p data-metrics-date class="mono"></p>
       <div class="grid g2" style="margin-top:24px">
         <div class="card reveal">
-          <h3>POA&amp;M Aging by Severity</h3>
-          <div class="bar-row"><span>CAT I</span><div class="bar-track"><div class="bar-fill" style="width:18%;background:var(--crit)"></div></div><b>23</b></div>
-          <div class="bar-row"><span>CAT II</span><div class="bar-track"><div class="bar-fill" style="width:52%;background:var(--warn)"></div></div><b>96</b></div>
-          <div class="bar-row"><span>Medium</span><div class="bar-track"><div class="bar-fill" style="width:76%"></div></div><b>141</b></div>
-          <div class="bar-row"><span>Low</span><div class="bar-track"><div class="bar-fill" style="width:30%;background:var(--olive)"></div></div><b>52</b></div>
+          <h3>Open POA&amp;M by Severity</h3><div data-severity-summary><p class="dim">No reporting data available yet.</p></div>
         </div>
         <div class="card reveal">
-          <h3>Workforce Operational Metrics</h3>
-          <div class="bar-row"><span>ISSO avg systems/person</span><div class="bar-track"><div class="bar-fill" style="width:64%"></div></div><b>3.2</b></div>
-          <div class="bar-row"><span>Assessor saturation</span><div class="bar-track"><div class="bar-fill" style="width:92%;background:var(--warn)"></div></div><b>92%</b></div>
-          <div class="bar-row"><span>8140 qualified</span><div class="bar-track"><div class="bar-fill" style="width:84%;background:var(--olive)"></div></div><b>84%</b></div>
-          <div class="bar-row"><span>First-pass package acceptance</span><div class="bar-track"><div class="bar-fill" style="width:71%"></div></div><b>71%</b></div>
+          <h3>Workforce Operational Metrics</h3><div data-workforce-metrics><p class="dim">No reporting data available yet.</p></div>
         </div>
       </div>
       <div class="callout" style="margin-top:24px"><b class="head">RBAC Notice</b>Cycle-time analytics, rejection-rate detail by team, and unredacted vulnerability profiles are restricted views. Request access via <a href="tools-dashboards.html">Tools &amp; Dashboards</a>.</div>
@@ -162,5 +149,6 @@
 </main>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/live-data.js" defer></script>
+<script src="assets/js/metrics.js" defer></script>
 </body>
 </html>

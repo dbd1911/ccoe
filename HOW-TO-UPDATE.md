@@ -5,17 +5,13 @@ routine content lives in JSON files — you almost never touch HTML.
 
 ## Quick reference — the two most common edits
 
-**Change the home-page numbers** (84 systems, 71 authorizations, the tiles, the
-donut, the bars): open `data/manual/site-metrics.json`. Every section has a
-`_comment_…` key right above it explaining the fields. Save, refresh, done.
+**Update portfolio metrics weekly:** append a dated snapshot in `data/manual/metrics.json`. See [the field guide](docs/METRICS-UPDATE.md). Dashboards share this file and preserve history. Missing data appears as unavailable.
 
 **Change the CYBER ALERTS ticker**: open `data/manual/ticker.json`. Each item is
 `{ "tag": "BADGE", "text": "message" }`; `auto_kev_item` controls whether the
 newest CISA KEV entry is auto-inserted first.
 
-The matching HTML blocks in `index.html` are marked with `▶ TO CHANGE…` comments —
-they are offline fallbacks only (shown when the JSON can't load, e.g. opening the
-file straight from disk). Update them too if you want the fallback to match.
+Metrics deliberately show unavailable values if data cannot load. Other editorial content retains its existing fallback behavior.
 
 ## 1. Data you edit by hand — `data/manual/`
 
@@ -24,11 +20,11 @@ already in each page acts as the fallback if a fetch ever fails.
 
 | File | Drives | Typical edit |
 |---|---|---|
-| `site-metrics.json` | Home page hero counters, metrics snapshot, ATO donut, POA&M severity bars — plus the live dashboard on `tools-dashboards.html` and the leadership tiles on `governance.html` | Monthly metrics roll |
+| `metrics.json` | Home page summary, metrics snapshot, authorization status, POA&M severity — plus the dashboard on `tools-dashboards.html` and the leadership tiles on `governance.html` | Append weekly snapshots |
 | `ticker.json` | Home page CYBER ALERTS ticker | Add/remove alert lines. With `"auto_kev_item": true` the newest CISA KEV entry is inserted automatically as the first item |
-| `poam.json` | Open POA&M table on `vulnerability-poam.html` | Add/close findings. `status`: `overdue` \| `atrisk` \| `ontrack` \| `review` |
-| `calendar.json` | Month grid events, hard milestones (with `.ics` downloads), ATO expiration table on `assessment-calendar.html` | Add events as `"YYYY-MM-DD": [["e-type","Label"]]`. Event types: `e-ato`, `e-asmt`, `e-mil`, `e-trn`, `e-blk` |
-| `threat-week.json` | Weekly alert cards, KEV→portfolio map on `threat-intel.html` | Monday-morning weekly refresh |
+| `poam.json` | Retired; no finding records are published | Leave empty |
+| `calendar.json` | Month grid events, hard milestones (with `.ics` downloads) on `assessment-calendar.html` (ATO dates come from metrics.json) | Add events as `"YYYY-MM-DD": [["e-type","Label"]]`. Event types: `e-ato`, `e-asmt`, `e-mil`, `e-trn`, `e-blk` |
+| `threat-week.json` | Weekly public alert cards on `threat-intel.html` | Monday-morning weekly refresh |
 
 Notes:
 * Milestones in `calendar.json` need a unique `slug` — the workflow builds
@@ -80,7 +76,7 @@ row in `templates.html` (filename, version, date).
 ## 4. Placeholders to replace for production
 
 * All form/report buttons currently open a pre-addressed email to
-  `usarmy.ccoe.office@army.mil` (contact, engineering ARB intake,
+  `usarmy.orlando.cpe-st3.mbx.cybersecurity-office@army.mil` (contact, engineering ARB intake,
   AI & Automation intake, incident report). Search for that address and replace
   it with the real org box — it appears only in HTML `mailto:` links.
 * Newsletter archive lives in `newsletters/` — copy an existing issue as the

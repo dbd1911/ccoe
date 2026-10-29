@@ -24,43 +24,21 @@
   <!-- LIVE PORTFOLIO DASHBOARD (hydrated from data/ by assets/js/live-data.js) -->
   <section class="section">
     <div class="wrap">
-      <span class="kicker">Portfolio Dashboard · Live</span>
+      <span class="kicker">Portfolio Dashboard · Reporting Snapshot</span>
       <h2>Command Center Snapshot</h2>
-      <p class="section-sub">The portfolio in one screen, rendered from the same data layer that drives the rest of the hub — edit <span class="mono">data/manual/</span> and this view follows. External feed data refreshes automatically twice daily. <span class="mono" id="dashUpdated" style="font-size:11px"></span></p>
+      <p class="section-sub">Portfolio summary from the latest published reporting snapshot. Individual POA&amp;M findings remain in the authorized source tool.</p>
 
-      <div class="grid g4 reveal" id="dashMetrics">
-        <div class="metric m-ok"><div class="n">84%</div><div class="l">Portfolio ATO Health</div><div class="delta" style="color:var(--ok)">▲ 3% vs last month</div></div>
-        <div class="metric m-warn"><div class="n">312</div><div class="l">Open POA&amp;M Items</div><div class="delta" style="color:var(--warn)">47 aging &gt; 90 days</div></div>
-        <div class="metric m-info"><div class="n">12</div><div class="l">In Assessment Queue</div><div class="delta">Median cycle: 41 days</div></div>
-        <div class="metric m-crit"><div class="n">6</div><div class="l">High-Risk Systems</div><div class="delta" style="color:var(--crit)">2 overdue remediation</div></div>
-      </div>
+      <div class="grid g4" id="dashMetrics" data-portfolio-cards><p class="dim">No reporting data available yet.</p></div><p data-metrics-date class="mono"></p>
 
       <div class="grid g2" style="margin-top:22px">
         <div class="card reveal">
           <h3 style="font-size:16px;margin-bottom:14px">Authorization Status Mix</h3>
-          <div class="donut-wrap">
-            <div class="donut" id="dashDonut" role="img" aria-label="Authorization mix: 58 full ATO, 7 conditional, 4 IATT, 2 ATC, 9 expiring, 4 in process">
-              <div class="donut-center">84</div>
-            </div>
-            <ul class="legend">
-              <li><span class="sw" style="background:var(--ok)"></span>Full ATO <span class="lv">58</span></li>
-              <li><span class="sw" style="background:var(--gold)"></span>Conditional ATO <span class="lv">7</span></li>
-              <li><span class="sw" style="background:var(--info)"></span>IATT <span class="lv">4</span></li>
-              <li><span class="sw" style="background:#7A8576"></span>ATC Only <span class="lv">2</span></li>
-              <li><span class="sw" style="background:var(--warn)"></span>Expiring ≤180d <span class="lv">9</span></li>
-              <li><span class="sw" style="background:var(--crit)"></span>In Process / Lapsed <span class="lv">4</span></li>
-            </ul>
-          </div>
+          <div id="dashDonut" data-authorization-summary><p class="dim">No reporting data available yet.</p></div>
         </div>
         <div class="card reveal">
           <h3 style="font-size:16px;margin-bottom:14px">Open POA&amp;M by Severity</h3>
-          <div id="dashBars">
-            <div class="bar-row"><span>Critical (CAT I)</span><div class="bar-track"><div class="bar-fill f-crit" style="width:18%" data-w="18%"></div></div><span class="v">23</span></div>
-            <div class="bar-row"><span>High (CAT II)</span><div class="bar-track"><div class="bar-fill f-warn" style="width:52%" data-w="52%"></div></div><span class="v">96</span></div>
-            <div class="bar-row"><span>Medium</span><div class="bar-track"><div class="bar-fill f-gold" style="width:78%" data-w="78%"></div></div><span class="v">141</span></div>
-            <div class="bar-row"><span>Low (CAT III)</span><div class="bar-track"><div class="bar-fill f-ok" style="width:29%" data-w="29%"></div></div><span class="v">52</span></div>
-          </div>
-          <p class="dim" style="margin-top:12px;font-size:13px">Live worked findings and closure status: <a href="vulnerability-poam.html">Vulnerability &amp; POA&amp;M node →</a></p>
+          <div id="dashBars" data-severity-summary><p class="dim">No reporting data available yet.</p></div>
+          <p class="dim" style="margin-top:12px;font-size:13px">Portfolio summary and backlog trends: <a href="vulnerability-poam.html">Vulnerability &amp; POA&amp;M node →</a></p>
         </div>
       </div>
 
@@ -69,31 +47,12 @@
           <div class="card-head"><h3>Nearest ATO Expirations</h3><a class="mono" style="font-size:11px" href="assessment-calendar.html">FULL RUNWAY →</a></div>
           <div class="table-wrap">
             <table>
-              <thead><tr><th>System</th><th>Days</th><th>Stage</th><th>Track</th></tr></thead>
-              <tbody id="dashExp">
-                <tr><td><b>FIRES-DSS</b></td><td class="mono">44</td><td>Package routing to AODR</td><td><span class="badge b-crit">Daily Track</span></td></tr>
-                <tr><td><b>LOGNET-04</b></td><td class="mono">58</td><td>Assessment starts 16 JUN (SAP/TRR)</td><td><span class="badge b-crit">Daily Track</span></td></tr>
-                <tr><td><b>MEDLOG-01</b></td><td class="mono">83</td><td>Condition milestones in verification</td><td><span class="badge b-warn">Watch</span></td></tr>
-                <tr><td><b>TRNG-SIM-2</b></td><td class="mono">97</td><td>Readiness checklist 70% complete</td><td><span class="badge b-warn">Watch</span></td></tr>
-                <tr><td><b>SUPPLY-NET</b></td><td class="mono">118</td><td>Self-assessment underway</td><td><span class="badge b-warn">Watch</span></td></tr>
-              </tbody>
+              <thead><tr><th>System</th><th>Expiration</th><th>Days from report date</th></tr></thead>
+              <tbody id="dashExp" data-ato-expirations><tr><td colspan="3">No reporting data available yet.</td></tr></tbody>
             </table>
           </div>
         </div>
-        <div class="card flush reveal">
-          <div class="card-head"><h3>Worklist — Needs Attention</h3><a class="mono" style="font-size:11px" href="vulnerability-poam.html">ALL ITEMS →</a></div>
-          <div class="table-wrap">
-            <table>
-              <thead><tr><th>POA&amp;M</th><th>System</th><th>Severity</th><th>Due</th></tr></thead>
-              <tbody id="dashPoam">
-                <tr><td class="mono">PM-2418</td><td>FIRES-DSS</td><td><span class="badge b-crit">CAT I</span></td><td class="mono">2026-06-02</td></tr>
-                <tr><td class="mono">PM-2391</td><td>LOGNET-04</td><td><span class="badge b-warn">CAT II</span></td><td class="mono">2026-05-28</td></tr>
-                <tr><td class="mono">PM-2502</td><td>MEDLOG-01</td><td><span class="badge b-crit">KEV</span></td><td class="mono">2026-06-13</td></tr>
-                <tr><td class="mono">PM-2466</td><td>FIRES-DSS</td><td><span class="badge b-warn">CAT II</span></td><td class="mono">2026-06-14</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+        <div class="card"><h3>System POA&amp;M Totals</h3><p>Total open counts only; no overdue attribution.</p><div data-system-ranking><p class="dim">No reporting data available yet.</p></div></div>
       </div>
 
       <div class="callout" style="margin-top:22px"><b class="head">Feed status</b><span id="dashFeeds">External source feeds (CISA KEV, NVD, MSRC, Ubuntu, Red Hat, Tenable) refresh automatically twice daily.</span> Raw feed tables live on the <a href="threat-intel.html">Threat Intelligence node</a>.</div>
@@ -186,7 +145,7 @@
             <li><b>Owner:</b> AODR office (org administrator)</li>
             <li><b>Access:</b> CAC + eMASS CBT certificate + ISSM sponsorship form → ~5 business days</li>
             <li><b>Guidance:</b> Managing eMASS &amp; ATO Workflows (IC-204) in the <a href="training.html">Training Academy</a>; quick-reference cards in <a href="templates.html">Templates</a></li>
-            <li><b>Support:</b> usarmy.ccoe.emass@army.mil · office hours Tuesdays 1000</li>
+            <li><b>Support:</b> usarmy.orlando.cpe-st3.mbx.cybersecurity-office@army.mil · office hours Tuesdays 1000</li>
           </ul>
         </div>
         <div class="card reveal">
@@ -197,7 +156,7 @@
             <li><b>Owner:</b> Vulnerability Management Cell</li>
             <li><b>Access:</b> read access for ISSOs by default; operator roles require ACAS course completion</li>
             <li><b>Cadence:</b> weekly authenticated scans, per the <a href="vulnerability-poam.html">vuln standards</a>; newest detection plugins tracked on the <a href="threat-intel.html">Threat Intel feeds</a> (<a href="https://www.tenable.com/plugins" target="_blank" rel="noopener">tenable.com/plugins ⤤</a>)</li>
-            <li><b>Support:</b> usarmy.ccoe.vulncell@army.mil</li>
+            <li><b>Support:</b> usarmy.orlando.cpe-st3.mbx.cybersecurity-office@army.mil</li>
           </ul>
         </div>
         <div class="card reveal">
@@ -228,7 +187,7 @@
           <ul class="checklist">
             <li><b>Owner:</b> Metrics &amp; Performance Center</li>
             <li><b>Access:</b> view access by role; report-builder access by request with supervisor endorsement</li>
-            <li><b>Support:</b> usarmy.ccoe.metrics@army.mil</li>
+            <li><b>Support:</b> usarmy.orlando.cpe-st3.mbx.cybersecurity-office@army.mil</li>
           </ul>
         </div>
         <div class="card reveal">
@@ -278,7 +237,7 @@
       <div class="phase-track">
         <div class="phase-item reveal"><div class="phase-num">1</div><div><h3>Prerequisites</h3><p>CAC issued, baseline training current (CUI + incident reporting), tool-specific CBT where required.</p></div></div>
         <div class="phase-item reveal"><div class="phase-num">2</div><div><h3>Sponsorship</h3><p>ISSM (or supervisor for non-system tools) endorses the request naming exact roles and systems.</p></div></div>
-        <div class="phase-item reveal"><div class="phase-num">3</div><div><h3>Provisioning</h3><p>Tool owner provisions least-privilege roles; SLA 5 business days, expedite via the incident inbox (usarmy.ccoe.incident@army.mil) for incident needs.</p></div></div>
+        <div class="phase-item reveal"><div class="phase-num">3</div><div><h3>Provisioning</h3><p>Tool owner provisions least-privilege roles; SLA 5 business days, expedite via the incident inbox (usarmy.orlando.cpe-st3.mbx.cybersecurity-office@army.mil) for incident needs.</p></div></div>
         <div class="phase-item reveal"><div class="phase-num">4</div><div><h3>Recertification</h3><p>Privileged access recertified every 90 days; departure triggers same-day deactivation per the contractor and personnel standards.</p></div></div>
       </div>
     </div>
@@ -286,5 +245,6 @@
 </main>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/live-data.js" defer></script>
+<script src="assets/js/metrics.js" defer></script>
 </body>
 </html>

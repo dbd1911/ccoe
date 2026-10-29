@@ -91,7 +91,7 @@
   "id": "q057",
   "cat": "poam",
   "q": "Can I get an SLA extension?",
-  "a": "Only via a written exception request with compensating measures, endorsed by your ISSM. <b>KEV-listed items have no extension path</b> \u2014 if a KEV item cannot make the 7-day window, escalate resourcing instead of extending the clock. Route requests through the Vulnerability Cell (usarmy.ccoe.vulncell@army.mil) or the Thursday Vuln &amp; POA&amp;M Surgery session. SLA table on <a href=\"vulnerability-poam.html\">Vulnerability &amp; POA&amp;M</a>.",
+  "a": "Only via a written exception request with compensating measures, endorsed by your ISSM. <b>KEV-listed items have no extension path</b> \u2014 if a KEV item cannot make the 7-day window, escalate resourcing instead of extending the clock. Route requests through the Vulnerability Cell (usarmy.orlando.cpe-st3.mbx.cybersecurity-office@army.mil) or the Thursday Vuln &amp; POA&amp;M Surgery session. SLA table on <a href=\"vulnerability-poam.html\">Vulnerability &amp; POA&amp;M</a>.",
   "k": "sla extension exception request compensating measures kev no extension how get",
   "src": "Site \u00b7 vulnerability-poam.html \u00b7 contact.html"
  },
@@ -299,7 +299,7 @@
   "id": "q084",
   "cat": "incident",
   "q": "Something is wrong right now \u2014 what do I do first?",
-  "a": "Follow the three-step poster on <a href=\"incident-response.html\">Incident Response</a>: (1) disconnect from the network if safe to do so \u2014 <b>do not power off</b>; (2) call the 24/7 incident inbox \u2014 usarmy.ccoe.incident@army.mil \u2014 immediate for spills, malware, exploitation, insider threat; (3) preserve everything; touch nothing else. RAM is volatile: it is evidence.",
+  "a": "Follow the three-step poster on <a href=\"incident-response.html\">Incident Response</a>: (1) disconnect from the network if safe to do so \u2014 <b>do not power off</b>; (2) call the 24/7 incident inbox \u2014 usarmy.orlando.cpe-st3.mbx.cybersecurity-office@army.mil \u2014 immediate for spills, malware, exploitation, insider threat; (3) preserve everything; touch nothing else. RAM is volatile: it is evidence.",
   "k": "wrong now what do first steps poster disconnect power off three step immediate",
   "src": "Site \u00b7 incident-response.html"
  },

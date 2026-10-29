@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "_instructions": "Append a dated snapshot each reporting period. null means unavailable; 0 is confirmed zero. Only approved summary data belongs here. See docs/METRICS-UPDATE.md.",
+  "snapshots": [
+    {
+      "reportingDate": "2026-10-29",
+      "portfolio": {
+        "activeSystems": null,
+        "currentAuthorizations": null,
+        "expiredAuthorizations": null,
+        "assessmentQueue": null,
+        "highRiskSystems": null,
+        "authorizationDatesComplete": false
+      },
+      "poam": {
+        "totalOpen": null,
+        "overdue": null,
+        "dueWithin30Days": null,
+        "systemCountsComplete": false,
+        "bySeverity": {
+          "CAT I": null,
+          "CAT II": null,
+          "CAT III": null
+        }
+      },
+      "workforce": {
+        "systemsPerIsso": null,
+        "assessorSaturationPercent": null,
+        "qualified8140Percent": null,
+        "firstPassAcceptancePercent": null
+      },
+      "systems": []
+    }
+  ]
+}
