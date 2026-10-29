@@ -3,77 +3,77 @@
  "source_url": "https://www.tenable.com/plugins/newest",
  "items": [
   {
-   "id": "372881",
-   "title": "MiracleLinux 8 : grafana-9.2.10-36.el8_10 (AXSA:2026-2173:33)",
-   "link": "https://www.tenable.com/plugins/nessus/372881",
+   "id": "373456",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-116794",
+   "link": "https://www.tenable.com/plugins/nessus/373456",
+   "published": "Thu, 29 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "373455",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-118264",
+   "link": "https://www.tenable.com/plugins/nessus/373455",
+   "published": "Thu, 29 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "373454",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-59959",
+   "link": "https://www.tenable.com/plugins/nessus/373454",
+   "published": "Thu, 29 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "373453",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-105031",
+   "link": "https://www.tenable.com/plugins/nessus/373453",
+   "published": "Thu, 29 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "373452",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-115942",
+   "link": "https://www.tenable.com/plugins/nessus/373452",
+   "published": "Thu, 29 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "373451",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-118261",
+   "link": "https://www.tenable.com/plugins/nessus/373451",
+   "published": "Thu, 29 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "373450",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-118688",
+   "link": "https://www.tenable.com/plugins/nessus/373450",
+   "published": "Thu, 29 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "373449",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-105042",
+   "link": "https://www.tenable.com/plugins/nessus/373449",
+   "published": "Thu, 29 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "373448",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-118681",
+   "link": "https://www.tenable.com/plugins/nessus/373448",
+   "published": "Thu, 29 Oct 2026 00:00:00 GMT"
+  },
+  {
+   "id": "373447",
+   "title": "AlmaLinux 9.6 [TuxCare] Security Update: libX11 / libX11-common / libX11-devel / libX11-xcb (ALMALINUX9.6:CLSA-2026:1793110850)",
+   "link": "https://www.tenable.com/plugins/nessus/373447",
    "published": "Wed, 28 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "372880",
-   "title": "MiracleLinux 8 : grafana-pcp-5.1.1-19.el8_10 (AXSA:2026-2172:14)",
-   "link": "https://www.tenable.com/plugins/nessus/372880",
+   "id": "373446",
+   "title": "Rocky Linux 9.6 [TuxCare] Security Update: hplip / hplip-common / hplip-libs / libsane-hpaio (ALMALINUX9.6:CLSA-2026:1793107993)",
+   "link": "https://www.tenable.com/plugins/nessus/373446",
    "published": "Wed, 28 Oct 2026 00:00:00 GMT"
   },
   {
-   "id": "372879",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-117885",
-   "link": "https://www.tenable.com/plugins/nessus/372879",
-   "published": "Wed, 28 Oct 2026 00:00:00 GMT"
-  },
-  {
-   "id": "372878",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-117875",
-   "link": "https://www.tenable.com/plugins/nessus/372878",
-   "published": "Wed, 28 Oct 2026 00:00:00 GMT"
-  },
-  {
-   "id": "372877",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-116730",
-   "link": "https://www.tenable.com/plugins/nessus/372877",
-   "published": "Wed, 28 Oct 2026 00:00:00 GMT"
-  },
-  {
-   "id": "372876",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-116272",
-   "link": "https://www.tenable.com/plugins/nessus/372876",
-   "published": "Wed, 28 Oct 2026 00:00:00 GMT"
-  },
-  {
-   "id": "372875",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-117884",
-   "link": "https://www.tenable.com/plugins/nessus/372875",
-   "published": "Wed, 28 Oct 2026 00:00:00 GMT"
-  },
-  {
-   "id": "372874",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-117954",
-   "link": "https://www.tenable.com/plugins/nessus/372874",
-   "published": "Wed, 28 Oct 2026 00:00:00 GMT"
-  },
-  {
-   "id": "372873",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-117942",
-   "link": "https://www.tenable.com/plugins/nessus/372873",
-   "published": "Wed, 28 Oct 2026 00:00:00 GMT"
-  },
-  {
-   "id": "372872",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-117945",
-   "link": "https://www.tenable.com/plugins/nessus/372872",
-   "published": "Wed, 28 Oct 2026 00:00:00 GMT"
-  },
-  {
-   "id": "372871",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-118180",
-   "link": "https://www.tenable.com/plugins/nessus/372871",
-   "published": "Wed, 28 Oct 2026 00:00:00 GMT"
-  },
-  {
-   "id": "372870",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-117923",
-   "link": "https://www.tenable.com/plugins/nessus/372870",
+   "id": "373445",
+   "title": "AlmaLinux 9.6 [TuxCare] Security Update: delve Multiple Vulnerabilities (ALMALINUX9.6:CLSA-2026:1793215478)",
+   "link": "https://www.tenable.com/plugins/nessus/373445",
    "published": "Wed, 28 Oct 2026 00:00:00 GMT"
   }
  ],
- "_updated": "2026-10-28T13:55:09Z"
+ "_updated": "2026-10-29T14:01:25Z"
 }

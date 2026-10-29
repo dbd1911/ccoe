@@ -1,10 +1,30 @@
 {
  "source": "CISA Known Exploited Vulnerabilities Catalog",
  "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
- "catalogVersion": "2026.10.27",
- "dateReleased": "2026-10-27T19:00:02.2307Z",
- "total": 1760,
+ "catalogVersion": "2026.10.28",
+ "dateReleased": "2026-10-28T19:00:04.8077Z",
+ "total": 1762,
  "recent": [
+  {
+   "cveID": "CVE-2026-41709",
+   "vendorProject": "Broadcom",
+   "product": "VMware ESX",
+   "vulnerabilityName": "Broadcom VMWare ESX Insufficient Logging Vulnerability",
+   "dateAdded": "2026-10-28",
+   "dueDate": "2026-11-11",
+   "knownRansomwareCampaignUse": "Unknown",
+   "shortDescription": "Broadcom VMWare ESX contains an insufficient logging vulnerability that could allow a malicious actor with admin access to perform certain operations without being logged."
+  },
+  {
+   "cveID": "CVE-2026-46300",
+   "vendorProject": "Linux",
+   "product": "Kernel",
+   "vulnerabilityName": "Linux Kernel Missing Initialization of a Variable Vulnerability",
+   "dateAdded": "2026-10-28",
+   "dueDate": "2026-10-31",
+   "knownRansomwareCampaignUse": "Unknown",
+   "shortDescription": "Linux Kernel contains a missing initialization of a variable vulnerability that could allow for unintended modification of page-cache-backed data via failure to preserve the shared-fragment marker during socket buffer co"
+  },
   {
    "cveID": "CVE-2026-48356",
    "vendorProject": "Adobe",
@@ -134,28 +154,8 @@
    "dueDate": "2026-10-19",
    "knownRansomwareCampaignUse": "Unknown",
    "shortDescription": "BeyondTrust Remote Support contains an authentication bypass by spoofing vulnerability that could allow a remote attacker to perform file operations on the appliance."
-  },
-  {
-   "cveID": "CVE-2025-61624",
-   "vendorProject": "Fortinet",
-   "product": "Multiple Products",
-   "vulnerabilityName": "Fortinet Multiple Products Path Traversal Vulnerability",
-   "dateAdded": "2026-10-16",
-   "dueDate": "2026-10-19",
-   "knownRansomwareCampaignUse": "Unknown",
-   "shortDescription": "FortiOS, FortiPAM, FortiProxy, and FortiSwitchManager contain a path traversal vulnerability that may allow an authenticated attacker with admin profile and at least read-write permissions to write or delete arbitrary fi"
-  },
-  {
-   "cveID": "CVE-2026-21589",
-   "vendorProject": "Atlassian",
-   "product": "Multiple Products",
-   "vulnerabilityName": "Atlassian Multiple Products Files or Directories Accessible to External Parties Vulnerability",
-   "dateAdded": "2026-10-15",
-   "dueDate": "2026-10-18",
-   "knownRansomwareCampaignUse": "Unknown",
-   "shortDescription": "Multiple Atlassian products (Bitbucket Data Center ,Confluence Data Center, Jira Service Management Data Center, Jira Software Data Center, Bamboo Data Center, Crowd Data Center, Crucible and Fisheye) contain a files or "
   }
  ],
  "tracked_crosscheck": [],
- "_updated": "2026-10-28T13:55:09Z"
+ "_updated": "2026-10-29T14:01:25Z"
 }

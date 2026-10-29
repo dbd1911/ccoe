@@ -4,7 +4,7 @@
  "release_id": "2026-Oct",
  "release_title": "October 2026 Security Updates",
  "release_date": "2026-10-13T07:00:00Z",
- "cve_count": 3238,
+ "cve_count": 3327,
  "kb_count": 81,
  "kbs": [
   {
@@ -106,5 +106,5 @@
    "title": "Windows Update Elevation of Privilege Vulnerability"
   }
  ],
- "_updated": "2026-10-28T13:55:09Z"
+ "_updated": "2026-10-29T14:01:25Z"
 }

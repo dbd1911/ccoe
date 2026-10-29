@@ -4,6 +4,15 @@
  "redhat_url": "https://access.redhat.com/security/security-updates/security-advisories",
  "ubuntu": [
   {
+   "id": "USN-8956-2",
+   "title": "Brotli vulnerability",
+   "published": "2026-10-27",
+   "cves": [
+    "CVE-2026-111497"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8956-2"
+  },
+  {
    "id": "USN-8957-1",
    "title": "authd vulnerability",
    "published": "2026-10-27",
@@ -98,88 +107,79 @@
    "published": "2026-10-21",
    "cves": [],
    "url": "https://ubuntu.com/security/notices/USN-8947-1"
-  },
-  {
-   "id": "USN-8950-1",
-   "title": "poppler vulnerability",
-   "published": "2026-10-21",
-   "cves": [
-    "CVE-2026-107705"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8950-1"
   }
  ],
  "redhat": [
   {
-   "cve": "CVE-2026-116620",
-   "severity": "important",
-   "public_date": "2026-10-27",
-   "description": "rapidjson: rapidjson: Denial of Service via out-of-bounds read in regex parser",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-116620"
-  },
-  {
-   "cve": "CVE-2026-116803",
+   "cve": "CVE-2026-99208",
    "severity": "moderate",
-   "public_date": "2026-10-26",
-   "description": "dompurify: DOMPurify: Cross-site scripting via unneutralized detached elements during in-place sanitization",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-116803"
+   "public_date": "2026-10-28",
+   "description": "kernel: kernel: Information disclosure via uninitialized buffer allocation in Intel Xe driver",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-99208"
   },
   {
-   "cve": "CVE-2026-116804",
+   "cve": "CVE-2026-99188",
    "severity": "moderate",
-   "public_date": "2026-10-26",
-   "description": "dompurify: DOMPurify: Cross-site scripting via sanitization bypass in attached shadow roots",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-116804"
+   "public_date": "2026-10-28",
+   "description": "kernel: kernel: Denial of Service via interrupt storm during system resume in stmmac driver",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-99188"
   },
   {
-   "cve": "CVE-2026-116802",
+   "cve": "CVE-2026-99184",
    "severity": "moderate",
-   "public_date": "2026-10-26",
-   "description": "dompurify: DOMPurify: Cross-site scripting via attribute sanitization bypass in XHTML mode",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-116802"
+   "public_date": "2026-10-28",
+   "description": "kernel: kernel: accel/rocket: Denial of Service via out-of-bounds write during core rebinding",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-99184"
   },
   {
-   "cve": "CVE-2026-116741",
+   "cve": "CVE-2026-99179",
    "severity": "moderate",
-   "public_date": "2026-10-26",
-   "description": "speex: speex: Denial of Service via out-of-bounds write",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-116741"
+   "public_date": "2026-10-28",
+   "description": "kernel: kernel: Denial of Service via race condition in watch_queue",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-99179"
   },
   {
-   "cve": "CVE-2026-116732",
+   "cve": "CVE-2026-99178",
    "severity": "moderate",
-   "public_date": "2026-10-26",
-   "description": "libdwarf: libdwarf: Denial of Service via out-of-bounds read in dwarf_debug_addr_table",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-116732"
+   "public_date": "2026-10-28",
+   "description": "kernel: kernel: Denial of Service via race condition in KVM asynchronous page fault handling",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-99178"
   },
   {
-   "cve": "CVE-2026-116724",
-   "severity": "important",
-   "public_date": "2026-10-26",
-   "description": "fltk: fltk: Arbitrary code execution via integer overflow in BMP image parsing",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-116724"
-  },
-  {
-   "cve": "CVE-2026-116723",
-   "severity": "important",
-   "public_date": "2026-10-26",
-   "description": "fltk: fltk: Arbitrary code execution via crafted BMP image file",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-116723"
-  },
-  {
-   "cve": "CVE-2026-116584",
-   "severity": "important",
-   "public_date": "2026-10-26",
-   "description": "seroval: seroval: Denial of Service via manipulated array length during deserialization",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-116584"
-  },
-  {
-   "cve": "CVE-2026-116583",
+   "cve": "CVE-2026-99176",
    "severity": "moderate",
-   "public_date": "2026-10-26",
-   "description": "seroval: seroval: Arbitrary code execution via untrusted typed array constructor properties",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-116583"
+   "public_date": "2026-10-28",
+   "description": "kernel: kernel: Denial of Service via improper MMU reset in KVM nested virtualization",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-99176"
+  },
+  {
+   "cve": "CVE-2026-99100",
+   "severity": "moderate",
+   "public_date": "2026-10-28",
+   "description": "kernel: wifi: p54: validate firmware record lengths",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-99100"
+  },
+  {
+   "cve": "CVE-2026-99210",
+   "severity": "moderate",
+   "public_date": "2026-10-28",
+   "description": "kernel: accel/rocket: clear rdev on device init failure",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-99210"
+  },
+  {
+   "cve": "CVE-2026-99111",
+   "severity": "low",
+   "public_date": "2026-10-28",
+   "description": "kernel: smb: client: fix data corruption with concurrent writes and O_TRUNC",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-99111"
+  },
+  {
+   "cve": "CVE-2026-99200",
+   "severity": "moderate",
+   "public_date": "2026-10-28",
+   "description": "kernel: net: hisilicon: hisi_femac: Move setting of netops to fix crash",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-99200"
   }
  ],
- "_updated": "2026-10-28T13:55:09Z"
+ "_updated": "2026-10-29T14:01:25Z"
 }
