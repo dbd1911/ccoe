@@ -4,6 +4,17 @@
  "redhat_url": "https://access.redhat.com/security/security-updates/security-advisories",
  "ubuntu": [
   {
+   "id": "USN-8958-1",
+   "title": ".NET vulnerabilities",
+   "published": "2026-10-29",
+   "cves": [
+    "CVE-2026-114148",
+    "CVE-2026-102870",
+    "CVE-2026-111497"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8958-1"
+  },
+  {
    "id": "USN-8956-2",
    "title": "Brotli vulnerability",
    "published": "2026-10-27",
@@ -100,86 +111,79 @@
     "CVE-2026-69186"
    ],
    "url": "https://ubuntu.com/security/notices/USN-8951-1"
-  },
-  {
-   "id": "USN-8947-1",
-   "title": "NSS update",
-   "published": "2026-10-21",
-   "cves": [],
-   "url": "https://ubuntu.com/security/notices/USN-8947-1"
   }
  ],
  "redhat": [
   {
-   "cve": "CVE-2026-99208",
+   "cve": "CVE-2026-119272",
    "severity": "moderate",
-   "public_date": "2026-10-28",
-   "description": "kernel: kernel: Information disclosure via uninitialized buffer allocation in Intel Xe driver",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-99208"
+   "public_date": "2026-10-30",
+   "description": "chromium-browser: chromium-browser: Out of bounds read in FileSystem",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-119272"
   },
   {
-   "cve": "CVE-2026-99188",
-   "severity": "moderate",
-   "public_date": "2026-10-28",
-   "description": "kernel: kernel: Denial of Service via interrupt storm during system resume in stmmac driver",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-99188"
+   "cve": "CVE-2026-119271",
+   "severity": "important",
+   "public_date": "2026-10-30",
+   "description": "chromium-browser: chromium-browser: Use after free in Skia",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-119271"
   },
   {
-   "cve": "CVE-2026-99184",
-   "severity": "moderate",
-   "public_date": "2026-10-28",
-   "description": "kernel: kernel: accel/rocket: Denial of Service via out-of-bounds write during core rebinding",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-99184"
+   "cve": "CVE-2026-119269",
+   "severity": "important",
+   "public_date": "2026-10-30",
+   "description": "chromium-browser: chromium-browser: Use after free in Blink",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-119269"
   },
   {
-   "cve": "CVE-2026-99179",
-   "severity": "moderate",
-   "public_date": "2026-10-28",
-   "description": "kernel: kernel: Denial of Service via race condition in watch_queue",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-99179"
+   "cve": "CVE-2026-76025",
+   "severity": "important",
+   "public_date": "2026-10-30",
+   "description": "chromium-browser: chromium-browser: Use after free in FileSystem",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-76025"
   },
   {
-   "cve": "CVE-2026-99178",
-   "severity": "moderate",
-   "public_date": "2026-10-28",
-   "description": "kernel: kernel: Denial of Service via race condition in KVM asynchronous page fault handling",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-99178"
+   "cve": "CVE-2026-119286",
+   "severity": "important",
+   "public_date": "2026-10-29",
+   "description": "graphql-core: graphql-core: Denial of Service via unbounded memory growth during document validation",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-119286"
   },
   {
-   "cve": "CVE-2026-99176",
+   "cve": "CVE-2026-119284",
    "severity": "moderate",
-   "public_date": "2026-10-28",
-   "description": "kernel: kernel: Denial of Service via improper MMU reset in KVM nested virtualization",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-99176"
+   "public_date": "2026-10-29",
+   "description": "joserfc: joserfc: Denial of Service via excessive memory allocation during JWS deserialization",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-119284"
   },
   {
-   "cve": "CVE-2026-99100",
-   "severity": "moderate",
-   "public_date": "2026-10-28",
-   "description": "kernel: wifi: p54: validate firmware record lengths",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-99100"
+   "cve": "CVE-2026-119283",
+   "severity": "important",
+   "public_date": "2026-10-29",
+   "description": "joserfc: joserfc: Denial of Service via unbounded recipient processing during JWE decryption",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-119283"
   },
   {
-   "cve": "CVE-2026-99210",
-   "severity": "moderate",
-   "public_date": "2026-10-28",
-   "description": "kernel: accel/rocket: clear rdev on device init failure",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-99210"
-  },
-  {
-   "cve": "CVE-2026-99111",
+   "cve": "CVE-2026-119280",
    "severity": "low",
-   "public_date": "2026-10-28",
-   "description": "kernel: smb: client: fix data corruption with concurrent writes and O_TRUNC",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-99111"
+   "public_date": "2026-10-29",
+   "description": "org.mariadb.jdbc/mariadb-java-client: MariaDB Connector/J: Denial of Service via unvalidated lengths during XA recovery",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-119280"
   },
   {
-   "cve": "CVE-2026-99200",
+   "cve": "CVE-2026-119209",
    "severity": "moderate",
-   "public_date": "2026-10-28",
-   "description": "kernel: net: hisilicon: hisi_femac: Move setting of netops to fix crash",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-99200"
+   "public_date": "2026-10-29",
+   "description": "pypdf: pypdf: Denial of Service via crafted cross-reference streams",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-119209"
+  },
+  {
+   "cve": "CVE-2026-119208",
+   "severity": "moderate",
+   "public_date": "2026-10-29",
+   "description": "pypdf: pypdf: Denial of Service via forged page count in encrypted PDFs",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-119208"
   }
  ],
- "_updated": "2026-10-29T14:01:25Z"
+ "_updated": "2026-10-30T13:56:12Z"
 }
