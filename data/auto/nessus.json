@@ -3,77 +3,77 @@
  "source_url": "https://www.tenable.com/plugins/newest",
  "items": [
   {
-   "id": "374044",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-118244",
-   "link": "https://www.tenable.com/plugins/nessus/374044",
-   "published": "Fri, 30 Oct 2026 00:00:00 GMT"
+   "id": "375068",
+   "title": "Photon OS 5.0: Linux PHSA-2026-5.0-90-0830",
+   "link": "https://www.tenable.com/plugins/nessus/375068",
+   "published": "Mon, 02 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "374043",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-108353",
-   "link": "https://www.tenable.com/plugins/nessus/374043",
-   "published": "Fri, 30 Oct 2026 00:00:00 GMT"
+   "id": "375067",
+   "title": "Photon OS 5.0: Nss PHSA-2023-5.0-90-0006",
+   "link": "https://www.tenable.com/plugins/nessus/375067",
+   "published": "Mon, 02 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "374042",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-108342",
-   "link": "https://www.tenable.com/plugins/nessus/374042",
-   "published": "Fri, 30 Oct 2026 00:00:00 GMT"
+   "id": "375066",
+   "title": "Photon OS 5.0: Dotnet PHSA-2026-5.0-92-1014",
+   "link": "https://www.tenable.com/plugins/nessus/375066",
+   "published": "Mon, 02 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "374041",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-119130",
-   "link": "https://www.tenable.com/plugins/nessus/374041",
-   "published": "Fri, 30 Oct 2026 00:00:00 GMT"
+   "id": "375065",
+   "title": "Photon OS 5.0: Nss PHSA-2026-5.0-90-0965",
+   "link": "https://www.tenable.com/plugins/nessus/375065",
+   "published": "Mon, 02 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "374040",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-118246",
-   "link": "https://www.tenable.com/plugins/nessus/374040",
-   "published": "Fri, 30 Oct 2026 00:00:00 GMT"
+   "id": "375064",
+   "title": "Photon OS 5.0: Lz4 PHSA-2025-5.0-91-0677",
+   "link": "https://www.tenable.com/plugins/nessus/375064",
+   "published": "Mon, 02 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "374039",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-108344",
-   "link": "https://www.tenable.com/plugins/nessus/374039",
-   "published": "Fri, 30 Oct 2026 00:00:00 GMT"
+   "id": "375063",
+   "title": "Photon OS 5.0: Util PHSA-2026-5.0-91-0999",
+   "link": "https://www.tenable.com/plugins/nessus/375063",
+   "published": "Mon, 02 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "374038",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-108363",
-   "link": "https://www.tenable.com/plugins/nessus/374038",
-   "published": "Fri, 30 Oct 2026 00:00:00 GMT"
+   "id": "375062",
+   "title": "Photon OS 4.0: Rubygem PHSA-2026-4.0-1018",
+   "link": "https://www.tenable.com/plugins/nessus/375062",
+   "published": "Mon, 02 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "374037",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-108349",
-   "link": "https://www.tenable.com/plugins/nessus/374037",
-   "published": "Fri, 30 Oct 2026 00:00:00 GMT"
+   "id": "375061",
+   "title": "Photon OS 5.0: Libssh2 PHSA-2026-5.0-92-0985",
+   "link": "https://www.tenable.com/plugins/nessus/375061",
+   "published": "Mon, 02 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "374036",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-108343",
-   "link": "https://www.tenable.com/plugins/nessus/374036",
-   "published": "Fri, 30 Oct 2026 00:00:00 GMT"
+   "id": "375060",
+   "title": "Photon OS 5.0: Nasm PHSA-2026-5.0-91-0925",
+   "link": "https://www.tenable.com/plugins/nessus/375060",
+   "published": "Mon, 02 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "374035",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-108279",
-   "link": "https://www.tenable.com/plugins/nessus/374035",
-   "published": "Fri, 30 Oct 2026 00:00:00 GMT"
+   "id": "375059",
+   "title": "Photon OS 5.0: Python3 PHSA-2026-5.0-91-0997",
+   "link": "https://www.tenable.com/plugins/nessus/375059",
+   "published": "Mon, 02 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "374034",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-108275",
-   "link": "https://www.tenable.com/plugins/nessus/374034",
-   "published": "Fri, 30 Oct 2026 00:00:00 GMT"
+   "id": "375058",
+   "title": "Photon OS 5.0: Linux PHSA-2025-5.0-90-0717",
+   "link": "https://www.tenable.com/plugins/nessus/375058",
+   "published": "Mon, 02 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "374033",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-108351",
-   "link": "https://www.tenable.com/plugins/nessus/374033",
-   "published": "Fri, 30 Oct 2026 00:00:00 GMT"
+   "id": "375057",
+   "title": "Photon OS 5.0: Openssh PHSA-2026-5.0-90-0830",
+   "link": "https://www.tenable.com/plugins/nessus/375057",
+   "published": "Mon, 02 Nov 2026 00:00:00 GMT"
   }
  ],
- "_updated": "2026-10-30T13:56:12Z"
+ "_updated": "2026-11-02T16:56:03Z"
 }
