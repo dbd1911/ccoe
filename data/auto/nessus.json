@@ -3,77 +3,77 @@
  "source_url": "https://www.tenable.com/plugins/newest",
  "items": [
   {
-   "id": "375068",
-   "title": "Photon OS 5.0: Linux PHSA-2026-5.0-90-0830",
-   "link": "https://www.tenable.com/plugins/nessus/375068",
-   "published": "Mon, 02 Nov 2026 00:00:00 GMT"
+   "id": "375423",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-112899",
+   "link": "https://www.tenable.com/plugins/nessus/375423",
+   "published": "Tue, 03 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "375067",
-   "title": "Photon OS 5.0: Nss PHSA-2023-5.0-90-0006",
-   "link": "https://www.tenable.com/plugins/nessus/375067",
-   "published": "Mon, 02 Nov 2026 00:00:00 GMT"
+   "id": "375422",
+   "title": "RHEL 8 : bind9.16 (RHSA-2026:94277)",
+   "link": "https://www.tenable.com/plugins/nessus/375422",
+   "published": "Tue, 03 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "375066",
-   "title": "Photon OS 5.0: Dotnet PHSA-2026-5.0-92-1014",
-   "link": "https://www.tenable.com/plugins/nessus/375066",
-   "published": "Mon, 02 Nov 2026 00:00:00 GMT"
+   "id": "375421",
+   "title": "RHEL 9 : bind9.18 (RHSA-2026:94278)",
+   "link": "https://www.tenable.com/plugins/nessus/375421",
+   "published": "Tue, 03 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "375065",
-   "title": "Photon OS 5.0: Nss PHSA-2026-5.0-90-0965",
-   "link": "https://www.tenable.com/plugins/nessus/375065",
-   "published": "Mon, 02 Nov 2026 00:00:00 GMT"
+   "id": "375420",
+   "title": "RHEL 10 : bind (RHSA-2026:94115)",
+   "link": "https://www.tenable.com/plugins/nessus/375420",
+   "published": "Tue, 03 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "375064",
-   "title": "Photon OS 5.0: Lz4 PHSA-2025-5.0-91-0677",
-   "link": "https://www.tenable.com/plugins/nessus/375064",
-   "published": "Mon, 02 Nov 2026 00:00:00 GMT"
+   "id": "375419",
+   "title": "RHEL 9 : kernel (RHSA-2026:94109)",
+   "link": "https://www.tenable.com/plugins/nessus/375419",
+   "published": "Tue, 03 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "375063",
-   "title": "Photon OS 5.0: Util PHSA-2026-5.0-91-0999",
-   "link": "https://www.tenable.com/plugins/nessus/375063",
-   "published": "Mon, 02 Nov 2026 00:00:00 GMT"
+   "id": "375418",
+   "title": "RHEL 8 : kernel (RHSA-2026:94303)",
+   "link": "https://www.tenable.com/plugins/nessus/375418",
+   "published": "Tue, 03 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "375062",
-   "title": "Photon OS 4.0: Rubygem PHSA-2026-4.0-1018",
-   "link": "https://www.tenable.com/plugins/nessus/375062",
-   "published": "Mon, 02 Nov 2026 00:00:00 GMT"
+   "id": "375417",
+   "title": "RHEL 10 / 8 / 9 : Satellite 6 Client Update (Important) (RHSA-2026:94063)",
+   "link": "https://www.tenable.com/plugins/nessus/375417",
+   "published": "Tue, 03 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "375061",
-   "title": "Photon OS 5.0: Libssh2 PHSA-2026-5.0-92-0985",
-   "link": "https://www.tenable.com/plugins/nessus/375061",
-   "published": "Mon, 02 Nov 2026 00:00:00 GMT"
+   "id": "375416",
+   "title": "RHEL 8 : bind9.16 (RHSA-2026:94011)",
+   "link": "https://www.tenable.com/plugins/nessus/375416",
+   "published": "Tue, 03 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "375060",
-   "title": "Photon OS 5.0: Nasm PHSA-2026-5.0-91-0925",
-   "link": "https://www.tenable.com/plugins/nessus/375060",
-   "published": "Mon, 02 Nov 2026 00:00:00 GMT"
+   "id": "375415",
+   "title": "Slackware Linux 15.0 / current expat  Multiple Vulnerabilities (SSA:2026-306-01)",
+   "link": "https://www.tenable.com/plugins/nessus/375415",
+   "published": "Tue, 03 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "375059",
-   "title": "Photon OS 5.0: Python3 PHSA-2026-5.0-91-0997",
-   "link": "https://www.tenable.com/plugins/nessus/375059",
-   "published": "Mon, 02 Nov 2026 00:00:00 GMT"
+   "id": "375414",
+   "title": "Fedora 44 : mingw-cfitsio (2026-723469d025)",
+   "link": "https://www.tenable.com/plugins/nessus/375414",
+   "published": "Tue, 03 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "375058",
-   "title": "Photon OS 5.0: Linux PHSA-2025-5.0-90-0717",
-   "link": "https://www.tenable.com/plugins/nessus/375058",
-   "published": "Mon, 02 Nov 2026 00:00:00 GMT"
+   "id": "375413",
+   "title": "Fedora 43 : radicale (2026-3bf33310f5)",
+   "link": "https://www.tenable.com/plugins/nessus/375413",
+   "published": "Tue, 03 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "375057",
-   "title": "Photon OS 5.0: Openssh PHSA-2026-5.0-90-0830",
-   "link": "https://www.tenable.com/plugins/nessus/375057",
-   "published": "Mon, 02 Nov 2026 00:00:00 GMT"
+   "id": "375412",
+   "title": "Fedora 45 : kernel (2026-7a0f444c64)",
+   "link": "https://www.tenable.com/plugins/nessus/375412",
+   "published": "Tue, 03 Nov 2026 00:00:00 GMT"
   }
  ],
- "_updated": "2026-11-02T16:56:03Z"
+ "_updated": "2026-11-03T14:55:33Z"
 }

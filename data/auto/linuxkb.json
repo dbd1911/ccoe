@@ -4,186 +4,200 @@
  "redhat_url": "https://access.redhat.com/security/security-updates/security-advisories",
  "ubuntu": [
   {
-   "id": "USN-8958-1",
-   "title": ".NET vulnerabilities",
-   "published": "2026-10-29",
+   "id": "USN-8961-1",
+   "title": "Linux kernel vulnerabilities",
+   "published": "2026-11-03",
    "cves": [
-    "CVE-2026-114148",
-    "CVE-2026-102870",
-    "CVE-2026-111497"
+    "CVE-2026-89847",
+    "CVE-2026-98342",
+    "CVE-2026-97450",
+    "CVE-2024-53187",
+    "CVE-2025-21801",
+    "CVE-2026-98607"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-8958-1"
+   "url": "https://ubuntu.com/security/notices/USN-8961-1"
   },
   {
-   "id": "USN-8956-2",
-   "title": "Brotli vulnerability",
-   "published": "2026-10-27",
+   "id": "USN-8963-1",
+   "title": "Linux kernel (NVIDIA Tegra) vulnerabilities",
+   "published": "2026-11-03",
    "cves": [
-    "CVE-2026-111497"
+    "CVE-2026-53194",
+    "CVE-2025-21801",
+    "CVE-2026-68377",
+    "CVE-2026-68143",
+    "CVE-2026-53245",
+    "CVE-2026-74585"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-8956-2"
+   "url": "https://ubuntu.com/security/notices/USN-8963-1"
   },
   {
-   "id": "USN-8957-1",
-   "title": "authd vulnerability",
-   "published": "2026-10-27",
+   "id": "USN-8959-1",
+   "title": "Linux kernel vulnerabilities",
+   "published": "2026-11-03",
    "cves": [
-    "CVE-2026-102631"
+    "CVE-2026-92488",
+    "CVE-2026-74721",
+    "CVE-2026-80556",
+    "CVE-2026-89866",
+    "CVE-2026-98387",
+    "CVE-2026-80692"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-8957-1"
+   "url": "https://ubuntu.com/security/notices/USN-8959-1"
   },
   {
-   "id": "USN-8956-1",
-   "title": "Brotli vulnerability",
-   "published": "2026-10-26",
+   "id": "USN-8968-1",
+   "title": "Linux kernel vulnerabilities",
+   "published": "2026-11-03",
    "cves": [
-    "CVE-2026-111497"
+    "CVE-2021-3640",
+    "CVE-2022-49058"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-8956-1"
+   "url": "https://ubuntu.com/security/notices/USN-8968-1"
   },
   {
-   "id": "USN-8955-1",
-   "title": "nginx vulnerabilities",
-   "published": "2026-10-26",
+   "id": "USN-8967-1",
+   "title": "Linux kernel (AWS) vulnerability",
+   "published": "2026-11-03",
    "cves": [
-    "CVE-2026-97205",
-    "CVE-2026-97629",
-    "CVE-2026-15176",
-    "CVE-2026-93479",
-    "CVE-2026-95101"
+    "CVE-2021-28714"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-8955-1"
+   "url": "https://ubuntu.com/security/notices/USN-8967-1"
   },
   {
-   "id": "USN-8954-1",
-   "title": "zlib vulnerability",
-   "published": "2026-10-22",
+   "id": "USN-8960-1",
+   "title": "Linux kernel (OEM) vulnerabilities",
+   "published": "2026-11-03",
    "cves": [
-    "CVE-2026-85091"
+    "CVE-2026-92488",
+    "CVE-2026-74721",
+    "CVE-2026-80556",
+    "CVE-2026-89866",
+    "CVE-2026-98387",
+    "CVE-2026-80692"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-8954-1"
+   "url": "https://ubuntu.com/security/notices/USN-8960-1"
   },
   {
-   "id": "USN-8953-1",
-   "title": "OpenVPN vulnerability",
-   "published": "2026-10-22",
+   "id": "USN-8966-1",
+   "title": "Linux kernel vulnerabilities",
+   "published": "2026-11-03",
    "cves": [
-    "CVE-2026-84790"
+    "CVE-2021-3640",
+    "CVE-2021-28714"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-8953-1"
+   "url": "https://ubuntu.com/security/notices/USN-8966-1"
   },
   {
-   "id": "USN-8952-1",
-   "title": "Tornado vulnerabilities",
-   "published": "2026-10-22",
+   "id": "USN-8965-1",
+   "title": "Linux kernel (BlueField) vulnerabilities",
+   "published": "2026-11-03",
    "cves": [
-    "CVE-2026-103263",
-    "CVE-2024-14029",
-    "CVE-2023-54397",
-    "CVE-2026-91992",
-    "CVE-2026-91990",
-    "CVE-2026-103262"
+    "CVE-2022-49149",
+    "CVE-2024-56763",
+    "CVE-2022-49082",
+    "CVE-2022-49170",
+    "CVE-2022-49201",
+    "CVE-2024-53210"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-8952-1"
+   "url": "https://ubuntu.com/security/notices/USN-8965-1"
   },
   {
-   "id": "USN-8890-2",
-   "title": "libsoup vulnerabilities",
-   "published": "2026-10-21",
+   "id": "USN-8962-1",
+   "title": "Linux kernel (Azure CVM) vulnerabilities",
+   "published": "2026-11-03",
    "cves": [
-    "CVE-2026-85534",
-    "CVE-2026-85197",
-    "CVE-2026-77014",
-    "CVE-2026-77680",
-    "CVE-2026-5119",
-    "CVE-2026-66339"
+    "CVE-2026-89847",
+    "CVE-2026-97450",
+    "CVE-2024-53187",
+    "CVE-2025-21801",
+    "CVE-2026-93252",
+    "CVE-2026-89525"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-8890-2"
+   "url": "https://ubuntu.com/security/notices/USN-8962-1"
   },
   {
-   "id": "USN-8951-1",
-   "title": "c-ares vulnerabilities",
-   "published": "2026-10-21",
+   "id": "USN-8964-1",
+   "title": "Linux kernel vulnerabilities",
+   "published": "2026-11-03",
    "cves": [
-    "CVE-2026-69184",
-    "CVE-2020-22217",
-    "CVE-2022-4904",
-    "CVE-2026-69186"
+    "CVE-2025-39730",
+    "CVE-2022-49082"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-8951-1"
+   "url": "https://ubuntu.com/security/notices/USN-8964-1"
   }
  ],
  "redhat": [
   {
-   "cve": "CVE-2026-120325",
+   "cve": "CVE-2026-120971",
+   "severity": "moderate",
+   "public_date": "2026-11-03",
+   "description": "org.jboss.resteasy/resteasy-core: RESTEasy: Information disclosure through default exception mapper responses",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-120971"
+  },
+  {
+   "cve": "CVE-2026-120752",
    "severity": "important",
    "public_date": "2026-11-02",
-   "description": "knip: knip: Arbitrary file overwrite via path traversal",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-120325"
+   "description": "PyMuPDF: PyMuPDF: Arbitrary code execution via stack-based buffer overflow in JM_set_annot_callout_line",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-120752"
   },
   {
-   "cve": "CVE-2026-120217",
+   "cve": "CVE-2026-120067",
    "severity": "moderate",
-   "public_date": "2026-11-01",
-   "description": "loguru: loguru: Denial of Service via inefficient regular expression complexity",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-120217"
+   "public_date": "2026-11-02",
+   "description": "postgresql-odbc: postgresql-odbc: Denial of Service via stack-based buffer overflow in updatable cursors",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-120067"
   },
   {
-   "cve": "CVE-2026-120247",
-   "severity": "moderate",
-   "public_date": "2026-11-01",
-   "description": "ffmpeg: ffmpeg: Information disclosure via uninitialized heap memory in Huffyuv decoder",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-120247"
-  },
-  {
-   "cve": "CVE-2026-120246",
-   "severity": "moderate",
-   "public_date": "2026-11-01",
-   "description": "ffmpeg: ffmpeg: Information disclosure via uninitialized palette entries in CDXL decoder",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-120246"
-  },
-  {
-   "cve": "CVE-2026-120244",
-   "severity": "moderate",
-   "public_date": "2026-11-01",
-   "description": "ffmpeg: ffmpeg: Information disclosure via truncated PCX image",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-120244"
-  },
-  {
-   "cve": "CVE-2026-120245",
-   "severity": "moderate",
-   "public_date": "2026-11-01",
-   "description": "ffmpeg: ffmpeg: Information disclosure via crafted Sun Raster image",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-120245"
-  },
-  {
-   "cve": "CVE-2026-120243",
-   "severity": "moderate",
-   "public_date": "2026-11-01",
-   "description": "ffmpeg: ffmpeg: information disclosure via crafted Go2Meeting stream",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-120243"
-  },
-  {
-   "cve": "CVE-2026-120210",
-   "severity": "moderate",
-   "public_date": "2026-10-31",
-   "description": "ffmpeg: ffmpeg: Information disclosure via path traversal in IMF demuxer",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-120210"
-  },
-  {
-   "cve": "CVE-2026-119977",
+   "cve": "CVE-2026-120065",
    "severity": "important",
-   "public_date": "2026-10-31",
-   "description": "wordpress: WordPress: Arbitrary code execution via predictable upgrade staging paths",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-119977"
+   "public_date": "2026-11-02",
+   "description": "postgresql-odbc: postgresql-odbc: SQL injection via unescaped column names in updatable cursors",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-120065"
   },
   {
-   "cve": "CVE-2026-118938",
+   "cve": "CVE-2026-120066",
+   "severity": "moderate",
+   "public_date": "2026-11-02",
+   "description": "postgresql-odbc: postgresql-odbc: Information disclosure via insecure temporary log file creation",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-120066"
+  },
+  {
+   "cve": "CVE-2026-120062",
    "severity": "important",
-   "public_date": "2026-10-30",
-   "description": "fickling: fickling: Arbitrary code execution via safety analysis bypass for dotted attribute paths",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-118938"
+   "public_date": "2026-11-02",
+   "description": "postgresql-odbc: postgresql-odbc: arbitrary SQL execution via unescaped input in SQLSpecialColumns",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-120062"
+  },
+  {
+   "cve": "CVE-2026-120061",
+   "severity": "important",
+   "public_date": "2026-11-02",
+   "description": "postgresql-odbc: postgresql-odbc: Memory corruption via malformed SQL escape sequences",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-120061"
+  },
+  {
+   "cve": "CVE-2026-120059",
+   "severity": "moderate",
+   "public_date": "2026-11-02",
+   "description": "postgresql-odbc: postgresql-odbc: Information disclosure via format string in column name",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-120059"
+  },
+  {
+   "cve": "CVE-2026-120057",
+   "severity": "important",
+   "public_date": "2026-11-02",
+   "description": "postgresql-odbc: postgresql-odbc: arbitrary code execution via buffer overflow in large-object read",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-120057"
+  },
+  {
+   "cve": "CVE-2026-120058",
+   "severity": "important",
+   "public_date": "2026-11-02",
+   "description": "postgresql-odbc: postgresql-odbc: Arbitrary code execution via heap buffer overflow during cursor fetch",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-120058"
   }
  ],
- "_updated": "2026-11-02T16:56:03Z"
+ "_updated": "2026-11-03T14:55:33Z"
 }
