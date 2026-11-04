@@ -4,200 +4,173 @@
  "redhat_url": "https://access.redhat.com/security/security-updates/security-advisories",
  "ubuntu": [
   {
-   "id": "USN-8961-1",
-   "title": "Linux kernel vulnerabilities",
+   "id": "USN-8994-1",
+   "title": "libvips vulnerabilities",
    "published": "2026-11-03",
    "cves": [
-    "CVE-2026-89847",
-    "CVE-2026-98342",
-    "CVE-2026-97450",
-    "CVE-2024-53187",
-    "CVE-2025-21801",
-    "CVE-2026-98607"
+    "CVE-2026-33327",
+    "CVE-2026-35590",
+    "CVE-2025-59933",
+    "CVE-2026-35591",
+    "CVE-2026-70653",
+    "CVE-2026-33328"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-8961-1"
+   "url": "https://ubuntu.com/security/notices/USN-8994-1"
   },
   {
-   "id": "USN-8963-1",
-   "title": "Linux kernel (NVIDIA Tegra) vulnerabilities",
+   "id": "USN-8993-1",
+   "title": "SOGo vulnerability",
    "published": "2026-11-03",
    "cves": [
-    "CVE-2026-53194",
-    "CVE-2025-21801",
-    "CVE-2026-68377",
-    "CVE-2026-68143",
-    "CVE-2026-53245",
-    "CVE-2026-74585"
+    "CVE-2026-93453"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-8963-1"
+   "url": "https://ubuntu.com/security/notices/USN-8993-1"
   },
   {
-   "id": "USN-8959-1",
-   "title": "Linux kernel vulnerabilities",
+   "id": "USN-8992-1",
+   "title": "Shapelib vulnerability",
    "published": "2026-11-03",
    "cves": [
-    "CVE-2026-92488",
-    "CVE-2026-74721",
-    "CVE-2026-80556",
-    "CVE-2026-89866",
-    "CVE-2026-98387",
-    "CVE-2026-80692"
+    "CVE-2022-0699"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-8959-1"
+   "url": "https://ubuntu.com/security/notices/USN-8992-1"
   },
   {
-   "id": "USN-8968-1",
-   "title": "Linux kernel vulnerabilities",
+   "id": "USN-8991-1",
+   "title": "rxvt-unicode vulnerability",
    "published": "2026-11-03",
    "cves": [
-    "CVE-2021-3640",
-    "CVE-2022-49058"
+    "CVE-2021-33477"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-8968-1"
+   "url": "https://ubuntu.com/security/notices/USN-8991-1"
   },
   {
-   "id": "USN-8967-1",
-   "title": "Linux kernel (AWS) vulnerability",
+   "id": "USN-8990-1",
+   "title": "Sprockets vulnerability",
    "published": "2026-11-03",
    "cves": [
-    "CVE-2021-28714"
+    "CVE-2018-3760"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-8967-1"
+   "url": "https://ubuntu.com/security/notices/USN-8990-1"
   },
   {
-   "id": "USN-8960-1",
-   "title": "Linux kernel (OEM) vulnerabilities",
+   "id": "USN-8988-1",
+   "title": "Relax-and-Recover vulnerability",
    "published": "2026-11-03",
    "cves": [
-    "CVE-2026-92488",
-    "CVE-2026-74721",
-    "CVE-2026-80556",
-    "CVE-2026-89866",
-    "CVE-2026-98387",
-    "CVE-2026-80692"
+    "CVE-2024-23301"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-8960-1"
+   "url": "https://ubuntu.com/security/notices/USN-8988-1"
   },
   {
-   "id": "USN-8966-1",
-   "title": "Linux kernel vulnerabilities",
+   "id": "USN-8987-1",
+   "title": "libuser vulnerabilities",
    "published": "2026-11-03",
    "cves": [
-    "CVE-2021-3640",
-    "CVE-2021-28714"
+    "CVE-2015-3246",
+    "CVE-2015-3245"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-8966-1"
+   "url": "https://ubuntu.com/security/notices/USN-8987-1"
   },
   {
-   "id": "USN-8965-1",
-   "title": "Linux kernel (BlueField) vulnerabilities",
+   "id": "USN-8986-1",
+   "title": "Swift Mailer vulnerability",
    "published": "2026-11-03",
    "cves": [
-    "CVE-2022-49149",
-    "CVE-2024-56763",
-    "CVE-2022-49082",
-    "CVE-2022-49170",
-    "CVE-2022-49201",
-    "CVE-2024-53210"
+    "CVE-2016-10074"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-8965-1"
+   "url": "https://ubuntu.com/security/notices/USN-8986-1"
   },
   {
-   "id": "USN-8962-1",
-   "title": "Linux kernel (Azure CVM) vulnerabilities",
+   "id": "USN-8985-1",
+   "title": "Net::EasyTCP vulnerability",
    "published": "2026-11-03",
    "cves": [
-    "CVE-2026-89847",
-    "CVE-2026-97450",
-    "CVE-2024-53187",
-    "CVE-2025-21801",
-    "CVE-2026-93252",
-    "CVE-2026-89525"
+    "CVE-2024-56830"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-8962-1"
+   "url": "https://ubuntu.com/security/notices/USN-8985-1"
   },
   {
-   "id": "USN-8964-1",
-   "title": "Linux kernel vulnerabilities",
+   "id": "USN-8984-1",
+   "title": "jabberd2 vulnerability",
    "published": "2026-11-03",
    "cves": [
-    "CVE-2025-39730",
-    "CVE-2022-49082"
+    "CVE-2017-10807"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-8964-1"
+   "url": "https://ubuntu.com/security/notices/USN-8984-1"
   }
  ],
  "redhat": [
   {
-   "cve": "CVE-2026-120971",
+   "cve": "CVE-2026-114550",
+   "severity": "important",
+   "public_date": "2026-11-03",
+   "description": "libwebsockets: libwebsockets: arbitrary code execution via crafted MQTT PUBACK packets",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-114550"
+  },
+  {
+   "cve": "CVE-2026-118628",
    "severity": "moderate",
    "public_date": "2026-11-03",
-   "description": "org.jboss.resteasy/resteasy-core: RESTEasy: Information disclosure through default exception mapper responses",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-120971"
+   "description": "mlflow: mlflow: Information disclosure via SSRF in get-artifacts",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-118628"
   },
   {
-   "cve": "CVE-2026-120752",
+   "cve": "CVE-2026-118627",
    "severity": "important",
-   "public_date": "2026-11-02",
-   "description": "PyMuPDF: PyMuPDF: Arbitrary code execution via stack-based buffer overflow in JM_set_annot_callout_line",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-120752"
+   "public_date": "2026-11-03",
+   "description": "mlflow: mlflow: Arbitrary code execution via untrusted SHAP model deserialization",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-118627"
   },
   {
-   "cve": "CVE-2026-120067",
+   "cve": "CVE-2026-118626",
    "severity": "moderate",
-   "public_date": "2026-11-02",
-   "description": "postgresql-odbc: postgresql-odbc: Denial of Service via stack-based buffer overflow in updatable cursors",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-120067"
+   "public_date": "2026-11-03",
+   "description": "mlflow: mlflow: Privilege escalation via missing authorization in request handlers",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-118626"
   },
   {
-   "cve": "CVE-2026-120065",
-   "severity": "important",
-   "public_date": "2026-11-02",
-   "description": "postgresql-odbc: postgresql-odbc: SQL injection via unescaped column names in updatable cursors",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-120065"
-  },
-  {
-   "cve": "CVE-2026-120066",
+   "cve": "CVE-2026-118625",
    "severity": "moderate",
-   "public_date": "2026-11-02",
-   "description": "postgresql-odbc: postgresql-odbc: Information disclosure via insecure temporary log file creation",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-120066"
+   "public_date": "2026-11-03",
+   "description": "mlflow: mlflow: Privilege escalation via missing authorization in get_endpoints",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-118625"
   },
   {
-   "cve": "CVE-2026-120062",
-   "severity": "important",
-   "public_date": "2026-11-02",
-   "description": "postgresql-odbc: postgresql-odbc: arbitrary SQL execution via unescaped input in SQLSpecialColumns",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-120062"
-  },
-  {
-   "cve": "CVE-2026-120061",
-   "severity": "important",
-   "public_date": "2026-11-02",
-   "description": "postgresql-odbc: postgresql-odbc: Memory corruption via malformed SQL escape sequences",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-120061"
-  },
-  {
-   "cve": "CVE-2026-120059",
+   "cve": "CVE-2026-118624",
    "severity": "moderate",
-   "public_date": "2026-11-02",
-   "description": "postgresql-odbc: postgresql-odbc: Information disclosure via format string in column name",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-120059"
+   "public_date": "2026-11-03",
+   "description": "mlflow: mlflow: Information disclosure via missing authorization in Tracking Server Jobs",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-118624"
   },
   {
-   "cve": "CVE-2026-120057",
+   "cve": "CVE-2026-118623",
    "severity": "important",
-   "public_date": "2026-11-02",
-   "description": "postgresql-odbc: postgresql-odbc: arbitrary code execution via buffer overflow in large-object read",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-120057"
+   "public_date": "2026-11-03",
+   "description": "mlflow: mlflow: Arbitrary code execution via untrusted data deserialization in PickleEvaluationArtifact",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-118623"
   },
   {
-   "cve": "CVE-2026-120058",
+   "cve": "CVE-2026-120651",
    "severity": "important",
-   "public_date": "2026-11-02",
-   "description": "postgresql-odbc: postgresql-odbc: Arbitrary code execution via heap buffer overflow during cursor fetch",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-120058"
+   "public_date": "2026-11-03",
+   "description": "perl-cgi: perl-cgi: Denial of Service via truncated request body",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-120651"
+  },
+  {
+   "cve": "CVE-2026-120650",
+   "severity": "important",
+   "public_date": "2026-11-03",
+   "description": "perl-cgi: perl-cgi: Denial of Service via unenforced request and upload limits",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-120650"
+  },
+  {
+   "cve": "CVE-2026-120648",
+   "severity": "moderate",
+   "public_date": "2026-11-03",
+   "description": "perl-CGI: perl-CGI: HTML injection via unescaped comment delimiter",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-120648"
   }
  ],
- "_updated": "2026-11-03T14:55:33Z"
+ "_updated": "2026-11-04T15:15:54Z"
 }
