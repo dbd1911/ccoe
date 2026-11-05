@@ -1,10 +1,20 @@
 {
  "source": "CISA Known Exploited Vulnerabilities Catalog",
  "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
- "catalogVersion": "2026.11.03",
- "dateReleased": "2026-11-03T20:00:24.8741Z",
- "total": 1767,
+ "catalogVersion": "2026.11.04",
+ "dateReleased": "2026-11-04T20:00:05.774Z",
+ "total": 1768,
  "recent": [
+  {
+   "cveID": "CVE-2024-27834",
+   "vendorProject": "Apple",
+   "product": "Multiple Products",
+   "vulnerabilityName": "Apple Multiple Products Improper Authentication Vulnerability",
+   "dateAdded": "2026-11-04",
+   "dueDate": "2026-11-18",
+   "knownRansomwareCampaignUse": "Unknown",
+   "shortDescription": "Apple iOS, iPadOS, macOS, Safari, tvOS and watchOS 10.5 contain an improper authentication vulnerability which could allow an attacker with arbitrary read and write capability to bypass pointer authentication."
+  },
   {
    "cveID": "CVE-2026-119977",
    "vendorProject": "WordPress",
@@ -144,18 +154,8 @@
    "dueDate": "2026-10-23",
    "knownRansomwareCampaignUse": "Unknown",
    "shortDescription": "EG Secure Solutions SiteGuard Server Edition contains an OS command injection vulnerability which may allow an attacker to execute arbitrary OS commands with root or SYSTEM privileges on the system running the affected p"
-  },
-  {
-   "cveID": "CVE-2026-96656",
-   "vendorProject": "Plex",
-   "product": "Media Server",
-   "vulnerabilityName": "Plex Media Server External Control of File Name or Path Vulnerability",
-   "dateAdded": "2026-10-20",
-   "dueDate": "2026-10-23",
-   "knownRansomwareCampaignUse": "Unknown",
-   "shortDescription": "Plex Media Server contains an external control of file name or path vulnerability which can allow an admin user to write arbitrary files that may be executed on load. This vulnerability can be chained with CVE-2026-96652"
   }
  ],
  "tracked_crosscheck": [],
- "_updated": "2026-11-04T15:15:54Z"
+ "_updated": "2026-11-05T15:17:21Z"
 }

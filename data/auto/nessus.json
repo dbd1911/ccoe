@@ -3,77 +3,77 @@
  "source_url": "https://www.tenable.com/plugins/newest",
  "items": [
   {
-   "id": "375825",
-   "title": "Rocky Linux 10.2 [CIQ] Security Update: opentelemetry-collector Multiple Vulnerabilities (crlsa-2026_93596)",
-   "link": "https://www.tenable.com/plugins/nessus/375825",
-   "published": "Wed, 04 Nov 2026 00:00:00 GMT"
+   "id": "376234",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-121962",
+   "link": "https://www.tenable.com/plugins/nessus/376234",
+   "published": "Thu, 05 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "375824",
-   "title": "Rocky Linux 9 [CIQ] Security Update: freerdp / freerdp-debuginfo / freerdp-debugsource / freerdp-devel / etc Multiple Vulnerabilities (crlsa-2026_93592)",
-   "link": "https://www.tenable.com/plugins/nessus/375824",
-   "published": "Wed, 04 Nov 2026 00:00:00 GMT"
+   "id": "376233",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-121958",
+   "link": "https://www.tenable.com/plugins/nessus/376233",
+   "published": "Thu, 05 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "375823",
-   "title": "Rocky Linux 9 [CIQ] Security Update: libXi / libXi-debuginfo / libXi-debugsource / libXi-devel Multiple Vulnerabilities (crlsa-2026_93439)",
-   "link": "https://www.tenable.com/plugins/nessus/375823",
-   "published": "Wed, 04 Nov 2026 00:00:00 GMT"
+   "id": "376232",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-121541",
+   "link": "https://www.tenable.com/plugins/nessus/376232",
+   "published": "Thu, 05 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "375822",
-   "title": "Rocky Linux 8 [CIQ] Security Update: python3-jwt (crlsa-2026_93440)",
-   "link": "https://www.tenable.com/plugins/nessus/375822",
-   "published": "Wed, 04 Nov 2026 00:00:00 GMT"
+   "id": "376231",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-121955",
+   "link": "https://www.tenable.com/plugins/nessus/376231",
+   "published": "Thu, 05 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "375821",
-   "title": "Rocky Linux 9 [CIQ] Security Update: thunderbird / thunderbird-debuginfo / thunderbird-debugsource Multiple Vulnerabilities (crlsa-2026_93443)",
-   "link": "https://www.tenable.com/plugins/nessus/375821",
-   "published": "Wed, 04 Nov 2026 00:00:00 GMT"
+   "id": "376230",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-121951",
+   "link": "https://www.tenable.com/plugins/nessus/376230",
+   "published": "Thu, 05 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "375820",
-   "title": "Rocky Linux 8 [CIQ] Security Update: qt5-qtbase / qt5-qtbase-common / qt5-qtbase-debuginfo / etc Multiple Vulnerabilities (crlsa-2026_93924)",
-   "link": "https://www.tenable.com/plugins/nessus/375820",
-   "published": "Wed, 04 Nov 2026 00:00:00 GMT"
+   "id": "376229",
+   "title": "TencentOS Server 4: java-8-konajdk (TSSA-2026:1335)",
+   "link": "https://www.tenable.com/plugins/nessus/376229",
+   "published": "Thu, 05 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "375819",
-   "title": "Rocky Linux 10.2 [CIQ] Security Update: libblkid / libblkid-debuginfo / libblkid-devel / libfdisk / etc Multiple Vulnerabilities (crlsa-2026_93461)",
-   "link": "https://www.tenable.com/plugins/nessus/375819",
-   "published": "Wed, 04 Nov 2026 00:00:00 GMT"
+   "id": "376228",
+   "title": "TencentOS Server 4: java-11-konajdk (TSSA-2026:1330)",
+   "link": "https://www.tenable.com/plugins/nessus/376228",
+   "published": "Thu, 05 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "375818",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-106804",
-   "link": "https://www.tenable.com/plugins/nessus/375818",
-   "published": "Wed, 04 Nov 2026 00:00:00 GMT"
+   "id": "376227",
+   "title": "TencentOS Server 4: python-oauthlib (TSSA-2026:1328)",
+   "link": "https://www.tenable.com/plugins/nessus/376227",
+   "published": "Thu, 05 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "375817",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-103995",
-   "link": "https://www.tenable.com/plugins/nessus/375817",
-   "published": "Wed, 04 Nov 2026 00:00:00 GMT"
+   "id": "376226",
+   "title": "TencentOS Server 4: java-17-konajdk (TSSA-2026:1329)",
+   "link": "https://www.tenable.com/plugins/nessus/376226",
+   "published": "Thu, 05 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "375816",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-114596",
-   "link": "https://www.tenable.com/plugins/nessus/375816",
-   "published": "Wed, 04 Nov 2026 00:00:00 GMT"
+   "id": "376225",
+   "title": "TencentOS Server 4: pcs (TSSA-2026:1351)",
+   "link": "https://www.tenable.com/plugins/nessus/376225",
+   "published": "Thu, 05 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "375815",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-119415",
-   "link": "https://www.tenable.com/plugins/nessus/375815",
-   "published": "Wed, 04 Nov 2026 00:00:00 GMT"
+   "id": "376224",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-63183",
+   "link": "https://www.tenable.com/plugins/nessus/376224",
+   "published": "Thu, 05 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "375814",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-118447",
-   "link": "https://www.tenable.com/plugins/nessus/375814",
-   "published": "Wed, 04 Nov 2026 00:00:00 GMT"
+   "id": "376223",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-121964",
+   "link": "https://www.tenable.com/plugins/nessus/376223",
+   "published": "Thu, 05 Nov 2026 00:00:00 GMT"
   }
  ],
- "_updated": "2026-11-04T15:15:54Z"
+ "_updated": "2026-11-05T15:17:21Z"
 }
