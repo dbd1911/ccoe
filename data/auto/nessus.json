@@ -3,77 +3,77 @@
  "source_url": "https://www.tenable.com/plugins/newest",
  "items": [
   {
-   "id": "376234",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-121962",
-   "link": "https://www.tenable.com/plugins/nessus/376234",
-   "published": "Thu, 05 Nov 2026 00:00:00 GMT"
+   "id": "376803",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-122130",
+   "link": "https://www.tenable.com/plugins/nessus/376803",
+   "published": "Fri, 06 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "376233",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-121958",
-   "link": "https://www.tenable.com/plugins/nessus/376233",
-   "published": "Thu, 05 Nov 2026 00:00:00 GMT"
+   "id": "376802",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-103653",
+   "link": "https://www.tenable.com/plugins/nessus/376802",
+   "published": "Fri, 06 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "376232",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-121541",
-   "link": "https://www.tenable.com/plugins/nessus/376232",
-   "published": "Thu, 05 Nov 2026 00:00:00 GMT"
+   "id": "376801",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-100252",
+   "link": "https://www.tenable.com/plugins/nessus/376801",
+   "published": "Fri, 06 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "376231",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-121955",
-   "link": "https://www.tenable.com/plugins/nessus/376231",
-   "published": "Thu, 05 Nov 2026 00:00:00 GMT"
+   "id": "376800",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-120421",
+   "link": "https://www.tenable.com/plugins/nessus/376800",
+   "published": "Fri, 06 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "376230",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-121951",
-   "link": "https://www.tenable.com/plugins/nessus/376230",
-   "published": "Thu, 05 Nov 2026 00:00:00 GMT"
+   "id": "376799",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-122127",
+   "link": "https://www.tenable.com/plugins/nessus/376799",
+   "published": "Fri, 06 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "376229",
-   "title": "TencentOS Server 4: java-8-konajdk (TSSA-2026:1335)",
-   "link": "https://www.tenable.com/plugins/nessus/376229",
-   "published": "Thu, 05 Nov 2026 00:00:00 GMT"
+   "id": "376798",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123036",
+   "link": "https://www.tenable.com/plugins/nessus/376798",
+   "published": "Fri, 06 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "376228",
-   "title": "TencentOS Server 4: java-11-konajdk (TSSA-2026:1330)",
-   "link": "https://www.tenable.com/plugins/nessus/376228",
-   "published": "Thu, 05 Nov 2026 00:00:00 GMT"
+   "id": "376797",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-103582",
+   "link": "https://www.tenable.com/plugins/nessus/376797",
+   "published": "Fri, 06 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "376227",
-   "title": "TencentOS Server 4: python-oauthlib (TSSA-2026:1328)",
-   "link": "https://www.tenable.com/plugins/nessus/376227",
-   "published": "Thu, 05 Nov 2026 00:00:00 GMT"
+   "id": "376796",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-121968",
+   "link": "https://www.tenable.com/plugins/nessus/376796",
+   "published": "Fri, 06 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "376226",
-   "title": "TencentOS Server 4: java-17-konajdk (TSSA-2026:1329)",
-   "link": "https://www.tenable.com/plugins/nessus/376226",
-   "published": "Thu, 05 Nov 2026 00:00:00 GMT"
+   "id": "376795",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-122052",
+   "link": "https://www.tenable.com/plugins/nessus/376795",
+   "published": "Fri, 06 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "376225",
-   "title": "TencentOS Server 4: pcs (TSSA-2026:1351)",
-   "link": "https://www.tenable.com/plugins/nessus/376225",
-   "published": "Thu, 05 Nov 2026 00:00:00 GMT"
+   "id": "376794",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-122006",
+   "link": "https://www.tenable.com/plugins/nessus/376794",
+   "published": "Fri, 06 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "376224",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-63183",
-   "link": "https://www.tenable.com/plugins/nessus/376224",
-   "published": "Thu, 05 Nov 2026 00:00:00 GMT"
+   "id": "376793",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-108500",
+   "link": "https://www.tenable.com/plugins/nessus/376793",
+   "published": "Fri, 06 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "376223",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-121964",
-   "link": "https://www.tenable.com/plugins/nessus/376223",
-   "published": "Thu, 05 Nov 2026 00:00:00 GMT"
+   "id": "376792",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-100302",
+   "link": "https://www.tenable.com/plugins/nessus/376792",
+   "published": "Fri, 06 Nov 2026 00:00:00 GMT"
   }
  ],
- "_updated": "2026-11-05T15:17:21Z"
+ "_updated": "2026-11-06T14:53:12Z"
 }

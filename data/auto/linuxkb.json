@@ -4,6 +4,69 @@
  "redhat_url": "https://access.redhat.com/security/security-updates/security-advisories",
  "ubuntu": [
   {
+   "id": "USN-9003-1",
+   "title": "Linux kernel (NVIDIA) vulnerabilities",
+   "published": "2026-11-06",
+   "cves": [
+    "CVE-2026-72154",
+    "CVE-2026-80602",
+    "CVE-2026-68357",
+    "CVE-2026-72236",
+    "CVE-2026-74352",
+    "CVE-2026-72194"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-9003-1"
+  },
+  {
+   "id": "USN-9002-1",
+   "title": "Linux kernel (NVIDIA Tegra) vulnerabilities",
+   "published": "2026-11-06",
+   "cves": [
+    "CVE-2026-89669",
+    "CVE-2026-89477",
+    "CVE-2026-63896",
+    "CVE-2026-64305",
+    "CVE-2026-89487",
+    "CVE-2026-89526"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-9002-1"
+  },
+  {
+   "id": "USN-9001-1",
+   "title": "ca-certificates update",
+   "published": "2026-11-05",
+   "cves": [],
+   "url": "https://ubuntu.com/security/notices/USN-9001-1"
+  },
+  {
+   "id": "USN-8955-2",
+   "title": "nginx vulnerabilities",
+   "published": "2026-11-05",
+   "cves": [
+    "CVE-2026-97205",
+    "CVE-2026-42533",
+    "CVE-2026-93479",
+    "CVE-2026-15176"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-8955-2"
+  },
+  {
+   "id": "USN-7230-3",
+   "title": "FRR regression",
+   "published": "2026-11-05",
+   "cves": [
+    "CVE-2024-55553"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-7230-3"
+  },
+  {
+   "id": "USN-8972-2",
+   "title": "HAProxy regression",
+   "published": "2026-11-05",
+   "cves": [],
+   "url": "https://ubuntu.com/security/notices/USN-8972-2"
+  },
+  {
    "id": "USN-9000-1",
    "title": "Twisted vulnerability",
    "published": "2026-11-04",
@@ -43,138 +106,79 @@
     "CVE-2026-89147"
    ],
    "url": "https://ubuntu.com/security/notices/USN-8997-1"
-  },
-  {
-   "id": "USN-7530-2",
-   "title": "ADOdb vulnerability",
-   "published": "2026-11-04",
-   "cves": [
-    "CVE-2025-46337"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-7530-2"
-  },
-  {
-   "id": "USN-8996-1",
-   "title": "APT vulnerability",
-   "published": "2026-11-04",
-   "cves": [
-    "CVE-2026-109518"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8996-1"
-  },
-  {
-   "id": "USN-8994-1",
-   "title": "libvips vulnerabilities",
-   "published": "2026-11-03",
-   "cves": [
-    "CVE-2026-33327",
-    "CVE-2026-35590",
-    "CVE-2025-59933",
-    "CVE-2026-35591",
-    "CVE-2026-70653",
-    "CVE-2026-33328"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8994-1"
-  },
-  {
-   "id": "USN-8993-1",
-   "title": "SOGo vulnerability",
-   "published": "2026-11-03",
-   "cves": [
-    "CVE-2026-93453"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8993-1"
-  },
-  {
-   "id": "USN-8992-1",
-   "title": "Shapelib vulnerability",
-   "published": "2026-11-03",
-   "cves": [
-    "CVE-2022-0699"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8992-1"
-  },
-  {
-   "id": "USN-8991-1",
-   "title": "rxvt-unicode vulnerability",
-   "published": "2026-11-03",
-   "cves": [
-    "CVE-2021-33477"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8991-1"
   }
  ],
  "redhat": [
   {
-   "cve": "CVE-2026-123037",
+   "cve": "CVE-2026-121820",
+   "severity": "important",
+   "public_date": "2026-11-06",
+   "description": "com.linecorp.armeria/armeria-saml: armeria-saml: Denial of Service via decompression of untrusted SAML messages",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-121820"
+  },
+  {
+   "cve": "CVE-2026-121819",
    "severity": "moderate",
+   "public_date": "2026-11-06",
+   "description": "com.linecorp.armeria/armeria-xds: armeria-xds: Information disclosure via unresolved symbolic links in DataSourcePolicy",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-121819"
+  },
+  {
+   "cve": "CVE-2026-88799",
+   "severity": "important",
+   "public_date": "2026-11-06",
+   "description": "mdjm-event-management: mobile-events-manager: MDJM Event Management and Mobile Events Manager: Privilege escalation via missing authorization check in profile updates",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-88799"
+  },
+  {
+   "cve": "CVE-2026-77299",
+   "severity": "important",
+   "public_date": "2026-11-06",
+   "description": "github.com/dlclark/regexp2: regexp2: Denial of Service via unbounded memory allocation during pattern matching",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-77299"
+  },
+  {
+   "cve": "CVE-2026-85068",
+   "severity": "low",
    "public_date": "2026-11-05",
-   "description": "ansible-core: user module generate_ssh_key follows a symlinked ~/.ssh enabling local privilege escalation (incomplete fix of CVE-2024-9902)",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-123037"
+   "description": "nut: nut: Information disclosure via uninitialized stack memory in blazer_usb driver",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-85068"
   },
   {
-   "cve": "CVE-2026-121837",
-   "severity": "moderate",
+   "cve": "CVE-2026-92698",
+   "severity": "important",
    "public_date": "2026-11-05",
-   "description": "quarkus-rest-data-panache: quarkus-rest-data-panache: getter-level @SecureField ignored for filter and sort",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-121837"
+   "description": "fastnetmon: fastnetmon: Denial of Service via crafted sFlow packet",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-92698"
   },
   {
-   "cve": "CVE-2026-119776",
+   "cve": "CVE-2026-92697",
    "severity": "important",
-   "public_date": "2026-11-04",
-   "description": "frr: frr: Unauthorized routing adjacency establishment via missing OSPFv3 address validation",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-119776"
+   "public_date": "2026-11-05",
+   "description": "fastnetmon: fastnetmon: Denial of Service via crafted NetFlow packets",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-92697"
   },
   {
-   "cve": "CVE-2026-122006",
+   "cve": "CVE-2026-92693",
    "severity": "important",
-   "public_date": "2026-11-04",
-   "description": "activestorage: activestorage: arbitrary file read and write via ImageMagick attachment analysis",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-122006"
+   "public_date": "2026-11-05",
+   "description": "fastnetmon: FastNetMon: Denial of Service via crafted IPv6 packet header",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-92693"
   },
   {
-   "cve": "CVE-2026-121942",
-   "severity": "moderate",
-   "public_date": "2026-11-04",
-   "description": "zbar: zbar: Denial of Service via crafted SQ code image",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-121942"
-  },
-  {
-   "cve": "CVE-2026-100302",
-   "severity": "moderate",
-   "public_date": "2026-11-04",
-   "description": "org.apache.zookeeper/zookeeper: Apache ZooKeeper: Denial of Service via unbounded multiRead response memory allocation",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-100302"
-  },
-  {
-   "cve": "CVE-2026-115448",
+   "cve": "CVE-2026-93424",
    "severity": "important",
-   "public_date": "2026-11-04",
-   "description": "org.apache.zookeeper/zookeeper: ZooKeeper: Denial of Service via deeply nested znodes during snapshot creation",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-115448"
+   "public_date": "2026-11-05",
+   "description": "fastnetmon: FastNetMon: Denial of Service via race condition in NetFlow template processing",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-93424"
   },
   {
-   "cve": "CVE-2026-100252",
+   "cve": "CVE-2026-92695",
    "severity": "important",
-   "public_date": "2026-11-04",
-   "description": "org.apache.zookeeper/zookeeper: zookeeper: Privilege escalation via improper SASL authorization identity validation",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-100252"
-  },
-  {
-   "cve": "CVE-2026-100235",
-   "severity": "moderate",
-   "public_date": "2026-11-04",
-   "description": "org.apache.zookeeper/zookeeper: zookeeper: Authorization bypass via race condition in setACL handling",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-100235"
-  },
-  {
-   "cve": "CVE-2026-118178",
-   "severity": "important",
-   "public_date": "2026-11-04",
-   "description": "firefox: thunderbird: RSS feed could redirect its subscription to a local file or network share",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-118178"
+   "public_date": "2026-11-05",
+   "description": "fastnetmon: fastnetmon: Denial of Service via out-of-bounds read during packet parsing",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-92695"
   }
  ],
- "_updated": "2026-11-05T15:17:21Z"
+ "_updated": "2026-11-06T14:53:12Z"
 }
