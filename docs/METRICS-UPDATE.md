@@ -16,7 +16,60 @@ The committed initial snapshot deliberately contains unavailable values. Replace
 
 `null` means unavailable. `0` means confirmed zero. Dates use YYYY-MM-DD. Never remove an earlier record just to update this week's numbers. Fixing an incorrect historical value is allowed; document that correction in the commit message.
 
-Run `node tests/metrics.test.cjs` for calculation checks and `node -e "require('./assets/js/metrics.js').validate(require('./data/manual/metrics.json'))"` to validate your current data before publishing.
+Run `node tests/metrics.test.cjs` and `node tests/enterprise-metrics.test.cjs` for calculation checks, and validate your current data before publishing:
+
+```
+node -e "const d=require('./data/manual/metrics.json');require('./assets/js/metrics.js').validate(d);require('./assets/js/enterprise-metrics.js').validate(d)"
+```
+
+## Enterprise metrics (`enterprise`) and Cyber Task Orders (`cyberTaskOrders`)
+
+Both blocks live inside each snapshot, beside `portfolio` and `poam`. They are rendered by `assets/js/enterprise-metrics.js`.
+
+**Where they appear**
+
+| Page | Container | Shows |
+|---|---|---|
+| `index.html` hero band | `data-ent-hero` | Total systems, NIPR queue, SIPR queue, expired POA&Ms |
+| `index.html` "Portfolio Health at a Glance" | `data-ent-highlights` | The headline (starred) metrics: total systems, NIPR/SIPR workflows in queue, authorization status, expired POA&Ms |
+| `rmf-operations.html#enterprise-metrics` | `data-ent-dashboard` | All enterprise metrics |
+| `rmf-operations.html#cyber-task-orders` | `data-cto-dashboard` | CTO KPI/KRI dashboard |
+
+**Preview:** add `?demo=1` to either page URL (for example `rmf-operations.html?demo=1`) to render `data/manual/metrics.sample.json`, which contains clearly labeled illustrative values. A "sample data" badge appears. Never put real data in the sample file.
+
+**`enterprise` fields** (all counts; `null` = not available)
+
+- `totalSystems`
+- `workflowsInQueue`: `NIPR`, `SIPR`
+- `workflowsByStage`: `ISO/PM`, `ISSM`, `AO`
+- `authorizationStatus`: `Not Authorized`, `Valid`, `Expired`
+- `expiringAuthorizations` (days until expiration): `0-60`, `61-90`, `91-120`, `121-150`, `151-180`
+- `systemsByOverallRisk`: `Unassigned`, `Very Low`, `Low`, `Moderate`, `High`, `Very High`
+- `controlCompliance`: `Compliant`, `Non-Compliant`, `Not Applicable`, `Unassessed`. The compliance rate shown is Compliant ÷ (Compliant + Non-Compliant).
+- `vulnerabilityTrend`: list of `{"month":"YYYY-MM","Low":n,"Moderate":n,"High":n,"Very High":n}`. The last 12 months are charted. Copy the 12-month trend from your source dashboard each period.
+- `expiredPoams` (days past due): `1-89`, `>=90`
+- `expiringPoams` (days until due): `0-30`, `31-60`, `61-90`
+- `overduePoamLeaderboard`: list of `{"system":"Name","overdue":n}`. The top 10 are shown, ranked by overdue count. This publishes per-system overdue counts by name; confirm that is approved for the hosting environment.
+
+If the legacy `portfolio.activeSystems`, `currentAuthorizations` or `expiredAuthorizations` are `null`, the older summary cards on other pages use `totalSystems`, `authorizationStatus.Valid` and `authorizationStatus.Expired` instead, so you don't have to enter them twice.
+
+**`cyberTaskOrders` fields**
+
+- `slaTargetPercent`: the SLA target (default 90). The SLA rate turns red below it.
+- `status`: `open` (active and not yet past due), `late` (active and past due), `completed` (completed in the reporting window)
+- `completedOnTime`: completed by the deadline in the same window as `status.completed`
+- `monthly`: list of `{"month":"YYYY-MM","open":n,"late":n,"completed":n,"assigned":n}`. Drives the stacked-bar trend and completion velocity. `assigned` = new tasks received that month.
+- `lateTasks`: list of `{"id":"CTO 26-014","title":"Short title","severity":"Critical|High|Medium|Low","dueDate":"YYYY-MM-DD"}`. Drives the aging table, backlog aging and the late-critical count. If the list is shorter than `status.late`, the page says it is partial. Task identifiers and titles can be sensitive. Publish only what is approved for the host.
+
+**CTO calculations**
+
+- SLA compliance rate = `completedOnTime` ÷ `status.completed`
+- Overdue risk ratio = `late` ÷ (`open` + `late`)
+- Backlog aging = average of (report date − `dueDate`) across `lateTasks`
+- Completion velocity = latest month's `completed` vs `assigned`. If assignments exceed completions, the backlog is growing.
+- Late critical tasks = `lateTasks` with severity `Critical`
+
+A zero denominator displays N/A, not 0%.
 
 ## Calculations
 

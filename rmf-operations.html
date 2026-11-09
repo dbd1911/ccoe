@@ -26,7 +26,7 @@
   <a class="tile" href="assessment-calendar.html"><h3>Renew an authorization</h3><p>Review expiration dates and assessment milestones.</p></a>
   <a class="tile" href="templates.html"><h3>Assess a system change</h3><p>Use the Security Impact Analysis guide and briefing template.</p></a>
   <a class="tile" href="vulnerability-poam.html"><h3>Maintain an authorization</h3><p>Review monitoring guidance and portfolio remediation trends.</p></a>
-  </div></div></section>
+  </div><p style="margin-top:14px"><a href="#enterprise-metrics">Enterprise metrics →</a> · <a href="#cyber-task-orders">Cyber Task Order performance →</a></p></div></section>
   <!-- LIFECYCLE MATRIX -->
   <section class="section">
     <div class="wrap">
@@ -115,10 +115,33 @@
       </div>
     </div>
   </section>
+  <!-- ENTERPRISE METRICS: edit data/manual/metrics.json → latest snapshot → "enterprise".
+       Rendered by assets/js/enterprise-metrics.js. Preview layout with ?demo=1 -->
+  <section class="section" id="enterprise-metrics">
+    <div class="wrap">
+      <span class="kicker">Enterprise Metrics · Organization-Wide</span>
+      <h2>RMF Enterprise Metrics</h2>
+      <p class="section-sub">Portfolio-wide authorization, workflow, risk, compliance, vulnerability and POA&amp;M measures, published from the dated reporting snapshot. Hover any chart mark for its value; open “View data table” for exact counts. N/A means no data was reported for the period.</p>
+      <p data-ent-date class="mono"></p>
+      <div data-ent-dashboard><p class="dim">No reporting data available yet.</p></div>
+    </div>
+  </section>
+
+  <!-- CYBER TASK ORDERS: edit data/manual/metrics.json → latest snapshot → "cyberTaskOrders". -->
+  <section class="section" id="cyber-task-orders" style="background:var(--panel)">
+    <div class="wrap">
+      <span class="kicker">Cyber Task Orders (CTOs) · KPIs &amp; KRIs</span>
+      <h2>Cyber Task Order Performance</h2>
+      <p class="section-sub">Open, late and completed task orders converted into decision measures: <b>SLA compliance</b> (completed on time ÷ total completed), <b>overdue risk ratio</b> (late ÷ total active), <b>backlog aging</b> (average days late tasks are past deadline) and <b>completion velocity</b> (completed vs. newly assigned per month).</p>
+      <div data-cto-dashboard><p class="dim">No reporting data available yet.</p></div>
+    </div>
+  </section>
+
   <section class="section"><div class="wrap"><div class="card card-accent"><h2>Incident Response</h2><p>Reporting suspected cybersecurity incidents promptly helps protect mission operations and supports a coordinated response. Use the incident reporting channel to notify the Cybersecurity Office and access reporting instructions.</p><a class="btn btn-gold" href="incident-response.html#report">Report an Incident</a></div></div></section>
 </main>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/enterprise-metrics.js" defer></script>
 <script>
 const STEPS = {
   prepare: { title:'Prepare', who:'System Owner · ISSM · ISSO', goal:'Set the conditions for a clean run through the framework.',

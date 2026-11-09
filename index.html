@@ -27,14 +27,12 @@
 </section>
 <!-- ═══════════════════════════════════════════════════════════════════
      HERO STATS (the four big numbers under the banner)
-     ▶ TO CHANGE NUMBERS OR LABELS: edit  data/manual/metrics.json
-       → "hero_stats" section. The page loads that file automatically.
-     ▶ The HTML below is only the OFFLINE FALLBACK (shown if the JSON
-       can't load, e.g. opening the file directly from disk). Keep the
-       data-count value and label text in sync with the JSON when editing.
+     ▶ TO CHANGE NUMBERS: edit  data/manual/metrics.json → latest snapshot
+       → "enterprise" block (totalSystems, workflowsInQueue, expiredPoams).
+       Rendered by assets/js/enterprise-metrics.js.
      ═══════════════════════════════════════════════════════════════════ -->
 <div class="hero-stats">
-  <div class="hero-stats-inner" data-hero-metrics><p class="dim">No reporting data available yet.</p>
+  <div class="hero-stats-inner" data-ent-hero><p class="dim">No reporting data available yet.</p>
   </div>
 </div>
 
@@ -97,23 +95,11 @@
     <div class="wrap">
       <span class="kicker">Metrics Snapshot</span>
       <h2>Portfolio Health at a Glance</h2>
-      <p class="section-sub">Dated portfolio summary. Additional summary views are available in <a href="tools-dashboards.html">Tools &amp; Dashboards</a>.</p>
-      <!-- METRICS SNAPSHOT: edit data/manual/metrics.json → "metrics_snapshot".
-           HTML below = offline fallback only. -->
-      <div class="grid g4" id="metricsSnapshot" data-portfolio-cards><p class="dim">No reporting data available yet.</p></div><p data-metrics-date class="mono"></p>
-      <div class="grid g2" style="margin-top:18px">
-        <div class="card reveal">
-          <h3 style="font-size:16px;margin-bottom:14px">Authorization Status Mix</h3>
-          <div id="atoDonut" data-authorization-summary><p class="dim">No reporting data available yet.</p></div>
-        </div>
-        <div class="card reveal">
-          <h3 style="font-size:16px;margin-bottom:14px">Open POA&M by Severity</h3>
-          <!-- POA&M SEVERITY BARS: edit data/manual/metrics.json →
-               "poam_severity_bars". HTML below = offline fallback. -->
-          <div id="poamBars" data-severity-summary><p class="dim">No reporting data available yet.</p></div>
-          <p class="dim" style="margin-top:10px;font-size:13px">Backlog summaries and trends: <a href="vulnerability-poam.html">Vulnerability &amp; POA&M Portal</a></p>
-        </div>
-      </div>
+      <p class="section-sub">High-level enterprise metrics. The full enterprise view — workflow stages, expiring authorizations, risk, control compliance, vulnerability trend, POA&amp;M health and Cyber Task Orders — is in the <a href="rmf-operations.html#enterprise-metrics">RMF Operations Hub</a>.</p>
+      <p data-ent-date class="mono"></p>
+      <!-- METRICS SNAPSHOT: edit data/manual/metrics.json → "enterprise".
+           Rendered by assets/js/enterprise-metrics.js. -->
+      <div id="metricsSnapshot" data-ent-highlights><p class="dim">No reporting data available yet.</p></div>
     </div>
   </section>
 
@@ -215,6 +201,7 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/live-data.js" defer></script>
 <script src="assets/js/metrics.js" defer></script>
+<script src="assets/js/enterprise-metrics.js" defer></script>
 <script>
 // Duplicate ticker content for seamless loop
 (function(){ const t=document.getElementById('ticker'); t.innerHTML += t.innerHTML; })();

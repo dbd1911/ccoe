@@ -86,3 +86,18 @@ Preview over HTTP. Confirm page menus and .mil links; confirm unavailable initia
 - `tools-dashboards.html`
 - `tools/cyber-range/index.html`
 - `vulnerability-poam.html`
+
+## November 2026 — Enterprise metrics and Cyber Task Order dashboard
+
+Navigation, page paths, and `assets/js/main.js` are unchanged. Copy these:
+
+| File | Action |
+|---|---|
+| `assets/js/enterprise-metrics.js` | **New.** Renderer for the enterprise metrics and the CTO dashboard |
+| `data/manual/metrics.sample.json` | **New.** Illustrative preview data. Only used with `?demo=1`, and optional on the .mil copy |
+| `assets/css/styles.css` | Append the block headed `ENTERPRISE METRICS & CTO DASHBOARD` |
+| `assets/js/metrics.js` | Two small edits: accept the new snapshot blocks, and fall back to them for the legacy portfolio fields |
+| `data/manual/metrics.json` | Add the `enterprise` and `cyberTaskOrders` blocks to your snapshot, then fill them with real values on the .mil side |
+| `index.html` | Hero band now uses `data-ent-hero`. The "Portfolio Health at a Glance" section body now uses `data-ent-highlights` and `data-ent-date`. Add the `enterprise-metrics.js` script tag |
+| `rmf-operations.html` | New `#enterprise-metrics` and `#cyber-task-orders` sections before Incident Response, jump links under "What do you need to do?", and the script tag |
+| `tests/enterprise-metrics.test.cjs`, `docs/METRICS-UPDATE.md`, `HOW-TO-UPDATE.md` | Tests and field documentation |
