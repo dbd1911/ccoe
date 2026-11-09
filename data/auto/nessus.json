@@ -3,77 +3,77 @@
  "source_url": "https://www.tenable.com/plugins/newest",
  "items": [
   {
-   "id": "376803",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-122130",
-   "link": "https://www.tenable.com/plugins/nessus/376803",
-   "published": "Fri, 06 Nov 2026 00:00:00 GMT"
+   "id": "377576",
+   "title": "Fedora 46 : python-pymdown-extensions (2026-de1da3cf3b)",
+   "link": "https://www.tenable.com/plugins/nessus/377576",
+   "published": "Sun, 08 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "376802",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-103653",
-   "link": "https://www.tenable.com/plugins/nessus/376802",
-   "published": "Fri, 06 Nov 2026 00:00:00 GMT"
+   "id": "377575",
+   "title": "Rocky Linux 8 [CIQ] Security Update: protobuf-c / protobuf-c-compiler / protobuf-c-compiler-debuginfo / etc (crlsa-2023_6944)",
+   "link": "https://www.tenable.com/plugins/nessus/377575",
+   "published": "Sun, 08 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "376801",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-100252",
-   "link": "https://www.tenable.com/plugins/nessus/376801",
-   "published": "Fri, 06 Nov 2026 00:00:00 GMT"
+   "id": "377574",
+   "title": "Rocky Linux 8 [CIQ] Security Update: tesseract / tesseract-debuginfo / tesseract-debugsource / etc Multiple Vulnerabilities (crlsa-2026_95725)",
+   "link": "https://www.tenable.com/plugins/nessus/377574",
+   "published": "Sun, 08 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "376800",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-120421",
-   "link": "https://www.tenable.com/plugins/nessus/376800",
-   "published": "Fri, 06 Nov 2026 00:00:00 GMT"
+   "id": "377573",
+   "title": "Fedora 45 : python3.12 (2026-5f99243da4)",
+   "link": "https://www.tenable.com/plugins/nessus/377573",
+   "published": "Sun, 08 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "376799",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-122127",
-   "link": "https://www.tenable.com/plugins/nessus/376799",
-   "published": "Fri, 06 Nov 2026 00:00:00 GMT"
+   "id": "377572",
+   "title": "Fedora 44 : pcre2 (2026-450395b11f)",
+   "link": "https://www.tenable.com/plugins/nessus/377572",
+   "published": "Sun, 08 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "376798",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123036",
-   "link": "https://www.tenable.com/plugins/nessus/376798",
-   "published": "Fri, 06 Nov 2026 00:00:00 GMT"
+   "id": "377571",
+   "title": "Fedora 45 : rsync (2026-30581e33eb)",
+   "link": "https://www.tenable.com/plugins/nessus/377571",
+   "published": "Sun, 08 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "376797",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-103582",
-   "link": "https://www.tenable.com/plugins/nessus/376797",
-   "published": "Fri, 06 Nov 2026 00:00:00 GMT"
+   "id": "377570",
+   "title": "Fedora 44 : composer (2026-0fac5fe7fe)",
+   "link": "https://www.tenable.com/plugins/nessus/377570",
+   "published": "Sun, 08 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "376796",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-121968",
-   "link": "https://www.tenable.com/plugins/nessus/376796",
-   "published": "Fri, 06 Nov 2026 00:00:00 GMT"
+   "id": "377569",
+   "title": "Fedora 43 : python-boto3 / python-botocore / python-s3transfer (2026-1f40f6b868)",
+   "link": "https://www.tenable.com/plugins/nessus/377569",
+   "published": "Sun, 08 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "376795",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-122052",
-   "link": "https://www.tenable.com/plugins/nessus/376795",
-   "published": "Fri, 06 Nov 2026 00:00:00 GMT"
+   "id": "377568",
+   "title": "Fedora 44 : fasterxml-oss-parent / jackson-annotations / jackson-bom / etc (2026-b7ad391dd5)",
+   "link": "https://www.tenable.com/plugins/nessus/377568",
+   "published": "Sun, 08 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "376794",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-122006",
-   "link": "https://www.tenable.com/plugins/nessus/376794",
-   "published": "Fri, 06 Nov 2026 00:00:00 GMT"
+   "id": "377567",
+   "title": "Fedora 45 : rccl (2026-5b6559d7c1)",
+   "link": "https://www.tenable.com/plugins/nessus/377567",
+   "published": "Sun, 08 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "376793",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-108500",
-   "link": "https://www.tenable.com/plugins/nessus/376793",
-   "published": "Fri, 06 Nov 2026 00:00:00 GMT"
+   "id": "377566",
+   "title": "Fedora 44 : rccl (2026-e85939a5f8)",
+   "link": "https://www.tenable.com/plugins/nessus/377566",
+   "published": "Sun, 08 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "376792",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-100302",
-   "link": "https://www.tenable.com/plugins/nessus/376792",
-   "published": "Fri, 06 Nov 2026 00:00:00 GMT"
+   "id": "377565",
+   "title": "Fedora 45 : luksmeta (2026-a00abaf169)",
+   "link": "https://www.tenable.com/plugins/nessus/377565",
+   "published": "Sun, 08 Nov 2026 00:00:00 GMT"
   }
  ],
- "_updated": "2026-11-06T14:53:12Z"
+ "_updated": "2026-11-09T17:18:06Z"
 }

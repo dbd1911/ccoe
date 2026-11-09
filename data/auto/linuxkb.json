@@ -2,183 +2,78 @@
  "source": "Ubuntu Security Notices + Red Hat Security Data API",
  "ubuntu_url": "https://ubuntu.com/security/notices",
  "redhat_url": "https://access.redhat.com/security/security-updates/security-advisories",
- "ubuntu": [
-  {
-   "id": "USN-9003-1",
-   "title": "Linux kernel (NVIDIA) vulnerabilities",
-   "published": "2026-11-06",
-   "cves": [
-    "CVE-2026-72154",
-    "CVE-2026-80602",
-    "CVE-2026-68357",
-    "CVE-2026-72236",
-    "CVE-2026-74352",
-    "CVE-2026-72194"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-9003-1"
-  },
-  {
-   "id": "USN-9002-1",
-   "title": "Linux kernel (NVIDIA Tegra) vulnerabilities",
-   "published": "2026-11-06",
-   "cves": [
-    "CVE-2026-89669",
-    "CVE-2026-89477",
-    "CVE-2026-63896",
-    "CVE-2026-64305",
-    "CVE-2026-89487",
-    "CVE-2026-89526"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-9002-1"
-  },
-  {
-   "id": "USN-9001-1",
-   "title": "ca-certificates update",
-   "published": "2026-11-05",
-   "cves": [],
-   "url": "https://ubuntu.com/security/notices/USN-9001-1"
-  },
-  {
-   "id": "USN-8955-2",
-   "title": "nginx vulnerabilities",
-   "published": "2026-11-05",
-   "cves": [
-    "CVE-2026-97205",
-    "CVE-2026-42533",
-    "CVE-2026-93479",
-    "CVE-2026-15176"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8955-2"
-  },
-  {
-   "id": "USN-7230-3",
-   "title": "FRR regression",
-   "published": "2026-11-05",
-   "cves": [
-    "CVE-2024-55553"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-7230-3"
-  },
-  {
-   "id": "USN-8972-2",
-   "title": "HAProxy regression",
-   "published": "2026-11-05",
-   "cves": [],
-   "url": "https://ubuntu.com/security/notices/USN-8972-2"
-  },
-  {
-   "id": "USN-9000-1",
-   "title": "Twisted vulnerability",
-   "published": "2026-11-04",
-   "cves": [
-    "CVE-2026-106454"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-9000-1"
-  },
-  {
-   "id": "USN-8999-1",
-   "title": "Pillow vulnerabilities",
-   "published": "2026-11-04",
-   "cves": [
-    "CVE-2026-54060",
-    "CVE-2026-54059",
-    "CVE-2026-59200",
-    "CVE-2026-59203",
-    "CVE-2026-54058",
-    "CVE-2026-59197"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8999-1"
-  },
-  {
-   "id": "USN-8998-1",
-   "title": "Squid vulnerability",
-   "published": "2026-11-04",
-   "cves": [
-    "CVE-2026-61642"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8998-1"
-  },
-  {
-   "id": "USN-8997-1",
-   "title": "Net-SNMP vulnerability",
-   "published": "2026-11-04",
-   "cves": [
-    "CVE-2026-89147"
-   ],
-   "url": "https://ubuntu.com/security/notices/USN-8997-1"
-  }
- ],
+ "ubuntu": [],
  "redhat": [
   {
-   "cve": "CVE-2026-121820",
+   "cve": "CVE-2026-99284",
    "severity": "important",
-   "public_date": "2026-11-06",
-   "description": "com.linecorp.armeria/armeria-saml: armeria-saml: Denial of Service via decompression of untrusted SAML messages",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-121820"
+   "public_date": "2026-11-07",
+   "description": "kernel: kernel: privilege escalation via missing shared fragment flag in skb_zerocopy",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-99284"
   },
   {
-   "cve": "CVE-2026-121819",
-   "severity": "moderate",
-   "public_date": "2026-11-06",
-   "description": "com.linecorp.armeria/armeria-xds: armeria-xds: Information disclosure via unresolved symbolic links in DataSourcePolicy",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-121819"
-  },
-  {
-   "cve": "CVE-2026-88799",
-   "severity": "important",
-   "public_date": "2026-11-06",
-   "description": "mdjm-event-management: mobile-events-manager: MDJM Event Management and Mobile Events Manager: Privilege escalation via missing authorization check in profile updates",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-88799"
-  },
-  {
-   "cve": "CVE-2026-77299",
-   "severity": "important",
-   "public_date": "2026-11-06",
-   "description": "github.com/dlclark/regexp2: regexp2: Denial of Service via unbounded memory allocation during pattern matching",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-77299"
-  },
-  {
-   "cve": "CVE-2026-85068",
+   "cve": "CVE-2026-99283",
    "severity": "low",
-   "public_date": "2026-11-05",
-   "description": "nut: nut: Information disclosure via uninitialized stack memory in blazer_usb driver",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-85068"
+   "public_date": "2026-11-07",
+   "description": "kernel: kernel: Denial of Service via premature connection tracking expiration on TCP RST packets",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-99283"
   },
   {
-   "cve": "CVE-2026-92698",
-   "severity": "important",
-   "public_date": "2026-11-05",
-   "description": "fastnetmon: fastnetmon: Denial of Service via crafted sFlow packet",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-92698"
+   "cve": "CVE-2026-99279",
+   "severity": "moderate",
+   "public_date": "2026-11-07",
+   "description": "kernel: kernel: ksmbd: Denial of Service via unreclaimed expired sessions",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-99279"
   },
   {
-   "cve": "CVE-2026-92697",
-   "severity": "important",
-   "public_date": "2026-11-05",
-   "description": "fastnetmon: fastnetmon: Denial of Service via crafted NetFlow packets",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-92697"
+   "cve": "CVE-2026-99282",
+   "severity": "moderate",
+   "public_date": "2026-11-07",
+   "description": "kernel: kernel: Denial of Service via use-after-free in sch_teql",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-99282"
   },
   {
-   "cve": "CVE-2026-92693",
+   "cve": "CVE-2026-99281",
    "severity": "important",
-   "public_date": "2026-11-05",
-   "description": "fastnetmon: FastNetMon: Denial of Service via crafted IPv6 packet header",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-92693"
+   "public_date": "2026-11-07",
+   "description": "kernel: kernel: Unauthorized network device access via missing permission checks on ownerless TUN/TAP devices",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-99281"
   },
   {
-   "cve": "CVE-2026-93424",
-   "severity": "important",
-   "public_date": "2026-11-05",
-   "description": "fastnetmon: FastNetMon: Denial of Service via race condition in NetFlow template processing",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-93424"
+   "cve": "CVE-2026-99280",
+   "severity": "moderate",
+   "public_date": "2026-11-07",
+   "description": "kernel: kernel: Denial of Service via improper session cleanup in ksmbd",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-99280"
   },
   {
-   "cve": "CVE-2026-92695",
-   "severity": "important",
-   "public_date": "2026-11-05",
-   "description": "fastnetmon: fastnetmon: Denial of Service via out-of-bounds read during packet parsing",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-92695"
+   "cve": "CVE-2026-99275",
+   "severity": "moderate",
+   "public_date": "2026-11-07",
+   "description": "kernel: kernel: Information disclosure via crafted SMB session setup responses",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-99275"
+  },
+  {
+   "cve": "CVE-2026-99278",
+   "severity": "moderate",
+   "public_date": "2026-11-07",
+   "description": "kernel: kernel: ksmbd: Denial of Service via unbounded sessions per connection",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-99278"
+  },
+  {
+   "cve": "CVE-2026-99276",
+   "severity": "moderate",
+   "public_date": "2026-11-07",
+   "description": "kernel: kernel: Denial of Service in ksmbd via deadlock during session cleanup",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-99276"
+  },
+  {
+   "cve": "CVE-2026-99277",
+   "severity": "moderate",
+   "public_date": "2026-11-07",
+   "description": "kernel: kernel: ksmbd: Denial of Service via use-after-free in session channel handling",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-99277"
   }
  ],
- "_updated": "2026-11-06T14:53:12Z"
+ "_updated": "2026-11-09T17:18:06Z"
 }
