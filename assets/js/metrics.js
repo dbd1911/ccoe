@@ -10,7 +10,7 @@ function validate(d){
  const seen=new Set();
  for(const s of d.snapshots){
   if(!date(s.reportingDate)||seen.has(s.reportingDate))throw Error('Reporting dates must be valid and unique');seen.add(s.reportingDate);
-  for(const [obj,allowed] of [[s,['reportingDate','portfolio','poam','workforce','systems']],[s.portfolio,['activeSystems','currentAuthorizations','expiredAuthorizations','assessmentQueue','highRiskSystems','authorizationDatesComplete']],[s.poam,['totalOpen','overdue','dueWithin30Days','systemCountsComplete','bySeverity']],[s.workforce,['systemsPerIsso','assessorSaturationPercent','qualified8140Percent','firstPassAcceptancePercent']]]){
+  for(const [obj,allowed] of [[s,['reportingDate','portfolio','poam','workforce','systems','enterprise','cyberTaskOrders']],[s.portfolio,['activeSystems','currentAuthorizations','expiredAuthorizations','assessmentQueue','highRiskSystems','authorizationDatesComplete']],[s.poam,['totalOpen','overdue','dueWithin30Days','systemCountsComplete','bySeverity']],[s.workforce,['systemsPerIsso','assessorSaturationPercent','qualified8140Percent','firstPassAcceptancePercent']]]){
    if(!obj||Object.keys(obj).some(k=>!allowed.includes(k)))throw Error('Unsupported summary field');
   }
   if(!Array.isArray(s.systems)||!s.poam.bySeverity||Object.keys(s.poam.bySeverity).some(k=>!['CAT I','CAT II','CAT III'].includes(k))||typeof s.poam.systemCountsComplete!=='boolean'||typeof s.portfolio.authorizationDatesComplete!=='boolean')throw Error('Invalid completeness flags or severity summary');
@@ -31,7 +31,8 @@ const fill=(sel,html)=>document.querySelectorAll(sel).forEach(e=>e.innerHTML=htm
 const table=(headers,rows)=>'<div style="overflow-x:auto"><table><thead><tr>'+headers.map(h=>'<th>'+esc(h)+'</th>').join('')+'</tr></thead><tbody>'+rows.map(row=>'<tr>'+row.map(v=>'<td>'+esc(v)+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
 async function hydrate(){try{
  const response=await fetch('data/manual/metrics.json',{cache:'no-store'});if(!response.ok)throw Error('Metrics unavailable');
- const snapshots=validate(await response.json());if(!snapshots.length)return;const s=snapshots.at(-1),previous=snapshots.at(-2),p=s.portfolio,delta=change(s,previous);
+ const snapshots=validate(await response.json());if(!snapshots.length)return;const s=snapshots.at(-1),previous=snapshots.at(-2),e=s.enterprise||{},a=e.authorizationStatus||{},p=Object.assign({},s.portfolio),delta=change(s,previous);
+ if(p.activeSystems===null&&known(e.totalSystems))p.activeSystems=e.totalSystems;if(p.currentAuthorizations===null&&known(a.Valid))p.currentAuthorizations=a.Valid;if(p.expiredAuthorizations===null&&known(a.Expired))p.expiredAuthorizations=a.Expired;
  fill('[data-metrics-date]','As of '+esc(s.reportingDate));
  const exp=s.systems.filter(r=>r.atoExpiration).map(r=>({...r,days:Math.round((Date.parse(r.atoExpiration)-Date.parse(s.reportingDate))/86400000)})).sort((a,b)=>a.days-b.days);
  const soon=exp.filter(r=>r.days>=0&&r.days<=60).length;

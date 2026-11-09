@@ -20,7 +20,7 @@ already in each page acts as the fallback if a fetch ever fails.
 
 | File | Drives | Typical edit |
 |---|---|---|
-| `metrics.json` | Home page summary, metrics snapshot, authorization status, POA&M severity — plus the dashboard on `tools-dashboards.html` and the leadership tiles on `governance.html` | Append weekly snapshots |
+| `metrics.json` | Home page hero numbers and "Portfolio Health at a Glance" (`enterprise` block); the full enterprise metrics and Cyber Task Order dashboard on `rmf-operations.html` (`enterprise`, `cyberTaskOrders`); plus the dashboard on `tools-dashboards.html` and the leadership tiles on `governance.html` | Append weekly snapshots. Preview the layout with `?demo=1` |
 | `ticker.json` | Home page CYBER ALERTS ticker | Add/remove alert lines. With `"auto_kev_item": true` the newest CISA KEV entry is inserted automatically as the first item |
 | `poam.json` | Retired; no finding records are published | Leave empty |
 | `calendar.json` | Month grid events, hard milestones (with `.ics` downloads) on `assessment-calendar.html` (ATO dates come from metrics.json) | Add events as `"YYYY-MM-DD": [["e-type","Label"]]`. Event types: `e-ato`, `e-asmt`, `e-mil`, `e-trn`, `e-blk` |

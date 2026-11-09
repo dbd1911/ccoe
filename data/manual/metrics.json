@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "_instructions": "Append a dated snapshot each reporting period. null means unavailable; 0 is confirmed zero. Only approved summary data belongs here. See docs/METRICS-UPDATE.md.",
+  "_instructions": "Append a dated snapshot each reporting period. null means unavailable; 0 is confirmed zero. 'enterprise' drives the home-page highlights and the RMF Operations enterprise metrics; 'cyberTaskOrders' drives the CTO dashboard. Preview the layout with ?demo=1 (uses metrics.sample.json). See docs/METRICS-UPDATE.md.",
   "snapshots": [
     {
       "reportingDate": "2026-10-29",
@@ -29,7 +29,67 @@
         "qualified8140Percent": null,
         "firstPassAcceptancePercent": null
       },
-      "systems": []
+      "systems": [],
+      "enterprise": {
+        "totalSystems": null,
+        "workflowsInQueue": {
+          "NIPR": null,
+          "SIPR": null
+        },
+        "workflowsByStage": {
+          "ISO/PM": null,
+          "ISSM": null,
+          "AO": null
+        },
+        "authorizationStatus": {
+          "Not Authorized": null,
+          "Valid": null,
+          "Expired": null
+        },
+        "expiringAuthorizations": {
+          "0-60": null,
+          "61-90": null,
+          "91-120": null,
+          "121-150": null,
+          "151-180": null
+        },
+        "systemsByOverallRisk": {
+          "Unassigned": null,
+          "Very Low": null,
+          "Low": null,
+          "Moderate": null,
+          "High": null,
+          "Very High": null
+        },
+        "controlCompliance": {
+          "Compliant": null,
+          "Non-Compliant": null,
+          "Not Applicable": null,
+          "Unassessed": null
+        },
+        "vulnerabilityTrend": [],
+        "expiredPoams": {
+          "1-89": null,
+          ">=90": null
+        },
+        "expiringPoams": {
+          "0-30": null,
+          "31-60": null,
+          "61-90": null
+        },
+        "overduePoamLeaderboard": []
+      },
+      "cyberTaskOrders": {
+        "slaTargetPercent": 90,
+        "status": {
+          "open": null,
+          "late": null,
+          "completed": null
+        },
+        "completedOnTime": null,
+        "monthly": [],
+        "lateTasks": []
+      }
     }
   ]
 }

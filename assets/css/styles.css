@@ -737,3 +737,43 @@ details.faq-item .faq-body { padding: 0 18px 16px; color: var(--ink-soft); font-
   text-align: center; padding: 40px 20px; color: var(--ink-mute);
   font-family: var(--mono); font-size: 14px;
 }
+
+/* ============ ENTERPRISE METRICS & CTO DASHBOARD ============
+   Rendered by assets/js/enterprise-metrics.js from data/manual/metrics.json */
+.ent-panel { min-width: 0; }
+.ent-panel h3 { font-size: 16px; margin-bottom: 4px; }
+.ent-sub { color: var(--ink-mute); font-size: 13px; margin-bottom: 14px; }
+.ent-sub .badge { margin-left: 6px; vertical-align: 1px; }
+.ent-na { font-style: italic; }
+.ent-group { font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-mute); margin: 30px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+.ent-tight { gap: 12px; }
+.ent-uneven { grid-template-columns: 1fr 1.5fr; }
+@media (max-width: 980px) { .ent-uneven { grid-template-columns: 1fr; } }
+.ent-donut { width: 160px; height: 160px; flex: none; }
+.ent-donut-n { font-family: var(--display); font-size: 28px; font-weight: 600; fill: var(--ink); }
+.ent-donut-l { font-family: var(--mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; fill: var(--ink-mute); }
+.ent-chart { width: 100%; height: auto; }
+.ent-chart rect:hover { opacity: .8; }
+.ent-grid { stroke: var(--line); stroke-width: 1; }
+.ent-axis { font-family: var(--mono); font-size: 10.5px; fill: var(--ink-mute); }
+.ent-legend-row { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-bottom: 6px; }
+.ent-legend-row li { margin-bottom: 0; }
+.ent-details { margin-top: 10px; font-size: 13px; }
+.ent-details summary { cursor: pointer; font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--info); margin-bottom: 8px; }
+.ent-leader { list-style: none; }
+.ent-leader li { display: grid; grid-template-columns: 26px minmax(110px, 2fr) 1fr 40px; gap: 10px; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 13.5px; }
+.ent-leader li:last-child { border-bottom: none; }
+.ent-leader .rk { font-family: var(--display); font-size: 18px; font-weight: 600; color: var(--gold-deep); text-align: center; }
+.ent-leader .nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ent-leader .bar-track { height: 10px; }
+.ent-leader .v { font-family: var(--mono); font-size: 12px; text-align: right; }
+.ent-callouts .metric { border-top-width: 4px; padding: 22px 22px 18px; }
+.ent-callouts .metric .n { font-size: 64px; }
+.ent-callouts .metric.m-crit { border-top-color: var(--crit); background: linear-gradient(var(--crit-tint), var(--panel) 70%); }
+.ent-callouts .metric.m-ok { border-top-color: var(--ok); }
+.ent-callouts .metric.m-warn { border-top-color: var(--warn); }
+table.ent-aging th[data-key] { cursor: pointer; user-select: none; }
+table.ent-aging td.mono { white-space: nowrap; }
+table.ent-aging th[data-key]::after { content: ' ↕'; opacity: .4; }
+table.ent-aging th[data-dir="asc"]::after { content: ' ▲'; opacity: 1; }
+table.ent-aging th[data-dir="desc"]::after { content: ' ▼'; opacity: 1; }

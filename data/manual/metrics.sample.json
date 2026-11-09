@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 1,
+  "_instructions": "ILLUSTRATIVE SAMPLE DATA ONLY \u2014 not real systems or task orders. Shown when a page is opened with ?demo=1. Real reporting goes in metrics.json.",
+  "snapshots": [
+    {
+      "reportingDate": "2026-11-06",
+      "portfolio": {
+        "activeSystems": null,
+        "currentAuthorizations": null,
+        "expiredAuthorizations": null,
+        "assessmentQueue": null,
+        "highRiskSystems": null,
+        "authorizationDatesComplete": false
+      },
+      "poam": {
+        "totalOpen": null,
+        "overdue": null,
+        "dueWithin30Days": null,
+        "systemCountsComplete": false,
+        "bySeverity": {
+          "CAT I": null,
+          "CAT II": null,
+          "CAT III": null
+        }
+      },
+      "workforce": {
+        "systemsPerIsso": null,
+        "assessorSaturationPercent": null,
+        "qualified8140Percent": null,
+        "firstPassAcceptancePercent": null
+      },
+      "systems": [],
+      "enterprise": {
+        "totalSystems": 142,
+        "workflowsInQueue": {
+          "NIPR": 37,
+          "SIPR": 11
+        },
+        "workflowsByStage": {
+          "ISO/PM": 19,
+          "ISSM": 21,
+          "AO": 8
+        },
+        "authorizationStatus": {
+          "Not Authorized": 9,
+          "Valid": 121,
+          "Expired": 12
+        },
+        "expiringAuthorizations": {
+          "0-60": 4,
+          "61-90": 3,
+          "91-120": 6,
+          "121-150": 5,
+          "151-180": 7
+        },
+        "systemsByOverallRisk": {
+          "Unassigned": 7,
+          "Very Low": 18,
+          "Low": 49,
+          "Moderate": 44,
+          "High": 19,
+          "Very High": 5
+        },
+        "controlCompliance": {
+          "Compliant": 18240,
+          "Non-Compliant": 2115,
+          "Not Applicable": 4630,
+          "Unassessed": 1385
+        },
+        "vulnerabilityTrend": [
+          {
+            "month": "2025-12",
+            "Low": 410,
+            "Moderate": 648,
+            "High": 190,
+            "Very High": 46
+          },
+          {
+            "month": "2026-01",
+            "Low": 404,
+            "Moderate": 628,
+            "High": 183,
+            "Very High": 43
+          },
+          {
+            "month": "2026-02",
+            "Low": 398,
+            "Moderate": 616,
+            "High": 176,
+            "Very High": 40
+          },
+          {
+            "month": "2026-03",
+            "Low": 392,
+            "Moderate": 612,
+            "High": 169,
+            "Very High": 37
+          },
+          {
+            "month": "2026-04",
+            "Low": 386,
+            "Moderate": 592,
+            "High": 162,
+            "Very High": 34
+          },
+          {
+            "month": "2026-05",
+            "Low": 380,
+            "Moderate": 580,
+            "High": 155,
+            "Very High": 31
+          },
+          {
+            "month": "2026-06",
+            "Low": 374,
+            "Moderate": 576,
+            "High": 148,
+            "Very High": 32
+          },
+          {
+            "month": "2026-07",
+            "Low": 368,
+            "Moderate": 556,
+            "High": 141,
+            "Very High": 25
+          },
+          {
+            "month": "2026-08",
+            "Low": 362,
+            "Moderate": 544,
+            "High": 134,
+            "Very High": 22
+          },
+          {
+            "month": "2026-09",
+            "Low": 356,
+            "Moderate": 540,
+            "High": 127,
+            "Very High": 19
+          },
+          {
+            "month": "2026-10",
+            "Low": 350,
+            "Moderate": 520,
+            "High": 120,
+            "Very High": 16
+          },
+          {
+            "month": "2026-11",
+            "Low": 344,
+            "Moderate": 508,
+            "High": 113,
+            "Very High": 13
+          }
+        ],
+        "expiredPoams": {
+          "1-89": 214,
+          ">=90": 87
+        },
+        "expiringPoams": {
+          "0-30": 96,
+          "31-60": 131,
+          "61-90": 158
+        },
+        "overduePoamLeaderboard": [
+          {
+            "system": "Sample System Alpha",
+            "overdue": 41
+          },
+          {
+            "system": "Sample System Bravo",
+            "overdue": 33
+          },
+          {
+            "system": "Sample System Charlie",
+            "overdue": 27
+          },
+          {
+            "system": "Sample System Delta",
+            "overdue": 19
+          },
+          {
+            "system": "Sample System Echo",
+            "overdue": 14
+          },
+          {
+            "system": "Sample System Foxtrot",
+            "overdue": 11
+          },
+          {
+            "system": "Sample System Golf",
+            "overdue": 9
+          },
+          {
+            "system": "Sample System Hotel",
+            "overdue": 6
+          }
+        ]
+      },
+      "cyberTaskOrders": {
+        "slaTargetPercent": 90,
+        "status": {
+          "open": 11,
+          "late": 3,
+          "completed": 271
+        },
+        "completedOnTime": 238,
+        "monthly": [
+          {
+            "month": "2025-12",
+            "open": 14,
+            "late": 3,
+            "completed": 22,
+            "assigned": 24
+          },
+          {
+            "month": "2026-01",
+            "open": 15,
+            "late": 4,
+            "completed": 21,
+            "assigned": 25
+          },
+          {
+            "month": "2026-02",
+            "open": 13,
+            "late": 5,
+            "completed": 24,
+            "assigned": 23
+          },
+          {
+            "month": "2026-03",
+            "open": 16,
+            "late": 6,
+            "completed": 20,
+            "assigned": 24
+          },
+          {
+            "month": "2026-04",
+            "open": 17,
+            "late": 7,
+            "completed": 19,
+            "assigned": 22
+          },
+          {
+            "month": "2026-05",
+            "open": 15,
+            "late": 8,
+            "completed": 23,
+            "assigned": 26
+          },
+          {
+            "month": "2026-06",
+            "open": 14,
+            "late": 6,
+            "completed": 25,
+            "assigned": 22
+          },
+          {
+            "month": "2026-07",
+            "open": 16,
+            "late": 5,
+            "completed": 24,
+            "assigned": 23
+          },
+          {
+            "month": "2026-08",
+            "open": 15,
+            "late": 4,
+            "completed": 26,
+            "assigned": 24
+          },
+          {
+            "month": "2026-09",
+            "open": 13,
+            "late": 4,
+            "completed": 27,
+            "assigned": 22
+          },
+          {
+            "month": "2026-10",
+            "open": 12,
+            "late": 3,
+            "completed": 28,
+            "assigned": 23
+          },
+          {
+            "month": "2026-11",
+            "open": 11,
+            "late": 3,
+            "completed": 12,
+            "assigned": 9
+          }
+        ],
+        "lateTasks": [
+          {
+            "id": "SAMPLE-CTO-01",
+            "title": "Illustrative critical patch directive",
+            "severity": "Critical",
+            "dueDate": "2026-09-22"
+          },
+          {
+            "id": "SAMPLE-CTO-02",
+            "title": "Illustrative configuration hardening order",
+            "severity": "High",
+            "dueDate": "2026-10-17"
+          },
+          {
+            "id": "SAMPLE-CTO-03",
+            "title": "Illustrative reporting requirement",
+            "severity": "Medium",
+            "dueDate": "2026-11-04"
+          }
+        ]
+      }
+    }
+  ]
+}
