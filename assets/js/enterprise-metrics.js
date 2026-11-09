@@ -436,7 +436,7 @@
       var s = snaps[snaps.length - 1];
       if (!s) return;
       var e = s.enterprise || {}, c = s.cyberTaskOrders || {};
-      fill('[data-ent-date]', (demo ? '<span class="badge b-warn">Illustrative sample data — not real</span> ' : '') + 'As of ' + esc(s.reportingDate));
+      fill('[data-ent-date]', (demo || data.sampleData === true ? '<span class="badge b-warn">Illustrative sample data — not real</span> ' : '') + 'As of ' + esc(s.reportingDate));
       fill('[data-ent-hero]', heroBand(e));
       fill('[data-ent-highlights]', highlights(e));
       fill('[data-ent-dashboard]', dashboard(e));

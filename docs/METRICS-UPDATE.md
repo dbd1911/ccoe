@@ -4,7 +4,7 @@ Edit `data/manual/metrics.json` through your existing repository login. There is
 
 Keep every prior snapshot. Copy the last snapshot, append it to `snapshots`, change `reportingDate` to the report's actual date, and replace all values for that date. Publish through the normal GitLab pipeline. Refreshing a page reads the published file; editing a local file alone does not publish it. Use HTTP hosting, not file://.
 
-The committed initial snapshot deliberately contains unavailable values. Replace that initial empty entry with your first real report. Do not upload operational .mil metrics to a public repository. JSON delivered to a static website can be downloaded by anyone who can access that site.
+The committed `metrics.json` currently contains **illustrative sample data** so you can see the visualizations. `"sampleData": true` puts a "sample data — not real" badge on every metrics page. Before you enter real reporting, delete the `sampleData` line and replace all sample snapshots with your first real report. Do not upload operational .mil metrics to a public repository. JSON delivered to a static website can be downloaded by anyone who can access that site.
 
 ## Fields
 
