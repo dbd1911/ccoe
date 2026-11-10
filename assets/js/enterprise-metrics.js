@@ -8,6 +8,9 @@
      [data-ent-dashboard]   full enterprise metrics (RMF Operations)
      [data-cto-dashboard]   Cyber Task Order KPI/KRI dashboard
      [data-ent-date]        "As of" line
+     [data-expiration-radar]    Assessment Calendar expiration cards
+     [data-throughput-metrics]  Tools & Dashboards performance cards
+     [data-readiness-metrics]   Workforce 8140 readiness cards
    Preview with illustrative data: open the page with ?demo=1
    (reads data/manual/metrics.sample.json — never real data).
    null = not available; 0 = confirmed zero.
@@ -107,9 +110,28 @@
     }
   }
 
+  /* Throughput (Tools & Dashboards) and 8140 readiness (Workforce) fields. */
+  var PERF_KEYS = ['medianCycleTimeDays', 'packageRejectionPercent', 'templateCompliancePercent'];
+  var PERCENT_FIELDS = ['packageRejectionPercent', 'templateCompliancePercent', 'dcwfCodedPercent', 'qualified8140Percent', 'assessorSaturationPercent', 'firstPassAcceptancePercent'];
+  function validatePercents(obj, where) {
+    if (!obj) return;
+    PERCENT_FIELDS.forEach(function (k) { if (known(obj[k]) && obj[k] > 100) fail(where + '.' + k + ' cannot exceed 100'); });
+  }
+  function validatePerformance(p) {
+    if (p === undefined) return;
+    onlyKeys(p, PERF_KEYS, 'performance');
+    PERF_KEYS.forEach(function (k) { count(p[k] === undefined ? null : p[k], 'performance.' + k); });
+    validatePercents(p, 'performance');
+  }
+  function validateWorkforceExtras(w) {
+    if (!w) return;
+    validatePercents(w, 'workforce');
+    if (known(w.inGraceWindowWithIdp) && known(w.inGraceWindow) && w.inGraceWindowWithIdp > w.inGraceWindow) fail('workforce.inGraceWindowWithIdp cannot exceed inGraceWindow');
+  }
+
   function validate(data) {
     if (!data || !Array.isArray(data.snapshots)) fail('Invalid snapshot format');
-    data.snapshots.forEach(function (s) { validateEnterprise(s.enterprise); validateCto(s.cyberTaskOrders); });
+    data.snapshots.forEach(function (s) { validateEnterprise(s.enterprise); validateCto(s.cyberTaskOrders); validatePerformance(s.performance); validateWorkforceExtras(s.workforce); });
     return data;
   }
 
@@ -423,8 +445,59 @@
     render();
   }
 
+  /* Change vs. the previous snapshot that reported the same field.
+     lowerIsBetter flips the green/red coloring. */
+  function trendDelta(snaps, pick, unit, lowerIsBetter) {
+    var cur = pick(snaps[snaps.length - 1]);
+    if (!known(cur)) return null;
+    for (var i = snaps.length - 2; i >= 0; i--) {
+      var prev = pick(snaps[i]);
+      if (!known(prev)) continue;
+      var d = Math.round((cur - prev) * 10) / 10;
+      if (d === 0) return '<span>No change since ' + esc(snaps[i].reportingDate) + '</span>';
+      var good = lowerIsBetter ? d < 0 : d > 0;
+      return '<span style="color:var(--' + (good ? 'ok' : 'crit') + ')">' + (d > 0 ? '▲ ' : '▼ ') + Math.abs(d) + esc(Math.abs(d) === 1 ? unit.replace(/s$/, '') : unit) + ' since ' + esc(snaps[i].reportingDate) + '</span>';
+    }
+    return null;
+  }
+  var dec = function (v) { return known(v) ? (Math.round(v * 10) / 10).toLocaleString() : 'N/A'; };
+  var small = function (t) { return '<span style="font-size:18px">' + t + '</span>'; };
+
+  /* Assessment Calendar — Expiration Radar (same buckets as enterprise.expiringAuthorizations). */
+  function expirationRadar(e) {
+    var x = e.expiringAuthorizations || {};
+    var add = function (a, b) { return known(x[a]) && known(x[b]) ? x[a] + x[b] : null; };
+    var card = function (v, label, cls, note) { return metric(label, fmt(v), known(v) ? cls : '', note); };
+    var soon = x['0-60'];
+    return card(add('121-150', '151-180'), 'Expiring 121–180 days', 'm-info', 'Strategy confirmation due') +
+      card(x['91-120'], 'Expiring 91–120 days', 'm-warn', 'Assessment must be scheduled') +
+      card(x['61-90'], 'Expiring 61–90 days', 'm-warn', 'Package in routing — weekly tracking') +
+      card(soon, 'Expiring 0–60 days', soon === 0 ? 'm-ok' : 'm-crit', soon === 0 ? '<span style="color:var(--ok)">▲ Clean — keep it that way</span>' : 'Daily tracking — escalate blockers');
+  }
+
+  /* Tools & Dashboards — Metrics & Performance Management Center. */
+  function throughput(snaps) {
+    var s = snaps[snaps.length - 1], p = s.performance || {}, w = s.workforce || {};
+    var ratio = w.systemsPerIsso, target = w.systemsPerIssoTarget;
+    var over = known(ratio) && known(target) && ratio > target;
+    return metric('Median package cycle time', known(p.medianCycleTimeDays) ? dec(p.medianCycleTimeDays) + small('d') : 'N/A', '', trendDelta(snaps, function (r) { return (r.performance || {}).medianCycleTimeDays; }, ' days', true) || 'Submission to authorization decision') +
+      metric('Package rejection rate', known(p.packageRejectionPercent) ? dec(p.packageRejectionPercent) + '%' : 'N/A', '', trendDelta(snaps, function (r) { return (r.performance || {}).packageRejectionPercent; }, ' pts', true) || 'Packages returned at review') +
+      metric('Template compliance', known(p.templateCompliancePercent) ? dec(p.templateCompliancePercent) + '%' : 'N/A', '', trendDelta(snaps, function (r) { return (r.performance || {}).templateCompliancePercent; }, ' pts', false) || 'Gold Standard usage tracked per package') +
+      metric('Avg systems per ISSO', dec(ratio), over ? 'm-warn' : (known(ratio) && known(target) ? 'm-ok' : ''), known(target) ? 'Target ≤ ' + target.toFixed(1) + (over ? ' — load balancing in progress' : ' — within target') : (trendDelta(snaps, function (r) { return (r.workforce || {}).systemsPerIsso; }, '', true) || ''));
+  }
+
+  /* Workforce — DoDI 8140.02 Qualification Posture. */
+  function readiness(snaps) {
+    var w = snaps[snaps.length - 1].workforce || {};
+    var grace = w.inGraceWindow, idp = w.inGraceWindowWithIdp;
+    return metric('Billets DCWF-coded', known(w.dcwfCodedPercent) ? dec(w.dcwfCodedPercent) + '%' : 'N/A', '', trendDelta(snaps, function (r) { return (r.workforce || {}).dcwfCodedPercent; }, ' pts', false) || 'Share of cyber billets coded') +
+      metric('Foundational qualified', known(w.qualified8140Percent) ? dec(w.qualified8140Percent) + '%' : 'N/A', '', trendDelta(snaps, function (r) { return (r.workforce || {}).qualified8140Percent; }, ' pts', false) || 'Personnel meeting foundational qualification') +
+      metric('In 9-month grace window', fmt(grace), known(grace) && grace > 0 ? 'm-warn' : '', known(grace) && known(idp) ? (idp === grace ? 'IDPs on file for all ' + fmt(grace) : '<span style="color:var(--crit)">IDPs on file for ' + fmt(idp) + ' of ' + fmt(grace) + '</span>') : 'Working toward qualification') +
+      metric('Active IDPs portfolio-wide', fmt(w.activeIdps), '', trendDelta(snaps, function (r) { return (r.workforce || {}).activeIdps; }, '', false) || 'Reviewed semi-annually');
+  }
+
   async function hydrate() {
-    var targets = '[data-ent-hero],[data-ent-highlights],[data-ent-dashboard],[data-cto-dashboard]';
+    var targets = '[data-ent-hero],[data-ent-highlights],[data-ent-dashboard],[data-cto-dashboard],[data-expiration-radar],[data-throughput-metrics],[data-readiness-metrics]';
     if (!document.querySelector(targets)) return;
     var demo = /[?&]demo=1\b/.test(location.search);
     var src = demo ? 'data/manual/metrics.sample.json' : 'data/manual/metrics.json';
@@ -440,6 +513,9 @@
       fill('[data-ent-hero]', heroBand(e));
       fill('[data-ent-highlights]', highlights(e));
       fill('[data-ent-dashboard]', dashboard(e));
+      fill('[data-expiration-radar]', expirationRadar(e));
+      fill('[data-throughput-metrics]', throughput(snaps));
+      fill('[data-readiness-metrics]', readiness(snaps));
       document.querySelectorAll('[data-cto-dashboard]').forEach(function (el) {
         el.innerHTML = ctoDashboard(c, s.reportingDate);
         wireAgingTable(el, ctoKpis(c, s.reportingDate).lateTasks);
@@ -448,6 +524,7 @@
     } catch (err) {
       console.error(err);
       fill('[data-ent-date]', 'Reporting data unavailable — check the metrics file.');
+      fill('[data-expiration-radar],[data-throughput-metrics],[data-readiness-metrics]', '<p class="dim">Reporting data unavailable — check the metrics file.</p>');
     }
   }
   document.addEventListener('DOMContentLoaded', hydrate);

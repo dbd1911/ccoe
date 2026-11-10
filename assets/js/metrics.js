@@ -10,7 +10,7 @@ function validate(d){
  const seen=new Set();
  for(const s of d.snapshots){
   if(!date(s.reportingDate)||seen.has(s.reportingDate))throw Error('Reporting dates must be valid and unique');seen.add(s.reportingDate);
-  for(const [obj,allowed] of [[s,['reportingDate','portfolio','poam','workforce','systems','enterprise','cyberTaskOrders']],[s.portfolio,['activeSystems','currentAuthorizations','expiredAuthorizations','assessmentQueue','highRiskSystems','authorizationDatesComplete']],[s.poam,['totalOpen','overdue','dueWithin30Days','systemCountsComplete','bySeverity']],[s.workforce,['systemsPerIsso','assessorSaturationPercent','qualified8140Percent','firstPassAcceptancePercent']]]){
+  for(const [obj,allowed] of [[s,['reportingDate','portfolio','poam','workforce','systems','enterprise','cyberTaskOrders','performance']],[s.portfolio,['activeSystems','currentAuthorizations','expiredAuthorizations','assessmentQueue','highRiskSystems','authorizationDatesComplete']],[s.poam,['totalOpen','overdue','dueWithin30Days','systemCountsComplete','bySeverity']],[s.workforce,['systemsPerIsso','systemsPerIssoTarget','assessorSaturationPercent','qualified8140Percent','firstPassAcceptancePercent','dcwfCodedPercent','inGraceWindow','inGraceWindowWithIdp','activeIdps']]]){
    if(!obj||Object.keys(obj).some(k=>!allowed.includes(k)))throw Error('Unsupported summary field');
   }
   if(!Array.isArray(s.systems)||!s.poam.bySeverity||Object.keys(s.poam.bySeverity).some(k=>!['CAT I','CAT II','CAT III'].includes(k))||typeof s.poam.systemCountsComplete!=='boolean'||typeof s.portfolio.authorizationDatesComplete!=='boolean')throw Error('Invalid completeness flags or severity summary');

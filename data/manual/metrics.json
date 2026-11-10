@@ -25,10 +25,15 @@
         }
       },
       "workforce": {
-        "systemsPerIsso": 3.2,
+        "systemsPerIsso": 3.4,
         "assessorSaturationPercent": 84,
-        "qualified8140Percent": 88,
-        "firstPassAcceptancePercent": 71
+        "qualified8140Percent": 82,
+        "firstPassAcceptancePercent": 71,
+        "systemsPerIssoTarget": 3.0,
+        "dcwfCodedPercent": 88,
+        "inGraceWindow": 13,
+        "inGraceWindowWithIdp": 12,
+        "activeIdps": 35
       },
       "systems": [
         {
@@ -71,7 +76,12 @@
           "atoExpiration": "2027-09-12",
           "openPoam": 8
         }
-      ]
+      ],
+      "performance": {
+        "medianCycleTimeDays": 56,
+        "packageRejectionPercent": 33,
+        "templateCompliancePercent": 85
+      }
     },
     {
       "reportingDate": "2026-10-30",
@@ -95,10 +105,15 @@
         }
       },
       "workforce": {
-        "systemsPerIsso": 3.2,
+        "systemsPerIsso": 3.3,
         "assessorSaturationPercent": 84,
-        "qualified8140Percent": 88,
-        "firstPassAcceptancePercent": 71
+        "qualified8140Percent": 83,
+        "firstPassAcceptancePercent": 71,
+        "systemsPerIssoTarget": 3.0,
+        "dcwfCodedPercent": 89,
+        "inGraceWindow": 12,
+        "inGraceWindowWithIdp": 12,
+        "activeIdps": 36
       },
       "systems": [
         {
@@ -141,7 +156,12 @@
           "atoExpiration": "2027-09-12",
           "openPoam": 8
         }
-      ]
+      ],
+      "performance": {
+        "medianCycleTimeDays": 52,
+        "packageRejectionPercent": 31,
+        "templateCompliancePercent": 86
+      }
     },
     {
       "reportingDate": "2026-11-06",
@@ -167,8 +187,13 @@
       "workforce": {
         "systemsPerIsso": 3.2,
         "assessorSaturationPercent": 84,
-        "qualified8140Percent": 88,
-        "firstPassAcceptancePercent": 71
+        "qualified8140Percent": 84,
+        "firstPassAcceptancePercent": 71,
+        "systemsPerIssoTarget": 3.0,
+        "dcwfCodedPercent": 91,
+        "inGraceWindow": 11,
+        "inGraceWindowWithIdp": 11,
+        "activeIdps": 37
       },
       "systems": [
         {
@@ -493,6 +518,11 @@
             "dueDate": "2026-11-04"
           }
         ]
+      },
+      "performance": {
+        "medianCycleTimeDays": 47,
+        "packageRejectionPercent": 29,
+        "templateCompliancePercent": 88
       }
     }
   ]

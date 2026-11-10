@@ -101,3 +101,13 @@ Navigation, page paths, and `assets/js/main.js` are unchanged. Copy these:
 | `index.html` | Hero band now uses `data-ent-hero`. The "Portfolio Health at a Glance" section body now uses `data-ent-highlights` and `data-ent-date`. Add the `enterprise-metrics.js` script tag |
 | `rmf-operations.html` | New `#enterprise-metrics` and `#cyber-task-orders` sections before Incident Response, jump links under "What do you need to do?", and the script tag |
 | `tests/enterprise-metrics.test.cjs`, `docs/METRICS-UPDATE.md`, `HOW-TO-UPDATE.md` | Tests and field documentation |
+
+### Follow-up: all metric tiles now read from metrics.json
+
+| File | Change |
+|---|---|
+| `assessment-calendar.html` | Expiration Radar's four typed-in tiles replaced by `data-expiration-radar`; add `data-ent-date` and the `enterprise-metrics.js` script tag |
+| `tools-dashboards.html` | "Throughput, Measured" tiles replaced by `data-throughput-metrics`; add the script tag |
+| `workforce.html` | 8140 readiness tiles replaced by `data-readiness-metrics` and `data-ent-date`; add the script tag |
+| `assets/js/enterprise-metrics.js`, `assets/js/metrics.js` | Render and validate the new `performance` block and the added `workforce` fields |
+| `data/manual/metrics.json` | New `performance` block plus `workforce` fields (see `docs/METRICS-UPDATE.md`) |
