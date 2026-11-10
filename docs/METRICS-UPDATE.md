@@ -10,7 +10,14 @@ The committed `metrics.json` currently contains **illustrative sample data** so 
 
 - `portfolio`: active systems, current and expired authorizations, assessment queue, high-risk system count. `authorizationDatesComplete` is true only when every active system is listed with its authorization expiration date.
 - `poam`: `totalOpen`, portfolio-wide `overdue` and `dueWithin30Days`, optional `bySeverity` counts. Due within 30 days excludes already overdue items. Use the report date consistently. Do not enter individual findings, descriptions, IDs, owner names, or per-system overdue counts.
-- `workforce`: optional aggregate workforce measures, in the units named by their keys.
+- `workforce`: aggregate workforce measures, in the units named by their keys.
+  - `systemsPerIsso`, `systemsPerIssoTarget`: Tools & Dashboards "Avg systems per ISSO" tile and its target
+  - `dcwfCodedPercent`, `qualified8140Percent`, `inGraceWindow`, `inGraceWindowWithIdp`, `activeIdps`: the Workforce page's "Qualification Posture at a Glance" tiles (Billets DCWF-coded, Foundational qualified, In 9-month grace window with IDPs on file, Active IDPs)
+  - `assessorSaturationPercent`, `firstPassAcceptancePercent`: Governance workforce table
+- `performance`: Tools & Dashboards "Throughput, Measured" tiles: `medianCycleTimeDays`, `packageRejectionPercent`, `templateCompliancePercent`.
+- The Assessment Calendar "Expiration Radar" tiles come from `enterprise.expiringAuthorizations` (the same numbers as RMF Operations), so the two pages always agree.
+
+Every metric tile on the site now reads from this file. The "▲/▼ since" lines compare with the most recent earlier snapshot that has the same field, so keep earlier snapshots.
 - `systems`: one object per system: `{"name":"Example system","atoExpiration":"2027-01-15","openPoam":12}`. This example is illustrative, not real data. Use `null` for an unavailable date or count.
 - `poam.systemCountsComplete`: true only when all active systems are included and each has a confirmed count. Then open backlog is calculated from their sum; leave `totalOpen` null or supply the identical sum. Otherwise enter the portfolio total separately and the leaderboard is labeled partial.
 

@@ -20,3 +20,10 @@ bad(x=>x.cyberTaskOrders.lateTasks[0].severity='Urgent');
 bad(x=>x.cyberTaskOrders.lateTasks[0].dueDate='10/01/2026');
 bad(x=>x.cyberTaskOrders.slaTargetPercent=120);
 console.log('Enterprise metrics: CTO KPIs, unknown handling and schema guards passed');
+// performance / workforce readiness guards
+{const x=structuredClone(s);x.performance={medianCycleTimeDays:40,packageRejectionPercent:20,templateCompliancePercent:90};x.workforce.inGraceWindow=5;x.workforce.inGraceWindowWithIdp=5;e.validate({snapshots:[x]});m.validate({schemaVersion:1,snapshots:[x]});}
+bad(x=>x.performance={packageRejectionPercent:140});
+bad(x=>x.performance={cycleTime:4});
+bad(x=>{x.workforce.inGraceWindow=3;x.workforce.inGraceWindowWithIdp=4;});
+bad(x=>x.workforce.dcwfCodedPercent=101);
+console.log('Enterprise metrics: throughput and 8140 readiness guards passed');

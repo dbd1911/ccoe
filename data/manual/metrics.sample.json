@@ -24,10 +24,15 @@
         }
       },
       "workforce": {
-        "systemsPerIsso": null,
+        "systemsPerIsso": 3.2,
         "assessorSaturationPercent": null,
-        "qualified8140Percent": null,
-        "firstPassAcceptancePercent": null
+        "qualified8140Percent": 84,
+        "firstPassAcceptancePercent": null,
+        "systemsPerIssoTarget": 3.0,
+        "dcwfCodedPercent": 91,
+        "inGraceWindow": 11,
+        "inGraceWindowWithIdp": 11,
+        "activeIdps": 37
       },
       "systems": [],
       "enterprise": {
@@ -311,6 +316,11 @@
             "dueDate": "2026-11-04"
           }
         ]
+      },
+      "performance": {
+        "medianCycleTimeDays": 47,
+        "packageRejectionPercent": 29,
+        "templateCompliancePercent": 88
       }
     }
   ]

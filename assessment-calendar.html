@@ -23,14 +23,11 @@
   <!-- EXPIRATION RADAR -->
   <section class="section">
     <div class="wrap">
-      <span class="kicker">180-to-30 Day Warning Dashboard</span>
+      <span class="kicker">180-Day Warning Dashboard</span>
       <h2>Expiration Radar</h2>
-      <div class="grid g4">
-        <div class="metric m-info"><div class="n">4</div><div class="l">Expiring 121–180 Days</div><div class="delta">Strategy confirmation due</div></div>
-        <div class="metric m-warn"><div class="n">3</div><div class="l">Expiring 61–120 Days</div><div class="delta">Assessment must be scheduled</div></div>
-        <div class="metric m-crit"><div class="n">2</div><div class="l">Expiring 31–60 Days</div><div class="delta">Package in routing — daily tracking</div></div>
-        <div class="metric m-crit"><div class="n">0</div><div class="l">Expiring ≤ 30 Days</div><div class="delta" style="color:var(--ok)">▲ Clean — keep it that way</div></div>
-      </div>
+      <!-- EXPIRATION RADAR: edit data/manual/metrics.json → "enterprise" → "expiringAuthorizations". -->
+      <p data-ent-date class="mono"></p>
+      <div class="grid g4" data-expiration-radar><p class="dim">No reporting data available yet.</p></div>
       <div class="table-wrap" style="margin-top:18px">
         <table>
           <thead><tr><th>System</th><th>Expiration</th><th>Days from report date</th></tr></thead>
@@ -150,5 +147,6 @@ fetch('data/manual/calendar.json', {cache:'no-cache'}).then(r=>{ if(!r.ok) throw
 }).catch(()=>{ /* JSON unavailable — static content stays */ });
 </script>
 <script src="assets/js/metrics.js" defer></script>
+<script src="assets/js/enterprise-metrics.js" defer></script>
 </body>
 </html>
