@@ -2,8 +2,8 @@
  "source": "CISA Known Exploited Vulnerabilities Catalog",
  "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
  "catalogVersion": "2026.11.09",
- "dateReleased": "2026-11-09T16:16:16.4275Z",
- "total": 1772,
+ "dateReleased": "2026-11-09T19:54:37.4945Z",
+ "total": 1773,
  "recent": [
   {
    "cveID": "CVE-2026-102895",
@@ -34,6 +34,16 @@
    "dueDate": "2026-11-12",
    "knownRansomwareCampaignUse": "Unknown",
    "shortDescription": "SignalWire FreeSwitch contains a code injection vulnerability that permits configuration and credential disclosure, arbitrary call control, and command execution."
+  },
+  {
+   "cveID": "CVE-2026-123218",
+   "vendorProject": "IBM",
+   "product": "Aspera Faspex",
+   "vulnerabilityName": "IBM Aspera Faspex Incorrect Authorization Vulnerability",
+   "dateAdded": "2026-11-09",
+   "dueDate": "2026-11-12",
+   "knownRansomwareCampaignUse": "Unknown",
+   "shortDescription": "IBM Aspera Faspex contains an incorrect authorization vulnerability that could allow an authenticated user to craft a specific message to bypass authorization, causing privilege escalations."
   },
   {
    "cveID": "CVE-2026-19868",
@@ -144,18 +154,8 @@
    "dueDate": "2026-11-10",
    "knownRansomwareCampaignUse": "Unknown",
    "shortDescription": "Google Brotli contains an unchecked return value vulnerability that allows a remote unauthenticated attacker to corrupt adjacent decoder state memory, disclose sensitive memory contents, cause a denial of service, or pot"
-  },
-  {
-   "cveID": "CVE-2026-109618",
-   "vendorProject": "PHP Group",
-   "product": "PHP",
-   "vulnerabilityName": "PHP Memory Corruption Vulnerability",
-   "dateAdded": "2026-10-26",
-   "dueDate": "2026-10-29",
-   "knownRansomwareCampaignUse": "Unknown",
-   "shortDescription": "PHP contains an out-of-memory corruption vulnerability that allows for unauthenticated remote code execution."
   }
  ],
  "tracked_crosscheck": [],
- "_updated": "2026-11-09T17:18:06Z"
+ "_updated": "2026-11-10T15:29:21Z"
 }

@@ -5,75 +5,75 @@
  "ubuntu": [],
  "redhat": [
   {
-   "cve": "CVE-2026-99284",
+   "cve": "CVE-2026-125672",
+   "severity": "moderate",
+   "public_date": "2026-11-10",
+   "description": "cockpit: cockpit-storaged: Tang keyserver address from an untrusted LUKS header clevis token reaches curl's argument vector as an option",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-125672"
+  },
+  {
+   "cve": "CVE-2026-107364",
    "severity": "important",
-   "public_date": "2026-11-07",
-   "description": "kernel: kernel: privilege escalation via missing shared fragment flag in skb_zerocopy",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-99284"
+   "public_date": "2026-11-10",
+   "description": "krb5: Unauthenticated KDC DoS based on ASN.1 decoder read overrun",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-107364"
   },
   {
-   "cve": "CVE-2026-99283",
-   "severity": "low",
-   "public_date": "2026-11-07",
-   "description": "kernel: kernel: Denial of Service via premature connection tracking expiration on TCP RST packets",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-99283"
-  },
-  {
-   "cve": "CVE-2026-99279",
-   "severity": "moderate",
-   "public_date": "2026-11-07",
-   "description": "kernel: kernel: ksmbd: Denial of Service via unreclaimed expired sessions",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-99279"
-  },
-  {
-   "cve": "CVE-2026-99282",
-   "severity": "moderate",
-   "public_date": "2026-11-07",
-   "description": "kernel: kernel: Denial of Service via use-after-free in sch_teql",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-99282"
-  },
-  {
-   "cve": "CVE-2026-99281",
+   "cve": "CVE-2026-125637",
    "severity": "important",
-   "public_date": "2026-11-07",
-   "description": "kernel: kernel: Unauthorized network device access via missing permission checks on ownerless TUN/TAP devices",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-99281"
+   "public_date": "2026-11-10",
+   "description": "konflux-ci: Unvalidated hostname fields enable Caddyfile config injection in the Konflux UI proxy generator, allowing an unauthenticated route to be spliced ahead of the forward_au",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-125637"
   },
   {
-   "cve": "CVE-2026-99280",
+   "cve": "CVE-2026-122056",
    "severity": "moderate",
-   "public_date": "2026-11-07",
-   "description": "kernel: kernel: Denial of Service via improper session cleanup in ksmbd",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-99280"
+   "public_date": "2026-11-09",
+   "description": "openscap: One-byte heap buffer overflow in sds-compose may lead to Denial-of-Service",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-122056"
   },
   {
-   "cve": "CVE-2026-99275",
-   "severity": "moderate",
-   "public_date": "2026-11-07",
-   "description": "kernel: kernel: Information disclosure via crafted SMB session setup responses",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-99275"
+   "cve": "CVE-2026-12977",
+   "severity": "important",
+   "public_date": "2026-11-09",
+   "description": "org.wildfly.core/wildfly-server: wildfly: RBAC bypass in WildFly deployment-operation handlers leads to privilege escalation",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-12977"
   },
   {
-   "cve": "CVE-2026-99278",
+   "cve": "CVE-2026-125063",
    "severity": "moderate",
-   "public_date": "2026-11-07",
-   "description": "kernel: kernel: ksmbd: Denial of Service via unbounded sessions per connection",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-99278"
+   "public_date": "2026-11-09",
+   "description": "automation-controller: automation-controller: quadratic regex in schedule rrule validation allows an authenticated user to exhaust API web workers (denial of service)",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-125063"
   },
   {
-   "cve": "CVE-2026-99276",
-   "severity": "moderate",
-   "public_date": "2026-11-07",
-   "description": "kernel: kernel: Denial of Service in ksmbd via deadlock during session cleanup",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-99276"
+   "cve": "CVE-2026-112323",
+   "severity": "important",
+   "public_date": "2026-11-09",
+   "description": "krb5: MIT krb5 kadmind unauthenticated memory exhaustion via failed AUTH_GSSAPI_INIT requests",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-112323"
   },
   {
-   "cve": "CVE-2026-99277",
+   "cve": "CVE-2026-112322",
+   "severity": "important",
+   "public_date": "2026-11-09",
+   "description": "krb5: MIT krb5 kadmind unauthenticated CPU DoS via AUTH_GSSAPI client states cleanup",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-112322"
+  },
+  {
+   "cve": "CVE-2026-112314",
    "severity": "moderate",
-   "public_date": "2026-11-07",
-   "description": "kernel: kernel: ksmbd: Denial of Service via use-after-free in session channel handling",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-99277"
+   "public_date": "2026-11-09",
+   "description": "krb5: MIT krb5 GSS-RPC client memory leak on XID mismatch retries",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-112314"
+  },
+  {
+   "cve": "CVE-2026-71200",
+   "severity": "important",
+   "public_date": "2026-11-09",
+   "description": "krb5: Unauthenticated KDC NULL pointer dereference KDC DoS via crafted PKINIT pre-auth request",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-71200"
   }
  ],
- "_updated": "2026-11-09T17:18:06Z"
+ "_updated": "2026-11-10T15:29:21Z"
 }

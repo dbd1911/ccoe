@@ -4,9 +4,9 @@
  "release_id": "2026-Nov",
  "release_title": "November 2026 Early Security Updates",
  "release_date": "2026-11-04T08:00:00Z",
- "cve_count": 93,
+ "cve_count": 108,
  "kb_count": 0,
  "kbs": [],
  "exploitation_more_likely": [],
- "_updated": "2026-11-09T17:18:06Z"
+ "_updated": "2026-11-10T15:29:21Z"
 }
