@@ -3,77 +3,77 @@
  "source_url": "https://www.tenable.com/plugins/newest",
  "items": [
   {
-   "id": "378064",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123607",
-   "link": "https://www.tenable.com/plugins/nessus/378064",
-   "published": "Tue, 10 Nov 2026 00:00:00 GMT"
+   "id": "378754",
+   "title": "GLSA-202611-01 : Brotli: Remote code execution",
+   "link": "https://www.tenable.com/plugins/nessus/378754",
+   "published": "Wed, 11 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "378063",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123584",
-   "link": "https://www.tenable.com/plugins/nessus/378063",
-   "published": "Tue, 10 Nov 2026 00:00:00 GMT"
+   "id": "378753",
+   "title": "GLSA-202611-04 : libheif: Multiple Vulnerabilities",
+   "link": "https://www.tenable.com/plugins/nessus/378753",
+   "published": "Wed, 11 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "378062",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-115701",
-   "link": "https://www.tenable.com/plugins/nessus/378062",
-   "published": "Tue, 10 Nov 2026 00:00:00 GMT"
+   "id": "378752",
+   "title": "GLSA-202611-02 : git: Multiple Vulnerabilities",
+   "link": "https://www.tenable.com/plugins/nessus/378752",
+   "published": "Wed, 11 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "378061",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123592",
-   "link": "https://www.tenable.com/plugins/nessus/378061",
-   "published": "Tue, 10 Nov 2026 00:00:00 GMT"
+   "id": "378751",
+   "title": "GLSA-202611-03 : libde265: Multiple Vulnerabilities",
+   "link": "https://www.tenable.com/plugins/nessus/378751",
+   "published": "Wed, 11 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "378060",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-113431",
-   "link": "https://www.tenable.com/plugins/nessus/378060",
-   "published": "Tue, 10 Nov 2026 00:00:00 GMT"
+   "id": "378750",
+   "title": "RHEL 8 : libimobiledevice (RHSA-2026:98105)",
+   "link": "https://www.tenable.com/plugins/nessus/378750",
+   "published": "Wed, 11 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "378059",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123587",
-   "link": "https://www.tenable.com/plugins/nessus/378059",
-   "published": "Tue, 10 Nov 2026 00:00:00 GMT"
+   "id": "378749",
+   "title": "RHEL 8 : python-pillow (RHSA-2026:98109)",
+   "link": "https://www.tenable.com/plugins/nessus/378749",
+   "published": "Wed, 11 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "378058",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-124584",
-   "link": "https://www.tenable.com/plugins/nessus/378058",
-   "published": "Tue, 10 Nov 2026 00:00:00 GMT"
+   "id": "378748",
+   "title": "RHEL 9 : python-tornado (RHSA-2026:98106)",
+   "link": "https://www.tenable.com/plugins/nessus/378748",
+   "published": "Wed, 11 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "378057",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-124030",
-   "link": "https://www.tenable.com/plugins/nessus/378057",
-   "published": "Tue, 10 Nov 2026 00:00:00 GMT"
+   "id": "378747",
+   "title": "RHCOS 4 : OpenShift Container Platform 4.13.73 (RHSA-2026:95744)",
+   "link": "https://www.tenable.com/plugins/nessus/378747",
+   "published": "Wed, 11 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "378056",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123532",
-   "link": "https://www.tenable.com/plugins/nessus/378056",
-   "published": "Tue, 10 Nov 2026 00:00:00 GMT"
+   "id": "378746",
+   "title": "RHEL 9 : wireshark (RHSA-2026:97879)",
+   "link": "https://www.tenable.com/plugins/nessus/378746",
+   "published": "Wed, 11 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "378055",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123655",
-   "link": "https://www.tenable.com/plugins/nessus/378055",
-   "published": "Tue, 10 Nov 2026 00:00:00 GMT"
+   "id": "378745",
+   "title": "RHEL 8 : python-pillow (RHSA-2026:98120)",
+   "link": "https://www.tenable.com/plugins/nessus/378745",
+   "published": "Wed, 11 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "378054",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-124031",
-   "link": "https://www.tenable.com/plugins/nessus/378054",
-   "published": "Tue, 10 Nov 2026 00:00:00 GMT"
+   "id": "378744",
+   "title": "RHEL 10 : golang-github-openprinting-ipp-usb (RHSA-2026:98108)",
+   "link": "https://www.tenable.com/plugins/nessus/378744",
+   "published": "Wed, 11 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "378053",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-124586",
-   "link": "https://www.tenable.com/plugins/nessus/378053",
-   "published": "Tue, 10 Nov 2026 00:00:00 GMT"
+   "id": "378743",
+   "title": "RHEL 8 : kernel (RHSA-2026:98099)",
+   "link": "https://www.tenable.com/plugins/nessus/378743",
+   "published": "Wed, 11 Nov 2026 00:00:00 GMT"
   }
  ],
- "_updated": "2026-11-10T15:29:21Z"
+ "_updated": "2026-11-11T14:59:42Z"
 }

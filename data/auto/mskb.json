@@ -2,11 +2,109 @@
  "source": "Microsoft Security Response Center (MSRC) CVRF v3.0",
  "source_url": "https://msrc.microsoft.com/update-guide/releaseNote/2026-Nov",
  "release_id": "2026-Nov",
- "release_title": "November 2026 Early Security Updates",
- "release_date": "2026-11-04T08:00:00Z",
- "cve_count": 108,
- "kb_count": 0,
- "kbs": [],
- "exploitation_more_likely": [],
- "_updated": "2026-11-10T15:29:21Z"
+ "release_title": "November 2026 Security Updates",
+ "release_date": "2026-11-10T08:00:00Z",
+ "cve_count": 1362,
+ "kb_count": 54,
+ "kbs": [
+  {
+   "kb": "KB5131291",
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131291"
+  },
+  {
+   "kb": "KB5131085",
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131085"
+  },
+  {
+   "kb": "KB5131096",
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131096"
+  },
+  {
+   "kb": "KB5131090",
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131090"
+  },
+  {
+   "kb": "KB5131087",
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131087"
+  },
+  {
+   "kb": "KB5132061",
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5132061"
+  },
+  {
+   "kb": "KB5132043",
+   "url": "https://catalog.update.microsoft.com/Search.aspx?q=KB5132043"
+  },
+  {
+   "kb": "KB5131080",
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131080"
+  },
+  {
+   "kb": "KB5131077",
+   "url": "https://catalog.update.microsoft.com/Search.aspx?q=KB5131077"
+  },
+  {
+   "kb": "KB5132059",
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5132059"
+  },
+  {
+   "kb": "KB5124008",
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5124008"
+  },
+  {
+   "kb": "KB5126651",
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5126651"
+  },
+  {
+   "kb": "KB5126657",
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5126657"
+  },
+  {
+   "kb": "KB5126655",
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5126655"
+  }
+ ],
+ "exploitation_more_likely": [
+  {
+   "cve": "CVE-2026-105501",
+   "title": "Windows Installer Elevation of Privilege Vulnerability"
+  },
+  {
+   "cve": "CVE-2026-105524",
+   "title": "Windows Management Instrumentation Elevation of Privilege Vulnerability"
+  },
+  {
+   "cve": "CVE-2026-109473",
+   "title": "Windows Kernel Elevation of Privilege Vulnerability"
+  },
+  {
+   "cve": "CVE-2026-112745",
+   "title": "Azure DevOps Server Information Disclosure Vulnerability"
+  },
+  {
+   "cve": "CVE-2026-112759",
+   "title": "Windows Task Scheduler Elevation of Privilege Vulnerability"
+  },
+  {
+   "cve": "CVE-2026-112791",
+   "title": "Windows Print Spooler Components Elevation of Privilege Vulnerability"
+  },
+  {
+   "cve": "CVE-2026-112798",
+   "title": "Windows NetBIOS Elevation of Privilege Vulnerability"
+  },
+  {
+   "cve": "CVE-2026-112811",
+   "title": "Windows Print Spooler Components Elevation of Privilege Vulnerability"
+  },
+  {
+   "cve": "CVE-2026-112970",
+   "title": "Windows SMB Client Elevation of Privilege Vulnerability"
+  },
+  {
+   "cve": "CVE-2026-113819",
+   "title": "Desktop Window Manager Elevation of Privilege Vulnerability"
+  }
+ ],
+ "_updated": "2026-11-11T14:59:42Z"
 }
