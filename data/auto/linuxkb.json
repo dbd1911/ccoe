@@ -5,75 +5,75 @@
  "ubuntu": [],
  "redhat": [
   {
-   "cve": "CVE-2026-124737",
+   "cve": "CVE-2026-126890",
    "severity": "important",
    "public_date": "2026-11-11",
-   "description": "busybox: Heap buffer overflow in the tftp client on fallback to the default block size",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-124737"
+   "description": "chromium-browser: chromium-browser: Out of bounds read in Media",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-126890"
   },
   {
-   "cve": "CVE-2026-124738",
+   "cve": "CVE-2026-126868",
+   "severity": "important",
+   "public_date": "2026-11-11",
+   "description": "chromium-browser: chromium-browser: Arbitrary code execution via type confusion in V8",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-126868"
+  },
+  {
+   "cve": "CVE-2026-126913",
+   "severity": "important",
+   "public_date": "2026-11-11",
+   "description": "chromium-browser: chromium-browser: information disclosure via out-of-bounds read in compositing",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-126913"
+  },
+  {
+   "cve": "CVE-2026-126921",
+   "severity": "important",
+   "public_date": "2026-11-11",
+   "description": "chromium-browser: chromium-browser: arbitrary code execution via crafted HTML page",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-126921"
+  },
+  {
+   "cve": "CVE-2026-126841",
+   "severity": "important",
+   "public_date": "2026-11-11",
+   "description": "chromium-browser: chromium-browser: Information disclosure via out-of-bounds read in Skia",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-126841"
+  },
+  {
+   "cve": "CVE-2026-126850",
+   "severity": "important",
+   "public_date": "2026-11-11",
+   "description": "chromium-browser: chromium-browser: Incorrect authorization in SiteIsolation",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-126850"
+  },
+  {
+   "cve": "CVE-2026-126852",
+   "severity": "important",
+   "public_date": "2026-11-11",
+   "description": "chromium-browser: chromium-browser: Use after free in MediaStream",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-126852"
+  },
+  {
+   "cve": "CVE-2026-126901",
+   "severity": "important",
+   "public_date": "2026-11-11",
+   "description": "chromium-browser: chromium-browser: Arbitrary code execution via a crafted HTML page",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-126901"
+  },
+  {
+   "cve": "CVE-2026-126849",
+   "severity": "important",
+   "public_date": "2026-11-11",
+   "description": "chromium-browser: chromium-browser: Type confusion in V8",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-126849"
+  },
+  {
+   "cve": "CVE-2026-126855",
    "severity": "moderate",
    "public_date": "2026-11-11",
-   "description": "busybox: httpd password rule bypass for pre-compressed .gz files via Accept-Encoding: gzip",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-124738"
-  },
-  {
-   "cve": "CVE-2026-124739",
-   "severity": "important",
-   "public_date": "2026-11-11",
-   "description": "busybox: httpd stack buffer overflow via an \"I:\" rule in a subdirectory httpd.conf",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-124739"
-  },
-  {
-   "cve": "CVE-2026-124740",
-   "severity": "moderate",
-   "public_date": "2026-11-11",
-   "description": "busybox: Use-after-free of requested_ipv6 in udhcpc6",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-124740"
-  },
-  {
-   "cve": "CVE-2026-124741",
-   "severity": "important",
-   "public_date": "2026-11-11",
-   "description": "busybox: Stack buffer overflow in udhcpc6 send_d6_renew() and send_d6_release()",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-124741"
-  },
-  {
-   "cve": "CVE-2026-124742",
-   "severity": "moderate",
-   "public_date": "2026-11-11",
-   "description": "busybox: Divide-by-zero in the volume_id FAT prober via a zero sectors_per_cluster value",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-124742"
-  },
-  {
-   "cve": "CVE-2026-124743",
-   "severity": "moderate",
-   "public_date": "2026-11-11",
-   "description": "busybox: Divide-by-zero and heap over-read in the volume_id HFS+ prober",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-124743"
-  },
-  {
-   "cve": "CVE-2026-9703",
-   "severity": "important",
-   "public_date": "2026-11-11",
-   "description": "grafana: Grafana: Viewer role can create, modify and delete Loki alerting rules",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-9703"
-  },
-  {
-   "cve": "CVE-2026-116468",
-   "severity": "important",
-   "public_date": "2026-11-11",
-   "description": "keycloak-services: keycloak-services: Delegated admin escalates to realm-admin via group move",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-116468"
-  },
-  {
-   "cve": "CVE-2026-126186",
-   "severity": "important",
-   "public_date": "2026-11-10",
-   "description": "activestorage: Active Storage: Remote code execution via unsafe file extension handling in media processing",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-126186"
+   "description": "chromium-browser: chromium-browser: Missing authorization in ImageCapture",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-126855"
   }
  ],
- "_updated": "2026-11-11T14:59:42Z"
+ "_updated": "2026-11-12T15:52:20Z"
 }

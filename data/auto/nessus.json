@@ -3,77 +3,77 @@
  "source_url": "https://www.tenable.com/plugins/newest",
  "items": [
   {
-   "id": "378754",
-   "title": "GLSA-202611-01 : Brotli: Remote code execution",
-   "link": "https://www.tenable.com/plugins/nessus/378754",
+   "id": "379373",
+   "title": "RHEL 10 : .NET 10.0 (RHSA-2026:99143)",
+   "link": "https://www.tenable.com/plugins/nessus/379373",
    "published": "Wed, 11 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "378753",
-   "title": "GLSA-202611-04 : libheif: Multiple Vulnerabilities",
-   "link": "https://www.tenable.com/plugins/nessus/378753",
+   "id": "379372",
+   "title": "RHEL 10 : perl-DBI (RHSA-2026:99209)",
+   "link": "https://www.tenable.com/plugins/nessus/379372",
    "published": "Wed, 11 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "378752",
-   "title": "GLSA-202611-02 : git: Multiple Vulnerabilities",
-   "link": "https://www.tenable.com/plugins/nessus/378752",
+   "id": "379371",
+   "title": "RHEL 10 : squid (RHSA-2026:99123)",
+   "link": "https://www.tenable.com/plugins/nessus/379371",
    "published": "Wed, 11 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "378751",
-   "title": "GLSA-202611-03 : libde265: Multiple Vulnerabilities",
-   "link": "https://www.tenable.com/plugins/nessus/378751",
+   "id": "379370",
+   "title": "RHEL 10 : c-ares (RHSA-2026:99168)",
+   "link": "https://www.tenable.com/plugins/nessus/379370",
    "published": "Wed, 11 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "378750",
-   "title": "RHEL 8 : libimobiledevice (RHSA-2026:98105)",
-   "link": "https://www.tenable.com/plugins/nessus/378750",
+   "id": "379369",
+   "title": "RHEL 9 : gstreamer1-plugins-base (RHSA-2026:99126)",
+   "link": "https://www.tenable.com/plugins/nessus/379369",
    "published": "Wed, 11 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "378749",
-   "title": "RHEL 8 : python-pillow (RHSA-2026:98109)",
-   "link": "https://www.tenable.com/plugins/nessus/378749",
+   "id": "379368",
+   "title": "RHEL 10 : mutter (RHSA-2026:99130)",
+   "link": "https://www.tenable.com/plugins/nessus/379368",
    "published": "Wed, 11 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "378748",
-   "title": "RHEL 9 : python-tornado (RHSA-2026:98106)",
-   "link": "https://www.tenable.com/plugins/nessus/378748",
+   "id": "379367",
+   "title": "RHEL 10 : tomcat9 (RHSA-2026:99174)",
+   "link": "https://www.tenable.com/plugins/nessus/379367",
    "published": "Wed, 11 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "378747",
-   "title": "RHCOS 4 : OpenShift Container Platform 4.13.73 (RHSA-2026:95744)",
-   "link": "https://www.tenable.com/plugins/nessus/378747",
+   "id": "379366",
+   "title": "RHEL 10 : libpcap (RHSA-2026:99163)",
+   "link": "https://www.tenable.com/plugins/nessus/379366",
    "published": "Wed, 11 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "378746",
-   "title": "RHEL 9 : wireshark (RHSA-2026:97879)",
-   "link": "https://www.tenable.com/plugins/nessus/378746",
+   "id": "379365",
+   "title": "RHEL 10 : perl-DBI (RHSA-2026:99120)",
+   "link": "https://www.tenable.com/plugins/nessus/379365",
    "published": "Wed, 11 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "378745",
-   "title": "RHEL 8 : python-pillow (RHSA-2026:98120)",
-   "link": "https://www.tenable.com/plugins/nessus/378745",
+   "id": "379364",
+   "title": "RHEL 10 : .NET 9.0 (RHSA-2026:99145)",
+   "link": "https://www.tenable.com/plugins/nessus/379364",
    "published": "Wed, 11 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "378744",
-   "title": "RHEL 10 : golang-github-openprinting-ipp-usb (RHSA-2026:98108)",
-   "link": "https://www.tenable.com/plugins/nessus/378744",
+   "id": "379363",
+   "title": "RHEL 10 : grafana (RHSA-2026:99134)",
+   "link": "https://www.tenable.com/plugins/nessus/379363",
    "published": "Wed, 11 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "378743",
-   "title": "RHEL 8 : kernel (RHSA-2026:98099)",
-   "link": "https://www.tenable.com/plugins/nessus/378743",
+   "id": "379362",
+   "title": "RHEL 10 : gstreamer1-plugins-bad-free (RHSA-2026:99118)",
+   "link": "https://www.tenable.com/plugins/nessus/379362",
    "published": "Wed, 11 Nov 2026 00:00:00 GMT"
   }
  ],
- "_updated": "2026-11-11T14:59:42Z"
+ "_updated": "2026-11-12T15:52:20Z"
 }

@@ -4,7 +4,7 @@
  "release_id": "2026-Nov",
  "release_title": "November 2026 Security Updates",
  "release_date": "2026-11-10T08:00:00Z",
- "cve_count": 1362,
+ "cve_count": 1439,
  "kb_count": 54,
  "kbs": [
   {
@@ -106,5 +106,5 @@
    "title": "Desktop Window Manager Elevation of Privilege Vulnerability"
   }
  ],
- "_updated": "2026-11-11T14:59:42Z"
+ "_updated": "2026-11-12T15:52:20Z"
 }
