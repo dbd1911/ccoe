@@ -1,10 +1,10 @@
 {
  "feeds": {
   "kev": true,
-  "cves": true,
+  "cves": false,
   "mskb": true,
   "linuxkb": true,
   "nessus": true
  },
- "_updated": "2026-11-12T15:52:20Z"
+ "_updated": "2026-11-13T15:13:36Z"
 }

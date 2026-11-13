@@ -3,77 +3,77 @@
  "source_url": "https://www.tenable.com/plugins/newest",
  "items": [
   {
-   "id": "379373",
-   "title": "RHEL 10 : .NET 10.0 (RHSA-2026:99143)",
-   "link": "https://www.tenable.com/plugins/nessus/379373",
-   "published": "Wed, 11 Nov 2026 00:00:00 GMT"
+   "id": "380039",
+   "title": "Ubuntu 22.04 LTS / 24.04 LTS / 26.04 LTS : OpenJDK 17 vulnerabilities (USN-9014-1)",
+   "link": "https://www.tenable.com/plugins/nessus/380039",
+   "published": "Fri, 13 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "379372",
-   "title": "RHEL 10 : perl-DBI (RHSA-2026:99209)",
-   "link": "https://www.tenable.com/plugins/nessus/379372",
-   "published": "Wed, 11 Nov 2026 00:00:00 GMT"
+   "id": "380038",
+   "title": "Ubuntu 14.04 LTS / 22.04 LTS / 24.04 LTS / 26.04 LTS : Perl vulnerability (USN-9006-1)",
+   "link": "https://www.tenable.com/plugins/nessus/380038",
+   "published": "Fri, 13 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "379371",
-   "title": "RHEL 10 : squid (RHSA-2026:99123)",
-   "link": "https://www.tenable.com/plugins/nessus/379371",
-   "published": "Wed, 11 Nov 2026 00:00:00 GMT"
+   "id": "380037",
+   "title": "Ubuntu 22.04 LTS / 24.04 LTS / 26.04 LTS : OpenJDK 25 vulnerabilities (USN-9004-1)",
+   "link": "https://www.tenable.com/plugins/nessus/380037",
+   "published": "Fri, 13 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "379370",
-   "title": "RHEL 10 : c-ares (RHSA-2026:99168)",
-   "link": "https://www.tenable.com/plugins/nessus/379370",
-   "published": "Wed, 11 Nov 2026 00:00:00 GMT"
+   "id": "380036",
+   "title": "Ubuntu 22.04 LTS : Linux kernel vulnerabilities (USN-9027-1)",
+   "link": "https://www.tenable.com/plugins/nessus/380036",
+   "published": "Fri, 13 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "379369",
-   "title": "RHEL 9 : gstreamer1-plugins-base (RHSA-2026:99126)",
-   "link": "https://www.tenable.com/plugins/nessus/379369",
-   "published": "Wed, 11 Nov 2026 00:00:00 GMT"
+   "id": "380035",
+   "title": "Ubuntu 14.04 LTS / 22.04 LTS / 24.04 LTS / 26.04 LTS : libgphoto2 vulnerabilities (USN-9017-1)",
+   "link": "https://www.tenable.com/plugins/nessus/380035",
+   "published": "Fri, 13 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "379368",
-   "title": "RHEL 10 : mutter (RHSA-2026:99130)",
-   "link": "https://www.tenable.com/plugins/nessus/379368",
-   "published": "Wed, 11 Nov 2026 00:00:00 GMT"
+   "id": "380034",
+   "title": "Ubuntu 22.04 LTS / 24.04 LTS / 26.04 LTS : .NET vulnerabilities (USN-9042-1)",
+   "link": "https://www.tenable.com/plugins/nessus/380034",
+   "published": "Fri, 13 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "379367",
-   "title": "RHEL 10 : tomcat9 (RHSA-2026:99174)",
-   "link": "https://www.tenable.com/plugins/nessus/379367",
-   "published": "Wed, 11 Nov 2026 00:00:00 GMT"
+   "id": "380033",
+   "title": "Ubuntu 14.04 LTS : Linux kernel vulnerabilities (USN-9035-1)",
+   "link": "https://www.tenable.com/plugins/nessus/380033",
+   "published": "Fri, 13 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "379366",
-   "title": "RHEL 10 : libpcap (RHSA-2026:99163)",
-   "link": "https://www.tenable.com/plugins/nessus/379366",
-   "published": "Wed, 11 Nov 2026 00:00:00 GMT"
+   "id": "380032",
+   "title": "Ubuntu 14.04 LTS / 22.04 LTS / 24.04 LTS / 26.04 LTS : Apache HTTP Server vulnerabilities (USN-9016-1)",
+   "link": "https://www.tenable.com/plugins/nessus/380032",
+   "published": "Fri, 13 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "379365",
-   "title": "RHEL 10 : perl-DBI (RHSA-2026:99120)",
-   "link": "https://www.tenable.com/plugins/nessus/379365",
-   "published": "Wed, 11 Nov 2026 00:00:00 GMT"
+   "id": "380031",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-12933",
+   "link": "https://www.tenable.com/plugins/nessus/380031",
+   "published": "Fri, 13 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "379364",
-   "title": "RHEL 10 : .NET 9.0 (RHSA-2026:99145)",
-   "link": "https://www.tenable.com/plugins/nessus/379364",
-   "published": "Wed, 11 Nov 2026 00:00:00 GMT"
+   "id": "380030",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16237",
+   "link": "https://www.tenable.com/plugins/nessus/380030",
+   "published": "Fri, 13 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "379363",
-   "title": "RHEL 10 : grafana (RHSA-2026:99134)",
-   "link": "https://www.tenable.com/plugins/nessus/379363",
-   "published": "Wed, 11 Nov 2026 00:00:00 GMT"
+   "id": "380029",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-18447",
+   "link": "https://www.tenable.com/plugins/nessus/380029",
+   "published": "Fri, 13 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "379362",
-   "title": "RHEL 10 : gstreamer1-plugins-bad-free (RHSA-2026:99118)",
-   "link": "https://www.tenable.com/plugins/nessus/379362",
-   "published": "Wed, 11 Nov 2026 00:00:00 GMT"
+   "id": "380028",
+   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-124911",
+   "link": "https://www.tenable.com/plugins/nessus/380028",
+   "published": "Fri, 13 Nov 2026 00:00:00 GMT"
   }
  ],
- "_updated": "2026-11-12T15:52:20Z"
+ "_updated": "2026-11-13T15:13:36Z"
 }

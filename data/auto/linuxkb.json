@@ -2,78 +2,182 @@
  "source": "Ubuntu Security Notices + Red Hat Security Data API",
  "ubuntu_url": "https://ubuntu.com/security/notices",
  "redhat_url": "https://access.redhat.com/security/security-updates/security-advisories",
- "ubuntu": [],
- "redhat": [
+ "ubuntu": [
   {
-   "cve": "CVE-2026-126890",
-   "severity": "important",
-   "public_date": "2026-11-11",
-   "description": "chromium-browser: chromium-browser: Out of bounds read in Media",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-126890"
+   "id": "USN-9027-2",
+   "title": "Linux kernel (FIPS) vulnerabilities",
+   "published": "2026-11-13",
+   "cves": [
+    "CVE-2026-63940",
+    "CVE-2026-98432",
+    "CVE-2026-74350",
+    "CVE-2025-21656",
+    "CVE-2026-99999"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-9027-2"
   },
   {
-   "cve": "CVE-2026-126868",
-   "severity": "important",
-   "public_date": "2026-11-11",
-   "description": "chromium-browser: chromium-browser: Arbitrary code execution via type confusion in V8",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-126868"
+   "id": "USN-9091-1",
+   "title": "Linux kernel (NVIDIA Tegra) vulnerabilities",
+   "published": "2026-11-13",
+   "cves": [
+    "CVE-2026-93141",
+    "CVE-2026-80879",
+    "CVE-2026-98687",
+    "CVE-2026-68261",
+    "CVE-2026-99007",
+    "CVE-2026-72414"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-9091-1"
   },
   {
-   "cve": "CVE-2026-126913",
-   "severity": "important",
-   "public_date": "2026-11-11",
-   "description": "chromium-browser: chromium-browser: information disclosure via out-of-bounds read in compositing",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-126913"
+   "id": "USN-9090-1",
+   "title": "Apache HTTP Server vulnerabilities",
+   "published": "2026-11-12",
+   "cves": [
+    "CVE-2026-42356",
+    "CVE-2026-119618",
+    "CVE-2026-109163",
+    "CVE-2026-106023",
+    "CVE-2026-42528"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-9090-1"
   },
   {
-   "cve": "CVE-2026-126921",
-   "severity": "important",
-   "public_date": "2026-11-11",
-   "description": "chromium-browser: chromium-browser: arbitrary code execution via crafted HTML page",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-126921"
+   "id": "USN-9068-1",
+   "title": "Debian-LAN vulnerability",
+   "published": "2026-11-12",
+   "cves": [
+    "CVE-2019-3467"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-9068-1"
   },
   {
-   "cve": "CVE-2026-126841",
-   "severity": "important",
-   "public_date": "2026-11-11",
-   "description": "chromium-browser: chromium-browser: Information disclosure via out-of-bounds read in Skia",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-126841"
+   "id": "USN-9089-1",
+   "title": "x11vnc vulnerability",
+   "published": "2026-11-12",
+   "cves": [
+    "CVE-2020-29074"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-9089-1"
   },
   {
-   "cve": "CVE-2026-126850",
-   "severity": "important",
-   "public_date": "2026-11-11",
-   "description": "chromium-browser: chromium-browser: Incorrect authorization in SiteIsolation",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-126850"
+   "id": "USN-9088-1",
+   "title": "TigerVNC vulnerability",
+   "published": "2026-11-12",
+   "cves": [
+    "CVE-2020-26117"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-9088-1"
   },
   {
-   "cve": "CVE-2026-126852",
-   "severity": "important",
-   "public_date": "2026-11-11",
-   "description": "chromium-browser: chromium-browser: Use after free in MediaStream",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-126852"
+   "id": "USN-9087-1",
+   "title": "signing-party vulnerability",
+   "published": "2026-11-12",
+   "cves": [
+    "CVE-2019-11627"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-9087-1"
   },
   {
-   "cve": "CVE-2026-126901",
-   "severity": "important",
-   "public_date": "2026-11-11",
-   "description": "chromium-browser: chromium-browser: Arbitrary code execution via a crafted HTML page",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-126901"
+   "id": "USN-9086-1",
+   "title": "SA-Exim vulnerability",
+   "published": "2026-11-12",
+   "cves": [
+    "CVE-2019-19920"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-9086-1"
   },
   {
-   "cve": "CVE-2026-126849",
-   "severity": "important",
-   "public_date": "2026-11-11",
-   "description": "chromium-browser: chromium-browser: Type confusion in V8",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-126849"
+   "id": "USN-9085-1",
+   "title": "Ruby OpenID vulnerability",
+   "published": "2026-11-12",
+   "cves": [
+    "CVE-2019-11027"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-9085-1"
   },
   {
-   "cve": "CVE-2026-126855",
-   "severity": "moderate",
-   "public_date": "2026-11-11",
-   "description": "chromium-browser: chromium-browser: Missing authorization in ImageCapture",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-126855"
+   "id": "USN-9084-1",
+   "title": "Radicale vulnerability",
+   "published": "2026-11-12",
+   "cves": [
+    "CVE-2017-8342"
+   ],
+   "url": "https://ubuntu.com/security/notices/USN-9084-1"
   }
  ],
- "_updated": "2026-11-12T15:52:20Z"
+ "redhat": [
+  {
+   "cve": "CVE-2026-128824",
+   "severity": "moderate",
+   "public_date": "2026-11-13",
+   "description": "quay: quay: reflected XSS via image_id in v1 registry error responses",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-128824"
+  },
+  {
+   "cve": "CVE-2026-126206",
+   "severity": "moderate",
+   "public_date": "2026-11-12",
+   "description": "loofah: Loofah: Cross-site scripting via improper data URI validation",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-126206"
+  },
+  {
+   "cve": "CVE-2026-86324",
+   "severity": "moderate",
+   "public_date": "2026-11-12",
+   "description": "foreman: authorization flaw in the Foreman::Controller::UserAware handling used by Api::V2::SshKeysController",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-86324"
+  },
+  {
+   "cve": "CVE-2026-86323",
+   "severity": "moderate",
+   "public_date": "2026-11-12",
+   "description": "foreman: authorization flaw in the mail-notification endpoints implemented by Api::V2::MailNotificationsController",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-86323"
+  },
+  {
+   "cve": "CVE-2026-86322",
+   "severity": "important",
+   "public_date": "2026-11-12",
+   "description": "foreman: authorization flaw in the Foreman::Controller::UserAware#find_user handling used by Api::V2::PersonalAccessTokensController",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-86322"
+  },
+  {
+   "cve": "CVE-2026-107443",
+   "severity": "important",
+   "public_date": "2026-11-12",
+   "description": "foreman: foreman: API host template render discloses secrets to view_hosts users (incomplete CVE-2026-96659 fix)",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-107443"
+  },
+  {
+   "cve": "CVE-2026-107360",
+   "severity": "critical",
+   "public_date": "2026-11-12",
+   "description": "rubygem-safemode: safemode: Jail allow-list bypass via op-assign expressions",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-107360"
+  },
+  {
+   "cve": "CVE-2026-107152",
+   "severity": "important",
+   "public_date": "2026-11-12",
+   "description": "rubygem-smart_proxy_dynflow: Dynflow console authorizes any client certificate the capsule CA signed",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-107152"
+  },
+  {
+   "cve": "CVE-2026-127101",
+   "severity": "moderate",
+   "public_date": "2026-11-12",
+   "description": "sssd: sssd: NULL pointer dereference in PAM responder when protocol version negotiation is skipped",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-127101"
+  },
+  {
+   "cve": "CVE-2026-127100",
+   "severity": "moderate",
+   "public_date": "2026-11-12",
+   "description": "sssd: sssd: Local denial of service through unchecked OAuth2 JSON code type in PAM responder",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-127100"
+  }
+ ],
+ "_updated": "2026-11-13T15:13:36Z"
 }
