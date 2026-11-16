@@ -1,6 +1,6 @@
 # CCoE Hub — Your Field Guide: Everything Available to You
 
-**For the PAEC2-CC2ST3 Cyber CoE workforce · 10 OCT 2026 · Every tool, resource, site, and data source the hub gives you — the complete list, no truncation.**
+**For the PAE C2-CC2 ST3 Cyber CoE workforce · 10 OCT 2026 · Every tool, resource, site, and data source the hub gives you — the complete list, no truncation.**
 
 This is not the inventory of what we're deciding to keep — this IS the release. Everything listed below is live or clearly marked coming soon. Bookmark this document; it's the map of the site.
 

@@ -93,7 +93,7 @@ function buildHeader() {
       <a class="brand" href="index.html" aria-label="CCoE Home">
         <span class="brand-mark">CoE</span>
         <span class="brand-text">
-          <span class="t1">PAEC2-CC2ST3 Cybersecurity Center of Excellence</span>
+          <span class="t1">PAE C2-CC2 ST3 Cybersecurity Center of Excellence</span>
         </span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="mainnav">MENU ☰</button>

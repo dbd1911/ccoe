@@ -98,6 +98,19 @@ img, svg { max-width: 100%; display: block; }
   min-height: 62px;
 }
 .brand { display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; }
+.hero-watermark {
+  position: absolute; top: 50%; right: 4%;
+  width: min(46vw, 560px); height: auto;
+  transform: translateY(-50%);
+  opacity: .30; z-index: 1;
+  -webkit-mask-image: radial-gradient(circle, #000 55%, transparent 72%);
+          mask-image: radial-gradient(circle, #000 55%, transparent 72%);
+  pointer-events: none;
+}
+@media (max-width: 900px) { .hero-watermark { opacity: .18; right: -8%; } }
+@media (max-width: 640px) { .hero-watermark { opacity: .14; width: 120vw; right: -30vw; } }
+.org-name { letter-spacing: .16em; }
+
 .brand-logo {
   width: 40px; height: 40px; flex: none;
   border-radius: 50%;
@@ -105,15 +118,7 @@ img, svg { max-width: 100%; display: block; }
   object-fit: cover;
   background: #fff;
 }
-.hero-logo {
-  width: 96px; height: 96px;
-  border-radius: 50%;
-  border: 2px solid rgba(201,162,39,.85);
-  box-shadow: 0 6px 24px rgba(0,0,0,.45);
-  margin: 0 auto 18px;
-  display: block;
-}
-@media (max-width: 640px) { .hero-logo { width: 72px; height: 72px; margin-bottom: 12px; } .brand-logo { width: 32px; height: 32px; } }
+
 .brand:hover { text-decoration: none; }
 .brand-mark {
   width: 38px; height: 38px; flex: none;
