@@ -121,13 +121,17 @@ img, svg { max-width: 100%; display: block; }
 
 .brand:hover { text-decoration: none; }
 .brand-mark {
-  width: 38px; height: 38px; flex: none;
-  background: linear-gradient(135deg, var(--olive) 0%, #36400f 100%);
+  width: 40px; height: 40px; flex: none;
   border: 1.5px solid var(--gold);
   display: grid; place-items: center;
   font-family: var(--display); font-weight: 700; font-size: 15px; color: var(--gold);
   letter-spacing: .04em;
 }
+img.brand-mark { object-fit: cover; border-radius: 50%; background: #fff; }
+.brand-text { line-height: 1.15; }
+.brand-text .t1 { font-family: var(--display); font-size: 19px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; }
+.brand-text .t2 { font-family: var(--mono); font-size: 9.5px; letter-spacing: .18em; color: #B9C2BC; text-transform: uppercase; }
+.brand-text .t2 { display: block; margin-top: 2px; white-space: nowrap; }
 .brand-text { line-height: 1.15; }
 .brand-text .t1 { font-family: var(--display); font-size: 19px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; }
 .brand-text .t2 { font-family: var(--mono); font-size: 9.5px; letter-spacing: .18em; color: #B9C2BC; text-transform: uppercase; }
