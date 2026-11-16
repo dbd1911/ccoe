@@ -1,10 +1,30 @@
 {
  "source": "CISA Known Exploited Vulnerabilities Catalog",
  "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
- "catalogVersion": "2026.11.10",
- "dateReleased": "2026-11-10T19:03:29.8375Z",
- "total": 1779,
+ "catalogVersion": "2026.11.13",
+ "dateReleased": "2026-11-13T20:24:18.3008Z",
+ "total": 1781,
  "recent": [
+  {
+   "cveID": "CVE-2026-114713",
+   "vendorProject": "UnrealIRCd",
+   "product": "UnrealIRCd",
+   "vulnerabilityName": "UnrealIRCd Improper Neutralization of Delimiters Vulnerability",
+   "dateAdded": "2026-11-13",
+   "dueDate": "2026-11-16",
+   "knownRansomwareCampaignUse": "Unknown",
+   "shortDescription": "UnrealIRCd UnrealIRCd contains an improper neutralization of delimiters vulnerability that allows any user on a network with two or more linked servers to inject server-to-server commands that are executed with server au"
+  },
+  {
+   "cveID": "CVE-2026-123039",
+   "vendorProject": "Check Point",
+   "product": "Multiple Products",
+   "vulnerabilityName": "Check Point Multiple Products Incorrect Permission Assignment for Critical Resource Vulnerability",
+   "dateAdded": "2026-11-13",
+   "dueDate": "2026-11-16",
+   "knownRansomwareCampaignUse": "Unknown",
+   "shortDescription": "Check Point Firewall, Multi-Domain Security Management Server, Scalable Platforms, Security Gateway, and Security Management Server contain an incorrect permissions assignment for critical resources vulnerability when th"
+  },
   {
    "cveID": "CVE-2026-124194",
    "vendorProject": "Microsoft",
@@ -134,28 +154,8 @@
    "dueDate": "2026-11-06",
    "knownRansomwareCampaignUse": "Unknown",
    "shortDescription": "WordPress WordPress Core contains a time-of-check time-of-use (TOCTOU) race condition vulnerability that could allow unauthenticated attackers to execute code on the server during the upgrade window. This is due to predi"
-  },
-  {
-   "cveID": "CVE-2026-118527",
-   "vendorProject": "Ivanti",
-   "product": "Connect Secure",
-   "vulnerabilityName": "Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability",
-   "dateAdded": "2026-10-30",
-   "dueDate": "2026-11-13",
-   "knownRansomwareCampaignUse": "Unknown",
-   "shortDescription": "Ivanti Connect Secure contains a generation of predictable numbers or identifiers vulnerability that allows a remote authenticated attacker to upload files with attacker-controlled content to a known location on disk. Th"
-  },
-  {
-   "cveID": "CVE-2026-111357",
-   "vendorProject": "Ivanti",
-   "product": "Connect Secure",
-   "vulnerabilityName": "Ivanti Connect Secure Missing Authentication for Critical Function Vulnerability",
-   "dateAdded": "2026-10-30",
-   "dueDate": "2026-11-02",
-   "knownRansomwareCampaignUse": "Unknown",
-   "shortDescription": "Ivanti Connect Secure contains a missing authentication for critical function vulnerability that could allow a local authenticated attacker to escalate their privileges. This vulnerability can be chained with CVE-2026-10"
   }
  ],
  "tracked_crosscheck": [],
- "_updated": "2026-11-13T15:13:36Z"
+ "_updated": "2026-11-16T16:52:24Z"
 }
