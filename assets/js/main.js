@@ -91,7 +91,7 @@ function buildHeader() {
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="index.html" aria-label="CCoE Home">
-        <img class="brand-mark" src="assets/img/paec2-cc2st3-logo.jpg" alt="PAE C2-CC2 ST3 Cybersecurity Center of Excellence seal">
+        <img class="brand-mark" src="assets/img/paec2-cc2st3-badge.jpg" alt="PAE C2-CC2 ST3 Cybersecurity Center of Excellence seal">
         <span class="brand-text">
           <span class="t1">PAE C2-CC2 ST3</span>
           <span class="t2">Cybersecurity Center of Excellence</span>
