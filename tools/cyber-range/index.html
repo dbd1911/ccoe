@@ -308,7 +308,7 @@ canvas.cert{width:100%;height:auto;border:1px solid var(--hairline);border-radiu
 <script>
 /* ============================================================
    CSO Cyber Range — Training Academy
-   CPE ST3 Cybersecurity Office (CSO)
+   PAEC2-CC2ST3 Cybersecurity Office (CSO)
    Self-contained LMS. 30 courses x 15 modules. Each module ends
    in a required knowledge check (two attempts per item, then the
    correct answer is revealed with an explanation). Each course
@@ -460,7 +460,7 @@ window.openCourse=function(id){App.sel=id;App.mod=null;App.kc=null;App.view='cou
 function shell(content){
   const ts={beginner:tierStats('beginner'),intermediate:tierStats('intermediate'),advanced:tierStats('advanced')};
   return `
-  <div class="classbar"><span><span class="dot"></span>CPE ST3 // CYBERSECURITY OFFICE (CSO) — TRAINING SIMULATOR</span>
+  <div class="classbar"><span><span class="dot"></span>PAEC2-CC2ST3 // CYBERSECURITY OFFICE (CSO) — TRAINING SIMULATOR</span>
     <span class="right"><span>OP: ${esc(App.user.username)}</span><span id="clk"></span></span></div>
   <div class="shell">
     <aside class="rail" id="rail">
@@ -875,7 +875,7 @@ function addCert(kind,ref){
 }
 function renderCerts(){
   const certs=allCerts().slice().sort((a,b)=>b.date-a.date);
-  let html=`<div class="page-head"><div class="eyebrow">Credentials Wallet · CPE ST3 CSO</div>
+  let html=`<div class="page-head"><div class="eyebrow">Credentials Wallet · PAEC2-CC2ST3 CSO</div>
   <h1>My Credentials</h1><p>Session completion records using the name you entered. Course certificates are issued on capstone pass; tier credentials on tier capstone pass. Download PNG or print / save PDF. Course time is counted once per session; tier certificates add no duplicate course credit. CPE acceptance is determined by your credentialing organization.</p></div>`;
   if(!certs.length){return html+`<div class="panel"><div class="empty">${IC.cert}<div>No credentials yet. Pass a course capstone to earn your first certificate.</div><button class="btn btn-primary" style="margin-top:14px" onclick="go('catalog')">Browse catalog</button></div></div>`;}
   const caps=certs.filter(c=>c.kind==='capstone'),crs=certs.filter(c=>c.kind==='course');
@@ -940,7 +940,7 @@ async function drawCert(cv,c){
   x.strokeStyle=accent;x.lineWidth=3;x.strokeRect(40,40,W-80,H-80);
   x.strokeStyle='rgba(130,148,182,.45)';x.lineWidth=1;x.strokeRect(54,54,W-108,H-108);
   x.save();x.fillStyle='rgba(130,148,182,.4)';x.font='10px "IBM Plex Mono"';
-  const micro=('CPE ST3 CYBERSECURITY OFFICE · TRAINING COMPLETION · '+c.hash+' · ').repeat(20);
+  const micro=('PAEC2-CC2ST3 CYBERSECURITY OFFICE · TRAINING COMPLETION · '+c.hash+' · ').repeat(20);
   x.fillText(micro.slice(0,210),70,78);x.fillText(micro.slice(0,210),70,H-66);x.restore();
   const cx=W/2;
   x.save();x.translate(cx,170);
@@ -950,7 +950,7 @@ async function drawCert(cv,c){
   x.beginPath();x.moveTo(-17,2);x.lineTo(-4,16);x.lineTo(22,-14);x.stroke();
   x.restore();
   const ctr=(txt,y,font,col,ls)=>{x.fillStyle=col;x.font=font;x.textAlign='center';if(ls){x.save();letterCenter(x,txt,cx,y,ls);x.restore();}else x.fillText(txt,cx,y,1300);};
-  ctr('CPE ST3 CYBERSECURITY OFFICE (CSO)',262,'600 22px "IBM Plex Mono"','#8294B6',5);
+  ctr('PAEC2-CC2ST3 CYBERSECURITY OFFICE (CSO)',262,'600 22px "IBM Plex Mono"','#8294B6',5);
   ctr(c.kind==='capstone'?'TIER PROFICIENCY CREDENTIAL':'CERTIFICATE OF COMPLETION',322,'700 40px "Space Grotesk"','#DCE5F5',2);
   x.strokeStyle=accent;x.lineWidth=2;x.beginPath();x.moveTo(cx-120,352);x.lineTo(cx+120,352);x.stroke();
   ctr('This credential is awarded to',420,'400 24px "Inter"','#8294B6');
