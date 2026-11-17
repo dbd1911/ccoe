@@ -2,28 +2,14 @@
  "source": "NVD (NIST) — CRITICAL severity CVEs published in the last 7 days",
  "source_url": "https://nvd.nist.gov/vuln/search",
  "window_days": 7,
- "total_in_window": 27,
+ "total_in_window": 18,
  "items": [
-  {
-   "id": "CVE-2026-129353",
-   "published": "2026-11-15",
-   "score": 10.0,
-   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-   "description": "A vulnerability was detected in D-Link DIR-600L 2.17/2.17b02. Affected by this vulnerability is the function authenticationcgi_main of the file authentication.cgi. Performing a manipulation of the argument id/password results in stack-based"
-  },
   {
    "id": "CVE-2026-129354",
    "published": "2026-11-15",
    "score": 10.0,
    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
    "description": "A flaw has been found in D-Link DIR-600L 2.17b02. Affected by this issue is the function hnap_main of the file htdocs/cgibin of the component HNAP Handler. Executing a manipulation can lead to stack-based buffer overflow. The attack can be "
-  },
-  {
-   "id": "CVE-2026-129444",
-   "published": "2026-11-15",
-   "score": 10.0,
-   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-   "description": "A vulnerability was identified in D-Link DSL-6740C 20131126. This affects an unknown function of the file /etc/templates/ftpd/ftpd_conf.php of the component FTP Daemon. Such manipulation leads to hard-coded credentials. The attack can be ex"
   },
   {
    "id": "CVE-2026-129351",
@@ -40,11 +26,11 @@
    "description": "A security flaw has been discovered in Linksys EA8100 1.0.3.216940. The affected element is an unknown function of the file etc/init.d/service_smbd.sh of the component SMB Service. Performing a manipulation of the argument ANON_ACCESS resul"
   },
   {
-   "id": "CVE-2026-129450",
-   "published": "2026-11-15",
+   "id": "CVE-2026-130587",
+   "published": "2026-11-17",
    "score": 9.9,
    "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-   "description": "A vulnerability was detected in DrayTek Vigor2960 1.5.1.6. Affected by this issue is the function sub_1E084 of the file /cgi-bin/mainfunction.cgi?action=doWebBackup. The manipulation of the argument option results in path traversal. It is p"
+   "description": "OpenFunction through 1.2.0 contains a privilege escalation vulnerability that allows namespace tenants to create privileged host-access pods by supplying unrestricted PodSpec templates in Function and Serving resources. Attackers with only "
   },
   {
    "id": "CVE-2026-129451",
@@ -54,13 +40,6 @@
    "description": "A flaw has been found in DrayTek Vigor2960 up to 1.5.1.6. This affects the function app_guest_export of the file /cgi-bin/mainfunction.cgi. This manipulation of the argument filename causes path traversal. The attack can be initiated remote"
   },
   {
-   "id": "CVE-2026-129433",
-   "published": "2026-11-14",
-   "score": 9.9,
-   "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-   "description": "Dokploy before 0.31.1 contains an OS command injection vulnerability in getComposeContainerCommand() that allows authenticated organization members to execute shell commands via the serviceName parameter. Attackers can store serviceName val"
-  },
-  {
    "id": "CVE-2026-120002",
    "published": "2026-11-10",
    "score": 9.9,
@@ -68,18 +47,11 @@
    "description": "Incorrect authorization in Microsoft Office SharePoint allows an authorized attacker to elevate privileges over a network."
   },
   {
-   "id": "CVE-2026-129552",
-   "published": "2026-11-16",
+   "id": "CVE-2026-79614",
+   "published": "2026-11-17",
    "score": 9.8,
    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-   "description": "Tensei through 0.11.5 contains an authentication bypass vulnerability in @tensei/auth that falls back to the hard-coded JWT signing key 'auth-secret-key' when JWT_SECRET is unset. Unauthenticated attackers can sign tokens with arbitrary use"
-  },
-  {
-   "id": "CVE-2026-129941",
-   "published": "2026-11-16",
-   "score": 9.8,
-   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-   "description": "Prime CMS (@primecms/core) through 0.4.0-beta.0 contains an authentication bypass vulnerability that allows unauthenticated attackers to register accounts via the createUser mutation on /prime/graphql. Because the isAuthenticated() guard ha"
+   "description": "An out-of-bounds write vulnerability in “libclinkc.so” in Zyxel DX3301-T0/EX3301-T0 firmware versions through 5.50(ABVY.8.3)C0 could allow an unauthenticated attacker to elevate privileges and potentially execute arbitrary commands by sendi"
   },
   {
    "id": "CVE-2026-129952",
@@ -87,7 +59,35 @@
    "score": 9.8,
    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
    "description": "NodePress through 8.5.1 contains an authentication bypass vulnerability that allows unauthenticated remote attackers to gain administrator access by forging JWTs with the hardcoded 'nodepress-secret' fallback key. Attackers can sign HS256 b"
+  },
+  {
+   "id": "CVE-2026-129955",
+   "published": "2026-11-16",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "NodePress through 8.5.1 contains an authentication bypass vulnerability that allows unauthenticated attackers to gain administrator access by using the hardcoded default password 'root'. Attackers can send base64-encoded 'root' to POST /adm"
+  },
+  {
+   "id": "CVE-2026-130071",
+   "published": "2026-11-16",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "TridotsTech go1cms master branch through commit 7f68d05 and version-3 branch before commit ead8da3 contains a missing authentication vulnerability in the guest-whitelisted update_doc method that allows unauthenticated attackers to modify an"
+  },
+  {
+   "id": "CVE-2026-109445",
+   "published": "2026-11-13",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "PLANET GS-5220-8P2T2S (hardware version 3.0) firmware versions before 3.2412b261008 contains a stack-based buffer overflow vulnerability that allows unauthenticated attackers to corrupt stack memory by submitting an oversized webstax_auth H"
+  },
+  {
+   "id": "CVE-2026-129171",
+   "published": "2026-11-13",
+   "score": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+   "description": "NginxPulse 1.5.0 before 1.6.26 contains an unauthenticated sql injection vulnerability that allows remote attackers to append SQL via the id and locationType parameters of /api/stats/:type. Attackers can close the quoted table-name identifi"
   }
  ],
- "_updated": "2026-11-16T16:52:24Z"
+ "_updated": "2026-11-17T16:47:20Z"
 }

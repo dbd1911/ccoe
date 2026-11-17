@@ -3,77 +3,77 @@
  "source_url": "https://www.tenable.com/plugins/newest",
  "items": [
   {
-   "id": "381554",
-   "title": "SUSE SLES16: brotli / libbrotli-devel / libbrotlicommon1 / etc (SUSE-SU-2026:24719-1)",
-   "link": "https://www.tenable.com/plugins/nessus/381554",
-   "published": "Mon, 16 Nov 2026 00:00:00 GMT"
+   "id": "381956",
+   "title": "GitLab 17.10 < 19.3.9 / 19.4 < 19.4.8 / 19.5 < 19.5.6 (CVE-2026-101358)",
+   "link": "https://www.tenable.com/plugins/nessus/381956",
+   "published": "Tue, 17 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "381553",
-   "title": "SUSE SLES16: brotli / libbrotli-devel / libbrotlicommon1 / libbrotlidec1 / etc (SUSE-SU-2026:24707-1)",
-   "link": "https://www.tenable.com/plugins/nessus/381553",
-   "published": "Mon, 16 Nov 2026 00:00:00 GMT"
+   "id": "381955",
+   "title": "GitLab 17.1.7 < 19.3.9 / 19.4 < 19.4.8 / 19.5 < 19.5.6 (CVE-2026-110990)",
+   "link": "https://www.tenable.com/plugins/nessus/381955",
+   "published": "Tue, 17 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "381552",
-   "title": "MiracleLinux 9 : thunderbird-153.6.0-1.el9_8.ML.1 (AXSA:2026-2316:27)",
-   "link": "https://www.tenable.com/plugins/nessus/381552",
-   "published": "Mon, 16 Nov 2026 00:00:00 GMT"
+   "id": "381954",
+   "title": "GitLab 13.8 < 19.3.9 / 19.4 < 19.4.8 / 19.5 < 19.5.6 (CVE-2026-121533)",
+   "link": "https://www.tenable.com/plugins/nessus/381954",
+   "published": "Tue, 17 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "381551",
-   "title": "Fedora 45 : tpm2-tss (2026-0866c99872)",
-   "link": "https://www.tenable.com/plugins/nessus/381551",
-   "published": "Mon, 16 Nov 2026 00:00:00 GMT"
+   "id": "381953",
+   "title": "GitLab 12.10 < 19.3.9 / 19.4 < 19.4.8 / 19.5 < 19.5.6 (CVE-2026-16545)",
+   "link": "https://www.tenable.com/plugins/nessus/381953",
+   "published": "Tue, 17 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "381550",
-   "title": "Fedora 43 : rust-sccache (2026-cf5cea3096)",
-   "link": "https://www.tenable.com/plugins/nessus/381550",
-   "published": "Mon, 16 Nov 2026 00:00:00 GMT"
+   "id": "381952",
+   "title": "GitLab 19.1 < 19.3.9 / 19.4 < 19.4.8 / 19.5 < 19.5.6 (CVE-2026-85778)",
+   "link": "https://www.tenable.com/plugins/nessus/381952",
+   "published": "Tue, 17 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "381549",
-   "title": "Fedora 43 : dnf5 (2026-5b05307c5f)",
-   "link": "https://www.tenable.com/plugins/nessus/381549",
-   "published": "Mon, 16 Nov 2026 00:00:00 GMT"
+   "id": "381951",
+   "title": "GitLab 13.2 < 19.3.9 / 19.4 < 19.4.8 / 19.5 < 19.5.6 (CVE-2026-16609)",
+   "link": "https://www.tenable.com/plugins/nessus/381951",
+   "published": "Tue, 17 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "381548",
-   "title": "Fedora 45 : rust-sccache (2026-8c0b42efd3)",
-   "link": "https://www.tenable.com/plugins/nessus/381548",
-   "published": "Mon, 16 Nov 2026 00:00:00 GMT"
+   "id": "381950",
+   "title": "GitLab 19.2 < 19.3.9 / 19.4 < 19.4.8 / 19.5 < 19.5.6 (CVE-2026-121948)",
+   "link": "https://www.tenable.com/plugins/nessus/381950",
+   "published": "Tue, 17 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "381547",
-   "title": "Fedora 45 : chromium (2026-b51236ac2d)",
-   "link": "https://www.tenable.com/plugins/nessus/381547",
-   "published": "Mon, 16 Nov 2026 00:00:00 GMT"
+   "id": "381949",
+   "title": "GitLab 18.2 < 19.3.9 / 19.4 < 19.4.8 / 19.5 < 19.5.6 (CVE-2026-112203)",
+   "link": "https://www.tenable.com/plugins/nessus/381949",
+   "published": "Tue, 17 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "381546",
-   "title": "Fedora 44 : freerdp (2026-c3c88dc710)",
-   "link": "https://www.tenable.com/plugins/nessus/381546",
-   "published": "Mon, 16 Nov 2026 00:00:00 GMT"
+   "id": "381948",
+   "title": "GitLab 8.12 < 19.3.9 / 19.4 < 19.4.8 / 19.5 < 19.5.6 (CVE-2026-108155)",
+   "link": "https://www.tenable.com/plugins/nessus/381948",
+   "published": "Tue, 17 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "381545",
-   "title": "Fedora 44 : rust-sccache (2026-b0da955212)",
-   "link": "https://www.tenable.com/plugins/nessus/381545",
-   "published": "Mon, 16 Nov 2026 00:00:00 GMT"
+   "id": "381947",
+   "title": "GitLab 13.4 < 19.3.9 / 19.4 < 19.4.8 / 19.5 < 19.5.6 (CVE-2026-104717)",
+   "link": "https://www.tenable.com/plugins/nessus/381947",
+   "published": "Tue, 17 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "381544",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-129479",
-   "link": "https://www.tenable.com/plugins/nessus/381544",
-   "published": "Sun, 15 Nov 2026 00:00:00 GMT"
+   "id": "381946",
+   "title": "GitLab 17.2 < 19.3.9 / 19.4 < 19.4.8 / 19.5 < 19.5.6 (CVE-2026-115428)",
+   "link": "https://www.tenable.com/plugins/nessus/381946",
+   "published": "Tue, 17 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "381543",
-   "title": "Linux Distros Unpatched Vulnerability : CVE-2026-129477",
-   "link": "https://www.tenable.com/plugins/nessus/381543",
-   "published": "Sun, 15 Nov 2026 00:00:00 GMT"
+   "id": "381945",
+   "title": "GitLab 13.8 < 19.3.9 / 19.4 < 19.4.8 / 19.5 < 19.5.6 (CVE-2026-115218)",
+   "link": "https://www.tenable.com/plugins/nessus/381945",
+   "published": "Tue, 17 Nov 2026 00:00:00 GMT"
   }
  ],
- "_updated": "2026-11-16T16:52:24Z"
+ "_updated": "2026-11-17T16:47:20Z"
 }

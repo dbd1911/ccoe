@@ -4,107 +4,104 @@
  "redhat_url": "https://access.redhat.com/security/security-updates/security-advisories",
  "ubuntu": [
   {
-   "id": "USN-9027-2",
-   "title": "Linux kernel (FIPS) vulnerabilities",
-   "published": "2026-11-13",
+   "id": "USN-9131-1",
+   "title": "CRaC JDK 25 vulnerabilities",
+   "published": "2026-11-17",
    "cves": [
-    "CVE-2026-63940",
-    "CVE-2026-98432",
-    "CVE-2026-74350",
-    "CVE-2025-21656",
-    "CVE-2026-99999"
+    "CVE-2026-87291",
+    "CVE-2026-87294",
+    "CVE-2026-91394",
+    "CVE-2026-91373",
+    "CVE-2026-91333",
+    "CVE-2026-91334"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-9027-2"
+   "url": "https://ubuntu.com/security/notices/USN-9131-1"
   },
   {
-   "id": "USN-9091-1",
-   "title": "Linux kernel (NVIDIA Tegra) vulnerabilities",
-   "published": "2026-11-13",
+   "id": "USN-9115-1",
+   "title": "Mini-XML vulnerabilities",
+   "published": "2026-11-17",
    "cves": [
-    "CVE-2026-93141",
-    "CVE-2026-80879",
-    "CVE-2026-98687",
-    "CVE-2026-68261",
-    "CVE-2026-99007",
-    "CVE-2026-72414"
+    "CVE-2016-4571",
+    "CVE-2018-20004",
+    "CVE-2016-4570"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-9091-1"
+   "url": "https://ubuntu.com/security/notices/USN-9115-1"
   },
   {
-   "id": "USN-9090-1",
-   "title": "Apache HTTP Server vulnerabilities",
-   "published": "2026-11-12",
+   "id": "USN-8979-2",
+   "title": "Deluge vulnerabilities",
+   "published": "2026-11-17",
    "cves": [
-    "CVE-2026-42356",
-    "CVE-2026-119618",
-    "CVE-2026-109163",
-    "CVE-2026-106023",
-    "CVE-2026-42528"
+    "CVE-2017-7178",
+    "CVE-2017-9031"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-9090-1"
+   "url": "https://ubuntu.com/security/notices/USN-8979-2"
   },
   {
-   "id": "USN-9068-1",
-   "title": "Debian-LAN vulnerability",
-   "published": "2026-11-12",
+   "id": "USN-9130-1",
+   "title": "zutils vulnerability",
+   "published": "2026-11-17",
    "cves": [
-    "CVE-2019-3467"
+    "CVE-2018-1000637"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-9068-1"
+   "url": "https://ubuntu.com/security/notices/USN-9130-1"
   },
   {
-   "id": "USN-9089-1",
-   "title": "x11vnc vulnerability",
-   "published": "2026-11-12",
+   "id": "USN-9129-1",
+   "title": "ZBar vulnerability",
+   "published": "2026-11-17",
    "cves": [
-    "CVE-2020-29074"
+    "CVE-2023-40889"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-9089-1"
+   "url": "https://ubuntu.com/security/notices/USN-9129-1"
   },
   {
-   "id": "USN-9088-1",
-   "title": "TigerVNC vulnerability",
-   "published": "2026-11-12",
+   "id": "USN-9128-1",
+   "title": "YADIFA vulnerability",
+   "published": "2026-11-17",
    "cves": [
-    "CVE-2020-26117"
+    "CVE-2017-14339"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-9088-1"
+   "url": "https://ubuntu.com/security/notices/USN-9128-1"
   },
   {
-   "id": "USN-9087-1",
-   "title": "signing-party vulnerability",
-   "published": "2026-11-12",
+   "id": "USN-9127-1",
+   "title": "Syntastic vulnerability",
+   "published": "2026-11-17",
    "cves": [
-    "CVE-2019-11627"
+    "CVE-2018-11319"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-9087-1"
+   "url": "https://ubuntu.com/security/notices/USN-9127-1"
   },
   {
-   "id": "USN-9086-1",
-   "title": "SA-Exim vulnerability",
-   "published": "2026-11-12",
+   "id": "USN-9126-1",
+   "title": "tmpreaper vulnerability",
+   "published": "2026-11-17",
    "cves": [
-    "CVE-2019-19920"
+    "CVE-2019-3461"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-9086-1"
+   "url": "https://ubuntu.com/security/notices/USN-9126-1"
   },
   {
-   "id": "USN-9085-1",
-   "title": "Ruby OpenID vulnerability",
-   "published": "2026-11-12",
+   "id": "USN-9124-1",
+   "title": "RenderDoc vulnerabilities",
+   "published": "2026-11-17",
    "cves": [
-    "CVE-2019-11027"
+    "CVE-2023-33865",
+    "CVE-2023-33863",
+    "CVE-2023-33864"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-9085-1"
+   "url": "https://ubuntu.com/security/notices/USN-9124-1"
   },
   {
-   "id": "USN-9084-1",
-   "title": "Radicale vulnerability",
-   "published": "2026-11-12",
+   "id": "USN-9123-1",
+   "title": "mechanize vulnerability",
+   "published": "2026-11-17",
    "cves": [
-    "CVE-2017-8342"
+    "CVE-2021-32837"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-9084-1"
+   "url": "https://ubuntu.com/security/notices/USN-9123-1"
   }
  ],
  "redhat": [
@@ -179,5 +176,5 @@
    "url": "https://access.redhat.com/security/cve/CVE-2026-86324"
   }
  ],
- "_updated": "2026-11-16T16:52:24Z"
+ "_updated": "2026-11-17T16:47:20Z"
 }
