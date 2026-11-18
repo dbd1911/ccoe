@@ -1,10 +1,20 @@
 {
  "source": "CISA Known Exploited Vulnerabilities Catalog",
  "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
- "catalogVersion": "2026.11.13",
- "dateReleased": "2026-11-13T20:24:18.3008Z",
- "total": 1781,
+ "catalogVersion": "2026.11.17",
+ "dateReleased": "2026-11-17T17:53:15.5664Z",
+ "total": 1782,
  "recent": [
+  {
+   "cveID": "CVE-2026-115731",
+   "vendorProject": "Perforce",
+   "product": "Puppet Enterprise",
+   "vulnerabilityName": "Perforce Puppet Enterprise Deserialization of Untrusted Data Vulnerability",
+   "dateAdded": "2026-11-17",
+   "dueDate": "2026-12-01",
+   "knownRansomwareCampaignUse": "Unknown",
+   "shortDescription": "Perforce Puppet Enterprise contains a deserialization of untrusted data vulnerability in Puppet’s report-processing code that allows a client with any CA-signed agent certificate to execute arbitrary code on the Puppet S"
+  },
   {
    "cveID": "CVE-2026-114713",
    "vendorProject": "UnrealIRCd",
@@ -144,18 +154,8 @@
    "dueDate": "2026-11-18",
    "knownRansomwareCampaignUse": "Unknown",
    "shortDescription": "Apple iOS, iPadOS, macOS, Safari, tvOS and watchOS 10.5 contain an improper authentication vulnerability which could allow an attacker with arbitrary read and write capability to bypass pointer authentication."
-  },
-  {
-   "cveID": "CVE-2026-119977",
-   "vendorProject": "WordPress",
-   "product": "WordPress Core",
-   "vulnerabilityName": "WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability",
-   "dateAdded": "2026-11-03",
-   "dueDate": "2026-11-06",
-   "knownRansomwareCampaignUse": "Unknown",
-   "shortDescription": "WordPress WordPress Core contains a time-of-check time-of-use (TOCTOU) race condition vulnerability that could allow unauthenticated attackers to execute code on the server during the upgrade window. This is due to predi"
   }
  ],
  "tracked_crosscheck": [],
- "_updated": "2026-11-17T16:47:20Z"
+ "_updated": "2026-11-18T16:18:43Z"
 }

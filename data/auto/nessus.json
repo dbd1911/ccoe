@@ -3,77 +3,77 @@
  "source_url": "https://www.tenable.com/plugins/newest",
  "items": [
   {
-   "id": "381956",
-   "title": "GitLab 17.10 < 19.3.9 / 19.4 < 19.4.8 / 19.5 < 19.5.6 (CVE-2026-101358)",
-   "link": "https://www.tenable.com/plugins/nessus/381956",
-   "published": "Tue, 17 Nov 2026 00:00:00 GMT"
+   "id": "382525",
+   "title": "Fedora 45 : java-25-openjdk / java-latest-openjdk (2026-5923f6c958)",
+   "link": "https://www.tenable.com/plugins/nessus/382525",
+   "published": "Wed, 18 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "381955",
-   "title": "GitLab 17.1.7 < 19.3.9 / 19.4 < 19.4.8 / 19.5 < 19.5.6 (CVE-2026-110990)",
-   "link": "https://www.tenable.com/plugins/nessus/381955",
-   "published": "Tue, 17 Nov 2026 00:00:00 GMT"
+   "id": "382524",
+   "title": "Fedora 43 : sgx-pccs (2026-d015d281d3)",
+   "link": "https://www.tenable.com/plugins/nessus/382524",
+   "published": "Wed, 18 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "381954",
-   "title": "GitLab 13.8 < 19.3.9 / 19.4 < 19.4.8 / 19.5 < 19.5.6 (CVE-2026-121533)",
-   "link": "https://www.tenable.com/plugins/nessus/381954",
-   "published": "Tue, 17 Nov 2026 00:00:00 GMT"
+   "id": "382523",
+   "title": "Fedora 45 : p11-kit (2026-6c94f2c915)",
+   "link": "https://www.tenable.com/plugins/nessus/382523",
+   "published": "Wed, 18 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "381953",
-   "title": "GitLab 12.10 < 19.3.9 / 19.4 < 19.4.8 / 19.5 < 19.5.6 (CVE-2026-16545)",
-   "link": "https://www.tenable.com/plugins/nessus/381953",
-   "published": "Tue, 17 Nov 2026 00:00:00 GMT"
+   "id": "382522",
+   "title": "Fedora 45 : sgx-pccs (2026-069bc15d81)",
+   "link": "https://www.tenable.com/plugins/nessus/382522",
+   "published": "Wed, 18 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "381952",
-   "title": "GitLab 19.1 < 19.3.9 / 19.4 < 19.4.8 / 19.5 < 19.5.6 (CVE-2026-85778)",
-   "link": "https://www.tenable.com/plugins/nessus/381952",
-   "published": "Tue, 17 Nov 2026 00:00:00 GMT"
+   "id": "382521",
+   "title": "Fedora 44 : mingw-gstreamer1 / mingw-gstreamer1-plugins-bad-free / etc (2026-23ca9c3b2f)",
+   "link": "https://www.tenable.com/plugins/nessus/382521",
+   "published": "Wed, 18 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "381951",
-   "title": "GitLab 13.2 < 19.3.9 / 19.4 < 19.4.8 / 19.5 < 19.5.6 (CVE-2026-16609)",
-   "link": "https://www.tenable.com/plugins/nessus/381951",
-   "published": "Tue, 17 Nov 2026 00:00:00 GMT"
+   "id": "382520",
+   "title": "Fedora 44 : sgx-pccs (2026-7277fc13ac)",
+   "link": "https://www.tenable.com/plugins/nessus/382520",
+   "published": "Wed, 18 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "381950",
-   "title": "GitLab 19.2 < 19.3.9 / 19.4 < 19.4.8 / 19.5 < 19.5.6 (CVE-2026-121948)",
-   "link": "https://www.tenable.com/plugins/nessus/381950",
-   "published": "Tue, 17 Nov 2026 00:00:00 GMT"
+   "id": "382519",
+   "title": "Fedora 44 : gpsd (2026-85f1c692b7)",
+   "link": "https://www.tenable.com/plugins/nessus/382519",
+   "published": "Wed, 18 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "381949",
-   "title": "GitLab 18.2 < 19.3.9 / 19.4 < 19.4.8 / 19.5 < 19.5.6 (CVE-2026-112203)",
-   "link": "https://www.tenable.com/plugins/nessus/381949",
-   "published": "Tue, 17 Nov 2026 00:00:00 GMT"
+   "id": "382518",
+   "title": "Fedora 45 : dash (2026-864af60e88)",
+   "link": "https://www.tenable.com/plugins/nessus/382518",
+   "published": "Wed, 18 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "381948",
-   "title": "GitLab 8.12 < 19.3.9 / 19.4 < 19.4.8 / 19.5 < 19.5.6 (CVE-2026-108155)",
-   "link": "https://www.tenable.com/plugins/nessus/381948",
-   "published": "Tue, 17 Nov 2026 00:00:00 GMT"
+   "id": "382517",
+   "title": "Amazon Corretto Java 8.x < 8.514.01.1 Multiple Vulnerabilities",
+   "link": "https://www.tenable.com/plugins/nessus/382517",
+   "published": "Wed, 18 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "381947",
-   "title": "GitLab 13.4 < 19.3.9 / 19.4 < 19.4.8 / 19.5 < 19.5.6 (CVE-2026-104717)",
-   "link": "https://www.tenable.com/plugins/nessus/381947",
-   "published": "Tue, 17 Nov 2026 00:00:00 GMT"
+   "id": "382516",
+   "title": "Amazon Corretto Java 11.x < 11.0.33.1.1 Multiple Vulnerabilities",
+   "link": "https://www.tenable.com/plugins/nessus/382516",
+   "published": "Wed, 18 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "381946",
-   "title": "GitLab 17.2 < 19.3.9 / 19.4 < 19.4.8 / 19.5 < 19.5.6 (CVE-2026-115428)",
-   "link": "https://www.tenable.com/plugins/nessus/381946",
-   "published": "Tue, 17 Nov 2026 00:00:00 GMT"
+   "id": "382515",
+   "title": "Ubuntu 22.04 LTS / 24.04 LTS / 26.04 LTS / 26.10 : openjdk-25 regression (USN-9004-2)",
+   "link": "https://www.tenable.com/plugins/nessus/382515",
+   "published": "Wed, 18 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "381945",
-   "title": "GitLab 13.8 < 19.3.9 / 19.4 < 19.4.8 / 19.5 < 19.5.6 (CVE-2026-115218)",
-   "link": "https://www.tenable.com/plugins/nessus/381945",
-   "published": "Tue, 17 Nov 2026 00:00:00 GMT"
+   "id": "382514",
+   "title": "CentOS Linux 8 [TuxCare] Security Update: bpftool / kernel / kernel-core / kernel-cross-headers / etc Multiple Vulnerabilities (CENTOS-STREAM8:CLSA-2026:1794955",
+   "link": "https://www.tenable.com/plugins/nessus/382514",
+   "published": "Wed, 18 Nov 2026 00:00:00 GMT"
   }
  ],
- "_updated": "2026-11-17T16:47:20Z"
+ "_updated": "2026-11-18T16:18:43Z"
 }
