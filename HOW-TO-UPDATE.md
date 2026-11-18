@@ -57,6 +57,17 @@ site works out of the box; the first workflow run replaces them with live data.
 Requirement: repo **Settings → Actions → General → Workflow permissions** must be
 "Read and write permissions" so the bot can commit refreshed data.
 
+## SCRM Sentinel (tools/scrm)
+
+| Task | How |
+|---|---|
+| Enable AI | Each user opens the tool → **Settings**, pastes their GenAI.mil key, selects **Test connection**. Never commit keys. |
+| Change the AI endpoint or model site-wide | Edit `tools/scrm/config.json` → `defaults.llm_endpoint` / `defaults.llm_model` |
+| Publish the team vendor portfolio | In the tool: **Settings → Download team file**, then commit it as `data/manual/scrm-workspace.json` |
+| Quarterly | Review `tools/scrm/js/core/watchlists.js` against the FCC Covered List, §1260H, UFLPA and the FAR |
+
+Full guide: [tools/scrm/README.md](tools/scrm/README.md).
+
 ## 3. Downloads
 
 * ACMA: `assets/downloads/acma/` — the governing DACM policy PDF and the nomination

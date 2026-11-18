@@ -1,0 +1,9 @@
+{
+  "_comment": "Site-wide, NON-SECRET defaults for SCRM Sentinel. Never put an API key in this file: it is publicly downloadable. Users paste keys in the tool's Settings page.",
+  "defaults": {
+    "llm_endpoint": "https://api.genai.mil/v1/chat/completions",
+    "llm_model": "gemini-2.5-flash",
+    "mode": "live"
+  },
+  "sharedWorkspace": "../../data/manual/scrm-workspace.json"
+}

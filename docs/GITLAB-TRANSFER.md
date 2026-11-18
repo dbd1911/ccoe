@@ -111,3 +111,23 @@ Navigation, page paths, and `assets/js/main.js` are unchanged. Copy these:
 | `workforce.html` | 8140 readiness tiles replaced by `data-readiness-metrics` and `data-ent-date`; add the script tag |
 | `assets/js/enterprise-metrics.js`, `assets/js/metrics.js` | Render and validate the new `performance` block and the added `workforce` fields |
 | `data/manual/metrics.json` | New `performance` block plus `workforce` fields (see `docs/METRICS-UPDATE.md`) |
+
+## November 2026 — SCRM Sentinel (supply chain risk tool)
+
+A new self-contained tool. It adds no navigation changes and needs no server, no database and no CI changes; the existing `pages` job publishes it.
+
+| File | Action |
+|---|---|
+| `tools/scrm/` (whole folder) | **New.** Copy as-is |
+| `tools-dashboards.html` | Add the **SCRM Sentinel** card (the block after the Cyber Range card). Merge only that block; keep your .mil links |
+| `data/manual/scrm-workspace.json` | **New.** Empty team workspace placeholder. Later, replace it with the file exported from the tool |
+| `tests/scrm.test.mjs` | **New.** `node --test tests/scrm.test.mjs` |
+| `README.md`, `HOW-TO-UPDATE.md` | One short SCRM section each |
+
+After publishing:
+
+1. Open the tool, go to **Settings**, paste your GenAI.mil API key and select **Test connection**.
+2. Select **Run connection check** to see which public sources the .mil network allows.
+3. If `api.genai.mil` uses a different endpoint or model on your enclave, edit `tools/scrm/config.json`. **Do not put any key in that file.**
+
+Security note: `tools/vulnerasight/index.html` contains a hardcoded GenAI.mil API key. Revoke it, then switch that tool to the same per-user key pattern before or during transfer.

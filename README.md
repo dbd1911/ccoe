@@ -11,6 +11,7 @@ Static site for the Cybersecurity Center of Excellence operational hub.
 * **ACMA:** `acma.html` is the Cyber Acquisition Career Resource Center — general
   resources only (no login, no individual tracking), governed by the Army DACM
   ACMA Policy (2 FEB 2022) included at `assets/downloads/acma/`.
-* **SCRM Sentinel:** `apps/scrm/` is a full-stack, AI-assisted supply chain risk management app
-  (vendor due diligence from SAM.gov, USAspending, GLEIF, SEC, screening lists). It needs Node 22+ and
-  does not run on static Pages hosting. See [apps/scrm/README.md](apps/scrm/README.md).
+* **SCRM Sentinel:** `tools/scrm/` is a static, browser-only supply chain risk management tool (vendor due
+  diligence from SAM.gov, USAspending, GLEIF and screening lists, with an AI analyst on GenAI.mil). Users paste their own
+  API key in the tool's Settings. Data stays in the browser; the optional team file is `data/manual/scrm-workspace.json`.
+  See [tools/scrm/README.md](tools/scrm/README.md).
