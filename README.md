@@ -11,3 +11,6 @@ Static site for the Cybersecurity Center of Excellence operational hub.
 * **ACMA:** `acma.html` is the Cyber Acquisition Career Resource Center — general
   resources only (no login, no individual tracking), governed by the Army DACM
   ACMA Policy (2 FEB 2022) included at `assets/downloads/acma/`.
+* **SCRM Sentinel:** `apps/scrm/` is a full-stack, AI-assisted supply chain risk management app
+  (vendor due diligence from SAM.gov, USAspending, GLEIF, SEC, screening lists). It needs Node 22+ and
+  does not run on static Pages hosting. See [apps/scrm/README.md](apps/scrm/README.md).
