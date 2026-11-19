@@ -3,77 +3,77 @@
  "source_url": "https://www.tenable.com/plugins/newest",
  "items": [
   {
-   "id": "382525",
-   "title": "Fedora 45 : java-25-openjdk / java-latest-openjdk (2026-5923f6c958)",
-   "link": "https://www.tenable.com/plugins/nessus/382525",
-   "published": "Wed, 18 Nov 2026 00:00:00 GMT"
+   "id": "383339",
+   "title": "Oracle Linux 9 : cockpit (ELSA-2026-99602)",
+   "link": "https://www.tenable.com/plugins/nessus/383339",
+   "published": "Thu, 19 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "382524",
-   "title": "Fedora 43 : sgx-pccs (2026-d015d281d3)",
-   "link": "https://www.tenable.com/plugins/nessus/382524",
-   "published": "Wed, 18 Nov 2026 00:00:00 GMT"
+   "id": "383338",
+   "title": "Oracle Linux 9 : perl-CGI (ELSA-2026-99215)",
+   "link": "https://www.tenable.com/plugins/nessus/383338",
+   "published": "Thu, 19 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "382523",
-   "title": "Fedora 45 : p11-kit (2026-6c94f2c915)",
-   "link": "https://www.tenable.com/plugins/nessus/382523",
-   "published": "Wed, 18 Nov 2026 00:00:00 GMT"
+   "id": "383337",
+   "title": "Oracle Linux 9 : gstreamer1 (ELSA-2026-99228)",
+   "link": "https://www.tenable.com/plugins/nessus/383337",
+   "published": "Thu, 19 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "382522",
-   "title": "Fedora 45 : sgx-pccs (2026-069bc15d81)",
-   "link": "https://www.tenable.com/plugins/nessus/382522",
-   "published": "Wed, 18 Nov 2026 00:00:00 GMT"
+   "id": "383336",
+   "title": "Oracle Linux 9 : libpcap (ELSA-2026-99707)",
+   "link": "https://www.tenable.com/plugins/nessus/383336",
+   "published": "Thu, 19 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "382521",
-   "title": "Fedora 44 : mingw-gstreamer1 / mingw-gstreamer1-plugins-bad-free / etc (2026-23ca9c3b2f)",
-   "link": "https://www.tenable.com/plugins/nessus/382521",
-   "published": "Wed, 18 Nov 2026 00:00:00 GMT"
+   "id": "383335",
+   "title": "Oracle Linux 9 : glib-networking (ELSA-2026-99695)",
+   "link": "https://www.tenable.com/plugins/nessus/383335",
+   "published": "Thu, 19 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "382520",
-   "title": "Fedora 44 : sgx-pccs (2026-7277fc13ac)",
-   "link": "https://www.tenable.com/plugins/nessus/382520",
-   "published": "Wed, 18 Nov 2026 00:00:00 GMT"
+   "id": "383334",
+   "title": "Oracle Linux 9 : rpm (ELSA-2026-99593)",
+   "link": "https://www.tenable.com/plugins/nessus/383334",
+   "published": "Thu, 19 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "382519",
-   "title": "Fedora 44 : gpsd (2026-85f1c692b7)",
-   "link": "https://www.tenable.com/plugins/nessus/382519",
-   "published": "Wed, 18 Nov 2026 00:00:00 GMT"
+   "id": "383333",
+   "title": "Oracle Linux 9 : .NET / 10.0 (ELSA-2026-99142)",
+   "link": "https://www.tenable.com/plugins/nessus/383333",
+   "published": "Thu, 19 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "382518",
-   "title": "Fedora 45 : dash (2026-864af60e88)",
-   "link": "https://www.tenable.com/plugins/nessus/382518",
-   "published": "Wed, 18 Nov 2026 00:00:00 GMT"
+   "id": "383332",
+   "title": "Oracle Linux 9 : xorg-x11-server (ELSA-2026-99611)",
+   "link": "https://www.tenable.com/plugins/nessus/383332",
+   "published": "Thu, 19 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "382517",
-   "title": "Amazon Corretto Java 8.x < 8.514.01.1 Multiple Vulnerabilities",
-   "link": "https://www.tenable.com/plugins/nessus/382517",
-   "published": "Wed, 18 Nov 2026 00:00:00 GMT"
+   "id": "383331",
+   "title": "Oracle Linux 9 : .NET / 9.0 (ELSA-2026-99144)",
+   "link": "https://www.tenable.com/plugins/nessus/383331",
+   "published": "Thu, 19 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "382516",
-   "title": "Amazon Corretto Java 11.x < 11.0.33.1.1 Multiple Vulnerabilities",
-   "link": "https://www.tenable.com/plugins/nessus/382516",
-   "published": "Wed, 18 Nov 2026 00:00:00 GMT"
+   "id": "383330",
+   "title": "Oracle Linux 9 : emacs (ELSA-2026-99160)",
+   "link": "https://www.tenable.com/plugins/nessus/383330",
+   "published": "Thu, 19 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "382515",
-   "title": "Ubuntu 22.04 LTS / 24.04 LTS / 26.04 LTS / 26.10 : openjdk-25 regression (USN-9004-2)",
-   "link": "https://www.tenable.com/plugins/nessus/382515",
-   "published": "Wed, 18 Nov 2026 00:00:00 GMT"
+   "id": "383329",
+   "title": "Oracle Linux 9 : .NET / 8.0 (ELSA-2026-99146)",
+   "link": "https://www.tenable.com/plugins/nessus/383329",
+   "published": "Thu, 19 Nov 2026 00:00:00 GMT"
   },
   {
-   "id": "382514",
-   "title": "CentOS Linux 8 [TuxCare] Security Update: bpftool / kernel / kernel-core / kernel-cross-headers / etc Multiple Vulnerabilities (CENTOS-STREAM8:CLSA-2026:1794955",
-   "link": "https://www.tenable.com/plugins/nessus/382514",
-   "published": "Wed, 18 Nov 2026 00:00:00 GMT"
+   "id": "383328",
+   "title": "Oracle Linux 9 : perl-DBI (ELSA-2026-99208)",
+   "link": "https://www.tenable.com/plugins/nessus/383328",
+   "published": "Thu, 19 Nov 2026 00:00:00 GMT"
   }
  ],
- "_updated": "2026-11-18T16:18:43Z"
+ "_updated": "2026-11-19T16:26:55Z"
 }

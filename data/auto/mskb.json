@@ -4,32 +4,32 @@
  "release_id": "2026-Nov",
  "release_title": "November 2026 Security Updates",
  "release_date": "2026-11-10T08:00:00Z",
- "cve_count": 1791,
+ "cve_count": 1865,
  "kb_count": 54,
  "kbs": [
   {
    "kb": "KB5131291",
-   "url": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5131291"
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131291"
   },
   {
    "kb": "KB5131085",
-   "url": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5131085"
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131085"
   },
   {
    "kb": "KB5131096",
-   "url": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5131096"
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131096"
   },
   {
    "kb": "KB5131090",
-   "url": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5131090"
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131090"
   },
   {
    "kb": "KB5131087",
-   "url": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5131087"
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131087"
   },
   {
    "kb": "KB5132061",
-   "url": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5132061"
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5132061"
   },
   {
    "kb": "KB5132043",
@@ -37,7 +37,7 @@
   },
   {
    "kb": "KB5131080",
-   "url": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5131080"
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131080"
   },
   {
    "kb": "KB5131077",
@@ -45,11 +45,7 @@
   },
   {
    "kb": "KB5132059",
-   "url": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5132059"
-  },
-  {
-   "kb": "KB5131083",
-   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131083"
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5132059"
   },
   {
    "kb": "KB5124008",
@@ -62,16 +58,20 @@
   {
    "kb": "KB5126657",
    "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5126657"
+  },
+  {
+   "kb": "KB5126655",
+   "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5126655"
   }
  ],
  "exploitation_more_likely": [
   {
-   "cve": "CVE-2026-105524",
-   "title": "Windows Management Instrumentation Elevation of Privilege Vulnerability"
-  },
-  {
    "cve": "CVE-2026-105501",
    "title": "Windows Installer Elevation of Privilege Vulnerability"
+  },
+  {
+   "cve": "CVE-2026-105524",
+   "title": "Windows Management Instrumentation Elevation of Privilege Vulnerability"
   },
   {
    "cve": "CVE-2026-109473",
@@ -106,5 +106,5 @@
    "title": "Desktop Window Manager Elevation of Privilege Vulnerability"
   }
  ],
- "_updated": "2026-11-18T16:18:43Z"
+ "_updated": "2026-11-19T16:26:55Z"
 }

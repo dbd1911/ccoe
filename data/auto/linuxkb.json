@@ -4,171 +4,206 @@
  "redhat_url": "https://access.redhat.com/security/security-updates/security-advisories",
  "ubuntu": [
   {
-   "id": "USN-9151-1",
-   "title": "needrestart vulnerability",
-   "published": "2026-11-18",
+   "id": "USN-9172-1",
+   "title": "Linux kernel vulnerabilities",
+   "published": "2026-11-19",
    "cves": [
-    "CVE-2026-124757"
+    "CVE-2026-99999",
+    "CVE-2026-98432"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-9151-1"
+   "url": "https://ubuntu.com/security/notices/USN-9172-1"
   },
   {
-   "id": "USN-9132-1",
-   "title": "apng2gif vulnerabilities",
-   "published": "2026-11-17",
+   "id": "USN-9171-1",
+   "title": "Linux kernel vulnerabilities",
+   "published": "2026-11-19",
    "cves": [
-    "CVE-2017-6962",
-    "CVE-2017-6961",
-    "CVE-2017-6960"
+    "CVE-2026-98432",
+    "CVE-2026-99999"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-9132-1"
+   "url": "https://ubuntu.com/security/notices/USN-9171-1"
   },
   {
-   "id": "USN-9150-1",
-   "title": "SWUpdate vulnerabilities",
-   "published": "2026-11-17",
+   "id": "USN-9170-1",
+   "title": "Linux kernel vulnerabilities",
+   "published": "2026-11-19",
    "cves": [
-    "CVE-2026-109399",
-    "CVE-2025-41259"
+    "CVE-2026-98432",
+    "CVE-2026-99999",
+    "CVE-2026-64564"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-9150-1"
+   "url": "https://ubuntu.com/security/notices/USN-9170-1"
   },
   {
-   "id": "USN-9149-1",
-   "title": "MiniMagick vulnerability",
-   "published": "2026-11-17",
+   "id": "USN-9167-1",
+   "title": "Linux kernel vulnerabilities",
+   "published": "2026-11-19",
    "cves": [
-    "CVE-2019-13574"
+    "CVE-2026-89987",
+    "CVE-2026-98450",
+    "CVE-2026-98549",
+    "CVE-2026-98193",
+    "CVE-2026-89860",
+    "CVE-2026-89465"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-9149-1"
+   "url": "https://ubuntu.com/security/notices/USN-9167-1"
   },
   {
-   "id": "USN-9148-1",
-   "title": "Mechanize vulnerability",
-   "published": "2026-11-17",
+   "id": "USN-9169-1",
+   "title": "Linux kernel (AWS) vulnerabilities",
+   "published": "2026-11-19",
    "cves": [
-    "CVE-2021-21289"
+    "CVE-2026-80947",
+    "CVE-2023-53733",
+    "CVE-2026-99031",
+    "CVE-2026-98969",
+    "CVE-2026-99169",
+    "CVE-2026-98739"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-9148-1"
+   "url": "https://ubuntu.com/security/notices/USN-9169-1"
   },
   {
-   "id": "USN-9147-1",
-   "title": "PyWPS vulnerability",
-   "published": "2026-11-17",
+   "id": "USN-9168-1",
+   "title": "Linux kernel vulnerabilities",
+   "published": "2026-11-19",
    "cves": [
-    "CVE-2021-39371"
+    "CVE-2026-99024",
+    "CVE-2026-80947",
+    "CVE-2023-53733",
+    "CVE-2026-97901",
+    "CVE-2026-98764",
+    "CVE-2026-99100"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-9147-1"
+   "url": "https://ubuntu.com/security/notices/USN-9168-1"
   },
   {
-   "id": "USN-9146-1",
-   "title": "Privoxy vulnerabilities",
-   "published": "2026-11-17",
+   "id": "USN-9166-1",
+   "title": "Linux kernel vulnerabilities",
+   "published": "2026-11-19",
    "cves": [
-    "CVE-2021-44540",
-    "CVE-2021-44543"
+    "CVE-2026-99173",
+    "CVE-2026-99153",
+    "CVE-2026-99172",
+    "CVE-2026-99187",
+    "CVE-2026-99188",
+    "CVE-2026-99171"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-9146-1"
+   "url": "https://ubuntu.com/security/notices/USN-9166-1"
   },
   {
-   "id": "USN-9145-1",
-   "title": "OAR vulnerability",
-   "published": "2026-11-17",
+   "id": "USN-9165-1",
+   "title": "Linux kernel vulnerabilities",
+   "published": "2026-11-19",
    "cves": [
-    "CVE-2016-1235"
+    "CVE-2026-99218",
+    "CVE-2026-99225",
+    "CVE-2026-99237",
+    "CVE-2026-99244",
+    "CVE-2026-99226",
+    "CVE-2026-99232"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-9145-1"
+   "url": "https://ubuntu.com/security/notices/USN-9165-1"
   },
   {
-   "id": "USN-9144-1",
-   "title": "ngIRCd vulnerability",
-   "published": "2026-11-17",
+   "id": "USN-9160-1",
+   "title": "Linux kernel (Azure) vulnerabilities",
+   "published": "2026-11-19",
    "cves": [
-    "CVE-2020-14148"
+    "CVE-2026-98620",
+    "CVE-2026-97492",
+    "CVE-2026-98966",
+    "CVE-2026-100071",
+    "CVE-2026-89525",
+    "CVE-2026-90402"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-9144-1"
+   "url": "https://ubuntu.com/security/notices/USN-9160-1"
   },
   {
-   "id": "USN-9143-1",
-   "title": "Mumble vulnerability",
-   "published": "2026-11-17",
+   "id": "USN-9164-1",
+   "title": "Linux kernel (FIPS) vulnerabilities",
+   "published": "2026-11-19",
    "cves": [
-    "CVE-2018-20743"
+    "CVE-2024-53194",
+    "CVE-2022-49058",
+    "CVE-2022-49170",
+    "CVE-2024-53214",
+    "CVE-2024-57904",
+    "CVE-2024-56763"
    ],
-   "url": "https://ubuntu.com/security/notices/USN-9143-1"
+   "url": "https://ubuntu.com/security/notices/USN-9164-1"
   }
  ],
  "redhat": [
   {
-   "cve": "CVE-2026-114939",
+   "cve": "CVE-2026-132858",
    "severity": "important",
-   "public_date": "2026-11-18",
-   "description": "OpenJDK: OpenJDK: The acceptor does not properly implement RFC 4120 requirements for handling cross-realm tickets.",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-114939"
+   "public_date": "2026-11-19",
+   "description": "gdm: Missing authorization on CreateRemoteDisplay allows autologin as arbitrary users, including root",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-132858"
   },
   {
-   "cve": "CVE-2026-131920",
-   "severity": "important",
-   "public_date": "2026-11-18",
-   "description": "openstack-cinder: cinder: OpenStack Cinder: Arbitrary file overwrite via path traversal in LIO iSCSI driver",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-131920"
+   "cve": "CVE-2026-126631",
+   "severity": "moderate",
+   "public_date": "2026-11-19",
+   "description": "openscap: Symlink escape in offline scanning mode allows reading host files outside the scanned root",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-126631"
   },
   {
-   "cve": "CVE-2026-132049",
+   "cve": "CVE-2026-99320",
+   "severity": "moderate",
+   "public_date": "2026-11-19",
+   "description": "kernel: kernel: Denial of Service via use-after-free in IPv6 raw socket handling",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-99320"
+  },
+  {
+   "cve": "CVE-2026-117678",
+   "severity": "important",
+   "public_date": "2026-11-19",
+   "description": "idna: idna: Denial of Service via oversized domain labels",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-117678"
+  },
+  {
+   "cve": "CVE-2026-104357",
+   "severity": "moderate",
+   "public_date": "2026-11-19",
+   "description": "libtirpc: libtirpc: SunRPC UDP datagram-boundary violation (stale buffer bytes decoded as current request)",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-104357"
+  },
+  {
+   "cve": "CVE-2026-133004",
+   "severity": "moderate",
+   "public_date": "2026-11-19",
+   "description": "pipewire: pipewire: pipewire-pulse client can overwrite the server-computed access label to bypass audio access restrictions",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-133004"
+  },
+  {
+   "cve": "CVE-2026-127096",
+   "severity": "low",
+   "public_date": "2026-11-18",
+   "description": "vscode-ansible: denial of service via quadratic documentation-regex scanning in the Ansible language server",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-127096"
+  },
+  {
+   "cve": "CVE-2026-127095",
+   "severity": "low",
+   "public_date": "2026-11-18",
+   "description": "ansible-builder: denial of service via super-quadratic regular expression backtracking in ansible-builder requirements parsing",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-127095"
+  },
+  {
+   "cve": "CVE-2026-132229",
+   "severity": "important",
+   "public_date": "2026-11-18",
+   "description": "",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-132229"
+  },
+  {
+   "cve": "CVE-2026-125283",
    "severity": "moderate",
    "public_date": "2026-11-18",
-   "description": "lldpd: lldpd: out-of-bounds read in liblldpctl on a short LLDP-MED location",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-132049"
-  },
-  {
-   "cve": "CVE-2026-130020",
-   "severity": "important",
-   "public_date": "2026-11-17",
-   "description": "firefox: Privilege escalation due to incorrect boundary conditions in the Graphics: CanvasWebGL component on Android",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-130020"
-  },
-  {
-   "cve": "CVE-2026-130021",
-   "severity": "important",
-   "public_date": "2026-11-17",
-   "description": "firefox: Use-after-free in the Audio/Video: Playback component",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-130021"
-  },
-  {
-   "cve": "CVE-2026-114938",
-   "severity": "critical",
-   "public_date": "2026-11-17",
-   "description": "OpenJDK: OpenJDK: remote code execution via memory corruption on x86-64 systems with AVX-512 VBMI",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-114938"
-  },
-  {
-   "cve": "CVE-2026-114940",
-   "severity": "important",
-   "public_date": "2026-11-17",
-   "description": "OpenJDK: OpenJDK: Improve TLS client connections",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-114940"
-  },
-  {
-   "cve": "CVE-2026-114941",
-   "severity": "important",
-   "public_date": "2026-11-17",
-   "description": "OpenJDK: OpenJDK: Improve integer compression",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-114941"
-  },
-  {
-   "cve": "CVE-2026-114942",
-   "severity": "important",
-   "public_date": "2026-11-17",
-   "description": "OpenJDK: OpenJDK: Enhance vector masks",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-114942"
-  },
-  {
-   "cve": "CVE-2026-114943",
-   "severity": "moderate",
-   "public_date": "2026-11-17",
-   "description": "OpenJDK: OpenJDK: Enhance JFR Events",
-   "url": "https://access.redhat.com/security/cve/CVE-2026-114943"
+   "description": "",
+   "url": "https://access.redhat.com/security/cve/CVE-2026-125283"
   }
  ],
- "_updated": "2026-11-18T16:18:43Z"
+ "_updated": "2026-11-19T16:26:55Z"
 }
